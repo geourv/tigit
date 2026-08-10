@@ -1,0 +1,40 @@
+name: unaltraweb-template-profiles
+
+x-serve-base: &serve-base
+  image: ${DOCKER_IMAGE:-ghcr.io/dosquartsdedocs/unaltraweb:main}
+  working_dir: /srv/jekyll
+  user: "${LOCAL_UID:-1000}:${LOCAL_GID:-1000}"
+  environment:
+    HOME: /tmp
+    JEKYLL_ENV: development
+  volumes:
+    - .:/srv/jekyll
+
+services:
+  unaltreselfie:
+    <<: *serve-base
+    container_name: unaltraweb-template-unaltreselfie
+    ports:
+      - "${UNALTRESELFIE_PORT:-4001}:4001"
+    command: bash -lc 'make serve-native HOST=0.0.0.0 PORT=4001 LIVERELOAD= SITE_PROFILE=unaltreselfie'
+
+  unaltreprojecte:
+    <<: *serve-base
+    container_name: unaltraweb-template-unaltreprojecte
+    ports:
+      - "${UNALTREPROJECTE_PORT:-4002}:4002"
+    command: bash -lc 'make serve-native HOST=0.0.0.0 PORT=4002 LIVERELOAD= SITE_PROFILE=unaltreprojecte'
+
+  unaltremanual:
+    <<: *serve-base
+    container_name: unaltraweb-template-unaltremanual
+    ports:
+      - "${UNALTREMANUAL_PORT:-4003}:4003"
+    command: bash -lc 'make serve-native HOST=0.0.0.0 PORT=4003 LIVERELOAD= SITE_PROFILE=unaltremanual'
+
+  unaltredocs:
+    <<: *serve-base
+    container_name: unaltraweb-template-unaltredocs
+    ports:
+      - "${UNALTREDOCS_PORT:-4004}:4004"
+    command: bash -lc 'make serve-native HOST=0.0.0.0 PORT=4004 LIVERELOAD= SITE_PROFILE=unaltredocs'

@@ -1,0 +1,148 @@
+# Local project configuration. The base configuration is loaded from the
+# unaltraweb core gem by Makefile using: core/_config.yml,_config.yml
+
+title: "Tècniques d'informació geogràfica i turística"
+short_title: "TIGIT"
+description: >
+  Manual central del curs Tècniques d'informació geogràfica i turística de la Universitat Rovira i Virgili.
+keywords: TIGIT, informació geogràfica, turisme, QGIS, Excel, cartografia, visualització de dades, URV
+copyright_holder: Universitat Rovira i Virgili
+
+author:
+  name: Equip docent TIGIT
+  name_es: Equipo docente TIGIT
+  name_ca: Equip docent TIGIT
+  bio: Manual for the course Tècniques d'informació geogràfica i turística.
+  bio_es: Manual de la asignatura Técnicas de información geográfica y turística.
+  bio_ca: Manual de l'assignatura Tècniques d'informació geogràfica i turística.
+  affiliation: Universitat Rovira i Virgili
+  affiliation_es: Universitat Rovira i Virgili
+  affiliation_ca: Universitat Rovira i Virgili
+  location: Vila-seca
+  location_es: Vila-seca
+  location_ca: Vila-seca
+  email: benito.zaragozi@urv.cat
+  github: geourv
+
+lang: "ca"
+default_lang: "ca"
+languages: ["ca", "es", "en"]
+icon: "brand/dosquartsdedocs-logo-white.svg"
+
+url: "https://geourv.github.io"
+baseurl: "/tigit"
+
+theme: unaltraweb
+
+plugins:
+  - unaltraweb
+  - jekyll-3rd-party-libraries
+  - jekyll-archives-v2
+  - jekyll-cache-bust
+  - jekyll-email-protect
+  - jekyll-feed
+  - jekyll-get-json
+  - jekyll-imagemagick
+  - jekyll-link-attributes
+  - jekyll-minifier
+  - jekyll-paginate-v2
+  - jekyll-regex-replace
+  - jekyll/scholar
+  - jekyll-sitemap
+  - jekyll-socials
+  - jekyll-tabs
+  - jekyll-toc
+  - jekyll-twitter-plugin
+  - jemoji
+
+external_sources: []
+
+pagination:
+  enabled: true
+  collection: posts
+  per_page: 4
+  permalink: /page/:num/
+  title: ":title"
+  title_suffix: ""
+  sort_field: date
+  sort_reverse: true
+  trail:
+    before: 2
+    after: 2
+
+unaltraweb:
+  site_profile: "unaltremanual"
+  content_status_field: content_status
+  approved_status: approved
+  features:
+    news: false
+    blog: false
+    cv: false
+    projects: false
+    publications: false
+    readings: true
+    metrics: false
+    manual: true
+  manual:
+    collection: chapters
+    cover_image: /assets/img/manual-cover-cat.png
+    logo: /assets/img/brand/dosquartsdedocs-logo.svg
+    logo_inverse: /assets/img/brand/dosquartsdedocs-logo-white.svg
+  documentation:
+    collection: documentation
+    logo: /assets/img/brand/dosquartsdedocs-logo.svg
+    logo_inverse: /assets/img/brand/dosquartsdedocs-logo-white.svg
+    logo_sepia: /assets/img/brand/dosquartsdedocs-logo.svg
+    profiles:
+      - id: github-publishers
+        label: GitHub publishers
+      - id: local-editors
+        label: Local editors
+      - id: site-designers
+        label: Site designers
+      - id: template-maintainers
+        label: Template maintainers
+  readings:
+    badges:
+      finished:
+        label_en: Finished
+        label_es: Finalizada
+        label_ca: Finalitzada
+        color: "#72d6a2"
+        text_color: "#143125"
+      reading:
+        label_en: Reading now
+        label_es: En lectura
+        label_ca: En lectura
+        color: "#ffd166"
+        text_color: "#3a2a07"
+      queued:
+        label_en: To read
+        label_es: Por leer
+        label_ca: Per llegir
+        color: "#b8a3ff"
+        text_color: "#251c45"
+      urv-teacher:
+        label_en: URV teacher
+        label_es: Profesorado URV
+        label_ca: Professorat URV
+        color: "#72d6a2"
+        text_color: "#143125"
+      crai:
+        label_en: Available at CRAI
+        label_es: Disponible en el CRAI
+        label_ca: Disponible al CRAI
+        color: "#79b7ff"
+        text_color: "#102a44"
+      classic:
+        label_en: A classic
+        label_es: Un clásico
+        label_ca: Un clàssic
+        color: "#ffd166"
+        text_color: "#3a2a07"
+  figure_captions:
+    enabled: true
+    collections: [chapters, documentation]
+
+giscus:
+  repo: geourv/tigit

@@ -1,0 +1,43 @@
+- name: Benito
+  lastname: Zaragozí
+  position: Coordinador
+  organization: Universitat Rovira i Virgili
+  department: Departament de Geografia
+  pic: user-placeholder.png
+  email:
+    - title: E-mail
+      url: benito.zaragozi@urv.cat
+      class: "fa-solid fa-envelope fa-2x"
+
+- name: David
+  lastname: Azuara Garcés
+  position: Professor
+  organization: Universitat Rovira i Virgili
+  department: Departament de Geografia
+  pic: user-placeholder.png
+  email:
+    - title: E-mail
+      url: david.azuara@urv.cat
+      class: "fa-solid fa-envelope fa-2x"
+
+- name: Edgar
+  lastname: Bustamante
+  position: Professor
+  organization: Universitat Rovira i Virgili
+  department: Departament de Geografia
+  pic: user-placeholder.png
+  email:
+    - title: E-mail
+      url: edgar.bustamante@urv.cat
+      class: "fa-solid fa-envelope fa-2x"
+
+- name: Anna
+  lastname: Kazakova
+  position: Professora
+  organization: Universitat Rovira i Virgili
+  department: Departament de Geografia
+  pic: user-placeholder.png
+  email:
+    - title: E-mail
+      url: anna.kazakova@urv.cat
+      class: "fa-solid fa-envelope fa-2x"
