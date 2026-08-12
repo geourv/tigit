@@ -1,0 +1,14 @@
+flowchart TB
+  source[Organisme productor] --> portal[Portal de publicació]
+  portal --> gui[Interfície gràfica]
+  portal --> download[Fitxer descarregable]
+  portal --> api[API]
+  portal --> geoservice[Geoservei]
+  gui --> selection[Selecció manual i exportació]
+  download --> files[CSV · XLSX · GeoPackage · GeoTIFF]
+  api --> response[JSON · JSON-stat · CSV · XML]
+  geoservice --> ogc[WMS · WMTS · WFS · OGC API]
+  selection --> documented[Consulta documentada]
+  files --> documented
+  response --> documented
+  ogc --> documented

@@ -1,0 +1,12 @@
+flowchart LR
+  source[Font verificada] --> raw[Dades originals]
+  raw --> inspect[Inspecció i perfil]
+  inspect --> transform[Transformació documentada]
+  transform --> validate[Validació]
+  validate --> analytical[Taula analítica]
+  analytical --> indicators[Indicadors]
+  analytical --> charts[Gràfics]
+  analytical --> gis[Unió a geometries]
+  indicators --> synthesis[Síntesi i interpretació]
+  charts --> synthesis
+  gis --> synthesis

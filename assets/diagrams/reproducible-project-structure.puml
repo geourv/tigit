@@ -1,0 +1,15 @@
+@startfiles
+/tigit-group-xx/
+/tigit-group-xx/README.md
+/tigit-group-xx/data/
+/tigit-group-xx/data/raw/
+/tigit-group-xx/data/processed/
+/tigit-group-xx/src/
+/tigit-group-xx/qgis/
+/tigit-group-xx/qgis/project.qgz
+/tigit-group-xx/outputs/
+/tigit-group-xx/outputs/figures/
+/tigit-group-xx/outputs/maps/
+/tigit-group-xx/dist/
+/tigit-group-xx/sandbox/
+@endfiles

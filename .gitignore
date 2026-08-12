@@ -1,12 +1,13 @@
 _site
 .bundle
-.cache/scimago/
+.cache/
 .jekyll-cache
 .jekyll-metadata
 .sass-cache
 .DS_store
 Gemfile.lock
 node_modules/
+sandbox/
 test-results/
 tmp/
 tmp/metrics-report*.json

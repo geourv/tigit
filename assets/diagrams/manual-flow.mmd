@@ -1,7 +1,7 @@
 flowchart LR
-  dades[Dades territorials i turístiques] --> indicadors[Indicadors]
-  indicadors --> grafics[Gràfics i lectura visual]
-  grafics --> referencia[Sistemes de referència]
-  referencia --> cartografia[Cartografia temàtica]
-  cartografia --> sig[SIG aplicat al turisme]
-  sig --> sintesi[Síntesi visual]
+  pregunta[Pregunta i ús previst] --> dades[Selecció i preparació de dades]
+  dades --> indicadors[Construcció d'indicadors]
+  indicadors --> analisi[Gràfics i anàlisi espacial]
+  analisi --> interpretacio[Interpretació i avaluació]
+  interpretacio --> comunicacio[Mapes i síntesi visual]
+  comunicacio -. noves preguntes i revisions .-> pregunta

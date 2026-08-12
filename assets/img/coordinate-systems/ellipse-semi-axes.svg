@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:cc="http://creativecommons.org/ns#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	width="720px" height="440px" viewBox="-180 -110 360 220">
+<title>Semieixos d'una el·lipse</title>
+<desc>Secció el·líptica amb el semieix major a i el semieix menor b.</desc>
+<metadata>
+	<rdf:RDF>
+		<cc:Work rdf:about="">
+			<dc:title>Semieixos d'una el·lipse</dc:title>
+			<dc:creator>M. W. Toews</dc:creator>
+			<dc:contributor>Manual TIGIT</dc:contributor>
+			<dc:source>https://commons.wikimedia.org/wiki/File:Ellipse_semi-major_and_minor_axes.svg</dc:source>
+			<dc:rights>CC0 1.0</dc:rights>
+		</cc:Work>
+	</rdf:RDF>
+</metadata>
+<g stroke="black" fill="none" stroke-width="1">
+	<ellipse cx="0" cy="0" rx="170" ry="102" stroke="black" fill="seashell"/>
+	<line x1="-172" y1="0" x2="172" y2="0" stroke-dasharray="5,3"/>
+	<line x1="0" y1="-104" x2="0" y2="104" stroke-dasharray="5,3"/>
+	<line x1="-172" y1="0" x2="0" y2="0" stroke="darkred" stroke-width="3"/>
+	<line x1="0" y1="-104" x2="0" y2="0" stroke="darkblue" stroke-width="3"/>
+	<circle cx="0" cy="0" r="3" fill="black"/>
+	<g font-family="sans-serif" font-size="14" stroke="none">
+		<text font-style="italic" fill="black">
+			<tspan x="-86" y="-8" font-size="30" fill="darkred">a</tspan>
+			<tspan x="2" y="-52" font-size="30" fill="darkblue">b</tspan>
+			<tspan x="-102" y="18" font-size="12" fill="darkred">semieix major</tspan>
+			<tspan x="8" y="-44" font-size="12" fill="darkblue">semieix menor</tspan>
+		</text>
+	</g>
+</g>
+</svg>

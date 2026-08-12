@@ -1,0 +1,10 @@
+flowchart LR
+  question[Pregunta i ús previst] --> discover[Descoberta de fonts]
+  discover --> producer[Productor original]
+  producer --> metadata[Definicions i metadades]
+  metadata --> quality{Qualitat adequada?}
+  quality -- No --> discard[Descartar o reformular]
+  quality -- Sí --> licence{Llicència compatible?}
+  licence -- No --> alternative[Buscar una alternativa]
+  licence -- Sí --> acquire[Obtenir dades i documentació]
+  acquire --> preserve[Còpia original i registre de procedència]

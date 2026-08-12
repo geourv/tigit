@@ -8,6 +8,10 @@ description: >
 keywords: TIGIT, informació geogràfica, turisme, QGIS, Excel, cartografia, visualització de dades, URV
 copyright_holder: Universitat Rovira i Virgili
 
+scholar:
+  bibliography: manual.bib
+  locale: ca
+
 author:
   name: Equip docent TIGIT
   name_es: Equipo docente TIGIT
@@ -74,6 +78,11 @@ unaltraweb:
   site_profile: "unaltremanual"
   content_status_field: content_status
   approved_status: approved
+  footer:
+    show_logo: true
+    logo_light: /assets/img/brand/dosquartsdedocs-logo-white.svg
+    logo_dark: /assets/img/brand/dosquartsdedocs-logo.svg
+    logo_cafe: /assets/img/brand/dosquartsdedocs-logo-footer-cafe.svg
   features:
     news: false
     blog: false
@@ -88,11 +97,60 @@ unaltraweb:
     cover_image: /assets/img/manual-cover-cat.png
     logo: /assets/img/brand/dosquartsdedocs-logo.svg
     logo_inverse: /assets/img/brand/dosquartsdedocs-logo-white.svg
+    logo_cafe: /assets/img/brand/dosquartsdedocs-logo-cafe.svg
+    bibliography: true
+    bibliography_file: manual.bib
+    metadata:
+      short_title: TIGIT
+      description: Manual del curs TIGIT per coordinar teoria, pràctiques, dades, avaluació i professorat.
+      series: Dos quarts de docs
+      series_subtitle: Recursos d'aprenentatge
+      subject: Tècniques d'informació geogràfica i turística
+      teaching_guides:
+        - degree: Grau en Geografia, Anàlisi Territorial i Sostenibilitat
+          subject_code: "21234003"
+        - degree: Grau en Gestió en Turisme i Hoteleria
+          subject_code: "21224102"
+      department: Departament de Geografia
+      faculty: Facultat de Turisme i Geografia
+      institution: Universitat Rovira i Virgili
+      location: Vila-seca
+      academic_year: 2026/2027
+      revision_date:
+        ca: 11 d'agost de 2026
+        es: 11 de agosto de 2026
+        en: August 11, 2026
+      instructors:
+        - name: Benito Zaragozí
+        - name: David Azuara Garcés
+        - name: Edgar Bustamante
+        - name: Anna Kazakova
+      rights: © Universitat Rovira i Virgili. Tots els drets reservats.
+    pdf:
+      enabled: true
+      languages: [ca]
+      build_dir: tmp/manual-pdf
+      output: assets/pdf/tigit-{lang}.pdf
+      cover_output: assets/img/manual-cover-{lang}.png
+      include_home: true
+      include_bibliography: true
+      toc: true
+      mark_drafts: true
+      home_title: Inici i presentació del curs
+      csl: _bibliography/my-apa-cv-no-access.csl
+      cover:
+        image: assets/img/manual-cover-background.jpg
+        series_logo: assets/img/brand/docs-quarts-logo-small-white.png
+        institution_logo: assets/img/brand/dgeo-apilat-color.pdf
+        band_color: "990000"
+        primary_color: "990000"
+        secondary_color: "003366"
+        muted_color: "666666"
   documentation:
     collection: documentation
     logo: /assets/img/brand/dosquartsdedocs-logo.svg
     logo_inverse: /assets/img/brand/dosquartsdedocs-logo-white.svg
-    logo_sepia: /assets/img/brand/dosquartsdedocs-logo.svg
+    logo_sepia: /assets/img/brand/dosquartsdedocs-logo-cafe.svg
     profiles:
       - id: github-publishers
         label: GitHub publishers

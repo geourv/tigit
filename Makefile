@@ -36,6 +36,9 @@ PYTHONUSERBASE ?= tmp/python_user
 PIP_CACHE_DIR ?= tmp/pip_cache
 PIP_STAMP := $(PYTHONUSERBASE)/.requirements.sha256
 DOCKER_IMAGE ?= ghcr.io/dosquartsdedocs/unaltraweb:main
+MANUAL_PDF_IMAGE ?= $(if $(strip $(LOCAL_CORE)),unaltraweb-manual-pdf:local,ghcr.io/dosquartsdedocs/unaltraweb-manual-pdf:main)
+MANUAL_PDF_LANG ?=
+MANUAL_PDF_PUBLISH_DRY_RUN ?= 1
 PLAYWRIGHT_IMAGE ?= mcr.microsoft.com/playwright:v1.56.1-noble
 CONTAINER ?= unaltraweb-template-jekyll-dev
 CV_PDF ?= assets/pdf/cv.pdf
@@ -67,6 +70,8 @@ DOCKER_PORTS = -p $(PORT):$(PORT)
 SERVE_LIVERELOAD_ARGS =
 DOCKER_CORE_VOLUME =
 DOCKER_LOCAL_CORE =
+THEME_UPDATE_LOCAL_ENV =
+THEME_UPDATE_ARGS =
 ifneq ($(strip $(LIVERELOAD)),)
 DOCKER_PORTS += -p $(LIVERELOAD_PORT):$(LIVERELOAD_PORT)
 SERVE_LIVERELOAD_ARGS = $(LIVERELOAD) --livereload-port $(LIVERELOAD_PORT)
@@ -74,12 +79,17 @@ endif
 ifneq ($(strip $(LOCAL_CORE)),)
 DOCKER_CORE_VOLUME = -v "$(abspath $(LOCAL_CORE)):/srv/unaltraweb:ro"
 DOCKER_LOCAL_CORE = LOCAL_CORE=/srv/unaltraweb
+THEME_UPDATE_LOCAL_ENV = BUNDLE_LOCAL__UNALTRAWEB=/srv/unaltraweb
+THEME_UPDATE_ARGS = --local
 endif
 
-.PHONY: bootstrap local-core-check local-gemfile profile-config dev-config python-deps bundle-install open open-url profile-compose-local-core serve serve-native serve-profile serve-unaltreselfie serve-unaltreprojecte serve-unaltremanual serve-unaltredocs serve-allprofiles build build-native publish publish-native test test-native screenshots screenshots-all docs-screenshots documentation-screenshots screenshots-docs down down-profiles metrics-scimago-fetch metrics-scimago-fetch-native metrics-update metrics-update-native metrics-update-all metrics-check metrics-check-native cv-preview cv-preview-native diagrams docker-serve docker-serve-local docker-build docker-build-local docker-down open-local render-smoke render-smoke-local serve-local build-local
+.PHONY: bootstrap theme-update local-core-check local-gemfile profile-config dev-config python-deps bundle-install open open-url profile-compose-local-core serve serve-native serve-profile serve-unaltreselfie serve-unaltreprojecte serve-unaltremanual serve-unaltredocs serve-allprofiles build build-native manual-pdf manual-pdf-image manual-pdf-status manual-pdf-build manual-pdf-publish publish publish-native test test-native screenshots screenshots-all docs-screenshots documentation-screenshots screenshots-docs down down-profiles metrics-scimago-fetch metrics-scimago-fetch-native metrics-update metrics-update-native metrics-update-all metrics-check metrics-check-native cv-preview cv-preview-native diagrams docker-serve docker-serve-local docker-build docker-build-local docker-down open-local render-smoke render-smoke-local serve-local build-local
 
 bootstrap:
 	docker run --rm --user "$(LOCAL_UID):$(LOCAL_GID)" -e HOME=/tmp -v "$(CURDIR):/srv/jekyll" -w /srv/jekyll $(DOCKER_IMAGE) bash -lc 'bundle install && python3 -m pip install --break-system-packages --user -r requirements.txt'
+
+theme-update: local-core-check
+	docker run --rm --user "$(LOCAL_UID):$(LOCAL_GID)" -e HOME=/tmp -v "$(CURDIR):/srv/jekyll" $(DOCKER_CORE_VOLUME) -w /srv/jekyll $(DOCKER_IMAGE) bash -lc '$(THEME_UPDATE_LOCAL_ENV) BUNDLE_APP_CONFIG="$(LOCAL_BUNDLE_APP_CONFIG)" BUNDLE_PATH="$(LOCAL_BUNDLE_PATH)" bundle update $(THEME_UPDATE_ARGS) unaltraweb'
 
 local-core-check:
 	@if test -n "$(LOCAL_CORE)"; then \
@@ -231,6 +241,23 @@ build-native build-local: profile-config python-deps bundle-install
 	active_config="$$core_config,_config.yml"; \
 	if test -n "$(SITE_PROFILE)"; then active_config="$$active_config,$(PROFILE_CONFIG)"; fi; \
 	JEKYLL_ENV=production PYTHONUSERBASE="$(abspath $(PYTHONUSERBASE))" PIP_CACHE_DIR="$(abspath $(PIP_CACHE_DIR))" PATH="$(abspath $(PYTHONUSERBASE))/bin:$(PATH)" BUNDLE_GEMFILE="$$gemfile" BUNDLE_APP_CONFIG=$(abspath $(LOCAL_BUNDLE_APP_CONFIG)) BUNDLE_PATH=$(abspath $(LOCAL_BUNDLE_PATH)) $(BUNDLE) exec jekyll build --config "$$active_config" --disable-disk-cache
+
+manual-pdf: manual-pdf-build
+
+manual-pdf-image: local-core-check
+	@test -n "$(LOCAL_CORE)" || (printf 'Set LOCAL_CORE to build the local manual PDF image.\n' && exit 1)
+	docker build -f "$(abspath $(LOCAL_CORE))/scripts/manual/Dockerfile" -t "$(MANUAL_PDF_IMAGE)" "$(abspath $(LOCAL_CORE))/scripts/manual"
+
+manual-pdf-status manual-pdf-build manual-pdf-publish: $(if $(strip $(LOCAL_CORE)),manual-pdf-image,)
+
+manual-pdf-status:
+	docker run --rm --user "$(LOCAL_UID):$(LOCAL_GID)" -e HOME=/tmp -v "$(CURDIR):/project" -w /project "$(MANUAL_PDF_IMAGE)" status --project /project $(if $(strip $(MANUAL_PDF_LANG)),--language "$(MANUAL_PDF_LANG)",)
+
+manual-pdf-build:
+	docker run --rm --user "$(LOCAL_UID):$(LOCAL_GID)" -e HOME=/tmp -v "$(CURDIR):/project" -w /project "$(MANUAL_PDF_IMAGE)" build --project /project $(if $(strip $(MANUAL_PDF_LANG)),--language "$(MANUAL_PDF_LANG)",)
+
+manual-pdf-publish:
+	docker run --rm --user "$(LOCAL_UID):$(LOCAL_GID)" -e HOME=/tmp -v "$(CURDIR):/project" -w /project "$(MANUAL_PDF_IMAGE)" publish --project /project $(if $(strip $(MANUAL_PDF_LANG)),--language "$(MANUAL_PDF_LANG)",) $(if $(filter 1 true TRUE yes YES y Y,$(MANUAL_PDF_PUBLISH_DRY_RUN)),--dry-run,)
 
 publish: build
 	docker run --rm --user "$(LOCAL_UID):$(LOCAL_GID)" -e HOME=/tmp -e PUBLISH_REMOTE="$(PUBLISH_REMOTE)" -e PUBLISH_BRANCH="$(PUBLISH_BRANCH)" -e PUBLISH_SOURCE="$(PUBLISH_SOURCE)" -e PUBLISH_WORKTREE="$(PUBLISH_WORKTREE)" -e PUBLISH_DRY_RUN="$(PUBLISH_DRY_RUN)" -e PUBLISH_PREPARE_ONLY=1 -v "$(CURDIR):/srv/jekyll" $(DOCKER_CORE_VOLUME) -w /srv/jekyll $(DOCKER_IMAGE) bash -lc 'make publish-native $(DOCKER_LOCAL_CORE)'
