@@ -11,3 +11,14 @@
 // html[data-theme="sepia"] {
 //   --global-theme-color: #6f4e1f;
 // }
+
+.manual-content .md-table code {
+  display: inline-block;
+  border: 1px solid color-mix(in srgb, var(--global-theme-color) 34%, var(--global-divider-color));
+  border-radius: 0.18rem;
+  background: color-mix(in srgb, var(--global-theme-color) 15%, var(--global-card-bg-color));
+  color: var(--global-text-color);
+  padding: 0.1rem 0.32rem;
+  font-weight: 650;
+  white-space: nowrap;
+}

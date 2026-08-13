@@ -1,0 +1,38 @@
+flowchart LR
+  challenge[Repte territorial o turístic\npaisatge, aigua, allotjament, mobilitat, seguretat]
+  observations[Observacions\nenquestes, sensors, registres, imatges, treball de camp]
+  data[Dades\nregistres, fitxers, taules, bases i metadades]
+
+  subgraph kdd["KDD: descobriment de coneixement en bases de dades"]
+    selection[Selecció]
+    target[Dades objectiu]
+    preprocessing[Preprocessament\nneteja, integració i qualitat]
+    preprocessed[Dades preprocessades]
+    transformation[Transformació\nvariables, unitats i estructura analítica]
+    transformed[Dades transformades]
+    mining[Anàlisi o mineria de dades]
+    patterns[Patrons, models o indicadors]
+    evaluation[Interpretació i avaluació\ncontrast, context i utilitat]
+  end
+
+  information[Informació\ndades contextualitzades i comparables]
+  knowledge[Coneixement territorial\nrelacions defensables]
+  wisdom[Saviesa pràctica\ncriteri informat per evidència, experiència i valors]
+  action[Decisions i accions\nplanificació, gestió i comunicació]
+
+  challenge --> observations
+  observations --> data
+  data --> selection
+  selection --> target
+  target --> preprocessing
+  preprocessing --> preprocessed
+  preprocessed --> transformation
+  transformation --> transformed
+  transformed --> information
+  transformed --> mining
+  mining --> patterns
+  patterns --> evaluation
+  evaluation --> knowledge
+  knowledge --> wisdom
+  wisdom --> action
+  action -. genera noves preguntes .-> challenge

@@ -1,7 +1,7 @@
 ---
 layout: manual-chapter
-title: Integració de dades en un SIG
-description: Fonts cartogràfiques, capes, taules d'atributs, importació, unions i control de qualitat amb QGIS.
+title: Introducció als sistemes d'informació geogràfica
+description: Conceptes bàsics de SIG, capes, taules d'atributs, importació, unions i control de qualitat amb QGIS.
 lang: ca
 ref: manual-gis-data-integration
 profiles: [unaltremanual]
@@ -12,7 +12,7 @@ part: Continguts
 manual_references: true
 ---
 
-Un sistema d'informació geogràfica relaciona geometries, atributs i operacions. En aquest curs, QGIS serà sobretot l'espai on la taula municipal preparada al llibre únic es vincula amb els límits municipals de la comarca i es converteix en informació territorial consultable. Aquesta visió evita reduir el SIG a un programa: també hi intervenen les dades, els procediments, les preguntes i les persones que prenen decisions {% cite longleyGeographicInformationScience2015 nunesDiccionariSIG2012 %}.
+Un sistema d'informació geogràfica relaciona geometries, atributs i operacions. En aquesta assignatura se'n farà una introducció aplicada: QGIS serà sobretot l'espai on la taula municipal preparada al llibre únic es vincula amb els límits municipals de la comarca i es converteix en informació territorial consultable. Aquesta visió evita reduir el SIG a un programa: també hi intervenen les dades, els procediments, les preguntes i les persones que prenen decisions {% cite longleyGeographicInformationScience2015 nunesDiccionariSIG2012 %}.
 
 La informació **georeferenciada** combina un component temàtic, que descriu què és o quin valor té una entitat, i un component espacial, que indica on es troba. Un SIG integra dades, eines, persones i mètodes per gestionar i analitzar aquesta relació i respondre problemes territorials.
 
@@ -103,7 +103,7 @@ Localització condicionada
 Patró espacial
 : Regularitat, concentració o associació observable en la distribució territorial d'un fenomen. Reconèixer un patró no demostra per si mateix una relació causal.
 
-## Taller: unir els indicadors de la comarca
+## Activitat: unir els indicadors de la comarca
 
 La pràctica unirà `map_export` amb la capa municipal del capítol 4. La capa i la taula representen els mateixos municipis, però els codis poden tenir prefixos, longituds o tipus diferents. Abans de normalitzar-los, caldrà comptar valors únics, detectar duplicats i establir una correspondència d'una fila d'indicadors per municipi.
 
@@ -131,21 +131,21 @@ Després de la unió es repetiran els recomptes. Tots els municipis previstos ha
 | Després | La distribució espacial confirma casos concrets | Inspecció territorial documentada |
 :::
 
-### Consultar el resultat
+### Consultar la unió
 
 La unió es posarà a prova amb dues consultes senzilles. La primera identificarà els indicadors d'un municipi conegut. La segona localitzarà els municipis que compleixen una condició documentada, com superar un determinat percentatge d'habitatge no principal. Es podrà afegir una segona condició, però el resultat s'interpretarà com una selecció descriptiva, no com una explicació causal.
 
-## Organització del projecte QGIS
+### Organització del projecte QGIS
 
-### Capes originals, derivades i estils
+#### Capes originals, derivades i estils
 
 Els noms i grups de capes han de permetre distingir la font original, la capa comarcal, les transformacions de claus, la unió i els resultats preparats per simbolitzar. La simbologia temàtica encara no substituirà els noms semàntics ni la documentació de les capes.
 
-### Rutes, carpetes i traçabilitat
+#### Rutes, carpetes i traçabilitat
 
 El projecte s'ha de poder obrir i revisar sense perdre fitxers. S'utilitzarà el mateix `.qgz` iniciat al capítol 4, amb rutes relatives dins de la carpeta arrel. El CSV de transferència, la font espacial i qualsevol GeoPackage derivat conservaran ubicacions estables; no es crearà un segon projecte desconnectat per al mapa temàtic.
 
-### Evidències que s'han de conservar
+#### Evidències que s'han de conservar
 
 ::: table "Evidències de la integració SIG"
 | Ubicació | Evidència | Contingut mínim |
@@ -156,7 +156,3 @@ El projecte s'ha de poder obrir i revisar sense perdre fitxers. S'utilitzarà el
 | `data/processed` o `qgis` | Capa materialitzada, si cal | Geometries i indicadors units en un GeoPackage derivat |
 | `README.md` | Informe de la unió | Claus, normalització, cardinalitat, recomptes, absències i casos contrastats |
 :::
-
-## Resultat del capítol
-
-El resultat serà el mateix projecte QGIS amb els municipis de la comarca units correctament als indicadors de població i habitatge. La revisió documentarà coincidències, absències i qualsevol decisió adoptada. El llibre continuarà sent la font mestra dels càlculs. El capítol 6 reutilitzarà el projecte i la geometria per construir el mapa de context; el capítol 7 simbolitzarà els camps units verificats, sense edicions manuals intermèdies.

@@ -1,0 +1,29 @@
+flowchart LR
+  question[Pregunta del projecte] --> catalog[Catàleg o fitxa\nDescobrir el recurs]
+  catalog --> dataset[Conjunt de dades\nDefinició, productor i cobertura]
+  dataset --> access{Quina forma d'accés\nnecessita l'anàlisi?}
+
+  subgraph flat["Dades planes o estadístiques"]
+    flatdist[Distribució tabular\nTaula, fitxer o resposta de consulta]
+    flatselect[Selecció tabular\nDimensions, filtres, període i format]
+    flatcopy[Còpia documentada\nDades, metadades i consulta]
+  end
+
+  subgraph spatial["SIG i dades geoespacials"]
+    geodist[Distribució o servei cartogràfic\nFitxer, descàrrega o connexió]
+    layer[Capa geoespacial\nGeometria o cobertura, referència espacial i extensió]
+    spatialselect[Petició o descàrrega espacial\nCapa, àrea, escala i format]
+    spatialcopy[Còpia espacial documentada\nDades, geometria i metadades]
+  end
+
+  access --> flatdist
+  flatdist --> flatselect
+  flatselect --> flatcopy
+
+  access --> geodist
+  geodist --> layer
+  layer --> spatialselect
+  spatialselect --> spatialcopy
+
+  flatcopy -. si cal cartografiar .-> join[Unió amb geometria\nCodi territorial o coordenades]
+  join -. genera .-> spatialcopy

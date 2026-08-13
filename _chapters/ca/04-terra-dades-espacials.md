@@ -12,23 +12,51 @@ part: Continguts
 manual_references: true
 ---
 
-La posició geogràfica introdueix una condició que no apareix en una taula o en un gràfic convencional: les dades han d'estar relacionades amb un model de la Terra. Aquest capítol presenta els conceptes necessaris per començar a treballar amb capes a QGIS sense convertir els sistemes de referència en codis opacs.
+La posició geogràfica introdueix una condició que no apareix en una taula o en un gràfic convencional: les dades han d'estar relacionades amb un model de la Terra. Aquest capítol presenta els conceptes necessaris per entendre com una posició, una distància o una superfície depenen d'una forma de referència, d'unes coordenades i d'una projecció.
 
-El vocabulari cartogràfic clàssic ajuda a entendre la representació, però per treballar amb capes digitals cal fixar també la terminologia dels sistemes d'informació geogràfica. El capítol combina una lectura cartogràfica general, una introducció específica als sistemes de coordenades i una referència terminològica en català {% cite jolyCartografia1982 vanSickleBasicGISCoordinates2017 nunesDiccionariSIG2012 %}.
+El vocabulari cartogràfic clàssic ajuda a entendre la representació, però el treball amb capes digitals exigeix fixar també la terminologia dels sistemes de referència, les geometries i les dades espacials. El capítol combina una lectura cartogràfica general, una introducció específica als sistemes de coordenades i una referència terminològica en català {% cite jolyCartografia1982 vanSickleBasicGISCoordinates2017 nunesDiccionariSIG2012 %}.
 
 ## Modelar la forma de la Terra
 
-### Geoide i el·lipsoide
+### Geoide, el·lipsoide i esferoide
 
-La forma física de la Terra i el model matemàtic utilitzat per descriure-la no són exactament el mateix. Aquesta distinció ajuda a entendre per què existeixen diferents sistemes de referència. El **geoide** és una superfície vinculada al camp de gravetat que s'aproxima al nivell mitjà del mar i serveix de referència per a les altituds. L'**el·lipsoide de referència** és una superfície matemàtica regular que aproxima la forma terrestre i facilita els càlculs horitzontals.
+La forma física de la Terra, el model matemàtic utilitzat per calcular coordenades i la superfície de referència de les altures no són exactament el mateix. Aquesta distinció és important perquè una capa pot estar ben situada en planta i, alhora, expressar l'altura amb una referència inadequada. En cartografia digital, aquests conceptes apareixen dins dels sistemes de referència, però no són simples codis: indiquen quina superfície s'ha triat per mesurar, projectar o comparar.
 
-En una secció meridiana, l'el·lipsoide es pot descriure mitjançant el semieix major equatorial $a$ i el semieix menor polar $b$. La diferència real entre tots dos és molt petita respecte de la mida de la Terra; la figura exagera l'aplanament per fer visibles els eixos. En fer girar aquesta secció al voltant de l'eix polar s'obté l'el·lipsoide de revolució utilitzat com a model de referència.
+La superfície real de la Terra és el relleu: continents, fons oceànics, gel, aigua i formes canviants. El **geoide** no és aquesta superfície real. És una superfície física vinculada al camp de gravetat terrestre, propera al nivell mitjà del mar i prolongada conceptualment sota els continents. Serveix per entendre altures perquè segueix una condició gravimètrica: tots els punts del geoide comparteixen el mateix potencial de gravetat. Per això és una referència natural per a altures físiques, però no és una superfície regular ni còmoda per calcular coordenades horitzontals.
 
-![Secció el·líptica amb el semieix major equatorial a i el semieix menor polar b]({{ site.baseurl }}/assets/img/coordinate-systems/ellipse-semi-axes.svg "Els semieixos a i b descriuen la secció d'un el·lipsoide de revolució; l'aplanament està exagerat. Adaptació de M. W. Toews, «Ellipse semi-major and minor axes», Wikimedia Commons, CC0 1.0."){: data-figure-width="25rem"}
+L'**el·lipsoide de referència** és un model matemàtic regular que aproxima la forma general de la Terra i permet definir latituds, longituds, normals, distàncies i projeccions amb fórmules manejables. En molts textos també es parla d'**esferoide**. En aquest context, un esferoide és un el·lipsoide de revolució, és a dir, una el·lipse que gira al voltant del seu eix menor. La paraula recorda que el model s'assembla a una esfera lleugerament aplanada, però el terme tècnic més habitual en geodèsia i cartografia digital és el·lipsoide.
+
+En una secció meridiana, l'el·lipsoide es pot descriure mitjançant el semieix major equatorial $a$ i el semieix menor polar $b$. La diferència real entre tots dos és molt petita respecte de la mida de la Terra; la subfigura b exagera l'aplanament per fer visibles els eixos. En fer girar aquesta secció al voltant de l'eix polar s'obté l'el·lipsoide de revolució utilitzat com a model de referència.
+
+Els el·lipsoides es poden ajustar per a territoris, èpoques i finalitats diferents. Alguns models històrics o regionals buscaven encaixar molt bé amb una part concreta del món; altres, com els que s'utilitzen en marcs globals contemporanis, busquen una coherència planetària. Això explica que un canvi de dàtum pugui desplaçar una capa encara que la projecció sembli la mateixa: no només canvia la manera de dibuixar sobre el pla, sinó també la manera d'ancorar el model a la Terra.
+
+::: subfigures a+b/c "Geoide i el·lipsoide com a models de referència complementaris. El geoide descriu una superfície física vinculada a la gravetat; l'el·lipsoide és una superfície matemàtica regular que pot ajustar-se globalment o prioritzar una regió."
+![Visualització global del geoide GOCO06s amb colors blaus i vermells que indiquen l'altura del geoide respecte d'un el·lipsoide de referència]({{ site.baseurl }}/assets/img/coordinate-systems/nasa-geoid-goco06s-2026.png "Geoide GOCO06s, amb l'altura exagerada 10.000 vegades. Visualització de Mark SubbaRao, NASA/GSFC, basada en el model gravitatori GOCO06s")
+![Secció el·líptica amb el semieix major equatorial a i el semieix menor polar b]({{ site.baseurl }}/assets/img/coordinate-systems/ellipse-semi-axes.svg "Semieixos a i b d'un el·lipsoide de revolució; adaptació de M. W. Toews, Wikimedia Commons, CC0 1.0")
+![Esquema amb un el·lipsoide global i dos el·lipsoides locals que s'ajusten millor a Amèrica o a Europa]({{ site.baseurl }}/assets/img/coordinate-systems/ellipsoid-local-fit.svg "Esquema propi: un el·lipsoide local pot encaixar millor amb una regió i pitjor amb una altra; l'el·lipsoide global reparteix l'encaix a escala planetària")
+:::
+
+La subfigura a és útil justament perquè exagera allò que a escala planetària gairebé no veuríem. La mateixa fitxa de la NASA avisa que hi ha una versió a escala en què les variacions no són perceptibles, i una versió exagerada per fer-les visibles {% cite nasaSvsGeoid2026 %}. Aquesta és una bona advertència cartogràfica: una figura del geoide no mostra muntanyes ni fondàries oceàniques, sinó diferències de potencial gravimètric respecte d'un el·lipsoide. La subfigura c també és un esquema exagerat: no representa les dimensions reals dels el·lipsoides, sinó la idea que l'encaix d'un model depèn de l'àrea d'ús i del dàtum que el materialitza.
+
+>>>> **Ni el geoide ni l'el·lipsoide són «la forma real de la Terra».** El relleu real és irregular i inclou la superfície topogràfica i batimètrica. El geoide és una superfície física de referència gravimètrica; l'el·lipsoide és una superfície matemàtica regular. Cada model respon a una pregunta diferent i tots dos simplifiquen la realitat.
+
+### Altures el·lipsoidals i altures gravimètriques
+
+La distinció entre geoide i el·lipsoide es fa especialment visible quan es parla d'altures. Un receptor GNSS calcula habitualment una **altura el·lipsoidal** $h$, mesurada respecte de l'el·lipsoide i al llarg de la normal a aquest el·lipsoide. Aquesta altura és coherent amb el sistema geodèsic de posicionament, però no respon directament a la pregunta quotidiana de quants metres hi ha sobre el nivell del mar.
+
+Les altures que utilitza la cartografia topogràfica acostumen a ser altures físiques o gravimètriques. En el cas més habitual d'aquesta explicació, l'**altura ortomètrica** $H$ es mesura respecte del geoide i segueix la direcció de la gravetat. La diferència entre el geoide i l'el·lipsoide en un punt és l'**ondulació del geoide** $N$. De manera simplificada, la relació es pot escriure com $h = H + N$: si es coneixen dues de les magnituds, es pot obtenir la tercera mitjançant un model de geoide adequat.
+
+![Relació entre l'altura el·lipsoidal, l'altura ortomètrica i l'ondulació del geoide]({{ site.baseurl }}/assets/img/coordinate-systems/ellipsoidal-orthometric-geoid-height.svg "La figura diferencia l'altura el·lipsoidal h, l'altura ortomètrica H i l'ondulació del geoide N. Original de Javiersanp, «Altitudes.svg», Wikimedia Commons, CC BY-SA 4.0 i altres llicències compatibles."){: data-figure-width="36rem"}
+
+En alguns països i sistemes verticals s'utilitzen altures normals i quasi-geoides en lloc d'altures ortomètriques i geoides estrictes. El curs no necessita desenvolupar ara aquesta distinció, però sí conservar la idea principal: la coordenada horitzontal i l'altura poden dependre de superfícies i models diferents. Per això, quan es combinen punts GNSS, models digitals d'elevacions, capes municipals i mapes topogràfics, cal revisar tant el sistema de referència horitzontal com la referència vertical.
 
 ### Dàtum i marc de referència
 
-Les coordenades només tenen sentit quan es coneix respecte de quin model i marc s'han definit. El geoide descriu una superfície física; l'el·lipsoide n'ofereix una aproximació matemàtica; el **dàtum geodèsic** defineix com aquest model es relaciona amb la Terra; i el marc de referència en materialitza la realització mitjançant punts, coordenades i convencions de mesura. El **sistema de referència espacial** estableix com s'expressen i s'interpreten les posicions. Quan aquestes posicions es projecten sobre un pla, les coordenades passen a tenir unitats i propietats adequades per a determinades operacions.
+Les coordenades només tenen sentit quan es coneix respecte de quin model i marc s'han definit. El **dàtum geodèsic** defineix com l'el·lipsoide i el sistema de coordenades es relacionen amb la Terra: origen, orientació, escala, el·lipsoide adoptat i, segons el cas, convencions de mesura i època. El **marc de referència** materialitza aquest dàtum amb una xarxa de punts, coordenades, observacions i procediments que permeten obtenir posicions consistents. En sistemes moderns, el marc també ha de tenir en compte que les plaques tectòniques es mouen i que les coordenades poden estar associades a una època.
+
+També hi ha dàtums verticals. Un dàtum horitzontal permet expressar posicions en latitud, longitud o coordenades projectades; un dàtum vertical defineix de què depèn l'altura. En termes docents, l'el·lipsoide resol sobretot el problema geomètric de situar punts sobre una superfície regular, mentre que el geoide i els models gravimètrics resolen el problema físic de comparar altures. Aquesta separació no és absoluta, però ajuda a entendre per què el treball amb capes pot necessitar informació diferent per a planta i per a elevació.
+
+El **sistema de referència espacial** estableix com s'expressen i s'interpreten les posicions. Quan aquestes posicions es projecten sobre un pla, les coordenades passen a tenir unitats i propietats adequades per a determinades operacions. Per exemple, `ETRS89 / UTM zona 31N` (`EPSG:25831`) combina un marc geodèsic europeu amb una projecció UTM concreta; `ED50 / UTM zona 31N` utilitza una projecció semblant, però un dàtum diferent. Aquesta diferència és suficient per produir desplaçaments apreciables si una capa s'assigna o es transforma malament.
 
 Aquesta cadena explica per què dos parells de nombres no es poden comparar només per l'aparença. Una posició sense sistema de referència és incompleta, i un codi EPSG sense entendre les unitats i l'àrea d'ús tampoc no garanteix una operació correcta.
 
@@ -42,21 +70,21 @@ La latitud i la longitud expressen posicions mitjançant unitats angulars. Valor
 
 ### Reticle UTM i coordenades projectades
 
-Els sistemes projectats transformen la superfície terrestre en un pla i permeten treballar habitualment amb unitats mètriques. El sistema UTM divideix el món en seixanta zones de 6° de longitud. Catalunya es treballa habitualment dins de la zona 31N, compresa entre 0° i 6° E. En `ETRS89 / UTM zona 31N` (`EPSG:25831`), els eixos són **est** (*easting*, E) i **nord** (*northing*, N), en aquest ordre, i la unitat és el metre {% cite epsg25831 usgsUtmCoordinates2026 %}.
+Els sistemes projectats transformen la superfície terrestre en un pla i permeten treballar habitualment amb unitats mètriques. El sistema UTM divideix el món, entre 80° S i 84° N, en seixanta fusos longitudinals de 6°. Els mapes generals del reticle també mostren bandes latitudinals de 8° que s'utilitzen en referències de quadrícula: Catalunya queda al fus 31 i a la banda T. En canvi, quan parlem del CRS `ETRS89 / UTM zona 31N` (`EPSG:25831`), la `N` indica l'hemisferi nord, no la banda latitudinal. En aquest sistema, els eixos són **est** (*easting*, E) i **nord** (*northing*, N), en aquest ordre, i la unitat és el metre {% cite epsg25831 usgsUtmCoordinates2026 %}.
 
-La coordenada UTM necessita més informació que els dos nombres. `EPSG:25831 · E 344.469 m · N 4.551.807 m` identifica el CRS, la component est i la component nord de la Facultat. El meridià central de la zona, 3° E, rep un **fals est** de 500.000 m; per això una E inferior a 500.000 situa el punt a l'oest del meridià central sense emprar valors negatius. A l'hemisferi nord, la N es compta des de l'equador amb un fals nord de 0 m. La lletra `N` de `31N` indica l'hemisferi i no s'ha de confondre amb les bandes de l'MGRS, un altre sistema de referència per quadrícula.
+La coordenada UTM necessita més informació que els dos nombres. `ETRS89 / UTM zona 31N · EPSG:25831 · E 344.469 m · N 4.551.807 m` identifica el CRS, el fus i l'hemisferi, la component est i la component nord de la Facultat. El meridià central del fus 31, 3° E, rep un **fals est** de 500.000 m; per això una E inferior a 500.000 situa el punt a l'oest del meridià central sense emprar valors negatius. A l'hemisferi nord, la N es compta des de l'equador amb un fals nord de 0 m. Escriure només `344469, 4551807` deixaria oberta la zona, l'hemisferi, el dàtum i fins i tot l'ordre dels eixos.
 
-::: subfigures a+b "De la zona UTM al reticle local de Vila-seca. Esquemes propis basats en la definició d'ETRS89 / UTM zona 31N de l'EPSG i en conversions executades amb PROJ 9.4.0."
-![Zona UTM 31N entre zero i sis graus est, amb el meridià central de tres graus est i Vila-seca a l'oest]({{ site.baseurl }}/assets/img/coordinate-systems/utm-zone-31n.svg "La zona 31N i el fals est de 500.000 m")
-![Reticle UTM quilomètric amb tres llocs reals de Vila-seca i les seves coordenades est i nord]({{ site.baseurl }}/assets/img/coordinate-systems/utm-grid-vila-seca.svg "El reticle es llegeix primer cap a l'est i després cap al nord")
+::: subfigures a+b "Del reticle UTM global al reticle local de Vila-seca. La subfigura a mostra els fusos i bandes UTM del planeta; la subfigura b és un esquema propi basat en conversions executades amb PROJ 9.4.0."
+![Reticle mundial de fusos UTM i bandes latitudinals; Catalunya se situa al fus 31 i a la banda T, mentre que EPSG:25831 usa 31N per indicar el fus 31 de l'hemisferi nord]({{ site.baseurl }}/assets/img/coordinate-systems/utm-zones-world.jpg "Fusos longitudinals i bandes latitudinals del reticle UTM. Font: Jan Krymmel, Wikimedia Commons, a partir de NASA Visible Earth; domini públic, CC BY-SA 3.0 i GFDL.")
+![Reticle UTM quilomètric amb tres llocs reals de Vila-seca i les seves coordenades est i nord]({{ site.baseurl }}/assets/img/coordinate-systems/utm-grid-vila-seca.svg "El reticle es llegeix primer cap a l'est i després cap al nord; a l'hemisferi nord, el valor N es compta des de l'equador")
 :::
 
 ::: table "Tres llocs de Vila-seca en coordenades geogràfiques i UTM"
-| Lloc | Longitud, latitud (`EPSG:4326`) | E, N (`EPSG:25831`) |
+| Lloc | Longitud, latitud (`EPSG:4326`) | UTM ETRS89 / zona 31N (`EPSG:25831`) |
 | --- | --- | --- |
-| Facultat de Turisme i Geografia | `1.1478406, 41.1026664` | `344469 m E, 4551807 m N` |
-| Castell de Vila-seca | `1.1475084, 41.1146813` | `344469 m E, 4553142 m N` |
-| Torre d'en Dolça | `1.1599211, 41.0989127` | `345474 m E, 4551369 m N` |
+| Facultat de Turisme i Geografia | `1.1478406, 41.1026664` | `zona 31N · E 344469 m · N 4551807 m` |
+| Castell de Vila-seca | `1.1475084, 41.1146813` | `zona 31N · E 344469 m · N 4553142 m` |
+| Torre d'en Dolça | `1.1599211, 41.0989127` | `zona 31N · E 345474 m · N 4551369 m` |
 :::
 
 Les posicions geogràfiques de la taula provenen d'OpenStreetMap i s'han transformat amb PROJ 9.4.0; els resultats s'han arrodonit al metre i no representen un aixecament topogràfic {% cite openStreetMapCopyright2026 %}. La lectura relativa és immediata: la Facultat i el Castell tenen gairebé la mateixa E, però el Castell és aproximadament 1,3 km més al nord; la Torre d'en Dolça queda aproximadament 1 km més a l'est de tots dos. En un reticle d'1 km, primer s'identifica la línia d'est situada a l'esquerra del punt i després la línia de nord situada per sota; els dígits addicionals precisen la posició dins del quadrat {% cite usgsUtmGridReading2026 %}.
@@ -107,6 +135,8 @@ La projecció coneguda com a **Gall-Peters** respon a un altre propòsit. James 
 
 L'eina [*The True Size Of…*](https://thetruesize.com/) permet cercar un país i arrossegar-ne el contorn per diferents latituds sobre un fons Mercator. El territori no canvia d'àrea real durant el desplaçament, però la mida necessària per encaixar amb el mapa varia: Groenlàndia deixa de semblar comparable amb Àfrica quan s'acosta a l'equador. L'activitat fa visible el patró de distorsió, però no converteix el fons del visor en una superfície adequada per mesurar; serveix per formular una comparació que després es pot contrastar amb dades d'àrea {% cite talmageManeiceTrueSize %}.
 
+![Captura de The True Size Of amb Groenlàndia seleccionada sobre un mapa Mercator]({{ site.baseurl }}/assets/img/coordinate-systems/the-true-size-greenland-mercator-2026-08-13.png "Captura pròpia de The True Size Of, 13 d'agost de 2026, amb Groenlàndia seleccionada sobre el mapa interactiu. Recurs creat per James Talmage i Damon Maneice; mapa base de Google. La funció docent és observar com el visor permet desplaçar un territori per comparar-ne l'àrea aparent en Mercator."){: data-figure-width="54rem"}
+
 La campanya de Peters va assenyalar un efecte comunicatiu real: un mapamundi Mercator dona més pes visual a Europa i a altres territoris de latituds altes que a regions tropicals molt més extenses. Tanmateix, la fórmula amplia segons la latitud i ho fa simètricament als dos hemisferis; no codifica continents, pobles ni un meridià central concret. Analitzar l'eurocentrisme o el llegat colonial d'un mapa exigeix estudiar també qui el produeix, quina projecció i centrament escull, on talla el món, quina orientació adopta, quines fronteres i topònims mostra i en quin context circula {% cite harleyDeconstructingMap1989 monmonierHowLieMaps2018 %}.
 
 >>>> **Mercator no és «falsa» i Gall-Peters no és «la realitat».** Mercator és útil per a determinats problemes de navegació i inadequada per comparar àrees globals; Gall-Peters conserva les àrees, però ofereix formes molt deformades. Tampoc no és l'única projecció equivalent. La pregunta cartogràfica no és quina projecció és universalment millor, sinó quina propietat necessita conservar el mapa, quines distorsions pot assumir i com les farà comprensibles al lector.
@@ -131,7 +161,7 @@ La reprojecció calcula coordenades noves que representen les mateixes posicions
 
 #### Reprojecció al vol
 
-QGIS pot mostrar conjuntament capes amb sistemes diferents mitjançant una transformació temporal de visualització. Aquesta capacitat facilita l'exploració, però no canvia els fitxers d'origen ni resol automàticament quin sistema convé per mesurar o exportar. El CRS del projecte i el de cada capa s'han de revisar explícitament.
+El programari cartogràfic pot mostrar conjuntament capes amb sistemes diferents mitjançant una transformació temporal de visualització. Aquesta capacitat facilita l'exploració, però no canvia els fitxers d'origen ni resol automàticament quin sistema convé per mesurar o exportar. El sistema de referència del projecte i el de cada capa s'han de revisar explícitament.
 
 ### Escala de treball
 
@@ -208,7 +238,3 @@ Abans de continuar s'han de comprovar aquests punts:
 | `README.md` | Auditoria de la capa | Productor, versió, llicència, geometria, entitats, camps clau, CRS, unitats i extensió |
 | `README.md` | Diagnosi ED50–ETRS89 | Sistemes identificats, desplaçament, operació justificada i comprovació posterior |
 :::
-
-## Resultat del capítol
-
-El resultat serà un únic projecte QGIS inicial amb la capa municipal de Catalunya, la comarca de treball identificada, sistemes de referència comprovats i una explicació breu de per què les dades espacials són adequades. El llibre de càlcul no es modificarà ni es duplicarà en aquesta fase. El capítol 5 reutilitzarà la clau municipal validada per unir-hi `map_export`; els indicadors no s'han de copiar manualment dins de la font espacial.

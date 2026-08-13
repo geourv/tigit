@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.0"
+   width="526.88586"
+   height="303.46417"
+   id="svg2"
+   inkscape:version="0.47 r22583"
+   sodipodi:docname="altitudes.svg"
+   inkscape:export-filename="/home/javier/altitudes.png"
+   inkscape:export-xdpi="136.55"
+   inkscape:export-ydpi="136.55">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1440"
+     inkscape:window-height="872"
+     id="namedview38"
+     showgrid="false"
+     inkscape:zoom="1.2413955"
+     inkscape:cx="298.90107"
+     inkscape:cy="216.17569"
+     inkscape:window-x="0"
+     inkscape:window-y="1"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2" />
+  <title
+     id="title5099">Altitudes</title>
+  <metadata
+     id="metadata40">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>Altitudes</dc:title>
+        <dc:date>oct 30, 2010</dc:date>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Javier Sanchez Portero</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:rights>
+          <cc:Agent>
+            <dc:title>(cc) by-sa</dc:title>
+          </cc:Agent>
+        </dc:rights>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>topography</rdf:li>
+            <rdf:li>geodesic</rdf:li>
+            <rdf:li>geodesia topografia</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs4">
+    <marker
+       inkscape:stockid="TriangleOutM"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker4096"
+       style="overflow:visible">
+      <path
+         id="path3983"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;marker-start:none"
+         transform="scale(0.4,0.4)" />
+    </marker>
+    <inkscape:perspective
+       id="perspective42"
+       inkscape:persp3d-origin="300 : 116 : 1"
+       inkscape:vp_z="600 : 174 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 174 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <marker
+       style="overflow:visible"
+       id="TriangleOutM"
+       orient="auto"
+       refY="0"
+       refX="0">
+      <path
+         style="fill:#d02b22;stroke:#d02b22;stroke-width:1pt"
+         id="path3416"
+         transform="scale(0.5,0.5)"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="TriangleBlack"
+       orient="auto"
+       refY="0"
+       refX="0">
+      <use
+         height="3"
+         width="3"
+         y="0"
+         x="0"
+         xlink:href="#path3416"
+         style="fill:#000000;stroke:#000000"
+         id="use4576" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="TriangleBlue"
+       orient="auto"
+       refY="0"
+       refX="0">
+      <use
+         height="3"
+         width="3"
+         y="0"
+         x="0"
+         xlink:href="#path3416"
+         style="fill:#61bde4;stroke:#61bde4"
+         id="use4580" />
+    </marker>
+    <marker
+       inkscape:stockid="TriangleBluej"
+       style="overflow:visible"
+       id="TriangleBluej"
+       orient="auto"
+       refY="0"
+       refX="0">
+      <use
+         height="3"
+         width="3"
+         y="0"
+         x="0"
+         xlink:href="#path3416"
+         style="fill:#619d58;stroke:#619d58"
+         id="use3668" />
+    </marker>
+    <marker
+       inkscape:stockid="TriangleBlueju"
+       style="overflow:visible"
+       id="TriangleBlueju"
+       orient="auto"
+       refY="0"
+       refX="0">
+      <use
+         height="3"
+         width="3"
+         y="0"
+         x="0"
+         xlink:href="#path3416"
+         style="fill:#619d58;stroke:#619d58"
+         id="use3709" />
+    </marker>
+    <marker
+       inkscape:stockid="marker4096J"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker4096J"
+       style="overflow:visible">
+      <path
+         id="path4311"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         style="fill:#0000ff;fill-rule:evenodd;stroke:#0000ff;stroke-width:1pt;marker-start:none"
+         transform="scale(0.4,0.4)" />
+    </marker>
+    <marker
+       inkscape:stockid="marker4096P"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker4096P"
+       style="overflow:visible">
+      <path
+         id="path4758"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         style="fill:#619d58;fill-rule:evenodd;stroke:#619d58;stroke-width:1pt;marker-start:none"
+         transform="scale(0.4,0.4)" />
+    </marker>
+    <marker
+       inkscape:stockid="marker4096N"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker4096N"
+       style="overflow:visible">
+      <path
+         id="path5013"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         style="fill:#d02b22;fill-rule:evenodd;stroke:#d02b22;stroke-width:1pt;marker-start:none"
+         transform="scale(0.4,0.4)" />
+    </marker>
+    <marker
+       inkscape:stockid="marker4096Pb"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker4096Pb"
+       style="overflow:visible">
+      <path
+         id="path2884"
+         d="m 5.77,0 -8.65,5 0,-10 8.65,5 z"
+         style="stroke-width:1pt;marker-start:none;stroke:#d4aa00;fill-rule:evenodd;fill:#d4aa00"
+         transform="scale(0.4,0.4)" />
+    </marker>
+  </defs>
+  <rect
+     y="1"
+     x="1.0809019"
+     height="301.46417"
+     width="524.80499"
+     id="rect5095"
+     style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0" />
+  <path
+     sodipodi:nodetypes="cscccsc"
+     id="path5050"
+     d="m 160.28359,134.74739 c -43.81492,4.61123 -85.983982,10.95721 -107.750002,15 -30.654281,5.69366 -24.207592,10.409 -50.1875,19.6875 l 0,61.53125 0.25,-6.375 c 14.628731,-3.08249 61.0879,-19.03697 86.21875,-29.375 25.777622,-10.60409 47.983212,-40.41006 71.468752,-60.46875 z"
+     style="fill:#00ffff;stroke:#00ffff;stroke-width:2" />
+  <path
+     sodipodi:nodetypes="cccssssssssssscccc"
+     style="fill:#ffdd55;stroke:#d4aa00;stroke-width:2"
+     id="path2459"
+     d="m 525.69251,178.00261 c -12.09684,-8.67695 -27.86972,-12.0306 -30.38328,-23.66662 -16.07581,-26.2101 -3.1077,-16.97177 -19.77213,-37.94402 -6.75611,-2.94891 -14.00221,-5.79737 -23.5728,-8.53092 -17.69711,-5.05465 -14.70157,-13.015143 -29.07618,-24.999513 -7.08738,-5.90887 -24.47902,-12.51486 -34.20018,-22.31047 -7.97813,-8.03924 -17.55977,-14.69519 -23.37589,-19.54517 -8.39071,-6.99691 -13.01181,-11.88793 -28.28807,-13.55174 -6.29338,-0.68543 -13.00821,-2.04597 -21.13554,-1.64553 -3.69424,0.18201 -7.69107,0.71202 -12.06644,1.84235 -16.59597,4.28735 -37.276,16.25274 -46.25168,22.46287 -15.54881,10.75795 -28.03949,30.80724 -42.82387,44.49737 -16.65499,15.422273 -28.61981,20.577493 -46.7211,33.934663 -26.43324,19.50542 -50.62252,54.89034 -79.220722,66.65473 -25.13085,10.33803 -72.942517,26.31329 -87.5712478,29.39578 l 0,8.01965 524.4591298,0 0,-54.61343 z" />
+  <path
+     sodipodi:nodetypes="cc"
+     style="fill:none;stroke:#d02b22;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none"
+     id="path2453"
+     d="m 1,187.54499 c 161.49724,-53.90913 381.24462,-47.88218 525.28845,15.21249" />
+  <path
+     id="path3261"
+     d="m 316.9556,25.528113 c 0.0796,2.20657 -1.64667,4.06199 -3.85323,4.14157 -2.20657,0.0796 -4.06199,-1.64666 -4.14157,-3.85323 -0.0796,-2.20656 1.64666,-4.06199 3.85323,-4.14157 2.20656,-0.0796 4.06199,1.64667 4.14157,3.85323 z" />
+  <path
+     sodipodi:nodetypes="cc"
+     style="fill:none;stroke:#d02b22;stroke-width:2;marker-end:url(#marker4096N)"
+     id="path3265"
+     d="M 309.0559,153.60026 313.20556,30.935535" />
+  <path
+     sodipodi:nodetypes="cc"
+     style="stroke:#d4aa00;stroke-width:2;marker-end:url(#marker4096Pb);stroke-opacity:1;fill:#d4aa00"
+     id="path4049"
+     d="M 301.73838,109.10945 312.76525,31.131827" />
+  <path
+     sodipodi:nodetypes="cc"
+     style="fill:none;stroke:#0000ff;stroke-width:2;marker-end:url(#marker4096J)"
+     id="path4045"
+     d="m 299.76962,152.9253 1.80964,-38.40496" />
+  <path
+     sodipodi:nodetypes="cssssc"
+     style="fill:none;stroke:#0000ff;stroke-width:2"
+     id="path2455"
+     d="M 525.55253,224.06155 C 463.39497,198.88202 454.8042,181.50879 414.69618,158.43507 378.72541,137.74146 335.4475,109.23642 286.8648,107.12679 259.06616,105.91968 199.56441,130.65703 162.18128,134.54364 117.6826,139.17005 74.610638,145.6378 52.527322,149.73952 21.873041,155.43318 28.326636,160.15327 2.346728,169.43177" />
+  <text
+     id="text5057"
+     y="77.93972"
+     x="279.25598"
+     style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+     xml:space="preserve"><tspan
+       y="77.93972"
+       x="279.25598"
+       id="tspan5059"
+       sodipodi:role="line">H</tspan></text>
+  <text
+     id="text5061"
+     y="134.48105"
+     x="274.50549"
+     style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+     xml:space="preserve"><tspan
+       y="134.48105"
+       x="274.50549"
+       id="tspan5063"
+       sodipodi:role="line">N</tspan></text>
+  <text
+     id="text5065"
+     y="96.53933"
+     x="329.29434"
+     style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+     xml:space="preserve"><tspan
+       y="96.53933"
+       x="329.29434"
+       id="tspan5067"
+       sodipodi:role="line">h</tspan></text>
+  <path
+     sodipodi:nodetypes="cc"
+     id="path5069"
+     d="m 18.2435,258.26395 40.29383,0"
+     style="fill:none;stroke:#d4aa00;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+  <path
+     style="fill:none;stroke:#aa0000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+     d="m 190.2435,258.26395 40.29383,0"
+     id="path5071"
+     sodipodi:nodetypes="cc" />
+  <path
+     sodipodi:nodetypes="cc"
+     id="path5073"
+     d="m 386.2435,258.26395 40.29383,0"
+     style="fill:none;stroke:#0000ff;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+  <text
+     id="text5075"
+     y="261.61008"
+     x="238.33614"
+     style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+     xml:space="preserve"><tspan
+       y="261.61008"
+       x="238.33614"
+       id="tspan5077"
+       sodipodi:role="line">Elipsoide</tspan></text>
+  <text
+     id="text5079"
+     y="260.45322"
+     x="436.37051"
+     style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+     xml:space="preserve"><tspan
+       y="260.45322"
+       x="436.37051"
+       id="tspan5081"
+       sodipodi:role="line">Geoide</tspan></text>
+  <text
+     id="text5083"
+     y="262.00449"
+     x="71.507462"
+     style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+     xml:space="preserve"><tspan
+       y="262.00449"
+       x="71.507462"
+       id="tspan5085"
+       sodipodi:role="line">Terreno</tspan></text>
+  <text
+     id="text5087"
+     y="216.62003"
+     x="242.86952"
+     style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+     xml:space="preserve"><tspan
+       y="216.62003"
+       x="242.86952"
+       id="tspan5089"
+       sodipodi:role="line">h = H + N</tspan></text>
+  <text
+     id="text5091"
+     y="291.75699"
+     x="14.142904"
+     style="font-size:20px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial;-inkscape-font-specification:Arial"
+     xml:space="preserve"><tspan
+       style="font-size:18px"
+       y="291.75699"
+       x="14.142904"
+       id="tspan5093"
+       sodipodi:role="line">h = altura elipsoidal   H = altura ortométrica N = altura geoidal</tspan></text>
+  <rect
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+     id="rect5097"
+     width="524.80499"
+     height="301.46417"
+     x="1.0809019"
+     y="1" />
+</svg>

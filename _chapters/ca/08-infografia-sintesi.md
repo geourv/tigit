@@ -130,9 +130,9 @@ La paleta definida al capítol anterior s'aplicarà de manera consistent. El dis
 
 Cap informació essencial dependrà només del color. Les etiquetes, la posició, les formes o els patrons poden aportar redundància quan sigui necessària, i el contrast entre text i fons s'ha de revisar a la mida i al suport finals.
 
-## Interpretació territorial
+### Interpretació territorial
 
-### Descriure abans d'explicar
+#### Descriure abans d'explicar
 
 El text identificarà patrons visibles abans de proposar-ne causes. Una associació espacial o gràfica no demostra per si mateixa una relació causal.
 
@@ -146,31 +146,31 @@ Una interpretació breu es pot construir en cinc moviments:
 
 No cal convertir aquests moviments en cinc frases rígides. Serveixen per evitar una explicació causal sense evidència o una descripció que només repeteixi la llegenda.
 
-### Explicitar límits i incertesa
+#### Explicitar límits i incertesa
 
 Les limitacions de les fonts, els indicadors, la classificació i l'escala han de formar part de la interpretació quan afectin la conclusió.
 
 Una limitació útil és específica. Expressions genèriques com «les dades poden tenir errors» aporten poc. En canvi, indicar que l'habitatge no principal agrupa habitatges d'ús ocasional i buits explica per què el mapa no es pot interpretar directament com una distribució d'habitatges turístics.
 
-## Revisió del producte i del procés
+### Revisió del producte i del procés
 
-### Revisió del contingut
+#### Revisió del contingut
 
 La primera revisió comprovarà que totes les peces comparteixen territori, període, definicions i unitats compatibles. Cada afirmació s'ha de poder relacionar amb una evidència visible o amb un fitxer preservat. També es revisaran ortografia, xifres, topònims, fonts i notes metodològiques.
 
-### Revisió visual i d'accessibilitat
+#### Revisió visual i d'accessibilitat
 
 La segona revisió es farà a mida real. Es comprovaran el recorregut de lectura, les alineacions, l'espai, el contrast, la tipografia i la capacitat de distingir símbols sense dependre només del color. Una persona que no hagi participat en la maquetació intentarà identificar la pregunta, el resultat principal i la limitació sense una explicació oral prèvia. Les tres respostes, els dubtes i els canvis que se'n derivin s'anotaran al registre de revisió.
 
 Com a criteri del projecte, quan el format ho permeti, el document incorporarà metadades bàsiques com títol, autoria, descripció i paraules clau. El `README.md` conservarà també una descripció textual breu de la pregunta, el resultat i la limitació. Aquest text es podrà reutilitzar com a alternativa quan la infografia es publiqui en un entorn que admeti una descripció accessible.
 
-### Revisió tècnica i exportació
+#### Revisió tècnica i exportació
 
 Abans d'exportar es comprovaran la mida i l'orientació de la pàgina, els objectes fora dels límits, els recursos enllaçats, les proporcions de mapes i gràfics, el gruix dels traços i la resolució de les imatges. En el PDF, les tipografies s'han d'incrustar o substituir per una alternativa disponible; la comprovació es farà obrint el fitxer en un altre visor o entorn, no només a Inkscape.
 
 El fitxer exportat s'obrirà fora d'Inkscape. Ha de contenir la pàgina prevista, mantenir colors i transparències, mostrar tots els recursos i continuar sent llegible a la mida final. El nom distingirà el document editable, la versió de revisió i el lliurable; `final_final.pdf` no és una política de versions.
 
-### Auditoria abans/després
+#### Auditoria abans/després
 
 Cada projecte conservarà una versió intermèdia i la contrastarà amb la versió final. La revisió haurà d'identificar canvis observables: eliminació d'una figura redundant, reordenació de blocs, ampliació d'un mapa massa petit, simplificació de la paleta, millora de les fonts o reescriptura d'una conclusió massa contundent.
 
@@ -186,17 +186,17 @@ Cada projecte conservarà una versió intermèdia i la contrastarà amb la versi
 | Interpretació | Se separen descripció, hipòtesi, conclusió i limitacions? |
 :::
 
-### Traçabilitat i autoria
+#### Traçabilitat i autoria
 
 La infografia ha d'estar sostinguda per l'únic llibre de càlcul, el projecte QGIS, el document d'Inkscape i les fonts originals. Cal poder explicar les operacions i decisions principals, també quan el producte s'ha elaborat en grup.
 
 El `README.md` relacionarà cada component visible amb el fitxer d'origen: rang o full del llibre per a les mètriques, PDF o SVG per a les figures, composició QGIS per als mapes i document editable per al muntatge. Aquesta relació permet corregir una peça sense perdre la procedència ni introduir versions paral·leles.
 
-### Preparació de la presentació
+#### Preparació de la presentació
 
-La presentació oral, quan correspongui, no repetirà tot el document ni enumerarà eines. Seguirà un argument breu: pregunta territorial, dades seleccionades, indicador i decisions visuals, resultat principal i limitacions. La guia docent permet una presentació individual o en grup segons indiqui el professorat, però no fixa la mida dels equips, la durada ni el suport; aquestes condicions es concretaran a Moodle.
+La presentació oral, quan correspongui, no repetirà tot el document ni enumerarà eines. Seguirà un argument breu: pregunta territorial, dades seleccionades, indicador i decisions visuals, resultat principal i limitacions. En primera convocatòria, la síntesi es treballarà en trios mixtos de titulació; en segona convocatòria, quan calgui recuperar aquest bloc, el producte serà individual i de mida reduïda. La durada, el suport, el territori i les condicions concretes de presentació es concretaran a Moodle.
 
-### Evidències que s'han de conservar
+#### Evidències que s'han de conservar
 
 ::: table "Evidències de la síntesi territorial"
 | Ubicació | Evidència | Contingut mínim |
@@ -210,7 +210,3 @@ La presentació oral, quan correspongui, no repetirà tot el document ni enumera
 | `dist` | Exportació final | Pàgina verificada en el format de lliurament |
 | Arrel | `README.md` | Inventari, procedència, decisions, prova de lectura, descripció textual, metadades i limitacions conegudes |
 :::
-
-## Resultat del capítol
-
-El resultat serà una miniinfografia comarcal completa i exportada en el format indicat a Moodle. Per revisar el procés es conservaran el llibre únic, el CSV `map_export`, el projecte QGIS, el document d'Inkscape, les figures i mapes vectorials, les fonts originals i el `README.md`. El lliurable final quedarà a `dist`; els fitxers editables i les alternatives continuaran a les carpetes de treball corresponents. Moodle indicarà quins d'aquests fitxers s'han de trametre en cada lliurament.

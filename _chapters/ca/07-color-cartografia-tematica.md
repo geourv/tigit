@@ -186,7 +186,3 @@ Abans d'acceptar el mapa cal verificar que:
 | `README.md` | Registre de classificació | Camp, unitat, mètode, classes, punts de tall, paleta i justificació |
 | `README.md` | Control d'accessibilitat | Escala de grisos, simulació cromàtica, contrast i ajustos aplicats |
 :::
-
-## Resultat del capítol
-
-El resultat serà un mapa temàtic municipal exportat en format vectorial a `outputs/maps`, amb indicador, mètode, classes, paleta, absències i llegenda justificats. També es conservarà una alternativa descartada per documentar la decisió. La miniinfografia utilitzarà aquest mapa i el mapa de context del capítol 6, o només el temàtic si aquest ja proporciona prou localització.

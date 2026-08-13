@@ -133,28 +133,52 @@ L'organització dels fitxers forma part del treball tècnic. Un projecte mal ord
 
 ## Evidències d'aprenentatge
 
-La guia docent 2026_27 defineix una avaluació continuada amb activitats de laboratori, presentació o exposició, atenció personalitzada, prova de continguts i prova pràctica. El manual explica com aquestes evidències es connecten amb el treball del curs, però les condicions exactes i les instruccions de lliurament s'han de consultar a Moodle.
+La guia docent 2026_27 defineix una avaluació continuada amb activitats de laboratori, presentació o exposició, atenció personalitzada, prova de continguts i prova pràctica. El manual explica com aquestes evidències es connecten amb el treball del curs, però les dates, els lliuraments concrets, el territori assignat i els enunciats operatius s'han de consultar a Moodle.
 
-::: table "Blocs d'avaluació indicats a la guia docent 2026_27"
-| Activitat | Pes |
-| --- | --- |
-| Pràctiques a través de TIC en aules informàtiques | 5% |
-| Presentacions / exposicions | 30% |
-| Atenció personalitzada | 5% |
-| Proves mixtes | 30% |
-| Proves pràctiques | 30% |
+::: table "Blocs d'avaluació i desplegament del curs"
+| Activitat | Pes | Organització principal |
+| --- | --- | --- |
+| Pràctiques a través de TIC en aules informàtiques | 5% | Seguiment, exercicis i evidències intermèdies segons Moodle |
+| Presentació, exposició o infografia territorial | 30% | Primera convocatòria en trios mixtos de titulació; segona convocatòria individual i de mida reduïda |
+| Atenció personalitzada | 5% | Participació, resolució de dubtes i incorporació de correccions |
+| Prova mixta de continguts | 30% | Prova individual de comprensió teòrica i criteris d'aplicació |
+| Prova pràctica de full de càlcul | 15% | Prova individual sobre preparació de dades, codis i indicadors |
+| Prova pràctica de QGIS | 15% | Prova individual sobre unions, simbolització i resolució cartogràfica |
 :::
 
-Aquest repartiment combina seguiment, comprensió conceptual, resolució pràctica i un producte de síntesi. No n'hi ha prou amb obtenir un mapa visualment agradable: cal poder justificar les dades utilitzades, els indicadors calculats, les unions realitzades, la classificació cartogràfica i la interpretació territorial proposada.
+Aquest repartiment combina seguiment, comprensió conceptual, resolució pràctica individual i un producte de síntesi. No n'hi ha prou amb obtenir un mapa visualment agradable: cal poder justificar les dades utilitzades, els indicadors calculats, les unions realitzades, la classificació cartogràfica i la interpretació territorial proposada.
+
+L'avaluació continuada exigeix seguiment regular. Per mantenir l'itinerari ordinari de primera convocatòria cal assistir com a mínim al 80% de les sessions pràctiques, o justificar adequadament les absències, i lliurar les activitats o evidències intermèdies que indiqui Moodle. La manca de seguiment, d'assistència o de participació efectiva pot obligar a una recuperació individual específica en segona convocatòria.
+
+Si l'assistència i el seguiment són suficients, però una activitat principal queda per sota de 4 sobre 10 o la nota mitjana no arriba a l'aprovat, la segona convocatòria se centrarà en les activitats o blocs suspesos. Això permet conservar la feina superada i recuperar només allò que no ha assolit el nivell mínim. Si no hi ha seguiment continuat o el projecte de síntesi no s'ha desenvolupat de manera verificable, la recuperació pot requerir una modalitat individual més completa.
 
 ### Prova de continguts
 
-La prova mixta comprovarà la comprensió dels conceptes i la capacitat d'aplicar criteris: interpretar indicadors, llegir gràfics, detectar problemes visuals, entendre sistemes de referència i valorar decisions cartogràfiques.
+La prova mixta serà individual i comprovarà la comprensió dels conceptes i la capacitat d'aplicar criteris: interpretar indicadors, llegir gràfics, detectar problemes visuals, entendre sistemes de referència i valorar decisions cartogràfiques.
 
-### Prova pràctica
+### Proves pràctiques
 
-La prova pràctica serà individual i comprovarà la resolució d'operacions essencials del flux de treball, des de la preparació d'una taula i el càlcul d'un indicador fins a la unió i simbolització de dades a QGIS.
+Les proves pràctiques seran individuals i es distribuiran en dues parts. La prova de full de càlcul comprovarà la preparació d'una taula, la gestió de codis territorials, el tractament de valors absents, el càlcul d'indicadors i la validació dels resultats. La prova de QGIS comprovarà la incorporació de dades, la unió amb capes territorials, la simbolització cartogràfica i la resolució de problemes aplicats.
 
 ### Infografia territorial
 
-La infografia serà el producte de síntesi. Haurà d'integrar dades traçables, indicadors justificats, dues o tres figures, un o dos mapes i una interpretació breu dins d'una composició coherent elaborada amb Inkscape. La guia docent permet que aquest producte sigui individual o en grup segons indiqui el professorat, però no fixa una mida de grup. La composició dels equips, el format i les condicions concretes de la presentació es publicaran a Moodle.
+La infografia serà el producte de síntesi de primera convocatòria. Es farà en **trios** i els equips hauran de combinar estudiants de Geografia i de Turisme: no poden estar formats per tres persones de la mateixa titulació. Aquesta composició busca que el treball integre mirades territorials, turístiques, tècniques i comunicatives, no que cada membre treballe una peça aïllada sense entendre la resta.
+
+La infografia haurà d'integrar dades traçables, indicadors justificats, dues o tres figures, un o dos mapes i una interpretació breu dins d'una composició coherent elaborada amb Inkscape. El treball en equip no elimina la responsabilitat individual: qualsevol membre ha de poder explicar les fonts, els càlculs, les unions, els mapes i les decisions visuals principals.
+
+En segona convocatòria, quan calgui recuperar el projecte de síntesi, la infografia o document equivalent serà **individual** i de mida més reduïda. Moodle indicarà el territori, les dades, el format, el termini i els criteris concrets d'aquesta recuperació.
+
+### Preguntes freqüents
+
+::: table "Dubtes habituals sobre l'avaluació i el treball"
+| Pregunta | Resposta curta |
+| --- | --- |
+| La infografia és individual o en grup? | En primera convocatòria és en trios; en segona convocatòria, si s'ha de recuperar, és individual i més petita. |
+| Es pot fer un trio només de Geografia o només de Turisme? | No. Els trios han de combinar estudiants de les dues titulacions i no poden estar formats per tres persones de la mateixa titulació. |
+| Les proves pràctiques són en grup? | No. Hi haurà una prova individual de full de càlcul del 15% i una prova individual de QGIS del 15%. |
+| Què passa si una part queda per sota de 4? | No es pot compensar automàticament. Si hi ha seguiment suficient, en segona convocatòria es recuperaran les activitats o blocs suspesos. |
+| Què passa si la mitjana no arriba a 5? | Si s'ha seguit l'avaluació continuada, es recuperaran les parts necessàries per arribar al nivell mínim. |
+| L'assistència a pràctiques és obligatòria? | És necessària per mantenir l'itinerari ordinari d'avaluació continuada: cal arribar al 80% o justificar les absències. |
+| Es pot lliurar només l'enllaç a un fitxer compartit? | Només si Moodle ho demana explícitament. Quan es demani un fitxer, cal lliurar la versió correcta i comprovar que s'obre fora de la sessió del navegador. |
+| Com es comprova l'autoria d'un llibre de càlcul o projecte QGIS? | Amb originals, fonts, fórmules, comprovacions, versions intermèdies, fitxers de treball i explicacions orals quan calgui; les metadades del fitxer poden ser un indici, però no una prova suficient. |
+:::

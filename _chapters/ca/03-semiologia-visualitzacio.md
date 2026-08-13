@@ -279,4 +279,4 @@ La revisió també es farà a la mida final. El text, els símbols i els traços
 | `README.md` | Registre de figures | Fitxer, pregunta, tipus de dada, marca, variable visual, decisió de selecció i limitació principal |
 :::
 
-El resultat serà un conjunt de gràfics revisats i dues o tres figures candidates per a la mateixa miniinfografia comarcal, cadascuna associada a una pregunta i a un indicador. S'haurà de poder explicar quines variables visuals utilitza, què permet veure i quins límits conserva. Els capítols 4–7 desenvoluparan els components espacials abans d'integrar-los amb aquestes figures a la composició final.
+L'activitat deixarà un conjunt de gràfics revisats i dues o tres figures candidates per a la mateixa miniinfografia comarcal, cadascuna associada a una pregunta i a un indicador. S'haurà de poder explicar quines variables visuals utilitza, què permet veure i quins límits conserva. Els capítols 4–7 desenvoluparan els components espacials abans d'integrar-los amb aquestes figures a la composició final.

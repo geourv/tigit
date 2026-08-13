@@ -234,7 +234,3 @@ Abans d'acceptar el mapa cal verificar que:
 | `outputs/maps` | Comparació de retolació o escala | Alternativa automàtica i versió revisada a la mateixa mida |
 | `README.md` | Registre cartogràfic | Escala, mida final, detall omès, prioritats de retolació i decisió sobre el requadre |
 :::
-
-## Resultat del capítol
-
-El resultat serà un mapa de context llegible, documentat i exportat en format vectorial a `outputs/maps`. Servirà com a estructura territorial de la miniinfografia. El capítol 7 reutilitzarà la mateixa geometria, extensió i jerarquia general per construir el mapa temàtic, de manera que els canvis de lectura es puguin atribuir a l'indicador, la classificació i el color.

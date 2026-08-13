@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">Parts principals d'un full de calcul</title>
+  <desc id="desc">Esquema docent d'un full de calcul amb barra de formules, capcaleres de columnes, files, cel.la activa i rang de dades.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f6f8fb}.panel{fill:#fff;stroke:#c8d0dc;stroke-width:2}.header{fill:#e9eef5}.active{fill:#d9ecff;stroke:#1f78b4;stroke-width:3}.range{fill:#eef8ee;stroke:#4c956c;stroke-width:2}.text{font-family:Arial, sans-serif;fill:#1f2933;font-size:18px}.small{font-size:15px}.tiny{font-size:13px}.label{font-weight:700}.callout{fill:#fff8e6;stroke:#d49a00;stroke-width:2}.line{stroke:#d49a00;stroke-width:2;fill:none}.grid{stroke:#c8d0dc;stroke-width:1}
+    </style>
+  </defs>
+  <rect class="bg" width="960" height="540"/>
+  <rect class="panel" x="62" y="72" width="650" height="380" rx="12"/>
+  <rect class="header" x="62" y="72" width="650" height="54" rx="12"/>
+  <rect fill="#ffffff" stroke="#b7c1cf" x="170" y="88" width="420" height="24" rx="4"/>
+  <text class="text small" x="182" y="106">=B2+C2</text>
+  <text class="text small label" x="82" y="106">fx</text>
+  <text class="text small" x="610" y="106">barra de formules</text>
+  <rect class="header" x="112" y="148" width="120" height="34"/>
+  <rect class="header" x="232" y="148" width="120" height="34"/>
+  <rect class="header" x="352" y="148" width="120" height="34"/>
+  <rect class="header" x="472" y="148" width="120" height="34"/>
+  <rect class="header" x="62" y="148" width="50" height="34"/>
+  <text class="text label" x="165" y="171">A</text>
+  <text class="text label" x="285" y="171">B</text>
+  <text class="text label" x="405" y="171">C</text>
+  <text class="text label" x="525" y="171">D</text>
+  <text class="text label" x="82" y="216">1</text>
+  <text class="text label" x="82" y="260">2</text>
+  <text class="text label" x="82" y="304">3</text>
+  <text class="text label" x="82" y="348">4</text>
+  <text class="text label" x="82" y="392">5</text>
+  <g>
+    <line class="grid" x1="62" y1="182" x2="592" y2="182"/><line class="grid" x1="62" y1="226" x2="592" y2="226"/><line class="grid" x1="62" y1="270" x2="592" y2="270"/><line class="grid" x1="62" y1="314" x2="592" y2="314"/><line class="grid" x1="62" y1="358" x2="592" y2="358"/><line class="grid" x1="62" y1="402" x2="592" y2="402"/>
+    <line class="grid" x1="112" y1="148" x2="112" y2="402"/><line class="grid" x1="232" y1="148" x2="232" y2="402"/><line class="grid" x1="352" y1="148" x2="352" y2="402"/><line class="grid" x1="472" y1="148" x2="472" y2="402"/><line class="grid" x1="592" y1="148" x2="592" y2="402"/>
+  </g>
+  <rect class="range" x="112" y="182" width="480" height="176"/>
+  <rect class="active" x="352" y="226" width="120" height="44"/>
+  <text class="text small label" x="126" y="211">municipi</text>
+  <text class="text small label" x="246" y="211">places</text>
+  <text class="text small label" x="366" y="211">habitatges</text>
+  <text class="text small label" x="486" y="211">total</text>
+  <text class="text small" x="126" y="255">Salou</text>
+  <text class="text small" x="266" y="255">120</text>
+  <text class="text small" x="386" y="255">80</text>
+  <text class="text small" x="506" y="255">200</text>
+  <text class="text small" x="126" y="299">Vila-seca</text>
+  <text class="text small" x="266" y="299">90</text>
+  <text class="text small" x="386" y="299">60</text>
+  <text class="text small" x="506" y="299">150</text>
+  <text class="text small" x="126" y="343">Tarragona</text>
+  <text class="text small" x="266" y="343">300</text>
+  <text class="text small" x="386" y="343">140</text>
+  <text class="text small" x="506" y="343">440</text>
+  <rect class="callout" x="740" y="84" width="170" height="62" rx="10"/>
+  <text class="text small label" x="758" y="110">Cel.la activa</text>
+  <text class="text tiny" x="758" y="132">posicio C2</text>
+  <path class="line" d="M740 132 C690 160 540 215 470 238"/>
+  <rect class="callout" x="720" y="178" width="200" height="70" rx="10"/>
+  <text class="text small label" x="738" y="204">Rang rectangular</text>
+  <text class="text tiny" x="738" y="226">mateixes columnes</text>
+  <path class="line" d="M720 226 C660 250 630 308 592 330"/>
+  <rect class="callout" x="710" y="300" width="220" height="74" rx="10"/>
+  <text class="text small label" x="728" y="326">Referencies</text>
+  <text class="text tiny" x="728" y="348">columna + fila: B2</text>
+  <path class="line" d="M710 342 C650 350 606 392 592 402"/>
+  <text class="text tiny" x="70" y="482">Esquema propi. Les etiquetes i la disposicio poden canviar segons l'aplicacio, pero els conceptes son comuns.</text>
+</svg>

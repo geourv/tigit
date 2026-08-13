@@ -45,11 +45,13 @@ Aquest desplegament no defineix el calendari. Cada capítol connecta els concept
 
 ## Avaluació
 
-La guia 2026_27 distribueix l'avaluació en pràctiques TIC en aules informàtiques, presentació o exposició, atenció personalitzada, prova mixta i prova pràctica. Les dates, lliuraments concrets i instruccions operatives s'han de mantenir a Moodle.
+La guia 2026_27 distribueix l'avaluació en pràctiques TIC en aules informàtiques, presentació o exposició, atenció personalitzada, prova mixta i prova pràctica. Les dates, lliuraments concrets i instruccions operatives s'han de mantenir a Moodle. Organització operativa confirmada pel professorat: la prova pràctica del 30% es desplega en dues proves individuals de 15%, una de full de càlcul i una de QGIS.
 
 La descripció detallada de l'avaluació estableix un flux pràctic amb preparació de dades, càlcul d'indicadors en full de càlcul, organització de fitxers, codis territorials, unions a QGIS, gràfics, mapes i síntesi visual. El professorat pot demanar fitxers de treball i evidències intermèdies per comprovar autoria i traçabilitat.
 
-La visualització, infografia o document de síntesi pot ser individual o en grup segons indiqui el professorat. La guia no fixa una mida de grup; aquesta condició, el territori, el format i els terminis corresponen a Moodle.
+La visualització, infografia o document de síntesi es farà en primera convocatòria en trios mixtos de titulació: els equips han de combinar estudiants de Geografia i de Turisme i no poden estar formats per tres persones de la mateixa titulació. En segona convocatòria, si cal recuperar el projecte de síntesi, el producte serà individual i de mida reduïda. El territori, el format, els terminis i els criteris concrets corresponen a Moodle.
+
+L'assistència a pràctiques és condició important per mantenir l'itinerari ordinari d'avaluació continuada de primera convocatòria. Si es compleix l'assistència i el seguiment, però alguna activitat principal queda per sota de 4 sobre 10 o la mitjana no arriba a 5, l'estudiant haurà de recuperar només les activitats o blocs suspesos en segona convocatòria. Si no hi ha seguiment suficient, la recuperació pot requerir una modalitat individual específica més completa.
 
 ## Ús en el manual
 

@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1050" role="img" aria-labelledby="title desc">
+  <title id="title">Procés d'elaboració de dades territorials</title>
+  <desc id="desc">Diagrama editable que representa el KDD i la jerarquia dades-informació-coneixement-saviesa com una escala ascendent. El repte territorial inicia el procés, baixa cap a observacions i dades codificades, ascendeix a través de preparació, informació, patrons i coneixement, i retorna des de la saviesa pràctica per la part superior amb una bifurcació cap al repte i cap a noves observacions.</desc>
+  <defs>
+    <marker id="arrow-main" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M 1 1 L 11 6 L 1 11 z" fill="#2d4f68"/>
+    </marker>
+    <marker id="arrow-return" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M 1 1 L 11 6 L 1 11 z" fill="#6e7a86"/>
+    </marker>
+    <style>
+      .panel-title { font: 700 20px Arial, Helvetica, sans-serif; fill: #1f2d3a; }
+      .panel-note { font: 400 14px Arial, Helvetica, sans-serif; fill: #566878; }
+      .label { font: 700 17px Arial, Helvetica, sans-serif; fill: #1f2d3a; }
+      .small { font: 400 13.5px Arial, Helvetica, sans-serif; fill: #40566b; }
+      .level { font: 700 13px Arial, Helvetica, sans-serif; letter-spacing: 0.08em; fill: #6d7b88; }
+      .axis-label { text-anchor: middle; }
+      .tag { font: 700 12.5px Arial, Helvetica, sans-serif; fill: #2d4f68; }
+      .tag-return { font: 700 13px Arial, Helvetica, sans-serif; fill: #5f6e7a; }
+      .panel { fill: #f7fafc; stroke: #cbd6df; stroke-width: 2; }
+      .band-data { fill: #edf6ff; }
+      .band-info { fill: #f3f7fb; }
+      .band-knowledge { fill: #fff6e4; }
+      .node { fill: #ffffff; stroke: #b8c7d6; stroke-width: 2; }
+      .node-context { fill: #eef8ef; stroke: #83b783; }
+      .node-data { fill: #eaf4ff; stroke: #7eb0dc; }
+      .node-info { fill: #ffffff; stroke: #91a8bd; }
+      .node-knowledge { fill: #fff5df; stroke: #d8aa45; }
+      .node-wisdom { fill: #f2ecff; stroke: #a487cf; }
+      .flow { fill: none; stroke: #2d4f68; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; marker-end: url(#arrow-main); }
+      .return-stem { fill: none; stroke: #6e7a86; stroke-width: 2.8; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 10 8; }
+      .return { fill: none; stroke: #6e7a86; stroke-width: 2.8; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 10 8; marker-end: url(#arrow-return); }
+      .axis { fill: none; stroke: #91a8bd; stroke-width: 2; marker-end: url(#arrow-main); }
+      .tag-box { fill: #ffffff; stroke: #c8d5e1; stroke-width: 1.2; }
+      .junction { fill: #ffffff; stroke: #6e7a86; stroke-width: 2; }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="1400" height="1050" fill="#ffffff"/>
+
+  <rect x="420" y="215" width="900" height="710" rx="24" class="panel"/>
+  <rect x="455" y="770" width="825" height="125" rx="16" class="band-data"/>
+  <rect x="455" y="560" width="825" height="180" rx="16" class="band-info"/>
+  <rect x="455" y="285" width="825" height="245" rx="16" class="band-knowledge"/>
+  <text x="455" y="250" class="panel-title">Procés d'elaboració</text>
+  <text x="455" y="276" class="panel-note">Cada pas deixa decisions rastrejables: què entra, què es corregeix, què es compara i què es pot defensar.</text>
+  <text x="470" y="875" class="level">DADES</text>
+  <text x="470" y="700" class="level">INFORMACIÓ</text>
+  <text x="470" y="460" class="level">CONEIXEMENT</text>
+  <path d="M 390 900 L 390 285" class="axis"/>
+  <text x="360" y="595" class="level axis-label" transform="rotate(-90 360 595)">ELABORACIÓ</text>
+
+  <rect x="70" y="350" width="210" height="76" rx="16" class="node node-context"/>
+  <text x="96" y="381" class="label">Repte territorial</text>
+  <text x="96" y="405" class="small">decisió o problema</text>
+
+  <rect x="120" y="820" width="220" height="76" rx="16" class="node"/>
+  <text x="146" y="851" class="label">Observacions</text>
+  <text x="146" y="875" class="small">registres, sensors, camp</text>
+
+  <rect x="500" y="775" width="230" height="76" rx="16" class="node node-data"/>
+  <text x="526" y="806" class="label">Dades codificades</text>
+  <text x="526" y="830" class="small">unitat, temps, lloc</text>
+
+  <rect x="690" y="650" width="230" height="76" rx="16" class="node node-data"/>
+  <text x="716" y="681" class="label">Dades preparades</text>
+  <text x="716" y="705" class="small">neteja i integració</text>
+
+  <rect x="875" y="525" width="250" height="76" rx="16" class="node node-info"/>
+  <text x="901" y="556" class="label">Informació comparable</text>
+  <text x="901" y="580" class="small">context i variables</text>
+
+  <rect x="1065" y="400" width="200" height="76" rx="16" class="node node-knowledge"/>
+  <text x="1091" y="431" class="label">Patrons</text>
+  <text x="1091" y="455" class="small">diferències i relacions</text>
+
+  <rect x="1045" y="285" width="260" height="76" rx="16" class="node node-knowledge"/>
+  <text x="1071" y="316" class="label">Coneixement territorial</text>
+  <text x="1071" y="340" class="small">interpretació contrastada</text>
+
+  <rect x="1010" y="145" width="265" height="76" rx="16" class="node node-wisdom"/>
+  <text x="1036" y="176" class="label">Saviesa pràctica</text>
+  <text x="1036" y="200" class="small">criteri, experiència i valors</text>
+
+  <path d="M 230 426 C 260 555 245 700 230 820" class="flow"/>
+  <path d="M 340 858 C 405 850 455 825 500 813" class="flow"/>
+  <path d="M 718 775 C 735 760 760 740 778 726" class="flow"/>
+  <path d="M 910 650 C 930 630 950 615 970 601" class="flow"/>
+  <path d="M 1125 563 C 1150 530 1158 500 1165 476" class="flow"/>
+  <path d="M 1165 400 C 1168 384 1170 372 1175 361" class="flow"/>
+  <path d="M 1150 285 C 1145 258 1142 238 1140 221" class="flow"/>
+
+  <g transform="translate(250 585)">
+    <rect width="145" height="25" rx="12" class="tag-box"/>
+    <text x="12" y="17" class="tag">formular pregunta</text>
+  </g>
+  <g transform="translate(430 748)">
+    <rect width="100" height="25" rx="12" class="tag-box"/>
+    <text x="12" y="17" class="tag">codificar</text>
+  </g>
+  <g transform="translate(610 731)">
+    <rect width="170" height="25" rx="12" class="tag-box"/>
+    <text x="12" y="17" class="tag">seleccionar i preparar</text>
+  </g>
+  <g transform="translate(785 606)">
+    <rect width="170" height="25" rx="12" class="tag-box"/>
+    <text x="12" y="17" class="tag">transformar i integrar</text>
+  </g>
+  <g transform="translate(1000 500)">
+    <rect width="145" height="25" rx="12" class="tag-box"/>
+    <text x="12" y="17" class="tag">analitzar patrons</text>
+  </g>
+  <g transform="translate(1115 365)">
+    <rect width="175" height="25" rx="12" class="tag-box"/>
+    <text x="12" y="17" class="tag">interpretar i avaluar</text>
+  </g>
+  <g transform="translate(1125 235)">
+    <rect width="155" height="25" rx="12" class="tag-box"/>
+    <text x="12" y="17" class="tag">aplicar amb criteri</text>
+  </g>
+
+  <path d="M 1010 183 C 865 115 575 110 350 140" class="return-stem"/>
+  <circle cx="350" cy="140" r="5" class="junction"/>
+  <path d="M 350 140 C 265 145 190 235 175 350" class="return"/>
+  <path d="M 350 140 C 185 140 45 250 45 430 C 45 650 105 830 120 858" class="return"/>
+  <g transform="translate(560 112)">
+    <rect width="270" height="28" rx="14" class="tag-box"/>
+    <text x="15" y="19" class="tag-return">acció, seguiment i noves preguntes</text>
+  </g>
+</svg>

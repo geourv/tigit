@@ -1,14 +1,25 @@
 flowchart TB
-  source[Organisme productor] --> portal[Portal de publicació]
+  question[Pregunta i permís d'ús] --> own[Dades recollides pel projecte]
+  question --> published[Dades publicades formalment]
+  question --> document[Informació visible o documental]
+  own --> collection[Enquesta · observació · GPS · formulari]
+  collection --> ethics[Consentiment · minimització · anonimització]
+  published --> portal[Portal o catàleg de publicació]
   portal --> gui[Interfície gràfica]
   portal --> download[Fitxer descarregable]
   portal --> api[API]
   portal --> geoservice[Geoservei]
+  document --> scraping[Extracció web supervisada]
+  document --> extraction[Extracció de PDF · imatge · OCR]
+  scraping --> extracted[Taula extreta i verificada]
+  extraction --> extracted
   gui --> selection[Selecció manual i exportació]
   download --> files[CSV · XLSX · GeoPackage · GeoTIFF]
   api --> response[JSON · JSON-stat · CSV · XML]
   geoservice --> ogc[WMS · WMTS · WFS · OGC API]
-  selection --> documented[Consulta documentada]
+  ethics --> documented[Origen, mètode i límits documentats]
+  selection --> documented
   files --> documented
   response --> documented
   ogc --> documented
+  extracted --> documented

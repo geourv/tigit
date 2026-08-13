@@ -212,7 +212,7 @@ Dos indicadors només es poden comparar si les definicions, els períodes, les u
 
 Un indicador descriu un patró, però no n'estableix automàticament la causa. Un percentatge alt d'habitatge no principal no demostra especialització turística, despoblament ni habitatge buit. Aquestes interpretacions exigeixen altres fonts i una argumentació que separi observació, hipòtesi i conclusió.
 
-## Construcció reproduïble al llibre comarcal
+## Activitat: construir indicadors al llibre comarcal
 
 L'activitat continuarà amb `municipal_table` dins del mateix llibre preparat al capítol 1. El full `indicators` conservarà el codi i el nom de cada municipi, les variables de partida i les fórmules. No es descarregaran versions noves de les fonts a mig procés, tret que l'actualització quedi documentada.
 
@@ -291,4 +291,4 @@ Cada fórmula es calcularà per a tots els municipis. La taula permetrà observa
 | `README.md` | Nota interpretativa | Utilitat prevista, patró observat, hipòtesi i límit de cada indicador seleccionat |
 :::
 
-El resultat serà el full `indicators` calculat i documentat dins del llibre únic, acompanyat d'una justificació de què mesura cada camp, per a què pot ser útil i quines precaucions requereix. El capítol 3 utilitzarà aquests mateixos rangs per construir figures destinades a comparació, exploració i divulgació; no s'han de transcriure manualment a un altre llibre.
+El full `indicators` quedarà calculat i documentat dins del llibre únic, acompanyat d'una justificació de què mesura cada camp, per a què pot ser útil i quines precaucions requereix. El capítol 3 utilitzarà aquests mateixos rangs per construir figures destinades a comparació, exploració i divulgació; no s'han de transcriure manualment a un altre llibre.
