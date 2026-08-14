@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="760" viewBox="0 0 1180 760" role="img" aria-labelledby="title desc">
+  <title id="title">Models de color per a pantalla, impressió i selecció de paletes</title>
+  <desc id="desc">Esquema comparatiu dels models RGB, CMYK, RYB i HSL HSV, amb la funció principal de cada model en el treball amb mapes i figures.</desc>
+  <defs>
+    <style>
+      .bg { fill: #ffffff; }
+      .panel { fill: #f7fafb; stroke: #cbd6dc; stroke-width: 1.5; rx: 18; }
+      .title { font: 700 31px Arial, 'Liberation Sans', sans-serif; fill: #17202a; }
+      .subtitle { font: 16px Arial, 'Liberation Sans', sans-serif; fill: #52616b; }
+      .label { font: 700 22px Arial, 'Liberation Sans', sans-serif; fill: #17202a; }
+      .small { font: 15px Arial, 'Liberation Sans', sans-serif; fill: #40515c; }
+      .tiny { font: 13px Arial, 'Liberation Sans', sans-serif; fill: #52616b; }
+      .code { font: 700 14px Arial, 'Liberation Sans', sans-serif; fill: #17202a; }
+      .mix { mix-blend-mode: multiply; opacity: .78; }
+      .screen { mix-blend-mode: screen; opacity: .9; }
+      .stroke { fill: none; stroke: #17202a; stroke-width: 1.2; opacity: .45; }
+      .axis { stroke: #52616b; stroke-width: 2; marker-end: url(#arrow); }
+      .arrowText { font: 13px Arial, 'Liberation Sans', sans-serif; fill: #52616b; }
+      .chip { stroke: #ffffff; stroke-width: 2; }
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#52616b"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1180" height="760"/>
+  <text x="590" y="48" text-anchor="middle" class="title">Models de color: no tots responen a la mateixa decisió</text>
+  <text x="590" y="78" text-anchor="middle" class="subtitle">Pantalla, impressió, tradició artística i selectors digitals descriuen el color amb regles diferents.</text>
+
+  <rect x="60" y="120" width="510" height="250" class="panel"/>
+  <text x="92" y="158" class="label">RGB</text>
+  <text x="92" y="184" class="small">Mescla additiva de llum</text>
+  <circle cx="285" cy="246" r="66" fill="#ff3b30" class="screen"/>
+  <circle cx="355" cy="246" r="66" fill="#34c759" class="screen"/>
+  <circle cx="320" cy="185" r="66" fill="#0a84ff" class="screen"/>
+  <circle cx="285" cy="246" r="66" class="stroke"/>
+  <circle cx="355" cy="246" r="66" class="stroke"/>
+  <circle cx="320" cy="185" r="66" class="stroke"/>
+  <text x="475" y="162" text-anchor="end" class="code">#226699</text>
+  <text x="92" y="310" class="small">Ús principal: pantalla, web, QGIS, full de càlcul i SVG.</text>
+  <text x="92" y="334" class="tiny">El blanc apareix quan els canals de llum se sumen al màxim.</text>
+
+  <rect x="610" y="120" width="510" height="250" class="panel"/>
+  <text x="642" y="158" class="label">CMYK</text>
+  <text x="642" y="184" class="small">Mescla subtractiva de tintes</text>
+  <circle cx="835" cy="246" r="66" fill="#00aeef" class="mix"/>
+  <circle cx="905" cy="246" r="66" fill="#ec008c" class="mix"/>
+  <circle cx="870" cy="185" r="66" fill="#fff200" class="mix"/>
+  <circle cx="835" cy="246" r="66" class="stroke"/>
+  <circle cx="905" cy="246" r="66" class="stroke"/>
+  <circle cx="870" cy="185" r="66" class="stroke"/>
+  <rect x="1008" y="144" width="62" height="44" fill="#171717" rx="8"/>
+  <text x="1039" y="172" text-anchor="middle" fill="#ffffff" class="code">K</text>
+  <text x="642" y="310" class="small">Ús principal: impressió i proves de color.</text>
+  <text x="642" y="334" class="tiny">La conversió RGB-CMYK no garanteix una equivalència perceptiva exacta.</text>
+
+  <rect x="60" y="410" width="510" height="250" class="panel"/>
+  <text x="92" y="448" class="label">RYB</text>
+  <text x="92" y="474" class="small">Roda tradicional de belles arts</text>
+  <circle cx="290" cy="540" r="62" fill="#e53935" class="mix"/>
+  <circle cx="354" cy="540" r="62" fill="#fdd835" class="mix"/>
+  <circle cx="322" cy="484" r="62" fill="#1e88e5" class="mix"/>
+  <circle cx="290" cy="540" r="62" class="stroke"/>
+  <circle cx="354" cy="540" r="62" class="stroke"/>
+  <circle cx="322" cy="484" r="62" class="stroke"/>
+  <text x="92" y="600" class="small">Ús principal: llenguatge artístic i harmonies senzilles.</text>
+  <text x="92" y="624" class="tiny">Pot ajudar a parlar de complements, però no descriu bé pantalla ni impressió.</text>
+
+  <rect x="610" y="410" width="510" height="250" class="panel"/>
+  <text x="642" y="448" class="label">HSL / HSV</text>
+  <text x="642" y="474" class="small">Selectors digitals orientats a decisió visual</text>
+  <g transform="translate(832 552)">
+    <circle r="82" fill="none" stroke="#cbd6dc" stroke-width="16"/>
+    <path d="M0,-82 A82,82 0 0,1 71,41" fill="none" stroke="#ff3b30" stroke-width="16"/>
+    <path d="M71,41 A82,82 0 0,1 -71,41" fill="none" stroke="#34c759" stroke-width="16"/>
+    <path d="M-71,41 A82,82 0 0,1 0,-82" fill="none" stroke="#0a84ff" stroke-width="16"/>
+    <line x1="0" y1="0" x2="58" y2="-46" stroke="#17202a" stroke-width="2"/>
+    <circle cx="58" cy="-46" r="7" fill="#17202a"/>
+  </g>
+  <line x1="970" y1="620" x2="1060" y2="620" class="axis"/>
+  <text x="970" y="645" class="arrowText">més llum</text>
+  <rect x="970" y="525" width="18" height="80" class="chip" fill="#f2f2f2"/>
+  <rect x="988" y="525" width="18" height="80" class="chip" fill="#c6c6c6"/>
+  <rect x="1006" y="525" width="18" height="80" class="chip" fill="#8a8a8a"/>
+  <rect x="1024" y="525" width="18" height="80" class="chip" fill="#4a4a4a"/>
+  <text x="642" y="600" class="small">Ús principal: ajustar to, saturació i lluminositat.</text>
+  <text x="642" y="624" class="tiny">És pràctic per refinar paletes, però cal comprovar el resultat final.</text>
+
+  <text x="590" y="714" text-anchor="middle" class="tiny">Figura d'elaboració pròpia. Els cercles i mostres són esquemes didàctics, no una conversió colorimètrica exacta.</text>
+</svg>

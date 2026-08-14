@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="760" viewBox="0 0 1180 760" role="img" aria-labelledby="title desc">
+  <title id="title">Funcionament de les coordenades dins un fus UTM</title>
+  <desc id="desc">Esquema del fus UTM 31 nord amb limits longitudinals, meridia central, fals est, coordenada est i coordenada nord dins l'hemisferi nord.</desc>
+  <defs>
+    <style>
+      .bg { fill: #fffdf8; }
+      .zone { fill: #eef5f7; stroke: #365b6d; stroke-width: 3; }
+      .central { stroke: #d0523c; stroke-width: 5; stroke-dasharray: 12 9; }
+      .grid { stroke: #b7c6ce; stroke-width: 1.5; }
+      .axis { stroke: #16697a; stroke-width: 4; marker-end: url(#arrowBlue); }
+      .axisRed { stroke: #d0523c; stroke-width: 4; marker-end: url(#arrowRed); }
+      .guide { stroke: #52616b; stroke-width: 2; stroke-dasharray: 6 7; }
+      .label { font: 700 21px Arial, 'Liberation Sans', sans-serif; fill: #17202a; }
+      .title { font: 700 31px Arial, 'Liberation Sans', sans-serif; fill: #17202a; }
+      .small { font: 16px Arial, 'Liberation Sans', sans-serif; fill: #52616b; }
+      .mono { font: 700 18px 'Liberation Mono', Consolas, monospace; fill: #17202a; }
+      .panel { fill: #ffffff; stroke: #d5dde2; stroke-width: 1.5; rx: 16; }
+    </style>
+    <marker id="arrowBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#16697a"/>
+    </marker>
+    <marker id="arrowRed" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#d0523c"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1180" height="760"/>
+  <text x="590" y="48" text-anchor="middle" class="title">Dins un fus UTM: metres, falsos origens i ordre E,N</text>
+  <text x="590" y="78" text-anchor="middle" class="small">El fus 31N cobreix de 0 a 6 graus est; el seu meridia central (3 graus E) no te E=0, sino E=500.000 m.</text>
+
+  <path d="M170 130 C235 205,235 558,170 625 L720 625 C655 558,655 205,720 130 Z" class="zone"/>
+  <line x1="170" y1="130" x2="170" y2="625" stroke="#365b6d" stroke-width="3"/>
+  <line x1="720" y1="130" x2="720" y2="625" stroke="#365b6d" stroke-width="3"/>
+  <line x1="445" y1="130" x2="445" y2="625" class="central"/>
+  <line x1="275" y1="130" x2="275" y2="625" class="grid"/>
+  <line x1="360" y1="130" x2="360" y2="625" class="grid"/>
+  <line x1="530" y1="130" x2="530" y2="625" class="grid"/>
+  <line x1="615" y1="130" x2="615" y2="625" class="grid"/>
+  <line x1="170" y1="250" x2="720" y2="250" class="grid"/>
+  <line x1="170" y1="370" x2="720" y2="370" class="grid"/>
+  <line x1="170" y1="490" x2="720" y2="490" class="grid"/>
+
+  <text x="170" y="660" text-anchor="middle" class="label">0 E</text>
+  <text x="445" y="660" text-anchor="middle" class="label">3 E</text>
+  <text x="720" y="660" text-anchor="middle" class="label">6 E</text>
+  <text x="445" y="692" text-anchor="middle" class="small">meridia central</text>
+
+  <line x1="445" y1="596" x2="650" y2="596" class="axis"/>
+  <text x="552" y="583" text-anchor="middle" class="small">E augmenta cap a l'est</text>
+  <line x1="206" y1="625" x2="206" y2="392" class="axisRed"/>
+  <text x="235" y="512" class="small" transform="rotate(-90 235 512)">N augmenta cap al nord</text>
+
+  <circle cx="300" cy="430" r="13" fill="#16697a" stroke="#ffffff" stroke-width="5"/>
+  <line x1="300" y1="430" x2="300" y2="596" class="guide"/>
+  <line x1="300" y1="430" x2="445" y2="430" class="guide"/>
+  <text x="316" y="420" class="label">punt</text>
+  <text x="316" y="446" class="mono">E 344.469</text>
+  <text x="316" y="470" class="mono">N 4.551.807</text>
+
+  <rect x="785" y="145" width="320" height="126" class="panel"/>
+  <text x="812" y="181" class="label">1. El fus defineix l'espai</text>
+  <text x="812" y="212" class="small">Zona 31: 0 a 6 graus E.</text>
+  <text x="812" y="238" class="small">La N indica hemisferi nord en el CRS.</text>
+
+  <rect x="785" y="314" width="320" height="150" class="panel"/>
+  <text x="812" y="350" class="label">2. El fals est evita negatius</text>
+  <text x="812" y="381" class="small">El meridia central rep</text>
+  <text x="812" y="409" class="mono">E = 500.000 m</text>
+  <text x="812" y="438" class="small">Valors menors indiquen punts a l'oest.</text>
+
+  <rect x="785" y="507" width="320" height="126" class="panel"/>
+  <text x="812" y="543" class="label">3. Es llegeix E,N</text>
+  <text x="812" y="574" class="small">Primer distancia cap a l'est.</text>
+  <text x="812" y="600" class="small">Despres distancia cap al nord.</text>
+
+  <text x="590" y="728" text-anchor="middle" class="small">Figura d'elaboracio propia, 14 d'agost de 2026. Esquema didactic; no representa l'escala real de la deformacio UTM.</text>
+</svg>

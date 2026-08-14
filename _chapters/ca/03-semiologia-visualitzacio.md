@@ -12,7 +12,7 @@ part: Continguts
 manual_references: true
 ---
 
-Representar dades significa codificar-les visualment. Aquest capítol introdueix la semiologia gràfica a partir de taules i gràfics, abans d'aplicar-la al mapa. El color apareixerà com una variable visual, però el seu desenvolupament sistemàtic quedarà per al capítol de cartografia temàtica, un cop introduït el llenguatge propi del mapa. La idea d'un sistema de signes visuals parteix de la semiologia de Bertin i es pot connectar amb una introducció contemporània i aplicada a la visualització de dades {% cite bertinSemiologyGraphics2010 wilkeFundamentalsDataVisualization2019 %}.
+Representar dades significa codificar-les visualment. Aquest capítol introdueix la semiologia gràfica a partir de taules i gràfics, abans d'aplicar-la al mapa. El color apareixerà com una variable visual, però el seu desenvolupament sistemàtic quedarà per al capítol 7, i la classificació cartogràfica per al capítol 8, un cop introduït el llenguatge propi del mapa. La idea d'un sistema de signes visuals parteix de la semiologia de Bertin i es pot connectar amb una introducció contemporània i aplicada a la visualització de dades {% cite bertinSemiologyGraphics2010 wilkeFundamentalsDataVisualization2019 %}.
 
 ## Codificació visual de les dades
 
@@ -82,13 +82,21 @@ La selecció es pot entendre com un procés de sis decisions:
 
 Un selector de gràfics genera **candidats**, no un veredicte. Una taula pot ser preferible quan cal recuperar valors exactes; un gràfic ordenat facilita comparar municipis; i un mapa només és necessari quan la localització, la proximitat o el patró espacial formen part de la pregunta. Sovint mapa i gràfic es complementen: el primer conserva el context territorial i el segon permet una comparació més precisa.
 
+![Vuit famílies de representació visual vinculades a preguntes de comparació, evolució, composició, distribució, relació, xarxa, flux i espai]({{ site.baseurl }}/assets/img/data-visualization/chart-type-repertoire.svg "La pregunta orienta el tipus de gràfic: comparar magnituds, seguir un canvi, explicar una composició, observar una distribució, explorar una relació, mostrar una xarxa, representar un flux o conservar el patró espacial. Figura d'elaboració pròpia, 14 d'agost de 2026."){: data-figure-width="54rem"}
+
+Les galeries de codi també poden servir com a repertori quan es llegeixen amb criteri. *The R Graph Gallery* i *The Python Graph Gallery* agrupen exemples per famílies de gràfics i mostren codi reproduïble; el llibre en línia de `ggplot2` explica com una visualització es construeix combinant dades, variables estètiques, geometries, escales i facetes {% cite holtzRGraphGallery2026 holtzPythonGraphGallery2026 wickhamGgplot2Book2026 %}. Aquests recursos no s'han d'utilitzar per copiar una forma atractiva sense entendre-la. Són útils quan permeten formular alternatives i comprovar quina geometria respon millor a la pregunta.
+
 ### Comparar magnituds
 
 Els gràfics de barres i altres representacions basades en posició o longitud permeten comparar territoris i categories quan l'ordenació i les unitats són clares.
 
+Una barra és adequada quan cada municipi o categoria té un valor comparable i el lector ha de discriminar diferències. L'ordre pot seguir la magnitud, la posició geogràfica, una jerarquia conceptual o una classificació prèvia, però ha de tenir una funció. Si l'objectiu és veure qui té més i qui té menys, l'ordre descendent sol facilitar la lectura; si l'objectiu és reconèixer un recorregut territorial o una sèrie temporal, un altre ordre pot ser més coherent.
+
 ### Composició, relació i distribució
 
 La composició, la relació entre variables i la distribució d'un indicador demanen estructures gràfiques diferents. La tria ha de respondre a la pregunta, no a l'efecte visual més atractiu. Una sèrie temporal requeriria una estructura específica, però el projecte comarcal treballa principalment una comparació municipal per a un mateix període.
+
+Una figura de composició només és pertinent quan les parts comparteixen un total; una figura de relació només és pertinent quan dues variables es poden comparar observació per observació; i una figura de distribució només és pertinent quan interessa el conjunt de valors, no un municipi concret. Aquesta distinció evita tres errors habituals: fer sumar percentatges independents, suggerir una causalitat a partir d'una dispersió i substituir un mapa per un resum estadístic quan la localització és part de la pregunta.
 
 #### Composició
 
@@ -117,6 +125,18 @@ Un diagrama de caixa resumeix la mediana, els quartils, la dispersió i els poss
 ### Representar indicadors territorials
 
 Valors absoluts, percentatges, ràtios i densitats necessiten títols, unitats i context suficients perquè no es confonguin entre si.
+
+### Relacions, fluxos i grafs
+
+No totes les visualitzacions comparen magnituds, distribucions o composicions. En alguns casos la pregunta se centra en les **relacions**: quines fonts alimenten un indicador, quins municipis comparteixen un flux, quins equipaments formen una xarxa, quins passos depenen d'una comprovació prèvia o com circula una decisió dins d'un procés. Un **graf** representa aquesta estructura mitjançant nodes i arestes. Els nodes són els elements i les arestes indiquen vincles, dependències, connexions o fluxos; poden tenir direcció, pes o categoria segons la pregunta.
+
+Els grafs no substitueixen els mapes. Un mapa conserva posició, distància i veïnatge territorial; un graf pot reordenar els nodes per fer llegibles les relacions. Aquesta llibertat és útil quan el problema no és saber on és cada element, sinó entendre què connecta amb què. Un esquema de procés del projecte, una xarxa de fonts i fitxers, un flux de dades entre full de càlcul, QGIS i Inkscape, o una xarxa de mobilitat turística poden tenir forma de graf, encara que només alguns d'aquests casos siguin estrictament espacials.
+
+Mermaid.js permet escriure diagrames i gràfics mitjançant una sintaxi textual que després es renderitza com a figura {% cite mermaidDiagrammingCharting2026 %}. Aquesta propietat és especialment útil en un context amb models de llenguatge grans, perquè un LLM pot ajudar a esbossar una sintaxi inicial a partir d'una descripció verbal. El resultat, però, s'ha de verificar com qualsevol altra figura: una fletxa pot suggerir una dependència que no existeix, un node pot barrejar dues operacions diferents i una xarxa massa densa pot semblar precisa mentre oculta el criteri de selecció.
+
+![Esquema que mostra com un flux de treball es pot formular com a codi Mermaid, llegir com a xarxa de nodes i arestes i revisar abans d'exportar-lo com a figura]({{ site.baseurl }}/assets/img/data-visualization/graph-mermaid-workflow.svg "Un graf és adequat quan la pregunta se centra en dependències, connexions o fluxos; el codi textual facilita revisar-ne l'estructura abans de convertir-lo en figura. Figura d'elaboració pròpia, 14 d'agost de 2026."){: data-figure-width="48rem"}
+
+En el projecte comarcal, un diagrama d'aquest tipus pot servir per documentar el flux de treball, però no comptarà com a substitut dels gràfics estadístics principals. Si s'inclou en una memòria o presentació, haurà d'indicar què representa cada node, què significa cada aresta i quins elements s'han deixat fora. Una bona xarxa no és la que conté tots els noms possibles, sinó la que permet entendre una relació concreta sense perdre la traçabilitat.
 
 ## Jerarquia i lectura crítica
 
@@ -279,4 +299,4 @@ La revisió també es farà a la mida final. El text, els símbols i els traços
 | `README.md` | Registre de figures | Fitxer, pregunta, tipus de dada, marca, variable visual, decisió de selecció i limitació principal |
 :::
 
-L'activitat deixarà un conjunt de gràfics revisats i dues o tres figures candidates per a la mateixa miniinfografia comarcal, cadascuna associada a una pregunta i a un indicador. S'haurà de poder explicar quines variables visuals utilitza, què permet veure i quins límits conserva. Els capítols 4–7 desenvoluparan els components espacials abans d'integrar-los amb aquestes figures a la composició final.
+L'activitat deixarà un conjunt de gràfics revisats i dues o tres figures candidates per a la mateixa miniinfografia comarcal, cadascuna associada a una pregunta i a un indicador. S'haurà de poder explicar quines variables visuals utilitza, què permet veure i quins límits conserva. Els capítols 4–8 desenvoluparan els components espacials, cromàtics i cartogràfics abans d'integrar-los amb aquestes figures a la composició final.

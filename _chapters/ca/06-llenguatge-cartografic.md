@@ -28,6 +28,10 @@ La **planimetria** representa elements en posició horitzontal, com límits, nuc
 
 En el mapa comarcal, els límits i alguns topònims ajuden a localitzar els municipis. Un relleu detallat o una xarxa viària completa podrien competir amb aquesta funció. Només s'incorporaran si aporten una referència necessària per interpretar la localització; altrament, s'ometran com a part de la generalització.
 
+El relleu és especialment delicat perquè pot donar molta estructura visual sense formar part de la variable principal. Les cotes aporten valors puntuals; les corbes de nivell mostren forma i pendent; l'ombrejat fa intuïtiu el volum, però pot semblar una font de llum real; i les tintes hipsomètriques ordenen rangs d'altura, però introdueixen una paleta que pot competir amb una coropleta. En un mapa temàtic municipal, l'altimetria només s'ha d'afegir si ajuda a explicar un patró territorial, com una diferència entre litoral i interior, i no només perquè el mapa sembli més complet.
+
+![Quatre recursos per representar altimetria: cotes, corbes de nivell, ombrejat i tintes hipsomètriques]({{ site.baseurl }}/assets/img/cartographic-language/relief-representation-methods.svg "El relleu pot orientar la lectura o competir amb la variable principal; cotes, corbes, ombrejat i tintes hipsomètriques no comuniquen exactament la mateixa informació. Figura d'elaboració pròpia, 14 d'agost de 2026."){: data-figure-width="54rem"}
+
 ## De la fotografia aèria al mapa
 
 Una imatge presa des de l'aire pot mostrar el territori amb molt detall sense tenir encara la geometria d'un mapa. La direcció de la càmera, la perspectiva, el relleu, la inclinació de la plataforma i el processament posterior condicionen què es pot identificar i què es pot mesurar. Aquesta distinció és necessària quan s'utilitzen fotografies històriques per estudiar l'evolució urbana i litoral, o una ortofoto actual com a fons per localitzar allotjaments, accessos i equipaments.
@@ -111,9 +115,13 @@ Cada tipus de mapa selecciona informació diferent. Un mapa turístic pot orient
 
 L'**escala cartogràfica** relaciona una distància representada al mapa amb la distància corresponent al territori i limita el detall que es pot llegir. A escala `1:100 000`, una unitat al mapa representa cent mil unitats al territori: un centímetre equival a un quilòmetre. Aquesta relació només és interpretable quan es coneixen la mida i el suport finals.
 
+La distinció entre **escala gran** i **escala petita** pot resultar contraintuïtiva perquè es refereix al valor de la fracció, no a la mida del territori representat. `1:5 000` és una escala més gran que `1:100 000` perquè una unitat del mapa representa menys unitats del terreny i, per tant, pot mostrar més detall. Un plànol urbà és habitualment de gran escala; un mapa provincial o estatal és de petita escala. Dir que un mapa és “gran” perquè cobreix molta superfície és ambigu i s'ha d'evitar en la justificació cartogràfica.
+
 La mida final d'exportació forma part de la decisió. Ampliar el zoom de QGIS no augmenta l'espai disponible a la pàgina, i reduir posteriorment un mapa pot fer il·legibles etiquetes, traços i símbols. L'escala s'ha de comprovar dins de la composició, a la mida de publicació.
 
 L'escala gràfica manté la relació visual quan el document es redimensiona proporcionalment; l'escala numèrica deixa de ser certa si la pàgina s'amplia o es redueix. En tots dos casos, el marc de mapa i el CRS del projecte han de permetre interpretar les distàncies correctament.
+
+Una escala verbal, com “mapa de detall municipal” o “mapa de context provincial”, pot ajudar el lector general, però no substitueix l'escala numèrica o gràfica quan s'han de comprovar distàncies. En el treball del curs, l'escala s'ha de registrar juntament amb la mida final de la peça, perquè la mateixa composició exportada a una pàgina A4 o a una diapositiva no ofereix la mateixa lectura.
 
 ### Seleccionar, simplificar i jerarquitzar
 
@@ -131,6 +139,14 @@ La generalització pot seleccionar els elements necessaris, simplificar formes m
 
 La decisió s'ha de revisar al 100% de la mida d'exportació. Si un detall només es percep ampliant molt la pantalla, no forma part efectiva del mapa publicat. Abans de reduir totes les etiquetes o tots els traços, convé retirar informació secundària.
 
+#### Àrea mínima cartografiable
+
+L'**àrea mínima cartografiable** és la superfície més petita que es pot representar de manera llegible i significativa a una escala i una mida de sortida determinades. No és una propietat absoluta de la font, sinó una relació entre detall, suport i funció. Una capa pot contenir polígons petits perfectament reals, però si a la composició final ocupen una taca imperceptible, el lector no els podrà distingir ni interpretar.
+
+La decisió pot resoldre's de tres maneres. Si l'element és secundari, s'omet. Si forma part d'una categoria més gran, s'agrupa. Si és essencial per al missatge, es pot exagerar o representar amb un símbol, però llavors cal acceptar que la mida ja no correspon exactament a la superfície real. En tots els casos, la generalització ha d'estar justificada per la lectura final i no per la comoditat del programa.
+
+![Comparació entre una font detallada i un mapa publicat en què els polígons massa petits s'ometen, s'agrupen o s'exageren si són essencials]({{ site.baseurl }}/assets/img/cartographic-language/minimum-mapping-unit.svg "L'àrea mínima cartografiable recorda que un detall pot existir a la font i no ser llegible a la mida final; generalitzar significa decidir com conservar el sentit del mapa. Figura d'elaboració pròpia, 14 d'agost de 2026."){: data-figure-width="54rem"}
+
 ## Elements del mapa
 
 ### Títol i subtítol
@@ -147,7 +163,11 @@ Un límit municipal evident pot no necessitar una entrada de llegenda si el tít
 
 Els elements auxiliars s'inclouran quan compleixin una funció. Una fletxa del nord pot ser redundant en un mapa convencional orientat al nord i sense rotació. Una escala gràfica és útil quan cal estimar distàncies o quan el document es pot redimensionar. Cap element s'ha d'afegir només perquè aparegui entre les opcions de QGIS.
 
-La font de dades, el període o versió, l'autoria i, quan sigui rellevant, el CRS són necessaris per interpretar i revisar el producte. Cal distingir la font de les geometries de la font dels indicadors: el capítol 6 utilitza principalment la base espacial, mentre que el mapa temàtic del capítol 7 incorporarà també les dades estadístiques.
+La font de dades, el període o versió, l'autoria i, quan sigui rellevant, el CRS són necessaris per interpretar i revisar el producte. Cal distingir la font de les geometries de la font dels indicadors: el capítol 6 utilitza principalment la base espacial, mentre que el mapa temàtic del capítol 8 incorporarà també les dades estadístiques.
+
+L'orientació no és només una fletxa decorativa. El **nord geogràfic** apunta cap al pol geogràfic, el **nord de quadrícula** segueix les línies verticals del sistema projectat i el **nord magnètic** correspon a la direcció indicada per una brúixola en un lloc i moment concrets. En un mapa comarcal ordinari, aquestes diferències rarament seran decisives per a la lectura general, però convé saber que existeixen. Si es treballa amb navegació, treball de camp o cartografia tècnica, el tipus de nord i la declinació poden esdevenir rellevants.
+
+Un mapa pot estar rotat per aprofitar millor el suport, seguir una costa, adaptar-se a un recorregut turístic o encaixar en una composició. Aquesta decisió és legítima si no desorienta el lector. Com més s'allunyi la composició de l'orientació convencional al nord, més necessari serà indicar l'orientació i proporcionar referències suficients. En canvi, repetir una rosa dels vents en cada mapa petit d'una infografia pot afegir soroll si tots els marcs comparteixen una orientació evident.
 
 ### Retolació
 

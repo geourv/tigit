@@ -7,7 +7,7 @@ ref: manual-infographic-synthesis
 profiles: [unaltremanual]
 content_status: draft
 permalink: /ca/chapters/infografia-sintesi/
-weight: 90
+weight: 100
 part: Continguts
 manual_references: true
 ---
@@ -78,8 +78,8 @@ Abans d'obrir Inkscape es prepararà un inventari d'entrades:
 | Capítol 2 | Mètriques del full `indicators` | Fórmula, unitat, període i agregació comarcal |
 | Capítol 3 | Dues o tres figures vectorials | Pregunta pròpia, valors contrastats i mida llegible |
 | Capítol 6 | Mapa de context, si és necessari | Extensió, retolació, fonts i escala |
-| Capítol 7 | Mapa temàtic final | Camp, classes, paleta, llegenda i absències |
-| Capítol 8 | Text d'interpretació | Observació, evidència, hipòtesi prudent i limitació |
+| Capítol 8 | Mapa temàtic final | Camp, classes, paleta, llegenda i absències |
+| Aquest capítol | Text d'interpretació | Observació, evidència, hipòtesi prudent i limitació |
 :::
 
 Totes les peces han de referir-se al mateix territori i a períodes compatibles. Els noms dels municipis, les unitats, els colors i les fonts es revisaran abans de maquetar, perquè una incoherència no es resol col·locant els elements en una mateixa pàgina.
@@ -126,9 +126,13 @@ La tipografia es comprovarà a la mida real del document. Reduir les fonts per e
 
 ### Color i coherència
 
-La paleta definida al capítol anterior s'aplicarà de manera consistent. El disseny general no ha d'alterar el significat dels colors del mapa o dels gràfics. Els colors d'accent s'utilitzaran per reforçar la jerarquia, no per competir amb la codificació quantitativa.
+La paleta definida als capítols 7 i 8 s'aplicarà de manera consistent. El disseny general no ha d'alterar el significat dels colors del mapa o dels gràfics. Els colors d'accent s'utilitzaran per reforçar la jerarquia, no per competir amb la codificació quantitativa.
 
 Cap informació essencial dependrà només del color. Les etiquetes, la posició, les formes o els patrons poden aportar redundància quan sigui necessària, i el contrast entre text i fons s'ha de revisar a la mida i al suport finals.
+
+Si la infografia adopta una identitat visual institucional, territorial o turística, aquesta identitat ha de quedar subordinada a la lectura de les dades. Els colors associats a una marca, una destinació, un esdeveniment o una universitat poden servir per a títols, separadors o accents, però no han de reassignar el significat d'una paleta seqüencial, divergent o qualitativa. Una peça sobre un municipi litoral pot utilitzar un accent blau per reforçar el context marítim; això no autoritza a utilitzar el mateix blau per a una classe concreta si després impedeix distingir l'indicador principal.
+
+La coherència cromàtica també és una decisió d'autoria. Si el mapa utilitza una rampa de blaus per al percentatge d'habitatge no principal, els gràfics que representen el mateix indicador han de mantenir una relació recognoscible o explicar clarament el canvi. En canvi, les mètriques de capçalera, les notes o els elements d'orientació poden utilitzar neutres i accents per construir jerarquia sense afegir nous codis analítics. Aquesta separació evita que la infografia barregi tres llenguatges diferents: el de les dades, el de la marca i el de la decoració.
 
 ### Interpretació territorial
 
@@ -194,7 +198,7 @@ El `README.md` relacionarà cada component visible amb el fitxer d'origen: rang 
 
 #### Preparació de la presentació
 
-La presentació oral, quan correspongui, no repetirà tot el document ni enumerarà eines. Seguirà un argument breu: pregunta territorial, dades seleccionades, indicador i decisions visuals, resultat principal i limitacions. En primera convocatòria, la síntesi es treballarà en trios mixtos de titulació; en segona convocatòria, quan calgui recuperar aquest bloc, el producte serà individual i de mida reduïda. La durada, el suport, el territori i les condicions concretes de presentació es concretaran a Moodle.
+La presentació oral, quan correspongui, no repetirà tot el document ni enumerarà eines. Seguirà un argument breu: pregunta territorial, dades seleccionades, indicador i decisions visuals, resultat principal i limitacions. La durada, el suport, el territori, l'organització dels equips i les condicions concretes de presentació es concretaran a Moodle.
 
 #### Evidències que s'han de conservar
 

@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="760" viewBox="0 0 1180 760" role="img" aria-labelledby="title desc">
+  <title id="title">Rodes de color i rangs habituals dels models cromatics</title>
+  <desc id="desc">Esquema d'una roda de color amb relacions analogues, complementaries i triadiques, i taula de rangs habituals per RGB, HEX, CMYK, RYB, HSL i HSV.</desc>
+  <defs>
+    <style>
+      .bg { fill: #fffdf8; }
+      .panel { fill: #ffffff; stroke: #d5dde2; stroke-width: 1.6; rx: 18; }
+      .title { font: 700 31px Arial, 'Liberation Sans', sans-serif; fill: #17202a; }
+      .subtitle { font: 16px Arial, 'Liberation Sans', sans-serif; fill: #52616b; }
+      .label { font: 700 20px Arial, 'Liberation Sans', sans-serif; fill: #17202a; }
+      .small { font: 15px Arial, 'Liberation Sans', sans-serif; fill: #52616b; }
+      .tiny { font: 13px Arial, 'Liberation Sans', sans-serif; fill: #52616b; }
+      .mono { font: 700 14px 'Liberation Mono', Consolas, monospace; fill: #17202a; }
+      .line { stroke: #17202a; stroke-width: 2.4; fill: none; }
+      .dash { stroke: #17202a; stroke-width: 2.4; fill: none; stroke-dasharray: 7 7; }
+      .row { fill: #f7fafb; }
+    </style>
+  </defs>
+  <rect class="bg" width="1180" height="760"/>
+  <text x="590" y="48" text-anchor="middle" class="title">Roda, canals i rangs no son la mateixa cosa</text>
+  <text x="590" y="78" text-anchor="middle" class="subtitle">La roda ajuda a pensar relacions de to; els rangs indiquen com un programa codifica numericament el color.</text>
+
+  <g transform="translate(65 125)">
+    <rect class="panel" width="490" height="520"/>
+    <text x="30" y="42" class="label">Relacions en una roda de color</text>
+    <text x="30" y="69" class="small">un esquema per decidir, no una prova d'accessibilitat</text>
+    <g transform="translate(245 250)">
+      <path d="M0,-150 A150,150 0 0,1 75,-130 L0,0 Z" fill="#e53935"/>
+      <path d="M75,-130 A150,150 0 0,1 130,-75 L0,0 Z" fill="#fb8c00"/>
+      <path d="M130,-75 A150,150 0 0,1 150,0 L0,0 Z" fill="#fdd835"/>
+      <path d="M150,0 A150,150 0 0,1 130,75 L0,0 Z" fill="#7cb342"/>
+      <path d="M130,75 A150,150 0 0,1 75,130 L0,0 Z" fill="#43a047"/>
+      <path d="M75,130 A150,150 0 0,1 0,150 L0,0 Z" fill="#00897b"/>
+      <path d="M0,150 A150,150 0 0,1 -75,130 L0,0 Z" fill="#00acc1"/>
+      <path d="M-75,130 A150,150 0 0,1 -130,75 L0,0 Z" fill="#039be5"/>
+      <path d="M-130,75 A150,150 0 0,1 -150,0 L0,0 Z" fill="#3949ab"/>
+      <path d="M-150,0 A150,150 0 0,1 -130,-75 L0,0 Z" fill="#5e35b1"/>
+      <path d="M-130,-75 A150,150 0 0,1 -75,-130 L0,0 Z" fill="#8e24aa"/>
+      <path d="M-75,-130 A150,150 0 0,1 0,-150 L0,0 Z" fill="#d81b60"/>
+      <circle r="62" fill="#fffdf8" stroke="#ffffff" stroke-width="3"/>
+      <line x1="0" y1="-145" x2="0" y2="145" class="dash"/>
+      <polyline points="0,-145 126,73 -126,73 0,-145" class="line" opacity=".72"/>
+      <path d="M-24,-146 A146,146 0 0,1 48,-138" class="line" stroke="#ffffff" stroke-width="8"/>
+    </g>
+    <text x="45" y="452" class="small">Complementaris: punts oposats de la roda.</text>
+    <text x="45" y="478" class="small">Triadics: tres tons separats de manera regular.</text>
+    <text x="45" y="504" class="small">Analogics: tons veins amb transicio suau.</text>
+  </g>
+
+  <g transform="translate(595 125)">
+    <rect class="panel" width="520" height="520"/>
+    <text x="30" y="42" class="label">Rangs habituals en selectors digitals</text>
+    <text x="30" y="69" class="small">els limits numerics han de quedar documentats al projecte</text>
+    <rect x="30" y="100" width="460" height="50" class="row"/>
+    <text x="48" y="130" class="label">RGB</text><text x="170" y="130" class="mono">R,G,B = 0..255</text><text x="350" y="130" class="small">llum</text>
+    <text x="48" y="170" class="label">HEX</text><text x="170" y="170" class="mono">#000000..#FFFFFF</text><text x="350" y="170" class="small">RGB compactat</text>
+    <rect x="30" y="190" width="460" height="50" class="row"/>
+    <text x="48" y="220" class="label">CMYK</text><text x="170" y="220" class="mono">C,M,Y,K = 0..100%</text><text x="350" y="220" class="small">tinta</text>
+    <text x="48" y="260" class="label">RYB</text><text x="170" y="260" class="mono">sense rang unic</text><text x="350" y="260" class="small">tradicio artistica</text>
+    <rect x="30" y="280" width="460" height="50" class="row"/>
+    <text x="48" y="310" class="label">HSL</text><text x="170" y="310" class="mono">H=0..360; S,L=0..100%</text><text x="350" y="310" class="small">lluminositat</text>
+    <text x="48" y="350" class="label">HSV</text><text x="170" y="350" class="mono">H=0..360; S,V=0..100%</text><text x="350" y="350" class="small">valor maxim</text>
+    <line x1="48" y1="392" x2="460" y2="392" stroke="#d5dde2"/>
+    <text x="48" y="430" class="small">Exemple RGB:</text><text x="170" y="430" class="mono">#226699 = R34 G102 B153</text>
+    <rect x="410" y="403" width="48" height="36" rx="7" fill="#226699"/>
+    <text x="48" y="470" class="small">Exemple HSL:</text><text x="170" y="470" class="mono">H 205; S 64%; L 37%</text>
+  </g>
+  <text x="590" y="718" text-anchor="middle" class="small">Figura d'elaboracio propia, 14 d'agost de 2026. Els rangs son convencions habituals; cada programa pot presentar canals o percentatges amb variants.</text>
+</svg>

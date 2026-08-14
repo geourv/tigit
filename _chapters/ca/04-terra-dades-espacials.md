@@ -74,10 +74,13 @@ Els sistemes projectats transformen la superfície terrestre en un pla i permete
 
 La coordenada UTM necessita més informació que els dos nombres. `ETRS89 / UTM zona 31N · EPSG:25831 · E 344.469 m · N 4.551.807 m` identifica el CRS, el fus i l'hemisferi, la component est i la component nord de la Facultat. El meridià central del fus 31, 3° E, rep un **fals est** de 500.000 m; per això una E inferior a 500.000 situa el punt a l'oest del meridià central sense emprar valors negatius. A l'hemisferi nord, la N es compta des de l'equador amb un fals nord de 0 m. Escriure només `344469, 4551807` deixaria oberta la zona, l'hemisferi, el dàtum i fins i tot l'ordre dels eixos.
 
-::: subfigures a+b "Del reticle UTM global al reticle local de Vila-seca. La subfigura a mostra els fusos i bandes UTM del planeta; la subfigura b és un esquema propi basat en conversions executades amb PROJ 9.4.0."
+::: subfigures a+b/c "Del reticle UTM global al fus 31N i al reticle local de Vila-seca. La subfigura a mostra els fusos i bandes UTM del planeta; les subfigures b i c són esquemes propis basats en conversions executades amb PROJ 9.4.0."
 ![Reticle mundial de fusos UTM i bandes latitudinals; Catalunya se situa al fus 31 i a la banda T, mentre que EPSG:25831 usa 31N per indicar el fus 31 de l'hemisferi nord]({{ site.baseurl }}/assets/img/coordinate-systems/utm-zones-world.jpg "Fusos longitudinals i bandes latitudinals del reticle UTM. Font: Jan Krymmel, Wikimedia Commons, a partir de NASA Visible Earth; domini públic, CC BY-SA 3.0 i GFDL.")
+![Zona UTM 31N entre els meridians 0° E i 6° E, amb el meridià central a 3° E i Vila-seca situada a l'oest d'aquest meridià]({{ site.baseurl }}/assets/img/coordinate-systems/utm-zone-31n.svg "El fus 31N és una franja de 6° de longitud; el meridià central rep E = 500.000 m i permet interpretar per què Vila-seca té una coordenada est inferior a 500.000 m. Figura d'elaboració pròpia, 14 d'agost de 2026.")
 ![Reticle UTM quilomètric amb tres llocs reals de Vila-seca i les seves coordenades est i nord]({{ site.baseurl }}/assets/img/coordinate-systems/utm-grid-vila-seca.svg "El reticle es llegeix primer cap a l'est i després cap al nord; a l'hemisferi nord, el valor N es compta des de l'equador")
 :::
+
+![Esquema del funcionament intern d'un fus UTM: límits longitudinals, meridià central, fals est, coordenada est i coordenada nord]({{ site.baseurl }}/assets/img/coordinate-systems/utm-zone-internal-coordinates.svg "Dins d'un fus UTM, les coordenades són metres sobre un sistema cartesià local: E augmenta cap a l'est, N cap al nord i el fals est de 500.000 m evita valors negatius a prop del meridià central. Figura d'elaboració pròpia, 14 d'agost de 2026."){: data-figure-width="54rem"}
 
 ::: table "Tres llocs de Vila-seca en coordenades geogràfiques i UTM"
 | Lloc | Longitud, latitud (`EPSG:4326`) | UTM ETRS89 / zona 31N (`EPSG:25831`) |

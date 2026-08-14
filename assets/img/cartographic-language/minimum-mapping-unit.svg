@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="720" viewBox="0 0 1180 720" role="img" aria-labelledby="title desc">
+  <title id="title">Area minima cartografiable i escala final</title>
+  <desc id="desc">Comparació entre una representació detallada i una representació generalitzada en què els polígons massa petits s'ometen o s'agrupen perquè no serien llegibles a la mida final.</desc>
+  <defs>
+    <style>
+      .bg { fill: #fffdf8; }
+      .panel { fill: #ffffff; stroke: #d5dde2; stroke-width: 1.6; rx: 18; }
+      .title { font: 700 31px Arial, 'Liberation Sans', sans-serif; fill: #17202a; }
+      .subtitle { font: 16px Arial, 'Liberation Sans', sans-serif; fill: #52616b; }
+      .label { font: 700 20px Arial, 'Liberation Sans', sans-serif; fill: #17202a; }
+      .small { font: 15px Arial, 'Liberation Sans', sans-serif; fill: #52616b; }
+      .tiny { font: 13px Arial, 'Liberation Sans', sans-serif; fill: #52616b; }
+      .border { fill: #ecf3f1; stroke: #365b6d; stroke-width: 3; }
+      .minor { fill: #b8d7c1; stroke: #ffffff; stroke-width: 2; }
+      .warn { fill: #d0523c; opacity: .88; }
+      .keep { fill: #16697a; opacity: .82; }
+      .dash { fill: none; stroke: #d0523c; stroke-width: 3; stroke-dasharray: 8 8; }
+      .arrow { stroke: #365b6d; stroke-width: 4; marker-end: url(#arrow); }
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#365b6d"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1180" height="720"/>
+  <text x="590" y="48" text-anchor="middle" class="title">L'area minima cartografiable depen de la mida final</text>
+  <text x="590" y="78" text-anchor="middle" class="subtitle">Un detall real pot existir a la font i, alhora, no tenir prou superficie per ser llegible al mapa publicat.</text>
+
+  <g transform="translate(70 125)">
+    <rect class="panel" width="430" height="455"/>
+    <text x="28" y="42" class="label">Font detallada</text>
+    <text x="28" y="68" class="small">escala de captura mes gran</text>
+    <path class="border" d="M80,118 L206,88 L348,132 L365,282 L265,370 L105,336 L52,210 Z"/>
+    <path class="minor" d="M98,145 L170,122 L198,198 L132,226 Z"/>
+    <path class="minor" d="M205,96 L318,134 L280,206 L198,198 Z"/>
+    <path class="minor" d="M132,226 L198,198 L248,274 L168,322 L102,294 Z"/>
+    <path class="minor" d="M248,274 L280,206 L352,232 L337,286 L265,354 Z"/>
+    <circle cx="316" cy="306" r="14" class="warn"/>
+    <circle cx="146" cy="174" r="10" class="warn"/>
+    <circle cx="225" cy="335" r="7" class="warn"/>
+    <text x="82" y="416" class="tiny">Els poligons petits son reals, pero el lector nomes els ve ampliant molt.</text>
+  </g>
+
+  <line x1="530" y1="352" x2="650" y2="352" class="arrow"/>
+  <text x="590" y="326" text-anchor="middle" class="small">generalitzar</text>
+  <text x="590" y="383" text-anchor="middle" class="small">segons suport</text>
+
+  <g transform="translate(680 125)">
+    <rect class="panel" width="430" height="455"/>
+    <text x="28" y="42" class="label">Mapa publicat</text>
+    <text x="28" y="68" class="small">mida final i funcio del mapa</text>
+    <path class="border" d="M80,118 L206,88 L348,132 L365,282 L265,370 L105,336 L52,210 Z"/>
+    <path class="keep" d="M94,144 L206,103 L331,142 L349,280 L262,350 L112,317 L66,212 Z"/>
+    <path class="dash" d="M302,292 C326,274 339,296 318,315 C294,337 277,315 302,292 Z"/>
+    <text x="78" y="416" class="tiny">Els detalls sota l'AMC s'eliminen, s'agrupen o s'exageren si son essencials.</text>
+  </g>
+
+  <rect x="280" y="615" width="620" height="45" fill="#ffffff" stroke="#d5dde2" rx="12"/>
+  <text x="590" y="644" text-anchor="middle" class="small">Criteri practic: si un element no es pot distingir a la mida d'exportacio, no forma part efectiva del mapa.</text>
+</svg>

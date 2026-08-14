@@ -7,7 +7,7 @@ ref: manual-bibliography
 profiles: [unaltremanual]
 content_status: draft
 permalink: /ca/bibliografia/
-weight: 100
+weight: 110
 part: Referència
 manual_numbered: false
 manual_toc: false
