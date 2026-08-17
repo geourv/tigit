@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1180" height="760" viewBox="0 0 1180 760" role="img" aria-labelledby="title desc">
   <title id="title">Funcionament de les coordenades dins un fus UTM</title>
-  <desc id="desc">Esquema del fus UTM 31 nord amb limits longitudinals, meridia central, fals est, coordenada est i coordenada nord dins l'hemisferi nord.</desc>
+  <desc id="desc">Esquema del fus UTM 31 dins del CRS 31N amb limits longitudinals, meridia central, fals est, coordenada est i coordenada nord dins l'hemisferi nord.</desc>
   <defs>
     <style>
       .bg { fill: #fffdf8; }
@@ -25,7 +25,7 @@
   </defs>
   <rect class="bg" width="1180" height="760"/>
   <text x="590" y="48" text-anchor="middle" class="title">Dins un fus UTM: metres, falsos origens i ordre E,N</text>
-  <text x="590" y="78" text-anchor="middle" class="small">El fus 31N cobreix de 0 a 6 graus est; el seu meridia central (3 graus E) no te E=0, sino E=500.000 m.</text>
+  <text x="590" y="78" text-anchor="middle" class="small">El fus 31 cobreix de 0 a 6 graus est; en el CRS 31N, la N indica hemisferi nord, no banda latitudinal.</text>
 
   <path d="M170 130 C235 205,235 558,170 625 L720 625 C655 558,655 205,720 130 Z" class="zone"/>
   <line x1="170" y1="130" x2="170" y2="625" stroke="#365b6d" stroke-width="3"/>
@@ -58,8 +58,9 @@
 
   <rect x="785" y="145" width="320" height="126" class="panel"/>
   <text x="812" y="181" class="label">1. El fus defineix l'espai</text>
-  <text x="812" y="212" class="small">Zona 31: 0 a 6 graus E.</text>
-  <text x="812" y="238" class="small">La N indica hemisferi nord en el CRS.</text>
+  <text x="812" y="212" class="small">Fus 31: 0 a 6 graus E.</text>
+  <text x="812" y="238" class="small">La N indica hemisferi nord.</text>
+  <text x="812" y="260" class="small">No és la banda MGRS.</text>
 
   <rect x="785" y="314" width="320" height="150" class="panel"/>
   <text x="812" y="350" class="label">2. El fals est evita negatius</text>

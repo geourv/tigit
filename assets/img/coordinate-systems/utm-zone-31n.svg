@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="920" height="620" viewBox="0 0 920 620" role="img" aria-labelledby="title desc">
-  <title id="title">Zona UTM 31N i posició de Vila-seca</title>
-  <desc id="desc">Esquema de la zona UTM 31 nord, entre els meridians zero i sis graus est, amb el meridià central de tres graus est, el fals est de cinc-cents mil metres i Vila-seca situada a l'oest del meridià central.</desc>
+  <title id="title">Fus UTM 31 dins del CRS 31N i posició de Vila-seca</title>
+  <desc id="desc">Esquema del fus UTM 31 dins del CRS 31N, entre els meridians zero i sis graus est, amb el meridià central de tres graus est, el fals est de cinc-cents mil metres i Vila-seca situada a l'oest del meridià central.</desc>
   <defs>
     <style>
       .title { font: 700 30px system-ui, sans-serif; fill: #17202a; }
@@ -18,7 +18,7 @@
   </defs>
   <rect width="920" height="620" fill="#fffdf8"/>
   <text x="460" y="48" text-anchor="middle" class="title">ETRS89 / UTM zona 31N</text>
-  <text x="460" y="79" text-anchor="middle" class="small">Una zona de 6° de longitud amb coordenades cartesianes en metres</text>
+  <text x="460" y="79" text-anchor="middle" class="small">31N del CRS = fus 31, hemisferi nord; en MGRS Catalunya cau a 31T</text>
 
   <path d="M 130 120 C 175 165, 175 455, 130 505 L 790 505 C 745 455, 745 165, 790 120 Z" class="zone"/>
   <line x1="130" y1="120" x2="130" y2="505" class="boundary"/>
@@ -41,8 +41,9 @@
   <text x="388" y="252" class="mono">E 344.469 m</text>
   <text x="388" y="279" class="small">a l'oest del meridià central</text>
 
-  <text x="154" y="154" class="label">Zona 31N</text>
-  <text x="154" y="183" class="small">hemisferi nord</text>
+  <text x="154" y="154" class="label">Fus 31</text>
+  <text x="154" y="183" class="small">31N = hemisferi nord</text>
+  <text x="154" y="210" class="small">no banda latitudinal</text>
   <rect x="620" y="438" width="142" height="43" rx="9" fill="#17202a"/>
   <text x="691" y="467" text-anchor="middle" font-family="ui-monospace, monospace" font-size="20" font-weight="700" fill="#fff">EPSG:25831</text>
 </svg>

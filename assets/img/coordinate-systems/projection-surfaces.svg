@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="520" viewBox="0 0 1080 520" role="img" aria-labelledby="title desc">
+  <title id="title">Superfícies auxiliars de projecció cartogràfica</title>
+  <desc id="desc">Esquema conceptual que compara una projecció azimutal sobre un pla, una projecció cònica sobre un con i una projecció cilíndrica sobre un cilindre al voltant del globus.</desc>
+  <metadata>
+    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#">
+      <cc:Work rdf:about="">
+        <dc:title>Superfícies auxiliars de projecció cartogràfica</dc:title>
+        <dc:creator>Manual TIGIT</dc:creator>
+        <dc:description>Esquema vectorial propi inspirat en el repertori docent clàssic de projeccions planes, còniques i cilíndriques.</dc:description>
+        <dc:rights>Elaboració pròpia</dc:rights>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs>
+    <radialGradient id="globe-fill" cx="38%" cy="32%" r="68%">
+      <stop offset="0" stop-color="#d7f0fa"/>
+      <stop offset="0.62" stop-color="#8cc8de"/>
+      <stop offset="1" stop-color="#3f8eaa"/>
+    </radialGradient>
+    <style>
+      .panel-title { font: 700 22px Arial, Helvetica, sans-serif; fill: #1f2937; }
+      .label { font: 16px Arial, Helvetica, sans-serif; fill: #334155; }
+      .small { font: 14px Arial, Helvetica, sans-serif; fill: #475569; }
+      .surface { fill: #f8fafc; stroke: #334155; stroke-width: 2.5; opacity: 0.82; }
+      .surface-line { fill: none; stroke: #334155; stroke-width: 2.5; opacity: 0.9; }
+      .graticule { fill: none; stroke: #ffffff; stroke-width: 1.2; opacity: 0.72; }
+      .outline { fill: none; stroke: #1f2937; stroke-width: 2.6; }
+      .touch { fill: none; stroke: #b8403b; stroke-width: 3; stroke-linecap: round; }
+      .land { fill: #b6c98b; stroke: none; opacity: 0.95; }
+    </style>
+  </defs>
+
+  <rect width="1080" height="520" fill="#fbfaf7"/>
+
+  <g transform="translate(72,42)">
+    <text class="panel-title" x="108" y="24" text-anchor="middle">Azimutal o zenital</text>
+    <text class="small" x="108" y="47" text-anchor="middle">projecta sobre un pla</text>
+    <polygon class="surface" points="22,88 194,50 242,82 70,120"/>
+    <line class="surface-line" x1="34" y1="96" x2="206" y2="58"/>
+    <circle cx="130" cy="198" r="78" fill="url(#globe-fill)" stroke="#1f2937" stroke-width="2.6"/>
+    <ellipse class="graticule" cx="130" cy="198" rx="78" ry="24"/>
+    <ellipse class="graticule" cx="130" cy="198" rx="78" ry="48"/>
+    <ellipse class="graticule" cx="130" cy="198" rx="28" ry="78"/>
+    <ellipse class="graticule" cx="130" cy="198" rx="55" ry="78"/>
+    <path class="land" d="M 103 160 C 120 148, 139 157, 151 175 C 143 190, 121 192, 108 181 C 98 174, 94 167, 103 160 Z"/>
+    <path class="land" d="M 148 215 C 169 207, 190 220, 188 239 C 169 251, 143 245, 136 228 C 135 220, 140 216, 148 215 Z"/>
+    <path class="touch" d="M 95 121 C 119 114, 144 109, 169 107"/>
+    <text class="label" x="130" y="312" text-anchor="middle">punt o zona central</text>
+    <text class="small" x="130" y="334" text-anchor="middle">distorsió baixa prop del contacte</text>
+  </g>
+
+  <g transform="translate(388,42)">
+    <text class="panel-title" x="152" y="24" text-anchor="middle">Cònica</text>
+    <text class="small" x="152" y="47" text-anchor="middle">projecta sobre un con</text>
+    <path class="surface" d="M 152 52 L 42 290 Q 152 330 262 290 Z"/>
+    <ellipse class="surface-line" cx="152" cy="290" rx="110" ry="28"/>
+    <circle cx="152" cy="216" r="78" fill="url(#globe-fill)" stroke="#1f2937" stroke-width="2.6"/>
+    <ellipse class="graticule" cx="152" cy="216" rx="78" ry="24"/>
+    <ellipse class="graticule" cx="152" cy="216" rx="78" ry="48"/>
+    <ellipse class="graticule" cx="152" cy="216" rx="28" ry="78"/>
+    <ellipse class="graticule" cx="152" cy="216" rx="55" ry="78"/>
+    <path class="land" d="M 120 178 C 139 165, 161 175, 171 196 C 159 209, 135 207, 121 194 C 114 187, 113 183, 120 178 Z"/>
+    <path class="land" d="M 169 235 C 188 228, 213 238, 212 255 C 196 269, 168 266, 158 248 C 158 241, 162 237, 169 235 Z"/>
+    <path class="touch" d="M 77 195 C 121 179, 180 179, 226 195"/>
+    <text class="label" x="152" y="340" text-anchor="middle">un o dos paral·lels estàndard</text>
+    <text class="small" x="152" y="362" text-anchor="middle">freqüent en latituds mitjanes</text>
+  </g>
+
+  <g transform="translate(734,42)">
+    <text class="panel-title" x="130" y="24" text-anchor="middle">Cilíndrica</text>
+    <text class="small" x="130" y="47" text-anchor="middle">projecta sobre un cilindre</text>
+    <path class="surface" d="M 36 92 Q 130 58 224 92 L 224 292 Q 130 326 36 292 Z"/>
+    <ellipse class="surface-line" cx="130" cy="92" rx="94" ry="29"/>
+    <ellipse class="surface-line" cx="130" cy="292" rx="94" ry="29"/>
+    <circle cx="130" cy="198" r="78" fill="url(#globe-fill)" stroke="#1f2937" stroke-width="2.6"/>
+    <ellipse class="graticule" cx="130" cy="198" rx="78" ry="24"/>
+    <ellipse class="graticule" cx="130" cy="198" rx="78" ry="48"/>
+    <ellipse class="graticule" cx="130" cy="198" rx="28" ry="78"/>
+    <ellipse class="graticule" cx="130" cy="198" rx="55" ry="78"/>
+    <path class="land" d="M 100 161 C 117 149, 140 159, 151 177 C 141 191, 118 191, 105 181 C 96 173, 94 166, 100 161 Z"/>
+    <path class="land" d="M 149 216 C 170 209, 192 221, 190 240 C 172 253, 145 246, 138 229 C 137 222, 141 218, 149 216 Z"/>
+    <path class="touch" d="M 53 198 C 98 211, 162 211, 207 198"/>
+    <text class="label" x="130" y="340" text-anchor="middle">normal, transversa o obliqua</text>
+    <text class="small" x="130" y="362" text-anchor="middle">base de Mercator i de la UTM transversa</text>
+  </g>
+
+  <g transform="translate(128,438)">
+    <text class="small" x="0" y="0">La superfície auxiliar pot ser tangent o secant, i es pot orientar segons el territori que es vol representar.</text>
+    <text class="small" x="0" y="24">És un esquema per entendre famílies de projecció; moltes projeccions reals es defineixen directament amb fórmules.</text>
+  </g>
+</svg>

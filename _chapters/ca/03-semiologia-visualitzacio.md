@@ -24,6 +24,10 @@ El tipus de dada condiciona les operacions de comparació possibles i la variabl
 
 Una representació es construeix amb **marques gràfiques**, elements visibles com punts, línies o àrees. En un gràfic poden ser una barra o un punt; en un mapa poden correspondre a un municipi, una carretera o una comarca. Les propietats que varien per codificar informació, com la posició, la mida, la forma, l'orientació, el valor, la textura o el color, s'anomenen **variables visuals**. Aquest llenguatge serà compartit després pels gràfics i pels mapes.
 
+La figura següent resumeix aquesta relació. No s'ha de llegir com una recepta automàtica, sinó com una taula de decisions: primer cal saber si la marca és puntual, lineal o superficial; després cal decidir quina variable visual ajuda el lector a distingir categories, reconèixer un ordre, estimar una magnitud o localitzar un patró. Aquesta mateixa matriu tornarà a aparèixer en cartografia quan una carretera sigui una línia, un municipi sigui una superfície i un allotjament o un nucli es representi amb un símbol puntual.
+
+![Matriu de variables visuals aplicada a marques puntuals, lineals i superficials: posició, mida, forma, orientació, valor, textura i to]({{ site.baseurl }}/assets/img/data-visualization/visual-variables-matrix.svg "Les variables visuals no treballen soles: depenen del tipus de marca i de la tasca de lectura. Figura d'elaboració pròpia a partir del vocabulari de la semiologia gràfica de Bertin, 17 d'agost de 2026."){: data-figure-width="54rem"}
+
 ## Variables visuals
 
 ### Posició, longitud i mida

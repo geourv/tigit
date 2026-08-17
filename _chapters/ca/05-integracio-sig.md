@@ -18,7 +18,7 @@ Les demostracions breus de QGIS que hagin aparegut en capítols anteriors no sub
 
 La informació **georeferenciada** combina un component temàtic, que descriu què és o quin valor té una entitat, i un component espacial, que indica on es troba. Un SIG integra dades, eines, persones i mètodes per gestionar i analitzar aquesta relació i respondre problemes territorials.
 
-![Esquema històric de fases d'un projecte SIG, utilitzat com a suport provisional per distingir dades, tractament, anàlisi i presentació]({{ site.baseurl }}/assets/img/legacy/gis-phases.png "Un projecte SIG no comença en el mapa final: necessita definir el problema, preparar dades, executar operacions, verificar resultats i comunicar-los. Imatge procedent de les diapositives antigues del curs; font i autoria pendents de verificació. Llicència: Referencia pendiente."){: data-figure-width="48rem"}
+![Esquema de fases d'un projecte SIG, utilitzat per distingir dades, tractament, anàlisi i presentació]({{ site.baseurl }}/assets/img/legacy/gis-phases.png "Un projecte SIG no comença en el mapa final: necessita definir el problema, preparar dades, executar operacions, verificar resultats i comunicar-los. Llicència: pendent de revisar."){: data-figure-width="48rem"}
 
 ## Del programa al mètode de treball
 
@@ -88,6 +88,8 @@ Abans d'unir, almenys dos municipis i dos indicadors es contrastaran amb el full
 ### Coordenades a punts
 
 Algunes fonts no arriben com una capa de municipis, sinó com una taula amb coordenades. Pot passar amb equipaments turístics, punts d'informació, allotjaments, recursos patrimonials o adreces geocodificades. En aquest cas, QGIS pot carregar el CSV com a capa de text delimitat i crear geometries puntuals a partir dels camps X i Y. La decisió crítica és indicar el CRS correcte de les coordenades originals: longitud i latitud en graus solen correspondre a `EPSG:4326`, mentre que coordenades UTM del projecte haurien d'estar en metres i documentar-se com `EPSG:25831`.
+
+No totes les coordenades UTM d'una taula s'han de convertir automàticament en punts. Si la font identifica una quadrícula, com les quadrícules UTM de l'ICGC amb codis MGRS del tipus `31TCG213911`, la dada representa una cel·la. El parell E/N associat permet situar la cantonada de referència del quadrat i dona nom al polígon, però no descriu per si sol el centre ni un objecte puntual. En aquests casos convé carregar o construir la capa poligonal de quadrícula i, només si l'objectiu cartogràfic ho justifica, derivar-ne un punt auxiliar documentat {% cite icgcQuadriculesUtm2026 icgcQuadriculesUtmEspecificacions2026 icgcMgrsCoordinates2026 %}.
 
 ![Espai de treball per documentar la importació d'un CSV, la unió amb límits municipals i la creació de punts a partir de coordenades]({{ site.baseurl }}/assets/img/placeholders/qgis-data-operations-placeholder.svg "QGIS: diàleg d'importació de text delimitat, configuració de la unió i conversió de camps X/Y en punts."){: data-figure-width="44rem"}
 

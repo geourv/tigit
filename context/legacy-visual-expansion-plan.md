@@ -10,7 +10,7 @@ El cos del manual ha de continuar sent publicable. Per tant, els placeholders ed
 
 ### Criteri provisional de revisió visual
 
-El 14 d'agost de 2026 s'ha introduït una excepció de treball per aprofundir els capítols 2-9: quan encara no existeixi la figura ideal, es pot incorporar una imatge de les diapositives antigues o un placeholder visual amb una descripció precisa. Les imatges procedents de `sandbox/geoteaching-tigit-90437e4c4ce3/` han d'indicar explícitament al peu que la font, autoria o llicència estan pendents, i la posició de la llicència ha d'incloure el text literal `Referencia pendiente`. Aquest criteri serveix per a revisió docent i no elimina la necessitat de substituir o verificar cada recurs abans d'aprovar el contingut.
+El 14 d'agost de 2026 s'ha introduït una excepció de treball per aprofundir els capítols 2-9: quan encara no existeixi la figura ideal, es pot incorporar una imatge de les diapositives antigues o un placeholder visual amb una descripció precisa. Si una imatge amb llicència encara no revisada arriba al cos publicable, el peu ha d'evitar informació interna sobre l'origen editorial del recurs i ha d'utilitzar només la fórmula `Llicència: pendent de revisar.`. Aquest criteri serveix per a revisió docent i no elimina la necessitat de substituir o verificar cada recurs abans d'aprovar el contingut.
 
 ## Fonts locals revisades
 
@@ -48,7 +48,7 @@ El 14 d'agost de 2026 s'ha introduït una excepció de treball per aprofundir el
 | `fig-05-ed50-etrs89` | Terra i dades espacials | `datum-distortions.png`, capes antigues ED50 | Recrear | Mateixa entitat interpretada amb CRS correcte i incorrecte, amb desplaçament mesurat |
 | `fig-06-mtn-sheet-system` | Llenguatge cartogràfic | `3-mapa-topografic-nacional-espanyol-cat.homework.md` | Proposada | Esquema propi de full 1:50.000 i subdivisió a escales més detallades |
 | `fig-06-toponymy-labels` | Llenguatge cartogràfic | `3-toponimia-cat.homework.md`, `map-labels-eg-*` | Recrear | Retolació amb prioritats, topònims oficials i conflictes resolts |
-| `fig-06-generalization-three-scales` | Llenguatge cartogràfic | `map-generalization-three-scales.png` | Recrear | Mateix territori a tres escales amb selecció, simplificació i canvi de jerarquia |
+| `fig-06-generalization-three-scales` | Llenguatge cartogràfic | `map-generalization-three-scales.png` | Incorporada com a figura pròpia | Mateix territori a tres escales amb selecció, simplificació i canvi de jerarquia (`assets/img/cartographic-language/generalization-three-scales.svg`) |
 | `fig-07-gis-workflow` | SIG | `qgis-exercise-setup.uml`, `qgis-join-attributes.uml`, `qgis-visual-analysis.uml` | Recrear | Diagrama únic de preparació, importació, unió, validació i exportació |
 | `fig-08-classification-series` | Cartografia temàtica | `quantile-choropleth-map.png`, `iqual-intervals-choropleth-map.png`, `natural-breaks-jenks-choropleth-map.png` | Recrear | Mateix indicador municipal amb intervals iguals, quantils i Jenks, punts de tall visibles |
 | `fig-08-technique-choice` | Cartografia temàtica | cartodiagrames, coropletes, fluxos, dasimètrics i cartogrames antics | Recrear | Matriu de tècnica cartogràfica segons tipus de dada i pregunta |

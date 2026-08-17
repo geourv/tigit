@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="720" viewBox="0 0 1180 720" role="img" aria-labelledby="title desc">
+  <title id="title">Relació entre símbol cartogràfic i fenomen representat</title>
+  <desc id="desc">Esquema docent amb símbols arbitraris, associatius i convencionals aplicats a implantació puntual, lineal i superficial.</desc>
+  <defs>
+    <style>
+      .bg { fill: #fffdf8; }
+      .panel { fill: #ffffff; stroke: #d5dde2; stroke-width: 1.5; }
+      .head { fill: #eef4f5; stroke: #d5dde2; stroke-width: 1.5; }
+      .title { font: 700 31px Arial, 'Liberation Sans', sans-serif; fill: #17202a; }
+      .subtitle { font: 16px Arial, 'Liberation Sans', sans-serif; fill: #52616b; }
+      .label { font: 700 17px Arial, 'Liberation Sans', sans-serif; fill: #17202a; }
+      .small { font: 14px Arial, 'Liberation Sans', sans-serif; fill: #52616b; }
+      .tiny { font: 12px Arial, 'Liberation Sans', sans-serif; fill: #52616b; }
+      .ink { fill: #16697a; stroke: #123f4b; stroke-width: 1.5; }
+      .ink2 { fill: #d0523c; stroke: #8c3225; stroke-width: 1.5; }
+      .line { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+      .water { fill: none; stroke: #2c83c5; stroke-width: 5; stroke-linecap: round; }
+      .rail { fill: none; stroke: #365b6d; stroke-width: 4; stroke-linecap: round; }
+      .area { fill: #cfe3ea; stroke: #365b6d; stroke-width: 1.4; }
+    </style>
+    <pattern id="abstractHatch" patternUnits="userSpaceOnUse" width="9" height="9" patternTransform="rotate(35)">
+      <line x1="0" y1="0" x2="0" y2="9" stroke="#7a5195" stroke-width="1.3"/>
+    </pattern>
+    <pattern id="forestPattern" patternUnits="userSpaceOnUse" width="24" height="24">
+      <circle cx="8" cy="8" r="5" fill="#5a9f70"/>
+      <circle cx="18" cy="17" r="4" fill="#3f7d58"/>
+    </pattern>
+    <pattern id="orchardPattern" patternUnits="userSpaceOnUse" width="22" height="22">
+      <circle cx="6" cy="6" r="3.5" fill="#3f7d58"/>
+      <circle cx="16" cy="16" r="3.5" fill="#3f7d58"/>
+    </pattern>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#16697a"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" width="1180" height="720"/>
+  <text x="590" y="48" text-anchor="middle" class="title">Els simbols poden ser arbitraris, associatius o convencionals</text>
+  <text x="590" y="78" text-anchor="middle" class="subtitle">La llegenda tradueix el signe; les convencions i la semblança només acceleren la lectura quan el codi és compartit.</text>
+
+  <g transform="translate(40 115)">
+    <rect x="0" y="0" width="1100" height="520" rx="16" class="panel"/>
+    <rect x="0" y="0" width="1100" height="66" rx="16" class="head"/>
+    <rect x="0" y="48" width="1100" height="18" class="head"/>
+    <line x1="180" y1="0" x2="180" y2="520" stroke="#d5dde2" stroke-width="1.5"/>
+    <line x1="455" y1="0" x2="455" y2="520" stroke="#d5dde2" stroke-width="1.5"/>
+    <line x1="670" y1="0" x2="670" y2="520" stroke="#d5dde2" stroke-width="1.5"/>
+    <line x1="885" y1="0" x2="885" y2="520" stroke="#d5dde2" stroke-width="1.5"/>
+    <line x1="0" y1="66" x2="1100" y2="66" stroke="#d5dde2" stroke-width="1.5"/>
+    <line x1="0" y1="217" x2="1100" y2="217" stroke="#d5dde2" stroke-width="1.5"/>
+    <line x1="0" y1="368" x2="1100" y2="368" stroke="#d5dde2" stroke-width="1.5"/>
+
+    <text x="24" y="40" class="label">Tipus de signe</text>
+    <text x="205" y="40" class="label">Criteri de lectura</text>
+    <text x="562" y="40" text-anchor="middle" class="label">Puntual</text>
+    <text x="777" y="40" text-anchor="middle" class="label">Lineal</text>
+    <text x="992" y="40" text-anchor="middle" class="label">Superficial</text>
+
+    <text x="24" y="136" class="label">Arbitrari</text>
+    <text x="205" y="118" class="small">El signe no s'assembla al fenomen.</text>
+    <text x="205" y="140" class="small">Funciona si la llegenda el defineix</text>
+    <text x="205" y="162" class="small">i si no competeix amb altres signes.</text>
+    <rect x="533" y="104" width="58" height="42" rx="8" fill="#ffffff" stroke="#16697a" stroke-width="4"/>
+    <text x="562" y="174" text-anchor="middle" class="tiny">equipament A</text>
+    <line x1="710" y1="126" x2="845" y2="126" class="line" stroke="#7a5195" stroke-width="7"/>
+    <text x="777" y="174" text-anchor="middle" class="tiny">itinerari 1</text>
+    <rect x="945" y="95" width="92" height="58" fill="url(#abstractHatch)" stroke="#7a5195" stroke-width="2"/>
+    <text x="991" y="174" text-anchor="middle" class="tiny">zona A</text>
+
+    <text x="24" y="287" class="label">Associatiu</text>
+    <text x="205" y="269" class="small">Algun tret recorda el fenomen:</text>
+    <text x="205" y="291" class="small">forma, color, textura o gest gràfic.</text>
+    <text x="205" y="313" class="small">Accelera la lectura, pero cal control.</text>
+    <path d="M528,297 L528,256 L541,256 L541,281 L554,271 L554,281 L568,271 L568,281 L582,271 L582,297 Z" fill="#cfe3ea" stroke="#365b6d" stroke-width="2"/>
+    <text x="556" y="325" text-anchor="middle" class="tiny">indústria</text>
+    <line x1="710" y1="277" x2="845" y2="277" class="rail"/>
+    <g stroke="#365b6d" stroke-width="2">
+      <line x1="725" y1="268" x2="725" y2="286"/>
+      <line x1="745" y1="268" x2="745" y2="286"/>
+      <line x1="765" y1="268" x2="765" y2="286"/>
+      <line x1="785" y1="268" x2="785" y2="286"/>
+      <line x1="805" y1="268" x2="805" y2="286"/>
+      <line x1="825" y1="268" x2="825" y2="286"/>
+    </g>
+    <text x="777" y="325" text-anchor="middle" class="tiny">ferrocarril</text>
+    <rect x="945" y="246" width="92" height="58" fill="url(#forestPattern)" stroke="#365b6d" stroke-width="2"/>
+    <text x="991" y="325" text-anchor="middle" class="tiny">bosc</text>
+
+    <text x="24" y="438" class="label">Convencional</text>
+    <text x="205" y="420" class="small">El significat depèn d'un acord repetit:</text>
+    <text x="205" y="442" class="small">sèries cartogràfiques, llegendes,</text>
+    <text x="205" y="464" class="small">normes institucionals o hàbits d'usuari.</text>
+    <g transform="translate(562 425)">
+      <line x1="-20" y1="-20" x2="20" y2="20" stroke="#365b6d" stroke-width="5" stroke-linecap="round"/>
+      <line x1="20" y1="-20" x2="-20" y2="20" stroke="#365b6d" stroke-width="5" stroke-linecap="round"/>
+      <line x1="-27" y1="-27" x2="-13" y2="-27" stroke="#365b6d" stroke-width="5" stroke-linecap="round"/>
+      <line x1="13" y1="-27" x2="27" y2="-27" stroke="#365b6d" stroke-width="5" stroke-linecap="round"/>
+    </g>
+    <text x="562" y="476" text-anchor="middle" class="tiny">pedrera</text>
+    <path d="M710,434 C730,414 752,454 774,434 C796,414 818,454 845,434" class="water"/>
+    <text x="777" y="476" text-anchor="middle" class="tiny">riu</text>
+    <rect x="945" y="397" width="92" height="58" fill="url(#orchardPattern)" stroke="#365b6d" stroke-width="2"/>
+    <text x="991" y="476" text-anchor="middle" class="tiny">fruiters</text>
+  </g>
+
+  <text x="590" y="680" text-anchor="middle" class="small">Figura d'elaboració pròpia. Els exemples són esquemàtics: un símbol pot combinar semblança, convenció i decisió gràfica segons el mapa.</text>
+</svg>

@@ -855,6 +855,10 @@ https://www.ign.es/wms-inspire/pnoa-ma
 
 ![Ortofoto PNOA de la Facultat de Turisme i Geografia]({{ site.baseurl }}/assets/img/data-sources/pnoa-facultat-turisme-geografia.jpg "La petició WMS retorna una imatge concreta de l'entorn de la Facultat de Turisme i Geografia; si canvien capa, extensió, mida o sistema de referència, canvia també el resultat. Font: IGN/CNIG, PNOA màxima actualitat, CC BY 4.0, consulta de l'11 d'agost de 2026.")
 
+La mateixa facultat també es pot observar amb una fotografia aèria obliqua feta durant la seva construcció. La comparació ajuda a separar dues funcions diferents de la imatge territorial: l'obliqua conserva una percepció més intuïtiva de volums, façanes, pendents i relacions visuals entre edificis, camins i espais oberts; l'ortofoto, en canvi, corregeix la perspectiva per aproximar-se a una vista zenital i pot servir millor com a fons cartogràfic per localitzar, digitalitzar o comparar geometries. Una fotografia obliqua pot ser excel·lent per interpretar un lloc, però no s'ha de tractar com si tingués escala uniforme a tota la imatge.
+
+![Fotografia aèria obliqua de la Facultat de Turisme i Geografia durant la construcció d'un dels seus edificis]({{ site.baseurl }}/assets/img/aerial-photography/oblique-aerial-photography-ftg.png "La vista obliqua mostra façanes, volums i context immediat amb una lectura més propera a l'observació humana, però introdueix perspectiva i ocultacions. Llicència: pendent de revisar."){: data-figure-width="44rem"}
+
 ## Introducció als fulls de càlcul
 
 Quan les dades ja s'han localitzat i obtingut, comença una feina menys visible però decisiva: preparar-les perquè puguin respondre la pregunta. El primer entorn de treball serà el full de càlcul perquè combina una taula, un llenguatge de fórmules i una interfície visual. Permet inspeccionar les dades directament, provar una operació i veure'n el resultat sense construir primer un programa complet. Aquesta immediatesa el fa adequat per començar a treballar amb taules territorials de volum moderat, però també pot afavorir canvis manuals difícils de reconstruir si el llibre no s'organitza amb criteri.

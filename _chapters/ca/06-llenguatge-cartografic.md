@@ -1,7 +1,7 @@
 ---
 layout: manual-chapter
 title: Llenguatge cartogràfic
-description: Fotografia aèria, ortofotos, escala, orientació, llegenda, retolació, generalització, jerarquia i composició del mapa.
+description: Productes cartogràfics, escala, generalització, fotografia aèria, ortofotos, orientació, llegenda, retolació, jerarquia i composició del mapa.
 lang: ca
 ref: manual-cartographic-language
 profiles: [unaltremanual]
@@ -14,7 +14,7 @@ manual_references: true
 
 Un mapa no és una taula acolorida ni un gràfic col·locat sobre un territori. La posició de les entitats ve determinada per la geografia, i l'escala, la selecció i la generalització condicionen què pot mostrar-se. Aquest capítol aplica al mapa els criteris de semiologia i color treballats abans i prepara l'entrada sistemàtica a QGIS i a la cartografia temàtica. Les decisions cartogràfiques no són neutres: seleccionar, ometre, projectar, classificar i jerarquitzar condiciona el missatge que rep el lector {% cite jolyCartografia1982 monmonierHowLieMaps2018 %}.
 
-## Què fa que una representació sigui un mapa
+## Productes cartogràfics i funció del mapa
 
 ### Posició geogràfica i relacions espacials
 
@@ -22,15 +22,18 @@ La proximitat, la continuïtat, la forma i el veïnatge tenen significat territo
 
 En un gràfic de barres, els municipis es poden ordenar de més a menys per facilitar una comparació. En un mapa, cada municipi ha de mantenir la posició, la forma i el contacte amb els veïns. Aquesta restricció redueix la precisió d'algunes comparacions quantitatives, però permet observar continuïtats, agrupacions i contrastos territorials que la taula no mostra.
 
-### Planimetria i altimetria
+### Mapes de referència, temàtics i turístics
 
-La **planimetria** representa elements en posició horitzontal, com límits, nuclis, carreteres, costa o hidrografia. L'**altimetria** descriu el relleu mitjançant cotes, corbes de nivell, ombrejat o tintes hipsomètriques. Totes dues poden proporcionar context, però el seu nivell de detall ha de respondre al propòsit del mapa.
+Cada producte cartogràfic selecciona informació diferent. Un mapa turístic pot orientar, localitzar recursos o comunicar una anàlisi, i aquestes funcions no exigeixen la mateixa composició. Abans de discutir escala, relleu, llegenda o retolació, cal saber quin paper tindrà el mapa dins del treball.
 
-En el mapa comarcal, els límits i alguns topònims ajuden a localitzar els municipis. Un relleu detallat o una xarxa viària completa podrien competir amb aquesta funció. Només s'incorporaran si aporten una referència necessària per interpretar la localització; altrament, s'ometran com a part de la generalització.
-
-El relleu és especialment delicat perquè pot donar molta estructura visual sense formar part de la variable principal. Les cotes aporten valors puntuals; les corbes de nivell mostren forma i pendent; l'ombrejat fa intuïtiu el volum, però pot semblar una font de llum real; i les tintes hipsomètriques ordenen rangs d'altura, però introdueixen una paleta que pot competir amb una coropleta. En un mapa temàtic municipal, l'altimetria només s'ha d'afegir si ajuda a explicar un patró territorial, com una diferència entre litoral i interior, i no només perquè el mapa sembli més complet.
-
-![Quatre recursos per representar altimetria: cotes, corbes de nivell, ombrejat i tintes hipsomètriques]({{ site.baseurl }}/assets/img/cartographic-language/relief-representation-methods.svg "El relleu pot orientar la lectura o competir amb la variable principal; cotes, corbes, ombrejat i tintes hipsomètriques no comuniquen exactament la mateixa informació. Figura d'elaboració pròpia, 14 d'agost de 2026."){: data-figure-width="54rem"}
+::: table "Funció del mapa i informació prioritària"
+| Tipus | Pregunta principal | Informació prioritària | Risc habitual |
+| --- | --- | --- | --- |
+| Referència | On és cada element? | Xarxa, poblament, relleu, límits i topònims | Acumular més detall del que permet l'escala |
+| Temàtic | Com es distribueix una variable? | Patró de l'indicador, unitats territorials i llegenda | Fer que el context competeixi amb la variable |
+| Localització | On se situa el territori d'estudi? | Extensió, entorn i jerarquia territorial | Convertir el requadre en un segon mapa complex |
+| Turístic d'orientació | Com s'arriba als recursos i serveis? | Itineraris, accessos, punts d'interès i referències útils | Confondre promoció, orientació i anàlisi |
+:::
 
 ## De la fotografia aèria al mapa
 
@@ -107,32 +110,31 @@ Una exploració guiada pot partir d'aquest [panorama de l'entorn sud-est del nuc
 
 Les directrius de Google permeten consultar i incrustar Street View mitjançant les eines proporcionades, però prohibeixen publicar-ne captures fixes, utilitzar-les en llibres o manuals i extreure'n dades per digitalització o anàlisi automatitzada. Per això el manual enllaça el panorama viu i no reprodueix una parella de captures. Les observacions serviran per formular hipòtesis qualitatives, que s'hauran de contrastar amb ortofotos oficials, cartografia, planejament o treball de camp abans d'afirmar un canvi {% cite googleGeoGuidelines2026 %}.
 
-### Mapes de referència, temàtics i turístics
-
-Cada tipus de mapa selecciona informació diferent. Un mapa turístic pot orientar, localitzar recursos o comunicar una anàlisi, i aquestes funcions no exigeixen la mateixa composició.
-
-::: table "Funció del mapa i informació prioritària"
-| Tipus | Pregunta principal | Informació prioritària | Risc habitual |
-| --- | --- | --- | --- |
-| Referència | On és cada element? | Xarxa, poblament, relleu, límits i topònims | Acumular més detall del que permet l'escala |
-| Temàtic | Com es distribueix una variable? | Patró de l'indicador, unitats territorials i llegenda | Fer que el context competeixi amb la variable |
-| Localització | On se situa el territori d'estudi? | Extensió, entorn i jerarquia territorial | Convertir el requadre en un segon mapa complex |
-| Turístic d'orientació | Com s'arriba als recursos i serveis? | Itineraris, accessos, punts d'interès i referències útils | Confondre promoció, orientació i anàlisi |
-:::
-
 ## Escala i generalització
 
 ### Escala numèrica i gràfica
 
 L'**escala cartogràfica** relaciona una distància representada al mapa amb la distància corresponent al territori i limita el detall que es pot llegir. A escala `1:100 000`, una unitat al mapa representa cent mil unitats al territori: un centímetre equival a un quilòmetre. Aquesta relació només és interpretable quan es coneixen la mida i el suport finals.
 
-La distinció entre **escala gran** i **escala petita** pot resultar contraintuïtiva perquè es refereix al valor de la fracció, no a la mida del territori representat. `1:5 000` és una escala més gran que `1:100 000` perquè una unitat del mapa representa menys unitats del terreny i, per tant, pot mostrar més detall. Un plànol urbà és habitualment de gran escala; un mapa provincial o estatal és de petita escala. Dir que un mapa és “gran” perquè cobreix molta superfície és ambigu i s'ha d'evitar en la justificació cartogràfica.
+>> **Gran i petita descriuen la fracció.** Una escala `1:5 000` és més gran que `1:100 000` perquè la fracció `1/5 000` té més valor que `1/100 000`. En cartografia, «gran» no descriu ni el denominador ni l'extensió del territori, sinó la relació entre mapa i realitat: com més gran és l'escala, més detall pot mantenir el mapa en una mateixa mida final.
 
 La mida final d'exportació forma part de la decisió. Ampliar el zoom de QGIS no augmenta l'espai disponible a la pàgina, i reduir posteriorment un mapa pot fer il·legibles etiquetes, traços i símbols. L'escala s'ha de comprovar dins de la composició, a la mida de publicació.
 
 L'escala gràfica manté la relació visual quan el document es redimensiona proporcionalment; l'escala numèrica deixa de ser certa si la pàgina s'amplia o es redueix. En tots dos casos, el marc de mapa i el CRS del projecte han de permetre interpretar les distàncies correctament.
 
 Una escala verbal, com “mapa de detall municipal” o “mapa de context provincial”, pot ajudar el lector general, però no substitueix l'escala numèrica o gràfica quan s'han de comprovar distàncies. En el treball del curs, l'escala s'ha de registrar juntament amb la mida final de la peça, perquè la mateixa composició exportada a una pàgina A4 o a una diapositiva no ofereix la mateixa lectura.
+
+### Escales mètriques i escales en graus
+
+Les equivalències d'una escala només són segures quan les unitats que es comparen són compatibles. En una composició projectada en metres, com ETRS89 / UTM 31N per a Catalunya, la barra d'escala pot expressar quilòmetres o metres perquè el sistema de coordenades ja treballa amb unitats lineals. En un sistema geogràfic, en canvi, les coordenades s'expressen en graus de latitud i longitud; un grau és una obertura angular sobre l'el·lipsoide, no una distància fixa sobre el mapa.
+
+El recordatori geomètric és important. Les línies de latitud són **paral·lels** perquè envolten la Terra en plans paral·lels a l'equador i no s'intersequen entre elles. Les línies de longitud són **meridians**: uneixen els dos pols i tots coincideixen en aquests punts. Per això un grau de latitud es mesura com un arc nord-sud sobre un meridià, mentre que un grau de longitud es mesura com un arc est-oest sobre un paral·lel. Com més petit és el paral·lel, més curta és la distància corresponent al mateix angle de longitud.
+
+La latitud i la longitud tampoc no es comporten igual. Un grau de latitud no val exactament sempre el mateix, perquè depèn de l'el·lipsoide i de la latitud, però la variació és petita: se situa al voltant de 111 km i pot usar-se com a aproximació docent. Un grau de longitud, en canvi, s'escurça molt cap als pols: prop de l'equador s'aproxima als 111 km, a la latitud del Camp de Tarragona, al voltant de 41° N, baixa a uns 84 km, i a 60° N és d'uns 56 km. Per això una retícula en graus no pot llegir-se com una regla mètrica uniforme. Si el mapa necessita mesurar recorreguts, àrees o zones d'influència, cal treballar amb un CRS projectat adequat a l'àrea i a l'ús, o documentar explícitament el mètode geodèsic emprat {% cite snyderMapProjections1987 vanSickleBasicGISCoordinates2017 %}.
+
+![Esquema que compara escala numèrica, verbal i gràfica, i recorda que els graus de latitud es mesuren sobre meridians mentre que els graus de longitud es mesuren sobre paral·lels cada vegada més curts cap als pols]({{ site.baseurl }}/assets/img/cartographic-language/scale-types-and-degree-units.svg "Les formes habituals de l'escala poden ser equivalents en un mapa mètric, però una retícula en graus no és una regla uniforme: els paral·lels no s'intersequen, els meridians convergeixen als pols i la distància associada a un grau de longitud depèn de la latitud. Figura d'elaboració pròpia, 17 d'agost de 2026."){: data-figure-width="54rem"}
+
+>>>> **Una escala en graus no és una escala en metres.** Si una capa o una captura mostra coordenades en graus, no s'han de calcular distàncies multiplicant graus per metres sense revisar la latitud, la projecció i el mètode de mesura. En QGIS, abans de confiar en una barra d'escala o en una mesura directa, cal comprovar el CRS del projecte i de les capes; per a treballs locals a Catalunya, un CRS projectat en metres acostuma a ser més adequat que una visualització en latitud i longitud.
 
 ### Càlculs d'escala
 
@@ -303,6 +305,10 @@ La **generalització cartogràfica** adapta la informació a l'escala i al prop�
 
 Una mateixa geometria municipal es pot observar en una composició provincial, comarcal o local. A l'escala provincial interessa la forma general i la situació de la comarca; a l'escala comarcal es poden distingir els municipis; a una escala local pot ser necessari incorporar carreteres, nuclis o altres elements. Mostrar el mateix detall en els tres casos produeix soroll o una falsa sensació de precisió.
 
+El canvi d'escala no és només reduir una imatge. Si tres mapes ocupen la mateixa mida de paper o de pantalla, el mapa d'escala més petita cobreix molt més territori dins del mateix marc. Això comprimeix carrers, parcel·les, topònims i petits polígons fins que deixen de ser llegibles. La generalització comença aquí: abans de decidir quina operació concreta s'aplica, cal entendre quina informació encara pot funcionar a la nova escala.
+
+![Tres mapes de la mateixa mida final a escala local, comarcal i regional, amb menys detall i més simbolització a mesura que l'extensió representada creix]({{ site.baseurl }}/assets/img/cartographic-language/generalization-three-scales.svg "La generalització és una resposta al canvi d'escala: la mateixa mida de sortida cobreix extensions reals diferents i obliga a seleccionar, simplificar, agregar o simbolitzar el detall. Figura d'elaboració pròpia, 17 d'agost de 2026."){: data-figure-width="54rem"}
+
 #### Decidir què es conserva
 
 La generalització pot seleccionar els elements necessaris, simplificar formes massa detallades, combinar categories, desplaçar símbols que se superposen o exagerar elements que desapareixerien. Cada operació ha de conservar la funció territorial del mapa. En el mapa de context del projecte, els municipis i la comarca són essencials; una xarxa viària exhaustiva o una ortofoto detallada no ho són.
@@ -315,17 +321,82 @@ La decisió s'ha de revisar al 100% de la mida d'exportació. Si un detall nomé
 
 #### Àrea mínima cartografiable
 
-L'**àrea mínima cartografiable** és la superfície més petita que es pot representar de manera llegible i significativa a una escala i una mida de sortida determinades. No és una propietat absoluta de la font, sinó una relació entre detall, suport i funció. Una capa pot contenir polígons petits perfectament reals, però si a la composició final ocupen una taca imperceptible, el lector no els podrà distingir ni interpretar.
+L'**àrea mínima cartografiable** és la superfície més petita que es pot representar de manera llegible i significativa a una escala i una mida de sortida determinades. També pot aparèixer com a **unitat mínima cartogràfica** o, en anglès, *minimum mapping unit* (**MMU**). No és una propietat absoluta de la font, sinó una relació entre detall, suport i funció. Una capa pot contenir polígons petits perfectament reals, però si a la composició final ocupen una taca imperceptible, el lector no els podrà distingir ni interpretar. L'AMC no diu que l'element no existeixi; diu que aquest mapa concret no el pot mostrar com una unitat superficial independent sense enganyar la lectura.
 
-La decisió pot resoldre's de tres maneres. Si l'element és secundari, s'omet. Si forma part d'una categoria més gran, s'agrupa. Si és essencial per al missatge, es pot exagerar o representar amb un símbol, però llavors cal acceptar que la mida ja no correspon exactament a la superfície real. En tots els casos, la generalització ha d'estar justificada per la lectura final i no per la comoditat del programa.
+El llindar perceptiu és una pista important, però no és tota la decisió. En condicions ideals, l'ull humà pot separar detalls molt petits; en cartografia, però, no es tracta només de detectar una ratlla, sinó de reconèixer una forma, distingir-la del contorn veí, associar-la a una llegenda i llegir-la dins d'una composició carregada. Les guies de dimensions mínimes cartogràfiques acostumen a moure's al voltant de $0{,}2\mm$ per a separacions o traços bàsics a una distància de lectura d'uns $30\cm$, i recomanen valors més grans quan cal discriminar símbols, colors, textos o àrees. Un valor com $0{,}02\mm$ és massa petit per decidir l'AMC d'un mapa publicat: pot tenir sentit com a ordre de reproducció tècnica o de resolució instrumental, però no com a criteri docent de llegibilitat cartogràfica {% cite ledermannMinimumDimensionsCartographic2023 %}.
+
+El càlcul comença sempre en la mida final del mapa. Si s'adopta una dimensió mínima $d_m$ en mil·límetres sobre el paper o sobre l'exportació, i l'escala és $1:n$, la dimensió real equivalent és:
+
+$$
+D_r = \frac{d_m \cdot n}{1\,000}
+$$
+
+on $D_r$ queda expressada en metres. Si el criteri és un quadrat mínim de costat $d_m$, l'àrea real equivalent és:
+
+$$
+A_r = \left(\frac{d_m \cdot n}{1\,000}\right)^2
+$$
+
+Si el criteri ja es defineix com una superfície mínima sobre el mapa, $a_m$, expressada en $\mm^2$, la conversió directa a hectàrees és:
+
+$$
+A_{r,ha} = \frac{a_m \cdot n^2}{10^{10}}
+$$
+
+La diferència entre un llindar gràfic i una AMC realista es veu de seguida. A escala $1:50\,000$, una separació de $0{,}2\mm$ equival a $10\m$ sobre el terreny, però això només indica una mida perceptiva elemental. Si es vol que un polígon temàtic tingui una taca prou clara, un criteri de $5\mm \times 5\mm$ equival a $250\m \times 250\m$, és a dir, $6{,}25\hectare$. Amb $6\mm \times 6\mm$, l'AMC puja a $9\hectare$.
+
+::: table "De la mida gràfica a l'àrea mínima sobre el terreny"
+| Criteri sobre el mapa final | Lectura prudent | A $1:50\,000$ | A $1:100\,000$ |
+| --- | --- | --- | --- |
+| $0{,}2\mm \times 0{,}2\mm$ | Llindar gràfic elemental; no és una AMC per a polígons | $10\m$ de costat; $0{,}01\hectare$ | $20\m$ de costat; $0{,}04\hectare$ |
+| $1\mm \times 1\mm$ | Taca molt petita, útil només si el mapa és net i l'element és simple | $50\m$ de costat; $0{,}25\hectare$ | $100\m$ de costat; $1\hectare$ |
+| $5\mm \times 5\mm$ | Criteri conservador per a polígons temàtics llegibles | $250\m$ de costat; $6{,}25\hectare$ | $500\m$ de costat; $25\hectare$ |
+| $6\mm \times 6\mm$ | Criteri encara més prudent quan cal delinear bé taques petites | $300\m$ de costat; $9\hectare$ | $600\m$ de costat; $36\hectare$ |
+:::
+
+En cartografia professional, aquesta decisió acostuma a quedar fixada en les especificacions del producte o en les metadades: escala de publicació, mida de sortida, tipus de lector, densitat d'informació, contrast, símbols i AMC adoptada. Després es treballa sobre una capa de sortida, sense destruir la font detallada. Els polígons per sota del llindar es poden eliminar si són secundaris, dissoldre amb unitats veïnes, agregar dins d'una classe més general, simplificar si el problema és només l'excés de vèrtexs, o substituir per un símbol puntual si són essencials per al missatge. En un mapa digital amb diversos nivells de zoom, no hi ha una sola AMC per a tot el visor: cada nivell d'escala necessita la seva pròpia regla de visibilitat i generalització.
+
+La decisió, per tant, pot resoldre's de tres maneres principals. Si l'element és secundari, s'omet. Si forma part d'una categoria més gran, s'agrupa. Si és essencial per al missatge, es pot exagerar o representar amb un símbol, però llavors cal acceptar que la mida ja no correspon exactament a la superfície real. En tots els casos, la generalització ha d'estar justificada per la lectura final i no per la comoditat del programa.
 
 ![Comparació entre una font detallada i un mapa publicat en què els polígons massa petits s'ometen, s'agrupen o s'exageren si són essencials]({{ site.baseurl }}/assets/img/cartographic-language/minimum-mapping-unit.svg "L'àrea mínima cartografiable recorda que un detall pot existir a la font i no ser llegible a la mida final; generalitzar significa decidir com conservar el sentit del mapa. Figura d'elaboració pròpia, 14 d'agost de 2026."){: data-figure-width="54rem"}
+
+## Informació de base i relleu
+
+### Planimetria i altimetria
+
+Un cop fixada la funció del mapa i l'escala de treball, es pot decidir quina informació de base ajuda a llegir el territori. La **planimetria** representa elements en posició horitzontal, com límits, nuclis, carreteres, costa o hidrografia. L'**altimetria** descriu el relleu mitjançant cotes, corbes de nivell, ombrejat o tintes hipsomètriques. Totes dues poden proporcionar context, però el seu nivell de detall ha de respondre al propòsit del mapa.
+
+En el mapa comarcal, els límits i alguns topònims ajuden a localitzar els municipis. Un relleu detallat o una xarxa viària completa podrien competir amb aquesta funció. Només s'incorporaran si aporten una referència necessària per interpretar la localització; altrament, s'ometran com a part de la generalització.
+
+El relleu és especialment delicat perquè pot donar molta estructura visual sense formar part de la variable principal. Les cotes aporten valors puntuals; les corbes de nivell mostren forma i pendent; l'ombrejat fa intuïtiu el volum, però pot semblar una font de llum real; i les tintes hipsomètriques ordenen rangs d'altura, però introdueixen una paleta que pot competir amb una coropleta. En un mapa temàtic municipal, l'altimetria només s'ha d'afegir si ajuda a explicar un patró territorial, com una diferència entre litoral i interior, i no només perquè el mapa sembli més complet.
+
+![Quatre recursos per representar altimetria: cotes, corbes de nivell, ombrejat i tintes hipsomètriques]({{ site.baseurl }}/assets/img/cartographic-language/relief-representation-methods.svg "El relleu pot orientar la lectura o competir amb la variable principal; cotes, corbes, ombrejat i tintes hipsomètriques no comuniquen exactament la mateixa informació. Figura d'elaboració pròpia, 14 d'agost de 2026."){: data-figure-width="54rem"}
+
+### Corbes de nivell i formes del relleu
+
+Una **corba de nivell** uneix punts que tenen la mateixa altitud. En un mapa topogràfic, aquestes línies acostumen a dibuixar-se en color sèpia o marró perquè el relleu quedi diferenciat de la hidrografia, la vegetació, els camins i la retolació. Les **corbes mestres** apareixen més gruixudes i sovint etiquetades amb la cota; serveixen per no perdre el recompte vertical. Entre dues corbes mestres hi ha corbes normals o intermèdies, separades per una **equidistància** constant que cal llegir a la llegenda del mapa. Si l'equidistància és de 10 m, cada corba normal representa un canvi de 10 m d'altitud; si és de 20 m, el salt és de 20 m. La distància visual entre línies, en canvi, no és l'equidistància: quan les corbes estan molt juntes el pendent és més fort, i quan s'allunyen el pendent és més suau.
+
+La forma de les corbes també informa sobre el drenatge. En un barranc o una vall, les corbes tendeixen a entrar cap amunt en forma de `V` o de `U`: el terreny és còncau i el flux d'aigua es concentra cap a l'eix de la depressió. En una cresta o un esperó, la forma s'obre cap avall i el terreny és convex: l'aigua es dispersa cap als dos vessants. Aquesta lectura no substitueix una xarxa hidrogràfica ni un model digital d'elevacions, però permet reconèixer lògiques bàsiques del relleu abans d'afegir més capes.
+
+El retall següent mostra l'entorn de l'Estany de Montcortès en cartografia topogràfica de l'ICGC. La convenció cromàtica ajuda a separar les corbes de nivell sèpia, la hidrografia blava, les masses de vegetació verdes, les vies grises i els topònims {% cite icgcServeiMapaBase2026 %}.
+
+![Retall topogràfic de l'Estany de Montcortès amb corbes de nivell, cotes, hidrografia, vegetació i topònims]({{ site.baseurl }}/assets/img/cartographic-language/contour-lines-montcortes.png "Retall topogràfic de l'entorn de l'Estany de Montcortès. Font cartogràfica: Institut Cartogràfic i Geològic de Catalunya, cartografia topogràfica de Catalunya. Llicència: pendent de revisar."){: data-figure-width="54rem"}
+
+>>> **Estimar l'altitud de l'Estany de Montcortès.** Per llegir l'altitud de l'estany no n'hi ha prou amb mirar el color blau de l'aigua. Primer cal identificar una corba mestra propera, com la de `1.050 m`, deduir l'equidistància entre corbes i comptar cap a la riba. Si la làmina d'aigua queda entre dues corbes consecutives, el mapa només permet afirmar un interval: l'altitud és més alta que la corba inferior i més baixa que la corba superior. Un valor com `1.030 m` pot ser una estimació raonada si la lectura de les corbes porta a aquest entorn, però no s'ha de presentar com una dada exacta obtinguda del mapa. L'altitud que el mapa declara directament, sempre dins de la precisió de la font, només correspon a una cota puntual, una consulta altimètrica documentada o els punts pels quals passa una corba de nivell concreta; entre dues corbes, el relleu s'interpreta dins d'un rang.
 
 ## Elements del mapa
 
 ### Títol i subtítol
 
 El títol ha d'identificar el propòsit, la variable o el territori i, quan sigui necessari, el període o la unitat. No ha de repetir literalment tota la llegenda. En un mapa de context pot ser suficient «El Tarragonès dins de la província de Tarragona»; en un mapa temàtic caldrà identificar també l'indicador i l'any.
+
+### Símbols cartogràfics i convencions
+
+Els símbols cartogràfics apliquen les variables visuals sobre tres formes d'implantació: puntual, lineal i superficial. Un allotjament, un museu o una estació poden aparèixer com a símbols puntuals; una carretera, un itinerari o un riu, com a símbols lineals; i un municipi, una zona urbana o una coberta del sòl, com a símbols superficials. Aquesta implantació no és només una qüestió geomètrica: condiciona quina variable visual serà llegible. La mida funciona d'una manera en un cercle puntual, d'una altra en l'amplada d'una línia i d'una altra en una àrea de color.
+
+La relació entre el signe i el fenomen també pot variar. Un símbol **arbitrari** no s'assembla al que representa i necessita una llegenda clara. Un símbol **associatiu** aprofita algun tret recognoscible, com una forma, un color o una textura que evoca el fenomen. Un símbol **convencional** depèn d'un acord compartit, sovint repetit en sèries cartogràfiques, institucions o pràctiques professionals. En la pràctica, molts símbols combinen aquestes tres dimensions: el blau d'un riu és associatiu perquè recorda l'aigua, però també és convencional perquè el lector l'ha après en molts mapes.
+
+![Esquema de símbols cartogràfics arbitraris, associatius i convencionals aplicats a implantació puntual, lineal i superficial]({{ site.baseurl }}/assets/img/cartographic-language/map-symbols-relationships.svg "Els símbols poden ser arbitraris, associatius o convencionals, i aquesta relació funciona de manera diferent segons si la implantació és puntual, lineal o superficial. Figura d'elaboració pròpia, 17 d'agost de 2026."){: data-figure-width="54rem"}
 
 ### Llegenda
 
@@ -343,9 +414,24 @@ L'orientació no és només una fletxa decorativa. El **nord geogràfic** apunta
 
 Un mapa pot estar rotat per aprofitar millor el suport, seguir una costa, adaptar-se a un recorregut turístic o encaixar en una composició. Aquesta decisió és legítima si no desorienta el lector. Com més s'allunyi la composició de l'orientació convencional al nord, més necessari serà indicar l'orientació i proporcionar referències suficients. En canvi, repetir una rosa dels vents en cada mapa petit d'una infografia pot afegir soroll si tots els marcs comparteixen una orientació evident.
 
+::: subfigures a+b/c+d "Orientar un mapa és una decisió de llenguatge cartogràfic. La subfigura a mostra la diferència entre nord geogràfic, nord de quadrícula i nord magnètic; la subfigura b recorda que una fletxa del nord també és un símbol gràfic que cal triar amb contenció; la subfigura c mostra un mapa de Catalunya sense fletxa explícita, però amb retícula, coordenades i una convenció nord-amunt prou clares; la subfigura d capgira deliberadament el mapamundi convencional i, per això, necessita fer visible l'orientació. Llicència: pendent de revisar."
+![Esquema tècnic amb nord geogràfic, nord de quadrícula, nord magnètic, convergència i declinació]({{ site.baseurl }}/assets/img/cartographic-language/north-types.png "Tipus de nord en un full cartogràfic tècnic")
+![Diverses formes gràfiques de fletxes del nord i roses dels vents]({{ site.baseurl }}/assets/img/cartographic-language/graphic-north-types.png "Repertori gràfic de símbols d'orientació")
+![Mapa de Catalunya sense fletxa del nord explícita, però amb retícula i coordenades]({{ site.baseurl }}/assets/img/cartographic-language/catalonia-without-north.png "Mapa de Catalunya sense fletxa del nord")
+![Mapamundi de McArthur amb orientació sud-amunt i rosa dels vents visible]({{ site.baseurl }}/assets/img/cartographic-language/mcarthur-corrective-projection.png "Mapamundi de McArthur amb orientació sud-amunt")
+:::
+
+>>>> **No confongueu absència de fletxa amb absència d'orientació.** En un mapa nord-amunt, sense rotació i amb retícula, costa, topònims o marc territorial fàcilment recognoscibles, ometre la fletxa pot ser una decisió correcta. En un mapa rotat, en una ruta, en una composició turística poc convencional o en un producte que serveixi per orientar-se físicament sobre el terreny, cal indicar l'orientació de manera explícita. Si el treball depèn d'una brúixola, d'una quadrícula o de navegació, també cal precisar quin nord s'està utilitzant.
+
 ### Retolació
 
 La **retolació** selecciona, jerarquitza i col·loca noms i altres textos perquè identifiquin elements geogràfics sense ambigüitat. Inclou topònims, valors puntuals, anotacions, unitats, textos de llegenda i crèdits breus. No és una capa decorativa que s'afegeix al final: forma part del llenguatge del mapa i pot confirmar o desfer la jerarquia construïda amb símbols i colors. Les etiquetes no han de competir amb la variable principal. Tipografia, mida, posició, espaiament, contrast i ús d'halo formen part de la decisió; per això la retolació s'ha de revisar en la mida final i no només dins de la interfície de QGIS {% cite brewerDesigningBetterMaps2005 %}.
+
+La jerarquia tipogràfica es pot entendre abans de mirar cap mapa. Un rètol comercial de carrer, per exemple, no reparteix l'atenció de manera neutral: una paraula domina per mida, color, pes i contrast; altres línies expliquen la condició de l'oferta, la marca o el detall secundari; i alguns textos queden deliberadament en un nivell molt baix. El mecanisme és el mateix que després cal disciplinar en cartografia. El lector no llegeix totes les paraules alhora, sinó que entra per un nivell dominant i continua per nivells més petits si necessita més informació.
+
+![Rètol comercial de carrer amb una jerarquia tipogràfica molt marcada per mida, pes, color, posició i contrast]({{ site.baseurl }}/assets/img/cartographic-language/typographic-hierarchy.png "La jerarquia tipogràfica guia l'ordre de lectura: mida, pes, color, majúscules, posició i contrast indiquen què s'ha de veure primer i què queda com a informació secundària. Llicència: pendent de revisar."){: data-figure-width="44rem"}
+
+En un mapa, aquesta força s'ha d'utilitzar amb més contenció. Una etiqueta massa gran pot fer semblar més important una població, un accident geogràfic o un país; una cursiva pot suggerir hidrografia o relleu; un color blau pot associar-se a aigua; una majúscula espaiada pot fer llegir un mar, una serralada o una regió com una superfície. Cap d'aquests recursos és innocent. Quan es combinen bé, permeten que mars i oceans, estats, regions, ciutats, accidents físics i elements puntuals formin una jerarquia llegible sense necessitat d'explicar cada nivell amb una llegenda.
 
 #### Topònims i formes oficials
 
@@ -356,6 +442,12 @@ Els noms també informen sobre el territori. Poden indicar relleu, hidrografia, 
 #### Prioritat dels topònims
 
 No tots els noms tenen la mateixa funció. El nom de la comarca, els municipis del territori d'estudi, els municipis veïns, els rius, les vies principals i les referències externes poden formar nivells jeràrquics diferents. La prioritat s'ha de definir abans de reduir la tipografia: quan no hi ha espai, primer s'eliminen o se simplifiquen els noms secundaris. Una jerarquia clara pot combinar mida, pes, estil, color i espaiament, però no ha d'utilitzar tots aquests recursos alhora.
+
+La jerarquia no s'ha de confondre amb una simple llista de cossos de lletra. En un mapa de referència a escala regional, els nivells poden començar pels grans espais marins o continentals, continuar pels països o unitats polítiques principals, baixar a illes, regions i ciutats destacades, i acabar en localitats menors, caps, badies, relleu, carreteres o cotes. La pregunta de revisió és doble: quin nivell ha de percebre el lector primer, i quin recurs tipogràfic fa possible aquesta prioritat sense tapar els altres?
+
+![Fragment de mapa de Xipre i el Mediterrani oriental amb diversos nivells de retolació: mar, illa, països, ciutats, caps, badies, relleu i xarxa viària]({{ site.baseurl }}/assets/img/cartographic-language/map-labels-eg-2.png "El fragment permet analitzar com mida, majúscules, minúscules, cursiva, color, pes, espaiament, orientació i posició creen nivells de lectura en la retolació cartogràfica. Llicència: pendent de revisar."){: data-figure-width="48rem"}
+
+>>> **Analitzar la jerarquia de la retolació.** Sobre el mapa anterior, ordeneu els nivells de retolació de més a menys presència visual. Comenceu pels grans espais, com mars i oceans, i continueu amb països, illes, ciutats, elements costaners, relleu, vies o altres categories que hi reconegueu. Per a cada nivell, descriviu què fa que destaqui més o menys: mida, majúscules, pes, color, cursiva, espaiament, orientació, halo, proximitat a l'element o relació amb el fons. La resposta no ha de ser només una llista de noms; ha d'explicar quin sistema de prioritats construeix el mapa.
 
 ::: table "Criteris de retolació cartogràfica"
 | Element | Criteri principal | Risc habitual |
@@ -410,7 +502,7 @@ El procediment general serà aquest:
 3. ordenar i estilitzar les capes perquè la comarca domini i el context quedi en segon terme;
 4. configurar l'etiquetatge municipal i resoldre els conflictes a la mida final;
 5. afegir un segon marc provincial només si millora la localització;
-6. completar títol, escala, fonts i crèdits després d'estabilitzar els marcs;
+6. completar títol, escala, orientació, fonts i crèdits després d'estabilitzar els marcs;
 7. exportar una prova, obrir-la fora de QGIS i corregir la composició editable abans de generar la versió conservada.
 
 ### Construir el mapa principal
@@ -425,20 +517,21 @@ Un requadre més petit podrà mostrar la comarca destacada dins de la província
 
 ### Completar i exportar la composició
 
-El títol, la llegenda si és necessària, l'escala, les fonts i els crèdits s'afegiran després d'estabilitzar el mapa. El CRS del projecte es comprovarà abans de confiar en la barra d'escala. La composició es revisarà a mida real i s'exportarà en PDF vectorial a `outputs/maps`, sense substituir el projecte ni la composició editable.
+El títol, la llegenda si és necessària, l'escala, l'orientació, les fonts i els crèdits s'afegiran després d'estabilitzar el mapa. El CRS del projecte es comprovarà abans de confiar en la barra d'escala. La fletxa del nord només s'incorporarà si resol una ambigüitat: si el mapa principal i el requadre comparteixen una orientació convencional i evident, l'omissió també s'haurà de poder justificar. La composició es revisarà a mida real i s'exportarà en PDF vectorial a `outputs/maps`, sense substituir el projecte ni la composició editable.
 
 ### Comprovacions de qualitat
 
 Abans d'acceptar el mapa cal verificar que:
 
 1. hi apareixen tots els municipis previstos i cap territori exterior es confon amb la comarca;
-2. el CRS, l'extensió i la barra d'escala són coherents;
+2. el CRS, l'extensió i la barra d'escala són coherents, i cap coordenada en graus es presenta com una mesura mètrica directa;
 3. els límits municipals es poden seguir sense dominar visualment la pàgina;
-4. les etiquetes no presenten col·lisions ni associacions ambigües;
-5. el requadre de situació aporta una localització que el mapa principal no resol per si sol;
-6. la font, la versió, l'autoria i els crèdits es poden recuperar;
-7. els textos i traços continuen sent llegibles a la mida final;
-8. el PDF conserva vectors, tipografies i proporcions quan s'obre fora de QGIS; en obrir-lo a Inkscape, els límits i textos vectorials es poden ampliar sense pixelació i seleccionar com a objectes.
+4. l'orientació és evident o està indicada amb un símbol discret i coherent;
+5. les etiquetes no presenten col·lisions ni associacions ambigües;
+6. el requadre de situació aporta una localització que el mapa principal no resol per si sol;
+7. la font, la versió, l'autoria i els crèdits es poden recuperar;
+8. els textos i traços continuen sent llegibles a la mida final;
+9. el PDF conserva vectors, tipografies i proporcions quan s'obre fora de QGIS; en obrir-lo a Inkscape, els límits i textos vectorials es poden ampliar sense pixelació i seleccionar com a objectes.
 
 ### Evidències que s'han de conservar
 
@@ -448,5 +541,5 @@ Abans d'acceptar el mapa cal verificar que:
 | `qgis` | Projecte QGIS continuat | Capes, CRS, estils, etiquetes i composició editable |
 | `outputs/maps` | Mapa de context vectorial | Extensió final, topònims, escala funcional, fonts i crèdits |
 | `outputs/maps` | Comparació de retolació o escala | Alternativa automàtica i versió revisada a la mateixa mida |
-| `README.md` | Registre cartogràfic | Escala, mida final, detall omès, prioritats de retolació i decisió sobre el requadre |
+| `README.md` | Registre cartogràfic | Escala, mida final, detall omès, prioritats de retolació, decisió sobre orientació o fletxa del nord i decisió sobre el requadre |
 :::
