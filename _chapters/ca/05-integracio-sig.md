@@ -26,7 +26,7 @@ Les operacions de QGIS dels capítols anteriors formen part del mateix flux acum
 >>>>> - Executar consultes alfanumèriques a QGIS i interpretar-ne els resultats com a seleccions descriptives.
 >>>>> - Validar la unió amb recomptes, duplicats, coincidències, absències, contrastos manuals i comprovació espacial.
 
-## De la cartografia automatitzada als SIG actuals
+## Història i evolució dels sistemes d'informació geogràfica
 
 Els mapes, els censos i els inventaris territorials són molt anteriors als ordinadors. El canvi que va donar lloc als SIG no va consistir només a dibuixar mapes amb una màquina, sinó a representar la localització i els atributs de manera que es poguessin consultar, combinar i analitzar. Durant les dècades de 1950 i 1960, la geografia quantitativa, l'anàlisi espacial i els primers ordinadors van crear aquest entorn conceptual. El *Canada Geographic Information System*, desenvolupat per gestionar l'inventari de terres del Canadà durant els anys seixanta, se sol considerar una de les primeres implementacions de SIG a gran escala {% cite longleyGeographicInformationScience2015 %}.
 
@@ -84,7 +84,7 @@ QGIS ofereix eines de simbolització i composició suficients per produir mapes 
 
 >>>> **El retoc gràfic no pot corregir ni reescriure l'anàlisi espacial.** No s'han de moure municipis, punts o límits per fer-los encaixar; estirar el mapa; redibuixar geometries; canviar classes o valors; eliminar absències; alterar proporcions de símbols; ni conservar una escala gràfica després d'haver deformat la peça. Si cal modificar l'extensió, la projecció, la classificació, la simbologia, les etiquetes vinculades a dades o qualsevol geometria, la correcció s'ha de fer al projecte QGIS i s'ha de tornar a exportar. Inkscape serveix per compondre i acabar, no per trencar la correspondència entre dada i espai.
 
-## Del programa al mètode de treball
+## Flux de treball SIG revisable
 
 Un SIG universitari no s'aprèn només localitzant menús. El programa és necessari, però el criteri principal és saber construir una cadena de treball revisable. Abans d'una unió, cal saber quina taula aporta els indicadors, quina capa aporta les geometries i quin camp permet relacionar-les. Després de la unió, cal comprovar si el nombre d'entitats, les claus i els valors continuen tenint sentit. Entre una captura vistosa i un resultat defensable hi ha una diferència metodològica: la segona opció permet reconstruir com s'ha arribat al mapa.
 
@@ -129,7 +129,7 @@ Les capes descarregables permeten conservar una versió local, inspeccionar-ne l
 
 La procedència i les metadades s'han de conservar en tots els casos. Un servei pot canviar mantenint la mateixa adreça, i una capa local pot quedar descontextualitzada si se'n perd la data, la llicència o el sistema de referència. La base municipal validada al capítol 4 continuarà sent la geometria de treball del projecte.
 
-## Taules d'atributs
+## Estructura i consulta de les taules d'atributs
 
 ### Entitats, camps i tipus de dada
 
@@ -141,7 +141,7 @@ Abans de representar una variable cal saber inspeccionar els registres i localit
 
 La selecció respon una condició temporal dins del projecte; no modifica necessàriament les dades. Un filtre limita quines entitats es mostren o es processen, i una exportació crea un resultat nou. Cal distingir aquestes operacions per no confondre una vista parcial amb una capa que només conté la comarca.
 
-## Transferir la taula a QGIS
+## Importació de taules i creació de punts a QGIS
 
 ### Preparar la taula externa
 
@@ -225,7 +225,7 @@ La pràctica relaciona la geometria municipal validada amb els indicadors del ll
 >>>>> - Conservar dues consultes de QGIS amb l'expressió, el recompte i els codis municipals seleccionats.
 >>>>> - Mantenir `qgis/tigit_tarragones.qgz`, el CSV, la capa espacial i qualsevol GeoPackage derivat amb rutes relatives i funcions diferenciades.
 
-### Materials i resultats de treball
+### Entrades i resultats de la unió municipal
 
 Per al Tarragonès es continuarà `qgis/tigit_tarragones.qgz` amb `data/processed/municipis_tarragones_epsg25831.gpkg` quan s'hagi materialitzat al capítol 4 i amb el llibre únic, del qual es crearà o regenerarà `map_export` des dels fulls coherents `municipal` i `indicators`. La còpia de transferència serà `data/processed/municipal_indicators_tarragones_2021.csv` i inclourà codi i nom municipals, l'indicador relatiu seleccionat, població total i/o total d'habitatges. Els noms de comarca i any s'adaptaran al territori i al període del projecte.
 
@@ -271,7 +271,7 @@ Els noms i grups de capes han de permetre distingir la font original, la capa co
 
 El projecte s'ha de poder obrir i revisar sense perdre fitxers. S'utilitzarà el mateix `.qgz` iniciat al capítol 4, amb rutes relatives dins de la carpeta arrel. El CSV de transferència, la font espacial i qualsevol GeoPackage derivat conservaran ubicacions estables; no es crearà un segon projecte desconnectat per al mapa temàtic.
 
-#### Evidències que s'han de conservar
+### Evidències de la integració SIG
 
 ::: table "Evidències de la integració SIG"
 | Ubicació | Evidència | Contingut mínim |

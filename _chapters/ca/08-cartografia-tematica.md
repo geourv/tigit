@@ -319,9 +319,9 @@ La demostració guiada reprèn la unió municipal, el registre cromàtic i el ma
 >>>>> - Aplicar el registre cromàtic i reutilitzar el mapa de context amb una jerarquia visual coherent.
 >>>>> - Revisar la llegenda, les fonts, l'accessibilitat i l'SVG a la mida prevista per a la miniinfografia.
 
-### Materials i resultats de treball
+### Entrades i mapes temàtics resultants
 
-Per començar es disposa del projecte QGIS compartit amb la unió municipal verificada al capítol 5, del `## Registre cromàtic` del capítol 7 i del mapa de context construït al capítol 6. Els resultats de treball són la coropleta final, la comparació controlada de classificació o paleta i el registre al `README.md` de la classificació i les comprovacions d'accessibilitat. El mapa de context es reutilitza o s'incorpora a la composició, sense reconstruir-lo com una peça independent.
+Per començar es disposa del projecte QGIS compartit amb la unió municipal verificada al capítol de SIG, del `## Registre cromàtic` del capítol de teoria del color i del mapa de context construït al capítol de llenguatge cartogràfic. Els resultats de treball són la coropleta final, la comparació controlada de classificació o paleta i el registre al `README.md` de la classificació i les comprovacions d'accessibilitat. El mapa de context es reutilitza o s'incorpora a la composició, sense reconstruir-lo com una peça independent.
 
 En el cas del Tarragonès, els noms semàntics poden ser `outputs/maps/mapa_coropleta_tarragones_habitatge_no_principal.svg` i, si aporta una lectura complementària, un nom adaptat al camp absolut seleccionat, per exemple `outputs/maps/mapa_simbols_tarragones_poblacio_total.svg`. Si cal comparar-la fora de QGIS, l'alternativa també es pot exportar com `outputs/maps/mapa_coropleta_tarragones_habitatge_no_principal_alternativa.svg`. Els noms s'adapten al territori, l'indicador i el camp de cada projecte.
 
@@ -340,7 +340,7 @@ La construcció seguirà un procediment estable:
 3. aplicar un primer mètode i registrar el nombre de classes, els punts de tall i les observacions de cada classe;
 4. duplicar l'estil o la capa només per crear una alternativa controlada, sense duplicar les dades d'origen;
 5. mantenir la mateixa extensió i composició mentre es comparen classificacions;
-6. fixar els punts de tall seleccionats i comparar després les paletes preparades al capítol 7;
+6. fixar els punts de tall seleccionats i comparar després les paletes preparades al capítol de teoria del color;
 7. desar l'estil final al projecte i, si cal reutilitzar-lo, en un fitxer d'estil al costat del projecte.
 
 ### Construir alternatives controlades
@@ -367,7 +367,7 @@ Quan aporti aquesta lectura complementària, el mapa de símbols proporcionals t
 
 En alguns casos serà millor separar la coropleta i els símbols proporcionals en dos mapes. Superposar-los pot ser útil quan les dues lectures es reforcen, per exemple percentatge d'habitatge no principal i nombre total d'habitatges, però pot saturar la peça si les classes de color, els cercles, els límits i les etiquetes competeixen. La decisió s'ha de prendre mirant la composició final, no només la pantalla de QGIS.
 
-### Mapa de referència i layouts
+### Reutilitzar el mapa de context en les composicions
 
 El mapa de referència del capítol 6 no és una versió simplificada del mapa temàtic. La seva funció és localitzar: pot utilitzar un fons gris o simplificat, límits administratius, topònims seleccionats, xarxa viària principal o una ortofoto quan el context físic sigui necessari. En aquesta activitat es reutilitzarà o s'incorporarà a la composició sense reconstruir-lo com una tercera peça independent. El connector Open ICGC pot facilitar l'accés a aquests fons i divisions, però el mapa final ha de mantenir la mateixa exigència de fonts i crèdits que la resta de capes.
 
@@ -381,7 +381,7 @@ El mapa temàtic reutilitzarà l'extensió, la jerarquia territorial i els crite
 
 La composició es revisarà a la mida que ocuparà a la miniinfografia. Els mapes finals s'exportaran en format vectorial a `outputs/maps`; l'alternativa controlada només s'exportarà separadament si cal consultar la comparació fora de QGIS. Els estils, les classificacions, les llegendes, la versió final i l'alternativa controlada editables es conservaran al projecte QGIS.
 
-### Comprovacions de qualitat
+### Validar el mapa temàtic
 
 Abans d'acceptar el mapa cal verificar que:
 
@@ -398,7 +398,7 @@ Abans d'acceptar el mapa cal verificar que:
 11. la interpretació no atribueix a carrers, persones o establiments allò que només s'ha calculat per municipi;
 12. l'SVG conserva les geometries, els textos i els colors previstos.
 
-### Evidències que s'han de conservar
+### Evidències de la cartografia temàtica
 
 ::: table "Evidències de la cartografia temàtica"
 | Ubicació | Evidència | Contingut mínim |

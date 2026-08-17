@@ -12,7 +12,7 @@ part: Continguts
 manual_references: true
 ---
 
-Representar dades significa codificar-les visualment. Aquest capítol introdueix la semiologia gràfica a partir de taules i gràfics, abans d'aplicar-la al mapa. El color apareixerà com una variable visual, però el seu desenvolupament sistemàtic quedarà per al capítol 7, perquè és una decisió transversal que afecta gràfics, mapes, accessibilitat i infografia. La classificació cartogràfica es treballarà més endavant, un cop introduït el llenguatge propi del mapa i la integració amb QGIS. La idea d'un sistema de signes visuals parteix de la semiologia de Bertin i es pot connectar amb una introducció contemporània i aplicada a la visualització de dades {% cite bertinSemiologyGraphics2010 wilkeFundamentalsDataVisualization2019 %}.
+Representar dades significa codificar-les visualment. Aquest capítol introdueix la semiologia gràfica a partir de taules i gràfics, abans d'aplicar-la al mapa. El color apareixerà com una variable visual, però el seu desenvolupament sistemàtic quedarà per al capítol de teoria del color, perquè és una decisió transversal que afecta gràfics, mapes, accessibilitat i infografia. La classificació cartogràfica es treballarà més endavant, un cop introduït el llenguatge propi del mapa i la integració amb QGIS. La idea d'un sistema de signes visuals parteix de la semiologia de Bertin i es pot connectar amb una introducció contemporània i aplicada a la visualització de dades {% cite bertinSemiologyGraphics2010 wilkeFundamentalsDataVisualization2019 %}.
 
 >>>>> En acabar el capítol, cal poder seleccionar, construir, revisar i exportar figures que responguin una pregunta territorial sense deformar les dades.
 >>>>>
@@ -74,7 +74,7 @@ En una escala lineal, les barres que representen quantitats han de començar a z
 
 ## Gràfics segons la pregunta
 
-### Un repertori per explorar alternatives
+### Selectors de gràfics per comparar alternatives
 
 La pàgina [*Data Visualization Reference Guides*](https://coolinfographics.com/dataviz-guides), curada per Randy Krum, forma part de *Cool Infographics*, el lloc que acompanya i promociona el seu llibre *Cool Infographics: Effective Communication with Data Visualization and Design* {% cite krumCoolInfographics2013 %}. El llibre desenvolupa el procés de disseny, la narració visual i la integració de dades, text i il·lustracions; el web n'ofereix informació, un capítol de mostra i figures, i amplia aquest entorn amb un directori posterior de selectors de gràfics, vocabularis visuals, catàlegs, matrius i llistes de comprovació.
 
@@ -187,7 +187,7 @@ Quan diverses observacions comparteixen valors o queden molt pròximes, els punt
 
 Un diagrama de caixa resumeix la mediana, els quartils, la dispersió i els possibles valors extrems d'un indicador. Facilita una visió conjunta, però no mostra on es localitza cada municipi. Un valor assenyalat com a extrem no és automàticament un error: cal revisar la dada, el denominador i les característiques territorials abans d'interpretar-lo.
 
-### Representar indicadors territorials
+### Unitats i context dels indicadors territorials
 
 Valors absoluts, percentatges, ràtios i densitats necessiten títols, unitats i context suficients perquè no es confonguin entre si.
 
@@ -245,7 +245,7 @@ La retolació de gràfics comparteix criteris amb la retolació cartogràfica qu
 
 En un gràfic de barres, etiquetar tots els valors pot ser útil amb poques categories, però pot fer perdre la comparació si cada barra incorpora números llargs. En una sèrie temporal, sovint és més llegible etiquetar la línia al final que obligar a anar i tornar entre línia i llegenda. En una dispersió, no s'han d'etiquetar tots els punts si això crea una massa de noms; pot ser millor assenyalar només municipis extrems, casos rellevants o observacions que el text comentarà explícitament. Les anotacions s'han de justificar per la lectura, no per omplir l'espai buit.
 
-Els elements auxiliars han d'explicar la comparació i no competir amb les dades. Les línies de quadrícula, els eixos, les marques i les vores poden ajudar a estimar valors o separar panells, però han de quedar en segon pla. El color necessita una funció definida, com agrupar, ordenar o destacar, i no ha de ser l'únic recurs per distingir informació essencial. El capítol 7 desenvoluparà les paletes i les comprovacions d'accessibilitat.
+Els elements auxiliars han d'explicar la comparació i no competir amb les dades. Les línies de quadrícula, els eixos, les marques i les vores poden ajudar a estimar valors o separar panells, però han de quedar en segon pla. El color necessita una funció definida, com agrupar, ordenar o destacar, i no ha de ser l'únic recurs per distingir informació essencial. El capítol de teoria del color desenvoluparà les paletes i les comprovacions d'accessibilitat.
 
 ### Eixos truncats, tres dimensions i soroll visual
 
@@ -287,7 +287,7 @@ La relació d'aspecte també orienta la lectura. En una sèrie temporal, la mate
 
 >>>> **Una tendència visual no és una previsió.** Unir punts amb una línia ajuda a llegir evolució, però extrapolar-la cap al futur exigeix una hipòtesi sobre el procés que genera les dades. Si el text diu que un indicador "continuarà pujant", cal aportar model, període, incertesa i justificació; si només es descriu el passat, és millor parlar d'augment observat, canvi de ritme o variació entre anys.
 
-### Principis orientadors, no receptes
+### Criteris per seleccionar i revisar visualitzacions
 
 Les guies de visualització, com [*From Data to Viz*](https://www.data-to-viz.com/), el [*Financial Times Visual Vocabulary*](https://github.com/Financial-Times/chart-doctor/tree/main/visual-vocabulary), els [*Core Principles of Data Visualization*](https://policyviz.com/2018/08/07/dataviz-cheatsheet/) i la [*Data Visualization Checklist*](https://web.archive.org/web/20190918015742/https://datavizchecklist.stephanieevergreen.com/assets/DataVizChecklist_Feb2018.pdf), coincideixen en molts criteris de claredat i integritat, però les recomanacions depenen de la marca, la tasca i el suport. Convertir-les en prohibicions absolutes produiria errors nous: l'origen zero és essencial per comparar longituds de barres, però no per a qualsevol gràfic de línies; una quadrícula pot ser útil per estimar valors si queda en segon pla; i una llegenda continua sent necessària quan les etiquetes directes saturarien un mapa.
 
@@ -301,14 +301,14 @@ Les guies de visualització, com [*From Data to Viz*](https://www.data-to-viz.co
 | Ordenar amb un criteri | Utilitzar magnitud, cronologia, grup, geografia o una seqüència conceptual | L'ordre alfabètic només és útil per localitzar, no sempre per comparar |
 | Integrar text i gràfic | Fer coherents títol, anotacions, etiquetes, unitats i font amb el missatge | Etiquetar directament quan millora la lectura, sense omplir totes les marques |
 | Subordinar l'estructura auxiliar | Reduir vores, quadrícules, marques i llegendes que competeixen amb les dades | No s'han d'eliminar els elements necessaris per estimar valors o separar panells |
-| Donar funció al color | Utilitzar-lo per agrupar, ordenar o destacar i combinar-lo amb altres senyals | Cal comprovar contrast, mida final i visió cromàtica; el capítol 7 ho desenvolupa |
+| Donar funció al color | Utilitzar-lo per agrupar, ordenar o destacar i combinar-lo amb altres senyals | Cal comprovar contrast, mida final i visió cromàtica; el capítol de teoria del color ho desenvolupa |
 | Evitar comparacions ambigües | Mantenir escales comunes i separar mesures quan una doble escala vertical podria suggerir una relació artificial | Els panells coordinats o els petits múltiples solen fer explícites les unitats |
 | Utilitzar mapes quan l'espai importa | Representar localització, proximitat, direcció o patrons territorials | Un gràfic ordenat és millor quan només cal comparar valors amb precisió |
 | Conservar context i precisió adequats | Indicar període, territori, unitat, font, transformacions i absències | Més decimals i més dades no impliquen necessàriament més informació útil |
 | Comparar alternatives | Mantenir constants la pregunta i les dades mentre canvia una decisió visual | La versió més atractiva no és necessàriament la més interpretable |
 :::
 
-### El laboratori de figures millorables
+### Auditoria i revisió de figures millorables
 
 La comparació de gràfics circulars, radials, de barres, de línies, de dispersió i de bombolles no ha de servir per memoritzar un catàleg de formes. El seu valor consisteix a identificar què facilita i què dificulta cada geometria quan es manté una mateixa pregunta i una mateixa taula de partida.
 
@@ -329,7 +329,7 @@ La comparació de gràfics circulars, radials, de barres, de línies, de dispers
 
 Com a pràctica guiada del mètode d'auditoria, es conservarà una figura inicial i una de revisada. S'hi identificaran almenys tres decisions problemàtiques i es construirà la versió alternativa amb el full de càlcul. La comparació entre l'original i la revisió es justificarà amb criteris perceptius, no amb preferències com “queda més bonic”.
 
-### Procediment de construcció i revisió
+### Construir i revisar gràfics al full de càlcul
 
 Excel i Calc permeten produir gràfics ràpidament, però el resultat automàtic s'ha de revisar. El procediment es manté estable encara que canviï la interfície:
 
@@ -373,7 +373,7 @@ Les figures són resultats intermedis i s'emmagatzemaran a `outputs/figures`. El
 
 ## Activitat: construir el conjunt de figures comarcals
 
-### Entrades i sortides
+### Dades d'entrada, gràfics guiats i PDFs candidats
 
 L'entrada és el mateix llibre acumulatiu, amb els camps de població per grans grups d'edat a `municipal` i els sis càlculs municipals revisats a `indicators`. La demostració guiada construeix al full `charts` unes barres apilades al 100% de l'estructura d'edats i unes barres ordenades del percentatge d'habitatge no principal. També construeix una dispersió entre envelliment i habitatge no principal quan la pregunta acordada i les dades compatibles justifiquen explorar-ne l'associació; en cas contrari, se'n justificarà la substitució per una figura pertinent o l'omissió. Tots els gràfics construïts que es considerin candidats es conservaran editables i vinculats a les cel·les d'origen a `charts`. Com a demostració del mètode d'auditoria, una figura conservarà una versió inicial i una de revisada. S'exportaran exactament dues o tres figures candidates en PDF vectorial a `outputs/figures` i es registraran a `README.md`.
 
@@ -387,7 +387,7 @@ Cada figura haurà de respondre una pregunta sobre les diferències entre munici
 >>>>> - Validar marques, totals, unitats, absències, retolació i valors representats contra les cel·les d'origen.
 >>>>> - Exportar exactament dues o tres figures candidates en PDF vectorial i registrar-les a `README.md`.
 
-### Sèrie de gràfics bàsics i específics
+### Figures guiades i alternatives opcionals
 
 ::: table "Figures que es poden construir o analitzar"
 | Figura | Dades adequades | Pregunta possible | Abast |
@@ -419,7 +419,7 @@ La sèrie completa serveix per aprendre i comparar, mentre que el repertori rest
 
 La dispersió només es construirà quan la pregunta i les dades justifiquin explorar una associació. Que no mostri una relació interpretable és un resultat que es documentarà i pot motivar que es descarti de la selecció; si l'associació no era una pregunta pertinent d'entrada, se'n justificarà la substitució o l'omissió.
 
-### Organització i noms
+### Carpeta i noms dels PDFs candidats
 
 Cada figura candidata exportada tindrà un nom semàntic i una versió vectorial PDF. Una possible estructura és:
 
@@ -438,7 +438,7 @@ Abans d'acceptar una figura cal comprovar que el nombre de marques correspon als
 
 La revisió també es farà a la mida final. El text, els símbols i els traços han de continuar sent llegibles fora de la interfície del full de càlcul. Després de l'exportació, el PDF s'obrirà a Inkscape per verificar que les formes i els textos continuen sent objectes vectorials seleccionables.
 
-### Evidències de la pràctica guiada
+### Evidències de la visualització comarcal
 
 ::: table "Evidències de la visualització comarcal"
 | Ubicació | Evidència | Contingut mínim |

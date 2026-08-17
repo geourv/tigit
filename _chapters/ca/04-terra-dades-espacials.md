@@ -26,7 +26,7 @@ El vocabulari cartogràfic clàssic ajuda a entendre la representació, però el
 >>>>> - Preparar a QGIS, quan calgui, una capa municipal de treball en `EPSG:25831` sense sobreescriure la font original.
 >>>>> - Validar procedència, geometria, codis, CRS, extensió i mesures abans d'utilitzar una capa en una anàlisi.
 
-## De la Terra percebuda a la Terra mesurada
+## Forma terrestre, moviments i il·luminació solar
 
 ### Forma, evidència i mesura
 
@@ -112,7 +112,7 @@ El **sistema de referència espacial** estableix com s'expressen i s'interpreten
 
 Aquesta cadena explica per què dos parells de nombres no es poden comparar només per l'aparença. Una posició sense sistema de referència és incompleta, i un codi EPSG sense entendre les unitats i l'àrea d'ús tampoc no garanteix una operació correcta.
 
-## Localitzar i mesurar
+## Coordenades, projeccions i mesura territorial
 
 ### Coordenades geogràfiques
 
@@ -227,7 +227,7 @@ El [GITTA Map Projector](https://gevian.github.io/GITTA-MP/) de Magnus Heitzler 
 
 Una exploració breu pot començar a **Projection Surfaces** per construir un pla, un con i un cilindre; continuar a **Map Distortion Basics** activant les indicatrius; i acabar a **The Mercator Projection** amb la seqüència **Central Cylindrical Projection**, **flatten** i **Scale Central Cylindrical to Mercator**. El model ajuda a entendre propietats i transformacions, però no implica que totes les projeccions cartogràfiques siguin projeccions geomètriques de llum sobre una superfície: moltes es defineixen directament mitjançant fórmules.
 
-### Les projeccions ens enganyen?
+### Mercator, Gall-Peters i lectura crítica de la distorsió
 
 Una projecció no és una fotografia defectuosa del globus, sinó una transformació matemàtica. Com que una superfície corba no es pot desplegar sobre un pla sense deformar-la, qualsevol mapamundi altera les àrees, les formes, les distàncies o les direccions. La distorsió és inevitable i es pot mesurar; el problema comunicatiu apareix quan s'utilitza una projecció inadequada per a la pregunta o s'oculten les propietats que no conserva {% cite snyderMapProjections1987 %}.
 
@@ -277,7 +277,7 @@ La reprojecció calcula coordenades noves que representen les mateixes posicions
 
 El programari cartogràfic pot mostrar conjuntament capes amb sistemes diferents mitjançant una transformació temporal de visualització. Aquesta capacitat facilita l'exploració, però no canvia els fitxers d'origen ni resol automàticament quin sistema convé per mesurar o exportar. El sistema de referència del projecte i el de cada capa s'han de revisar explícitament.
 
-### Escala de treball
+### Escala cartogràfica i nivell de detall
 
 Els mapes municipals, comarcals i regionals requereixen nivells de detall i fonts cartogràfiques diferents. La capa més detallada no és sempre la més adequada: pot alentir el projecte i introduir formes impossibles de percebre a la mida final.
 
@@ -312,7 +312,7 @@ L'activitat prepara una base espacial municipal fiable per continuar el projecte
 >>>>> - Desar, quan calgui, `data/processed/municipis_tarragones_epsg25831.gpkg` en `EPSG:25831` sense modificar la font original.
 >>>>> - Verificar geometria, CRS, extensió, recomptes, codis i ordres de magnitud abans de continuar el projecte.
 
-### Materials i resultats de treball
+### Fonts, fitxers i resultats de la preparació espacial
 
 Per al Tarragonès s'utilitzaran la capa oficial completa de límits municipals identificada al `README.md`, el projecte `qgis/tigit_tarragones.qgz` i, quan calgui filtrar o reprojeccionar, la capa derivada `data/processed/municipis_tarragones_epsg25831.gpkg`. La parella diagnòstica ED50/ETRS89 serà proporcionada pel professorat: no se'n pressuposen els noms de fitxer, però el `README.md` n'identificarà cada fitxer, el tipus de geometria i el CRS. Els noms territorials dels fitxers s'adaptaran a la comarca del projecte.
 
@@ -344,7 +344,7 @@ La resolució haurà d'identificar els dos CRS, descriure el desplaçament obser
 
 Quan sigui necessari filtrar o reprojeccionar, la selecció del Tarragonès es desarà a la ubicació canònica `data/processed/municipis_tarragones_epsg25831.gpkg`. La font original continuarà a `data/raw`, i el projecte utilitzarà rutes relatives perquè la carpeta es pugui moure sense perdre les capes.
 
-### Comprovacions de qualitat
+### Validar la base espacial municipal
 
 Abans de continuar s'han de comprovar aquests punts:
 
@@ -356,7 +356,7 @@ Abans de continuar s'han de comprovar aquests punts:
 6. la data territorial, la font i la llicència es poden recuperar;
 7. els fitxers originals no s'han sobreescrit.
 
-### Evidències que s'han de conservar
+### Evidències de la preparació espacial
 
 ::: table "Evidències de la preparació espacial"
 | Ubicació | Evidència | Contingut mínim |

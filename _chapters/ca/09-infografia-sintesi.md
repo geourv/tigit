@@ -127,7 +127,7 @@ La demostració guiada reprèn tots els materials produïts fins aquí, en compr
 >>>>> - Generar un PDF de revisió, provar-lo amb una persona lectora i registrar els canvis observables.
 >>>>> - Exportar el PDF final i verificar-ne recursos, tipografies, colors, proporcions i llegibilitat fora d'Inkscape.
 
-### Materials i resultats de treball
+### Entrades i fitxers finals de la miniinfografia
 
 La composició comença amb les entrades acumulades disponibles: les fonts originals i el registre de procedència; el llibre canònic amb indicadors i mètriques; totes les figures candidates exportades; l'informe de la unió i el projecte QGIS compartit; el mapa de context; el registre cromàtic i la prova de paleta; la coropleta final i, si s'ha produït, el mapa de símbols proporcionals. L'alternativa controlada es consulta dins de QGIS com a evidència de comparació, no com una peça visible candidata. L'inventari permet validar i comparar les peces abans de seleccionar-ne dues o tres en total per a la composició, inclosos els mapes.
 
@@ -244,7 +244,7 @@ Abans d'exportar es comprovaran la mida i l'orientació de la pàgina, els objec
 
 El fitxer exportat s'obrirà fora d'Inkscape. Ha de contenir la pàgina prevista, mantenir colors i transparències, mostrar tots els recursos i continuar sent llegible a la mida final. El nom distingirà el document editable, la versió de revisió i el document final; noms com `final_final.pdf` no permeten reconstruir el procés.
 
-#### Auditoria abans/després
+#### Comparar la versió intermèdia amb la final
 
 Cada projecte conservarà una versió intermèdia i la contrastarà amb la versió final. La revisió haurà d'identificar canvis observables: eliminació d'una figura redundant, reordenació de blocs, ampliació d'un mapa massa petit, simplificació de la paleta, millora de les fonts o reescriptura d'una conclusió massa contundent.
 
@@ -272,7 +272,7 @@ El `README.md` relacionarà cada component visible amb el fitxer d'origen: rang 
 
 Una explicació oral de la peça no repetirà tot el document ni enumerarà eines. Seguirà un argument breu: pregunta territorial, dades seleccionades, indicador i decisions visuals, resultat principal i limitacions.
 
-#### Evidències que s'han de conservar
+### Evidències de la síntesi territorial
 
 ::: table "Evidències de la síntesi territorial"
 | Ubicació | Evidència | Contingut mínim |

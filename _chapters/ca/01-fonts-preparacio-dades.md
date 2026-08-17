@@ -29,7 +29,7 @@ Aquest capítol introdueix aquesta cadena. Primer parteix de reptes territorials
 
 La ruta mínima de treball és sempre la mateixa, encara que la font canviï. Primer es formula una pregunta amb fenomen, territori, període, unitat d'observació i mesura. Després es tria una font que realment pugui respondre-la, es comproven productor, definició, cobertura, data i llicència, i només aleshores es descarrega o consulta la dada. El resultat del capítol no és un fitxer acumulat sense criteri, sinó una primera base territorial que conserva els originals, explica d'on surt cada camp i deixa preparades les comprovacions per als capítols següents.
 
-## Preguntes i dades
+## Formulació de preguntes i cadena d'evidència
 
 El primer pas no és descarregar una taula, sinó delimitar què es vol saber. Una pregunta clara permet decidir quina unitat d'observació, quin període, quina mesura i quin nivell territorial cal buscar.
 
@@ -157,7 +157,7 @@ Una altra classificació útil diferencia les fonts per la manera com es genera 
 - **Col·laboratives o generades pels usuaris:** OpenStreetMap, ressenyes, fotografies o publicacions socials. La cobertura i els criteris poden ser desiguals, però poden ser valuoses si la pregunta i el mètode ho justifiquen.
 - **Comercials:** telefonia, transaccions, reserves o mobilitat. Poden oferir detall i actualitat, però solen tenir restriccions, biaixos de cobertura i metodologies no auditables completament.
 
-### Altres distincions pràctiques
+### Nivell, estructura, cobertura i accés de les fonts
 
 Les classificacions anteriors no esgoten les decisions que cal prendre. Una mateixa font pot ser estadística oficial, secundària respecte de la pregunta, agregada per municipis, publicada com a sèrie anual i accessible amb una llicència oberta. Per això convé afegir altres preguntes abans de triar-la:
 
@@ -174,7 +174,7 @@ Les classificacions anteriors no esgoten les decisions que cal prendre. Una mate
 
 La categoria no determina automàticament la qualitat. Un registre administratiu oficial pot contenir duplicats; una font col·laborativa pot estar molt actualitzada; una enquesta rigorosa pot no ser representativa a escala municipal. La classificació tampoc substitueix la lectura metodològica: serveix per saber quines preguntes caldrà fer després. Abans d'avaluar una font concreta, però, cal saber en quins àmbits institucionals i territorials és més probable trobar-la.
 
-## Algunes fonts rellevants
+## Fonts de dades segons l'escala territorial
 
 Aquesta secció presenta algunes fonts rellevants per al curs, sense pretendre convertir-se en un catàleg complet ni en una guia definitiva d'ús. Amb la pregunta i una primera tipologia de fonts ja plantejades, la cerca pot orientar-se. No es tracta de recórrer portals a l'atzar, sinó de començar per l'escala on és més probable trobar la unitat territorial i la definició adequades. L'escala geogràfica condiciona qui produeix les dades, quin detall es pot obtenir i fins a quin punt són comparables. Les fonts globals harmonitzen conceptes per comparar països, però sovint perden detall territorial. Les fonts estatals, catalanes i locals acostumen a oferir més desagregació, però poden emprar classificacions pròpies i cobrir només el seu àmbit administratiu.
 
@@ -420,7 +420,7 @@ En aquests recursos locals convé començar amb preguntes molt concretes: quina 
 
 El resultat d'aquesta secció no hauria de ser una llista de portals memoritzats, sinó una manera d'entrar-hi. Cada font demana una exploració pròpia: localitzar el productor, entendre la definició de la variable, comprovar l'escala, llegir les metadades, identificar els recursos disponibles i veure sota quines condicions es poden usar. Les seccions següents ordenen aquests passos amb més detall perquè la font deixi de ser només una troballa i pugui convertir-se en evidència dins d'un treball territorial.
 
-## Verificar abans d'utilitzar
+## Verificar les fonts abans d'utilitzar-les
 
 Després de classificar una font, cal decidir si pot entrar en la cadena d'evidència. Una dada trobada en un portal, una captura, una consulta automatitzada o un informe encara no és una dada defensable. La verificació transforma una dada trobada en una dada utilitzable: abans de calcular, cal comprovar qui la produeix, què mesura, com s'ha obtingut, quines limitacions declara i si existeixen altres fonts que en confirmen o matisen la lectura.
 
@@ -859,7 +859,7 @@ La mateixa facultat també es pot observar amb una fotografia aèria obliqua fet
 
 ![Fotografia aèria obliqua de la Facultat de Turisme i Geografia durant la construcció d'un dels seus edificis]({{ site.baseurl }}/assets/img/aerial-photography/oblique-aerial-photography-ftg.png "La vista obliqua mostra façanes, volums i context immediat amb una lectura més propera a l'observació humana, però introdueix perspectiva i ocultacions. Llicència: pendent de revisar."){: data-figure-width="44rem"}
 
-## Introducció als fulls de càlcul
+## Fulls de càlcul per preparar dades territorials
 
 Quan les dades ja s'han localitzat i obtingut, comença una feina menys visible però decisiva: preparar-les perquè puguin respondre la pregunta. El primer entorn de treball serà el full de càlcul perquè combina una taula, un llenguatge de fórmules i una interfície visual. Permet inspeccionar les dades directament, provar una operació i veure'n el resultat sense construir primer un programa complet. Aquesta immediatesa el fa adequat per començar a treballar amb taules territorials de volum moderat, però també pot afavorir canvis manuals difícils de reconstruir si el llibre no s'organitza amb criteri.
 
@@ -1188,7 +1188,7 @@ Fer que un LLM processi repetidament cada fila pot consumir temps, diners, conte
 
 >>>> **Automatitzar no elimina la responsabilitat tècnica.** La decisió important no és si s'ha usat un LLM, sinó per què era l'eina adequada, quines dades ha rebut, com s'ha verificat el resultat i si el procediment es podrà mantenir i reutilitzar. Aquest criteri l'aporta la persona que coneix la pregunta, les dades i els límits de l'anàlisi.
 
-## Activitats: preparar les dades del territori de treball
+## Activitat: preparar les dades del territori de treball
 
 Tot el recorregut anterior convergeix ara en una primera tasca concreta: preparar la base de dades que alimentarà els indicadors, els gràfics, els mapes i la miniinfografia final. El manual descriu el flux tècnic compartit; el territori i la pregunta de cada projecte s'acordaran abans de preparar les dades.
 
@@ -1249,7 +1249,7 @@ La taula de codis conté el codi de comarca. Primer s'incorporarà aquesta corre
 
 Si les notes d'una taula censal indiquen arrodoniment, protecció del secret estadístic o una altra regla de difusió, alguna suma de components pot diferir lleugerament del total publicat. Aquesta diferència no s'ha de «corregir» repartint-la manualment: s'ha de conservar i documentar.
 
-### Descarregar i preservar els originals
+### Diagnosticar les taules descarregades
 
 Les dades descarregades rarament es poden analitzar de manera immediata. Poden contenir títols dins de la taula, capçaleres dobles, notes al peu, totals barrejats amb territoris, codis convertits en nombres, símbols de confidencialitat, decimals interpretats com a text o una estructura pensada per a lectura humana i no per al càlcul.
 
@@ -1359,7 +1359,7 @@ Cada transformació ha de tenir una comprovació. Si es remodela una taula, s'ha
 
 Una taula preparada no és necessàriament correcta perquè Excel no mostri errors. La validació combina controls tècnics, comparació amb la font i judici substantiu sobre valors plausibles.
 
-### Preparar i auditar la taula municipal
+### Integrar les fonts en una taula municipal
 
 Les quatre descàrregues no formen encara una taula analítica. Poden ordenar els municipis de manera diferent, anomenar els camps amb capçaleres de publicació i barrejar totals amb components. La preparació haurà d'obtenir una única fila per municipi sense copiar valors a mà ni unir les fonts per posició de fila.
 
@@ -1382,7 +1382,7 @@ Les quatre descàrregues no formen encara una taula analítica. Poden ordenar el
 
 **4. Validar.** La taula final haurà de superar quatre controls: nombre justificat de files, clau territorial sense duplicats inesperats, valors dins de rangs plausibles i correspondència amb un total o resultat publicat.
 
-### Evidències de la preparació que convé conservar
+### Evidències de la preparació de dades
 
 La preparació ha de deixar un rastre revisable perquè l'equip pugui reconstruir el procés i reutilitzar la base en la síntesi posterior:
 

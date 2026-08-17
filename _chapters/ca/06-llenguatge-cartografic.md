@@ -44,7 +44,7 @@ Cada producte cartogràfic selecciona informació diferent. Un mapa turístic po
 | Turístic d'orientació | Com s'arriba als recursos i serveis? | Itineraris, accessos, punts d'interès i referències útils | Confondre promoció, orientació i anàlisi |
 :::
 
-## De la fotografia aèria al mapa
+## Productes d'imatge per observar i cartografiar el territori
 
 Una imatge presa des de l'aire pot mostrar el territori amb molt detall sense tenir encara la geometria d'un mapa. La direcció de la càmera, la perspectiva, el relleu, la inclinació de la plataforma i el processament posterior condicionen què es pot identificar i què es pot mesurar. Aquesta distinció és necessària quan s'utilitzen fotografies històriques per estudiar l'evolució urbana i litoral, o una ortofoto actual com a fons per localitzar allotjaments, accessos i equipaments.
 
@@ -65,7 +65,7 @@ El tema [*Aerial Photography: History and Georeferencing*](https://doi.org/10.22
 
 ![Capçalera, citació i definicions inicials del tema sobre fotografia aèria al GIS&T Body of Knowledge]({{ site.baseurl }}/assets/img/aerial-photography/gistbok-aerial-photography-2026-08-12.png "Consulta del tema DC-02-010, amb etiquetes, citació, DOI i definicions de fotogrametria, ortorectificació i georeferenciació. Captura pròpia de la interfície del GIS&T Body of Knowledge, UCGIS, 12 d'agost de 2026; fragment reproduït per a comentari docent. El contingut pertany a UCGIS i als autors del tema."){: data-figure-width="48rem"}
 
-### Del fotograma a l'ortofoto
+### Georeferenciació i ortorectificació d'imatges aèries
 
 Un **fotograma** és una captura individual d'un vol fotogramètric abans de l'ortorectificació. Les passades es planifiquen amb solapament longitudinal i transversal perquè una part del territori aparegui en diverses imatges. Aquest recobriment evita buits, permet la visió estereoscòpica i contribueix a estimar el relleu i a construir mosaics.
 
@@ -410,7 +410,7 @@ El retall següent mostra l'entorn de l'Estany de Montcortès en la [cartografia
 
 >>> **Estimar l'altitud de l'Estany de Montcortès.** Per llegir l'altitud de l'estany no n'hi ha prou amb mirar el color blau de l'aigua. Primer cal identificar una corba mestra propera, com la de `1.050 m`, deduir l'equidistància entre corbes i comptar cap a la riba. Si la làmina d'aigua queda entre dues corbes consecutives, el mapa només permet afirmar un interval: l'altitud és més alta que la corba inferior i més baixa que la corba superior. Un valor com `1.030 m` pot ser una estimació raonada si la lectura de les corbes porta a aquest entorn, però no s'ha de presentar com una dada exacta obtinguda del mapa. L'altitud que el mapa declara directament, sempre dins de la precisió de la font, només correspon a una cota puntual, una consulta altimètrica documentada o els punts pels quals passa una corba de nivell concreta; entre dues corbes, el relleu s'interpreta dins d'un rang.
 
-## Elements del mapa
+## Símbols, textos i elements auxiliars del mapa
 
 Els elements auxiliars i la retolació només aporten informació quan responen a la funció, l'orientació i la jerarquia de la composició. Aquesta fase prepara una revisió sistemàtica abans de maquetar el mapa de context.
 
@@ -505,7 +505,7 @@ L'espaiament també comunica escala i jerarquia. Un topònim zonal pot ocupar m�
 
 Una etiqueta no ha de tapar una altra, sortir de la seva entitat sense una relació clara ni confondre's amb un municipi veí. La posició, l'halo, el contrast i les línies de crida poden resoldre casos concrets, però una acumulació de recursos correctius sol indicar que hi ha massa noms per a l'escala disponible. El mapa de context del projecte no necessita demostrar que QGIS pot etiquetar tots els objectes: necessita mostrar els noms que permeten entendre el territori d'estudi.
 
-#### Comparació abans i després
+#### Retolació automàtica i versió revisada
 
 La retolació es revisarà mitjançant una parella construïda sobre el territori d'estudi. La primera versió conservarà una configuració automàtica; la segona aplicarà prioritats, resolució de conflictes, formes oficials i jerarquia. La justificació identificarà canvis observables i no es limitarà a afirmar que el resultat és més atractiu. Una bona revisió pot explicar quins noms s'han mantingut, quins s'han eliminat, quins s'han desplaçat i quines convencions tipogràfiques indiquen cada nivell.
 
@@ -535,7 +535,7 @@ La pràctica construirà el **mapa de context** de la miniinfografia, encara sen
 >>>>> - Comparar retolació, escala, detall, orientació i jerarquia entre els dos PDF.
 >>>>> - Registrar al `README.md` les comprovacions i la justificació dels canvis aplicats.
 
-### Materials i resultats de treball
+### Entrades i mapes de context resultants
 
 Per al Tarragonès es continuarà `qgis/tigit_tarragones.qgz`. El projecte mantindrà la font municipal oficial completa del capítol 4, que proporciona o permet derivar el context provincial, i la capa filtrada del Tarragonès, sense recrear ni tornar a descarregar les geometries. Abans d'obrir la composició es fixaran la mida i l'orientació finals. Els noms de comarca i any s'adaptaran al territori i al període del projecte.
 
@@ -569,7 +569,7 @@ Un requadre més petit podrà mostrar la comarca destacada dins de la província
 
 El títol, la llegenda si és necessària, l'escala, l'orientació, les fonts i els crèdits s'afegiran després d'estabilitzar el mapa. El CRS del projecte es comprovarà abans de confiar en la barra d'escala. La fletxa del nord només s'incorporarà si resol una ambigüitat: si el mapa principal i el requadre comparteixen una orientació convencional i evident, l'omissió també s'haurà de poder justificar. La composició es revisarà a mida real. Primer s'exportarà `context_tarragones_2021_automatic.pdf` amb l'etiquetatge automàtic inicial; després de revisar la retolació, s'exportarà `context_tarragones_2021.pdf`, sense substituir el projecte ni la composició editable.
 
-### Comprovacions de qualitat
+### Validar el mapa de context
 
 Abans d'acceptar el mapa cal verificar que:
 
@@ -583,7 +583,7 @@ Abans d'acceptar el mapa cal verificar que:
 8. els textos i traços continuen sent llegibles a la mida final;
 9. el PDF conserva vectors, tipografies i proporcions quan s'obre fora de QGIS; en obrir-lo a Inkscape, els límits i textos vectorials es poden ampliar sense pixelació i seleccionar com a objectes.
 
-### Evidències que s'han de conservar
+### Evidències del mapa de context
 
 ::: table "Evidències del mapa de context"
 | Ubicació | Evidència | Contingut mínim |
