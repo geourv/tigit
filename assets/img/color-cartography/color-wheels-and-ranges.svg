@@ -1,12 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="760" viewBox="0 0 1180 760" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1054" height="524" viewBox="63 123 1054 524" role="img" aria-labelledby="title desc">
   <title id="title">Rodes de color i rangs habituals dels models cromatics</title>
   <desc id="desc">Esquema d'una roda de color amb relacions analogues, complementaries i triadiques, i taula de rangs habituals per RGB, HEX, CMYK, RYB, HSL i HSV.</desc>
   <defs>
     <style>
-      .bg { fill: #fffdf8; }
-      .panel { fill: #ffffff; stroke: #d5dde2; stroke-width: 1.6; rx: 18; }
-      .title { font: 700 31px Arial, 'Liberation Sans', sans-serif; fill: #17202a; }
-      .subtitle { font: 16px Arial, 'Liberation Sans', sans-serif; fill: #52616b; }
+      .panel { fill: #ffffff; stroke: #d5dde2; stroke-width: 1.6; }
       .label { font: 700 20px Arial, 'Liberation Sans', sans-serif; fill: #17202a; }
       .small { font: 15px Arial, 'Liberation Sans', sans-serif; fill: #52616b; }
       .tiny { font: 13px Arial, 'Liberation Sans', sans-serif; fill: #52616b; }
@@ -16,10 +13,6 @@
       .row { fill: #f7fafb; }
     </style>
   </defs>
-  <rect class="bg" width="1180" height="760"/>
-  <text x="590" y="48" text-anchor="middle" class="title">Roda, canals i rangs no son la mateixa cosa</text>
-  <text x="590" y="78" text-anchor="middle" class="subtitle">La roda ajuda a pensar relacions de to; els rangs indiquen com un programa codifica numericament el color.</text>
-
   <g transform="translate(65 125)">
     <rect class="panel" width="490" height="520"/>
     <text x="30" y="42" class="label">Relacions en una roda de color</text>
@@ -62,8 +55,7 @@
     <text x="48" y="350" class="label">HSV</text><text x="170" y="350" class="mono">H=0..360; S,V=0..100%</text><text x="410" y="350" class="small">V</text>
     <line x1="48" y1="392" x2="460" y2="392" stroke="#d5dde2"/>
     <text x="48" y="430" class="small">Exemple RGB:</text><text x="170" y="430" class="mono">#226699 = R34 G102 B153</text>
-    <rect x="410" y="403" width="48" height="36" rx="7" fill="#226699"/>
+    <rect x="410" y="403" width="48" height="36" fill="#226699"/>
     <text x="48" y="470" class="small">Exemple HSL:</text><text x="170" y="470" class="mono">H 205; S 64%; L 37%</text>
   </g>
-  <text x="590" y="718" text-anchor="middle" class="small">Figura d'elaboracio propia, 14 d'agost de 2026. Els rangs son convencions habituals; cada programa pot presentar canals o percentatges amb variants.</text>
 </svg>

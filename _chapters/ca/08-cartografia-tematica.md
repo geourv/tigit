@@ -16,7 +16,25 @@ La cartografia temàtica converteix una variable en una lectura espacial. A dife
 
 Aquest capítol aplica els principis de semiologia gràfica, llenguatge cartogràfic i color als mapes municipals del projecte. La seqüència és deliberada: primer es decideix què es mesura i quin mètode ho pot representar; després es normalitza quan cal; a continuació es classifica la distribució; finalment s'aplica una paleta coherent i es comprova la composició. Les referències de Brewer, Slocum, Wilke i Monmonier ajuden a entendre que classificar i simbolitzar també són decisions interpretatives {% cite brewerDesigningBetterMaps2005 slocumThematicCartography2009 wilkeFundamentalsDataVisualization2019 monmonierHowLieMaps2018 %}.
 
+>>>>> En acabar el capítol, cal poder convertir un indicador municipal verificat en un mapa temàtic coherent, comparable i revisable.
+>>>>>
+>>>>> - Relacionar la pregunta, el tipus de dada i la unitat espacial amb un mètode cartogràfic adequat.
+>>>>> - Distingir recomptes absoluts, percentatges, ràtios, densitats, zeros i absències abans de simbolitzar-los.
+>>>>> - Comparar classificacions quantitatives mitjançant una alternativa controlada i editable.
+>>>>> - Construir una coropleta i, quan aporti una lectura complementària, un mapa de símbols proporcionals escalats per àrea.
+>>>>> - Reutilitzar el mapa de context i el registre cromàtic sense alterar el significat de les dades.
+>>>>> - Validar camps, classes, llegendes, contrast, llegibilitat i exportació vectorial a la mida d'ús.
+
 ## Escollir el mètode abans que la paleta
+
+La primera decisió consisteix a determinar quina relació territorial es vol representar; la paleta només es pot triar després d'haver establert què codificarà cada signe.
+
+>>>>> Aquesta fase relaciona el fenomen, la dada i la geometria amb el mètode que en permet una lectura defensable.
+>>>>>
+>>>>> - Identificar la unitat espacial i el nivell d'agregació de cada variable.
+>>>>> - Seleccionar coropletes per a intensitats comparables i símbols proporcionals per a magnituds absolutes.
+>>>>> - Interpretar els límits de les unitats municipals sense atribuir el valor agregat a cada punt o persona.
+>>>>> - Justificar el mètode abans de definir colors, classes o elements decoratius.
 
 ### El fenomen i la unitat espacial
 
@@ -36,7 +54,7 @@ La figura següent permet veure que una coropleta pot combinar més d'una decisi
 
 Altres mètodes responen a estructures diferents. Un mapa de punts assigna una quantitat constant a cada punt; un mapa de fluxos representa moviments o connexions mitjançant línies; i una isolínia uneix posicions amb el mateix valor d'un fenomen considerat continu, interpolat o modelat. Les corbes de nivell o isohipses només en són el cas més conegut: també hi ha isòbares de pressió atmosfèrica, isotermes de temperatura, isohietes de precipitació, isòbates de profunditat o isòcrones de temps de desplaçament. No tots aquests mètodes s'aplicaran al projecte comarcal, però ajuden a entendre que la forma del fenomen precedeix la selecció de la simbologia.
 
-![Sis esquemes de mapes temàtics: coropleta, símbols proporcionals, punts, fluxos, isolínies i cartodiagrama]({{ site.baseurl }}/assets/img/thematic-cartography/thematic-map-types.svg "El mètode cartogràfic ha de respondre al tipus de dada: intensitat, volum, presència, moviment, continuïtat o composició localitzada. Figura d'elaboració pròpia, 14 d'agost de 2026."){: data-figure-width="54rem"}
+![Sis esquemes de mapes temàtics: coropleta, símbols proporcionals, punts, fluxos, isolínies i cartodiagrama]({{ site.baseurl }}/assets/img/thematic-cartography/thematic-map-types.svg "El mètode cartogràfic ha de respondre al tipus de dada: intensitat, volum, presència, moviment, continuïtat o composició localitzada. Les geometries són esquemàtiques i no representen cap comarca real. Figura d'elaboració pròpia."){: data-figure-width="54rem"}
 
 ### Pregunta, dada i mètode
 
@@ -74,7 +92,7 @@ La lectura crítica dels mapes parteix d'una idea incòmoda però necessària: u
 
 Molts errors cartogràfics són versions espacials d'errors de gràfics. Una coropleta basada en recomptes absoluts fa que una àrea territorial sembli intensitat; una classificació massa dramàtica pot fabricar contrast; una llegenda automàtica pot ocultar unitats, decimals o valors absents; i una paleta atractiva pot suggerir un ordre que les dades no tenen. El mapa continua semblant tècnic perquè surt de QGIS, però el problema és anterior a l'exportació.
 
-::: subfigures a+b "Comparació esquemàtica entre una coropleta problemàtica i una versió revisada. La subfigura a pinta recomptes absoluts de places turístiques sobre municipis i confon una absència amb la classe més baixa; la subfigura b representa un indicador normalitzat, separa els valors sense dades i fa explícita la unitat de lectura. Figures d'elaboració pròpia, 15 d'agost de 2026."
+::: subfigures a+b "Comparació amb dades esquemàtiques entre una coropleta problemàtica i una versió revisada. La subfigura a pinta recomptes absoluts de places turístiques sobre municipis, tot i que una coropleta requereix una unitat comparable i un denominador justificat, i confon una absència amb la classe més baixa; la subfigura b representa un indicador normalitzat, separa els valors sense dades i fa explícita la unitat de lectura. Figures d'elaboració pròpia."
 ![Mapa de coropletes problemàtic que usa recomptes absoluts, una llegenda automàtica i cap tractament visible dels valors absents]({{ site.baseurl }}/assets/img/thematic-cartography/choropleth-absolute-counts-bad.svg "Coropleta problemàtica: recompte absolut, llegenda automàtica i absència amagada")
 ![Mapa de coropletes revisat que usa places per mil residents, una paleta seqüencial i una classe separada per als valors sense dades]({{ site.baseurl }}/assets/img/thematic-cartography/choropleth-normalized-reviewed.svg "Coropleta revisada: indicador normalitzat, unitat explícita i absències separades")
 :::
@@ -96,7 +114,7 @@ Molts errors cartogràfics són versions espacials d'errors de gràfics. Una cor
 
 ### Mapes dasimètrics
 
-El límit principal d'una coropleta no és només estadístic; també és espacial. Quan un municipi queda pintat amb una classe, el lector pot imaginar que el fenomen ocupa tota la superfície de manera homogènia, encara que la població, els habitatges, els establiments turístics o les places d'allotjament es concentrin en nuclis urbans, urbanitzacions, càmpings, fronts litorals o eixos de comunicació. El terme català habitual és **mapa dasimètric**. Rabella el presenta, dins dels recursos cartogràfics de l'ICGC, com una resposta al problema de les coropletes: subdividir àrees estadístiques heterogènies en àrees més petites i relativament homogènies amb l'ajuda d'informació complementària, i aplicar-hi després un tractament de tipus coroplètic {% cite rabellaMapaCoropletes2013 slocumThematicCartography2009 %}.
+El límit principal d'una coropleta no és només estadístic; també és espacial. Quan un municipi queda pintat amb una classe, el lector pot imaginar que el fenomen ocupa tota la superfície de manera homogènia, encara que la població, els habitatges, els establiments turístics o les places d'allotjament es concentrin en nuclis urbans, urbanitzacions, càmpings, fronts litorals o eixos de comunicació. El terme català habitual és **mapa dasimètric**. Rabella el presenta, dins del recurs de l'ICGC sobre el [mapa de coropletes](https://www.icgc.cat/en/node/19259), com una resposta al problema de les coropletes: subdividir àrees estadístiques heterogènies en àrees més petites i relativament homogènies amb l'ajuda d'informació complementària, i aplicar-hi després un tractament de tipus coroplètic {% cite slocumThematicCartography2009 %}.
 
 Un mapa dasimètric no descobreix automàticament on és cada cas individual. Si només es disposa d'un total municipal, no es pot saber en quin carrer o parcel·la es troba el fenomen; sí que es pot restringir o redistribuir la lectura cap a zones on la presència és plausible. Una capa de cobertes del sòl, el sòl urbà, el cadastre, les edificacions, la xarxa viària o una classificació d'usos pot funcionar com a informació auxiliar, sempre que la relació amb la variable estigui justificada. Per exemple, una densitat de població representada sobre tot el terme municipal pot fer semblar habitat un espai agrícola o forestal; una versió dasimètrica pot limitar la lectura a les àrees residencials o urbanitzades, deixant clar quin criteri s'ha utilitzat.
 
@@ -118,7 +136,7 @@ Quadruplicar una dada només duplica el diàmetre. Si el diàmetre creixés dire
 
 Una **isolínia** és una línia que uneix punts amb el mateix valor d'una variable. La corba de nivell o **isohipsa** uneix punts amb la mateixa altitud, però el mateix principi s'utilitza per a moltes altres lectures geogràfiques. Una **isòbara** uneix punts amb la mateixa pressió atmosfèrica; una **isoterma**, punts amb la mateixa temperatura; una **isohieta**, punts amb la mateixa precipitació acumulada; una **isòbata**, punts amb la mateixa profunditat; i una **isòcrona**, punts que comparteixen el mateix temps d'accés segons un model de mobilitat. En tots els casos la pregunta no és només com es dibuixa la línia, sinó què vol dir que dos punts tinguin "el mateix valor".
 
-El cas de les isòbares ajuda a separar el vocabulari del relleu. En un mapa de superfície meteorològica, les línies no representen muntanyes ni pendents del terreny, sinó pressió atmosfèrica reduïda al nivell del mar. La distància entre isòbares suggereix el gradient de pressió: quan estan molt juntes, el canvi de pressió és més intens i pot associar-se a vents més forts. El Weather Prediction Center publica anàlisis de superfície amb centres d'alta i baixa pressió, fronts i altres límits atmosfèrics; els productes del National Weather Service són de domini públic si no indiquen el contrari {% cite weatherPredictionCenterSurfaceAnalysis2002 nationalWeatherServiceDisclaimer2026 %}.
+El cas de les isòbares ajuda a separar el vocabulari del relleu. En un mapa de superfície meteorològica, les línies no representen muntanyes ni pendents del terreny, sinó pressió atmosfèrica reduïda al nivell del mar. La distància entre isòbares suggereix el gradient de pressió: quan estan molt juntes, el canvi de pressió és més intens i pot associar-se a vents més forts. L'[anàlisi de superfície del Weather Prediction Center del 28 d'abril de 2002](https://commons.wikimedia.org/wiki/File:2002-04-28_2100_UTC_WPC_surface_analysis.jpg) mostra centres d'alta i baixa pressió, fronts i altres límits atmosfèrics; els productes del National Weather Service són de domini públic si no indiquen el contrari, segons l'[avís legal del National Weather Service](https://www.weather.gov/disclaimer/).
 
 ![Mapa de superfície del Weather Prediction Center amb isòbares, centres d'alta i baixa pressió i fronts]({{ site.baseurl }}/assets/img/thematic-cartography/wpc-surface-analysis-isobars-2002-04-28.jpg "Les isòbares uneixen punts amb la mateixa pressió atmosfèrica, no punts amb la mateixa altitud. Weather Prediction Center, anàlisi de superfície del 28 d'abril de 2002 a les 21 UTC, producte NWS de domini públic als Estats Units; fitxer incorporat des de Wikimedia Commons sense modificacions."){: data-figure-width="46rem"}
 
@@ -138,21 +156,30 @@ Aquesta igualtat no diu que el territori sigui físicament més gran, sinó que 
 
 La clau matemàtica és distingir propietats **geomètriques** i propietats **topològiques**. La geometria mesura distàncies, angles, posicions, formes i àrees; la topologia descriu relacions que poden continuar sent vàlides encara que l'espai es deformi, sobretot el veïnatge: què toca amb què, quines unitats continuen connectades i quin ordre relacional es manté. Un cartograma contigu intenta conservar aquesta topologia d'adjacències mentre deforma els polígons per ajustar-ne l'àrea a la magnitud representada. Un cartograma no contigu permet separar-los o canviar-los de mida sense mantenir totes les vores; un cartograma de cercles substitueix territoris per cercles o altres formes proporcionals. Cap d'aquestes variants és una versió més "real" del mapa: totes canvien la propietat que el lector ha d'observar.
 
-![Comparació entre un mapa territorial convencional, un cartograma contigu esquemàtic i un cartograma de cercles en què la mida respon a una magnitud]({{ site.baseurl }}/assets/img/thematic-cartography/cartogram-anamorphic-principle.svg "Els cartogrames fan visible el pes d'una magnitud sacrificant part de la forma, la distància o la familiaritat territorial. Figura d'elaboració pròpia, 14 d'agost de 2026."){: data-figure-width="54rem"}
+![Comparació entre un mapa territorial convencional, un cartograma contigu esquemàtic i un cartograma de cercles en què la mida respon a una magnitud]({{ site.baseurl }}/assets/img/thematic-cartography/cartogram-anamorphic-principle.svg "Els cartogrames fan visible el pes d'una magnitud sacrificant part de la forma, la distància o la familiaritat territorial. És un esquema conceptual sense dades reals ni geometries administratives. Figura d'elaboració pròpia."){: data-figure-width="54rem"}
 
 El cartograma següent aplica aquest principi a la població europea de 2018. Cada quadrat representa `500.000` persones, de manera que Alemanya, França, el Regne Unit, Itàlia, Espanya, Polònia, Ucraïna o la part europea de Rússia ocupen una presència visual molt diferent de la que tindrien en un mapa territorial convencional. La forma encara conserva prou referències per reconèixer Europa, però la lectura ja no és de distància ni de superfície real: és una lectura del pes demogràfic.
 
 ![Cartograma de la població europea de 2018 en què cada quadrat representa 500.000 persones i la mida dels països respon al volum de població]({{ site.baseurl }}/assets/img/thematic-cartography/cartogram-europe-population-2018.png "Europe's Population in 2018. Max Roser per a Our World in Data; dades de població de la UN Population Division; versió 1, setembre de 2018; llicència CC-BY-SA indicada a la mateixa imatge."){: data-figure-width="60rem"}
 
-Un exemple directament turístic és el cartograma de HowMuch [*Mapping the Tourism Industry Around the World*](https://howmuch.net/articles/worlds-top-tourist-destinations-money-spent), publicat el 16 de setembre de 2019. La peça representa els ingressos o rebuts del turisme internacional de 2018 en dòlars: cada país canvia de mida segons el valor d'aquests rebuts, de manera que els Estats Units, Espanya, França o Tailàndia guanyen una presència visual que no correspon a la seva superfície territorial, sinó al pes econòmic de la variable. La pàgina de l'article enllaça també una [pàgina de fonts i dades preparades](https://howmuch.net/sources/worlds-top-tourist-destinations-money-spent), identificada com a `Data: Table 1.1`, que convé citar juntament amb el cartograma quan s'utilitza l'exemple {% cite howMuchMappingTourismIndustry2019 howMuchTouristSpendingSources2019 %}.
+Un exemple directament turístic és el cartograma de HowMuch [*Mapping the Tourism Industry Around the World*](https://howmuch.net/articles/worlds-top-tourist-destinations-money-spent), publicat el 16 de setembre de 2019. La peça representa els ingressos o rebuts del turisme internacional de 2018 en dòlars: cada país canvia de mida segons el valor d'aquests rebuts, de manera que els Estats Units, Espanya, França o Tailàndia guanyen una presència visual que no correspon a la seva superfície territorial, sinó al pes econòmic de la variable. La pàgina de l'article enllaça també una [pàgina de fonts i dades preparades](https://howmuch.net/sources/worlds-top-tourist-destinations-money-spent), identificada com a `Data: Table 1.1`, que convé citar juntament amb el cartograma quan s'utilitza l'exemple.
 
-Els mapes de metro permeten introduir una altra forma d'anamorfosi, més esquemàtica que estadística. Un plànol de xarxa no acostuma a fer proporcional l'àrea a una magnitud, com faria un cartograma de població, sinó que deforma distàncies, angles i posicions per fer llegible l'ordre de les estacions, les línies i les correspondències. Per això és una bona peça per preguntar què sacrifica una representació i què guanya a canvi: el viatger no necessita mesurar la distància real entre dues parades, sinó entendre quina línia ha d'agafar, on ha de canviar i en quin ordre trobarà les estacions. L'exemple següent és un diagrama del metro de Washington publicat a Wikimedia Commons amb dedicació CC0 {% cite veggieGardenWashingtonDcMetroMap2012 %}.
+Els mapes de metro permeten introduir una altra forma d'anamorfosi, més esquemàtica que estadística. Un plànol de xarxa no acostuma a fer proporcional l'àrea a una magnitud, com faria un cartograma de població, sinó que deforma distàncies, angles i posicions per fer llegible l'ordre de les estacions, les línies i les correspondències. Per això és una bona peça per preguntar què sacrifica una representació i què guanya a canvi: el viatger no necessita mesurar la distància real entre dues parades, sinó entendre quina línia ha d'agafar, on ha de canviar i en quin ordre trobarà les estacions. L'exemple següent és un [diagrama del metro de Washington](https://commons.wikimedia.org/wiki/File:Washington_DC_Metro_Map.svg) publicat a Wikimedia Commons amb dedicació CC0.
 
 ![Diagrama del metro de Washington amb línies acolorides, estacions i correspondències]({{ site.baseurl }}/assets/img/thematic-cartography/washington-dc-metro-map-2012.svg "Un mapa de metro reorganitza l'espai per prioritzar connectivitat, ordre i correspondències per sobre de distància i forma territorial exactes. Washington DC Metro Map, VeggieGarden, 14 de gener de 2012, Wikimedia Commons, CC0 1.0; fitxer incorporat sense modificacions."){: data-figure-width="46rem"}
 
 En turisme, un cartograma podria mostrar el pes de les pernoctacions o de les places d'allotjament respecte d'una base territorial. Seria útil per comunicar concentracions fortes, però no substituiria el mapa convencional quan calgui entendre proximitat, litoralitat, accessos o continuïtats territorials. En el projecte comarcal no es demanarà construir-ne un de complet, però sí reconèixer quan una representació anamòrfica està canviant la pregunta de lectura.
 
 ## Normalitzar abans de simbolitzar
+
+La normalització prepara una comparació territorial només quan relaciona un numerador amb un denominador pertinent i documentat.
+
+>>>>> Aquesta fase comprova si la variable ja és comparable o si necessita una transformació abans de representar-la.
+>>>>>
+>>>>> - Classificar cada camp com a recompte, percentatge, ràtio o densitat.
+>>>>> - Formular i documentar el numerador, el denominador i la unitat d'un indicador normalitzat.
+>>>>> - Verificar la comparabilitat de l'indicador amb el diccionari del llibre i amb casos municipals coneguts.
+>>>>> - Separar els zeros, les absències i els casos no aplicables abans de calcular classes.
 
 ### Volum, intensitat i denominador
 
@@ -168,13 +195,23 @@ Convertir nuls en zero pot alterar tant la classificació com la interpretació.
 
 ## Classificar dades quantitatives
 
+Classificar significa agrupar una distribució ja validada; per això cal observar-ne la forma i controlar què canvia entre alternatives.
+
+>>>>> Aquesta fase compara criteris de tall sense confondre l'efecte de la classificació amb altres decisions visuals.
+>>>>>
+>>>>> - Examinar mínims, màxims, mediana, repeticions, absències i valors extrems abans de crear classes.
+>>>>> - Aplicar i comparar almenys dos mètodes mantenint constants l'indicador, el territori, la paleta i la composició.
+>>>>> - Registrar punts de tall, observacions per classe, classes buides i efectes dels casos extrems.
+>>>>> - Seleccionar una classificació segons la pregunta i la distribució, no segons el contrast que produeix.
+>>>>> - Comprovar que els intervals i les etiquetes de la llegenda no se solapen ni deixen valors sense assignar.
+
 ### Examinar la distribució abans de classificar
 
 Abans d'escollir un mètode s'han de revisar el mínim, el màxim, la mediana, els valors repetits, les absències i els casos extrems. Una llista ordenada, un histograma o el diagrama de caixa construït al capítol 3 permeten observar si la distribució és uniforme, asimètrica o dominada per pocs municipis.
 
 La classificació agrupa valors que ja existeixen; no corregeix errors ni crea comparabilitat. Si un municipi té un valor excepcional, primer s'ha de comprovar el numerador, el denominador i la font. Si és correcte, cal decidir com afecta les classes i explicar-ho, no eliminar-lo perquè dificulta el mapa.
 
-![Comparació entre intervals iguals, quantils, intervals arrodonits, desviacions estàndard i trencaments naturals sobre una mateixa distribució sintètica de valors municipals]({{ site.baseurl }}/assets/img/thematic-cartography/classification-methods.svg "Classificar és decidir quins valors es llegiran com a semblants; intervals iguals, quantils, intervals arrodonits, desviacions estàndard i trencaments naturals responen a criteris diferents. Figura d'elaboració pròpia, 16 d'agost de 2026."){: data-figure-width="54rem"}
+![Comparació entre intervals iguals, quantils, intervals arrodonits, desviacions estàndard i trencaments naturals sobre una mateixa distribució sintètica de valors municipals]({{ site.baseurl }}/assets/img/thematic-cartography/classification-methods.svg "Distribució sintètica de dotze observacions: intervals iguals, quantils, intervals arrodonits, desviacions estàndard i trencaments naturals il·lustren criteris diferents, no una recomanació automàtica. Figura d'elaboració pròpia."){: data-figure-width="54rem"}
 
 ::: subfigures a+b+c/d+e "Comparació de cinc classificacions cartogràfiques sobre un mateix conjunt de dades. Llicència: pendent de revisar."
 ![Mapa de coropletes classificat amb intervals iguals, on els punts de tall mantenen la mateixa amplitud numèrica]({{ site.baseurl }}/assets/img/legacy/iqual-intervals-choropleth-map.png "Els intervals iguals conserven amplituds constants, però poden deixar classes poc poblades")
@@ -186,9 +223,9 @@ La classificació agrupa valors que ja existeixen; no corregeix errors ni crea c
 
 La comparació visual només és útil si les alternatives estan controlades. En una prova de classificacions, el territori, l'indicador, la paleta, la mida del mapa i la llegenda general s'han de mantenir estables; només canvia el mètode de tall. Si alhora es modifica l'extensió, el nombre de classes, la rampa cromàtica i la presència d'etiquetes, ja no es pot saber quina decisió ha produït el canvi de lectura.
 
-Aquest control no converteix cap mètode en obligatori. Els quantils poden ser adequats quan es vol comparar territoris repartits en grups de mida semblant; els intervals iguals faciliten explicar distàncies numèriques; els intervals arrodonits poden fer més llegible una llegenda; les desviacions estàndard destaquen distàncies respecte d'una mitjana; els trencaments màxims situen talls en salts forts entre valors consecutius; i Jenks pot ressaltar agrupacions pròpies d'una distribució. La justificació ha d'explicar quina lectura es prioritza i quin cost s'assumeix. Per exemple, un mapa amb quantils pot mostrar contrast territorial fins i tot quan els valors reals són molt pròxims, mentre que un mapa amb intervals iguals pot deixar una classe quasi buida si hi ha un valor extrem. Aquesta diferència no és un error tècnic: és una conseqüència de la pregunta i del criteri de classificació.
+Aquest control no imposa cap mètode. Els quantils poden ser adequats quan es vol comparar territoris repartits en grups de mida semblant; els intervals iguals faciliten explicar distàncies numèriques; els intervals arrodonits poden fer més llegible una llegenda; les desviacions estàndard destaquen distàncies respecte d'una mitjana; els trencaments màxims situen talls en salts forts entre valors consecutius; i Jenks pot ressaltar agrupacions pròpies d'una distribució. La justificació ha d'explicar quina lectura es prioritza i quin cost s'assumeix. Per exemple, un mapa amb quantils pot mostrar contrast territorial fins i tot quan els valors reals són molt pròxims, mentre que un mapa amb intervals iguals pot deixar una classe quasi buida si hi ha un valor extrem. Aquesta diferència no és un error tècnic: és una conseqüència de la pregunta i del criteri de classificació.
 
-La taula següent resumeix aquesta decisió de manera orientativa. No puntua els mètodes com si un fos sempre millor que els altres: relaciona cada opció amb el tipus de lectura que facilita, el cost que introdueix i el risc d'aplicar-la a dades que ja són categories ordinals. Si el programa utilitzat ofereix noms diferents, cal escriure el nom exacte del mètode i revisar què fa sobre la llista ordenada de valors.
+La taula següent resumeix aquesta decisió de manera orientativa. No ordena els mètodes com si un fos sempre millor que els altres: relaciona cada opció amb el tipus de lectura que facilita, el cost que introdueix i el risc d'aplicar-la a dades que ja són categories ordinals. Si el programa utilitzat ofereix noms diferents, cal escriure el nom exacte del mètode i revisar què fa sobre la llista ordenada de valors.
 
 ::: table "Criteris per triar un mètode de classificació"
 | Mètode | Quan ajuda més | Cost principal | Dades ordinals |
@@ -272,9 +309,25 @@ Els valors extrems poden concentrar la resta d'observacions en poques classes. E
 
 ## Activitat: construir i comparar el mapa temàtic
 
+La demostració guiada reprèn la unió municipal, el registre cromàtic i el mapa de context per convertir un indicador verificat en una lectura espacial. Sempre produeix una coropleta i una alternativa controlada en què només canvia la classificació o la paleta; aquesta alternativa es conserva editable dins del projecte QGIS com a evidència de comparació i permet justificar la versió escollida sense confondre l'efecte de diverses decisions simultànies.
+
+>>>>> L'activitat integra les decisions estadístiques, cartogràfiques i gràfiques en un mapa temàtic preparat per a la síntesi final.
+>>>>>
+>>>>> - Verificar el camp, la unitat, la unió i les absències abans d'aplicar la simbologia.
+>>>>> - Produir una coropleta i conservar una alternativa controlada editable dins del projecte QGIS.
+>>>>> - Construir símbols proporcionals només quan una magnitud absoluta aporti una lectura complementària.
+>>>>> - Aplicar el registre cromàtic i reutilitzar el mapa de context amb una jerarquia visual coherent.
+>>>>> - Revisar la llegenda, les fonts, l'accessibilitat i l'SVG a la mida prevista per a la miniinfografia.
+
+### Materials i resultats de treball
+
+Per començar es disposa del projecte QGIS compartit amb la unió municipal verificada al capítol 5, del `## Registre cromàtic` del capítol 7 i del mapa de context construït al capítol 6. Els resultats de treball són la coropleta final, la comparació controlada de classificació o paleta i el registre al `README.md` de la classificació i les comprovacions d'accessibilitat. El mapa de context es reutilitza o s'incorpora a la composició, sense reconstruir-lo com una peça independent.
+
+En el cas del Tarragonès, els noms semàntics poden ser `outputs/maps/mapa_coropleta_tarragones_habitatge_no_principal.svg` i, si aporta una lectura complementària, un nom adaptat al camp absolut seleccionat, per exemple `outputs/maps/mapa_simbols_tarragones_poblacio_total.svg`. Si cal comparar-la fora de QGIS, l'alternativa també es pot exportar com `outputs/maps/mapa_coropleta_tarragones_habitatge_no_principal_alternativa.svg`. Els noms s'adapten al territori, l'indicador i el camp de cada projecte.
+
 La pràctica compararà mapes municipals del mateix indicador construïts amb classificacions i paletes diferents. La demostració representarà el **percentatge d'habitatge no principal** al Tarragonès. Cada projecte podrà mantenir aquest indicador o justificar l'ús del percentatge de població de 65 anys o més.
 
-La sèrie de sortides cartogràfiques inclourà tres peces complementàries. El **mapa de referència** situarà el territori d'estudi, els municipis principals i els elements de context necessaris perquè el lector entengui on mira. La **coropleta** representarà un indicador relatiu, com un percentatge o una densitat, mitjançant classes de color. El **mapa de símbols proporcionals** representarà una magnitud absoluta, com població, places d'allotjament o habitatges, mitjançant mides escalades per àrea. Les tres peces poden aparèixer en una mateixa composició o en layouts separats, però han de compartir fonts, criteris de retolació i una jerarquia visual coherent.
+La **coropleta** representarà un indicador relatiu, com un percentatge o una densitat, mitjançant classes de color. Quan una magnitud absoluta aporti una lectura complementària, es produirà també un **mapa de símbols proporcionals** amb la població total o els habitatges totals disponibles i mides escalades per àrea. El mapa de context ja construït situarà el territori d'estudi i es podrà incorporar a una de les composicions o reutilitzar com a peça separada, però no s'haurà de duplicar. Totes les peces compartiran fonts, criteris de retolació i una jerarquia visual coherent.
 
 ### Verificar l'indicador unit a la capa
 
@@ -287,7 +340,7 @@ La construcció seguirà un procediment estable:
 3. aplicar un primer mètode i registrar el nombre de classes, els punts de tall i les observacions de cada classe;
 4. duplicar l'estil o la capa només per crear una alternativa controlada, sense duplicar les dades d'origen;
 5. mantenir la mateixa extensió i composició mentre es comparen classificacions;
-6. fixar els punts de tall seleccionats i comparar després les paletes preparades al capítol 4;
+6. fixar els punts de tall seleccionats i comparar després les paletes preparades al capítol 7;
 7. desar l'estil final al projecte i, si cal reutilitzar-lo, en un fitxer d'estil al costat del projecte.
 
 ### Construir alternatives controlades
@@ -304,19 +357,19 @@ La segona comparació mantindrà els punts de tall seleccionats i provarà palet
 
 #### Justificar la versió final
 
-La decisió registrarà què s'ha mantingut constant, què ha canviat, quin patró es fa més o menys visible i quines limitacions conserva. Una alternativa descartada es mantindrà com a evidència; no s'ha de presentar com un error si representa les dades correctament però respon pitjor al propòsit.
+La decisió registrarà què s'ha mantingut constant, què ha canviat, quin patró es fa més o menys visible i quines limitacions conserva. Una alternativa descartada es mantindrà sempre editable dins del projecte QGIS com a evidència de comparació; no s'ha de presentar com un error si representa les dades correctament però respon pitjor al propòsit. Només caldrà exportar-la com un SVG independent si la comparació s'ha de consultar fora de QGIS.
 
-El mapa principal serà una coropleta perquè representa un percentatge. No s'hi aplicaran els colors al nombre absolut d'habitatges. Si una segona capa de símbols proporcionals representa la població total, haurà d'aportar una lectura complementària, conservar una llegenda clara i no ocultar el patró de la coropleta.
+El mapa principal serà una coropleta perquè representa un percentatge. No s'hi aplicaran els colors al nombre absolut d'habitatges. Si es produeix un mapa de símbols proporcionals, utilitzarà la població total o el total d'habitatges disponible i aportarà una lectura complementària. Si se superposen els símbols i la coropleta, els símbols conservaran una llegenda clara i no ocultaran el patró de la coropleta.
 
 ### Construir símbols proporcionals
 
-El mapa de símbols proporcionals treballarà amb un recompte o una magnitud absoluta. QGIS pot generar mides a partir d'un camp numèric, però cal revisar si l'assistent està escalant l'àrea del símbol o només el radi. La llegenda ha de mostrar almenys dos o tres valors de referència, i els símbols no han de tapar completament els límits, les etiquetes o els punts que el mapa necessita per orientar-se.
+Quan aporti aquesta lectura complementària, el mapa de símbols proporcionals treballarà amb un recompte o una magnitud absoluta disponible. QGIS pot generar mides a partir d'un camp numèric, però cal revisar si l'assistent està escalant l'àrea del símbol o només el radi. La llegenda mostrarà dos o tres valors de referència, i els símbols no taparan completament els límits, les etiquetes o els punts que el mapa necessita per orientar-se.
 
 En alguns casos serà millor separar la coropleta i els símbols proporcionals en dos mapes. Superposar-los pot ser útil quan les dues lectures es reforcen, per exemple percentatge d'habitatge no principal i nombre total d'habitatges, però pot saturar la peça si les classes de color, els cercles, els límits i les etiquetes competeixen. La decisió s'ha de prendre mirant la composició final, no només la pantalla de QGIS.
 
 ### Mapa de referència i layouts
 
-El mapa de referència no és una versió simplificada del mapa temàtic. La seva funció és localitzar: pot utilitzar un fons gris o simplificat, límits administratius, topònims seleccionats, xarxa viària principal o una ortofoto quan el context físic sigui necessari. El connector Open ICGC pot facilitar l'accés a aquests fons i divisions, però el mapa final ha de mantenir la mateixa exigència de fonts i crèdits que la resta de capes.
+El mapa de referència del capítol 6 no és una versió simplificada del mapa temàtic. La seva funció és localitzar: pot utilitzar un fons gris o simplificat, límits administratius, topònims seleccionats, xarxa viària principal o una ortofoto quan el context físic sigui necessari. En aquesta activitat es reutilitzarà o s'incorporarà a la composició sense reconstruir-lo com una tercera peça independent. El connector Open ICGC pot facilitar l'accés a aquests fons i divisions, però el mapa final ha de mantenir la mateixa exigència de fonts i crèdits que la resta de capes.
 
 En el disseny d'impressió de QGIS es podrà preparar una composició amb el mapa temàtic principal i un petit mapa de referència, o bé una sèrie de layouts separats per comparar coropleta, símbols proporcionals i context. Si es fan diverses composicions, s'han de conservar l'escala de lectura, la mida relativa dels textos, el sistema de fonts i la manera d'indicar període, unitat i productor. Canviar de layout no ha de canviar la interpretació de les dades.
 
@@ -326,7 +379,7 @@ En el disseny d'impressió de QGIS es podrà preparar una composició amb el map
 
 El mapa temàtic reutilitzarà l'extensió, la jerarquia territorial i els criteris de retolació del mapa de context. La llegenda indicarà l'indicador, la unitat, les classes i el tractament de les absències amb etiquetes comprensibles. Quan hi hagi símbols proporcionals, la llegenda de mides s'haurà de llegir sense confondre-la amb les classes de color. Les fonts distingiran les dades estadístiques, la geometria municipal i els fons cartogràfics.
 
-La composició es revisarà a la mida que ocuparà a la miniinfografia. Els mapes s'exportaran en format vectorial a `outputs/maps`, i els estils, les classificacions, les llegendes i les composicions editables es conservaran al projecte QGIS.
+La composició es revisarà a la mida que ocuparà a la miniinfografia. Els mapes finals s'exportaran en format vectorial a `outputs/maps`; l'alternativa controlada només s'exportarà separadament si cal consultar la comparació fora de QGIS. Els estils, les classificacions, les llegendes, la versió final i l'alternativa controlada editables es conservaran al projecte QGIS.
 
 ### Comprovacions de qualitat
 
@@ -343,19 +396,19 @@ Abans d'acceptar el mapa cal verificar que:
 9. el mapa de referència orienta sense competir amb la variable principal;
 10. les llegendes de color i de mida no es confonen entre si;
 11. la interpretació no atribueix a carrers, persones o establiments allò que només s'ha calculat per municipi;
-12. el PDF conserva les geometries, els textos i els colors previstos.
+12. l'SVG conserva les geometries, els textos i els colors previstos.
 
 ### Evidències que s'han de conservar
 
 ::: table "Evidències de la cartografia temàtica"
 | Ubicació | Evidència | Contingut mínim |
 | --- | --- | --- |
-| `qgis` | Projecte QGIS continuat | Unió verificada, estils, classificacions i composició editable |
+| `qgis` | Projecte QGIS continuat | Unió verificada, estils, classificacions, versió final i alternativa controlada editables |
 | `qgis` | Estil reutilitzable, si cal | Camp, classes, punts de tall, colors i símbol d'absència |
-| `outputs/maps` | Mapa temàtic final | Coropleta vectorial amb llegenda, fonts, període i absències |
-| `outputs/maps` | Mapa de símbols proporcionals | Magnitud absoluta, escala de mides, valors de referència i fonts |
-| `outputs/maps` | Mapa de referència o composició contextual | Extensió, fons, límits, topònims seleccionats i crèdits |
-| `outputs/maps` | Alternativa descartada | Mateix indicador, extensió i mida amb una variació controlada |
+| `outputs/maps` | Mapa temàtic final | `mapa_coropleta_tarragones_habitatge_no_principal.svg`, amb llegenda, fonts, període i absències |
+| `outputs/maps` | Mapa de símbols proporcionals, si aporta una lectura complementària | Nom adaptat al camp absolut seleccionat, per exemple `mapa_simbols_tarragones_poblacio_total.svg`; població total o habitatges totals disponibles, escala de mides, valors de referència i fonts |
+| `outputs/maps` | Alternativa controlada, només si cal consultar-la fora de QGIS | `mapa_coropleta_tarragones_habitatge_no_principal_alternativa.svg`, amb el mateix indicador, extensió i mida i una sola variació controlada |
+| Capítol 6 / composició | Mapa de context reutilitzat | Peça existent incorporada o referenciada, sense exigir-ne una reconstrucció independent |
 | `README.md` | Registre de classificació | Camp, unitat, mètode, classes, punts de tall, paleta i justificació |
 | `README.md` | Control d'accessibilitat | Escala de grisos, simulació cromàtica, contrast i ajustos aplicats |
 :::

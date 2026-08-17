@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="520" viewBox="0 0 1080 520" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="876" height="370" viewBox="86 48 876 370" role="img" aria-labelledby="title desc">
   <title id="title">Superfícies auxiliars de projecció cartogràfica</title>
   <desc id="desc">Esquema conceptual que compara una projecció azimutal sobre un pla, una projecció cònica sobre un con i una projecció cilíndrica sobre un cilindre al voltant del globus.</desc>
   <metadata>
@@ -30,8 +30,6 @@
       .land { fill: #b6c98b; stroke: none; opacity: 0.95; }
     </style>
   </defs>
-
-  <rect width="1080" height="520" fill="#fbfaf7"/>
 
   <g transform="translate(72,42)">
     <text class="panel-title" x="108" y="24" text-anchor="middle">Azimutal o zenital</text>
@@ -67,7 +65,7 @@
     <text class="small" x="152" y="362" text-anchor="middle">freqüent en latituds mitjanes</text>
   </g>
 
-  <g transform="translate(734,42)">
+  <g transform="translate(690,42)">
     <text class="panel-title" x="130" y="24" text-anchor="middle">Cilíndrica</text>
     <text class="small" x="130" y="47" text-anchor="middle">projecta sobre un cilindre</text>
     <path class="surface" d="M 36 92 Q 130 58 224 92 L 224 292 Q 130 326 36 292 Z"/>
@@ -85,8 +83,4 @@
     <text class="small" x="130" y="362" text-anchor="middle">base de Mercator i de la UTM transversa</text>
   </g>
 
-  <g transform="translate(128,438)">
-    <text class="small" x="0" y="0">La superfície auxiliar pot ser tangent o secant, i es pot orientar segons el territori que es vol representar.</text>
-    <text class="small" x="0" y="24">És un esquema per entendre famílies de projecció; moltes projeccions reals es defineixen directament amb fórmules.</text>
-  </g>
 </svg>

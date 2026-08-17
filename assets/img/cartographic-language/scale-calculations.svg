@@ -1,25 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 700" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1014" height="489" viewBox="53 113 1014 489" role="img" aria-labelledby="title desc">
   <title id="title">Càlculs d'escala cartogràfica</title>
   <desc id="desc">Quatre panells mostren com passar de distància al mapa a distància real, de distància real a distància al mapa, com calcular superfícies amb el quadrat de l'escala i com estimar fulls equivalents entre dues escales.</desc>
   <defs>
     <style>
-      .bg{fill:#fbfaf7}.panel{fill:#fff;stroke:#d8d2c5;stroke-width:1.6}.txt{font-family:Arial,Helvetica,sans-serif;fill:#2b2b2b}.title{font-size:28px;font-weight:700}.subtitle{font-size:15px;fill:#5c5c5c}.h{font-size:18px;font-weight:700}.small{font-size:14px}.label{font-size:13px;fill:#555}.tiny{font-size:12px;fill:#666}.map{fill:#e7efe2;stroke:#75a36d;stroke-width:2}.real{fill:#e8f1fb;stroke:#4c78a8;stroke-width:2}.accent{fill:#d65f43}.orange{fill:#f7b267;stroke:#a55c1c;stroke-width:1.5}.line{stroke:#2b2b2b;stroke-width:4;stroke-linecap:round}.dash{stroke:#777;stroke-width:1.4;stroke-dasharray:5 5}.arrow{stroke:#777;stroke-width:2;marker-end:url(#arrow)}.grid{stroke:#4c78a8;stroke-width:2}.formula{font-size:17px;font-weight:700;fill:#365b6d}
+      .panel{fill:#fff;stroke:#d8d2c5;stroke-width:1.6}.txt{font-family:Arial,Helvetica,sans-serif;fill:#2b2b2b}.h{font-size:18px;font-weight:700}.small{font-size:14px}.label{font-size:13px;fill:#555}.map{fill:#e7efe2;stroke:#75a36d;stroke-width:2}.real{fill:#e8f1fb;stroke:#4c78a8;stroke-width:2}.accent{fill:#d65f43}.orange{fill:#f7b267;stroke:#a55c1c;stroke-width:1.5}.line{stroke:#2b2b2b;stroke-width:4;stroke-linecap:round}.dash{stroke:#777;stroke-width:1.4;stroke-dasharray:5 5}.arrow{stroke:#777;stroke-width:2;marker-end:url(#arrow)}.grid{stroke:#4c78a8;stroke-width:2}.formula{font-size:17px;font-weight:700;fill:#365b6d}
     </style>
     <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#777"/></marker>
   </defs>
-  <rect width="1120" height="700" class="bg"/>
-  <text x="560" y="45" text-anchor="middle" class="txt title">Càlculs d'escala: longitud, àrea i fulls</text>
-  <text x="560" y="72" text-anchor="middle" class="txt subtitle">En una escala 1:n, les distàncies usen n i les superfícies usen n².</text>
-
   <g transform="translate(55,115)">
-    <rect width="480" height="220" rx="8" class="panel"/>
+    <rect width="480" height="220" class="panel"/>
     <text x="24" y="36" class="txt h">1. Del mapa a la realitat</text>
-    <rect x="34" y="65" width="175" height="100" rx="12" class="map"/>
+    <rect x="34" y="65" width="175" height="100" class="map"/>
     <path d="M70,120 L173,120" class="line"/>
     <circle cx="70" cy="120" r="6" class="accent"/><circle cx="173" cy="120" r="6" class="accent"/>
     <text x="74" y="150" class="txt small">2 cm al mapa</text>
     <line x1="222" y1="114" x2="282" y2="114" class="arrow"/>
-    <rect x="298" y="65" width="145" height="100" rx="12" class="real"/>
+    <rect x="298" y="65" width="145" height="100" class="real"/>
     <path d="M326,120 L414,120" class="line"/>
     <text x="321" y="150" class="txt small">1 km real</text>
     <text x="34" y="196" class="txt formula"><tspan>D</tspan><tspan baseline-shift="sub" font-size="12">r</tspan><tspan> = D</tspan><tspan baseline-shift="sub" font-size="12">m</tspan><tspan> × n</tspan></text>
@@ -27,13 +23,13 @@
   </g>
 
   <g transform="translate(585,115)">
-    <rect width="480" height="220" rx="8" class="panel"/>
+    <rect width="480" height="220" class="panel"/>
     <text x="24" y="36" class="txt h">2. De la realitat al mapa</text>
-    <rect x="34" y="65" width="175" height="100" rx="12" class="real"/>
+    <rect x="34" y="65" width="175" height="100" class="real"/>
     <path d="M62,120 C92,95 134,95 179,120" fill="none" class="line"/>
     <text x="58" y="150" class="txt small">628 m reals</text>
     <line x1="222" y1="114" x2="282" y2="114" class="arrow"/>
-    <rect x="298" y="65" width="145" height="100" rx="12" class="map"/>
+    <rect x="298" y="65" width="145" height="100" class="map"/>
     <path d="M345,120 L397,120" class="line"/>
     <text x="327" y="150" class="txt small">2,51 cm</text>
     <text x="34" y="196" class="txt formula"><tspan>D</tspan><tspan baseline-shift="sub" font-size="12">m</tspan><tspan> = D</tspan><tspan baseline-shift="sub" font-size="12">r</tspan><tspan> / n</tspan></text>
@@ -41,7 +37,7 @@
   </g>
 
   <g transform="translate(55,370)">
-    <rect width="480" height="230" rx="8" class="panel"/>
+    <rect width="480" height="230" class="panel"/>
     <text x="24" y="36" class="txt h">3. Superfícies</text>
     <rect x="50" y="75" width="70" height="70" class="map"/>
     <text x="43" y="166" class="txt small">18 cm²</text>
@@ -55,7 +51,7 @@
   </g>
 
   <g transform="translate(585,370)">
-    <rect width="480" height="230" rx="8" class="panel"/>
+    <rect width="480" height="230" class="panel"/>
     <text x="24" y="36" class="txt h">4. Fulls equivalents</text>
     <rect x="52" y="70" width="125" height="125" class="orange"/>
     <text x="70" y="216" class="txt small">1 full a 1:50 000</text>
@@ -66,7 +62,4 @@
     <text x="303" y="216" class="txt small">4 fulls a 1:25 000</text>
     <text x="300" y="38" class="txt formula">N = (n₁ / n₂)²</text>
   </g>
-
-  <rect x="230" y="635" width="660" height="36" rx="8" fill="#fff" stroke="#d8d2c5"/>
-  <text x="560" y="658" text-anchor="middle" class="txt tiny">Primer s'unifiquen unitats; després es calcula. La mida final del mapa determina si el resultat és llegible.</text>
 </svg>

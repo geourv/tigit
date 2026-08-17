@@ -1,23 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="760" viewBox="0 0 1180 760" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="696" height="496" viewBox="62 122 696 496" role="img" aria-labelledby="title desc">
   <title id="title">Grafs i diagrames amb sintaxi Mermaid</title>
-  <desc id="desc">Un mateix procés es representa com a codi textual, graf de nodes i arestes, i diagrama exportable per documentar un flux de treball amb dades territorials.</desc>
+  <desc id="desc">Un mateix procés es representa com a codi Mermaid i com a graf de nodes i arestes per documentar un flux de treball amb dades territorials.</desc>
   <defs>
     <style>
-      .bg { fill: #ffffff; }
-      .title { font: 700 31px Arial, 'Liberation Sans', sans-serif; fill: #17202a; }
-      .subtitle { font: 16px Arial, 'Liberation Sans', sans-serif; fill: #52616b; }
-      .panel { fill: #f7fafb; stroke: #cbd6dc; stroke-width: 1.5; rx: 18; }
+      .panel { fill: #f7fafb; stroke: #cbd6dc; stroke-width: 1.5; }
       .panelTitle { font: 700 19px Arial, 'Liberation Sans', sans-serif; fill: #17202a; }
       .text { font: 15px Arial, 'Liberation Sans', sans-serif; fill: #40515c; }
       .tiny { font: 13px Arial, 'Liberation Sans', sans-serif; fill: #52616b; }
       .code { font: 15px 'Liberation Mono', Consolas, monospace; fill: #17202a; }
-      .node { fill: #ffffff; stroke: #226699; stroke-width: 2; rx: 12; }
-      .nodeMain { fill: #226699; stroke: #174867; stroke-width: 2; rx: 12; }
+      .node { fill: #ffffff; stroke: #226699; stroke-width: 2; }
+      .nodeMain { fill: #226699; stroke: #174867; stroke-width: 2; }
       .nodeText { font: 700 14px Arial, 'Liberation Sans', sans-serif; fill: #17202a; }
       .nodeTextWhite { font: 700 14px Arial, 'Liberation Sans', sans-serif; fill: #ffffff; }
       .edge { fill: none; stroke: #52616b; stroke-width: 2.4; marker-end: url(#arrow); }
       .edgeSoft { fill: none; stroke: #8fa0aa; stroke-width: 2; stroke-dasharray: 6 5; marker-end: url(#arrowSoft); }
-      .callout { fill: #fff7e6; stroke: #e2b35f; stroke-width: 1.4; rx: 14; }
     </style>
     <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
       <path d="M0,0 L0,6 L9,3 z" fill="#52616b"/>
@@ -26,24 +22,15 @@
       <path d="M0,0 L0,6 L9,3 z" fill="#8fa0aa"/>
     </marker>
   </defs>
-  <rect class="bg" width="1180" height="760"/>
-  <text x="590" y="48" text-anchor="middle" class="title">Un graf mostra relacions, no superfícies</text>
-  <text x="590" y="78" text-anchor="middle" class="subtitle">La mateixa lògica pot documentar-se com a codi Mermaid, diagrama revisable i figura final.</text>
-
   <rect x="64" y="124" width="330" height="492" class="panel"/>
   <text x="94" y="162" class="panelTitle">1. Descriure en text</text>
-  <text x="94" y="196" class="text">La sintaxi textual obliga a identificar</text>
-  <text x="94" y="218" class="text">nodes, arestes i direcció del flux.</text>
-  <rect x="94" y="252" width="250" height="216" fill="#ffffff" stroke="#cbd6dc" rx="10"/>
+  <rect x="94" y="196" width="250" height="272" fill="#ffffff" stroke="#cbd6dc"/>
   <text x="114" y="286" class="code">graph LR</text>
   <text x="114" y="318" class="code">A[Fonts] --&gt; B[Indicadors]</text>
   <text x="114" y="350" class="code">B --&gt; C[Gràfics]</text>
   <text x="114" y="382" class="code">B --&gt; D[Mapes]</text>
   <text x="114" y="414" class="code">C --&gt; E[Infografia]</text>
   <text x="114" y="446" class="code">D --&gt; E</text>
-  <text x="94" y="514" class="tiny">Un LLM pot proposar aquest esborrany,</text>
-  <text x="94" y="536" class="tiny">però cal comprovar-ne la lògica i les fonts.</text>
-
   <rect x="426" y="124" width="330" height="492" class="panel"/>
   <text x="456" y="162" class="panelTitle">2. Llegir com a xarxa</text>
   <path d="M535 235 C590 210, 642 214, 678 250" class="edge"/>
@@ -61,20 +48,4 @@
   <text x="696" y="471" text-anchor="middle" class="nodeText">Mapes</text>
   <rect x="530" y="560" width="142" height="54" class="nodeMain"/>
   <text x="601" y="593" text-anchor="middle" class="nodeTextWhite">Infografia</text>
-
-  <rect x="788" y="124" width="330" height="492" class="panel"/>
-  <text x="818" y="162" class="panelTitle">3. Verificar abans d'usar</text>
-  <rect x="818" y="208" width="250" height="76" class="callout"/>
-  <text x="842" y="236" class="text">Les fletxes indiquen dependència,</text>
-  <text x="842" y="258" class="text">no causalitat demostrada.</text>
-  <rect x="818" y="316" width="250" height="76" class="callout"/>
-  <text x="842" y="344" class="text">Cada node ha de correspondre a</text>
-  <text x="842" y="366" class="text">un fitxer, dada o decisió revisable.</text>
-  <rect x="818" y="424" width="250" height="76" class="callout"/>
-  <text x="842" y="452" class="text">El diagrama final s'exporta,</text>
-  <text x="842" y="474" class="text">però el codi font es conserva.</text>
-  <text x="818" y="554" class="tiny">Els grafs són útils per processos,</text>
-  <text x="818" y="576" class="tiny">relacions entre fonts, fluxos i decisions.</text>
-
-  <text x="590" y="714" text-anchor="middle" class="tiny">Figura d'elaboració pròpia inspirada en la sintaxi Mermaid. El codi mostrat és un exemple didàctic simplificat.</text>
 </svg>

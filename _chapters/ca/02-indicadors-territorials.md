@@ -16,6 +16,15 @@ Un indicador condensa dades per fer visible una situació, una diferència o una
 
 Aquest capítol amplia, per tant, la dimensió pràctica del llibre comarcal. Abans de calcular percentatges, ràtios i densitats, situa els indicadors dins de sistemes oficials, quadres de comandament i estudis científics. Després examina com es dissenyen i interpreten, i finalment aplica aquests criteris a la població i l'habitatge dels municipis del Tarragonès.
 
+>>>>> En acabar el capítol, cal poder dissenyar, calcular, interpretar i validar indicadors territorials coherents amb una pregunta i amb les dades disponibles.
+>>>>>
+>>>>> - Explicar què representa un indicador i quins límits imposen la definició, l'escala, el període i la cobertura.
+>>>>> - Distingir les funcions dels sistemes oficials, els estudis de recerca i els quadres de comandament.
+>>>>> - Justificar el numerador, el denominador, la unitat i el factor d'escala d'una mesura útil.
+>>>>> - Calcular indicadors municipals i agregats comarcals reproduïbles al full `indicators`.
+>>>>> - Interpretar patrons, contrastos i casos extrems sense presentar-los com a causes demostrades.
+>>>>> - Validar fórmules, compatibilitat, cobertura, absències i resultats abans de documentar-los.
+
 ## Per què es construeixen indicadors
 
 Les dades originals acostumen a descriure observacions concretes: persones residents, habitatges, pernoctacions, places d'allotjament o superfície. Aquestes magnituds són indispensables, però una pregunta territorial sol exigir alguna transformació. El nombre d'habitatges no principals informa del volum; el seu percentatge dins del parc residencial informa de composició. La població informa de grandària; els habitants per quilòmetre quadrat informen de concentració.
@@ -49,6 +58,13 @@ Aquesta funció exploratòria connecta amb el procés de descobriment de coneixe
 ## Sistemes oficials, recerca i quadres de comandament
 
 Els indicadors rarament apareixen sols. Formen sistemes perquè una realitat territorial o turística té diverses dimensions i perquè cada públic necessita una forma de consulta. Una publicació estadística pot explicar una tendència mitjançant text i figures; un quadre de comandament facilita filtres i actualitzacions; un sistema de planificació relaciona indicadors amb objectius; i un article científic fa explícita la metodologia per poder discutir-la i reproduir-la.
+
+>>>>> La comparació entre sistemes permet decidir què es pot reutilitzar i quines comprovacions exigeix cada entorn.
+>>>>>
+>>>>> - Comparar la finalitat, l'escala i el grau de documentació d'un sistema oficial, un estudi científic i un quadre de comandament.
+>>>>> - Distingir una interfície de consulta, una font de dades i un sistema d'indicadors.
+>>>>> - Interpretar com els denominadors, les dimensions i l'harmonització modifiquen la lectura d'un fenomen.
+>>>>> - Validar definició, productor, període, unitat, cobertura i metodologia abans de reutilitzar un valor.
 
 ::: table "Exemples d'ús d'indicadors territorials i turístics"
 | Exemple | Escala i contingut | Utilitat principal | Precaució de lectura |
@@ -144,7 +160,7 @@ $$
 
 El factor $k$ permet expressar, per exemple, places o pernoctacions per 1.000 habitants. No s'ha d'afegir automàticament: la unitat final ha de respondre a una escala comprensible i s'ha de mantenir al nom de l'indicador.
 
-Per a la demanda turística, l'estada mitjana relaciona pernoctacions i arribades. La intensitat i la densitat utilitzades per Eurostat comparteixen numerador, però canvien el denominador {% cite eurostatTourismOccupancyMetadata2024 %}:
+Per a la demanda turística, l'estada mitjana relaciona pernoctacions i arribades. La intensitat i la densitat definides a les [metadades d'ocupació turística d'Eurostat](https://ec.europa.eu/eurostat/cache/metadata/en/tour_occ_esms.htm) comparteixen numerador, però canvien el denominador:
 
 $$
 \text{estada mitjana} = \frac{\text{pernoctacions}}{\text{arribades}}
@@ -180,7 +196,7 @@ $$
 \text{intensitat hídrica turística} = \frac{\text{aigua atribuïble al turisme}}{\text{pernoctacions}}
 $$
 
-Dividir el consum municipal total per les pernoctacions seria incorrecte perquè el numerador inclouria residents, indústria, serveis i altres usos. A una altra escala, l'Agència Europea de Medi Ambient defineix el WEI+ com la part dels recursos renovables consumida per l'economia {% cite eeaWaterScarcityWEI2025 %}:
+Dividir el consum municipal total per les pernoctacions seria incorrecte perquè el numerador inclouria residents, indústria, serveis i altres usos. A una altra escala, l'Agència Europea de Medi Ambient [defineix el WEI+](https://www.eea.europa.eu/en/analysis/indicators/use-of-freshwater-resources-in-europe-1) com la part dels recursos renovables consumida per l'economia:
 
 $$
 \mathrm{WEI+} = \frac{\text{captacions}-\text{retorns}}{\text{recursos hídrics renovables}}\times 100
@@ -193,6 +209,13 @@ WEI+ descriu el context d'estrès d'una conca o territori. No atribueix el resul
 La qualitat d'un indicador depèn de la correspondència entre la pregunta i la construcció matemàtica. El punt de partida és una frase precisa: què es vol observar, sobre quines unitats territorials, en quin període i per a quin ús. Només després es decideixen el numerador, el denominador i el factor d'escala.
 
 Un valor absolut descriu volum. Un percentatge expressa una part d'un total. Una ràtio relaciona quantitats que poden representar fenòmens diferents. Una densitat posa una magnitud en relació amb la superfície. Aquestes formes no constitueixen una escala de sofisticació: cadascuna respon una pregunta. El volum de població pot ser rellevant per dimensionar serveis, mentre que la densitat ajuda a comparar concentració espacial.
+
+>>>>> El disseny d'una mesura útil tradueix una pregunta territorial en una construcció matemàtica interpretable i revisable.
+>>>>>
+>>>>> - Formular la pregunta, la unitat territorial, el període i l'ús previst abans d'escollir una fórmula.
+>>>>> - Distingir volum, percentatge, ràtio, densitat i agregació segons la comparació que permeten.
+>>>>> - Justificar el numerador, el denominador, la unitat i el factor d'escala amb relació a la pregunta.
+>>>>> - Validar comparabilitat, bases petites i casos extrems, i separar els patrons observats de les causes possibles.
 
 ::: table "Preguntes i indicadors possibles sobre població i habitatge"
 | Pregunta | Numerador | Denominador | Lectura principal | Ús possible |
@@ -225,11 +248,23 @@ Un indicador descriu un patró, però no n'estableix automàticament la causa. U
 
 ## Activitat: construir indicadors al llibre comarcal
 
-L'activitat continuarà amb `municipal_table` dins del mateix llibre preparat al capítol 1. El full `indicators` conservarà el codi i el nom de cada municipi, les variables de partida i les fórmules. No es descarregaran versions noves de les fonts a mig procés, tret que l'actualització quedi documentada.
+### Punt de partida i abast de la demostració guiada
+
+L'activitat continua en el mateix llibre acumulatiu del capítol 1 i es resol amb Excel o Calc. El punt de partida és `municipal`, amb una fila per municipi i els camps de codi i nom territorial, població total, població de 0–14, 15–64 i 65 anys o més, habitatges totals, principals i no principals, i superfície. L'abast de la demostració guiada és calcular al full `indicators` els sis indicadors següents per a tots els municipis, obtenir els agregats comarcals a partir dels numeradors i denominadors, i actualitzar `dictionary`, `checks` i `README.md`. No s'incorporarà cap font nova, llevat que la necessitat, la procedència i el tractament quedin documentats.
+
+Els sis indicadors de la taula següent concreten l'abast de la demostració guiada i permeten seguir un mateix exemple de principi a fi. El full `indicators` conservarà el codi i el nom de cada municipi, les variables de partida i les fórmules. En el projecte, la selecció efectiva d'indicadors es farà segons els camps compatibles disponibles i la pregunta acordada; pot coincidir amb aquesta sèrie o adoptar-ne només les construccions pertinents.
 
 La demostració utilitza població i habitatge perquè aquestes variables construeixen el context i diversos denominadors necessaris per interpretar un territori. No mesura encara l'activitat turística. Per calcular intensitat, densitat, estacionalitat o rendibilitat turística caldria incorporar pernoctacions, places, establiments, ocupació, despesa o altres dades amb cobertura territorial i temporal compatible. L'habitatge no principal no s'utilitzarà com a substitut d'aquestes fonts. Els indicadors turístics de la taula anterior funcionen com a model per a una ampliació posterior quan es disposi d'una font adequada.
 
 La pregunta «on pesa més la població gran?» es tradueix, per exemple, en tres camps relacionats: població de 65 anys o més, població total i percentatge resultant. Conservar els dos primers permet revisar el tercer i entendre si un valor elevat descansa sobre una base gran o petita. La mateixa lògica s'aplica als altres indicadors abans de convertir els camps en referències de cel·la.
+
+>>>>> L'activitat transforma les dades municipals preparades en indicadors documentats que continuaran alimentant els gràfics del llibre comarcal.
+>>>>>
+>>>>> - Construir al full `indicators` els indicadors municipals amb numeradors, denominadors, unitats i fórmules visibles.
+>>>>> - Calcular els agregats comarcals a partir de les sumes compatibles, sense fer mitjanes simples de percentatges municipals.
+>>>>> - Validar divisions, absències, cobertura, totals i casos extrems mitjançant comprovacions reproduïbles.
+>>>>> - Interpretar contrastos territorials com a patrons descriptius i distingir-los de les hipòtesis causals.
+>>>>> - Documentar definicions, limitacions i comprovacions a `dictionary`, `checks` i `README.md` perquè el full alimenti `charts`.
 
 ### Fórmules, unitats i casos no calculables
 

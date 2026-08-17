@@ -1,12 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="760" viewBox="0 0 1180 760" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1074" height="549" viewBox="53 118 1074 549" role="img" aria-labelledby="title desc">
   <title id="title">Repertori orientatiu de grafics segons la pregunta</title>
   <desc id="desc">Vuit famílies de representació visual vinculades a preguntes de comparació, evolució, composició, distribució, relació, xarxa, flux i espai.</desc>
   <defs>
     <style>
-      .bg { fill: #fffdf8; }
-      .card { fill: #ffffff; stroke: #d5dde2; stroke-width: 1.6; rx: 18; }
-      .title { font: 700 31px Arial, 'Liberation Sans', sans-serif; fill: #17202a; }
-      .subtitle { font: 16px Arial, 'Liberation Sans', sans-serif; fill: #52616b; }
+      .card { fill: #ffffff; stroke: #d5dde2; stroke-width: 1.6; }
       .label { font: 700 18px Arial, 'Liberation Sans', sans-serif; fill: #17202a; }
       .small { font: 14px Arial, 'Liberation Sans', sans-serif; fill: #52616b; }
       .axis { stroke: #9fb0b8; stroke-width: 1.5; }
@@ -21,10 +18,6 @@
       <path d="M0,0 L0,6 L9,3 z" fill="#365b6d"/>
     </marker>
   </defs>
-  <rect class="bg" width="1180" height="760"/>
-  <text x="590" y="48" text-anchor="middle" class="title">La pregunta orienta el tipus de grafic</text>
-  <text x="590" y="78" text-anchor="middle" class="subtitle">Una mateixa taula pot admetre diverses formes; cada geometria facilita unes lectures i en dificulta unes altres.</text>
-
   <g transform="translate(55 120)">
     <rect class="card" width="245" height="245"/>
     <text x="24" y="38" class="label">Comparar magnituds</text>
@@ -108,6 +101,4 @@
     <path d="M105,137 L112,195 L142,145 L178,178" class="thin"/>
     <circle cx="142" cy="145" r="18" fill="#d0523c" opacity=".85"/>
   </g>
-
-  <text x="590" y="723" text-anchor="middle" class="small">Figura d'elaboracio propia, 14 d'agost de 2026. El repertori es orientatiu: la dada, la pregunta i la mida final decideixen la representacio.</text>
 </svg>

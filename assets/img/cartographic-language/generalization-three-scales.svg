@@ -1,13 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="760" viewBox="0 0 1180 760" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1094" height="460" viewBox="43 123 1094 460" role="img" aria-labelledby="title desc">
   <title id="title">Generalització cartogràfica a tres escales</title>
   <desc id="desc">Tres marcs de la mateixa mida final mostren com una escala local, una escala comarcal i una escala regional cobreixen extensions reals creixents i exigeixen nivells diferents de generalització.</desc>
   <defs>
     <style>
-      .bg { fill: #fffdf8; }
       .card { fill: #ffffff; stroke: #d5dde2; stroke-width: 1.6; }
       .map { fill: #f7fbfa; stroke: #365b6d; stroke-width: 2.2; }
-      .title { font: 700 31px Arial, 'Liberation Sans', sans-serif; fill: #17202a; }
-      .subtitle { font: 16px Arial, 'Liberation Sans', sans-serif; fill: #52616b; }
       .label { font: 700 18px Arial, 'Liberation Sans', sans-serif; fill: #17202a; }
       .small { font: 14px Arial, 'Liberation Sans', sans-serif; fill: #52616b; }
       .tiny { font: 12px Arial, 'Liberation Sans', sans-serif; fill: #52616b; }
@@ -26,21 +23,17 @@
     <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
       <path d="M0,0 L0,6 L9,3 z" fill="#365b6d"/>
     </marker>
-    <clipPath id="clipLocal"><rect x="0" y="0" width="300" height="285" rx="10"/></clipPath>
-    <clipPath id="clipCounty"><rect x="0" y="0" width="300" height="285" rx="10"/></clipPath>
-    <clipPath id="clipRegion"><rect x="0" y="0" width="300" height="285" rx="10"/></clipPath>
+    <clipPath id="clipLocal"><rect x="0" y="0" width="300" height="285"/></clipPath>
+    <clipPath id="clipCounty"><rect x="0" y="0" width="300" height="285"/></clipPath>
+    <clipPath id="clipRegion"><rect x="0" y="0" width="300" height="285"/></clipPath>
   </defs>
 
-  <rect class="bg" width="1180" height="760"/>
-  <text x="590" y="48" text-anchor="middle" class="title">Generalitzar també és canviar d'escala</text>
-  <text x="590" y="78" text-anchor="middle" class="subtitle">Els tres marcs tenen la mateixa mida final, però cada un cobreix una extensió real més gran i ha de conservar menys detall.</text>
-
   <g transform="translate(45 125)">
-    <rect class="card" width="340" height="455" rx="16"/>
+    <rect class="card" width="340" height="455"/>
     <text x="24" y="38" class="label">Escala gran</text>
     <text x="24" y="62" class="small">1:25.000 · àmbit local</text>
     <g transform="translate(20 88)">
-      <rect class="map" width="300" height="285" rx="10"/>
+      <rect class="map" width="300" height="285"/>
       <g clip-path="url(#clipLocal)">
         <rect width="300" height="285" fill="#f7fbfa"/>
         <path d="M-10,238 C48,190 75,221 117,158 C157,99 214,130 312,62" class="riverThin"/>
@@ -84,14 +77,14 @@
     <text x="24" y="426" class="small">edificis i formes locals.</text>
   </g>
 
-  <line x1="400" y1="352" x2="440" y2="352" class="arrow"/>
+  <line x1="393" y1="352" x2="411" y2="352" class="arrow"/>
 
   <g transform="translate(420 125)">
-    <rect class="card" width="340" height="455" rx="16"/>
+    <rect class="card" width="340" height="455"/>
     <text x="24" y="38" class="label">Escala mitjana</text>
     <text x="24" y="62" class="small">1:100.000 · àmbit comarcal</text>
     <g transform="translate(20 88)">
-      <rect class="map" width="300" height="285" rx="10"/>
+      <rect class="map" width="300" height="285"/>
       <g clip-path="url(#clipCounty)">
         <rect width="300" height="285" fill="#f7fbfa"/>
         <path d="M-10,230 C44,200 73,212 105,172 C146,120 193,128 312,76" class="river"/>
@@ -109,14 +102,14 @@
     <text x="24" y="426" class="small">desapareix i la jerarquia domina.</text>
   </g>
 
-  <line x1="775" y1="352" x2="815" y2="352" class="arrow"/>
+  <line x1="768" y1="352" x2="786" y2="352" class="arrow"/>
 
   <g transform="translate(795 125)">
-    <rect class="card" width="340" height="455" rx="16"/>
+    <rect class="card" width="340" height="455"/>
     <text x="24" y="38" class="label">Escala petita</text>
     <text x="24" y="62" class="small">1:400.000 · àmbit regional</text>
     <g transform="translate(20 88)">
-      <rect class="map" width="300" height="285" rx="10"/>
+      <rect class="map" width="300" height="285"/>
       <g clip-path="url(#clipRegion)">
         <rect width="300" height="285" fill="#f7fbfa"/>
         <path d="M-15,222 C66,184 99,206 142,164 C189,118 226,126 318,75" class="river"/>
@@ -132,10 +125,5 @@
     </g>
     <text x="24" y="405" class="small">La ciutat ja és un símbol puntual:</text>
     <text x="24" y="426" class="small">es conserven posició i connexions.</text>
-  </g>
-
-  <g transform="translate(130 630)">
-    <line x1="0" y1="0" x2="920" y2="0" stroke="#d5dde2" stroke-width="2"/>
-    <text x="460" y="32" text-anchor="middle" class="small">La mida de sortida no canvia; canvia el territori que hi entra. Per això cal seleccionar, simplificar, agregar i, si cal, simbolitzar.</text>
   </g>
 </svg>

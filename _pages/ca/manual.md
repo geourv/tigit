@@ -132,10 +132,6 @@ Per treballar amb seguretat, el projecte tindrà una carpeta arrel identificable
 
 Compartir un enllaç no és el mateix que lliurar un fitxer. Quan Moodle demani un fitxer, s'ha de descarregar o exportar la versió correcta, verificar que s'obre fora de la sessió del navegador i trametre-la en el format indicat. Els enllaços compartits només substituiran el fitxer quan les instruccions ho demanin explícitament.
 
-L'organització dels fitxers forma part del treball tècnic. Un projecte mal ordenat és difícil de revisar i encara més difícil de corregir. Per això convé mantenir una estructura mínima i estable des del primer exercici.
-
-![Estructura recomanada de carpetes]({{ site.baseurl }}/assets/diagrams/reproducible-project-structure.puml "Estructura recomanada de carpetes per al treball del curs")
-
 ## Evidències d'aprenentatge
 
 La guia docent 2026_27 defineix una avaluació continuada amb activitats de laboratori, presentació o exposició, atenció personalitzada, prova de continguts i prova pràctica. El manual explica com aquestes evidències es connecten amb el treball del curs, però les dates, els lliuraments concrets, el territori assignat i els enunciats operatius s'han de consultar a Moodle.

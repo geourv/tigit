@@ -1,32 +1,28 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 820" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1014" height="624" viewBox="53 110 1014 624" role="img" aria-labelledby="title desc">
   <title id="title">Tipus d'escala cartogràfica i unitats angulars</title>
   <desc id="desc">Figura didàctica que compara l'escala numèrica, verbal i gràfica, mostra equivalències mètriques i distingeix el grau de latitud, mesurat sobre meridians i gairebé constant en distància nord-sud, del grau de longitud, mesurat sobre paral·lels cada vegada més curts cap als pols.</desc>
   <defs>
     <style>
-      .bg{fill:#fbfaf7}.panel{fill:#fff;stroke:#d8d2c5;stroke-width:1.6}.txt{font-family:Arial,Helvetica,sans-serif;fill:#2b2b2b}.title{font-size:28px;font-weight:700}.subtitle{font-size:15px;fill:#5c5c5c}.h{font-size:19px;font-weight:700}.small{font-size:14px}.label{font-size:13px;fill:#555}.tiny{font-size:12px;fill:#666}.map{fill:#e7efe2;stroke:#75a36d;stroke-width:2}.water{fill:#dcecf7}.line{stroke:#2b2b2b;stroke-width:4;stroke-linecap:round}.thin{stroke:#777;stroke-width:1.4}.dash{stroke:#777;stroke-width:1.4;stroke-dasharray:5 5}.accent{fill:#d65f43}.blue{fill:#e8f1fb;stroke:#4c78a8;stroke-width:2}.chip{fill:#f7f0df;stroke:#d0b56f;stroke-width:1.3}.formula{font-size:17px;font-weight:700;fill:#365b6d}.warning{fill:#fff5f0;stroke:#d65f43;stroke-width:1.5}.degree{stroke:#4c78a8;stroke-width:7;stroke-linecap:round}.degree2{stroke:#75a36d;stroke-width:7;stroke-linecap:round}.arrow{stroke:#777;stroke-width:2;marker-end:url(#arrow)}.tick{stroke:#2b2b2b;stroke-width:2}
+      .panel{fill:#fff;stroke:#d8d2c5;stroke-width:1.6}.txt{font-family:Arial,Helvetica,sans-serif;fill:#2b2b2b}.h{font-size:19px;font-weight:700}.small{font-size:14px}.label{font-size:13px;fill:#555}.tiny{font-size:12px;fill:#666}.map{fill:#e7efe2;stroke:#75a36d;stroke-width:2}.water{fill:#dcecf7}.line{stroke:#2b2b2b;stroke-width:4;stroke-linecap:round}.thin{stroke:#777;stroke-width:1.4}.dash{stroke:#777;stroke-width:1.4;stroke-dasharray:5 5}.accent{fill:#d65f43}.blue{fill:#e8f1fb;stroke:#4c78a8;stroke-width:2}.chip{fill:#f7f0df;stroke:#d0b56f;stroke-width:1.3}.formula{font-size:17px;font-weight:700;fill:#365b6d}.warning{fill:#fff5f0;stroke:#d65f43;stroke-width:1.5}.degree{stroke:#4c78a8;stroke-width:7;stroke-linecap:round}.degree2{stroke:#75a36d;stroke-width:7;stroke-linecap:round}.arrow{stroke:#777;stroke-width:2;marker-end:url(#arrow)}.tick{stroke:#2b2b2b;stroke-width:2}
     </style>
     <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#777"/></marker>
   </defs>
 
-  <rect width="1120" height="820" class="bg"/>
-  <text x="560" y="45" text-anchor="middle" class="txt title">Escala cartogràfica: formes i unitats</text>
-  <text x="560" y="72" text-anchor="middle" class="txt subtitle">La fracció, la barra i l'expressió verbal només són equivalents si les unitats permeten mesurar.</text>
-
   <g transform="translate(55,112)">
-    <rect width="480" height="245" rx="8" class="panel"/>
+    <rect width="480" height="245" class="panel"/>
     <text x="24" y="36" class="txt h">1. Tres formes equivalents</text>
 
-    <rect x="32" y="64" width="168" height="124" rx="10" class="water"/>
+    <rect x="32" y="64" width="168" height="124" class="water"/>
     <path d="M32,147 C62,129 93,135 122,111 C145,92 168,97 200,82 L200,188 L32,188 Z" class="map"/>
     <path d="M72,116 L142,97 L178,72" fill="none" class="thin"/>
     <circle cx="87" cy="112" r="5" class="accent"/>
     <circle cx="147" cy="95" r="5" class="accent"/>
     <text x="48" y="211" class="txt tiny">Marc de mapa a mida final</text>
 
-    <rect x="218" y="64" width="232" height="42" rx="8" class="chip"/>
+    <rect x="218" y="64" width="232" height="42" class="chip"/>
     <text x="246" y="91" class="txt formula">Numèrica: 1:50 000</text>
 
-    <rect x="218" y="118" width="232" height="42" rx="8" class="chip"/>
+    <rect x="218" y="118" width="232" height="42" class="chip"/>
     <text x="246" y="145" class="txt formula">Verbal: 1 cm = 500 m</text>
 
     <g transform="translate(218,182)">
@@ -46,25 +42,25 @@
   </g>
 
   <g transform="translate(585,112)">
-    <rect width="480" height="245" rx="8" class="panel"/>
+    <rect width="480" height="245" class="panel"/>
     <text x="24" y="36" class="txt h">2. Equivalències mètriques</text>
 
-    <rect x="34" y="68" width="158" height="90" rx="10" class="blue"/>
+    <rect x="34" y="68" width="158" height="90" class="blue"/>
     <path d="M68,113 L158,113" class="line"/>
     <text x="60" y="143" class="txt small">1 cm al mapa</text>
     <line x1="212" y1="113" x2="278" y2="113" class="arrow"/>
-    <rect x="296" y="68" width="145" height="90" rx="10" class="map"/>
+    <rect x="296" y="68" width="145" height="90" class="map"/>
     <path d="M326,113 L414,113" class="line"/>
     <text x="320" y="143" class="txt small">500 m reals</text>
 
-    <rect x="34" y="177" width="190" height="38" rx="8" class="chip"/>
+    <rect x="34" y="177" width="190" height="38" class="chip"/>
     <text x="52" y="202" class="txt small">1 km = 100 000 cm</text>
-    <rect x="250" y="177" width="190" height="38" rx="8" class="chip"/>
+    <rect x="250" y="177" width="190" height="38" class="chip"/>
     <text x="282" y="202" class="txt small">1 m = 100 cm</text>
   </g>
 
   <g transform="translate(55,392)">
-    <rect width="1010" height="340" rx="8" class="panel"/>
+    <rect width="1010" height="340" class="panel"/>
     <text x="24" y="38" class="txt h">3. Una escala en graus no és una regla mètrica uniforme</text>
     <text x="24" y="65" class="txt small">Els paral·lels no es tallen; els meridians convergeixen als pols. Això canvia la lectura dels graus.</text>
 
@@ -94,20 +90,17 @@
     </g>
 
     <g transform="translate(720,84)">
-      <rect x="0" y="0" width="270" height="146" rx="8" class="warning"/>
+      <rect x="0" y="0" width="270" height="146" class="warning"/>
       <text x="22" y="32" class="txt formula">CRS geogràfic</text>
       <text x="22" y="57" class="txt small">Coordenades en graus:</text>
       <text x="22" y="80" class="txt small">latitud i longitud.</text>
       <text x="22" y="103" class="txt small">Un grau és una obertura angular,</text>
       <text x="22" y="126" class="txt small">no un metre.</text>
 
-      <rect x="0" y="168" width="270" height="80" rx="8" class="blue"/>
+      <rect x="0" y="168" width="270" height="80" class="blue"/>
       <text x="22" y="198" class="txt small">Per mesurar a Catalunya:</text>
       <text x="22" y="221" class="txt small">ETRS89 / UTM 31N,</text>
       <text x="22" y="241" class="txt small">en metres.</text>
     </g>
   </g>
-
-  <rect x="230" y="765" width="660" height="30" rx="8" fill="#fff" stroke="#d8d2c5"/>
-  <text x="560" y="785" text-anchor="middle" class="txt tiny">Abans d'interpretar una barra d'escala, reviseu mida final, CRS, unitats i mètode de mesura.</text>
 </svg>

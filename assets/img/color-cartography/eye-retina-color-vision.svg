@@ -1,18 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 520" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="40 98 920 334" role="img" aria-labelledby="title desc">
   <title id="title">Esquema docent de l'ull, la retina i la percepcio cromatica</title>
-  <desc id="desc">La figura mostra la llum entrant a l'ull, la retina amb bastons i cons, i una traduccio didactica cap a contrast de valor i diferencies de to.</desc>
+  <desc id="desc">La figura mostra la llum entrant a l'ull, la retina amb bastons i cons, i una traduccio didactica cap a contrast de valor i diferencies de to. Es un esquema simplificat i l'anatomia no es representa a escala.</desc>
   <defs>
     <style>
-      .bg{fill:#fbfaf7}.panel{fill:#fff;stroke:#d8d2c5;stroke-width:1.5}.txt{font-family:Arial,Helvetica,sans-serif;fill:#2b2b2b}.title{font-size:19px;font-weight:700}.small{font-size:14px}.label{font-size:12px;fill:#555}.line{fill:none;stroke:#444;stroke-width:2}.soft{fill:#f0ece4}.retina{fill:none;stroke:#c96f5d;stroke-width:9;stroke-linecap:round}.lens{fill:#dcecff;stroke:#6a8fb3;stroke-width:2}.arrow{stroke:#d49a2a;stroke-width:3;fill:none;marker-end:url(#arrow)}.rod{fill:#4b5563}.coneS{fill:#3c70b2}.coneM{fill:#5a9b52}.coneL{fill:#d65f43}.chip{stroke:#555;stroke-width:.8}.note{font-size:12px;fill:#666}
+      .panel{fill:#fff;stroke:#d8d2c5;stroke-width:1.5}.txt{font-family:Arial,Helvetica,sans-serif;fill:#2b2b2b}.small{font-size:14px}.label{font-size:12px;fill:#555}.line{fill:none;stroke:#444;stroke-width:2}.soft{fill:#f0ece4}.retina{fill:none;stroke:#c96f5d;stroke-width:9;stroke-linecap:round}.lens{fill:#dcecff;stroke:#6a8fb3;stroke-width:2}.arrow{stroke:#d49a2a;stroke-width:3;fill:none;marker-end:url(#arrow)}.rod{fill:#4b5563}.coneS{fill:#3c70b2}.coneM{fill:#5a9b52}.coneL{fill:#d65f43}.chip{stroke:#555;stroke-width:.8}.note{font-size:12px;fill:#666}
     </style>
     <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#d49a2a"/></marker>
   </defs>
-  <rect width="1000" height="520" class="bg"/>
-  <text x="42" y="42" class="txt title">El color es llegeix amb la retina, el contrast i el context</text>
-  <text x="42" y="66" class="txt small">Per a mapes i grafics, la idea clau no es memoritzar anatomia, sino entendre per que el to no pot sostenir tota la lectura.</text>
-
   <g transform="translate(42,100)">
-    <rect width="575" height="330" rx="18" class="panel"/>
+    <rect width="575" height="330" class="panel"/>
     <path d="M50,168 C118,62 288,34 466,115 C518,139 546,165 546,165 C546,165 512,201 450,226 C283,293 119,268 50,168 Z" fill="#fff9f2" stroke="#4f4f4f" stroke-width="3"/>
     <circle cx="160" cy="166" r="68" fill="#eef6ff" stroke="#6a8fb3" stroke-width="3"/>
     <circle cx="160" cy="166" r="28" fill="#16181d" opacity=".86"/>
@@ -37,7 +33,7 @@
   </g>
 
   <g transform="translate(648,100)">
-    <rect width="310" height="330" rx="18" class="panel"/>
+    <rect width="310" height="330" class="panel"/>
     <text x="22" y="34" class="txt small" font-weight="700">Conseqüencia grafica</text>
     <text x="22" y="64" class="txt label">Una rampa ordenada necessita</text>
     <text x="22" y="82" class="txt label">contrast de valor, no nomes canvi de to.</text>
@@ -57,8 +53,9 @@
       <rect x="132" y="0" width="44" height="44" fill="#984ea3" class="chip"/>
       <rect x="176" y="0" width="44" height="44" fill="#ff7f00" class="chip"/>
     </g>
-    <text x="22" y="292" class="txt note">Si el to falla, la lectura encara ha de poder-se sostenir amb valor, etiqueta, forma o patró.</text>
+    <text x="22" y="284" class="txt note">
+      <tspan x="22" dy="0">Si el to falla, la lectura encara ha de poder-se</tspan>
+      <tspan x="22" dy="18">sostenir amb valor, etiqueta, forma o patró.</tspan>
+    </text>
   </g>
-
-  <text x="42" y="470" class="txt note">Esquema simplificat: no representa l'anatomia a escala ni substitueix una explicacio fisiologica completa. Figura d'elaboracio propia, 14 d'agost de 2026.</text>
 </svg>

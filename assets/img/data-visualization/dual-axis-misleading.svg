@@ -1,19 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 500" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="608" height="323" viewBox="76 113 608 323" role="img" aria-labelledby="title desc">
   <title id="title">Gràfica amb doble eix que fa coincidir dues sèries diferents</title>
   <desc id="desc">Un gràfic de línies mostra ocupació i preu mitjà amb dos eixos verticals ajustats per fer que els pendents semblin equivalents.</desc>
   <defs>
     <style>
-      .bg{fill:#fffdf8}.panel{fill:#fff;stroke:#d8d2c5;stroke-width:1.5}.grid{stroke:#e8e2d7;stroke-width:1}.axis{stroke:#555;stroke-width:1.8}.txt{font-family:Arial,Helvetica,sans-serif;fill:#2b2b2b}.title{font-size:26px;font-weight:700}.small{font-size:15px}.label{font-size:13px;fill:#555}.warn{fill:#8f1f18}.badge{fill:#8f1f18}.white{fill:#fff}.blueLine{fill:none;stroke:#2f6fb0;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}.orangeLine{fill:none;stroke:#d77828;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}.blueTxt{fill:#2f6fb0}.orangeTxt{fill:#b65f1f}.note{font-size:14px;fill:#5b5b5b}
+      .panel{fill:#fff;stroke:#d8d2c5;stroke-width:1.5}.grid{stroke:#e8e2d7;stroke-width:1}.axis{stroke:#555;stroke-width:1.8}.txt{font-family:Arial,Helvetica,sans-serif;fill:#2b2b2b}.label{font-size:13px;fill:#555}.blueLine{fill:none;stroke:#2f6fb0;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}.orangeLine{fill:none;stroke:#d77828;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}.blueTxt{fill:#2f6fb0}.orangeTxt{fill:#b65f1f}.note{font-size:14px;fill:#5b5b5b}
     </style>
   </defs>
-  <rect class="bg" width="760" height="500"/>
-  <rect x="34" y="28" width="118" height="34" rx="17" class="badge"/>
-  <text x="93" y="51" text-anchor="middle" class="txt white" font-size="16" font-weight="700">PROBLEMA</text>
-  <text x="190" y="51" class="txt title">Un doble eix pot fabricar una relació visual</text>
-  <text x="65" y="88" class="txt small">Els dos eixos s'han ajustat perquè les línies tinguin quasi el mateix pendent.</text>
-
   <g transform="translate(78 115)">
-    <rect class="panel" x="0" y="0" width="604" height="300" rx="10"/>
+    <rect class="panel" x="0" y="0" width="604" height="300"/>
     <line class="grid" x1="65" y1="48" x2="540" y2="48"/>
     <line class="grid" x1="65" y1="106" x2="540" y2="106"/>
     <line class="grid" x1="65" y1="164" x2="540" y2="164"/>
@@ -48,5 +42,4 @@
     <rect x="245" y="-18" width="16" height="16" fill="#d77828"/>
     <text x="269" y="-5" class="txt note">Preu: 92 EUR - 145 EUR</text>
   </g>
-  <text x="78" y="472" class="txt warn" font-size="16" font-weight="700">Risc: la semblança de pendents surt de l'escala, no de les dades.</text>
 </svg>

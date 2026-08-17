@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 520" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="641" height="344" viewBox="56 114 641 344" role="img" aria-labelledby="title desc">
   <title id="title">Coropleta problemàtica construïda amb recomptes absoluts</title>
   <desc id="desc">Mapa esquemàtic de municipis on una coropleta pinta recompte absolut de places turístiques, sense denominador i amb absència de dades confosa amb valor baix.</desc>
   <defs>
@@ -6,17 +6,11 @@
       <path d="M0 8L8 0" stroke="#caa" stroke-width="1"/>
     </pattern>
     <style>
-      .bg{fill:#fffdf8}.panel{fill:#fff;stroke:#d8d2c5;stroke-width:1.5}.sea{fill:#dcecf3}.muni{stroke:#fffdf8;stroke-width:4;stroke-linejoin:round}.txt{font-family:Arial,Helvetica,sans-serif;fill:#2b2b2b}.title{font-size:25px;font-weight:700}.small{font-size:14px}.label{font-size:13px;fill:#555}.badge{fill:#8f1f18}.white{fill:#fff}.warn{fill:#8f1f18}.c1{fill:#f6eadf}.c2{fill:#efc7a1}.c3{fill:#da874d}.c4{fill:#9d3b26}.nodata{fill:#f6eadf}.outline{fill:none;stroke:#6e6e6e;stroke-width:1.3}
+      .panel{fill:#fff;stroke:#d8d2c5;stroke-width:1.5}.sea{fill:#dcecf3}.muni{stroke:#fffdf8;stroke-width:4;stroke-linejoin:round}.txt{font-family:Arial,Helvetica,sans-serif;fill:#2b2b2b}.small{font-size:14px}.label{font-size:13px;fill:#555}.c1{fill:#f6eadf}.c2{fill:#efc7a1}.c3{fill:#da874d}.c4{fill:#9d3b26}.nodata{fill:#f6eadf}.outline{fill:none;stroke:#6e6e6e;stroke-width:1.3}
     </style>
   </defs>
-  <rect class="bg" width="760" height="520"/>
-  <rect x="34" y="30" width="118" height="34" rx="17" class="badge"/>
-  <text x="93" y="53" text-anchor="middle" class="txt white" font-size="16" font-weight="700">PROBLEMA</text>
-  <text x="188" y="53" class="txt title">Una coropleta amb volums absoluts</text>
-  <text x="64" y="88" class="txt small">La superfície pintada suggereix intensitat, però el valor representat és un recompte.</text>
-
   <g transform="translate(58 116)">
-    <rect class="panel" x="0" y="0" width="470" height="340" rx="10"/>
+    <rect class="panel" x="0" y="0" width="470" height="340"/>
     <path class="sea" d="M390,18 C455,68 475,142 438,214 C462,260 448,306 410,325 L470,325 L470,0 L390,0 Z"/>
     <polygon class="muni c2" points="58,42 186,34 196,128 68,136"/>
     <polygon class="muni c3" points="186,34 318,52 304,148 196,128"/>
@@ -38,10 +32,5 @@
     <rect x="0" y="52" width="28" height="18" class="c2"/><text x="40" y="66" class="txt label">251 - 750</text>
     <rect x="0" y="82" width="28" height="18" class="c3"/><text x="40" y="96" class="txt label">751 - 1.500</text>
     <rect x="0" y="112" width="28" height="18" class="c4"/><text x="40" y="126" class="txt label">1.501 - 4.000</text>
-    <text x="0" y="178" class="txt warn" font-size="15" font-weight="700">Falten unitat comparable,</text>
-    <text x="0" y="200" class="txt warn" font-size="15" font-weight="700">denominador i tractament</text>
-    <text x="0" y="222" class="txt warn" font-size="15" font-weight="700">de valors absents.</text>
   </g>
-
-  <text x="62" y="490" class="txt label">Dades esquemàtiques. Figura d'elaboració pròpia, 15 d'agost de 2026.</text>
 </svg>

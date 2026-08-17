@@ -1,9 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="760" viewBox="0 0 1180 760" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="953" height="567" viewBox="154 127 953 567" role="img" aria-labelledby="title desc">
   <title id="title">Funcionament de les coordenades dins un fus UTM</title>
   <desc id="desc">Esquema del fus UTM 31 dins del CRS 31N amb limits longitudinals, meridia central, fals est, coordenada est i coordenada nord dins l'hemisferi nord.</desc>
   <defs>
     <style>
-      .bg { fill: #fffdf8; }
       .zone { fill: #eef5f7; stroke: #365b6d; stroke-width: 3; }
       .central { stroke: #d0523c; stroke-width: 5; stroke-dasharray: 12 9; }
       .grid { stroke: #b7c6ce; stroke-width: 1.5; }
@@ -11,10 +10,9 @@
       .axisRed { stroke: #d0523c; stroke-width: 4; marker-end: url(#arrowRed); }
       .guide { stroke: #52616b; stroke-width: 2; stroke-dasharray: 6 7; }
       .label { font: 700 21px Arial, 'Liberation Sans', sans-serif; fill: #17202a; }
-      .title { font: 700 31px Arial, 'Liberation Sans', sans-serif; fill: #17202a; }
       .small { font: 16px Arial, 'Liberation Sans', sans-serif; fill: #52616b; }
       .mono { font: 700 18px 'Liberation Mono', Consolas, monospace; fill: #17202a; }
-      .panel { fill: #ffffff; stroke: #d5dde2; stroke-width: 1.5; rx: 16; }
+      .panel { fill: #ffffff; stroke: #d5dde2; stroke-width: 1.5; }
     </style>
     <marker id="arrowBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
       <path d="M0,0 L10,5 L0,10 z" fill="#16697a"/>
@@ -23,10 +21,6 @@
       <path d="M0,0 L10,5 L0,10 z" fill="#d0523c"/>
     </marker>
   </defs>
-  <rect class="bg" width="1180" height="760"/>
-  <text x="590" y="48" text-anchor="middle" class="title">Dins un fus UTM: metres, falsos origens i ordre E,N</text>
-  <text x="590" y="78" text-anchor="middle" class="small">El fus 31 cobreix de 0 a 6 graus est; en el CRS 31N, la N indica hemisferi nord, no banda latitudinal.</text>
-
   <path d="M170 130 C235 205,235 558,170 625 L720 625 C655 558,655 205,720 130 Z" class="zone"/>
   <line x1="170" y1="130" x2="170" y2="625" stroke="#365b6d" stroke-width="3"/>
   <line x1="720" y1="130" x2="720" y2="625" stroke="#365b6d" stroke-width="3"/>
@@ -73,5 +67,4 @@
   <text x="812" y="574" class="small">Primer distancia cap a l'est.</text>
   <text x="812" y="600" class="small">Despres distancia cap al nord.</text>
 
-  <text x="590" y="728" text-anchor="middle" class="small">Figura d'elaboracio propia, 14 d'agost de 2026. Esquema didactic; no representa l'escala real de la deformacio UTM.</text>
 </svg>

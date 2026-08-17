@@ -1,17 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 640" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="924" height="334" viewBox="38 88 924 334" role="img" aria-labelledby="title desc">
   <title id="title">Variants de grafics de barres i comparacions divergents</title>
   <desc id="desc">Sis panells comparen barres verticals, barres horitzontals ordenades, barres agrupades, barres apilades al 100%, un tornado plot i una piramide de poblacio.</desc>
   <defs>
     <style>
-      .bg{fill:#fbfaf7}.panel{fill:#fff;stroke:#d8d2c5;stroke-width:1.5}.axis{stroke:#5b5b5b;stroke-width:1.5}.grid{stroke:#e8e2d7;stroke-width:1}.txt{font-family:Arial,Helvetica,sans-serif;fill:#2b2b2b}.title{font-size:18px;font-weight:700}.small{font-size:13px}.label{font-size:12px;fill:#555}.blue{fill:#4c78a8}.orange{fill:#f58518}.green{fill:#54a24b}.red{fill:#d64f4f}.grey{fill:#b8b8b8}.pale{fill:#e9eef4}.line{stroke:#777;stroke-width:1.2;fill:none}.center{stroke:#777;stroke-width:2;stroke-dasharray:4 4}.note{font-size:12px;fill:#666}
+      .panel{fill:#fff;stroke:#d8d2c5;stroke-width:1.5}.axis{stroke:#5b5b5b;stroke-width:1.5}.grid{stroke:#e8e2d7;stroke-width:1}.txt{font-family:Arial,Helvetica,sans-serif;fill:#2b2b2b}.small{font-size:13px}.label{font-size:12px;fill:#555}.blue{fill:#4c78a8}.orange{fill:#f58518}.green{fill:#54a24b}.red{fill:#d64f4f}.grey{fill:#b8b8b8}.pale{fill:#e9eef4}.line{stroke:#777;stroke-width:1.2;fill:none}.center{stroke:#777;stroke-width:2;stroke-dasharray:4 4}
     </style>
   </defs>
-  <rect width="1000" height="640" class="bg"/>
-  <text x="40" y="38" class="txt title">Un mateix principi de barres adopta formes diferents segons la pregunta</text>
-  <text x="40" y="60" class="txt small">La posicio, la longitud comuna i l'ordre faciliten lectures diferents; la forma no s'ha de triar per costum.</text>
-
   <g transform="translate(40,90)">
-    <rect width="290" height="150" rx="12" class="panel"/>
+    <rect width="290" height="150" class="panel"/>
     <text x="18" y="28" class="txt small" font-weight="700">Barres verticals</text>
     <line x1="40" y1="122" x2="250" y2="122" class="axis"/>
     <line x1="40" y1="42" x2="40" y2="122" class="axis"/>
@@ -23,7 +19,7 @@
   </g>
 
   <g transform="translate(355,90)">
-    <rect width="290" height="150" rx="12" class="panel"/>
+    <rect width="290" height="150" class="panel"/>
     <text x="18" y="28" class="txt small" font-weight="700">Barres horitzontals ordenades</text>
     <line x1="92" y1="122" x2="250" y2="122" class="axis"/>
     <rect x="92" y="45" width="132" height="16" class="green"/>
@@ -35,7 +31,7 @@
   </g>
 
   <g transform="translate(670,90)">
-    <rect width="290" height="150" rx="12" class="panel"/>
+    <rect width="290" height="150" class="panel"/>
     <text x="18" y="28" class="txt small" font-weight="700">Barres agrupades</text>
     <line x1="40" y1="122" x2="250" y2="122" class="axis"/>
     <line x1="40" y1="42" x2="40" y2="122" class="axis"/>
@@ -47,28 +43,27 @@
   </g>
 
   <g transform="translate(40,270)">
-    <rect width="290" height="150" rx="12" class="panel"/>
+    <rect width="290" height="150" class="panel"/>
     <text x="18" y="28" class="txt small" font-weight="700">Barres apilades al 100%</text>
     <g transform="translate(58,50)">
       <rect x="0" y="0" width="180" height="18" class="blue"/><rect x="108" y="0" width="48" height="18" class="orange"/><rect x="156" y="0" width="24" height="18" class="grey"/>
       <rect x="0" y="36" width="180" height="18" class="blue" opacity=".78"/><rect x="72" y="36" width="72" height="18" class="orange"/><rect x="144" y="36" width="36" height="18" class="grey"/>
       <rect x="0" y="72" width="180" height="18" class="blue" opacity=".58"/><rect x="54" y="72" width="84" height="18" class="orange"/><rect x="138" y="72" width="42" height="18" class="grey"/>
     </g>
-    <text x="18" y="132" class="txt note">Només si les parts comparteixen total.</text>
   </g>
 
   <g transform="translate(355,270)">
-    <rect width="290" height="150" rx="12" class="panel"/>
+    <rect width="290" height="150" class="panel"/>
     <text x="18" y="28" class="txt small" font-weight="700">Tornado plot</text>
     <line x1="145" y1="42" x2="145" y2="122" class="center"/>
     <rect x="64" y="50" width="81" height="14" class="blue"/><rect x="145" y="50" width="104" height="14" class="orange"/>
     <rect x="88" y="75" width="57" height="14" class="blue"/><rect x="145" y="75" width="72" height="14" class="orange"/>
     <rect x="110" y="100" width="35" height="14" class="blue"/><rect x="145" y="100" width="46" height="14" class="orange"/>
-    <text x="32" y="60" class="txt label">Escenari baix</text><text x="205" y="60" class="txt label">Escenari alt</text>
+    <text x="92" y="142" class="txt label" text-anchor="middle">Escenari baix</text><text x="198" y="142" class="txt label" text-anchor="middle">Escenari alt</text>
   </g>
 
   <g transform="translate(670,270)">
-    <rect width="290" height="150" rx="12" class="panel"/>
+    <rect width="290" height="150" class="panel"/>
     <text x="18" y="28" class="txt small" font-weight="700">Piramide de poblacio</text>
     <line x1="145" y1="42" x2="145" y2="125" class="center"/>
     <g transform="translate(0,0)">
@@ -80,8 +75,4 @@
     </g>
     <text x="76" y="142" class="txt label">homes</text><text x="173" y="142" class="txt label">dones</text>
   </g>
-
-  <text x="40" y="472" class="txt small" font-weight="700">Criteri de seleccio</text>
-  <text x="40" y="496" class="txt small">Les barres verticals i horitzontals comparen magnituds; les apilades mostren composicio; les divergents comparen dos costats d'una referencia; la piramide aplica el mateix principi a una estructura d'edat.</text>
-  <text x="40" y="526" class="txt note">Dades esquematiques. Figura d'elaboracio propia, 14 d'agost de 2026.</text>
 </svg>

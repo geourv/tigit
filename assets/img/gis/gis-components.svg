@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="856" height="522" viewBox="102 115 856 522" role="img" aria-labelledby="title desc">
+  <title id="title">Components d'un sistema d'informació geogràfica</title>
+  <desc id="desc">Una pregunta territorial ocupa el centre i es relaciona amb cinc components: persones, dades, mètodes, programari i infraestructura. El control de qualitat envolta tot el sistema.</desc>
+  <defs>
+    <style>
+      .component { font: 700 21px Arial, sans-serif; fill: #17202a; }
+      .body { font: 15px Arial, sans-serif; fill: #334155; }
+      .center { font: 700 23px Arial, sans-serif; fill: #ffffff; }
+      .center-small { font: 16px Arial, sans-serif; fill: #ffffff; }
+      .quality { font: 700 17px Arial, sans-serif; fill: #365b6d; letter-spacing: 1px; }
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#78939b"/>
+    </marker>
+  </defs>
+  <ellipse cx="530" cy="389" rx="400" ry="245" fill="none" stroke="#9eb9be" stroke-width="3" stroke-dasharray="10 8"/>
+  <text class="quality" x="530" y="132" text-anchor="middle">CONTROL DE QUALITAT I DOCUMENTACIÓ</text>
+
+  <g fill="none" stroke="#78939b" stroke-width="3" marker-end="url(#arrow)">
+    <path d="M 530 315 C 530 270, 530 235, 530 207"/>
+    <path d="M 458 350 C 405 325, 361 296, 330 265"/>
+    <path d="M 450 419 C 392 440, 354 466, 322 500"/>
+    <path d="M 610 419 C 668 440, 706 466, 738 500"/>
+    <path d="M 602 350 C 655 325, 699 296, 730 265"/>
+  </g>
+
+  <g>
+    <rect x="420" y="315" width="220" height="148" fill="#21757b"/>
+    <rect x="400" y="137" width="260" height="86" fill="#ffffff" stroke="#b8403b" stroke-width="3"/>
+    <rect x="105" y="210" width="250" height="108" fill="#ffffff" stroke="#d47b36" stroke-width="3"/>
+    <rect x="105" y="480" width="250" height="108" fill="#ffffff" stroke="#b79b34" stroke-width="3"/>
+    <rect x="705" y="480" width="250" height="108" fill="#ffffff" stroke="#37856f" stroke-width="3"/>
+    <rect x="705" y="210" width="250" height="108" fill="#ffffff" stroke="#445f8a" stroke-width="3"/>
+  </g>
+
+  <text class="center" x="530" y="367" text-anchor="middle">Pregunta territorial</text>
+  <text class="center-small" x="530" y="397" text-anchor="middle">què es vol comprendre,</text>
+  <text class="center-small" x="530" y="419" text-anchor="middle">decidir o comunicar?</text>
+
+  <text class="component" x="530" y="171" text-anchor="middle">Persones</text>
+  <text class="body" x="530" y="198" text-anchor="middle">criteris, responsabilitats i interpretació</text>
+
+  <text class="component" x="230" y="246" text-anchor="middle">Dades</text>
+  <text class="body" x="230" y="273" text-anchor="middle">geometries, atributs, temps</text>
+  <text class="body" x="230" y="294" text-anchor="middle">qualitat, fonts i metadades</text>
+
+  <text class="component" x="230" y="516" text-anchor="middle">Mètodes</text>
+  <text class="body" x="230" y="543" text-anchor="middle">captura, transformació, anàlisi</text>
+  <text class="body" x="230" y="564" text-anchor="middle">validació i comunicació</text>
+
+  <text class="component" x="830" y="516" text-anchor="middle">Programari</text>
+  <text class="body" x="830" y="543" text-anchor="middle">QGIS, bases de dades, scripts</text>
+  <text class="body" x="830" y="564" text-anchor="middle">serveis web i aplicacions</text>
+
+  <text class="component" x="830" y="246" text-anchor="middle">Infraestructura</text>
+  <text class="body" x="830" y="273" text-anchor="middle">ordinadors, GNSS, servidors,</text>
+  <text class="body" x="830" y="294" text-anchor="middle">xarxes i emmagatzematge</text>
+
+</svg>

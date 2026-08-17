@@ -1,9 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="920" height="620" viewBox="0 0 920 620" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="684" height="467" viewBox="109 117 684 467" role="img" aria-labelledby="title desc">
   <title id="title">Fus UTM 31 dins del CRS 31N i posició de Vila-seca</title>
   <desc id="desc">Esquema del fus UTM 31 dins del CRS 31N, entre els meridians zero i sis graus est, amb el meridià central de tres graus est, el fals est de cinc-cents mil metres i Vila-seca situada a l'oest del meridià central.</desc>
   <defs>
     <style>
-      .title { font: 700 30px system-ui, sans-serif; fill: #17202a; }
       .label { font: 600 22px system-ui, sans-serif; fill: #17202a; }
       .small { font: 18px system-ui, sans-serif; fill: #34495e; }
       .mono { font: 600 19px ui-monospace, monospace; fill: #17202a; }
@@ -16,10 +15,6 @@
       <path d="M 0 0 L 10 5 L 0 10 z" fill="#365b6d"/>
     </marker>
   </defs>
-  <rect width="920" height="620" fill="#fffdf8"/>
-  <text x="460" y="48" text-anchor="middle" class="title">ETRS89 / UTM zona 31N</text>
-  <text x="460" y="79" text-anchor="middle" class="small">31N del CRS = fus 31, hemisferi nord; en MGRS Catalunya cau a 31T</text>
-
   <path d="M 130 120 C 175 165, 175 455, 130 505 L 790 505 C 745 455, 745 165, 790 120 Z" class="zone"/>
   <line x1="130" y1="120" x2="130" y2="505" class="boundary"/>
   <line x1="790" y1="120" x2="790" y2="505" class="boundary"/>
@@ -29,14 +24,14 @@
   <line x1="570" y1="120" x2="570" y2="505" class="guide"/>
   <line x1="680" y1="120" x2="680" y2="505" class="guide"/>
 
-  <text x="130" y="548" text-anchor="middle" class="label">0° E</text>
+  <text x="138" y="548" text-anchor="start" class="label">0° E</text>
   <text x="460" y="548" text-anchor="middle" class="label">3° E</text>
-  <text x="790" y="548" text-anchor="middle" class="label">6° E</text>
-  <text x="460" y="582" text-anchor="middle" class="small">meridià central: E = 500.000 m</text>
+  <text x="782" y="548" text-anchor="end" class="label">6° E</text>
+  <text x="460" y="576" text-anchor="middle" class="small">meridià central: E = 500.000 m</text>
 
   <circle cx="256" cy="339" r="13" fill="#16697a" stroke="#fff" stroke-width="5"/>
   <line x1="268" y1="329" x2="370" y2="255" stroke="#365b6d" stroke-width="2.5" marker-end="url(#arrow)"/>
-  <rect x="366" y="185" width="318" height="104" rx="12" fill="#fff" stroke="#365b6d" stroke-width="2"/>
+  <rect x="366" y="185" width="318" height="104" fill="#fff" stroke="#365b6d" stroke-width="2"/>
   <text x="388" y="220" class="label">Vila-seca</text>
   <text x="388" y="252" class="mono">E 344.469 m</text>
   <text x="388" y="279" class="small">a l'oest del meridià central</text>
@@ -44,6 +39,6 @@
   <text x="154" y="154" class="label">Fus 31</text>
   <text x="154" y="183" class="small">31N = hemisferi nord</text>
   <text x="154" y="210" class="small">no banda latitudinal</text>
-  <rect x="620" y="438" width="142" height="43" rx="9" fill="#17202a"/>
+  <rect x="620" y="438" width="142" height="43" fill="#17202a"/>
   <text x="691" y="467" text-anchor="middle" font-family="ui-monospace, monospace" font-size="20" font-weight="700" fill="#fff">EPSG:25831</text>
 </svg>

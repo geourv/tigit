@@ -1,24 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="820" viewBox="0 0 1180 820" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1036" height="539" viewBox="72 118 1036 539" role="img" aria-labelledby="title desc">
   <title id="title">Mostres de paletes cartogràfiques i científiques</title>
   <desc id="desc">Comparació de paletes ColorBrewer, amb exemples seqüencials, divergents i qualitatius, i de mapes de color perceptualment uniformes com viridis, magma i cividis.</desc>
   <defs>
     <style>
-      .bg { fill: #ffffff; }
       .rule { stroke: #d3dce0; stroke-width: 1.2; }
-      .title { font: 700 30px Arial, 'Liberation Sans', sans-serif; fill: #17202a; }
-      .subtitle { font: 16px Arial, 'Liberation Sans', sans-serif; fill: #52616b; }
       .section { font: 700 17px Arial, 'Liberation Sans', sans-serif; fill: #17202a; }
       .name { font: 700 19px Arial, 'Liberation Sans', sans-serif; fill: #17202a; }
       .kind { font: 700 16px Arial, 'Liberation Sans', sans-serif; fill: #263640; }
       .use { font: 15px Arial, 'Liberation Sans', sans-serif; fill: #52616b; }
-      .footer { font: 14px Arial, 'Liberation Sans', sans-serif; fill: #52616b; }
       .swatch { stroke: #ffffff; stroke-width: 2; }
-      .frame { fill: none; stroke: #c7d2d7; stroke-width: 1.4; }
     </style>
   </defs>
-  <rect class="bg" width="1180" height="820"/>
-  <text x="590" y="50" text-anchor="middle" class="title">Paletes de referència per a mapes i dades</text>
-  <text x="590" y="78" text-anchor="middle" class="subtitle">El tipus de dada determina la funció de la paleta: ordre, desviació o categories.</text>
   <line x1="74" y1="120" x2="1106" y2="120" class="rule"/>
   <text x="74" y="138" class="section">ColorBrewer</text>
   <text x="74" y="170" class="name">Reds</text>
@@ -31,7 +23,6 @@
   <rect x="828" y="144" width="78" height="42" class="swatch" fill="#ef3b2c"/>
   <rect x="906" y="144" width="78" height="42" class="swatch" fill="#cb181d"/>
   <rect x="984" y="144" width="78" height="42" class="swatch" fill="#99000d"/>
-  <rect x="516" y="144" width="546" height="42" class="frame"/>
   <text x="74" y="232" class="name">Blues</text>
   <text x="252" y="225" class="kind">seqüencial</text>
   <text x="252" y="248" class="use">ordre clar-fosc amb to fred</text>
@@ -42,7 +33,6 @@
   <rect x="828" y="206" width="78" height="42" class="swatch" fill="#4292c6"/>
   <rect x="906" y="206" width="78" height="42" class="swatch" fill="#2171b5"/>
   <rect x="984" y="206" width="78" height="42" class="swatch" fill="#084594"/>
-  <rect x="516" y="206" width="546" height="42" class="frame"/>
   <text x="74" y="294" class="name">YlGnBu</text>
   <text x="252" y="287" class="kind">seqüencial multito</text>
   <text x="252" y="310" class="use">progressió de lluminositat i to</text>
@@ -53,10 +43,9 @@
   <rect x="828" y="268" width="78" height="42" class="swatch" fill="#1d91c0"/>
   <rect x="906" y="268" width="78" height="42" class="swatch" fill="#225ea8"/>
   <rect x="984" y="268" width="78" height="42" class="swatch" fill="#0c2c84"/>
-  <rect x="516" y="268" width="546" height="42" class="frame"/>
   <text x="74" y="356" class="name">RdBu</text>
   <text x="252" y="349" class="kind">divergent</text>
-  <text x="252" y="372" class="use">desviacions a banda i banda d'un centre</text>
+  <text x="252" y="372" class="use">desviacions respecte d'un centre</text>
   <rect x="516" y="330" width="78" height="42" class="swatch" fill="#b2182b"/>
   <rect x="594" y="330" width="78" height="42" class="swatch" fill="#ef8a62"/>
   <rect x="672" y="330" width="78" height="42" class="swatch" fill="#fddbc7"/>
@@ -64,7 +53,6 @@
   <rect x="828" y="330" width="78" height="42" class="swatch" fill="#d1e5f0"/>
   <rect x="906" y="330" width="78" height="42" class="swatch" fill="#67a9cf"/>
   <rect x="984" y="330" width="78" height="42" class="swatch" fill="#2166ac"/>
-  <rect x="516" y="330" width="546" height="42" class="frame"/>
   <text x="74" y="418" class="name">Set2</text>
   <text x="252" y="411" class="kind">qualitativa</text>
   <text x="252" y="434" class="use">categories sense ordre intern</text>
@@ -75,7 +63,6 @@
   <rect x="828" y="392" width="78" height="42" class="swatch" fill="#a6d854"/>
   <rect x="906" y="392" width="78" height="42" class="swatch" fill="#ffd92f"/>
   <rect x="984" y="392" width="78" height="42" class="swatch" fill="#e5c494"/>
-  <rect x="516" y="392" width="546" height="42" class="frame"/>
   <line x1="74" y1="464" x2="1106" y2="464" class="rule"/>
   <text x="74" y="482" class="section">Paletes científiques</text>
   <text x="74" y="514" class="name">viridis</text>
@@ -88,7 +75,6 @@
   <rect x="828" y="488" width="78" height="42" class="swatch" fill="#35b779"/>
   <rect x="906" y="488" width="78" height="42" class="swatch" fill="#90d743"/>
   <rect x="984" y="488" width="78" height="42" class="swatch" fill="#fde725"/>
-  <rect x="516" y="488" width="546" height="42" class="frame"/>
   <text x="74" y="576" class="name">magma</text>
   <text x="252" y="569" class="kind">seqüencial uniforme</text>
   <text x="252" y="592" class="use">fosc-clar amb molt contrast</text>
@@ -99,17 +85,14 @@
   <rect x="828" y="550" width="78" height="42" class="swatch" fill="#f1605d"/>
   <rect x="906" y="550" width="78" height="42" class="swatch" fill="#feb078"/>
   <rect x="984" y="550" width="78" height="42" class="swatch" fill="#fcfdbf"/>
-  <rect x="516" y="550" width="546" height="42" class="frame"/>
-  <text x="74" y="638" class="name">cividis</text>
-  <text x="252" y="631" class="kind">uniforme i CVD</text>
-  <text x="252" y="654" class="use">optimitzada per al daltonisme roig-verd</text>
-  <rect x="516" y="612" width="78" height="42" class="swatch" fill="#00224e"/>
-  <rect x="594" y="612" width="78" height="42" class="swatch" fill="#2a3f6d"/>
-  <rect x="672" y="612" width="78" height="42" class="swatch" fill="#575d6d"/>
-  <rect x="750" y="612" width="78" height="42" class="swatch" fill="#7d7c78"/>
-  <rect x="828" y="612" width="78" height="42" class="swatch" fill="#a59c74"/>
-  <rect x="906" y="612" width="78" height="42" class="swatch" fill="#d2c060"/>
-  <rect x="984" y="612" width="78" height="42" class="swatch" fill="#fee838"/>
-  <rect x="516" y="612" width="546" height="42" class="frame"/>
-  <text x="590" y="782" text-anchor="middle" class="footer">Mostres de 7 colors. Les paletes contínues s’han discretitzat per comparar-les en una mateixa figura.</text>
+  <text x="74" y="630" class="name">cividis</text>
+  <text x="252" y="623" class="kind">uniforme i CVD</text>
+  <text x="252" y="646" class="use">optimitzada per al daltonisme roig-verd</text>
+  <rect x="516" y="604" width="78" height="42" class="swatch" fill="#00224e"/>
+  <rect x="594" y="604" width="78" height="42" class="swatch" fill="#2a3f6d"/>
+  <rect x="672" y="604" width="78" height="42" class="swatch" fill="#575d6d"/>
+  <rect x="750" y="604" width="78" height="42" class="swatch" fill="#7d7c78"/>
+  <rect x="828" y="604" width="78" height="42" class="swatch" fill="#a59c74"/>
+  <rect x="906" y="604" width="78" height="42" class="swatch" fill="#d2c060"/>
+  <rect x="984" y="604" width="78" height="42" class="swatch" fill="#fee838"/>
 </svg>

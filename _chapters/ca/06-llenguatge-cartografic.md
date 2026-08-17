@@ -12,7 +12,16 @@ part: Continguts
 manual_references: true
 ---
 
-Un mapa no és una taula acolorida ni un gràfic col·locat sobre un territori. La posició de les entitats ve determinada per la geografia, i l'escala, la selecció i la generalització condicionen què pot mostrar-se. Aquest capítol aplica al mapa els criteris de semiologia i color treballats abans i prepara l'entrada sistemàtica a QGIS i a la cartografia temàtica. Les decisions cartogràfiques no són neutres: seleccionar, ometre, projectar, classificar i jerarquitzar condiciona el missatge que rep el lector {% cite jolyCartografia1982 monmonierHowLieMaps2018 %}.
+Un mapa no és una taula acolorida ni un gràfic col·locat sobre un territori. La posició de les entitats ve determinada per la geografia, i l'escala, la selecció i la generalització condicionen què pot mostrar-se. Aquest capítol aplica al mapa els criteris de semiologia i color treballats abans, continua el projecte QGIS iniciat amb la base espacial i prepara la cartografia temàtica. Les decisions cartogràfiques no són neutres: seleccionar, ometre, projectar, classificar i jerarquitzar condiciona el missatge que rep el lector {% cite jolyCartografia1982 monmonierHowLieMaps2018 %}.
+
+>>>>> En acabar el capítol, cal poder construir i revisar un mapa de context que comuniqui la localització del territori amb una escala, una generalització i una composició justificades.
+>>>>>
+>>>>> - Distingir fotografies aèries, fotogrames georeferenciats, ortofotos, ortofotomapes i imatges de satèl·lit segons la geometria i l'ús possible.
+>>>>> - Explicar com la posició geogràfica, l'escala i la generalització condicionen la informació que es pot representar.
+>>>>> - Calcular equivalències d'escala amb unitats coherents i verificar-les en el suport final.
+>>>>> - Seleccionar símbols, retolació, orientació, llegenda, fonts i crèdits segons la funció del mapa.
+>>>>> - Construir a QGIS una composició de context amb una jerarquia territorial llegible.
+>>>>> - Comparar els PDF automàtic i revisat i justificar al `README.md` els canvis cartogràfics observables.
 
 ## Productes cartogràfics i funció del mapa
 
@@ -39,9 +48,16 @@ Cada producte cartogràfic selecciona informació diferent. Un mapa turístic po
 
 Una imatge presa des de l'aire pot mostrar el territori amb molt detall sense tenir encara la geometria d'un mapa. La direcció de la càmera, la perspectiva, el relleu, la inclinació de la plataforma i el processament posterior condicionen què es pot identificar i què es pot mesurar. Aquesta distinció és necessària quan s'utilitzen fotografies històriques per estudiar l'evolució urbana i litoral, o una ortofoto actual com a fons per localitzar allotjaments, accessos i equipaments.
 
+>>>>> Aquesta fase passa de la lectura visual d'una imatge a la valoració del seu ús com a font cartogràfica.
+>>>>>
+>>>>> - Diferenciar preses obliqües, fotogrames verticals, imatges georeferenciades i ortofotos a partir de la perspectiva i la correcció geomètrica.
+>>>>> - Explicar per què georeferenciar una imatge no equival a ortorectificar-la.
+>>>>> - Triar entre fotografia aèria, ortofoto i imatge de satèl·lit segons l'extensió, el detall i la pregunta territorial.
+>>>>> - Verificar data, CRS, resolució, precisió, productor i condicions de reutilització abans de mesurar o comparar.
+
 ### Preses obliqües i verticals
 
-Una **fotografia aèria obliqua** es pren amb l'eix òptic de la càmera inclinat respecte de la vertical. Ofereix una perspectiva semblant a la visió humana i fa visibles façanes, vessants i volums, però l'escala varia fortament entre el primer terme i el fons. En la classificació internacional utilitzada aquí, l'**obliqua baixa** no inclou l'horitzó i l'**obliqua alta** sí que l'inclou. La primera pot facilitar la identificació de formes i la segona proporciona una visió territorial més extensa, però cap de les dues no admet mesures planimètriques directes com un mapa {% cite baumannAerialPhotography2019 usgsAerialPhotoSingleFrames2018 %}.
+Una **fotografia aèria obliqua** es pren amb l'eix òptic de la càmera inclinat respecte de la vertical. Ofereix una perspectiva semblant a la visió humana i fa visibles façanes, vessants i volums, però l'escala varia fortament entre el primer terme i el fons. En la classificació internacional utilitzada aquí, l'**obliqua baixa** no inclou l'horitzó i l'**obliqua alta** sí que l'inclou. La primera pot facilitar la identificació de formes i la segona proporciona una visió territorial més extensa, però cap de les dues no admet mesures planimètriques directes com un mapa {% cite baumannAerialPhotography2019 %}. El [catàleg de fotogrames aeris individuals de l'USGS](https://www.usgs.gov/centers/eros/science/usgs-eros-archive-aerial-photography-aerial-photo-single-frames) permet consultar aquest tipus de recurs.
 
 Una **fotografia aèria vertical** es pren amb la càmera orientada tan a prop del nadir com permet la plataforma. Aquesta orientació facilita la fotogrametria i la cobertura sistemàtica, però la imatge continua sent una projecció central. Els elements elevats es desplacen radialment respecte del centre i poden mostrar part dels seus costats; la inclinació de la càmera i les diferències de relleu també alteren la posició i l'escala. Per tant, «vista des de dalt», «vertical», «georeferenciada» i «ortorectificada» no són sinònims.
 
@@ -53,7 +69,7 @@ El tema [*Aerial Photography: History and Georeferencing*](https://doi.org/10.22
 
 Un **fotograma** és una captura individual d'un vol fotogramètric abans de l'ortorectificació. Les passades es planifiquen amb solapament longitudinal i transversal perquè una part del territori aparegui en diverses imatges. Aquest recobriment evita buits, permet la visió estereoscòpica i contribueix a estimar el relleu i a construir mosaics.
 
-La **georeferenciació** relaciona la imatge amb un sistema de coordenades mitjançant la posició de la càmera, punts de control o altres paràmetres. Permet situar-la aproximadament sobre altres capes, però no elimina per si sola els desplaçaments interns de la perspectiva. L'**ortorectificació** corregeix geomètricament la inclinació, la perspectiva i l'efecte del relleu mitjançant l'orientació de la càmera, punts de control i un model d'elevacions. El resultat és una imatge en projecció ortogonal amb una escala espacial controlada, apta per comparar posicions i efectuar mesures dins de la precisió declarada {% cite ignPnoaOrthophotoGeneration2026 %}.
+La **georeferenciació** relaciona la imatge amb un sistema de coordenades mitjançant la posició de la càmera, punts de control o altres paràmetres. Permet situar-la aproximadament sobre altres capes, però no elimina per si sola els desplaçaments interns de la perspectiva. L'**ortorectificació** corregeix geomètricament la inclinació, la perspectiva i l'efecte del relleu mitjançant l'orientació de la càmera, punts de control i un model d'elevacions. El resultat, descrit amb més detall a la [documentació del PNOA sobre la generació d'ortofotos](https://pnoa.ign.es/web/portal/pnoa-imagen/generacion-de-ortofotos), és una imatge en projecció ortogonal amb una escala espacial controlada, apta per comparar posicions i efectuar mesures dins de la precisió declarada.
 
 ::: table "Fotografies aèries i productes derivats"
 | Tipus o producte | Com s'obté | Tret de lectura | Ús i límit principal |
@@ -75,7 +91,7 @@ La **georeferenciació** relaciona la imatge amb un sistema de coordenades mitja
 
 Una imatge de satèl·lit també pot funcionar com a producte cartogràfic quan ha estat corregida, georeferenciada i distribuïda amb metadades. La diferència amb una ortofoto aèria no és només la plataforma, sinó el tipus de sensor, la resolució espacial, la freqüència de revisita, les bandes espectrals i el nivell de processament. Una ortofoto permet llegir voreres, edificis, camins o parcel·les amb molt detall; un mosaic Sentinel-2 pot mostrar de manera més sintètica formes litorals, aigües, arrossars, zones urbanes, camps i grans contrastos de coberta.
 
-El delta de l'Ebre és un bon exemple perquè la forma del territori i els usos del sòl es reconeixen sense necessitat d'un zoom urbà: el riu, les badies, les barres litorals, les llacunes, la xarxa de canals i les parcel·les d'arròs formen un conjunt que es llegeix millor a escala regional. La figura següent prové d'una petició WMS a la capa `s2cloudless` d'EOxCloudless. És un mosaic sense núvols basat en dades Sentinel-2 de 2016, publicat sota CC BY 4.0, i no s'ha d'interpretar com una imatge d'última actualitat ni com una ortofoto de 25 o 50 cm {% cite eoxCloudlessUsage2026 eoxCloudlessPricing2026 copernicusSentinelDataLicence2026 %}.
+El delta de l'Ebre és un bon exemple perquè la forma del territori i els usos del sòl es reconeixen sense necessitat d'un zoom urbà: el riu, les badies, les barres litorals, les llacunes, la xarxa de canals i les parcel·les d'arròs formen un conjunt que es llegeix millor a escala regional. La figura següent prové d'una petició WMS a la capa `s2cloudless` d'[EOxCloudless](https://cloudless.eox.at/documentation/usage). És un mosaic sense núvols basat en dades Sentinel-2 de 2016, publicat sota CC BY 4.0 segons les [condicions de reutilització d'EOxCloudless](https://cloudless.eox.at/pricing) i la [llicència de dades Sentinel de Copernicus](https://cds.climate.copernicus.eu/licences/ec-sentinel), i no s'ha d'interpretar com una imatge d'última actualitat ni com una ortofoto de 25 o 50 cm.
 
 ![Imatge Sentinel-2 cloudless del delta de l'Ebre, amb el riu, les badies, les barres litorals, arrossars i zones urbanes principals]({{ site.baseurl }}/assets/img/aerial-photography/sentinel2-cloudless-delta-ebre-eox-2016.jpg "Imatge Sentinel-2 cloudless del delta de l'Ebre obtinguda mitjançant WMS. Font: EOxCloudless, EOX IT Services GmbH; conté dades Copernicus Sentinel modificades de 2016; llicència CC BY 4.0. Retall: 0,45-0,98° E i 40,52-40,86° N; consulta i incorporació: 17 d'agost de 2026."){: data-figure-width="48rem"}
 
@@ -85,7 +101,7 @@ La mateixa lògica es pot aplicar a QGIS o a una font Quarto del projecte: cal c
 
 La [Fototeca Digital del CNIG](https://fototeca.cnig.es/) permet cercar una localització, seleccionar vols històrics i PNOA en una cronologia, mostrar els fotocentres, obrir fotogrames, regular-ne l'opacitat, comparar-los amb ortofotos i consultar o descarregar els productes disponibles. El CNIG conserva i distribueix el material, però cada vol pot tenir un productor i unes condicions d'atribució propis.
 
-La captura mostra una consulta sobre Vila-seca, Salou i Tarragona. S'ha seleccionat el vol Americà B de 1956–1957 i el fotograma `PNOA-H_AMS_1956-57_33k_ES_comp_PAN_21mic_etrs89_UTM-hu31_H50_0472_fot_16089`, que apareix sobre l'ortofoto disponible com a fons el dia de la consulta. Els punts blaus representen fotocentres. La costa, els camins i les edificacions visibles al fotograma històric es poden contrastar amb el fons, però els contorns no coincideixen necessàriament: el servei adverteix que els fotogrames històrics poden tenir una orientació aproximada i que, encara que estiguin georeferenciats, no són ortofotos {% cite cnigFototecaDigital2026 %}.
+La captura mostra una consulta sobre Vila-seca, Salou i Tarragona. S'ha seleccionat el vol Americà B de 1956–1957 i el fotograma `PNOA-H_AMS_1956-57_33k_ES_comp_PAN_21mic_etrs89_UTM-hu31_H50_0472_fot_16089`, que apareix sobre l'ortofoto disponible com a fons el dia de la consulta. Els punts blaus representen fotocentres. La costa, els camins i les edificacions visibles al fotograma històric es poden contrastar amb el fons, però els contorns no coincideixen necessàriament: la [Fototeca Digital del CNIG adverteix](https://fototeca.cnig.es/) que els fotogrames històrics poden tenir una orientació aproximada i que, encara que estiguin georeferenciats, no són ortofotos.
 
 ::: subfigures a+b "Comparació de la mateixa extensió a la Fototeca Digital del CNIG. El fotograma històric es pot situar sobre l'ortofoto de fons, però conserva la geometria d'una fotografia en perspectiva. Captures pròpies, 12 d'agost de 2026. Vol Americà B, Ministeri de Defensa, CEGET, distribuït per IGN/CNIG; dades geogràfiques sota CC BY 4.0."
 ![Fotograma històric superposat a l'ortofoto de fons]({{ site.baseurl }}/assets/img/aerial-photography/fototeca-cnig-vila-seca-fotograma-1956-1957.png "Fotograma de 1956–1957 visible sobre el fons")
@@ -96,21 +112,31 @@ La consulta es pot reproduir cercant `Vila-seca`, activant **Fotogrames**, selec
 
 ### Google Maps i la vista d'imatges
 
-Google Maps distingeix oficialment entre **Mapa**, que mostra vies, llocs i punts de referència, i **Satèl·lit**, que mostra imatges aèries. Aquesta etiqueta comercial no identifica el sensor ni garanteix per si sola que cada peça visible sigui una ortofoto amb resolució, data i precisió conegudes. Amb les etiquetes desactivades, la vista és una base d'imatges georeferenciada; si s'hi superposen vies, topònims, límits i punts d'interès, el resultat funciona visualment com un **ortofotomapa**. En canvi, una vista inclinada o un entorn 3D torna a introduir perspectiva i no s'ha de descriure com un ortofotomapa planimètric.
+[Google Maps](https://support.google.com/maps/answer/3092439?hl=ca&co=GENIE.Platform%3DDesktop) distingeix oficialment entre **Mapa**, que mostra vies, llocs i punts de referència, i **Satèl·lit**, que mostra imatges aèries. Aquesta etiqueta comercial no identifica el sensor ni garanteix per si sola que cada peça visible sigui una ortofoto amb resolució, data i precisió conegudes. Amb les etiquetes desactivades, la vista és una base d'imatges georeferenciada; si s'hi superposen vies, topònims, límits i punts d'interès, el resultat funciona visualment com un **ortofotomapa**. En canvi, una vista inclinada o un entorn 3D torna a introduir perspectiva i no s'ha de descriure com un ortofotomapa planimètric.
 
-Per tant, el nom depèn del producte que es veu i de les capes actives, però també de la informació tècnica disponible. En una exploració quotidiana es pot parlar de vista d'imatges o vista híbrida. En un treball acadèmic, una mesura o una font de dades, cal preferir una ortofoto oficial amb data, CRS, resolució, precisió i condicions de reutilització documentades; la consulta pública de Google Maps no autoritza a redistribuir-ne les imatges {% cite googleMapsLayers2026 %}.
+Per tant, el nom depèn del producte que es veu i de les capes actives, però també de la informació tècnica disponible. En una exploració quotidiana es pot parlar de vista d'imatges o vista híbrida. En un treball acadèmic, una mesura o una font de dades, cal preferir una ortofoto oficial amb data, CRS, resolució, precisió i condicions de reutilització documentades. Google Maps no és una font de dades obertes: la reproducció i la reutilització del contingut estan subjectes als límits de les [directrius geogràfiques de Google](https://about.google/brand-resource-center/products-and-services/geo-guidelines/) i exigeixen mantenir l'atribució a Google i, si escau, als proveïdors de dades; les directrius admeten alguns usos i en restringeixen d'altres.
 
 ### Street View i el paisatge vist des del carrer
 
 Google Street View no és fotografia aèria: registra panorames des del nivell del carrer i, per tant, mostra façanes, voreres, arbrat, mobiliari, rètols, accessos i relacions entre l'espai públic i els edificis. Aquesta perspectiva complementa l'ortofoto. La vista zenital ajuda a reconèixer l'extensió i la forma del teixit urbà; la vista de carrer permet observar com aquest teixit es materialitza i com es percep a escala humana.
 
-En alguns punts, l'opció **Mostra més dates** permet recuperar panorames d'anys diferents. La comparació pot revelar una nova urbanització, la reforma d'un carrer, el creixement dels arbres, canvis d'usos o transformacions d'un paisatge turístic. No obstant això, l'historial no està disponible a tot arreu, els intervals són irregulars i una diferència d'estació, hora, trànsit o posició de la càmera pot semblar un canvi territorial sense ser-ho {% cite googleStreetViewHistorical2026 %}.
+En alguns punts, l'opció de Street View [**Mostra més dates**](https://support.google.com/maps/answer/3093484?hl=ca&co=GENIE.Platform%3DDesktop) permet recuperar panorames d'anys diferents. La comparació pot revelar una nova urbanització, la reforma d'un carrer, el creixement dels arbres, canvis d'usos o transformacions d'un paisatge turístic. No obstant això, l'historial no està disponible a tot arreu, els intervals són irregulars i una diferència d'estació, hora, trànsit o posició de la càmera pot semblar un canvi territorial sense ser-ho.
 
 Una exploració guiada pot partir d'aquest [panorama de l'entorn sud-est del nucli de Vila-seca](https://www.google.com/maps/@41.1074631,1.1453166,3a,75y,30.7h,90t/data=!3m6!1e1!3m4!1scbGZ8h5wToZfvBH_5i8XtA!2e0!7i16384!8i8192?hl=ca). Si la interfície ofereix **Mostra més dates**, se seleccionaran dos anys prou separats i es mantindran la mateixa posició, orientació i ampliació. El registre indicarà les dues dates i distingirà els canvis permanents, com l'edificació o la secció del carrer, dels elements conjunturals, com vehicles, obres provisionals, ombres o vegetació estacional.
 
-Les directrius de Google permeten consultar i incrustar Street View mitjançant les eines proporcionades, però prohibeixen publicar-ne captures fixes, utilitzar-les en llibres o manuals i extreure'n dades per digitalització o anàlisi automatitzada. Per això el manual enllaça el panorama viu i no reprodueix una parella de captures. Les observacions serviran per formular hipòtesis qualitatives, que s'hauran de contrastar amb ortofotos oficials, cartografia, planejament o treball de camp abans d'afirmar un canvi {% cite googleGeoGuidelines2026 %}.
+Pel que fa específicament a Street View, les [directrius geogràfiques de Google](https://about.google/brand-resource-center/products-and-services/geo-guidelines/) permeten enllaçar o incrustar els panorames mitjançant les eines proporcionades, però no autoritzen captures fixes de Street View, la seva reproducció en llibres o manuals ni l'extracció de dades per digitalització o anàlisi automatitzada. Aquestes restriccions afecten les imatges de Street View i no s'han de generalitzar a tots els productes cartogràfics de Google, que tenen condicions pròpies. Per això el manual enllaça el panorama viu i no reprodueix una parella de captures. Les observacions serviran per formular hipòtesis qualitatives, que s'hauran de contrastar amb ortofotos oficials, cartografia, planejament o treball de camp abans d'afirmar un canvi.
 
 ## Escala i generalització
+
+L'escala relaciona la mida del mapa amb el territori, mentre que la generalització adapta el detall a aquesta relació i a la funció de la peça. Les dues decisions s'han de comprovar conjuntament en la mida final.
+
+>>>>> Aquesta fase converteix l'escala i el suport final en criteris per calcular, seleccionar i simplificar la informació.
+>>>>>
+>>>>> - Interpretar escales numèriques, gràfiques i verbals sense confondre escales grans i petites.
+>>>>> - Calcular distàncies, superfícies i equivalències entre fulls després d'unificar les unitats.
+>>>>> - Distingir coordenades angulars i unitats mètriques abans d'interpretar mesures o barres d'escala.
+>>>>> - Aplicar selecció, simplificació, agregació, desplaçament o exageració segons la funció i l'escala.
+>>>>> - Validar la llegibilitat i l'àrea mínima cartografiable a la mida d'exportació.
 
 ### Escala numèrica i gràfica
 
@@ -132,7 +158,7 @@ El recordatori geomètric és important. Les línies de latitud són **paral·le
 
 La latitud i la longitud tampoc no es comporten igual. Un grau de latitud no val exactament sempre el mateix, perquè depèn de l'el·lipsoide i de la latitud, però la variació és petita: se situa al voltant de 111 km i pot usar-se com a aproximació docent. Un grau de longitud, en canvi, s'escurça molt cap als pols: prop de l'equador s'aproxima als 111 km, a la latitud del Camp de Tarragona, al voltant de 41° N, baixa a uns 84 km, i a 60° N és d'uns 56 km. Per això una retícula en graus no pot llegir-se com una regla mètrica uniforme. Si el mapa necessita mesurar recorreguts, àrees o zones d'influència, cal treballar amb un CRS projectat adequat a l'àrea i a l'ús, o documentar explícitament el mètode geodèsic emprat {% cite snyderMapProjections1987 vanSickleBasicGISCoordinates2017 %}.
 
-![Esquema que compara escala numèrica, verbal i gràfica, i recorda que els graus de latitud es mesuren sobre meridians mentre que els graus de longitud es mesuren sobre paral·lels cada vegada més curts cap als pols]({{ site.baseurl }}/assets/img/cartographic-language/scale-types-and-degree-units.svg "Les formes habituals de l'escala poden ser equivalents en un mapa mètric, però una retícula en graus no és una regla uniforme: els paral·lels no s'intersequen, els meridians convergeixen als pols i la distància associada a un grau de longitud depèn de la latitud. Figura d'elaboració pròpia, 17 d'agost de 2026."){: data-figure-width="54rem"}
+![Esquema que compara escala numèrica, verbal i gràfica, i recorda que els graus de latitud es mesuren sobre meridians mentre que els graus de longitud es mesuren sobre paral·lels cada vegada més curts cap als pols]({{ site.baseurl }}/assets/img/cartographic-language/scale-types-and-degree-units.svg "Les formes habituals de l'escala poden ser equivalents en un mapa mètric, però una retícula en graus no és una regla uniforme: els paral·lels no s'intersequen, els meridians convergeixen als pols i la distància associada a un grau de longitud depèn de la latitud. Abans d'interpretar una barra d'escala, cal revisar la mida final, el CRS, les unitats i el mètode de mesura. Figura d'elaboració pròpia, 17 d'agost de 2026."){: data-figure-width="54rem"}
 
 >>>> **Una escala en graus no és una escala en metres.** Si una capa o una captura mostra coordenades en graus, no s'han de calcular distàncies multiplicant graus per metres sense revisar la latitud, la projecció i el mètode de mesura. En QGIS, abans de confiar en una barra d'escala o en una mesura directa, cal comprovar el CRS del projecte i de les capes; per a treballs locals a Catalunya, un CRS projectat en metres acostuma a ser més adequat que una visualització en latitud i longitud.
 
@@ -278,7 +304,7 @@ $$
 
 En sèries cartogràfiques oficials poden existir talls, solapaments o convencions pròpies, però el càlcul mostra la relació geomètrica bàsica.
 
-![Quatre esquemes de càlcul d'escala: distància del mapa a la realitat, distància real sobre el mapa, superfície calculada amb el quadrat del denominador i divisió d'un full en quatre fulls a escala més gran]({{ site.baseurl }}/assets/img/cartographic-language/scale-calculations.svg "Els càlculs d'escala permeten controlar distàncies, superfícies i equivalències entre fulls. Figura d'elaboració pròpia, 14 d'agost de 2026."){: data-figure-width="54rem"}
+![Quatre esquemes de càlcul d'escala: distància del mapa a la realitat, distància real sobre el mapa, superfície calculada amb el quadrat del denominador i divisió d'un full en quatre fulls a escala més gran]({{ site.baseurl }}/assets/img/cartographic-language/scale-calculations.svg "Els càlculs d'escala permeten controlar distàncies, superfícies i equivalències entre fulls: primer s'unifiquen les unitats i després es calcula; la mida final determina si el resultat és llegible. Figura d'elaboració pròpia, 14 d'agost de 2026."){: data-figure-width="54rem"}
 
 ::: table "Càlculs d'escala que s'han de dominar"
 | Tipus de càlcul | Operació | Resultat de control |
@@ -307,13 +333,13 @@ Una mateixa geometria municipal es pot observar en una composició provincial, c
 
 El canvi d'escala no és només reduir una imatge. Si tres mapes ocupen la mateixa mida de paper o de pantalla, el mapa d'escala més petita cobreix molt més territori dins del mateix marc. Això comprimeix carrers, parcel·les, topònims i petits polígons fins que deixen de ser llegibles. La generalització comença aquí: abans de decidir quina operació concreta s'aplica, cal entendre quina informació encara pot funcionar a la nova escala.
 
-![Tres mapes de la mateixa mida final a escala local, comarcal i regional, amb menys detall i més simbolització a mesura que l'extensió representada creix]({{ site.baseurl }}/assets/img/cartographic-language/generalization-three-scales.svg "La generalització és una resposta al canvi d'escala: la mateixa mida de sortida cobreix extensions reals diferents i obliga a seleccionar, simplificar, agregar o simbolitzar el detall. Figura d'elaboració pròpia, 17 d'agost de 2026."){: data-figure-width="54rem"}
+![Tres mapes de la mateixa mida final a escala local, comarcal i regional, amb menys detall i més simbolització a mesura que l'extensió representada creix]({{ site.baseurl }}/assets/img/cartographic-language/generalization-three-scales.svg "La generalització és una resposta al canvi d'escala: amb la mateixa mida de sortida, cada marc cobreix una extensió real diferent i obliga a seleccionar, simplificar, agregar o simbolitzar el detall. Figura d'elaboració pròpia, 17 d'agost de 2026."){: data-figure-width="54rem"}
 
 #### Decidir què es conserva
 
 La generalització pot seleccionar els elements necessaris, simplificar formes massa detallades, combinar categories, desplaçar símbols que se superposen o exagerar elements que desapareixerien. Cada operació ha de conservar la funció territorial del mapa. En el mapa de context del projecte, els municipis i la comarca són essencials; una xarxa viària exhaustiva o una ortofoto detallada no ho són.
 
-![Operacions principals de generalització cartogràfica: selecció, simplificació, agregació, desplaçament i exageració]({{ site.baseurl }}/assets/img/cartographic-language/generalization-operations.svg "Generalitzar no és només treure detalls: pot seleccionar, simplificar, agregar, desplaçar o exagerar elements perquè el mapa continuï sent llegible a l'escala i mida finals. Figura d'elaboració pròpia, 14 d'agost de 2026."){: data-figure-width="54rem"}
+![Operacions principals de generalització cartogràfica: selecció, simplificació, agregació, desplaçament i exageració]({{ site.baseurl }}/assets/img/cartographic-language/generalization-operations.svg "Generalitzar no és només treure detalls: pot seleccionar, simplificar, agregar, desplaçar o exagerar elements perquè el mapa continuï sent llegible a l'escala i mida finals. Els esquemes docents no deriven d'una capa real. Figura d'elaboració pròpia, 14 d'agost de 2026."){: data-figure-width="54rem"}
 
 #### Comprovar el suport final
 
@@ -358,7 +384,7 @@ En cartografia professional, aquesta decisió acostuma a quedar fixada en les es
 
 La decisió, per tant, pot resoldre's de tres maneres principals. Si l'element és secundari, s'omet. Si forma part d'una categoria més gran, s'agrupa. Si és essencial per al missatge, es pot exagerar o representar amb un símbol, però llavors cal acceptar que la mida ja no correspon exactament a la superfície real. En tots els casos, la generalització ha d'estar justificada per la lectura final i no per la comoditat del programa.
 
-![Comparació entre una font detallada i un mapa publicat en què els polígons massa petits s'ometen, s'agrupen o s'exageren si són essencials]({{ site.baseurl }}/assets/img/cartographic-language/minimum-mapping-unit.svg "L'àrea mínima cartografiable recorda que un detall pot existir a la font i no ser llegible a la mida final; generalitzar significa decidir com conservar el sentit del mapa. Figura d'elaboració pròpia, 14 d'agost de 2026."){: data-figure-width="54rem"}
+![Comparació entre una font detallada i un mapa publicat en què els polígons massa petits s'ometen, s'agrupen o s'exageren si són essencials]({{ site.baseurl }}/assets/img/cartographic-language/minimum-mapping-unit.svg "L'àrea mínima cartografiable recorda que un detall pot existir a la font i no ser llegible a la mida final: si no es pot distingir a la mida d'exportació, no forma part efectiva del mapa; cal ometre'l, agrupar-lo o exagerar-lo si és essencial. Figura d'elaboració pròpia, 14 d'agost de 2026."){: data-figure-width="54rem"}
 
 ## Informació de base i relleu
 
@@ -370,7 +396,7 @@ En el mapa comarcal, els límits i alguns topònims ajuden a localitzar els muni
 
 El relleu és especialment delicat perquè pot donar molta estructura visual sense formar part de la variable principal. Les cotes aporten valors puntuals; les corbes de nivell mostren forma i pendent; l'ombrejat fa intuïtiu el volum, però pot semblar una font de llum real; i les tintes hipsomètriques ordenen rangs d'altura, però introdueixen una paleta que pot competir amb una coropleta. En un mapa temàtic municipal, l'altimetria només s'ha d'afegir si ajuda a explicar un patró territorial, com una diferència entre litoral i interior, i no només perquè el mapa sembli més complet.
 
-![Quatre recursos per representar altimetria: cotes, corbes de nivell, ombrejat i tintes hipsomètriques]({{ site.baseurl }}/assets/img/cartographic-language/relief-representation-methods.svg "El relleu pot orientar la lectura o competir amb la variable principal; cotes, corbes, ombrejat i tintes hipsomètriques no comuniquen exactament la mateixa informació. Figura d'elaboració pròpia, 14 d'agost de 2026."){: data-figure-width="54rem"}
+![Quatre recursos per representar altimetria: cotes, corbes de nivell, ombrejat i tintes hipsomètriques]({{ site.baseurl }}/assets/img/cartographic-language/relief-representation-methods.svg "El relleu pot orientar la lectura o competir amb la variable principal; les formes són esquemàtiques i permeten comparar com cotes, corbes, ombrejat i tintes hipsomètriques comuniquen propietats diferents. Figura d'elaboració pròpia, 14 d'agost de 2026."){: data-figure-width="54rem"}
 
 ### Corbes de nivell i formes del relleu
 
@@ -378,13 +404,23 @@ Una **corba de nivell** uneix punts que tenen la mateixa altitud. En un mapa top
 
 La forma de les corbes també informa sobre el drenatge. En un barranc o una vall, les corbes tendeixen a entrar cap amunt en forma de `V` o de `U`: el terreny és còncau i el flux d'aigua es concentra cap a l'eix de la depressió. En una cresta o un esperó, la forma s'obre cap avall i el terreny és convex: l'aigua es dispersa cap als dos vessants. Aquesta lectura no substitueix una xarxa hidrogràfica ni un model digital d'elevacions, però permet reconèixer lògiques bàsiques del relleu abans d'afegir més capes.
 
-El retall següent mostra l'entorn de l'Estany de Montcortès en cartografia topogràfica de l'ICGC. La convenció cromàtica ajuda a separar les corbes de nivell sèpia, la hidrografia blava, les masses de vegetació verdes, les vies grises i els topònims {% cite icgcServeiMapaBase2026 %}.
+El retall següent mostra l'entorn de l'Estany de Montcortès en la [cartografia topogràfica del Servei de Mapa Base de l'ICGC](https://www.icgc.cat/ca/Geoinformacio-i-mapes/Servei-de-Mapa-Base). La convenció cromàtica ajuda a separar les corbes de nivell sèpia, la hidrografia blava, les masses de vegetació verdes, les vies grises i els topònims.
 
 ![Retall topogràfic de l'Estany de Montcortès amb corbes de nivell, cotes, hidrografia, vegetació i topònims]({{ site.baseurl }}/assets/img/cartographic-language/contour-lines-montcortes.png "Retall topogràfic de l'entorn de l'Estany de Montcortès. Font cartogràfica: Institut Cartogràfic i Geològic de Catalunya, cartografia topogràfica de Catalunya. Llicència: pendent de revisar."){: data-figure-width="54rem"}
 
 >>> **Estimar l'altitud de l'Estany de Montcortès.** Per llegir l'altitud de l'estany no n'hi ha prou amb mirar el color blau de l'aigua. Primer cal identificar una corba mestra propera, com la de `1.050 m`, deduir l'equidistància entre corbes i comptar cap a la riba. Si la làmina d'aigua queda entre dues corbes consecutives, el mapa només permet afirmar un interval: l'altitud és més alta que la corba inferior i més baixa que la corba superior. Un valor com `1.030 m` pot ser una estimació raonada si la lectura de les corbes porta a aquest entorn, però no s'ha de presentar com una dada exacta obtinguda del mapa. L'altitud que el mapa declara directament, sempre dins de la precisió de la font, només correspon a una cota puntual, una consulta altimètrica documentada o els punts pels quals passa una corba de nivell concreta; entre dues corbes, el relleu s'interpreta dins d'un rang.
 
 ## Elements del mapa
+
+Els elements auxiliars i la retolació només aporten informació quan responen a la funció, l'orientació i la jerarquia de la composició. Aquesta fase prepara una revisió sistemàtica abans de maquetar el mapa de context.
+
+>>>>> Aquesta fase organitza els signes, textos i elements auxiliars perquè el lector pugui localitzar, descodificar i verificar el mapa.
+>>>>>
+>>>>> - Relacionar símbols puntuals, lineals i superficials amb el fenomen representat i la variable visual adequada.
+>>>>> - Redactar un títol i una llegenda que identifiquin el territori, la funció i els codis necessaris sense redundàncies.
+>>>>> - Decidir si calen escala gràfica i indicació del nord segons les mesures, la rotació i les referències disponibles.
+>>>>> - Jerarquitzar i col·locar topònims sense col·lisions ni associacions territorials ambigües.
+>>>>> - Comprovar fonts, període, autoria, CRS, crèdits i llegibilitat en la mida final.
 
 ### Títol i subtítol
 
@@ -396,7 +432,7 @@ Els símbols cartogràfics apliquen les variables visuals sobre tres formes d'im
 
 La relació entre el signe i el fenomen també pot variar. Un símbol **arbitrari** no s'assembla al que representa i necessita una llegenda clara. Un símbol **associatiu** aprofita algun tret recognoscible, com una forma, un color o una textura que evoca el fenomen. Un símbol **convencional** depèn d'un acord compartit, sovint repetit en sèries cartogràfiques, institucions o pràctiques professionals. En la pràctica, molts símbols combinen aquestes tres dimensions: el blau d'un riu és associatiu perquè recorda l'aigua, però també és convencional perquè el lector l'ha après en molts mapes.
 
-![Esquema de símbols cartogràfics arbitraris, associatius i convencionals aplicats a implantació puntual, lineal i superficial]({{ site.baseurl }}/assets/img/cartographic-language/map-symbols-relationships.svg "Els símbols poden ser arbitraris, associatius o convencionals, i aquesta relació funciona de manera diferent segons si la implantació és puntual, lineal o superficial. Figura d'elaboració pròpia, 17 d'agost de 2026."){: data-figure-width="54rem"}
+![Esquema de símbols cartogràfics arbitraris, associatius i convencionals aplicats a implantació puntual, lineal i superficial]({{ site.baseurl }}/assets/img/cartographic-language/map-symbols-relationships.svg "Els exemples són esquemàtics: els símbols poden ser arbitraris, associatius o convencionals, combinar semblança, convenció i decisió gràfica, i funcionar de manera diferent segons si la implantació és puntual, lineal o superficial. Figura d'elaboració pròpia, 17 d'agost de 2026."){: data-figure-width="54rem"}
 
 ### Llegenda
 
@@ -491,9 +527,23 @@ L'equilibri no obliga a centrar-ho tot ni a omplir qualsevol espai buit. Els mar
 
 La pràctica construirà el **mapa de context** de la miniinfografia, encara sense aprofundir en la classificació temàtica. Mostrarà on se situa la comarca dins de la província de Tarragona i identificarà els seus municipis amb una jerarquia llegible. L'objectiu serà controlar escala, extensió, retolació, fonts i exportació; no convertir el mapa de localització en un segon mapa temàtic.
 
+>>>>> L'activitat aplica els criteris del capítol a una composició de QGIS i conserva una comparació revisable del resultat.
+>>>>>
+>>>>> - Continuar `qgis/tigit_tarragones.qgz` amb la font municipal oficial i la capa filtrada ja validades.
+>>>>> - Construir el mapa principal i decidir si un requadre provincial millora realment la localització.
+>>>>> - Exportar `context_tarragones_2021_automatic.pdf` i `context_tarragones_2021.pdf` a la mateixa mida final.
+>>>>> - Comparar retolació, escala, detall, orientació i jerarquia entre els dos PDF.
+>>>>> - Registrar al `README.md` les comprovacions i la justificació dels canvis aplicats.
+
+### Materials i resultats de treball
+
+Per al Tarragonès es continuarà `qgis/tigit_tarragones.qgz`. El projecte mantindrà la font municipal oficial completa del capítol 4, que proporciona o permet derivar el context provincial, i la capa filtrada del Tarragonès, sense recrear ni tornar a descarregar les geometries. Abans d'obrir la composició es fixaran la mida i l'orientació finals. Els noms de comarca i any s'adaptaran al territori i al període del projecte.
+
+Es generaran dos PDF vectorials a `outputs/maps`: `context_tarragones_2021_automatic.pdf`, amb la configuració inicial d'etiquetatge automàtic, i `context_tarragones_2021.pdf`, amb la retolació revisada. El `README.md` en compararà els canvis a la mateixa mida final i conservarà el registre cartogràfic. El mapa revisat serà una entrada explícita del mapa temàtic del capítol 8 i de la miniinfografia del capítol 9.
+
 ### Dades i projecte de partida
 
-Es continuarà el mateix projecte QGIS iniciat en treballar les dades espacials, encara que el bloc sistemàtic de SIG arribi després. La capa municipal, el CRS, les rutes i els codis ja validats no s'han de substituir per una descàrrega nova sense documentar. Abans de maquetar es fixaran la mida del mapa exportat, l'orientació de la pàgina i l'espai que la peça ocuparà a la miniinfografia.
+Es continuarà el mateix projecte QGIS iniciat en treballar les dades espacials. La font municipal oficial completa, de la qual s'obté o es deriva el context provincial, la capa comarcal filtrada, el CRS, les rutes i els codis ja validats no s'han de substituir ni recrear a partir d'una descàrrega nova. Abans de maquetar es fixaran la mida del mapa exportat, l'orientació de la pàgina i l'espai que la peça ocuparà a la miniinfografia.
 
 El procediment general serà aquest:
 
@@ -503,7 +553,7 @@ El procediment general serà aquest:
 4. configurar l'etiquetatge municipal i resoldre els conflictes a la mida final;
 5. afegir un segon marc provincial només si millora la localització;
 6. completar títol, escala, orientació, fonts i crèdits després d'estabilitzar els marcs;
-7. exportar una prova, obrir-la fora de QGIS i corregir la composició editable abans de generar la versió conservada.
+7. exportar la versió amb etiquetatge automàtic, obrir-la fora de QGIS i corregir la composició editable abans de generar la versió revisada.
 
 ### Construir el mapa principal
 
@@ -517,7 +567,7 @@ Un requadre més petit podrà mostrar la comarca destacada dins de la província
 
 ### Completar i exportar la composició
 
-El títol, la llegenda si és necessària, l'escala, l'orientació, les fonts i els crèdits s'afegiran després d'estabilitzar el mapa. El CRS del projecte es comprovarà abans de confiar en la barra d'escala. La fletxa del nord només s'incorporarà si resol una ambigüitat: si el mapa principal i el requadre comparteixen una orientació convencional i evident, l'omissió també s'haurà de poder justificar. La composició es revisarà a mida real i s'exportarà en PDF vectorial a `outputs/maps`, sense substituir el projecte ni la composició editable.
+El títol, la llegenda si és necessària, l'escala, l'orientació, les fonts i els crèdits s'afegiran després d'estabilitzar el mapa. El CRS del projecte es comprovarà abans de confiar en la barra d'escala. La fletxa del nord només s'incorporarà si resol una ambigüitat: si el mapa principal i el requadre comparteixen una orientació convencional i evident, l'omissió també s'haurà de poder justificar. La composició es revisarà a mida real. Primer s'exportarà `context_tarragones_2021_automatic.pdf` amb l'etiquetatge automàtic inicial; després de revisar la retolació, s'exportarà `context_tarragones_2021.pdf`, sense substituir el projecte ni la composició editable.
 
 ### Comprovacions de qualitat
 
@@ -538,8 +588,8 @@ Abans d'acceptar el mapa cal verificar que:
 ::: table "Evidències del mapa de context"
 | Ubicació | Evidència | Contingut mínim |
 | --- | --- | --- |
-| `qgis` | Projecte QGIS continuat | Capes, CRS, estils, etiquetes i composició editable |
-| `outputs/maps` | Mapa de context vectorial | Extensió final, topònims, escala funcional, fonts i crèdits |
-| `outputs/maps` | Comparació de retolació o escala | Alternativa automàtica i versió revisada a la mateixa mida |
-| `README.md` | Registre cartogràfic | Escala, mida final, detall omès, prioritats de retolació, decisió sobre orientació o fletxa del nord i decisió sobre el requadre |
+| `qgis` | Projecte QGIS continuat | Font municipal oficial completa i context provincial obtingut o derivat d'aquesta font, capa filtrada del Tarragonès, CRS, estils, etiquetes i composició editable |
+| `outputs/maps` | `context_tarragones_2021_automatic.pdf` | Composició inicial amb etiquetatge automàtic, a la mida final i en format vectorial |
+| `outputs/maps` | `context_tarragones_2021.pdf` | Versió revisada amb extensió final, topònims, escala funcional, fonts i crèdits en format vectorial |
+| `README.md` | Comparació i registre cartogràfic | Comparació dels dos PDF a la mateixa mida, escala, detall omès, prioritats de retolació, orientació i decisió sobre el requadre |
 :::

@@ -1,20 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="980" viewBox="0 0 1400 980" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1304" height="724" viewBox="48 118 1304 724" role="img" aria-labelledby="title desc">
   <title id="title">Models de color per a monitors, impressio i selectors digitals</title>
   <desc id="desc">Comparacio didactica dels models RGB, CMYK, RYB i HSL HSV, amb colors primaris, usos principals i significat dels canals.</desc>
   <defs>
     <style>
-      .bg{fill:#ffffff}
-      .panel{fill:#f7fafb;stroke:#c9d4dc;stroke-width:2;rx:18}
-      .panelDark{fill:#101820;stroke:#c9d4dc;stroke-width:2;rx:18}
-      .title{font:700 34px Arial,'Liberation Sans',sans-serif;fill:#17202a}
-      .subtitle{font:18px Arial,'Liberation Sans',sans-serif;fill:#52616b}
+      .panel{fill:#f7fafb;stroke:#c9d4dc;stroke-width:2}
+      .panelDark{fill:#101820;stroke:#c9d4dc;stroke-width:2}
       .h{font:700 25px Arial,'Liberation Sans',sans-serif;fill:#17202a}
       .hLight{font:700 25px Arial,'Liberation Sans',sans-serif;fill:#ffffff}
       .p{font:17px Arial,'Liberation Sans',sans-serif;fill:#40515c}
       .pLight{font:17px Arial,'Liberation Sans',sans-serif;fill:#dce6ee}
       .small{font:15px Arial,'Liberation Sans',sans-serif;fill:#52616b}
       .smallLight{font:15px Arial,'Liberation Sans',sans-serif;fill:#dce6ee}
-      .tiny{font:13px Arial,'Liberation Sans',sans-serif;fill:#5c6b76}
       .tag{font:700 15px Arial,'Liberation Sans',sans-serif;fill:#17202a}
       .tagLight{font:700 15px Arial,'Liberation Sans',sans-serif;fill:#ffffff}
       .code{font:700 15px 'Liberation Mono',Consolas,monospace;fill:#17202a}
@@ -23,8 +19,8 @@
       .ink{mix-blend-mode:multiply;opacity:.86}
       .outline{fill:none;stroke:#17202a;stroke-width:1.4;opacity:.55}
       .outlineLight{fill:none;stroke:#ffffff;stroke-width:1.4;opacity:.65}
-      .box{fill:#ffffff;stroke:#c9d4dc;stroke-width:1.4;rx:12}
-      .boxDark{fill:#172331;stroke:#3c4d5d;stroke-width:1.4;rx:12}
+      .box{fill:#ffffff;stroke:#c9d4dc;stroke-width:1.4}
+      .boxDark{fill:#172331;stroke:#3c4d5d;stroke-width:1.4}
     </style>
     <linearGradient id="satBlue" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0" stop-color="#bfc4cb"/>
@@ -41,10 +37,6 @@
     </linearGradient>
   </defs>
 
-  <rect class="bg" width="1400" height="980"/>
-  <text x="700" y="52" text-anchor="middle" class="title">Models de color: llum, tinta i selectors no fan la mateixa feina</text>
-  <text x="700" y="84" text-anchor="middle" class="subtitle">RGB descriu dispositius que emeten llum; CMYK orienta la impressio amb tintes; HSL i HSV ajuden a ajustar paletes.</text>
-
   <rect x="50" y="120" width="630" height="360" class="panelDark"/>
   <text x="86" y="164" class="hLight">RGB: mescla additiva de llum</text>
   <text x="86" y="196" class="pLight">Monitors, projectors, mobils i webs</text>
@@ -55,7 +47,7 @@
   <text x="86" y="364" class="smallLight">equival a <tspan class="codeLight">#226699</tspan>.</text>
   <text x="86" y="424" class="smallLight">Una mateixa paleta pot canviar segons</text>
   <text x="86" y="448" class="smallLight">pantalla, brillantor i perfil del dispositiu.</text>
-  <g transform="translate(500 312)">
+  <g transform="translate(530 326) scale(.78)">
     <rect x="-148" y="-148" width="296" height="296" class="boxDark"/>
     <circle cx="-52" cy="28" r="74" fill="#ff2d2d" class="screen"/>
     <circle cx="52" cy="28" r="74" fill="#20d650" class="screen"/>
@@ -73,15 +65,16 @@
   <rect x="720" y="120" width="630" height="360" class="panel"/>
   <text x="756" y="164" class="h">CMYK: mescla subtractiva de tintes</text>
   <text x="756" y="196" class="p">Impressores i arts grafiques dipositen</text>
-  <text x="756" y="222" class="p">tintes sobre un suport que reflecteix llum.</text>
-  <text x="756" y="262" class="small">C, M i Y absorbeixen part de la llum blanca.</text>
-  <text x="756" y="286" class="small">El blanc es paper sense tinta.</text>
-  <text x="756" y="336" class="small">K = <tspan class="code">Key</tspan>, la planxa clau.</text>
-  <text x="756" y="360" class="small">Tinta negra per al text;</text>
-  <text x="756" y="384" class="small">registre, detall i contrast.</text>
+  <text x="756" y="222" class="p">tintes sobre un suport que reflecteix</text>
+  <text x="756" y="246" class="p">la llum.</text>
+  <text x="756" y="280" class="small">C, M i Y absorbeixen llum blanca.</text>
+  <text x="756" y="304" class="small">El blanc es paper sense tinta.</text>
+  <text x="756" y="344" class="small">K = <tspan class="code">Key</tspan>, la planxa clau.</text>
+  <text x="756" y="368" class="small">Tinta negra per al text;</text>
+  <text x="756" y="392" class="small">registre, detall i contrast.</text>
   <text x="756" y="442" class="small">La conversio depen de perfil,</text>
   <text x="756" y="464" class="small">paper, tinta i impressora.</text>
-  <g transform="translate(1132 307)">
+  <g transform="translate(1180 326) scale(.78)">
     <rect x="-168" y="-143" width="336" height="286" class="box"/>
     <circle cx="-58" cy="30" r="72" fill="#00aeef" class="ink"/>
     <circle cx="58" cy="30" r="72" fill="#ec008c" class="ink"/>
@@ -93,7 +86,7 @@
     <text x="-132" y="116" class="tag">C</text>
     <text x="121" y="116" class="tag">M</text>
     <text x="-7" y="-125" class="tag">Y</text>
-    <rect x="106" y="-105" width="46" height="46" rx="8" fill="#151515"/>
+    <rect x="106" y="-105" width="46" height="46" fill="#151515"/>
     <text x="129" y="-75" text-anchor="middle" class="codeLight">K</text>
   </g>
 
@@ -136,22 +129,21 @@
   </g>
   <g transform="translate(790 724)">
     <text x="0" y="-18" class="tag">S = saturation</text>
-    <rect x="0" y="0" width="190" height="34" rx="8" fill="url(#satBlue)" stroke="#8a9aa7"/>
+    <rect x="0" y="0" width="190" height="34" fill="url(#satBlue)" stroke="#8a9aa7"/>
     <text x="0" y="58" class="small">gris</text>
     <text x="132" y="58" class="small">color pur</text>
   </g>
   <g transform="translate(1040 704)">
     <text x="-18" y="-18" class="tag">L = lightness</text>
-    <rect x="0" y="0" width="34" height="116" rx="8" fill="url(#hslLight)" stroke="#8a9aa7"/>
+    <rect x="0" y="0" width="34" height="116" fill="url(#hslLight)" stroke="#8a9aa7"/>
     <text x="48" y="18" class="small">blanc</text>
     <text x="48" y="62" class="small">color</text>
     <text x="48" y="108" class="small">negre</text>
   </g>
   <g transform="translate(1230 704)">
     <text x="-12" y="-18" class="tag">V = value</text>
-    <rect x="0" y="0" width="34" height="116" rx="8" fill="url(#hsvValue)" stroke="#8a9aa7"/>
-    <text x="-36" y="130" class="small">llum maxima</text>
+    <rect x="0" y="0" width="34" height="116" fill="url(#hsvValue)" stroke="#8a9aa7"/>
+    <text x="-14" y="108" text-anchor="end" class="small">llum maxima</text>
   </g>
 
-  <text x="700" y="910" text-anchor="middle" class="tiny">Figura d'elaboracio propia, revisada el 15 d'agost de 2026. Els esquemes mostren principis de lectura, no una conversio colorimetrica exacta.</text>
 </svg>

@@ -1,12 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="760" viewBox="0 0 1180 760" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="534" viewBox="62 113 1080 534" role="img" aria-labelledby="title desc">
   <title id="title">Paletes segons el tipus de dada</title>
   <desc id="desc">Quatre exemples de decisió cromàtica per a categories nominals, quantitats relatives, desviacions respecte d'un centre i llindars o accents.</desc>
   <defs>
     <style>
-      .bg { fill: #ffffff; }
       .card { fill: #f7fafb; stroke: #cbd6dc; stroke-width: 1.4; }
-      .title { font: 700 31px Arial, 'Liberation Sans', sans-serif; fill: #17202a; }
-      .subtitle { font: 16px Arial, 'Liberation Sans', sans-serif; fill: #52616b; }
       .h { font: 700 22px Arial, 'Liberation Sans', sans-serif; fill: #17202a; }
       .kind { font: 700 15px Arial, 'Liberation Sans', sans-serif; fill: #2f5f73; text-transform: uppercase; }
       .p { font: 15px Arial, 'Liberation Sans', sans-serif; fill: #40515c; }
@@ -17,11 +14,7 @@
       .outline { stroke: #8fa0aa; stroke-width: 1.2; fill: none; }
     </style>
   </defs>
-  <rect class="bg" width="1180" height="760"/>
-  <text x="590" y="48" text-anchor="middle" class="title">Una paleta ha de respondre a una pregunta</text>
-  <text x="590" y="78" text-anchor="middle" class="subtitle">El mateix conjunt de colors pot ser correcte o enganyós segons el tipus de dada i la lectura esperada.</text>
-
-  <rect x="64" y="115" width="510" height="250" rx="12" class="card"/>
+  <rect x="64" y="115" width="510" height="250" class="card"/>
   <text x="94" y="153" class="kind">categoria nominal</text>
   <text x="94" y="182" class="h">Qualitativa</text>
   <text x="94" y="209" class="p">Separar tipus de recurs sense crear cap ordre.</text>
@@ -33,13 +26,13 @@
   <text x="124" y="313" class="label">Patrimoni</text>
   <circle cx="105" cy="340" r="10" fill="#e78ac3"/>
   <text x="124" y="345" class="label">Platja</text>
-  <rect x="355" y="223" width="68" height="58" rx="8" fill="#66c2a5" class="shape"/>
-  <rect x="424" y="223" width="68" height="58" rx="8" fill="#fc8d62" class="shape"/>
-  <rect x="355" y="282" width="68" height="58" rx="8" fill="#8da0cb" class="shape"/>
-  <rect x="424" y="282" width="68" height="58" rx="8" fill="#e78ac3" class="shape"/>
+  <rect x="355" y="223" width="68" height="58" fill="#66c2a5" class="shape"/>
+  <rect x="424" y="223" width="68" height="58" fill="#fc8d62" class="shape"/>
+  <rect x="355" y="282" width="68" height="58" fill="#8da0cb" class="shape"/>
+  <rect x="424" y="282" width="68" height="58" fill="#e78ac3" class="shape"/>
   <text x="424" y="354" text-anchor="middle" class="small">distingir, no ordenar</text>
 
-  <rect x="606" y="115" width="510" height="250" rx="12" class="card"/>
+  <rect x="606" y="115" width="510" height="250" class="card"/>
   <text x="636" y="153" class="kind">quantitat relativa</text>
   <text x="636" y="182" class="h">Seqüencial</text>
   <text x="636" y="209" class="p">Mostrar més o menys intensitat amb lluminositat.</text>
@@ -54,7 +47,7 @@
   <text x="817" y="340" text-anchor="middle" class="small">places / 1.000 hab.</text>
   <text x="972" y="340" text-anchor="middle" class="small">alt</text>
 
-  <rect x="64" y="395" width="510" height="250" rx="12" class="card"/>
+  <rect x="64" y="395" width="510" height="250" class="card"/>
   <text x="94" y="433" class="kind">respecte d'un centre</text>
   <text x="94" y="462" class="h">Divergent</text>
   <text x="94" y="489" class="p">Comparar desviacions a banda i banda d'una mitjana.</text>
@@ -70,25 +63,24 @@
   <text x="307" y="618" text-anchor="middle" class="small">mitjana</text>
   <text x="469" y="618" text-anchor="middle" class="small">per sobre</text>
 
-  <rect x="606" y="395" width="510" height="250" rx="12" class="card"/>
+  <rect x="606" y="395" width="510" height="250" class="card"/>
   <text x="636" y="433" class="kind">llindar o focus</text>
   <text x="636" y="462" class="h">Binària o accent</text>
   <text x="636" y="489" class="p">Destacar una condició definida i deixar la resta en segon pla.</text>
-  <rect x="668" y="527" width="56" height="48" rx="7" fill="#dce3e8" class="shape"/>
-  <rect x="729" y="527" width="56" height="48" rx="7" fill="#dce3e8" class="shape"/>
-  <rect x="790" y="527" width="56" height="48" rx="7" fill="#e4572e" class="shape"/>
-  <rect x="851" y="527" width="56" height="48" rx="7" fill="#dce3e8" class="shape"/>
-  <rect x="912" y="527" width="56" height="48" rx="7" fill="#dce3e8" class="shape"/>
-  <rect x="668" y="580" width="56" height="32" rx="7" fill="#dce3e8" class="shape"/>
-  <rect x="729" y="580" width="56" height="32" rx="7" fill="#dce3e8" class="shape"/>
-  <rect x="790" y="580" width="56" height="32" rx="7" fill="#dce3e8" class="shape"/>
-  <rect x="851" y="580" width="56" height="32" rx="7" fill="#e4572e" class="shape"/>
-  <rect x="912" y="580" width="56" height="32" rx="7" fill="#dce3e8" class="shape"/>
-  <circle cx="1012" cy="548" r="9" fill="#e4572e"/>
-  <text x="1029" y="553" class="label">supera el llindar</text>
-  <circle cx="1012" cy="588" r="9" fill="#dce3e8"/>
-  <text x="1029" y="593" class="label">resta de municipis</text>
+  <rect x="668" y="527" width="56" height="48" fill="#dce3e8" class="shape"/>
+  <rect x="729" y="527" width="56" height="48" fill="#dce3e8" class="shape"/>
+  <rect x="790" y="527" width="56" height="48" fill="#e4572e" class="shape"/>
+  <rect x="851" y="527" width="56" height="48" fill="#dce3e8" class="shape"/>
+  <rect x="912" y="527" width="56" height="48" fill="#dce3e8" class="shape"/>
+  <rect x="668" y="580" width="56" height="32" fill="#dce3e8" class="shape"/>
+  <rect x="729" y="580" width="56" height="32" fill="#dce3e8" class="shape"/>
+  <rect x="790" y="580" width="56" height="32" fill="#dce3e8" class="shape"/>
+  <rect x="851" y="580" width="56" height="32" fill="#e4572e" class="shape"/>
+  <rect x="912" y="580" width="56" height="32" fill="#dce3e8" class="shape"/>
+  <circle cx="981" cy="548" r="9" fill="#e4572e"/>
+  <text x="998" y="553" class="label">supera el llindar</text>
+  <circle cx="981" cy="588" r="9" fill="#dce3e8"/>
+  <text x="998" y="593" class="label">resta de municipis</text>
   <text x="817" y="630" text-anchor="middle" class="small">el llindar ha de constar a la llegenda</text>
 
-  <text x="590" y="720" text-anchor="middle" class="small">Figura d'elaboració pròpia amb exemples esquemàtics aplicables a dades turístiques i territorials.</text>
 </svg>

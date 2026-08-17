@@ -1,15 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="876" height="388" viewBox="58 68 876 388" role="img" aria-labelledby="title desc">
   <title id="title">Parts principals d'un full de calcul</title>
   <desc id="desc">Esquema docent d'un full de calcul amb barra de formules, capcaleres de columnes, files, cel.la activa i rang de dades.</desc>
   <defs>
     <style>
-      .bg{fill:#f6f8fb}.panel{fill:#fff;stroke:#c8d0dc;stroke-width:2}.header{fill:#e9eef5}.active{fill:#d9ecff;stroke:#1f78b4;stroke-width:3}.range{fill:#eef8ee;stroke:#4c956c;stroke-width:2}.text{font-family:Arial, sans-serif;fill:#1f2933;font-size:18px}.small{font-size:15px}.tiny{font-size:13px}.label{font-weight:700}.callout{fill:#fff8e6;stroke:#d49a00;stroke-width:2}.line{stroke:#d49a00;stroke-width:2;fill:none}.grid{stroke:#c8d0dc;stroke-width:1}
+      .panel{fill:#fff;stroke:#c8d0dc;stroke-width:2}.header{fill:#e9eef5}.active{fill:#d9ecff;stroke:#1f78b4;stroke-width:3}.range{fill:#eef8ee;stroke:#4c956c;stroke-width:2}.text{font-family:Arial, sans-serif;fill:#1f2933;font-size:18px}.small{font-size:15px}.tiny{font-size:13px}.label{font-weight:700}.callout{fill:#fff8e6;stroke:#d49a00;stroke-width:2}.line{stroke:#d49a00;stroke-width:2;fill:none}.grid{stroke:#c8d0dc;stroke-width:1}
     </style>
   </defs>
-  <rect class="bg" width="960" height="540"/>
-  <rect class="panel" x="62" y="72" width="650" height="380" rx="12"/>
-  <rect class="header" x="62" y="72" width="650" height="54" rx="12"/>
-  <rect fill="#ffffff" stroke="#b7c1cf" x="170" y="88" width="420" height="24" rx="4"/>
+  <rect class="panel" x="62" y="72" width="650" height="380"/>
+  <rect class="header" x="62" y="72" width="650" height="54"/>
+  <rect fill="#ffffff" stroke="#b7c1cf" x="170" y="88" width="420" height="24"/>
   <text class="text small" x="182" y="106">=B2+C2</text>
   <text class="text small label" x="82" y="106">fx</text>
   <text class="text small" x="610" y="106">barra de formules</text>
@@ -49,17 +48,16 @@
   <text class="text small" x="266" y="343">300</text>
   <text class="text small" x="386" y="343">140</text>
   <text class="text small" x="506" y="343">440</text>
-  <rect class="callout" x="740" y="84" width="170" height="62" rx="10"/>
+  <rect class="callout" x="740" y="84" width="170" height="62"/>
   <text class="text small label" x="758" y="110">Cel.la activa</text>
   <text class="text tiny" x="758" y="132">posicio C2</text>
   <path class="line" d="M740 132 C690 160 540 215 470 238"/>
-  <rect class="callout" x="720" y="178" width="200" height="70" rx="10"/>
+  <rect class="callout" x="720" y="178" width="200" height="70"/>
   <text class="text small label" x="738" y="204">Rang rectangular</text>
   <text class="text tiny" x="738" y="226">mateixes columnes</text>
   <path class="line" d="M720 226 C660 250 630 308 592 330"/>
-  <rect class="callout" x="710" y="300" width="220" height="74" rx="10"/>
+  <rect class="callout" x="710" y="300" width="220" height="74"/>
   <text class="text small label" x="728" y="326">Referencies</text>
   <text class="text tiny" x="728" y="348">columna + fila: B2</text>
   <path class="line" d="M710 342 C650 350 606 392 592 402"/>
-  <text class="text tiny" x="70" y="482">Esquema propi. Les etiquetes i la disposicio poden canviar segons l'aplicacio, pero els conceptes son comuns.</text>
 </svg>

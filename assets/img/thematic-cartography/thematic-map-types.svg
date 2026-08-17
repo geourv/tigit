@@ -1,12 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="760" viewBox="0 0 1180 760" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1075" height="555" viewBox="53 118 1075 555" role="img" aria-labelledby="title desc">
   <title id="title">Famílies principals de mapes tematics</title>
   <desc id="desc">Sis esquemes de mapes tematics: coropleta, simbols proporcionals, punts, fluxos, isolinies i cartodiagrama.</desc>
   <defs>
     <style>
-      .bg { fill: #fffdf8; }
-      .card { fill: #ffffff; stroke: #d5dde2; stroke-width: 1.6; rx: 18; }
-      .title { font: 700 31px Arial, 'Liberation Sans', sans-serif; fill: #17202a; }
-      .subtitle { font: 16px Arial, 'Liberation Sans', sans-serif; fill: #52616b; }
+      .card { fill: #ffffff; stroke: #d5dde2; stroke-width: 1.6; }
       .label { font: 700 18px Arial, 'Liberation Sans', sans-serif; fill: #17202a; }
       .small { font: 14px Arial, 'Liberation Sans', sans-serif; fill: #52616b; }
       .line { fill: none; stroke: #365b6d; stroke-width: 2; }
@@ -17,10 +14,6 @@
       <path d="M0,0 L0,6 L9,3 z" fill="#d0523c"/>
     </marker>
   </defs>
-  <rect class="bg" width="1180" height="760"/>
-  <text x="590" y="48" text-anchor="middle" class="title">El metode cartografic depen de la dada</text>
-  <text x="590" y="78" text-anchor="middle" class="subtitle">No totes les variables municipals han d'esdevenir coropletes: volum, intensitat, flux i continuïtat demanen recursos diferents.</text>
-
   <g transform="translate(55 120)">
     <rect class="card" width="340" height="250"/>
     <text x="24" y="38" class="label">Coropleta</text>
@@ -77,6 +70,4 @@
     <rect x="90" y="156" width="16" height="36" fill="#16697a"/><rect x="108" y="134" width="16" height="58" fill="#f2b544"/><rect x="126" y="168" width="16" height="24" fill="#d0523c"/>
     <rect x="170" y="127" width="16" height="65" fill="#16697a"/><rect x="188" y="146" width="16" height="46" fill="#f2b544"/><rect x="206" y="176" width="16" height="16" fill="#d0523c"/>
   </g>
-
-  <text x="590" y="723" text-anchor="middle" class="small">Figura d'elaboracio propia, 14 d'agost de 2026. Les geometries son esquematiques i no representen cap comarca real.</text>
 </svg>

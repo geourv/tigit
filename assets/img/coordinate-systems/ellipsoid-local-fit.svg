@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="520" viewBox="0 0 960 520" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="874" height="469" viewBox="56 42 874 469" role="img" aria-labelledby="title desc">
   <title id="title">Ajust local i global d'el·lipsoides</title>
   <desc id="desc">Esquema conceptual amb dues superfícies continentals separades, un el·lipsoide global i dos el·lipsoides locals que s'ajusten millor a l'entorn d'Amèrica del Nord i d'Europa.</desc>
   <metadata>
@@ -22,19 +22,13 @@
     <marker id="arrow-teal" viewBox="0 0 10 10" refX="8.4" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
       <path d="M 0 0 L 10 5 L 0 10 z" fill="#21757b"/>
     </marker>
-    <filter id="soft-shadow" x="-10%" y="-10%" width="120%" height="120%">
-      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#64748b" flood-opacity="0.18"/>
-    </filter>
     <style>
       .label { font: 700 20px Arial, Helvetica, sans-serif; fill: #1f2937; paint-order: stroke; stroke: #ffffff; stroke-width: 5px; stroke-linejoin: round; }
+      .label-back { fill: #ffffff; opacity: 0.9; }
       .small { font: 16px Arial, Helvetica, sans-serif; fill: #334155; }
-      .tiny { font: 14px Arial, Helvetica, sans-serif; fill: #475569; }
       .legend { font: 15px Arial, Helvetica, sans-serif; fill: #334155; }
     </style>
   </defs>
-
-  <rect width="960" height="520" fill="#fbfaf7"/>
-  <rect x="48" y="42" width="864" height="412" rx="16" fill="#ffffff" stroke="#d6d3cb" filter="url(#soft-shadow)"/>
 
   <g transform="translate(0,8)">
     <ellipse cx="480" cy="284" rx="390" ry="216" fill="#eaf4f6" stroke="#334155" stroke-width="3"/>
@@ -65,14 +59,16 @@
              C 872 192, 895 251, 905 305"
           fill="none" stroke="#21757b" stroke-width="10" stroke-linecap="round" opacity="0.22"/>
 
+    <rect class="label-back" x="70" y="76" width="190" height="29"/>
     <text class="label" x="78" y="98">Amèrica del Nord</text>
     <text class="small" x="120" y="206">el·lipsoide local</text>
     <text class="small" x="120" y="228">proper al relleu</text>
 
     <text class="label" x="806" y="106" text-anchor="middle">Europa</text>
-    <text class="small" x="610" y="208">el·lipsoide local</text>
-    <text class="small" x="610" y="230">proper al relleu</text>
+    <text class="small" x="700" y="208">el·lipsoide local</text>
+    <text class="small" x="700" y="230">proper al relleu</text>
 
+    <rect class="label-back" x="289" y="391" width="382" height="26"/>
     <text class="small" x="480" y="410" text-anchor="middle">el·lipsoide global: millor encaix mitjà del conjunt</text>
     <path d="M 480 389 C 492 361, 503 338, 520 314" fill="none" stroke="#334155" stroke-width="2" marker-end="url(#arrow-slate)"/>
 
@@ -82,5 +78,4 @@
     <text class="legend" x="586" y="443">ajust local d'Europa</text>
   </g>
 
-  <text class="tiny" x="480" y="486" text-anchor="middle">Esquema conceptual: formes, desplaçaments i separacions estan exagerats per fer visible l'encaix regional.</text>
 </svg>

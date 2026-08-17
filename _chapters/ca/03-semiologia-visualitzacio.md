@@ -12,7 +12,16 @@ part: Continguts
 manual_references: true
 ---
 
-Representar dades significa codificar-les visualment. Aquest capítol introdueix la semiologia gràfica a partir de taules i gràfics, abans d'aplicar-la al mapa. El color apareixerà com una variable visual, però el seu desenvolupament sistemàtic quedarà per al capítol 4, perquè és una decisió transversal que afecta gràfics, mapes, accessibilitat i infografia. La classificació cartogràfica es treballarà més endavant, un cop introduït el llenguatge propi del mapa i la integració amb QGIS. La idea d'un sistema de signes visuals parteix de la semiologia de Bertin i es pot connectar amb una introducció contemporània i aplicada a la visualització de dades {% cite bertinSemiologyGraphics2010 wilkeFundamentalsDataVisualization2019 %}.
+Representar dades significa codificar-les visualment. Aquest capítol introdueix la semiologia gràfica a partir de taules i gràfics, abans d'aplicar-la al mapa. El color apareixerà com una variable visual, però el seu desenvolupament sistemàtic quedarà per al capítol 7, perquè és una decisió transversal que afecta gràfics, mapes, accessibilitat i infografia. La classificació cartogràfica es treballarà més endavant, un cop introduït el llenguatge propi del mapa i la integració amb QGIS. La idea d'un sistema de signes visuals parteix de la semiologia de Bertin i es pot connectar amb una introducció contemporània i aplicada a la visualització de dades {% cite bertinSemiologyGraphics2010 wilkeFundamentalsDataVisualization2019 %}.
+
+>>>>> En acabar el capítol, cal poder seleccionar, construir, revisar i exportar figures que responguin una pregunta territorial sense deformar les dades.
+>>>>>
+>>>>> - Explicar com les marques i les variables visuals codifiquen dades qualitatives, ordinals i quantitatives.
+>>>>> - Distingir tasques de comparació, composició, distribució, relació, evolució, flux i localització.
+>>>>> - Justificar un tipus de gràfic segons la pregunta, les dades, el públic, el suport i la mida final.
+>>>>> - Construir al full `charts` figures editables i vinculades als indicadors d'origen.
+>>>>> - Interpretar patrons i associacions sense convertir-los en causes o previsions no demostrades.
+>>>>> - Validar proporcions, escales, retolació, absències i integritat vectorial, i exportar dues o tres figures candidates en PDF.
 
 ## Codificació visual de les dades
 
@@ -26,7 +35,7 @@ Una representació es construeix amb **marques gràfiques**, elements visibles c
 
 La figura següent resumeix aquesta relació. No s'ha de llegir com una recepta automàtica, sinó com una taula de decisions: primer cal saber si la marca és puntual, lineal o superficial; després cal decidir quina variable visual ajuda el lector a distingir categories, reconèixer un ordre, estimar una magnitud o localitzar un patró. Aquesta mateixa matriu tornarà a aparèixer en cartografia quan una carretera sigui una línia, un municipi sigui una superfície i un allotjament o un nucli es representi amb un símbol puntual.
 
-![Matriu de variables visuals aplicada a marques puntuals, lineals i superficials: posició, mida, forma, orientació, valor, textura i to]({{ site.baseurl }}/assets/img/data-visualization/visual-variables-matrix.svg "Les variables visuals no treballen soles: depenen del tipus de marca i de la tasca de lectura. Figura d'elaboració pròpia a partir del vocabulari de la semiologia gràfica de Bertin, 17 d'agost de 2026."){: data-figure-width="54rem"}
+![Matriu de variables visuals aplicada a marques puntuals, lineals i superficials: posició, mida, forma, orientació, valor, textura i to]({{ site.baseurl }}/assets/img/data-visualization/visual-variables-matrix.svg "Les marques són esquemàtiques: la tria final depèn de les dades, del suport, de la tasca de lectura i de la mida final de lectura. Figura d'elaboració pròpia a partir del vocabulari de la semiologia gràfica de Bertin, 17 d'agost de 2026."){: data-figure-width="54rem"}
 
 ## Variables visuals
 
@@ -67,13 +76,13 @@ En una escala lineal, les barres que representen quantitats han de començar a z
 
 ### Un repertori per explorar alternatives
 
-La pàgina [*Data Visualization Reference Guides*](https://coolinfographics.com/dataviz-guides), curada per Randy Krum, forma part de *Cool Infographics*, el lloc que acompanya i promociona el seu llibre *Cool Infographics: Effective Communication with Data Visualization and Design* {% cite krumCoolInfographics2013 krumDataVisualizationReferenceGuides2026 %}. El llibre desenvolupa el procés de disseny, la narració visual i la integració de dades, text i il·lustracions; el web n'ofereix informació, un capítol de mostra i figures, i amplia aquest entorn amb un directori posterior de selectors de gràfics, vocabularis visuals, catàlegs, matrius i llistes de comprovació.
+La pàgina [*Data Visualization Reference Guides*](https://coolinfographics.com/dataviz-guides), curada per Randy Krum, forma part de *Cool Infographics*, el lloc que acompanya i promociona el seu llibre *Cool Infographics: Effective Communication with Data Visualization and Design* {% cite krumCoolInfographics2013 %}. El llibre desenvolupa el procés de disseny, la narració visual i la integració de dades, text i il·lustracions; el web n'ofereix informació, un capítol de mostra i figures, i amplia aquest entorn amb un directori posterior de selectors de gràfics, vocabularis visuals, catàlegs, matrius i llistes de comprovació.
 
 El valor del directori no consisteix a proporcionar una resposta automàtica, sinó a mostrar que una mateixa taula pot admetre diverses representacions i que cada alternativa facilita unes lectures i en dificulta unes altres. Cal citar la pàgina quan s'utilitza aquesta selecció actualitzada de recursos i el llibre quan es treballa el plantejament general de la infografia; els pòsters i les guies externes conserven, a més, l'autoria i les condicions de cada productor.
 
 ![Capçalera del directori Data Visualization Reference Guides i primers recursos sobre principis, catàlegs i percentatges]({{ site.baseurl }}/assets/img/data-visualization/cool-infographics-dataviz-guides-2026-08-12.png "Fragment de «Data Visualization Reference Guides», Cool Infographics, directori curat per Randy Krum. Captura pròpia del 12 d'agost de 2026 per a comentari i docència. Avís del lloc: © 2023 Randy Krum, InfoNewt LLC; les miniatures incrustades pertanyen als titulars respectius."){: data-figure-width="44rem"}
 
-Les guies del repertori parteixen de perspectives complementàries. El *Chart Chooser* d'Andrew Abela comença per allò que es vol mostrar; el *Financial Times Visual Vocabulary* agrupa formes segons relacions com desviació, correlació, ordre, distribució, canvi, composició, magnitud, espai i flux; i *From Data to Viz* comença per l'estructura de les variables i condueix cap a diverses possibilitats, cadascuna amb advertiments {% cite abelaChartSuggestions2006 financialTimesVisualVocabulary2018 holtzFromDataViz2018 %}. Cap d'aquests marcs substitueix el coneixement de les dades ni converteix una geometria en universalment correcta.
+Les guies del repertori parteixen de perspectives complementàries. El [*Chart Chooser*](https://extremepresentation.com/design/7-charts/) d'Andrew Abela comença per allò que es vol mostrar; el [*Financial Times Visual Vocabulary*](https://github.com/Financial-Times/chart-doctor/tree/main/visual-vocabulary) agrupa formes segons relacions com desviació, correlació, ordre, distribució, canvi, composició, magnitud, espai i flux; i [*From Data to Viz*](https://www.data-to-viz.com/) comença per l'estructura de les variables i condueix cap a diverses possibilitats, cadascuna amb advertiments. Cap d'aquests marcs substitueix el coneixement de les dades ni converteix una geometria en universalment correcta.
 
 La selecció es pot entendre com un procés de sis decisions:
 
@@ -86,13 +95,20 @@ La selecció es pot entendre com un procés de sis decisions:
 
 Un selector de gràfics genera **candidats**, no un veredicte. Una taula pot ser preferible quan cal recuperar valors exactes; un gràfic ordenat facilita comparar municipis; i un mapa només és necessari quan la localització, la proximitat o el patró espacial formen part de la pregunta. Sovint mapa i gràfic es complementen: el primer conserva el context territorial i el segon permet una comparació més precisa.
 
-![Vuit famílies de representació visual vinculades a preguntes de comparació, evolució, composició, distribució, relació, xarxa, flux i espai]({{ site.baseurl }}/assets/img/data-visualization/chart-type-repertoire.svg "La pregunta orienta el tipus de gràfic: comparar magnituds, seguir un canvi, explicar una composició, observar una distribució, explorar una relació, mostrar una xarxa, representar un flux o conservar el patró espacial. Figura d'elaboració pròpia, 14 d'agost de 2026."){: data-figure-width="54rem"}
+>>>>> La tria d'un gràfic parteix de la pregunta de lectura i es comprova comparant alternatives sobre les mateixes dades.
+>>>>>
+>>>>> - Formular la comparació, el patró o el valor que el lector haurà de localitzar.
+>>>>> - Distingir quan convé una taula, un gràfic o un mapa segons la funció de l'espai i la precisió necessària.
+>>>>> - Justificar la geometria i les variables visuals a partir del tipus de dada, la unitat i el denominador.
+>>>>> - Construir i comparar alternatives que mantinguin constants la pregunta i les dades abans de seleccionar una candidata.
+
+![Vuit famílies de representació visual vinculades a preguntes de comparació, evolució, composició, distribució, relació, xarxa, flux i espai]({{ site.baseurl }}/assets/img/data-visualization/chart-type-repertoire.svg "La pregunta orienta el tipus de gràfic: comparar magnituds, seguir un canvi, explicar una composició, observar una distribució, explorar una relació, mostrar una xarxa, representar un flux o conservar el patró espacial. El repertori és orientatiu: la dada, la pregunta i la mida final condicionen la representació. Figura d'elaboració pròpia, 14 d'agost de 2026."){: data-figure-width="54rem"}
 
 ### Repertori ordenat per tasca de lectura
 
 Els noms dels gràfics són útils només si ajuden a formular una decisió. Un *treemap*, un alluvial, un climograma o un radar no són formes més avançades que una barra; són respostes a preguntes diferents. Per això el repertori del curs s'ha d'ordenar per allò que el lector ha de fer: comparar, seguir un canvi, examinar una distribució, explorar una relació, entendre una jerarquia, veure un flux, llegir una pauta estacional o comparar un perfil multivariant.
 
-![Set tipus específics de gràfics: dispersió, alluvial, treemap, climograma, mapa de calor, slopegraph i radar]({{ site.baseurl }}/assets/img/data-visualization/specialized-chart-types.svg "Alguns gràfics específics responen a tasques de lectura concretes: associació entre variables, flux entre categories, jerarquia dins d'un total, ritme climàtic mensual, matriu de valors, canvi entre dos moments o perfil multivariant. Figura d'elaboració pròpia, 16 d'agost de 2026."){: data-figure-width="54rem"}
+![Set tipus específics de gràfics: dispersió, alluvial, treemap, climograma, mapa de calor, slopegraph i radar]({{ site.baseurl }}/assets/img/data-visualization/specialized-chart-types.svg "Alguns gràfics específics responen a tasques de lectura concretes: associació entre variables, flux entre categories, jerarquia dins d'un total, ritme climàtic mensual, matriu de valors, canvi entre dos moments o perfil multivariant. Dades esquemàtiques. Figura d'elaboració pròpia, 16 d'agost de 2026."){: data-figure-width="54rem"}
 
 ::: table "Tipus de gràfics ordenats per pregunta"
 | Tasca de lectura | Tipus de gràfic | Exemple territorial o turístic | Precaució principal |
@@ -127,7 +143,7 @@ Un **diagrama de radar** representa diverses dimensions al voltant d'un centre i
 
 >>> **Del nom del gràfic a la decisió.** Si un grup proposa fer un alluvial, un treemap, un climograma o un radar, primer ha d'escriure la pregunta que aquest tipus de gràfic respon millor que una barra, una línia o un mapa. Després ha d'indicar quina variable controla la posició, la longitud, l'àrea, el color, l'amplada del flux o la distància a cada eix radial. Si aquesta correspondència no és clara, la forma encara no està justificada.
 
-Les galeries de codi també poden servir com a repertori quan es llegeixen amb criteri. *The R Graph Gallery* i *The Python Graph Gallery* agrupen exemples per famílies de gràfics i mostren codi reproduïble; el llibre en línia de `ggplot2` explica com una visualització es construeix combinant dades, variables estètiques, geometries, escales i facetes {% cite holtzRGraphGallery2026 holtzPythonGraphGallery2026 wickhamGgplot2Book2026 %}. Aquests recursos no s'han d'utilitzar per copiar una forma atractiva sense entendre-la. Són útils quan permeten formular alternatives i comprovar quina geometria respon millor a la pregunta.
+Les galeries de codi també poden servir com a repertori quan es llegeixen amb criteri. [*The R Graph Gallery*](https://r-graph-gallery.com/) i [*The Python Graph Gallery*](https://python-graph-gallery.com/) agrupen exemples per famílies de gràfics i mostren codi reproduïble; el llibre en línia de `ggplot2` explica com una visualització es construeix combinant dades, variables estètiques, geometries, escales i facetes {% cite wickhamGgplot2Book2026 %}. Aquests recursos no s'han d'utilitzar per copiar una forma atractiva sense entendre-la. Són útils quan permeten formular alternatives i comprovar quina geometria respon millor a la pregunta.
 
 ### Comparar magnituds
 
@@ -137,7 +153,7 @@ Una barra és adequada quan cada municipi o categoria té un valor comparable i 
 
 Les barres no formen una sola família rígida. Poden orientar-se verticalment o horitzontalment, agrupar-se per comparar dues sèries, apilar-se quan les parts comparteixen un total, o obrir-se a banda i banda d'una referència en un gràfic divergent. Una piràmide de població és una aplicació especial d'aquesta lògica: dues sèries comparables es disposen a esquerra i dreta d'un eix central per mostrar l'estructura per edat i sexe. Un *tornado plot* utilitza una disposició semblant per comparar escenaris, sensibilitats o diferències positives i negatives.
 
-![Sis variants de gràfics de barres: barres verticals, horitzontals ordenades, agrupades, apilades al 100%, tornado plot i piràmide de població]({{ site.baseurl }}/assets/img/data-visualization/bar-chart-variants.svg "Les barres comparen longituds sobre una base comuna, però l'orientació i l'organització canvien la pregunta de lectura: magnitud, ordre, comparació entre sèries, composició o diferència respecte d'una referència. Figura d'elaboració pròpia, 14 d'agost de 2026."){: data-figure-width="54rem"}
+![Sis variants de gràfics de barres: barres verticals, horitzontals ordenades, agrupades, apilades al 100%, tornado plot i piràmide de població]({{ site.baseurl }}/assets/img/data-visualization/bar-chart-variants.svg "Les barres comparen longituds sobre una base comuna, però l'orientació i l'organització canvien la pregunta de lectura: magnitud, ordre, comparació entre sèries, composició o diferència respecte d'una referència. Les barres apilades al 100% només són adequades si les parts comparteixen un total. Dades esquemàtiques. Figura d'elaboració pròpia, 14 d'agost de 2026."){: data-figure-width="54rem"}
 
 ### Composició, relació i distribució
 
@@ -159,7 +175,7 @@ $$
 D_2 = D_1\sqrt{\frac{X_2}{X_1}}
 $$
 
-Quadruplicar una dada només duplica el diàmetre, perquè així l'àrea es quadruplica. Fer el diàmetre directament proporcional al valor exageraria les diferències. Encara que l'escalat sigui correcte, l'àrea es compara amb menys precisió que una longitud alineada; per això els cercles són adequats per mostrar magnituds aproximades o patrons espacials, però necessiten una llegenda de mides o etiquetes quan cal llegir valors concrets {% cite krumSizingCircles2021 %}.
+Quadruplicar una dada només duplica el diàmetre, perquè així l'àrea es quadruplica. Fer el diàmetre directament proporcional al valor exageraria les diferències, com mostra la guia sobre [l'escalat de cercles en visualització de dades](https://infonewt.com/circles/). Encara que l'escalat sigui correcte, l'àrea es compara amb menys precisió que una longitud alineada; per això els cercles són adequats per mostrar magnituds aproximades o patrons espacials, però necessiten una llegenda de mides o etiquetes quan cal llegir valors concrets.
 
 #### Relació entre dues variables
 
@@ -181,7 +197,7 @@ No totes les visualitzacions comparen magnituds, distribucions o composicions. E
 
 Els grafs no substitueixen els mapes. Un mapa conserva posició, distància i veïnatge territorial; un graf pot reordenar els nodes per fer llegibles les relacions. Aquesta llibertat és útil quan el problema no és saber on és cada element, sinó entendre què connecta amb què. Un esquema de procés del projecte, una xarxa de fonts i fitxers, un flux de dades entre full de càlcul, QGIS i Inkscape, o una xarxa de mobilitat turística poden tenir forma de graf, encara que només alguns d'aquests casos siguin estrictament espacials.
 
-Mermaid.js permet escriure diagrames i gràfics mitjançant una sintaxi textual que després es renderitza com a figura {% cite mermaidDiagrammingCharting2026 %}. El codi es pot provar en un editor en línia com [Mermaid Live Editor](https://mermaid.live/) i després conservar-lo dins del projecte, de manera que la figura no depengui només d'una captura o d'una composició manual. Aquesta propietat és especialment útil en un context amb models de llenguatge grans, perquè un LLM pot ajudar a esbossar una sintaxi inicial a partir d'una descripció verbal. El resultat, però, s'ha de verificar com qualsevol altra figura: una fletxa pot suggerir una dependència que no existeix, un node pot barrejar dues operacions diferents i una xarxa massa densa pot semblar precisa mentre oculta el criteri de selecció.
+[Mermaid.js](https://mermaid.js.org/) permet escriure diagrames i gràfics mitjançant una sintaxi textual que després es renderitza com a figura. El codi es pot provar en un editor en línia com [Mermaid Live Editor](https://mermaid.live/) i després conservar-lo dins del projecte, de manera que la figura no depengui només d'una captura o d'una composició manual. Aquesta propietat és especialment útil en un context amb models de llenguatge grans, perquè un LLM pot ajudar a esbossar una sintaxi inicial a partir d'una descripció verbal. El resultat, però, s'ha de verificar com qualsevol altra figura: una fletxa pot suggerir una dependència que no existeix, un node pot barrejar dues operacions diferents i una xarxa massa densa pot semblar precisa mentre oculta el criteri de selecció.
 
 Mermaid no és un tipus únic de graf, sinó una família de notacions. Un diagrama de flux ajuda a explicar dependències entre passos; una seqüència mostra interaccions ordenades entre agents o eines; un diagrama d'estats documenta canvis de situació; un esquema entitat-relació és útil per pensar taules i claus; un Gantt situa tasques en el temps; i una línia del temps conserva la traça narrativa d'una figura o d'un projecte.
 
@@ -194,7 +210,7 @@ Mermaid no és un tipus únic de graf, sinó una família de notacions. Un diagr
 ![Línia del temps]({{ site.baseurl }}/assets/diagrams/data-visualization/mermaid-timeline.mmd "Línia del temps: traça de font, taula, visualització i publicació")
 :::
 
-![Esquema que mostra com un flux de treball es pot formular com a codi Mermaid, llegir com a xarxa de nodes i arestes i revisar abans d'exportar-lo com a figura]({{ site.baseurl }}/assets/img/data-visualization/graph-mermaid-workflow.svg "Un graf és adequat quan la pregunta se centra en dependències, connexions o fluxos; el codi textual facilita revisar-ne l'estructura abans de convertir-lo en figura. Figura d'elaboració pròpia, 14 d'agost de 2026."){: data-figure-width="48rem"}
+![Esquema que mostra com un flux de treball es pot formular com a codi Mermaid i llegir com a xarxa de nodes i arestes]({{ site.baseurl }}/assets/img/data-visualization/graph-mermaid-workflow.svg "Un graf és adequat quan la pregunta se centra en dependències, connexions o fluxos; el codi textual identifica nodes, arestes i direcció i facilita revisar-ne l'estructura abans d'exportar-la. Les fletxes indiquen dependència, no causalitat demostrada; cada node ha de correspondre a un element revisable i cal conservar el codi font. Un LLM pot proposar l'esborrany, però se n'han de comprovar la lògica i les fonts. Figura d'elaboració pròpia, 14 d'agost de 2026."){: data-figure-width="48rem"}
 
 En el projecte comarcal, un diagrama d'aquest tipus pot servir per documentar el flux de treball, però no comptarà com a substitut dels gràfics estadístics principals. Si s'inclou en una memòria o presentació, haurà d'indicar què representa cada node, què significa cada aresta i quins elements s'han deixat fora. Una bona xarxa no és la que conté tots els noms possibles, sinó la que permet entendre una relació concreta sense perdre la traçabilitat. La reproductibilitat no eximeix de revisar el significat: conservar el codi Mermaid permet regenerar la figura, però la responsabilitat sobre la relació representada continua sent de l'autor.
 
@@ -202,11 +218,18 @@ En el projecte comarcal, un diagrama d'aquest tipus pot servir per documentar el
 
 ### Retolació de gràfics: títol, eixos, etiquetes i font
 
-Un gràfic ha de poder-se interpretar sense reconstruir la taula original. El títol ha d'identificar la pregunta o la troballa sense afirmar més del que mostren les dades; el subtítol o una anotació poden aportar el context imprescindible. Les unitats, el període, el territori i la font han de ser visibles, i la precisió numèrica ha de correspondre a la qualitat de les dades i a la necessitat del lector. Les etiquetes directes redueixen el trajecte entre marca i llegenda quan l'espai ho permet {% cite schwabishCorePrinciples2018 evergreenDataVisualizationChecklist2018 %}.
+Un gràfic ha de poder-se interpretar sense reconstruir la taula original. El títol ha d'identificar la pregunta o la troballa sense afirmar més del que mostren les dades; el subtítol o una anotació poden aportar el context imprescindible. Les unitats, el període, el territori i la font han de ser visibles, i la precisió numèrica ha de correspondre a la qualitat de les dades i a la necessitat del lector. Les etiquetes directes redueixen el trajecte entre marca i llegenda quan l'espai ho permet. Aquests criteris també es poden revisar amb els [principis bàsics de visualització de dades](https://policyviz.com/2018/08/07/dataviz-cheatsheet/) i la [llista de comprovació de visualització de dades](https://web.archive.org/web/20190918015742/https://datavizchecklist.stephanieevergreen.com/assets/DataVizChecklist_Feb2018.pdf).
 
 La **retolació** d'un gràfic inclou tots els textos que guien la lectura: títol, subtítol, eixos, unitats, etiquetes directes, anotacions, llegenda, font i notes sobre transformacions. La seva funció és reduir l'ambigüitat sense repetir la taula sencera. Un gràfic sense prou text obliga el lector a endevinar què compara; un gràfic amb massa text converteix la figura en un full de càlcul il·lustrat. La decisió correcta depèn de la pregunta, de la mida final i del públic.
 
 La retolació de gràfics comparteix criteris amb la retolació cartogràfica que es treballarà al capítol 6. En tots dos casos cal associar cada text amb l'element corresponent, establir jerarquia, evitar col·lisions i comprovar la llegibilitat final. La diferència és que un gràfic pot reorganitzar categories o situar etiquetes directament al final d'una línia, mentre que un mapa ha de respectar la posició territorial dels elements.
+
+>>>>> La jerarquia visual i la lectura crítica permeten orientar l'atenció sense ocultar les condicions que sostenen la comparació.
+>>>>>
+>>>>> - Construir una jerarquia entre dades, títol, etiquetes, unitats, font i elements auxiliars.
+>>>>> - Distingir decisions que faciliten la lectura de recursos que exageren, oculten o fabriquen comparacions.
+>>>>> - Interpretar tendències, associacions i valors extrems com a patrons observats, no com a causes o previsions automàtiques.
+>>>>> - Validar origen dels eixos, proporcionalitat, ordre, denominadors, absències, llegibilitat i context abans d'acceptar una figura.
 
 ::: table "Decisions habituals de retolació en gràfics"
 | Element textual | Funció | Criteri de revisió |
@@ -260,13 +283,13 @@ Un cas habitual és el **doble eix vertical**. Pot semblar una solució compacta
 
 La relació d'aspecte també orienta la lectura. En una sèrie temporal, la mateixa diferència vertical pot semblar una pujada brusca o una variació suau segons l'altura i l'amplada del marc. No hi ha una proporció universalment correcta, però el criteri ha de ser defensable: conservar el rang rellevant, indicar unitats i període, i evitar que la forma del marc substitueixi l'anàlisi de la magnitud real del canvi.
 
-![Tres gràfics de línia amb la mateixa sèrie temporal i el mateix rang numèric, però amb marcs alt, equilibrat i pla que modifiquen la sensació de pendent]({{ site.baseurl }}/assets/img/data-visualization/aspect-ratio-trend.svg "La mateixa sèrie pot semblar més o menys dramàtica segons la relació entre amplada i altura del marc. Figura d'elaboració pròpia, 17 d'agost de 2026."){: data-figure-width="54rem"}
+![Tres gràfics de línia amb la mateixa sèrie temporal i el mateix rang numèric, però amb marcs alt, equilibrat i pla que modifiquen la sensació de pendent]({{ site.baseurl }}/assets/img/data-visualization/aspect-ratio-trend.svg "La mateixa sèrie de 2021 a 2025, representada sempre amb el rang 0-20, pot semblar més o menys dramàtica segons la relació entre amplada i altura del marc. En comparar alternatives cal mantenir visibles el rang, el període i el motiu de la proporció triada. Dades esquemàtiques: 8,2; 9,7; 10,8; 12,4; 13,8. Figura d'elaboració pròpia, 17 d'agost de 2026."){: data-figure-width="54rem"}
 
 >>>> **Una tendència visual no és una previsió.** Unir punts amb una línia ajuda a llegir evolució, però extrapolar-la cap al futur exigeix una hipòtesi sobre el procés que genera les dades. Si el text diu que un indicador "continuarà pujant", cal aportar model, període, incertesa i justificació; si només es descriu el passat, és millor parlar d'augment observat, canvi de ritme o variació entre anys.
 
 ### Principis orientadors, no receptes
 
-Les guies de visualització coincideixen en molts criteris de claredat i integritat, però les recomanacions depenen de la marca, la tasca i el suport. Convertir-les en prohibicions absolutes produiria errors nous: l'origen zero és essencial per comparar longituds de barres, però no per a qualsevol gràfic de línies; una quadrícula pot ser útil per estimar valors si queda en segon pla; i una llegenda continua sent necessària quan les etiquetes directes saturarien un mapa {% cite schwabishCorePrinciples2018 evergreenDataVisualizationChecklist2018 financialTimesVisualVocabulary2018 holtzFromDataViz2018 %}.
+Les guies de visualització, com [*From Data to Viz*](https://www.data-to-viz.com/), el [*Financial Times Visual Vocabulary*](https://github.com/Financial-Times/chart-doctor/tree/main/visual-vocabulary), els [*Core Principles of Data Visualization*](https://policyviz.com/2018/08/07/dataviz-cheatsheet/) i la [*Data Visualization Checklist*](https://web.archive.org/web/20190918015742/https://datavizchecklist.stephanieevergreen.com/assets/DataVizChecklist_Feb2018.pdf), coincideixen en molts criteris de claredat i integritat, però les recomanacions depenen de la marca, la tasca i el suport. Convertir-les en prohibicions absolutes produiria errors nous: l'origen zero és essencial per comparar longituds de barres, però no per a qualsevol gràfic de línies; una quadrícula pot ser útil per estimar valors si queda en segon pla; i una llegenda continua sent necessària quan les etiquetes directes saturarien un mapa.
 
 ::: table "Principis per seleccionar i revisar una visualització"
 | Principi | Aplicació | Matisació necessària |
@@ -278,7 +301,7 @@ Les guies de visualització coincideixen en molts criteris de claredat i integri
 | Ordenar amb un criteri | Utilitzar magnitud, cronologia, grup, geografia o una seqüència conceptual | L'ordre alfabètic només és útil per localitzar, no sempre per comparar |
 | Integrar text i gràfic | Fer coherents títol, anotacions, etiquetes, unitats i font amb el missatge | Etiquetar directament quan millora la lectura, sense omplir totes les marques |
 | Subordinar l'estructura auxiliar | Reduir vores, quadrícules, marques i llegendes que competeixen amb les dades | No s'han d'eliminar els elements necessaris per estimar valors o separar panells |
-| Donar funció al color | Utilitzar-lo per agrupar, ordenar o destacar i combinar-lo amb altres senyals | Cal comprovar contrast, mida final i visió cromàtica; el capítol 4 ho desenvolupa |
+| Donar funció al color | Utilitzar-lo per agrupar, ordenar o destacar i combinar-lo amb altres senyals | Cal comprovar contrast, mida final i visió cromàtica; el capítol 7 ho desenvolupa |
 | Evitar comparacions ambigües | Mantenir escales comunes i separar mesures quan una doble escala vertical podria suggerir una relació artificial | Els panells coordinats o els petits múltiples solen fer explícites les unitats |
 | Utilitzar mapes quan l'espai importa | Representar localització, proximitat, direcció o patrons territorials | Un gràfic ordenat és millor quan només cal comparar valors amb precisió |
 | Conservar context i precisió adequats | Indicar període, territori, unitat, font, transformacions i absències | Més decimals i més dades no impliquen necessàriament més informació útil |
@@ -304,7 +327,7 @@ La comparació de gràfics circulars, radials, de barres, de línies, de dispers
 | Soroll | Hi ha relleus, tres dimensions, icones o llegendes que dificulten la lectura? |
 :::
 
-Cada projecte partirà d'una figura funcional però millorable, identificarà almenys tres decisions problemàtiques i en construirà una versió alternativa amb el full de càlcul. La comparació entre l'original i la revisió haurà de justificar-se amb criteris perceptius, no amb preferències com “queda més bonic”.
+Com a pràctica guiada del mètode d'auditoria, es conservarà una figura inicial i una de revisada. S'hi identificaran almenys tres decisions problemàtiques i es construirà la versió alternativa amb el full de càlcul. La comparació entre l'original i la revisió es justificarà amb criteris perceptius, no amb preferències com “queda més bonic”.
 
 ### Procediment de construcció i revisió
 
@@ -350,43 +373,55 @@ Les figures són resultats intermedis i s'emmagatzemaran a `outputs/figures`. El
 
 ## Activitat: construir el conjunt de figures comarcals
 
-La sessió pràctica partirà del full `indicators` del llibre comarcal. Els gràfics es crearan al full `charts` i continuaran vinculats a les cel·les d'origen. Cada figura haurà de respondre una pregunta sobre les diferències entre municipis o sobre el conjunt de la comarca. No es tracta de decorar la mateixa dada de moltes maneres, sinó de comprovar què permet veure cada geometria.
+### Entrades i sortides
+
+L'entrada és el mateix llibre acumulatiu, amb els camps de població per grans grups d'edat a `municipal` i els sis càlculs municipals revisats a `indicators`. La demostració guiada construeix al full `charts` unes barres apilades al 100% de l'estructura d'edats i unes barres ordenades del percentatge d'habitatge no principal. També construeix una dispersió entre envelliment i habitatge no principal quan la pregunta acordada i les dades compatibles justifiquen explorar-ne l'associació; en cas contrari, se'n justificarà la substitució per una figura pertinent o l'omissió. Tots els gràfics construïts que es considerin candidats es conservaran editables i vinculats a les cel·les d'origen a `charts`. Com a demostració del mètode d'auditoria, una figura conservarà una versió inicial i una de revisada. S'exportaran exactament dues o tres figures candidates en PDF vectorial a `outputs/figures` i es registraran a `README.md`.
+
+Cada figura haurà de respondre una pregunta sobre les diferències entre municipis o sobre el conjunt de la comarca. No es tracta de decorar la mateixa dada de moltes maneres, sinó de comprovar què permet veure cada geometria.
+
+>>>>> L'activitat converteix els indicadors revisats en un conjunt de gràfics editables i en dues o tres figures candidates per a la síntesi comarcal.
+>>>>>
+>>>>> - Construir al full `charts` gràfics vinculats als camps compatibles de `municipal` i `indicators`.
+>>>>> - Justificar per a cada figura la pregunta, la geometria, les marques, les variables visuals i l'ordre.
+>>>>> - Interpretar comparacions i associacions com a patrons, i explicitar què no permeten concloure sobre les causes.
+>>>>> - Validar marques, totals, unitats, absències, retolació i valors representats contra les cel·les d'origen.
+>>>>> - Exportar exactament dues o tres figures candidates en PDF vectorial i registrar-les a `README.md`.
 
 ### Sèrie de gràfics bàsics i específics
 
 ::: table "Figures que es poden construir o analitzar"
-| Figura | Dades adequades | Pregunta possible |
-| --- | --- | --- |
-| Barres simples ordenades | Percentatge d'habitatge no principal per municipi | Quins municipis presenten els valors més alts i més baixos? |
-| Barres en paral·lel | Habitatges principals i no principals en valors absoluts | Com canvien el volum i la composició del parc residencial? |
-| Barres apilades al 100% | Percentatges de població de 0–14, 15–64 i 65+ | Com varia l'estructura per edats entre municipis? |
-| Línia temporal | Valors comparables repetits en el temps | Com evoluciona un indicador mensual o anual? |
-| Slopegraph | Mateixa variable en dos moments | Quins municipis han pujat o baixat de posició? |
-| Circular | Habitatges principals i no principals del total comarcal | Quina composició té el conjunt de la comarca? |
-| Anell | La mateixa composició que el circular | El buit central aporta informació o només decoració? |
-| Dispersió | Percentatge de 65+ i percentatge d'habitatge no principal | Hi ha una associació visible entre tots dos indicadors? |
-| Boxplot | Un indicador per a tots els municipis de la comarca | Quin és el centre, la dispersió i els possibles casos extrems? |
-| Mapa de calor | Matriu de mesos i municipis, o dies i hores | Quan es concentren els valors més alts i més baixos? |
-| Treemap | Parts jeràrquiques d'un total | Com es reparteixen places o pernoctacions per municipi i tipus? |
-| Alluvial o Sankey | Fluxos, transicions o repartiments successius | D'on venen els visitants, on van o com canvien de categoria? |
-| Climograma | Temperatura i precipitació mensual | Quin ritme climàtic condiciona l'activitat turística d'una destinació? |
+| Figura | Dades adequades | Pregunta possible | Abast |
+| --- | --- | --- | --- |
+| Barres simples ordenades | Percentatge d'habitatge no principal per municipi | Quins municipis presenten els valors més alts i més baixos? | Demostració guiada |
+| Barres apilades al 100% | Percentatges de població de 0–14, 15–64 i 65+ | Com varia l'estructura per edats entre municipis? | Demostració guiada |
+| Dispersió | Percentatge de 65+ i percentatge d'habitatge no principal | Hi ha una associació visible entre tots dos indicadors? | Demostració guiada quan la pregunta i les dades la justifiquen |
+| Barres en paral·lel | Habitatges principals i no principals en valors absoluts | Com canvien el volum i la composició del parc residencial? | Anàlisi opcional* |
+| Línia temporal | Valors comparables repetits en el temps | Com evoluciona un indicador mensual o anual? | Anàlisi opcional* |
+| Slopegraph | Mateixa variable en dos moments | Quins municipis han pujat o baixat de posició? | Anàlisi opcional* |
+| Circular | Habitatges principals i no principals del total comarcal | Quina composició té el conjunt de la comarca? | Anàlisi opcional* |
+| Anell | La mateixa composició que el circular | El buit central aporta informació o només decoració? | Anàlisi opcional* |
+| Boxplot | Un indicador per a tots els municipis de la comarca | Quin és el centre, la dispersió i els possibles casos extrems? | Anàlisi opcional* |
+| Mapa de calor | Matriu de mesos i municipis, o dies i hores | Quan es concentren els valors més alts i més baixos? | Anàlisi opcional* |
+| Treemap | Parts jeràrquiques d'un total | Com es reparteixen places o pernoctacions per municipi i tipus? | Anàlisi opcional* |
+| Alluvial o Sankey | Fluxos, transicions o repartiments successius | D'on venen els visitants, on van o com canvien de categoria? | Anàlisi opcional* |
+| Climograma | Temperatura i precipitació mensual | Quin ritme climàtic condiciona l'activitat turística d'una destinació? | Anàlisi opcional* |
 :::
 
-El gràfic circular i el d'anell representaran intencionadament la mateixa composició per permetre'n una comparació crítica. No caldrà incorporar-los a la infografia final si una barra comunica millor la diferència. El boxplot resumeix la distribució municipal, però no identifica per si sol la posició geogràfica dels valors. Els gràfics específics no seran obligatoris en tots els projectes: s'utilitzaran quan les dades disponibles i la pregunta ho facin pertinent, i es podran analitzar com a exemples encara que no es construeixin amb el full de càlcul.
+\* Les files d'anàlisi opcional només es construiran quan existeixin les dades que requereixen i la pregunta les faci pertinents; si no, es podran estudiar com a exemples. El gràfic circular i el d'anell poden representar intencionadament la mateixa composició per permetre'n una comparació crítica. El boxplot resumeix la distribució municipal, però no identifica per si sol la posició geogràfica dels valors.
 
-### Selecció de dues o tres figures
+### Selecció de dues o tres figures candidates
 
-La sèrie completa serveix per aprendre i comparar. La miniinfografia només seleccionarà dues o tres figures que expliquin aspectes complementaris. Per a la demostració del Tarragonès, una combinació coherent seria:
+La sèrie completa serveix per aprendre i comparar, mentre que el repertori restant continua sent opcional i analític. S'exportaran exactament dues o tres figures candidates que expliquin aspectes complementaris. El capítol 9 farà la selecció final de dues o tres peces visuals en total, comptant també els mapes. Per a la demostració del Tarragonès, una combinació coherent de candidates seria:
 
 1. barres apilades al 100% per comparar l'estructura d'edats;
 2. barres ordenades del percentatge d'habitatge no principal;
-3. dispersió entre envelliment i habitatge no principal, només si la relació aporta una lectura interpretable.
+3. dispersió entre envelliment i habitatge no principal.
 
-La tercera figura no és obligatòria si repeteix el mapa o no aporta una pregunta nova. Seleccionar també significa descartar.
+La dispersió només es construirà quan la pregunta i les dades justifiquin explorar una associació. Que no mostri una relació interpretable és un resultat que es documentarà i pot motivar que es descarti de la selecció; si l'associació no era una pregunta pertinent d'entrada, se'n justificarà la substitució o l'omissió.
 
 ### Organització i noms
 
-Cada figura tindrà un nom semàntic i una versió vectorial PDF. Una possible estructura és:
+Cada figura candidata exportada tindrà un nom semàntic i una versió vectorial PDF. Una possible estructura és:
 
 ```text
 outputs/figures/
@@ -399,19 +434,19 @@ L'any i el territori s'adaptaran a les dades reals. No s'utilitzaran noms com `g
 
 ### Control de qualitat abans d'exportar
 
-Abans d'acceptar una figura cal comprovar que el nombre de marques correspon als municipis o categories previstos, que les unitats coincideixen amb el diccionari del llibre i que els valors absents no han passat a ser zeros. Les composicions percentuals han de reconstruir el total dins del marge d'arrodoniment, i les barres basades en longitud han de començar ordinàriament a zero; qualsevol excepció requeriria una altra geometria o una justificació explícita. En sèries temporals, també es revisarà si la relació d'aspecte, el rang de l'eix i les anotacions fan semblar inevitable una tendència que només s'ha observat en aquell període.
+Abans d'acceptar una figura cal comprovar que el nombre de marques correspon als municipis o categories previstos, que les unitats coincideixen amb el diccionari del llibre i que els valors absents no han passat a ser zeros. En el gràfic apilat al 100% de l'estructura d'edats, el denominador de cada municipi serà la suma dels tres grups mostrats: població de 0–14, de 15–64 i de 65 anys o més. Si aquesta suma difereix del total de població publicat, la discrepància es conservarà i es registrarà a `checks`; no es modificarà manualment cap grup per forçar la coincidència. Les altres composicions percentuals també han de reconstruir el seu total explícit dins del marge d'arrodoniment, i les barres basades en longitud han de començar ordinàriament a zero; qualsevol excepció requeriria una altra geometria o una justificació explícita. En sèries temporals, també es revisarà si la relació d'aspecte, el rang de l'eix i les anotacions fan semblar inevitable una tendència que només s'ha observat en aquell període.
 
 La revisió també es farà a la mida final. El text, els símbols i els traços han de continuar sent llegibles fora de la interfície del full de càlcul. Després de l'exportació, el PDF s'obrirà a Inkscape per verificar que les formes i els textos continuen sent objectes vectorials seleccionables.
 
-### Evidències que s'han de conservar
+### Evidències de la pràctica guiada
 
 ::: table "Evidències de la visualització comarcal"
 | Ubicació | Evidència | Contingut mínim |
 | --- | --- | --- |
-| `data/processed` | El mateix llibre de treball | Taules, indicadors i gràfics editables al full `charts` |
-| `outputs/figures` | PDFs vectorials | Una figura per pregunta, amb títol, unitat, període i font |
-| `outputs/figures` | Alternatives comparables | Circular/anell o figura inicial/revisada quan ho requereixi l'activitat |
-| `README.md` | Registre de figures | Fitxer, pregunta, tipus de dada, marca, variable visual, decisió de selecció i limitació principal |
+| `data/processed` | El mateix llibre de treball | Taules, indicadors i tots els gràfics candidats editables al full `charts` |
+| `outputs/figures` | PDFs vectorials | Dos o tres PDFs candidats, un per cada pregunta considerada, amb títol, unitat, període i font |
+| `data/processed` | Auditoria guiada | Una figura inicial i la seva versió revisada, conservades com a demostració del mètode |
+| `README.md` | Registre de figures | Fitxer, pregunta, tipus de dada, marca, variable visual, condició de candidata i limitació principal |
 :::
 
-L'activitat deixarà un conjunt de gràfics revisats i dues o tres figures candidates per a la mateixa miniinfografia comarcal, cadascuna associada a una pregunta i a un indicador. S'haurà de poder explicar quines variables visuals utilitza, què permet veure i quins límits conserva. Els capítols següents desenvoluparan el color, els components espacials, el llenguatge cartogràfic, el SIG i la cartografia temàtica abans d'integrar-los amb aquestes figures a la composició final.
+L'activitat deixarà un conjunt de gràfics revisats i exactament dues o tres figures candidates per a la mateixa miniinfografia comarcal, cadascuna associada a una pregunta i a un indicador. Per a cada figura es podrà explicar quines variables visuals utilitza, què permet veure i quins límits conserva. Després de desenvolupar el color, els components espacials, el llenguatge cartogràfic, el SIG i la cartografia temàtica, el capítol 9 seleccionarà dues o tres peces visuals finals en total entre aquestes figures i els mapes disponibles.

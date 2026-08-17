@@ -1,16 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="874" height="412" viewBox="42 50 874 412" role="img" aria-labelledby="title desc">
   <title id="title">Exemple de correspondencia amb XLOOKUP</title>
   <desc id="desc">Esquema docent amb una taula municipal, una taula auxiliar de codis i el resultat d'una formula XLOOKUP que retorna el codi de comarca.</desc>
   <defs>
     <style>
-      .bg{fill:#f6f8fb}.panel{fill:#fff;stroke:#c8d0dc;stroke-width:2}.header{fill:#e9eef5}.cell{fill:#fff;stroke:#c8d0dc}.key{fill:#fff8e6;stroke:#d49a00;stroke-width:2}.match{fill:#eef8ee;stroke:#4c956c;stroke-width:3}.result{fill:#d9ecff;stroke:#1f78b4;stroke-width:3}.formula{fill:#1f2933}.formula-text{font-family:Arial, sans-serif;fill:#ffffff;font-size:13px}.formula-sub{font-family:Arial, sans-serif;fill:#dbeafe;font-size:12px}.text{font-family:Arial, sans-serif;fill:#1f2933;font-size:17px}.small{font-size:14px}.tiny{font-size:12px}.label{font-weight:700}.mono{font-family:Arial, sans-serif}.muted{fill:#52616f}.arrow{stroke:#d49a00;stroke-width:3;fill:none;marker-end:url(#arrow)}.arrow2{stroke:#1f78b4;stroke-width:3;fill:none;marker-end:url(#arrow2)}
+      .panel{fill:#fff;stroke:#c8d0dc;stroke-width:2}.header{fill:#e9eef5}.cell{fill:#fff;stroke:#c8d0dc}.key{fill:#fff8e6;stroke:#d49a00;stroke-width:2}.match{fill:#eef8ee;stroke:#4c956c;stroke-width:3}.result{fill:#d9ecff;stroke:#1f78b4;stroke-width:3}.formula{fill:#1f2933}.formula-text{font-family:Arial, sans-serif;fill:#ffffff;font-size:13px}.formula-sub{font-family:Arial, sans-serif;fill:#dbeafe;font-size:12px}.text{font-family:Arial, sans-serif;fill:#1f2933;font-size:17px}.small{font-size:14px}.tiny{font-size:12px}.label{font-weight:700}.mono{font-family:Arial, sans-serif}.muted{fill:#52616f}.arrow{stroke:#d49a00;stroke-width:3;fill:none;marker-end:url(#arrow)}.arrow2{stroke:#1f78b4;stroke-width:3;fill:none;marker-end:url(#arrow2)}
     </style>
     <marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 Z" fill="#d49a00"/></marker>
     <marker id="arrow2" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 Z" fill="#1f78b4"/></marker>
   </defs>
-  <rect class="bg" width="960" height="540"/>
-
-  <rect class="panel" x="46" y="54" width="386" height="292" rx="12"/>
+  <rect class="panel" x="46" y="54" width="386" height="292"/>
   <text class="text label" x="66" y="86">Full municipal</text>
   <rect class="header" x="66" y="108" width="110" height="36"/>
   <rect class="header" x="176" y="108" width="126" height="36"/>
@@ -47,7 +45,7 @@
   <text class="text small" x="188" y="282">Altafulla</text>
   <text class="text small" x="334" y="282">36</text>
 
-  <rect class="panel" x="520" y="54" width="392" height="292" rx="12"/>
+  <rect class="panel" x="520" y="54" width="392" height="292"/>
   <text class="text label" x="540" y="86">Full lookup_comarques</text>
   <rect class="header" x="540" y="108" width="122" height="36"/>
   <rect class="header" x="662" y="108" width="116" height="36"/>
@@ -87,10 +85,9 @@
   <path class="arrow" d="M176 164 C310 124 410 124 540 164"/>
   <path class="arrow2" d="M662 164 C590 362 394 362 350 182"/>
 
-  <rect class="formula" x="58" y="382" width="850" height="76" rx="12"/>
+  <rect class="formula" x="58" y="382" width="850" height="76"/>
   <text class="formula-text" x="80" y="410">C2 = XLOOKUP(A2, lookup_comarques!$A$2:$A$5,</text>
   <text class="formula-text" x="80" y="428">lookup_comarques!$B$2:$B$5, "sense correspondencia")</text>
   <text class="formula-sub" x="80" y="448">Busca 431711 en la taula auxiliar i retorna 36. Els signes $ mantenen fixos els rangs quan es copia cap avall.</text>
 
-  <text class="text tiny muted" x="58" y="500">Exemple propi amb dades simplificades. Els codis s'han de tractar com a text, no com a quantitats.</text>
 </svg>

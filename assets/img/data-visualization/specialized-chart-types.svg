@@ -1,17 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 980" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1076" height="628" viewBox="52 114 1076 628" role="img" aria-labelledby="title desc">
   <title id="title">Tipus específics de gràfics per a preguntes diferents</title>
   <desc id="desc">Set panells esquemàtics mostren un diagrama de dispersió, un alluvial, un treemap, un climograma, un mapa de calor, un slopegraph i un diagrama de radar.</desc>
   <defs>
     <style>
-      .bg{fill:#fffdf8}.panel{fill:#fff;stroke:#d8d2c5;stroke-width:1.6}.grid{stroke:#e8e2d7;stroke-width:1}.axis{stroke:#555;stroke-width:1.7}.txt{font-family:Arial,Helvetica,sans-serif;fill:#2b2b2b}.title{font-size:30px;font-weight:700}.subtitle{font-size:16px;fill:#5b5b5b}.panel-title{font-size:18px;font-weight:700}.label{font-size:13px;fill:#555}.small{font-size:12px;fill:#666}.blue{fill:#3f7fb5}.blue-line{stroke:#3f7fb5;fill:none;stroke-width:3}.orange{fill:#d47a2c}.orange-line{stroke:#d47a2c;fill:none;stroke-width:3}.green{fill:#5aa06a}.green-line{stroke:#5aa06a;fill:none;stroke-width:3}.purple{fill:#8563a8}.red{fill:#c75146}.pale{fill:#f3eadb}.teal{fill:#2f8f83}.flow-blue{fill:none;stroke:#3f7fb5;stroke-width:28;stroke-linecap:round;opacity:.55}.flow-orange{fill:none;stroke:#d47a2c;stroke-width:22;stroke-linecap:round;opacity:.55}.flow-green{fill:none;stroke:#5aa06a;stroke-width:16;stroke-linecap:round;opacity:.55}.thin{stroke:#777;stroke-width:1.2;fill:none}.heat1{fill:#f3eadb}.heat2{fill:#d8e8de}.heat3{fill:#95c8b5}.heat4{fill:#3f8f83}.heat5{fill:#1f5d54}
+      .panel{fill:#fff;stroke:#d8d2c5;stroke-width:1.6}.grid{stroke:#e8e2d7;stroke-width:1}.axis{stroke:#555;stroke-width:1.7}.txt{font-family:Arial,Helvetica,sans-serif;fill:#2b2b2b}.panel-title{font-size:18px;font-weight:700}.label{font-size:13px;fill:#555}.small{font-size:12px;fill:#666}.blue{fill:#3f7fb5}.blue-line{stroke:#3f7fb5;fill:none;stroke-width:3}.orange{fill:#d47a2c}.orange-line{stroke:#d47a2c;fill:none;stroke-width:3}.green{fill:#5aa06a}.green-line{stroke:#5aa06a;fill:none;stroke-width:3}.purple{fill:#8563a8}.red{fill:#c75146}.pale{fill:#f3eadb}.teal{fill:#2f8f83}.flow-blue{fill:none;stroke:#3f7fb5;stroke-width:28;stroke-linecap:round;opacity:.55}.flow-orange{fill:none;stroke:#d47a2c;stroke-width:22;stroke-linecap:round;opacity:.55}.flow-green{fill:none;stroke:#5aa06a;stroke-width:16;stroke-linecap:round;opacity:.55}.thin{stroke:#777;stroke-width:1.2;fill:none}.heat1{fill:#f3eadb}.heat2{fill:#d8e8de}.heat3{fill:#95c8b5}.heat4{fill:#3f8f83}.heat5{fill:#1f5d54}
     </style>
   </defs>
-  <rect class="bg" width="1180" height="980"/>
-  <text x="590" y="48" text-anchor="middle" class="txt title">Repertori visual especialitzat</text>
-  <text x="590" y="78" text-anchor="middle" class="txt subtitle">La forma del gràfic depèn de la tasca de lectura: relació, flux, jerarquia, estacionalitat, matriu o canvi.</text>
-
   <g transform="translate(54 116)">
-    <rect class="panel" width="330" height="180" rx="10"/>
+    <rect class="panel" width="330" height="180"/>
     <text x="20" y="32" class="txt panel-title">Dispersió</text>
     <text x="20" y="52" class="txt small">dues variables per observació</text>
     <line x1="62" y1="142" x2="280" y2="142" class="axis"/>
@@ -24,7 +20,7 @@
   </g>
 
   <g transform="translate(425 116)">
-    <rect class="panel" width="330" height="180" rx="10"/>
+    <rect class="panel" width="330" height="180"/>
     <text x="20" y="32" class="txt panel-title">Alluvial</text>
     <text x="20" y="52" class="txt small">canvi de categories o fluxos</text>
     <rect x="42" y="72" width="34" height="42" class="blue"/><rect x="42" y="120" width="34" height="24" class="orange"/>
@@ -36,7 +32,7 @@
   </g>
 
   <g transform="translate(796 116)">
-    <rect class="panel" width="330" height="180" rx="10"/>
+    <rect class="panel" width="330" height="180"/>
     <text x="20" y="32" class="txt panel-title">Treemap</text>
     <text x="20" y="52" class="txt small">parts jeràrquiques d'un total</text>
     <rect x="48" y="70" width="220" height="82" fill="#e9f1ed" stroke="#fffdf8" stroke-width="3"/>
@@ -48,8 +44,8 @@
     <text x="55" y="165" class="txt label">l'àrea representa magnitud</text>
   </g>
 
-  <g transform="translate(54 338)">
-    <rect class="panel" width="330" height="180" rx="10"/>
+  <g transform="translate(239 338)">
+    <rect class="panel" width="330" height="180"/>
     <text x="20" y="32" class="txt panel-title">Climograma</text>
     <text x="20" y="52" class="txt small">precipitació i temperatura mensual</text>
     <line x1="52" y1="146" x2="290" y2="146" class="axis"/>
@@ -61,8 +57,8 @@
     <text x="56" y="166" class="txt label">mesos</text><text x="218" y="70" class="txt label">°C</text><text x="74" y="88" class="txt label">mm</text>
   </g>
 
-  <g transform="translate(425 338)">
-    <rect class="panel" width="330" height="180" rx="10"/>
+  <g transform="translate(610 338)">
+    <rect class="panel" width="330" height="180"/>
     <text x="20" y="32" class="txt panel-title">Mapa de calor</text>
     <text x="20" y="52" class="txt small">matriu de valors o calendari</text>
     <g transform="translate(54 72)">
@@ -73,8 +69,8 @@
     <text x="54" y="168" class="txt label">patrons per dia, mes, hora o categoria</text>
   </g>
 
-  <g transform="translate(796 338)">
-    <rect class="panel" width="330" height="180" rx="10"/>
+  <g transform="translate(239 560)">
+    <rect class="panel" width="330" height="180"/>
     <text x="20" y="32" class="txt panel-title">Slopegraph</text>
     <text x="20" y="52" class="txt small">canvi entre dos moments</text>
     <line x1="92" y1="62" x2="92" y2="146" class="axis"/>
@@ -86,11 +82,11 @@
     <text x="46" y="130" class="txt small">A</text><text x="46" y="90" class="txt small">B</text><text x="46" y="114" class="txt small">C</text>
   </g>
 
-  <g transform="translate(425 560)">
-    <rect class="panel" width="330" height="230" rx="10"/>
+  <g transform="translate(610 560)">
+    <rect class="panel" width="330" height="180"/>
     <text x="20" y="32" class="txt panel-title">Radar</text>
     <text x="20" y="52" class="txt small">perfil multivariant sobre una escala comuna</text>
-    <g transform="translate(165 128)">
+    <g transform="translate(165 112)">
       <polygon points="0,-52 49,-17 31,44 -31,44 -49,-17" fill="none" stroke="#e8e2d7" stroke-width="1.2"/>
       <polygon points="0,-35 33,-11 21,30 -21,30 -33,-11" fill="none" stroke="#e8e2d7" stroke-width="1.2"/>
       <polygon points="0,-18 17,-6 10,15 -10,15 -17,-6" fill="none" stroke="#e8e2d7" stroke-width="1.2"/>
@@ -103,12 +99,10 @@
       <polygon points="0,-25 43,-15 28,40 -14,20 -23,-8" fill="#d47a2c" opacity=".28" stroke="#d47a2c" stroke-width="3"/>
       <circle cx="0" cy="-44" r="3" class="blue"/><circle cx="35" cy="-12" r="3" class="blue"/><circle cx="20" cy="28" r="3" class="blue"/><circle cx="-25" cy="35" r="3" class="blue"/><circle cx="-36" cy="-12" r="3" class="blue"/>
     </g>
-    <text x="165" y="82" text-anchor="middle" class="txt small">accessibilitat</text>
-    <text x="240" y="126" class="txt small">servei</text>
-    <text x="214" y="196" class="txt small">cost</text>
-    <text x="82" y="196" class="txt small">temps</text>
-    <text x="38" y="126" class="txt small">oferta</text>
+    <text x="165" y="66" text-anchor="middle" class="txt small">accessibilitat</text>
+    <text x="240" y="110" class="txt small">servei</text>
+    <text x="214" y="170" class="txt small">cost</text>
+    <text x="82" y="170" class="txt small">temps</text>
+    <text x="38" y="110" class="txt small">oferta</text>
   </g>
-
-  <text x="590" y="930" text-anchor="middle" class="txt subtitle">Dades esquemàtiques. Figura d'elaboració pròpia, 16 d'agost de 2026.</text>
 </svg>

@@ -1,12 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="760" viewBox="0 0 1180 760" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1044" height="559" viewBox="68 123 1044 559" role="img" aria-labelledby="title desc">
   <title id="title">Maneres habituals de representar el relleu</title>
   <desc id="desc">Quatre recursos per representar altimetria: cotes, corbes de nivell, ombrejat i tintes hipsometriques.</desc>
   <defs>
     <style>
-      .bg { fill: #fffdf8; }
-      .card { fill: #ffffff; stroke: #d5dde2; stroke-width: 1.6; rx: 18; }
-      .title { font: 700 31px Arial, 'Liberation Sans', sans-serif; fill: #17202a; }
-      .subtitle { font: 16px Arial, 'Liberation Sans', sans-serif; fill: #52616b; }
+      .card { fill: #ffffff; stroke: #d5dde2; stroke-width: 1.6; }
       .label { font: 700 20px Arial, 'Liberation Sans', sans-serif; fill: #17202a; }
       .small { font: 15px Arial, 'Liberation Sans', sans-serif; fill: #52616b; }
       .contour { fill: none; stroke: #7b5f3b; stroke-width: 2.2; }
@@ -25,50 +22,51 @@
       <stop offset="1" stop-color="#f2f0e8"/>
     </linearGradient>
   </defs>
-  <rect class="bg" width="1180" height="760"/>
-  <text x="590" y="48" text-anchor="middle" class="title">El relleu pot orientar o pot competir amb el tema</text>
-  <text x="590" y="78" text-anchor="middle" class="subtitle">Cada tecnica mostra una propietat diferent; en un mapa tematic s'ha d'escollir nomes la que ajuda la lectura.</text>
-
   <g transform="translate(70 125)">
     <rect class="card" width="500" height="250"/>
     <text x="28" y="40" class="label">Cotes i punts d'altura</text>
     <text x="28" y="66" class="small">valors puntuals: precisos pero dispersos</text>
-    <path d="M70,182 C122,110 174,150 215,88 C265,21 352,69 414,162" fill="#eef3ee" stroke="#91a991" stroke-width="2"/>
-    <circle cx="214" cy="91" r="6" class="spot"/><text x="228" y="98" class="small">312 m</text>
-    <circle cx="337" cy="75" r="6" class="spot"/><text x="351" y="82" class="small">428 m</text>
-    <circle cx="126" cy="140" r="6" class="spot"/><text x="140" y="147" class="small">184 m</text>
+    <g transform="translate(0 28)">
+      <path d="M70,182 C122,110 174,150 215,88 C265,21 352,69 414,162" fill="#eef3ee" stroke="#91a991" stroke-width="2"/>
+      <circle cx="214" cy="91" r="6" class="spot"/><text x="228" y="98" class="small">312 m</text>
+      <circle cx="337" cy="75" r="6" class="spot"/><text x="351" y="82" class="small">428 m</text>
+      <circle cx="126" cy="140" r="6" class="spot"/><text x="140" y="147" class="small">184 m</text>
+    </g>
   </g>
 
   <g transform="translate(610 125)">
     <rect class="card" width="500" height="250"/>
     <text x="28" y="40" class="label">Corbes de nivell</text>
     <text x="28" y="66" class="small">mateixa altura: forma, pendent i direccio</text>
-    <ellipse cx="245" cy="145" rx="165" ry="82" class="contour"/>
-    <ellipse cx="245" cy="145" rx="125" ry="62" class="index"/>
-    <ellipse cx="245" cy="145" rx="85" ry="42" class="contour"/>
-    <ellipse cx="245" cy="145" rx="48" ry="22" class="contour"/>
-    <text x="377" y="116" class="small">100</text>
-    <text x="344" y="137" class="small">200</text>
-    <text x="307" y="155" class="small">300</text>
+    <g transform="translate(0 18)">
+      <ellipse cx="245" cy="145" rx="165" ry="82" class="contour"/>
+      <ellipse cx="245" cy="145" rx="125" ry="62" class="index"/>
+      <ellipse cx="245" cy="145" rx="85" ry="42" class="contour"/>
+      <ellipse cx="245" cy="145" rx="48" ry="22" class="contour"/>
+      <text x="377" y="116" class="small">100</text>
+      <text x="344" y="137" class="small">200</text>
+      <text x="307" y="155" class="small">300</text>
+    </g>
   </g>
 
   <g transform="translate(70 430)">
     <rect class="card" width="500" height="250"/>
     <text x="28" y="40" class="label">Ombrejat del relleu</text>
     <text x="28" y="66" class="small">volum aparent: intuitiu pero no dona altura exacta</text>
-    <path d="M74,183 C119,78 174,133 222,73 C280,4 369,68 424,182 Z" fill="url(#shade)" stroke="#87949a" stroke-width="2"/>
-    <path d="M112,178 C152,128 182,148 220,112 C274,63 341,99 392,178" fill="none" stroke="#ffffff" stroke-width="7" opacity=".55"/>
-    <text x="355" y="96" class="small">llum</text>
+    <g transform="translate(0 28)">
+      <path d="M74,183 C119,78 174,133 222,73 C280,4 369,68 424,182 Z" fill="url(#shade)" stroke="#87949a" stroke-width="2"/>
+      <path d="M112,178 C152,128 182,148 220,112 C274,63 341,99 392,178" fill="none" stroke="#ffffff" stroke-width="7" opacity=".55"/>
+      <text x="355" y="96" class="small">llum</text>
+    </g>
   </g>
 
   <g transform="translate(610 430)">
     <rect class="card" width="500" height="250"/>
     <text x="28" y="40" class="label">Tintes hipsometriques</text>
     <text x="28" y="66" class="small">rang altimetric: adequat per grans patrons</text>
-    <path d="M80,185 C132,92 174,132 220,76 C276,18 356,72 421,185 Z" fill="url(#hypso)" stroke="#8b8b75" stroke-width="2"/>
+    <path d="M80,210 C132,117 174,157 220,101 C276,43 356,97 421,210 Z" fill="url(#hypso)" stroke="#8b8b75" stroke-width="2"/>
     <rect x="58" y="207" width="350" height="18" fill="url(#hypso)" stroke="#b9b29a"/>
     <text x="57" y="241" class="small">baix</text>
     <text x="376" y="241" class="small">alt</text>
   </g>
-  <text x="590" y="728" text-anchor="middle" class="small">Figura d'elaboracio propia, 14 d'agost de 2026. Les formes son esquematiques i serveixen per comparar funcions de lectura.</text>
 </svg>
