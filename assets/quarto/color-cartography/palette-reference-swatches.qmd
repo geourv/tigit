@@ -1,5 +1,7 @@
 ---
 title: "Mostres de paletes cartogràfiques i científiques"
+lang: ca
+ref: palette_reference_swatches
 format:
   gfm:
     output-file: palette-reference-swatches.generated.md
@@ -8,6 +10,11 @@ execute:
   warning: false
   message: false
 execute-dir: project
+unaltraweb_compute:
+  engine: python
+  mode: figure
+  outputs:
+    - assets/img/color-cartography/palette-reference-swatches.svg
 ---
 
 ```{python}

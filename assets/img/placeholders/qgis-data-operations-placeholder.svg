@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">QGIS data operations screenshot placeholder</title>
+  <desc id="desc">Placeholder for QGIS screenshots about CSV import, joins and point creation from coordinates.</desc>
+  <rect width="960" height="540" fill="#f3f4f6"/>
+  <rect x="54" y="50" width="852" height="440" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="3"/>
+  <rect x="54" y="50" width="852" height="48" rx="12" fill="#263445"/>
+  <circle cx="86" cy="74" r="7" fill="#ff7a7a"/>
+  <circle cx="110" cy="74" r="7" fill="#ffd166"/>
+  <circle cx="134" cy="74" r="7" fill="#64d68a"/>
+  <rect x="84" y="124" width="248" height="326" rx="8" fill="#f8fafc" stroke="#d8dee8"/>
+  <text x="114" y="164" font-family="DejaVu Sans, Arial, sans-serif" font-size="24" fill="#263445">Taula CSV</text>
+  <g fill="#94a3b8">
+    <rect x="114" y="196" width="176" height="14" rx="7"/>
+    <rect x="114" y="230" width="146" height="14" rx="7"/>
+    <rect x="114" y="264" width="164" height="14" rx="7"/>
+    <rect x="114" y="298" width="126" height="14" rx="7"/>
+  </g>
+  <rect x="368" y="124" width="224" height="326" rx="8" fill="#eef6ff" stroke="#9cc3f5"/>
+  <text x="480" y="164" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="24" fill="#263445">Join</text>
+  <path d="M418 236h124M418 280h124M418 324h124" stroke="#2a5db0" stroke-width="10" stroke-linecap="round"/>
+  <path d="M300 238c50 0 70 0 118 0M300 282c50 0 70 0 118 0" stroke="#7aa2d8" stroke-width="5" fill="none"/>
+  <path d="M542 238c52 0 74 0 124 0M542 282c52 0 74 0 124 0" stroke="#7aa2d8" stroke-width="5" fill="none"/>
+  <rect x="628" y="124" width="248" height="326" rx="8" fill="#eaf7f0" stroke="#91c9a7"/>
+  <text x="752" y="164" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="24" fill="#263445">Punts XY</text>
+  <path d="M672 388c42-58 96-86 162-84v86H672z" fill="#b9dfc7"/>
+  <circle cx="704" cy="248" r="12" fill="#e4572e"/>
+  <circle cx="770" cy="286" r="12" fill="#e4572e"/>
+  <circle cx="824" cy="230" r="12" fill="#e4572e"/>
+  <text x="480" y="474" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="22" fill="#52616f">Importar, unir i convertir coordenades en geometria</text>
+</svg>

@@ -7,20 +7,49 @@ ref: manual-gis-data-integration
 profiles: [unaltremanual]
 content_status: draft
 permalink: /ca/chapters/integracio-sig/
-weight: 60
+weight: 80
 part: Continguts
 manual_references: true
 ---
 
-Un sistema d'informació geogràfica relaciona geometries, atributs i operacions. En aquesta assignatura se'n farà una introducció aplicada: QGIS serà sobretot l'espai on la taula municipal preparada al llibre únic es vincula amb els límits municipals de la comarca i es converteix en informació territorial consultable. Aquesta visió evita reduir el SIG a un programa: també hi intervenen les dades, els procediments, les preguntes i les persones que prenen decisions {% cite longleyGeographicInformationScience2015 nunesDiccionariSIG2012 %}.
+Un sistema d'informació geogràfica relaciona geometries, atributs i operacions. En aquesta assignatura se'n farà una introducció aplicada després d'haver treballat semiologia, color, coordenades i llenguatge cartogràfic: QGIS serà sobretot l'espai on la taula municipal preparada al llibre únic es vincula amb els límits municipals de la comarca i es converteix en informació territorial consultable. Aquesta visió evita reduir el SIG a un programa: també hi intervenen les dades, els procediments, les preguntes i les persones que prenen decisions {% cite longleyGeographicInformationScience2015 nunesDiccionariSIG2012 %}.
+
+Les demostracions breus de QGIS que hagin aparegut en capítols anteriors no substitueixen aquest bloc. Servien per veure una capa, una escala, una composició o una paleta en context. Aquí es formalitza el procediment: importar dades, revisar atributs, unir taules, diagnosticar errors i deixar el projecte preparat perquè la cartografia temàtica posterior no sigui només una captura acolorida.
 
 La informació **georeferenciada** combina un component temàtic, que descriu què és o quin valor té una entitat, i un component espacial, que indica on es troba. Un SIG integra dades, eines, persones i mètodes per gestionar i analitzar aquesta relació i respondre problemes territorials.
+
+![Esquema històric de fases d'un projecte SIG, utilitzat com a suport provisional per distingir dades, tractament, anàlisi i presentació]({{ site.baseurl }}/assets/img/legacy/gis-phases.png "Un projecte SIG no comença en el mapa final: necessita definir el problema, preparar dades, executar operacions, verificar resultats i comunicar-los. Imatge procedent de les diapositives antigues del curs; font i autoria pendents de verificació. Llicència: Referencia pendiente."){: data-figure-width="48rem"}
+
+## Del programa al mètode de treball
+
+Un SIG universitari no s'aprèn només localitzant menús. El programa és necessari, però el criteri principal és saber construir una cadena de treball revisable. Abans d'una unió, cal saber quina taula aporta els indicadors, quina capa aporta les geometries i quin camp permet relacionar-les. Després de la unió, cal comprovar si el nombre d'entitats, les claus i els valors continuen tenint sentit. Entre una captura vistosa i un resultat defensable hi ha una diferència metodològica: la segona opció permet reconstruir com s'ha arribat al mapa.
+
+El projecte comarcal es pot entendre com quatre capes de responsabilitat. La primera és **documental**: conservar fonts, llicències, dates i definicions. La segona és **estructural**: mantenir una fila per municipi, camps amb tipus adequats i codis territorials coherents. La tercera és **espacial**: revisar CRS, geometria, extensió, escala i correspondència territorial. La quarta és **comunicativa**: decidir quines consultes, mapes i exportacions expliquen el resultat sense ocultar errors o absències. Si una d'aquestes capes falla, el mapa pot aparèixer igualment a la pantalla, però la interpretació quedarà debilitada.
+
+::: table "De la pregunta territorial a una sortida SIG revisable"
+| Fase | Decisió principal | Control mínim |
+| --- | --- | --- |
+| Pregunta | Quina relació territorial es vol observar? | Fenomen, territori, període i unitat d'observació explícits |
+| Entrades | Quina geometria i quina taula s'utilitzen? | Font, data, llicència, CRS, camps clau i nombre de registres |
+| Preparació | Quines transformacions són necessàries? | Camps nous documentats, originals preservats i valors contrastats |
+| Unió | Com es relacionen geometries i indicadors? | Cardinalitat, duplicats, coincidències, absències i nuls |
+| Consulta | Què es pot preguntar al resultat unit? | Filtres i seleccions descrits sense convertir-los en conclusions causals |
+| Sortida | Quin mapa, taula o fitxer es conservarà? | Format, estil, escala, fonts i ruta dins del projecte |
+:::
+
+Aquest esquema també ajuda a repartir responsabilitats entre teoria i laboratori. La teoria dona el vocabulari per parlar de georeferenciació, geometria, atribut, sistema de referència, escala i patró espacial. El laboratori converteix aquest vocabulari en comprovacions concretes: obrir propietats de capa, revisar una taula, normalitzar una clau, filtrar municipis, executar una unió i registrar el resultat. Cap de les dues parts funciona sola; sense criteri conceptual, QGIS es redueix a recepta, i sense pràctica, els conceptes no arriben a una decisió operativa.
 
 ## Fonts cartogràfiques i serveis geogràfics
 
 ### Capes oficials de límits administratius
 
 Les geometries han de provenir de fonts documentades, tenir una escala adequada i conservar informació sobre el sistema de referència i la data.
+
+En el laboratori es podrà utilitzar el connector **Open ICGC** de QGIS com a accés ràpid a la geoinformació de l'Institut Cartogràfic i Geològic de Catalunya. El connector incorpora una barra d'eines per carregar capes de referència, cercar topònims i adreces, consultar ortofotos, afegir fons cartogràfics i descarregar productes vectorials o ràster quan cal treballar sense connexió {% cite icgcOpenICGCQgisConnector2026 qgisOpenICGCPluginRepository2026 %}. Aquesta comoditat no substitueix la lectura de metadades: abans d'utilitzar una capa com a geometria d'anàlisi cal identificar productor, data, escala, CRS, llicència i si el recurs és una imatge de fons, un servei de visualització o una capa vectorial amb atributs.
+
+![Espai de treball per documentar el connector Open ICGC dins de QGIS, amb accés a fons de mapa, ortofoto i límits administratius]({{ site.baseurl }}/assets/img/placeholders/qgis-open-icgc-placeholder.svg "QGIS i Open ICGC: selecció d'un fons de mapa i localització de límits administratius o divisions territorials."){: data-figure-width="44rem"}
+
+Els fons de mapa de l'ICGC són molt útils per orientar el lector, comprovar si una capa cau on toca i construir un mapa de referència. En canvi, una unió d'indicadors municipals necessita una capa vectorial de límits amb camps identificadors. Si el connector ofereix diverses vies per arribar a un límit administratiu, s'ha de triar la que permeti conservar la geometria i els atributs necessaris, no només la que es veu millor al llenç.
 
 ### Fitxers i serveis de dades
 
@@ -55,6 +84,14 @@ Un CSV no conserva per si sol el tipus de cada camp. En importar-lo a QGIS, el c
 La importació no acaba quan la taula apareix al projecte. Cal revisar caràcters, separadors, camps, files i interpretació dels valors. El nombre de registres ha de coincidir amb les files municipals de `map_export`, els codis s'han de conservar com a text quan l'esquema ho requereixi i els indicadors han de continuar sent numèrics.
 
 Abans d'unir, almenys dos municipis i dos indicadors es contrastaran amb el full `indicators`. Aquesta comprovació separa els errors d'exportació dels errors que es puguin produir després durant la unió.
+
+### Coordenades a punts
+
+Algunes fonts no arriben com una capa de municipis, sinó com una taula amb coordenades. Pot passar amb equipaments turístics, punts d'informació, allotjaments, recursos patrimonials o adreces geocodificades. En aquest cas, QGIS pot carregar el CSV com a capa de text delimitat i crear geometries puntuals a partir dels camps X i Y. La decisió crítica és indicar el CRS correcte de les coordenades originals: longitud i latitud en graus solen correspondre a `EPSG:4326`, mentre que coordenades UTM del projecte haurien d'estar en metres i documentar-se com `EPSG:25831`.
+
+![Espai de treball per documentar la importació d'un CSV, la unió amb límits municipals i la creació de punts a partir de coordenades]({{ site.baseurl }}/assets/img/placeholders/qgis-data-operations-placeholder.svg "QGIS: diàleg d'importació de text delimitat, configuració de la unió i conversió de camps X/Y en punts."){: data-figure-width="44rem"}
+
+Crear punts no és el mateix que unir indicadors municipals. Una unió mitjançant codi territorial transfereix atributs a una geometria administrativa existent; una capa de punts crea entitats noves a partir de posicions. Si després cal resumir punts per municipi, caldrà una operació espacial específica i una comprovació diferent, perquè el resultat dependrà de la precisió de les coordenades i dels límits utilitzats.
 
 ## Unions mitjançant codis territorials
 
@@ -153,6 +190,7 @@ El projecte s'ha de poder obrir i revisar sense perdre fitxers. S'utilitzarà el
 | `data/processed` | Llibre únic actualitzat | Fulls `indicators` i `map_export` coherents |
 | `data/processed` | CSV de transferència | UTF-8, una fila per municipi, codis preservats i camps necessaris |
 | `qgis` | Projecte QGIS continuat | Capa municipal, taula importada, unió, grups i rutes relatives |
+| `qgis` | Capa de punts, si s'utilitzen coordenades | Camps X/Y, CRS d'origen, punts creats i comprovació espacial |
 | `data/processed` o `qgis` | Capa materialitzada, si cal | Geometries i indicadors units en un GeoPackage derivat |
 | `README.md` | Informe de la unió | Claus, normalització, cardinalitat, recomptes, absències i casos contrastats |
 :::

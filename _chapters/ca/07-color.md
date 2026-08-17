@@ -7,12 +7,12 @@ ref: manual-color
 profiles: [unaltremanual]
 content_status: draft
 permalink: /ca/chapters/color/
-weight: 80
+weight: 50
 part: Continguts
 manual_references: true
 ---
 
-El color participa en gairebé totes les figures del curs, però no sempre fa la mateixa feina. En un gràfic pot destacar una sèrie, separar categories o reforçar una jerarquia. En un mapa pot ajudar a reconèixer aigua, vegetació o sòl urbà, ordenar una intensitat o mostrar desviacions respecte d'un valor de referència. Aquest capítol estudia el color abans d'aplicar-lo a la classificació temàtica del capítol següent, per evitar que la paleta es decideixi com un acabat decoratiu.
+El color participa en gairebé totes les figures del curs, però no sempre fa la mateixa feina. En un gràfic pot destacar una sèrie, separar categories o reforçar una jerarquia. En un mapa pot ajudar a reconèixer aigua, vegetació o sòl urbà, ordenar una intensitat o mostrar desviacions respecte d'un valor de referència. Aquest capítol estudia el color immediatament després de la semiologia gràfica perquè la paleta no es decideixi al final com un acabat decoratiu. Les mateixes decisions es reprendran després en la cartografia i en QGIS.
 
 Les decisions cromàtiques combinen tres plans. El primer és físic i tècnic: pantalles, tinta i selectors digitals no generen el color de la mateixa manera. El segon és perceptiu: el contrast, la lluminositat, la mida de les marques i les deficiències de visió cromàtica condicionen el que es pot distingir. El tercer és cultural i cartogràfic: alguns colors activen associacions compartides, però aquestes associacions poden ajudar, confondre o introduir jerarquies que les dades no contenen. Les lectures de Brown i Feringa, Pellicer Corellano, Brewer i Wilke permeten connectar aquests fonaments amb l'ús de mapes i figures {% cite brownColourBasicsGIS2002 pellicerColorLenguajeCartografico1993 brewerDesigningBetterMaps2005 wilkeFundamentalsDataVisualization2019 %}.
 
@@ -22,7 +22,14 @@ Les decisions cromàtiques combinen tres plans. El primer és físic i tècnic: 
 
 El color no és una propietat simple que es pugui traslladar sense canvis d'una pantalla a un full imprès, d'un selector digital a un mapa o d'una llegenda a una àrea concreta. En una pantalla es combinen llums; en la impressió es combinen tintes que absorbeixen part de la llum incident; i en la lectura humana intervenen l'ull, el cervell, la mida de les marques, el fons, el contrast i l'experiència cultural del lector. Per això una paleta no s'ha de jutjar només en una mostra aïllada, sinó sobre el mapa, el gràfic i el suport final {% cite brownColourBasicsGIS2002 pellicerColorLenguajeCartografico1993 brewerPredictionSurroundInduced1991 %}.
 
-La retina conté receptors sensibles a la lluminositat i receptors que contribueixen a la percepció cromàtica. Aquesta explicació biològica bàsica ajuda a entendre per què el contrast de valor pot continuar funcionant quan el to falla, i per què una diferència aparent en pantalla pot perdre's en impressió, en una projecció o en una còpia en grisos. Les deficiències de visió cromàtica no són un cas excepcional que es resolgui al final: obliguen a no confiar tota la lectura en una oposició de tons, especialment en combinacions problemàtiques com alguns verds i vermells.
+La retina conté receptors sensibles a la lluminositat i receptors que contribueixen a la percepció cromàtica. Aquesta explicació biològica bàsica ajuda a entendre per què el contrast de valor pot continuar funcionant quan el to falla, i per què una diferència aparent en pantalla pot perdre's en impressió, en una projecció o en una còpia en grisos. Els bastons, habitualment **rods** en les figures anatòmiques en anglès, són especialment rellevants per a la visió amb poca llum; els cons, **cones**, sostenen bona part de la discriminació cromàtica. El manual no necessita convertir aquesta secció en fisiologia detallada, però sí mostrar que el color cartogràfic descansa sobre una percepció humana desigual, limitada i situada.
+
+Les deficiències de visió cromàtica no són un cas excepcional que es resolgui al final: obliguen a no confiar tota la lectura en una oposició de tons, especialment en combinacions problemàtiques com alguns verds i vermells. Una figura robusta ha de combinar color amb contrast de valor, etiquetes, forma, patró o posició quan la lectura sigui essencial.
+
+::: subfigures a+b "Ull humà i receptors de la retina com a base perceptiva de les decisions cromàtiques. La subfigura a és una figura SVG de Wikimedia Commons; la subfigura b és un placeholder editorial pendent de substituir per una figura oberta sobre rods i cones."
+![Tall esquemàtic de l'ull humà amb retolació anatòmica en català]({{ site.baseurl }}/assets/img/color-cartography/schematic-human-eye-ca.svg "Tall de l'ull humà. Font: Jmarchn, «Schematic diagram of the human eye ca.svg», Wikimedia Commons, 2016, CC BY-SA 3.0.")
+![Placeholder per a una figura sobre bastons i cons de la retina, amb les etiquetes angleses rods i cones]({{ site.baseurl }}/assets/img/placeholders/retina-rods-cones-placeholder.svg "Figura pendent: substituir per un SVG de qualitat sobre receptors de la retina que mostri rods i cones, amb autoria, font i llicència verificades.")
+:::
 
 ### To, saturació i lluminositat
 
@@ -42,13 +49,19 @@ Els esquemes analògics, complementaris o triàdics poden funcionar en una compo
 
 ### RGB, CMYK, RYB i HSL/HSV
 
-RGB descriu la combinació additiva de llum utilitzada habitualment en pantalles. Cada canal, en la codificació més comuna de 8 bits, pren valors de `0` a `255`; el negre és `RGB(0,0,0)` i el blanc és `RGB(255,255,255)`. Els codis HEX expressen el mateix model de manera compacta: `#226699` equival a `R=34`, `G=102`, `B=153`. Aquesta notació és pràctica per transportar colors entre QGIS, fulls de càlcul, SVG i webs.
+RGB descriu la combinació additiva de llum utilitzada habitualment en monitors, projectors, telèfons, tauletes i altres dispositius que emeten llum. Cada canal, en la codificació més comuna de 8 bits, pren valors de `0` a `255`; el negre és `RGB(0,0,0)` perquè no s'emet llum, i el blanc és `RGB(255,255,255)` perquè els canals vermell, verd i blau se sumen al màxim. Els codis HEX expressen el mateix model de manera compacta: `#226699` equival a `R=34`, `G=102`, `B=153`. Aquesta notació és pràctica per transportar colors entre QGIS, fulls de càlcul, SVG i webs.
 
-CMYK correspon a un procés subtractiu d'impressió amb tintes cian, magenta, groga i negra. Els canals s'expressen habitualment de `0%` a `100%`. El blanc no s'obté afegint tinta, sinó deixant el paper sense cobrir; el negre tècnic pot requerir el canal `K` i no només una combinació de cian, magenta i groc. La conversió RGB-CMYK depèn del perfil de color, del paper i del sistema d'impressió, de manera que no garanteix una equivalència perceptiva exacta.
+>>> **Identificar un gris en RGB.** Quan una pipeta retorna tres canals empatats, el color no té cap component cromàtic dominant i es llegeix com un gris neutre. `RGB(0,0,0)` és negre, `RGB(255,255,255)` és blanc, `RGB(128,128,128)` és un gris mitjà i `#cccccc`, equivalent a `RGB(204,204,204)`, és un gris clar. En HSL o HSV aquest mateix principi apareix com a saturació `0%`: el to deixa de ser informatiu i la lluminositat o el valor indiquen si el gris és més clar o més fosc. Si els canals no estan empatats, com a `RGB(120,120,138)`, ja no és un gris neutre, sinó un gris amb dominant blavosa.
+
+CMYK correspon a un procés subtractiu d'impressió amb tintes cian, magenta, groga i el canal `K`. A diferència d'una pantalla, el paper no emet llum: reflecteix la llum que rep, i cada tinta n'absorbeix una part. Per això el blanc no s'obté afegint tinta, sinó deixant el suport sense cobrir. Els canals s'expressen habitualment de `0%` a `100%`, però la conversió RGB-CMYK depèn del perfil de color, del paper, de les tintes i del sistema d'impressió, de manera que no garanteix una equivalència perceptiva exacta.
+
+El canal `K` no s'anomena així perquè sigui simplement la lletra final de *black*. En arts gràfiques identifica la **planxa clau** o *key plate*, que habitualment porta tinta negra i aporta registre, detall, contrast i profunditat a la impressió. També evita confusions amb `B`, que en molts contextos cromàtics ja designa el blau. En una impressora real, el negre ric, les ombres i el text petit no es resolen només superposant cian, magenta i groc: el canal `K` fa que el resultat sigui més estable, net i econòmic.
 
 El model **RYB** --vermell, groc i blau-- és útil per entendre una tradició artística de mescla de pigments i algunes harmonies cromàtiques, però no descriu amb precisió ni la llum de les pantalles ni la quadricromia d'impressió. No té un rang numèric universal comparable al de RGB o CMYK. Els selectors **HSL** i **HSV** organitzen el color al voltant de to, saturació i lluminositat o valor: `H` sol anar de `0` a `360` graus, i `S`, `L` o `V` de `0%` a `100%`. Són pràctics per ajustar una paleta perquè permeten pensar en decisions perceptives, encara que els seus components no coincideixin exactament amb la percepció humana ni amb el valor semiològic d'una rampa cartogràfica.
 
-![Comparació esquemàtica dels models RGB, CMYK, RYB i HSL/HSV, amb la funció principal de cada model en el treball amb mapes i figures]({{ site.baseurl }}/assets/img/color-cartography/color-models-overview.svg "RGB és el llenguatge habitual de pantalla i codis HEX, CMYK orienta la impressió, RYB pertany a una tradició artística i HSL/HSV ajuda a ajustar to, saturació i lluminositat. Figura d'elaboració pròpia, 14 d'agost de 2026."){: data-figure-width="48rem"}
+En HSL i HSV, `H` és el **to** (*hue*) i es representa sovint com un angle dins d'una roda de 0 a 360 graus; `S` és la **saturació**, és a dir, el pas d'un gris cap a un color més pur; `L` és la **lluminositat** (*lightness*) en HSL, que pot acostar el color cap al negre o cap al blanc; i `V` és el **valor** (*value*) en HSV, que controla la intensitat màxima del color triat. Aquests models són útils per ajustar una paleta de manera intuïtiva, però no substitueixen la comprovació final sobre el mapa, el gràfic, la pantalla o la impressió.
+
+![Comparació esquemàtica dels models RGB, CMYK, RYB i HSL/HSV, amb la funció principal de cada model en el treball amb mapes i figures]({{ site.baseurl }}/assets/img/color-cartography/color-models-overview.svg "RGB descriu llum emesa per pantalles i dispositius; CMYK descriu tintes sobre paper i utilitza K com a planxa clau; RYB pertany a la tradició artística; HSL i HSV separen to, saturació i lluminositat o valor per ajustar paletes. Figura d'elaboració pròpia, revisada el 15 d'agost de 2026."){: data-figure-width="54rem"}
 
 El projecte conservarà els valors RGB o HEX de la paleta per mantenir una definició coherent entre el full de càlcul, QGIS i Inkscape. Si el producte s'ha d'imprimir, caldrà revisar una prova o la conversió requerida pel sistema d'impressió; canviar el mode de color no garanteix per si sol una correspondència perceptiva exacta.
 
@@ -70,11 +83,15 @@ Si el blau d'una marca s'utilitza alhora per representar el valor més baix d'un
 
 ## Paletes segons el tipus de dada
 
+La primera decisió no és quin color agrada més, sinó quina pregunta ha de respondre la figura. Una paleta per separar tipus de recurs turístic no pot suggerir una jerarquia que les dades no tenen; una paleta per representar intensitat ha de mostrar ordre; una paleta per comparar desviacions necessita un centre amb significat; i un color d'accent només és honest si destaca una condició definida.
+
 ### Paletes qualitatives
 
 Les paletes qualitatives permeten diferenciar categories sense suggerir un ordre que les dades no tenen. Els tons han de ser distingibles, tenir una importància visual semblant quan cap categoria és prioritària i limitar-se a un nombre que continuï sent llegible al mapa i a la llegenda. Si hi ha massa categories, el problema pot no ser la paleta, sinó la necessitat d'agrupar categories o canviar la pregunta.
 
 Una paleta qualitativa pot combinar to, forma i textura quan les marques són petites o quan el document pot circular en grisos. Aquesta redundància evita que la lectura depengui d'una diferència cromàtica mínima.
+
+En un projecte turístic, una paleta qualitativa pot separar tipus de recurs, com allotjament, restauració, patrimoni, platja o oficina d'informació, sempre que cap color sembli "més alt" que un altre. També pot diferenciar mitjans de transport, cobertes del sòl o categories administratives. En canvi, no seria adequada per representar places d'allotjament per habitant, perquè aquest indicador demana una lectura ordenada.
 
 ### Paletes seqüencials
 
@@ -82,17 +99,25 @@ Les paletes seqüencials representen intensitat mitjançant una progressió perc
 
 Una rampa multicolor no esdevé seqüencial pel sol fet de recórrer molts tons. Si la lluminositat puja, baixa i torna a pujar, dos valors distants poden semblar pròxims i un canvi cromàtic brusc pot destacar un llindar que les dades no contenen. Les rampes de tipus arc de Sant Martí són un cas habitual d'aquesta manca de monotonia i no s'utilitzaran per representar una magnitud ordenada {% cite wilkeFundamentalsDataVisualization2019 matplotlibColormapReference2024 nunezOptimizingColormaps2018 %}.
 
+Els usos típics del curs són coropletes de percentatge d'habitatges d'ús turístic, places d'allotjament per 1.000 habitants, densitat de pernoctacions o proporció d'ocupació. Si la dada és un recompte absolut, cal pensar abans si convé normalitzar-la, utilitzar símbols proporcionals o explicar per què la comparació territorial continua sent justa.
+
 ### Paletes divergents
 
 Les paletes divergents mostren desviacions respecte d'un punt de referència explícit, com una mitjana, un objectiu o un valor zero amb significat analític. No s'han d'utilitzar només per obtenir més varietat cromàtica. El centre ha de tenir una interpretació territorial, i els dos costats de la paleta han de permetre comparar la magnitud de les desviacions.
 
 Quan una dada només té valors positius i no hi ha cap referència central significativa, una paleta divergent pot induir una lectura falsa: el lector pot entendre que hi ha dos fenòmens oposats quan en realitat només hi ha valors baixos i alts d'un mateix indicador.
 
+Una paleta divergent és útil per mostrar municipis per sota o per sobre de la mitjana comarcal, canvis positius i negatius respecte d'un any base, desviacions respecte d'un objectiu de sostenibilitat o diferències entre oferta i demanda quan el zero separa dues situacions interpretables. Si el centre és només el valor mig de la classificació i no una referència analítica, la paleta pot semblar més precisa del que és.
+
 ### Paletes binàries i d'accent
 
 Una paleta binària diferencia dues situacions, com presència/absència, compleix/no compleix o dins/fora. També pot destacar una categoria sobre un fons neutral. Aquest recurs és potent, però ha de respondre a una decisió clara: si el mapa destaca municipis per sobre d'un llindar, el llindar ha de tenir sentit analític i constar a la llegenda.
 
 Els accents cromàtics serveixen per conduir la mirada cap a una dada, una anotació o una conclusió. No han de crear una segona classificació implícita ni competir amb el codi principal. Una regla pràctica és que el color d'accent hauria de poder-se explicar en una frase: destaca el territori d'estudi, assenyala un valor de referència o connecta peces que parlen del mateix fenomen.
+
+En una infografia del projecte, un accent pot marcar la comarca analitzada dins de Catalunya, els municipis costaners dins d'una sèrie comarcal o els municipis que superen un llindar acordat. La resta d'elements han de quedar visibles però subordinats. Si l'accent serveix només per "fer bonic", el lector pot atribuir-li un significat que la dada no té.
+
+![Quatre exemples esquemàtics de paletes segons el tipus de dada: qualitativa per a categories de recursos, seqüencial per a quantitats relatives, divergent per a desviacions respecte d'una mitjana i binària o d'accent per a llindars]({{ site.baseurl }}/assets/img/color-cartography/palette-data-type-examples.svg "La funció de la paleta depèn de la pregunta: distingir categories, ordenar intensitats, comparar desviacions o destacar una condició definida. Figura d'elaboració pròpia, 15 d'agost de 2026."){: data-figure-width="54rem"}
 
 ::: table "Tipus de dada i paleta cromàtica"
 | Tipus de dada o decisió | Paleta adequada | Criteri principal | Risc habitual |
@@ -108,7 +133,7 @@ Els accents cromàtics serveixen per conduir la mirada cap a una dada, una anota
 
 ColorBrewer ofereix esquemes qualitatius, seqüencials i divergents pensats per a cartografia, amb advertiments sobre impressió, pantalles i deficiències de visió cromàtica {% cite harrowerColorBrewerOnline2003 brewerColorBrewerPrint2003 colorBrewer2026 %}. La interfície permet escollir el tipus de dada, el nombre de classes, el sistema de codis i diverses comprovacions, com esquemes aptes per a daltonisme, impressió o còpia en blanc i negre. El seu valor docent no és només triar colors: obliga a vincular paleta, nombre de classes i funció de lectura.
 
-![Interfície de ColorBrewer amb una paleta seqüencial BuGn de cinc classes i opcions de seguretat cromàtica, impressió i exportació de codis]({{ site.baseurl }}/assets/img/color-cartography/colorbrewer-2026-08-14.png "ColorBrewer ajuda a escollir paletes cartogràfiques segons tipus de dada, nombre de classes i condicions de reproducció. Captura pròpia de ColorBrewer 2.0, Cynthia A. Brewer i Mark Harrower, The Pennsylvania State University, 14 d'agost de 2026; reproduïda per a comentari docent."){: data-figure-width="54rem"}
+![Interfície de ColorBrewer amb una paleta seqüencial BuGn de cinc classes, mapa de prova carregat i opcions de seguretat cromàtica, context i exportació de codis]({{ site.baseurl }}/assets/img/color-cartography/colorbrewer-2026-08-14.png "ColorBrewer ajuda a escollir paletes cartogràfiques segons tipus de dada, nombre de classes i condicions de reproducció. Captura pròpia retallada de ColorBrewer 2.0, Cynthia A. Brewer i Mark Harrower, The Pennsylvania State University, 15 d'agost de 2026; reproduïda per a comentari docent."){: data-figure-width="54rem"}
 
 Adobe Color, en canvi, és una eina general de disseny que permet explorar rodes cromàtiques, comprovar contrastos, extreure paletes d'imatges i crear combinacions per a productes gràfics o identitat visual {% cite adobeColorPalettesThemes2026 %}. Pot ser útil per treballar accents, coherència visual o relacions de marca, però no substitueix un criteri cartogràfic sobre dades ordenades, nuls, classes i accessibilitat.
 
@@ -136,15 +161,21 @@ La coherència cromàtica també ajuda a separar tres llenguatges que sovint es 
 
 ## Activitat: preparar el registre cromàtic del projecte
 
-La pràctica d'aquest capítol prepararà les decisions de color que s'utilitzaran després en la cartografia temàtica i en la infografia. No es tracta d'escollir una paleta definitiva per gust, sinó de documentar opcions compatibles amb el tipus de dada i provar-les sobre peces reals.
+La pràctica d'aquest capítol prepararà les decisions de color que s'utilitzaran després en gràfics, cartografia temàtica, QGIS i infografia. No es tracta d'escollir una paleta definitiva per gust, sinó de documentar opcions compatibles amb el tipus de dada i provar-les sobre peces reals o mostres controlades. Si encara no s'ha construït el projecte QGIS, el professorat pot mostrar una demo curta amb una capa municipal per anticipar com una mateixa paleta canvia quan s'aplica a polígons, línies, etiquetes i fons.
 
 ### Inventariar funcions del color
 
 Abans d'obrir un selector cromàtic, s'identificaran les funcions del color dins del projecte: categories de gràfics, rampa per a l'indicador principal, tractament dels nuls, accents de jerarquia, fons, límits i text. Cada funció tindrà un nom i no es reutilitzarà un color amb significats incompatibles.
 
+### Capturar una mostra amb la pipeta
+
+Encara que aquesta operació no sigui una evidència puntuable, l'estudiant ha de practicar la captura d'un color a partir d'una mostra visual. La pipeta o selector de color de programes com GIMP o Inkscape permet llegir el codi d'un píxel i convertir una impressió visual en una definició transportable, com un valor HEX o RGB. L'exercici pot partir d'una mostra facilitada pel professorat, per exemple el logotip de la URV, i ha de servir per entendre que reproduir un color no consisteix a triar-ne un de semblant, sinó a registrar-ne el codi i aplicar-lo de manera coherent.
+
+El procediment serà breu. Primer s'obrirà la imatge de mostra i s'escollirà una zona plana del color, evitant vores, ombres, antialiasing i píxels semitransparents. Després es capturarà el color amb la pipeta i s'anotarà el valor HEX i, si el programa el mostra, els canals RGB. Finalment es reproduirà el mateix color en almenys dos objectes diferents, com un rectangle d'Inkscape, una cel·la d'un full de càlcul o una capa simbòlica de QGIS. Si es treballa amb un logotip institucional real, el color capturat d'una imatge web només serveix com a exercici tècnic: per a una publicació oficial caldrà consultar sempre el manual d'identitat o els fitxers originals proporcionats per la institució.
+
 ### Seleccionar i provar paletes
 
-La selecció inicial inclourà almenys una paleta seqüencial per a un indicador relatiu, una paleta qualitativa per a categories o elements de referència i un color d'accent per al territori d'estudi o per a una anotació. Les paletes es provaran sobre un gràfic del capítol 3 i sobre una mostra de mapa del projecte QGIS, encara que la classificació definitiva es treballi al capítol 8.
+La selecció inicial inclourà almenys una paleta seqüencial per a un indicador relatiu, una paleta qualitativa per a categories o elements de referència i un color d'accent per al territori d'estudi o per a una anotació. Les paletes es provaran sobre un gràfic del capítol 3 i, quan hi hagi una capa disponible, sobre una mostra de mapa del projecte QGIS. La classificació definitiva es treballarà més endavant, en la cartografia temàtica.
 
 ### Registrar codis i decisions
 
@@ -153,8 +184,9 @@ El registre cromàtic indicarà:
 1. funció de cada color dins del projecte;
 2. tipus de dada al qual s'aplica;
 3. codi HEX o RGB exacte;
-4. origen de la paleta o criteri de construcció;
-5. resultat de la prova en escala de grisos o simulació cromàtica;
-6. ajustos aplicats i motiu.
+4. origen de la paleta, mostra capturada o criteri de construcció;
+5. programa utilitzat per obtenir o comprovar el color, si escau;
+6. resultat de la prova en escala de grisos o simulació cromàtica;
+7. ajustos aplicats i motiu.
 
-La decisió cromàtica quedarà preparada quan es pugui reconstruir en un altre programa i explicar per què cada color ajuda la lectura. El capítol següent utilitzarà aquest registre per classificar i simbolitzar el mapa temàtic municipal.
+La decisió cromàtica quedarà preparada quan es pugui reconstruir en un altre programa i explicar per què cada color ajuda la lectura. Els capítols de cartografia i SIG utilitzaran aquest registre per classificar i simbolitzar el mapa temàtic municipal sense redissenyar la paleta a ull.

@@ -7,7 +7,7 @@ ref: manual-earth-spatial-data
 profiles: [unaltremanual]
 content_status: draft
 permalink: /ca/chapters/terra-dades-espacials/
-weight: 50
+weight: 60
 part: Continguts
 manual_references: true
 ---
@@ -184,7 +184,7 @@ Els models vectorials representen objectes geogràfics mitjançant geometries. U
 
 ### Geometria i atributs
 
-Cada entitat espacial combina una forma i un registre alfanumèric. Aquesta relació serà la base de les taules d'atributs i de les unions del capítol següent.
+Cada entitat espacial combina una forma i un registre alfanumèric. Aquesta relació serà la base de les taules d'atributs i de les unions del capítol de SIG.
 
 Una entitat municipal pot estar formada per una geometria multipart si inclou fragments territorials separats. També pot contenir errors geomètrics o un nivell de detall inadequat per a l'escala del mapa. La validesa de la forma, la presència d'un identificador i la data territorial són controls diferents: una geometria pot ser tècnicament vàlida i, alhora, correspondre a una delimitació antiga.
 

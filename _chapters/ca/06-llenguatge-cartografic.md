@@ -12,7 +12,7 @@ part: Continguts
 manual_references: true
 ---
 
-Un mapa no és una taula acolorida ni un gràfic col·locat sobre un territori. La posició de les entitats ve determinada per la geografia, i l'escala, la selecció i la generalització condicionen què pot mostrar-se. Aquest capítol introdueix la gramàtica pròpia del mapa abans d'entrar en el color i la cartografia temàtica. Les decisions cartogràfiques no són neutres: seleccionar, ometre, projectar, classificar i jerarquitzar condiciona el missatge que rep el lector {% cite jolyCartografia1982 monmonierHowLieMaps2018 %}.
+Un mapa no és una taula acolorida ni un gràfic col·locat sobre un territori. La posició de les entitats ve determinada per la geografia, i l'escala, la selecció i la generalització condicionen què pot mostrar-se. Aquest capítol aplica al mapa els criteris de semiologia i color treballats abans i prepara l'entrada sistemàtica a QGIS i a la cartografia temàtica. Les decisions cartogràfiques no són neutres: seleccionar, ometre, projectar, classificar i jerarquitzar condiciona el missatge que rep el lector {% cite jolyCartografia1982 monmonierHowLieMaps2018 %}.
 
 ## Què fa que una representació sigui un mapa
 
@@ -60,12 +60,23 @@ La **georeferenciació** relaciona la imatge amb un sistema de coordenades mitja
 | Fotograma vertical | Càmera orientada aproximadament al nadir | Captura individual amb perspectiva central | Fotointerpretació i fotogrametria; conserva desplaçaments per relleu i inclinació |
 | Fotograma georeferenciat | Fotograma associat a coordenades o punts de control | Se superposa aproximadament a altres capes | Localitzar i comparar; georeferenciar no equival a ortorectificar |
 | Ortoimatge | Qualsevol imatge corregida a projecció ortogonal | Posició planimètrica i escala espacial controlades | Mesurar dins de la resolució i precisió documentades; pot procedir d'un avió, un satèl·lit o un altre sensor |
+| Mosaic d'imatges de satèl·lit | Imatges de sensors orbitals processades i combinades | Cobertura territorial extensa i resolució més moderada | Observar formes, cobertes i dinàmiques ambientals; no confondre'l amb el detall d'una ortofoto aèria |
 | Ortofoto o ortofotografia | Fotografia aèria ortorectificada | Detall fotogràfic amb geometria cartogràfica | Mesurar, digitalitzar i usar com a fons; continua necessitant data, resolució, CRS i precisió |
 | Ortofotomosaic | Unió ajustada de diverses ortofotos | Cobertura contínua més gran que un fotograma | Consultar un territori extens; les peces poden correspondre a dates diferents |
 | Ortofotomapa | Ortofoto o ortofotomosaic amb topònims, xarxes, límits o símbols cartogràfics | La imatge aporta el fons i les capes afegides en faciliten l'orientació | Comunicar i navegar; cal distingir la data de la imatge de la de les capes superposades |
 :::
 
 >>>> **Una fotografia vertical no es converteix en ortofoto només perquè encaixi aproximadament sobre un mapa.** La georeferenciació pot situar alguns punts correctament mentre altres continuen desplaçats. Per interpretar una mesura cal conèixer el processament, el CRS, la resolució, la precisió i la data de captació.
+
+### Imatges de satèl·lit com a producte cartogràfic
+
+Una imatge de satèl·lit també pot funcionar com a producte cartogràfic quan ha estat corregida, georeferenciada i distribuïda amb metadades. La diferència amb una ortofoto aèria no és només la plataforma, sinó el tipus de sensor, la resolució espacial, la freqüència de revisita, les bandes espectrals i el nivell de processament. Una ortofoto permet llegir voreres, edificis, camins o parcel·les amb molt detall; un mosaic Sentinel-2 pot mostrar de manera més sintètica formes litorals, aigües, arrossars, zones urbanes, camps i grans contrastos de coberta.
+
+El delta de l'Ebre és un bon exemple perquè la forma del territori i els usos del sòl es reconeixen sense necessitat d'un zoom urbà: el riu, les badies, les barres litorals, les llacunes, la xarxa de canals i les parcel·les d'arròs formen un conjunt que es llegeix millor a escala regional. La figura següent prové d'una petició WMS a la capa `s2cloudless` d'EOxCloudless. És un mosaic sense núvols basat en dades Sentinel-2 de 2016, publicat sota CC BY 4.0, i no s'ha d'interpretar com una imatge d'última actualitat ni com una ortofoto de 25 o 50 cm {% cite eoxCloudlessUsage2026 eoxCloudlessPricing2026 copernicusSentinelDataLicence2026 %}.
+
+![Imatge Sentinel-2 cloudless del delta de l'Ebre, amb el riu, les badies, les barres litorals, arrossars i zones urbanes principals]({{ site.baseurl }}/assets/img/aerial-photography/sentinel2-cloudless-delta-ebre-eox-2016.jpg "Imatge Sentinel-2 cloudless del delta de l'Ebre obtinguda mitjançant WMS. Font: EOxCloudless, EOX IT Services GmbH; conté dades Copernicus Sentinel modificades de 2016; llicència CC BY 4.0. Retall: 0,45-0,98° E i 40,52-40,86° N; consulta i incorporació: 17 d'agost de 2026."){: data-figure-width="48rem"}
+
+La mateixa lògica es pot aplicar a QGIS o a una font Quarto del projecte: cal conservar la URL base del servei, la capa, el sistema de referència, l'extensió, la mida de sortida, el format i la data de consulta. Un WMS retorna una imatge renderitzada, no totes les bandes originals ni els valors radiomètrics necessaris per calcular índexs com NDVI. Si la pregunta demana només lectura territorial i context visual, la imatge renderitzada pot ser suficient; si demana anàlisi espectral, classificació de cobertes o mesures temporals, caldrà descarregar productes Sentinel amb el nivell de processament i les bandes adequades.
 
 ### Consultar una fototeca històrica
 
@@ -123,6 +134,167 @@ L'escala gràfica manté la relació visual quan el document es redimensiona pro
 
 Una escala verbal, com “mapa de detall municipal” o “mapa de context provincial”, pot ajudar el lector general, però no substitueix l'escala numèrica o gràfica quan s'han de comprovar distàncies. En el treball del curs, l'escala s'ha de registrar juntament amb la mida final de la peça, perquè la mateixa composició exportada a una pàgina A4 o a una diapositiva no ofereix la mateixa lectura.
 
+### Càlculs d'escala
+
+Els càlculs d'escala són una manera de comprovar si el mapa representa les magnituds amb coherència i si la composició final és viable. No són un exercici separat de la cartografia: permeten saber quina distància real correspon a una mesura sobre el paper, quina mida tindrà un element real en una pàgina, quina escala té una imatge quan es coneix una distància de referència i quants fulls a una escala més gran calen per cobrir l'extensió d'un full més general.
+
+En una escala $1:n$, una unitat mesurada al mapa representa $n$ unitats al territori. La regla només funciona si les dues magnituds estan en la mateixa unitat abans d'operar. Si $D_m$ és la distància al mapa, $D_r$ la distància real i $n$ el denominador de l'escala, les relacions bàsiques són:
+
+$$
+D_r = D_m \cdot n
+$$
+
+$$
+D_m = \frac{D_r}{n}
+$$
+
+$$
+n = \frac{D_r}{D_m}
+$$
+
+Per calcular la distància real, es planteja la proporció entre una unitat al mapa i les unitats corresponents a la realitat. Per exemple, $2\cm$ en un mapa $1:50\,000$ representen $1\km$:
+
+$$
+\frac{1\cm}{50\,000\cm} = \frac{2\cm}{X\cm}
+$$
+
+$$
+\frac{\cancel{1\cm}\cdot X\cm}{50\,000\cm}
+=
+\frac{2\cm\cdot\cancel{X\cm}}{\cancel{X\cm}}
+$$
+
+$$
+\frac{X\cm\cdot\cancel{50\,000\cm}}{\cancel{50\,000\cm}}
+=
+2\cm\cdot50\,000
+=
+100\,000\cm
+=
+1\km
+$$
+
+En sentit invers, primer cal convertir la distància real a la unitat del mapa i després aïllar $X$. Una distància màxima de $728\m$ en un camp de golf, representada a $1:30\,000$, ocuparia $2{,}43\cm$ sobre el mapa:
+
+$$
+\frac{1\cm}{30\,000\cm}
+=
+\frac{X\cm}{728\m}
+=
+\frac{X\cm}{72\,800\cm}
+$$
+
+$$
+\frac{\cancel{1\cm}\cdot72\,800\cm}{30\,000\cm}
+=
+\frac{X\cm\cdot\cancel{72\,800\cm}}{\cancel{72\,800\cm}}
+$$
+
+$$
+X\cm
+=
+\frac{72\,800\cm}{30\,000}
+=
+2{,}43\cm
+$$
+
+Quan es desconeix l'escala, es construeix la fracció amb la mesura del mapa i la mesura real expressades en la mateixa unitat. Si $40\mm$ al mapa corresponen a $200\m$ reals, la relació es redueix a $1:5\,000$:
+
+$$
+\frac{40\mm}{200\m}
+=
+\frac{4\cm}{20\,000\cm}
+=
+\frac{\cancelto{1}{4\cm/4\cm}}{20\,000\cm/4\cm}
+=
+\frac{1\cancel{\cm}}{5\,000\cancel{\cm}}
+$$
+
+La mateixa operació permet detectar captures o reproduccions redimensionades: una escala numèrica impresa deixa de ser vàlida si la imatge s'ha ampliat o reduït sense recalcular-la.
+
+Les superfícies segueixen la mateixa lògica, però amb el quadrat de l'escala. Si $A_m$ és l'àrea al mapa i $A_r$ l'àrea real, llavors:
+
+$$
+A_r = A_m \cdot n^2
+$$
+
+$$
+A_m = \frac{A_r}{n^2}
+$$
+
+A escala $1:50\,000$, $18\cms$ al mapa no es resolen multiplicant una sola vegada pel denominador, sinó elevant-lo al quadrat; el canvi de dimensió és el punt important del càlcul:
+
+$$
+\frac{1\cms}{\left(50\,000\cm\right)^2}
+=
+\frac{18\cms}{X\cms}
+$$
+
+$$
+X\cms
+=
+18\cms\cdot(50\,000)^2
+=
+45\,000\,000\,000\cms
+=
+4{,}5\squarekilometre
+$$
+
+Per passar d'una superfície real a una superfície sobre el mapa, es divideix pel quadrat del denominador. Així, $150\squarekilometre$ a $1:100\,000$ ocupen $150\cms$ al mapa:
+
+$$
+150\squarekilometre
+=
+1\,500\,000\,000\,000\cms
+$$
+
+$$
+X\cms
+=
+\frac{1\,500\,000\,000\,000\cms}{(100\,000)^2}
+=
+150\cms
+$$
+
+El nombre de fulls també depèn del quadrat de la relació entre escales. Si un full a una escala $1:n_1$ es vol cobrir amb fulls del mateix format a una escala més gran $1:n_2$, el nombre ideal de fulls és:
+
+$$
+N = \left(\frac{n_1}{n_2}\right)^2
+$$
+
+Un full $1:50\,000$ genera quatre fulls $1:25\,000$, perquè cada costat es divideix en dues parts i la superfície total queda dividida en quatre. Amb el mateix criteri, un full $1:200\,000$ genera setze fulls $1:50\,000$:
+
+$$
+\frac{200\,000^2}{50\,000^2}
+=
+\left(\frac{200\,000}{50\,000}\right)^2
+=
+4^2
+=
+16
+$$
+
+En sèries cartogràfiques oficials poden existir talls, solapaments o convencions pròpies, però el càlcul mostra la relació geomètrica bàsica.
+
+![Quatre esquemes de càlcul d'escala: distància del mapa a la realitat, distància real sobre el mapa, superfície calculada amb el quadrat del denominador i divisió d'un full en quatre fulls a escala més gran]({{ site.baseurl }}/assets/img/cartographic-language/scale-calculations.svg "Els càlculs d'escala permeten controlar distàncies, superfícies i equivalències entre fulls. Figura d'elaboració pròpia, 14 d'agost de 2026."){: data-figure-width="54rem"}
+
+::: table "Càlculs d'escala que s'han de dominar"
+| Tipus de càlcul | Operació | Resultat de control |
+| --- | --- | --- |
+| Distància real a partir del mapa | $5\cm$ a $1:50\,000$ | $5\cm\cdot50\,000=250\,000\cm=2{,}5\km$ |
+| Distància real a partir del mapa | $20\cm$ a $1:30\,000$ | $20\cm\cdot30\,000=600\,000\cm=6\,000\m$ |
+| Distància al mapa a partir de la realitat | $650\km$ a $1:1\,000\,000$ | $\frac{65\,000\,000\cm}{1\,000\,000}=65\cm$ |
+| Distància al mapa a partir de la realitat | $728\m$ a $1:30\,000$ | $\frac{72\,800\cm}{30\,000}=2{,}43\cm$ |
+| Escala desconeguda | $24\cm$ al plànol i $156\m$ reals | $\frac{24\cm}{15\,600\cm}=\frac{1}{650}$ |
+| Escala gràfica | $10\cm$ representen $10\,000\m$ | $\frac{10\cm}{1\,000\,000\cm}=\frac{1}{100\,000}$ |
+| Superfície real | $18\cms$ a $1:50\,000$ | $18\cms\cdot50\,000^2=4{,}5\squarekilometre$ |
+| Superfície al mapa | $150\squarekilometre$ a $1:100\,000$ | $\frac{1\,500\,000\,000\,000\cms}{100\,000^2}=150\cms$ |
+| Fulls equivalents | De $1:200\,000$ a $1:50\,000$ | $\left(\frac{200\,000}{50\,000}\right)^2=16$ fulls |
+| Fulls equivalents | De $1:500\,000$ a $1:25\,000$ | $\left(\frac{500\,000}{25\,000}\right)^2=400$ fulls |
+:::
+
+>>>> **No es barregen unitats dins d'una regla de tres.** Abans de calcular cal convertir metres, quilòmetres, mil·límetres o hectàrees a una unitat coherent. En distàncies es treballa amb unitats lineals; en superfícies, amb unitats quadrades. També cal recordar que les mesures calculades sobre un mapa només són fiables dins de les condicions del producte: projecció, escala, resolució, precisió i mida final.
+
 ### Seleccionar, simplificar i jerarquitzar
 
 La **generalització cartogràfica** adapta la informació a l'escala i al propòsit del mapa mitjançant selecció, simplificació, combinació, desplaçament o exageració. Generalitzar no és eliminar informació arbitràriament, sinó conservar-ne el sentit essencial a la mida prevista.
@@ -134,6 +306,8 @@ Una mateixa geometria municipal es pot observar en una composició provincial, c
 #### Decidir què es conserva
 
 La generalització pot seleccionar els elements necessaris, simplificar formes massa detallades, combinar categories, desplaçar símbols que se superposen o exagerar elements que desapareixerien. Cada operació ha de conservar la funció territorial del mapa. En el mapa de context del projecte, els municipis i la comarca són essencials; una xarxa viària exhaustiva o una ortofoto detallada no ho són.
+
+![Operacions principals de generalització cartogràfica: selecció, simplificació, agregació, desplaçament i exageració]({{ site.baseurl }}/assets/img/cartographic-language/generalization-operations.svg "Generalitzar no és només treure detalls: pot seleccionar, simplificar, agregar, desplaçar o exagerar elements perquè el mapa continuï sent llegible a l'escala i mida finals. Figura d'elaboració pròpia, 14 d'agost de 2026."){: data-figure-width="54rem"}
 
 #### Comprovar el suport final
 
@@ -163,7 +337,7 @@ Un límit municipal evident pot no necessitar una entrada de llegenda si el tít
 
 Els elements auxiliars s'inclouran quan compleixin una funció. Una fletxa del nord pot ser redundant en un mapa convencional orientat al nord i sense rotació. Una escala gràfica és útil quan cal estimar distàncies o quan el document es pot redimensionar. Cap element s'ha d'afegir només perquè aparegui entre les opcions de QGIS.
 
-La font de dades, el període o versió, l'autoria i, quan sigui rellevant, el CRS són necessaris per interpretar i revisar el producte. Cal distingir la font de les geometries de la font dels indicadors: el capítol 6 utilitza principalment la base espacial, mentre que el mapa temàtic del capítol 8 incorporarà també les dades estadístiques.
+La font de dades, el període o versió, l'autoria i, quan sigui rellevant, el CRS són necessaris per interpretar i revisar el producte. Cal distingir la font de les geometries de la font dels indicadors: aquest capítol utilitza principalment la base espacial, mentre que el mapa temàtic incorporarà també les dades estadístiques.
 
 L'orientació no és només una fletxa decorativa. El **nord geogràfic** apunta cap al pol geogràfic, el **nord de quadrícula** segueix les línies verticals del sistema projectat i el **nord magnètic** correspon a la direcció indicada per una brúixola en un lloc i moment concrets. En un mapa comarcal ordinari, aquestes diferències rarament seran decisives per a la lectura general, però convé saber que existeixen. Si es treballa amb navegació, treball de camp o cartografia tècnica, el tipus de nord i la declinació poden esdevenir rellevants.
 
@@ -171,19 +345,41 @@ Un mapa pot estar rotat per aprofitar millor el suport, seguir una costa, adapta
 
 ### Retolació
 
-La **retolació** selecciona, jerarquitza i col·loca noms i altres textos perquè identifiquin elements geogràfics sense ambigüitat. Les etiquetes no han de competir amb la variable principal. Tipografia, mida, posició i contrast formen part de la jerarquia. La qualitat del mapa depèn tant d'aquestes relacions com de la simbologia principal; per això les decisions de retolació i composició s'han de revisar en la mida final i no només dins de la interfície de QGIS {% cite brewerDesigningBetterMaps2005 %}.
+La **retolació** selecciona, jerarquitza i col·loca noms i altres textos perquè identifiquin elements geogràfics sense ambigüitat. Inclou topònims, valors puntuals, anotacions, unitats, textos de llegenda i crèdits breus. No és una capa decorativa que s'afegeix al final: forma part del llenguatge del mapa i pot confirmar o desfer la jerarquia construïda amb símbols i colors. Les etiquetes no han de competir amb la variable principal. Tipografia, mida, posició, espaiament, contrast i ús d'halo formen part de la decisió; per això la retolació s'ha de revisar en la mida final i no només dins de la interfície de QGIS {% cite brewerDesigningBetterMaps2005 %}.
+
+#### Topònims i formes oficials
+
+Els topònims són dades lingüístiques i territorials. Abans de retolar un mapa cal decidir quina forma del nom s'utilitzarà, amb quina llengua, amb quina capitalització i amb quina font de validació. En un mapa acadèmic ordinari convé respectar els nomenclàtors i les formes oficials quan existeixen. Si s'utilitza un exònim o una forma traduïda perquè és la forma habitual en el text, la decisió ha de ser coherent amb la resta del document i no pot barrejar variants sense criteri.
+
+Els noms també informen sobre el territori. Poden indicar relleu, hidrografia, vegetació, usos, història o llengua. Aquesta funció no obliga a explicar l'etimologia dins del mapa, però sí a tractar el topònim com una part rellevant de la informació. Escriure un nom incorrecte, retallar-lo sense criteri o col·locar-lo sobre una entitat veïna és un error cartogràfic, no només ortogràfic.
 
 #### Prioritat dels topònims
 
-No tots els noms tenen la mateixa funció. El nom de la comarca, els municipis del territori d'estudi i les referències externes poden formar nivells jeràrquics diferents. La prioritat s'ha de definir abans de reduir la tipografia: quan no hi ha espai, primer s'eliminen o se simplifiquen els noms secundaris.
+No tots els noms tenen la mateixa funció. El nom de la comarca, els municipis del territori d'estudi, els municipis veïns, els rius, les vies principals i les referències externes poden formar nivells jeràrquics diferents. La prioritat s'ha de definir abans de reduir la tipografia: quan no hi ha espai, primer s'eliminen o se simplifiquen els noms secundaris. Una jerarquia clara pot combinar mida, pes, estil, color i espaiament, però no ha d'utilitzar tots aquests recursos alhora.
+
+::: table "Criteris de retolació cartogràfica"
+| Element | Criteri principal | Risc habitual |
+| --- | --- | --- |
+| Punt o símbol puntual | Etiqueta pròxima, desplaçada sempre amb el mateix criteri i sense tapar el símbol | Que el lector no sàpiga a quin punt pertany el nom |
+| Línia o recorregut | Text orientat segons el sentit de la línia, amb separació suficient i repetició només quan ajuda | Fer seguir el text per corbes massa tancades o invertir-ne la lectura |
+| Àrea o municipi | Nom dins o associat clarament a l'àrea, amb mida proporcional a la jerarquia i no a la superfície | Confondre el nom amb una àrea veïna o fer-lo desaparèixer en polígons petits |
+| Element d'aigua o relleu | Estil coherent amb la convenció adoptada i contrast suficient amb el fons | Utilitzar cursiva, blau o efectes sense funció o amb poca llegibilitat |
+| Referència externa | Tractament secundari respecte del territori d'estudi | Donar més pes visual al context que al mapa principal |
+:::
+
+#### Posició, sentit i espaiament
+
+La posició de l'etiqueta ha de fer visible l'associació amb l'element. En elements puntuals, la proximitat i un desplaçament coherent resolen la relació. En elements lineals, el text ha de seguir el recorregut sense obligar a girar excessivament el cap ni trencar paraules. En àrees, el nom ha de quedar dins de l'entitat o vinculat de manera inequívoca; si l'àrea és massa petita, pot caldre una línia de crida, una etiqueta exterior o una decisió de generalització.
+
+L'espaiament també comunica escala i jerarquia. Un topònim zonal pot ocupar més espai perquè representa una àrea; un nom puntual ha de quedar més contingut. Les lletres massa separades poden semblar elegants però dificultar la lectura, especialment en pantalles petites o exportacions reduïdes. Abans d'abaixar tots els cossos, cal comprovar si hi ha massa etiquetes per a l'escala disponible.
 
 #### Conflictes i ambigüitats
 
-Una etiqueta no ha de tapar una altra, sortir de la seva entitat sense una relació clara ni confondre's amb un municipi veí. La posició, l'halo, el contrast i les línies de crida poden resoldre casos concrets, però una acumulació de recursos correctius sol indicar que hi ha massa noms per a l'escala disponible.
+Una etiqueta no ha de tapar una altra, sortir de la seva entitat sense una relació clara ni confondre's amb un municipi veí. La posició, l'halo, el contrast i les línies de crida poden resoldre casos concrets, però una acumulació de recursos correctius sol indicar que hi ha massa noms per a l'escala disponible. El mapa de context del projecte no necessita demostrar que QGIS pot etiquetar tots els objectes: necessita mostrar els noms que permeten entendre el territori d'estudi.
 
 #### Comparació abans i després
 
-La retolació es revisarà mitjançant una parella construïda sobre el territori d'estudi. La primera versió conservarà una configuració automàtica; la segona aplicarà prioritats, resolució de conflictes i jerarquia. La justificació identificarà canvis observables i no es limitarà a afirmar que el resultat és més atractiu.
+La retolació es revisarà mitjançant una parella construïda sobre el territori d'estudi. La primera versió conservarà una configuració automàtica; la segona aplicarà prioritats, resolució de conflictes, formes oficials i jerarquia. La justificació identificarà canvis observables i no es limitarà a afirmar que el resultat és més atractiu. Una bona revisió pot explicar quins noms s'han mantingut, quins s'han eliminat, quins s'han desplaçat i quines convencions tipogràfiques indiquen cada nivell.
 
 ## Jerarquia i composició
 
@@ -205,7 +401,7 @@ La pràctica construirà el **mapa de context** de la miniinfografia, encara sen
 
 ### Dades i projecte de partida
 
-Es continuarà el mateix projecte QGIS dels capítols 4 i 5. La capa municipal, el CRS, les rutes i els codis ja validats no s'han de substituir per una descàrrega nova sense documentar. Abans de maquetar es fixaran la mida del mapa exportat, l'orientació de la pàgina i l'espai que la peça ocuparà a la miniinfografia.
+Es continuarà el mateix projecte QGIS iniciat en treballar les dades espacials, encara que el bloc sistemàtic de SIG arribi després. La capa municipal, el CRS, les rutes i els codis ja validats no s'han de substituir per una descàrrega nova sense documentar. Abans de maquetar es fixaran la mida del mapa exportat, l'orientació de la pàgina i l'espai que la peça ocuparà a la miniinfografia.
 
 El procediment general serà aquest:
 

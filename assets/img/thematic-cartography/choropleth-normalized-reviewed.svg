@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 520" role="img" aria-labelledby="title desc">
+  <title id="title">Coropleta revisada amb indicador normalitzat i absències separades</title>
+  <desc id="desc">Mapa esquemàtic de municipis on una coropleta representa places turístiques per mil residents, separa les absències i mostra una llegenda amb unitat comparable.</desc>
+  <defs>
+    <pattern id="hatch" width="8" height="8" patternUnits="userSpaceOnUse">
+      <rect width="8" height="8" fill="#f6f3ea"/>
+      <path d="M-2 8L8 -2M0 10L10 0" stroke="#888" stroke-width="1.2"/>
+    </pattern>
+    <style>
+      .bg{fill:#fffdf8}.panel{fill:#fff;stroke:#d8d2c5;stroke-width:1.5}.sea{fill:#dcecf3}.muni{stroke:#fffdf8;stroke-width:4;stroke-linejoin:round}.txt{font-family:Arial,Helvetica,sans-serif;fill:#2b2b2b}.title{font-size:25px;font-weight:700}.small{font-size:14px}.label{font-size:13px;fill:#555}.badge{fill:#21643a}.white{fill:#fff}.ok{fill:#21643a}.c1{fill:#eef7f4}.c2{fill:#bfe2d7}.c3{fill:#6db7a5}.c4{fill:#1d7466}.nodata{fill:url(#hatch)}.outline{fill:none;stroke:#6e6e6e;stroke-width:1.3}
+    </style>
+  </defs>
+  <rect class="bg" width="760" height="520"/>
+  <rect x="34" y="30" width="94" height="34" rx="17" class="badge"/>
+  <text x="81" y="53" text-anchor="middle" class="txt white" font-size="16" font-weight="700">REVISAT</text>
+  <text x="164" y="53" class="txt title">Una coropleta amb indicador comparable</text>
+  <text x="64" y="88" class="txt small">La mateixa pregunta es formula com a intensitat i els valors absents queden fora de l'escala.</text>
+
+  <g transform="translate(58 116)">
+    <rect class="panel" x="0" y="0" width="470" height="340" rx="10"/>
+    <path class="sea" d="M390,18 C455,68 475,142 438,214 C462,260 448,306 410,325 L470,325 L470,0 L390,0 Z"/>
+    <polygon class="muni c3" points="58,42 186,34 196,128 68,136"/>
+    <polygon class="muni c1" points="186,34 318,52 304,148 196,128"/>
+    <polygon class="muni c3" points="318,52 402,40 422,142 304,148"/>
+    <polygon class="muni c2" points="68,136 196,128 205,226 54,236"/>
+    <polygon class="muni c4" points="196,128 304,148 292,244 205,226"/>
+    <polygon class="muni c2" points="304,148 422,142 404,248 292,244"/>
+    <polygon class="muni c1" points="54,236 205,226 214,314 48,322"/>
+    <polygon class="muni nodata" points="205,226 292,244 306,326 214,314"/>
+    <polygon class="muni c3" points="292,244 404,248 424,320 306,326"/>
+    <path class="outline" d="M58,42 186,34 318,52 402,40 422,142 404,248 424,320 306,326 214,314 48,322 54,236 68,136 Z"/>
+    <text x="164" y="199" class="txt label" font-weight="700">alta intensitat</text>
+    <text x="214" y="289" class="txt label">sense dades</text>
+  </g>
+
+  <g transform="translate(555 128)">
+    <text x="0" y="0" class="txt small" font-weight="700">Places per 1.000 residents</text>
+    <rect x="0" y="22" width="28" height="18" class="c1"/><text x="40" y="36" class="txt label">0 - 50</text>
+    <rect x="0" y="52" width="28" height="18" class="c2"/><text x="40" y="66" class="txt label">51 - 150</text>
+    <rect x="0" y="82" width="28" height="18" class="c3"/><text x="40" y="96" class="txt label">151 - 300</text>
+    <rect x="0" y="112" width="28" height="18" class="c4"/><text x="40" y="126" class="txt label">més de 300</text>
+    <rect x="0" y="148" width="28" height="18" class="nodata"/><text x="40" y="162" class="txt label">sense dades</text>
+    <text x="0" y="218" class="txt ok" font-size="15" font-weight="700">La llegenda explica</text>
+    <text x="0" y="240" class="txt ok" font-size="15" font-weight="700">denominador, unitat</text>
+    <text x="0" y="262" class="txt ok" font-size="15" font-weight="700">i absències.</text>
+  </g>
+
+  <text x="62" y="490" class="txt label">Dades esquemàtiques. Figura d'elaboració pròpia, 15 d'agost de 2026.</text>
+</svg>

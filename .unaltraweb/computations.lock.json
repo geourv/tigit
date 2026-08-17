@@ -1,0 +1,47 @@
+{
+  "records": {
+    "assets/quarto/color-cartography/palette-reference-swatches.qmd": {
+      "dependencies": [
+        {
+          "path": "assets/quarto/color-cartography/palette-reference-swatches.qmd",
+          "sha256": "1f9d650516a41222a8fc8e62f27754b90a53ec19b715ca0a2583e38d809a16ae"
+        },
+        {
+          "path": "Dockerfile.compute-python",
+          "sha256": "fde14d6d24d14f2ad0adc23caac835506e35a4fe3acce3a505f9228391351b74"
+        },
+        {
+          "path": "requirements-compute.txt",
+          "sha256": "d93c6c5c1ed8278b7a58a7f6c1633feac56ff1cbd371a09d142fa3e89fbeddc4"
+        },
+        {
+          "path": ".unaltraweb/computations.yml",
+          "sha256": "301b44c41e8a0e500dd5ffda7410b4221a63711479a41a06eb98b5aae8abd0b3"
+        }
+      ],
+      "engine": "python",
+      "fingerprint": "2381817a836fc86c8c74c6871b33ab6be3316a909f60f3ba062c9528bf1cda2a",
+      "image": {
+        "engine": "python",
+        "environment": "local",
+        "image": "tigit-compute-python:local",
+        "source": "environment:COMPUTE_PYTHON_IMAGE"
+      },
+      "image_identity": {
+        "available": "true",
+        "digest": "",
+        "id": "sha256:719b6ad00f89fabd01fd1fe543bb80c76e8bcb3b537bd8bb66342e3c900c015c"
+      },
+      "mode": "figure",
+      "outputs": [
+        {
+          "path": "assets/img/color-cartography/palette-reference-swatches.svg",
+          "sha256": "32da2b217fe5fef5f30920a1ce0a92c246b2fce0345474f9dd08f09231c0c289",
+          "size": 8370
+        }
+      ],
+      "rendered_at": "2026-08-15T11:57:16+00:00"
+    }
+  },
+  "version": 1
+}

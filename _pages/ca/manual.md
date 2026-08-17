@@ -2,7 +2,7 @@
 layout: manual-home
 title: Tècniques d'informació geogràfica i turística
 description: >
-  L'assignatura combina la representació gràfica de dades, la cartografia temàtica i l'ús bàsic dels sistemes d'informació geogràfica. Es treballarà amb dades oficials i obertes relacionades amb població, allotjament turístic, límits administratius i altres variables territorials d'interès. A partir d'aquestes fonts, l'estudiant aprendrà a construir indicadors simples que permetin descriure la distribució espacial de l'activitat turística, la seva intensitat relativa i la seva relació amb la població resident i amb el territori.
+  L'assignatura combina la preparació de dades, la visualització, el color, la cartografia i l'ús bàsic dels sistemes d'informació geogràfica. Es treballarà amb dades oficials i obertes relacionades amb població, allotjament turístic, límits administratius i altres variables territorials d'interès. A partir d'aquestes fonts, l'estudiant aprendrà a construir indicadors simples que permetin descriure la distribució espacial de l'activitat turística, la seva intensitat relativa i la seva relació amb la població resident i amb el territori.
 lang: ca
 ref: home
 profiles: [unaltremanual]
@@ -23,7 +23,11 @@ La idea central és senzilla. L'assignatura no tracta només d'aprendre a fer gr
 
 ## Recorregut de l'assignatura
 
-El curs parteix de dades territorials i turístiques i acaba amb una interpretació visual argumentada. Entre aquests dos extrems caldrà localitzar fonts fiables, preparar taules, construir indicadors, elaborar gràfics, entendre les dades espacials, unir informació a QGIS, dissenyar mapes temàtics i integrar els resultats en una infografia.
+El curs parteix de dades territorials i turístiques i acaba amb una interpretació visual argumentada. Entre aquests dos extrems caldrà localitzar fonts fiables, preparar taules, construir indicadors, elaborar gràfics, entendre el color, llegir les bases cartogràfiques, treballar amb QGIS, dissenyar mapes temàtics i integrar els resultats en una infografia.
+
+L'ordre del manual no separa teoria i laboratori en blocs independents. Primer es construeix la base de dades i indicadors; després s'estudia com es codifiquen visualment les dades i per què el color és una decisió transversal que afecta gràfics, mapes, accessibilitat i composició. A continuació s'introdueixen la Terra, les coordenades i el llenguatge cartogràfic. QGIS pot aparèixer abans com a demostració curta per veure una capa, una escala o una composició, però el bloc sistemàtic de SIG arriba quan l'estudiant ja sap què vol representar i quins errors ha d'evitar. La cartografia temàtica aplicada queda després de la integració SIG perquè necessita unir dades i geometries abans de classificar i simbolitzar.
+
+>>>> **Figures i drets d'ús.** El manual és una versió de treball. Algunes figures provenen de recursos oberts o de captures documentades i incorporen autoria, font i condicions d'ús al peu; altres són esquemes propis construïts per substituir materials antics de les diapositives. Quan una imatge de suport encara no ofereix garanties suficients de font, llicència o adequació, no s'ha d'entendre com a material reutilitzable fora del context docent fins que el peu n'indiqui explícitament l'origen i les condicions. Aquesta cautela no canvia el criteri de lectura: cada figura s'ha d'interpretar pel concepte que ajuda a entendre, no com una decoració ni com una autorització genèrica de reproducció.
 
 ### Un cicle de descobriment de coneixement territorial
 
@@ -43,8 +47,9 @@ El manual desenvoluparà una diagnosi de **població i habitatge d'una comarca t
 | Fonts i preparació | Un llibre amb dades originals importades, diccionari, comprovacions i una fila per municipi |
 | Indicadors | Percentatges, ràtios i densitats calculats al mateix llibre |
 | Gràfics | Sèrie de figures editables i selecció de dues o tres exportacions vectorials |
-| Dades espacials i SIG | Límits municipals documentats i unió controlada amb la taula del llibre |
-| Llenguatge cartogràfic | Mapa de localització de la comarca i base municipal llegible |
+| Color | Registre cromàtic amb funcions, paletes, codis i proves d'accessibilitat |
+| Dades espacials i llenguatge cartogràfic | Límits municipals documentats, escala, retolació i mapa de localització llegible |
+| SIG | Projecte QGIS amb capes, taula importada, unió controlada i comprovacions |
 | Cartografia temàtica | Mapa d'un indicador normalitzat, amb classificació i paleta justificades |
 | Síntesi | Miniinfografia, fitxers de treball i explicació oral quan correspongui |
 :::

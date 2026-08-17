@@ -1,0 +1,5 @@
+ARG BASE_IMAGE=ghcr.io/dosquartsdedocs/unaltraweb-compute-r@sha256:928ffb93f221e09e8b929157dee473b838e061915a2eb67224e4124b85f81837
+FROM ${BASE_IMAGE}
+
+COPY requirements-compute.R /tmp/requirements-compute.R
+RUN Rscript /tmp/requirements-compute.R

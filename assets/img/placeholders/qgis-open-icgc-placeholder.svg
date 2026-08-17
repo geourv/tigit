@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">QGIS Open ICGC screenshot placeholder</title>
+  <desc id="desc">Placeholder for a QGIS screenshot showing the Open ICGC plugin, background maps and administrative limits.</desc>
+  <rect width="960" height="540" fill="#eef4f0"/>
+  <rect x="56" y="48" width="848" height="444" rx="12" fill="#ffffff" stroke="#b8c8be" stroke-width="3"/>
+  <rect x="56" y="48" width="848" height="48" rx="12" fill="#2d4036"/>
+  <circle cx="88" cy="72" r="7" fill="#f07167"/>
+  <circle cx="112" cy="72" r="7" fill="#ffd166"/>
+  <circle cx="136" cy="72" r="7" fill="#63c785"/>
+  <rect x="84" y="120" width="792" height="48" rx="6" fill="#f6f8f5" stroke="#d7dfd8"/>
+  <rect x="104" y="134" width="82" height="20" rx="5" fill="#4b8a66"/>
+  <rect x="200" y="134" width="82" height="20" rx="5" fill="#7aa37b"/>
+  <rect x="296" y="134" width="82" height="20" rx="5" fill="#a0bf9f"/>
+  <text x="422" y="151" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" fill="#2d4036">Open ICGC</text>
+  <rect x="84" y="194" width="230" height="256" rx="8" fill="#f8fafc" stroke="#d7dfd8"/>
+  <text x="112" y="232" font-family="DejaVu Sans, Arial, sans-serif" font-size="24" fill="#2d4036">Capes ICGC</text>
+  <rect x="112" y="258" width="152" height="14" rx="7" fill="#4b8a66"/>
+  <rect x="112" y="292" width="174" height="14" rx="7" fill="#9db7a5"/>
+  <rect x="112" y="326" width="128" height="14" rx="7" fill="#c8d5ca"/>
+  <rect x="112" y="360" width="156" height="14" rx="7" fill="#c8d5ca"/>
+  <rect x="342" y="194" width="534" height="256" rx="8" fill="#eaf3ed" stroke="#a9c7b1"/>
+  <path d="M386 396c58-72 120-96 188-70 52 20 96 10 132-30 46-52 86-60 126-24v124z" fill="#c8dfce"/>
+  <path d="M386 396c64-42 124-46 180-12 64 38 124 28 180-30 34-36 62-46 86-30" fill="none" stroke="#4b8a66" stroke-width="7"/>
+  <circle cx="684" cy="276" r="42" fill="#ffd166"/>
+  <text x="480" y="472" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="22" fill="#52645a">Fons de mapa, ortofoto i limits administratius</text>
+</svg>

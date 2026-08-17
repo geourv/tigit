@@ -52,14 +52,14 @@
     <text x="30" y="42" class="label">Rangs habituals en selectors digitals</text>
     <text x="30" y="69" class="small">els limits numerics han de quedar documentats al projecte</text>
     <rect x="30" y="100" width="460" height="50" class="row"/>
-    <text x="48" y="130" class="label">RGB</text><text x="170" y="130" class="mono">R,G,B = 0..255</text><text x="350" y="130" class="small">llum</text>
-    <text x="48" y="170" class="label">HEX</text><text x="170" y="170" class="mono">#000000..#FFFFFF</text><text x="350" y="170" class="small">RGB compactat</text>
+    <text x="48" y="130" class="label">RGB</text><text x="170" y="130" class="mono">R,G,B = 0..255</text><text x="410" y="130" class="small">llum</text>
+    <text x="48" y="170" class="label">HEX</text><text x="170" y="170" class="mono">#000000..#FFFFFF</text><text x="410" y="170" class="small">RGB</text>
     <rect x="30" y="190" width="460" height="50" class="row"/>
-    <text x="48" y="220" class="label">CMYK</text><text x="170" y="220" class="mono">C,M,Y,K = 0..100%</text><text x="350" y="220" class="small">tinta</text>
-    <text x="48" y="260" class="label">RYB</text><text x="170" y="260" class="mono">sense rang unic</text><text x="350" y="260" class="small">tradicio artistica</text>
+    <text x="48" y="220" class="label">CMYK</text><text x="170" y="220" class="mono">C,M,Y,K = 0..100%</text><text x="410" y="220" class="small">tinta</text>
+    <text x="48" y="260" class="label">RYB</text><text x="170" y="260" class="mono">sense rang unic</text><text x="410" y="260" class="small">art</text>
     <rect x="30" y="280" width="460" height="50" class="row"/>
-    <text x="48" y="310" class="label">HSL</text><text x="170" y="310" class="mono">H=0..360; S,L=0..100%</text><text x="350" y="310" class="small">lluminositat</text>
-    <text x="48" y="350" class="label">HSV</text><text x="170" y="350" class="mono">H=0..360; S,V=0..100%</text><text x="350" y="350" class="small">valor maxim</text>
+    <text x="48" y="310" class="label">HSL</text><text x="170" y="310" class="mono">H=0..360; S,L=0..100%</text><text x="410" y="310" class="small">L</text>
+    <text x="48" y="350" class="label">HSV</text><text x="170" y="350" class="mono">H=0..360; S,V=0..100%</text><text x="410" y="350" class="small">V</text>
     <line x1="48" y1="392" x2="460" y2="392" stroke="#d5dde2"/>
     <text x="48" y="430" class="small">Exemple RGB:</text><text x="170" y="430" class="mono">#226699 = R34 G102 B153</text>
     <rect x="410" y="403" width="48" height="36" rx="7" fill="#226699"/>

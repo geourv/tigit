@@ -38,6 +38,20 @@ La miniinfografia comarcal integrarà, com a orientació estable del manual:
 
 Cada peça seleccionada ha de complir una funció. Si retirar una figura no debilita l'argument, probablement era redundant. Si una afirmació no es pot relacionar amb una dada, un mapa, un gràfic o una font preservada, no està prou sostinguda per aparèixer com a conclusió.
 
+>>>> **Seleccionar també pot distorsionar.** Una infografia pot ser formalment correcta i, alhora, orientar massa la lectura si només mostra les peces que reforcen una història prèvia. La lectura crítica de Jones i Monmonier ajuda a revisar aquesta selecció: quines dades han quedat fora, quina escala o classificació s'ha triat, quines absències es veuen i quin límit hauria d'acompanyar el resultat {% cite jonesHowLieCharts2018 monmonierHowLieMaps2018 %}.
+
+![Infografia turística antiga amb moltes xifres, gràfics, icones i blocs visuals, utilitzada com a material d'auditoria per revisar focus i jerarquia]({{ site.baseurl }}/assets/img/legacy/infographics-tourism.png "Una infografia carregada pot contenir moltes dades i, alhora, dificultar la pregunta principal, l'ordre de lectura, la unitat de cada valor i la relació entre peces. Imatge procedent de les diapositives antigues del curs; font, autoria i llicència pendents de verificació. Llicència: Referencia pendiente."){: data-figure-width="48rem"}
+
+Una auditoria d'una peça densa comença per preguntar què recordaria el lector després de trenta segons. Si la resposta és només una impressió general, però no una relació territorial concreta, la composició encara no fa una síntesi. La densitat visual pot ser útil quan el document funciona com a consulta, però la miniinfografia del curs ha de prioritzar una pregunta i unes poques evidències. La resta del projecte continuarà existint als fitxers de treball i al `README.md`; no cal que tot aparegui a la pàgina final.
+
+Un exemple més focalitzat és la gràfica sobre animals sacrificats al món publicada al *Meat Atlas 2014* {% cite chemnitzBechevaMeatAtlas2014 %}. La peça no tracta un cas turístic, però és útil per al capítol perquè mostra com una infografia pot combinar mapa, cartodiagrama, símbols proporcionals, figures icòniques i text curt per conduir una lectura. Les dades de FAOSTAT de 2011 proporcionen la traçabilitat estadística; el disseny, en canvi, construeix una història visual sobre l'escala desigual del fenomen.
+
+![Infografia del Meat Atlas amb cercles proporcionals, siluetes d'animals, colors categòrics, barres verticals i mapes petits sobre animals sacrificats al món segons FAOSTAT 2011]({{ site.baseurl }}/assets/img/infographics/animals-slaughtered-worldwide-meat-atlas-2014.png "Bartz/Stockmar organitzen dades FAOSTAT de 2011 amb un cartodiagrama compost: les bombolles donen ordre de magnitud global, els mapes petits localitzen països principals i les formes i colors separen categories. Font estadística: FAOSTAT. Gràfica: Bartz/Stockmar, Meat Atlas 2014, p. 15, Heinrich Böll Foundation, Friends of the Earth Europe, BUND i Le Monde diplomatique, CC BY-SA 3.0; fitxer incorporat sense modificacions."){: data-figure-width="48rem"}
+
+La força de la peça no depèn només de representar quantitats. Els cercles i les xifres grans fixen l'ordre de magnitud mundial, mentre que els mapes petits desplacen la lectura cap als països amb més pes en cada grup. El color actua sobretot com a codi categòric i, en alguns casos, associatiu; les siluetes dels animals reforcen la identificació quan la llegenda queda lluny. També és un bon exemple per discutir límits: la grandària dels cercles s'ha de llegir amb prudència si l'escala de mida no és explícita, i el relat visual ha de continuar distingint entre dada, selecció i interpretació.
+
+La selecció no consisteix a retallar dades fins que la pàgina respiri, sinó a assignar una funció a cada element. Una mètrica de capçalera dona ordre de magnitud; un mapa mostra patró espacial; un gràfic ordenat permet comparar municipis; una nota explica el límit de l'indicador; i les fonts permeten reconstruir el resultat. Quan dues peces fan la mateixa feina, se n'ha de conservar una o explicar per què la redundància ajuda la lectura. Quan una peça crida més l'atenció que el resultat principal, s'ha de redimensionar, simplificar o retirar.
+
 ### Pregunta, evidència i límit
 
 La síntesi es pot organitzar mitjançant tres elements. La **pregunta** delimita el fenomen i el territori; l'**evidència** mostra el patró principal amb indicadors, figures i mapes; i el **límit** indica què no es pot concloure amb aquestes dades. Aquesta estructura evita tant l'acumulació de peces sense missatge com una conclusió més contundent que els resultats.
@@ -51,6 +65,8 @@ Per exemple, el percentatge d'habitatge no principal pot mostrar contrastos muni
 La **jerarquia visual** organitza contrastos, posicions, mides i espais per indicar l'ordre de lectura i la importància relativa dels elements. El títol ha de formular el tema amb precisió i ocupar un nivell coherent amb aquesta funció. Una entrada breu situa la pregunta i la conclusió interpreta el patró sense repetir totes les xifres. Títols genèrics com «Anàlisi del Tarragonès» no indiquen què s'estudia; un títol informatiu identifica la relació entre població, habitatge, municipis i període.
 
 La conclusió ha de destacar una o dues relacions sostingudes per les peces visibles. No és un resum de totes les operacions realitzades ni una enumeració de programes. Les decisions tècniques que afecten la lectura s'expliquen en notes o en la documentació del projecte, mentre que el cos principal manté el fil territorial.
+
+>>>> **El títol no ha d'afirmar més que l'evidència.** Una frase com «el turisme buida els municipis interiors» exigiria dades sobre turisme, buidatge residencial, període i relació causal. Si la peça només mostra habitatge no principal i població resident, el títol ha de formular una lectura més prudent i verificable.
 
 ### Relació entre mapa, gràfic i text
 
@@ -126,7 +142,7 @@ La tipografia es comprovarà a la mida real del document. Reduir les fonts per e
 
 ### Color i coherència
 
-La paleta definida als capítols 7 i 8 s'aplicarà de manera consistent. El disseny general no ha d'alterar el significat dels colors del mapa o dels gràfics. Els colors d'accent s'utilitzaran per reforçar la jerarquia, no per competir amb la codificació quantitativa.
+La paleta definida als capítols de color i cartografia temàtica s'aplicarà de manera consistent. El disseny general no ha d'alterar el significat dels colors del mapa o dels gràfics. Els colors d'accent s'utilitzaran per reforçar la jerarquia, no per competir amb la codificació quantitativa.
 
 Cap informació essencial dependrà només del color. Les etiquetes, la posició, les formes o els patrons poden aportar redundància quan sigui necessària, i el contrast entre text i fons s'ha de revisar a la mida i al suport finals.
 
@@ -184,6 +200,8 @@ Cada projecte conservarà una versió intermèdia i la contrastarà amb la versi
 | Focus | Es pot resumir la pregunta principal en una frase? |
 | Coherència | Mapa, gràfic i text parlen del mateix territori, període i fenomen? |
 | Jerarquia | El lector sap per on començar i què és secundari? |
+| Selecció | Les peces descartades no canviarien la conclusió principal? |
+| Afirmació | Cada títol o conclusió es pot relacionar amb una evidència visible? |
 | Integritat | Les escales, unitats i classificacions permeten una lectura honesta? |
 | Traçabilitat | Es poden identificar fonts, càlculs i fitxers de treball? |
 | Llegibilitat | El document funciona a la mida i al suport de lliurament? |

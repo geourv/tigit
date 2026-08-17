@@ -1,0 +1,23 @@
+version: 1
+enabled: true
+source_roots:
+  - _chapters
+  - assets/quarto
+generated_assets_root: assets/img/generated
+engines:
+  python:
+    image: ghcr.io/dosquartsdedocs/unaltraweb-compute-python@sha256:18cb269811bd4005800382da25a480ec2bca7eac8d0501ad1ef36bad1c0f8cd9
+    dockerfile: Dockerfile.compute-python
+    context: .
+    base_image: ghcr.io/dosquartsdedocs/unaltraweb-compute-python@sha256:18cb269811bd4005800382da25a480ec2bca7eac8d0501ad1ef36bad1c0f8cd9
+    local_image: tigit-compute-python:local
+    lockfiles:
+      - requirements-compute.txt
+  r:
+    image: ghcr.io/dosquartsdedocs/unaltraweb-compute-r@sha256:928ffb93f221e09e8b929157dee473b838e061915a2eb67224e4124b85f81837
+    dockerfile: Dockerfile.compute-r
+    context: .
+    base_image: ghcr.io/dosquartsdedocs/unaltraweb-compute-r@sha256:928ffb93f221e09e8b929157dee473b838e061915a2eb67224e4124b85f81837
+    local_image: tigit-compute-r:local
+    lockfiles:
+      - requirements-compute.R

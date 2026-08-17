@@ -1,0 +1,16 @@
+erDiagram
+  MUNICIPI ||--o{ INDICADOR : registra
+  FONT ||--o{ INDICADOR : documenta
+  MUNICIPI {
+    string codi
+    string nom
+  }
+  INDICADOR {
+    string variable
+    number valor
+    string any
+  }
+  FONT {
+    string productor
+    string url
+  }

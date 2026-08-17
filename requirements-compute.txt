@@ -1,0 +1,4 @@
+# Project-specific Python packages for TIGIT manual computations.
+# The base image already includes Quarto, Jupyter, NumPy, pandas, Matplotlib,
+# GeoPandas, and common geospatial libraries.
+# Add pinned packages here when a figure source needs them.

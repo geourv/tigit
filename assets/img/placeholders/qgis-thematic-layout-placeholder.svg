@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">QGIS thematic maps and layout screenshot placeholder</title>
+  <desc id="desc">Placeholder for QGIS screenshots about graduated colors, proportional symbols and print layouts with a reference map.</desc>
+  <rect width="960" height="540" fill="#f6f2ee"/>
+  <rect x="58" y="48" width="844" height="444" rx="12" fill="#ffffff" stroke="#d9cfc4" stroke-width="3"/>
+  <rect x="58" y="48" width="844" height="48" rx="12" fill="#40362d"/>
+  <circle cx="90" cy="72" r="7" fill="#ff7a7a"/>
+  <circle cx="114" cy="72" r="7" fill="#ffd166"/>
+  <circle cx="138" cy="72" r="7" fill="#64d68a"/>
+  <rect x="88" y="122" width="242" height="310" rx="8" fill="#fff8ef" stroke="#e5cfae"/>
+  <text x="209" y="162" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" fill="#40362d">Coropleta</text>
+  <path d="M134 356h62v-54h58v54h36v46H134z" fill="#f7d9a8" stroke="#9c6b32" stroke-width="4"/>
+  <path d="M154 300h58v-54h78v56h-36v54h-58v-54h-42z" fill="#d77a2d" opacity=".7" stroke="#9c6b32" stroke-width="4"/>
+  <rect x="358" y="122" width="242" height="310" rx="8" fill="#eef6ff" stroke="#b4cbe8"/>
+  <text x="479" y="162" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" fill="#40362d">Simbols</text>
+  <path d="M402 368c46-64 96-80 150-48v82H402z" fill="#c7d9ef"/>
+  <circle cx="430" cy="260" r="16" fill="#2a5db0" opacity=".72"/>
+  <circle cx="498" cy="286" r="34" fill="#2a5db0" opacity=".72"/>
+  <circle cx="548" cy="236" r="24" fill="#2a5db0" opacity=".72"/>
+  <rect x="628" y="122" width="244" height="310" rx="8" fill="#f8fafc" stroke="#d6dbe3"/>
+  <text x="750" y="162" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" fill="#40362d">Layout</text>
+  <rect x="666" y="194" width="134" height="104" fill="#e6edf5" stroke="#8797a8" stroke-width="4"/>
+  <rect x="802" y="194" width="42" height="42" fill="#fff8ef" stroke="#c9a66b" stroke-width="3"/>
+  <rect x="666" y="322" width="178" height="18" rx="9" fill="#8aa0b6"/>
+  <rect x="666" y="354" width="126" height="14" rx="7" fill="#c2ccd8"/>
+  <text x="480" y="472" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="22" fill="#6b5a49">Mapa tematic, simbols proporcionals i mapa de referencia</text>
+</svg>

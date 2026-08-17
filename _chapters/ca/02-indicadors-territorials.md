@@ -90,6 +90,15 @@ Les pernoctacions serveixen per construir diverses lectures turístiques. El num
 
 Cap d'aquestes mesures descriu per si sola la sostenibilitat, la rendibilitat o el benestar de la població. Juntes poden mostrar volum, intensitat, concentració, dependència de mercats i estacionalitat, i orientar quines dimensions econòmiques, socials o ambientals cal investigar després.
 
+::: subfigures a+b "Dues lectures turístiques que convé separar abans de calcular indicadors nous: capacitat d'allotjament i pernoctacions registrades. Imatges procedents de les diapositives antigues del curs; font i autoria pendents de verificació. Llicència: Referencia pendiente."
+![Gràfic antic sobre establiments i places turístiques a Catalunya, útil per distingir capacitat i unitat d'oferta]({{ site.baseurl }}/assets/img/legacy/chart-tourist-establishments-beds-catalonia.png "La capacitat d'allotjament pot llegir-se com a establiments, habitacions o places; cada unitat respon una pregunta diferent")
+![Gràfic antic sobre pernoctacions turístiques a Catalunya, útil per distingir demanda registrada, període i possible estacionalitat]({{ site.baseurl }}/assets/img/legacy/chart-tourist-overnight-stays-catalonia.png "Les pernoctacions registrades descriuen demanda allotjada, no tota la presència turística ni totes les visites")
+:::
+
+La lectura conjunta d'oferta i demanda evita una confusió habitual. Les places d'allotjament indiquen capacitat disponible o autoritzada, mentre que les pernoctacions indiquen ús registrat durant un període. Dividir places per població resident construeix una mesura de pressió potencial de l'oferta; dividir pernoctacions per població resident construeix una intensitat de demanda; dividir pernoctacions per places obertes s'acosta a l'ocupació. Els tres càlculs poden ser correctes, però no són equivalents i no s'han de presentar amb el mateix nom.
+
+En una destinació litoral, aquesta diferència és especialment rellevant perquè el volum anual pot ocultar una concentració temporal molt forta. Un municipi pot tenir moltes places però una ocupació baixa fora de temporada, o poques places hoteleres i una presència residencial estacional que no apareix a les enquestes d'allotjament. Per això el projecte comarcal ha de conservar numeradors, denominadors i períodes abans d'escollir la fórmula final: el denominador no és un detall tècnic, sinó la manera d'indicar respecte de què es considera gran o petit el fenomen.
+
 ### Què aporta un quadre de comandament
 
 Un *dashboard* o quadre de comandament reuneix indicadors, filtres i representacions per facilitar una consulta recurrent. [Dataestur](https://www.dataestur.es/) integra informació de FRONTUR, EGATUR, enquestes d'ocupació, transport, ocupació laboral, rendibilitat hotelera i fonts ambientals. El [quadre de dades d'UN Tourism](https://www.unwto.org/tourism-data/un-tourism-tourism-dashboard) presenta arribades, ingressos, contribució al PIB, estacionalitat i altres mesures internacionals.
@@ -205,6 +214,8 @@ El factor d'escala facilita la comunicació. Una proporció es pot expressar com
 Els valors relatius faciliten comparacions entre territoris de mides diferents, però poden destacar bases molt petites. Un municipi amb pocs habitatges pot presentar un percentatge molt alt per una diferència de pocs casos. Per això convé conservar el numerador, el denominador i l'indicador, i llegir conjuntament volum i intensitat.
 
 El mateix principi s'aplica als casos extrems. Una densitat alta pot descriure una ciutat compacta, i una ràtio alta pot dependre d'un denominador molt petit. No s'han d'eliminar els valors incòmodes: s'han de comprovar i contextualitzar.
+
+>>>> **Un percentatge sense denominador pot exagerar una història.** Dir que un fenomen ha crescut un 50% no significa el mateix si passa de 2 a 3 casos que si passa de 2.000 a 3.000. En un indicador municipal cal conservar el numerador i el denominador perquè el lector pugui distingir intensitat, volum i estabilitat del càlcul. Aquesta cautela és una versió territorial dels problemes de reducció de dades que Jones descriu per als gràfics {% cite jonesHowLieCharts2018 %}.
 
 ### Comparabilitat i límits
 

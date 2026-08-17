@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 520" role="img" aria-labelledby="title desc">
+  <title id="title">Coropleta problemàtica construïda amb recomptes absoluts</title>
+  <desc id="desc">Mapa esquemàtic de municipis on una coropleta pinta recompte absolut de places turístiques, sense denominador i amb absència de dades confosa amb valor baix.</desc>
+  <defs>
+    <pattern id="tiny-grid" width="8" height="8" patternUnits="userSpaceOnUse">
+      <path d="M0 8L8 0" stroke="#caa" stroke-width="1"/>
+    </pattern>
+    <style>
+      .bg{fill:#fffdf8}.panel{fill:#fff;stroke:#d8d2c5;stroke-width:1.5}.sea{fill:#dcecf3}.muni{stroke:#fffdf8;stroke-width:4;stroke-linejoin:round}.txt{font-family:Arial,Helvetica,sans-serif;fill:#2b2b2b}.title{font-size:25px;font-weight:700}.small{font-size:14px}.label{font-size:13px;fill:#555}.badge{fill:#8f1f18}.white{fill:#fff}.warn{fill:#8f1f18}.c1{fill:#f6eadf}.c2{fill:#efc7a1}.c3{fill:#da874d}.c4{fill:#9d3b26}.nodata{fill:#f6eadf}.outline{fill:none;stroke:#6e6e6e;stroke-width:1.3}
+    </style>
+  </defs>
+  <rect class="bg" width="760" height="520"/>
+  <rect x="34" y="30" width="118" height="34" rx="17" class="badge"/>
+  <text x="93" y="53" text-anchor="middle" class="txt white" font-size="16" font-weight="700">PROBLEMA</text>
+  <text x="188" y="53" class="txt title">Una coropleta amb volums absoluts</text>
+  <text x="64" y="88" class="txt small">La superfície pintada suggereix intensitat, però el valor representat és un recompte.</text>
+
+  <g transform="translate(58 116)">
+    <rect class="panel" x="0" y="0" width="470" height="340" rx="10"/>
+    <path class="sea" d="M390,18 C455,68 475,142 438,214 C462,260 448,306 410,325 L470,325 L470,0 L390,0 Z"/>
+    <polygon class="muni c2" points="58,42 186,34 196,128 68,136"/>
+    <polygon class="muni c3" points="186,34 318,52 304,148 196,128"/>
+    <polygon class="muni c4" points="318,52 402,40 422,142 304,148"/>
+    <polygon class="muni c2" points="68,136 196,128 205,226 54,236"/>
+    <polygon class="muni c1" points="196,128 304,148 292,244 205,226"/>
+    <polygon class="muni c4" points="304,148 422,142 404,248 292,244"/>
+    <polygon class="muni c1" points="54,236 205,226 214,314 48,322"/>
+    <polygon class="muni nodata" points="205,226 292,244 306,326 214,314"/>
+    <polygon class="muni c3" points="292,244 404,248 424,320 306,326"/>
+    <path class="outline" d="M58,42 186,34 318,52 402,40 422,142 404,248 424,320 306,326 214,314 48,322 54,236 68,136 Z"/>
+    <text x="324" y="83" class="txt label" font-weight="700">litoral</text>
+    <text x="214" y="289" class="txt label">sense dades?</text>
+  </g>
+
+  <g transform="translate(555 128)">
+    <text x="0" y="0" class="txt small" font-weight="700">Llegenda automàtica</text>
+    <rect x="0" y="22" width="28" height="18" class="c1"/><text x="40" y="36" class="txt label">0 - 250</text>
+    <rect x="0" y="52" width="28" height="18" class="c2"/><text x="40" y="66" class="txt label">251 - 750</text>
+    <rect x="0" y="82" width="28" height="18" class="c3"/><text x="40" y="96" class="txt label">751 - 1.500</text>
+    <rect x="0" y="112" width="28" height="18" class="c4"/><text x="40" y="126" class="txt label">1.501 - 4.000</text>
+    <text x="0" y="178" class="txt warn" font-size="15" font-weight="700">Falten unitat comparable,</text>
+    <text x="0" y="200" class="txt warn" font-size="15" font-weight="700">denominador i tractament</text>
+    <text x="0" y="222" class="txt warn" font-size="15" font-weight="700">de valors absents.</text>
+  </g>
+
+  <text x="62" y="490" class="txt label">Dades esquemàtiques. Figura d'elaboració pròpia, 15 d'agost de 2026.</text>
+</svg>

@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="620" viewBox="0 0 900 620" role="img" aria-labelledby="title desc">
+  <title id="title">Placeholder for a rods and cones retina figure</title>
+  <desc id="desc">Editorial placeholder for a future Wikimedia Commons figure comparing rods and cones in the retina.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f5f7fa}
+      .panel{fill:#fff;stroke:#9aa8b7;stroke-width:2}
+      .axis{stroke:#617184;stroke-width:3;stroke-linecap:round}
+      .rod{fill:#5f6f80;stroke:#314253;stroke-width:2}
+      .coneRed{fill:#c85d5d;stroke:#7d2e2e;stroke-width:2}
+      .coneGreen{fill:#5d9b75;stroke:#2f6847;stroke-width:2}
+      .coneBlue{fill:#5e7fb8;stroke:#2f4d85;stroke-width:2}
+      .text{font-family:Latin Modern Sans,DejaVu Sans,Arial,sans-serif;fill:#17212b}
+      .small{font-size:24px}
+      .large{font-size:34px;font-weight:700}
+      .muted{fill:#617184}
+    </style>
+  </defs>
+  <rect class="bg" width="900" height="620" rx="18"/>
+  <rect class="panel" x="44" y="44" width="812" height="532" rx="12"/>
+  <text class="text large" x="86" y="105">Figura pendent: rods and cones</text>
+  <text class="text small muted" x="86" y="148">Substituir per una figura SVG de Wikimedia Commons amb autoria i llicencia verificades.</text>
+  <line class="axis" x1="120" y1="500" x2="780" y2="500"/>
+  <line class="axis" x1="450" y1="210" x2="450" y2="500"/>
+  <text class="text small" x="176" y="542">Rods</text>
+  <text class="text small" x="638" y="542">Cones</text>
+  <g transform="translate(170 250)">
+    <rect class="rod" x="0" y="0" width="36" height="190" rx="18"/>
+    <rect class="rod" x="58" y="24" width="36" height="166" rx="18"/>
+    <rect class="rod" x="116" y="8" width="36" height="182" rx="18"/>
+  </g>
+  <g transform="translate(620 248)">
+    <path class="coneRed" d="M0 190 L44 190 L32 20 Q22 0 12 20 Z"/>
+    <path class="coneGreen" d="M70 190 L114 190 L102 40 Q92 18 82 40 Z"/>
+    <path class="coneBlue" d="M140 190 L184 190 L172 10 Q162 -8 152 10 Z"/>
+  </g>
+  <text class="text small muted" x="170" y="220">low light</text>
+  <text class="text small muted" x="610" y="220">colour vision</text>
+</svg>

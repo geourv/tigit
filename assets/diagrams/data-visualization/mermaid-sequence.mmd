@@ -1,0 +1,10 @@
+sequenceDiagram
+  actor Estudiant
+  participant Portal as Portal de dades
+  participant Full as Full de càlcul
+  participant QGIS
+  Estudiant->>Portal: cerca un indicador i descarrega dades
+  Portal-->>Estudiant: taula i metadades
+  Estudiant->>Full: neteja camps i calcula indicadors
+  Full->>QGIS: exporta CSV revisat
+  QGIS-->>Estudiant: mapa o capa per revisar
