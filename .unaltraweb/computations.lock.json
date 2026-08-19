@@ -36,11 +36,95 @@
       "outputs": [
         {
           "path": "assets/img/color-cartography/palette-reference-swatches.svg",
-          "sha256": "32da2b217fe5fef5f30920a1ce0a92c246b2fce0345474f9dd08f09231c0c289",
-          "size": 8370
+          "sha256": "16098d4c9bc41a34fbfb598332c9d3a9a65b715e225b8fa4be91c3347c22c962",
+          "size": 7030
         }
       ],
-      "rendered_at": "2026-08-15T11:57:16+00:00"
+      "rendered_at": "2026-08-19T20:29:23+00:00"
+    },
+    "assets/quarto/data-visualization/alluvial-demo-titanic.qmd": {
+      "dependencies": [
+        {
+          "path": "assets/quarto/data-visualization/alluvial-demo-titanic.qmd",
+          "sha256": "6c001a7944cdbc3360ba6c789ccc9f7d78169eff855731d4020f1d1fc7c6b734"
+        },
+        {
+          "path": "Dockerfile.compute-r",
+          "sha256": "db3cb03be6f48b81f1abfcf7b2a3177c0206e7c76fb46765a81c625faa34fc49"
+        },
+        {
+          "path": "requirements-compute.R",
+          "sha256": "37c95a48770d46abcfd6536b5d1482e96507b3eddee8c7bde6bc1eef690afd6c"
+        },
+        {
+          "path": ".unaltraweb/computations.yml",
+          "sha256": "301b44c41e8a0e500dd5ffda7410b4221a63711479a41a06eb98b5aae8abd0b3"
+        }
+      ],
+      "engine": "r",
+      "fingerprint": "1d21e013f7352a91e3020c2dfe8f2e9407742616259579d90ad818220ee74903",
+      "image": {
+        "engine": "r",
+        "environment": "local",
+        "image": "tigit-compute-r:local",
+        "source": "environment:COMPUTE_R_IMAGE"
+      },
+      "image_identity": {
+        "available": "true",
+        "digest": "",
+        "id": "sha256:873721b4cb9527ddaee56d897c1d1352d80b77e77387264071bdf9c91dc31dcf"
+      },
+      "mode": "figure",
+      "outputs": [
+        {
+          "path": "assets/img/data-visualization/alluvial-titanic-demo.svg",
+          "sha256": "0bb5d036e9f80f8d73c4628547f496dd309e2044f17bdd946a3954cd85a0df68",
+          "size": 227451
+        }
+      ],
+      "rendered_at": "2026-08-19T20:31:41+00:00"
+    },
+    "assets/quarto/data-visualization/boxplot-demo-tarragones.qmd": {
+      "dependencies": [
+        {
+          "path": "assets/quarto/data-visualization/boxplot-demo-tarragones.qmd",
+          "sha256": "0ddc036718db4cf2213f02cac43cf7a62561528177d2bfd61ca3d3be9b3402ba"
+        },
+        {
+          "path": "Dockerfile.compute-r",
+          "sha256": "db3cb03be6f48b81f1abfcf7b2a3177c0206e7c76fb46765a81c625faa34fc49"
+        },
+        {
+          "path": "requirements-compute.R",
+          "sha256": "37c95a48770d46abcfd6536b5d1482e96507b3eddee8c7bde6bc1eef690afd6c"
+        },
+        {
+          "path": ".unaltraweb/computations.yml",
+          "sha256": "301b44c41e8a0e500dd5ffda7410b4221a63711479a41a06eb98b5aae8abd0b3"
+        }
+      ],
+      "engine": "r",
+      "fingerprint": "14532e38f4c2ffc5c8e4c5dd4dae24ae640a80065348cce1432ee61d6ed19fcb",
+      "image": {
+        "engine": "r",
+        "environment": "local",
+        "image": "tigit-compute-r:local",
+        "source": "environment:COMPUTE_R_IMAGE"
+      },
+      "image_identity": {
+        "available": "true",
+        "digest": "",
+        "id": "sha256:873721b4cb9527ddaee56d897c1d1352d80b77e77387264071bdf9c91dc31dcf"
+      },
+      "mode": "figure",
+      "outputs": [
+        {
+          "path": "assets/img/data-visualization/boxplot-housing-non-main-tarragones-2021.svg",
+          "sha256": "df84c3816eb9fdaab2b25eed16c46eff932e00255a77df70920fac388964d215",
+          "size": 48311
+        }
+      ],
+      "rendered_at": "2026-08-19T20:31:36+00:00"
     }
   },
   "version": 1

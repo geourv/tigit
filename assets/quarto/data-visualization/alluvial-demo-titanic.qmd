@@ -1,0 +1,99 @@
+---
+title: "Alluvial de demostració: supervivència al Titanic"
+lang: ca
+ref: alluvial_demo_titanic
+format:
+  gfm:
+    output-file: alluvial-demo-titanic.generated.md
+execute:
+  echo: false
+  warning: false
+  message: false
+execute-dir: project
+unaltraweb_compute:
+  engine: r
+  mode: figure
+  outputs:
+    - assets/img/data-visualization/alluvial-titanic-demo.svg
+---
+
+```{r}
+find_project_root <- function(start) {
+  path <- normalizePath(start, winslash = "/", mustWork = FALSE)
+  repeat {
+    if (file.exists(file.path(path, ".unaltraweb", "computations.yml"))) {
+      return(path)
+    }
+    parent <- dirname(path)
+    if (identical(parent, path)) {
+      stop("Project root not found: missing .unaltraweb/computations.yml")
+    }
+    path <- parent
+  }
+}
+
+root <- find_project_root(getwd())
+library(ggplot2)
+library(ggalluvial)
+
+titanic <- as.data.frame(Titanic)
+
+labels_ca <- list(
+  Class = c(
+    "1a classe", "2a classe", "3a classe", "Tripulació"
+  ),
+  Sex = c("Homes", "Dones"),
+  Survived = c("No", "Sí")
+)
+
+titanic$Class <- factor(titanic$Class, levels = c("1st", "2nd", "3rd", "Crew"), labels = labels_ca$Class)
+titanic$Sex <- factor(titanic$Sex, levels = c("Male", "Female"), labels = labels_ca$Sex)
+titanic$Survived <- factor(titanic$Survived, levels = c("No", "Yes"), labels = labels_ca$Survived)
+
+fig <- ggplot(
+  titanic,
+  aes(
+    y = Freq,
+    axis1 = Class,
+    axis2 = Sex,
+    axis3 = Survived
+  )
+) +
+  geom_alluvium(aes(fill = Class), width = 1 / 12) +
+  geom_stratum(width = 1 / 12, fill = "#d8e1e6", color = "#17202a", linewidth = 0.3) +
+  geom_label(
+    stat = "stratum",
+    aes(label = after_stat(stratum)),
+    size = 3.2,
+    na.rm = TRUE
+  ) +
+  scale_x_discrete(
+    limits = c("Classe", "Sexe", "Supervivència"),
+    expand = c(0.08, 0.08)
+  ) +
+  scale_fill_manual(
+    values = c(
+      "1a classe" = "#2171b5",
+      "2a classe" = "#4292c6",
+      "3a classe" = "#9ecae1",
+      "Tripulació" = "#d3dce0"
+    )
+  ) +
+  ggtitle("Passatgers del Titanic per classe, sexe i supervivència") +
+  theme_minimal(base_size = 12) +
+  theme(
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank(),
+    legend.position = "none",
+    plot.title = element_text(face = "bold", size = 14, hjust = 0.5, color = "#17202a"),
+    axis.title.x = element_blank(),
+    axis.title.y = element_blank(),
+    axis.text.y = element_blank()
+  )
+
+output <- file.path(root, "assets/img/data-visualization/alluvial-titanic-demo.svg")
+dir.create(dirname(output), showWarnings = FALSE, recursive = TRUE)
+ggsave(output, fig, width = 9, height = 6, device = svglite::svglite)
+```
+
+![Alluvial del passatge del Titanic per classe, sexe i supervivència, amb el conjunt `Titanic` de la base de R]({{ site.baseurl }}/assets/img/data-visualization/alluvial-titanic-demo.svg "Diagrama alluvial generat amb R i ggalluvial a partir del conjunt de dades Titanic de la base de R; la cartelleria il·lustra com es descomponen successivament els fluxos."){: data-figure-width="50rem"}

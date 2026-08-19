@@ -406,6 +406,18 @@ Cada figura haurà de respondre una pregunta sobre les diferències entre munici
 
 \* Les files d'anàlisi opcional només es construiran quan existeixin les dades que requereixen i la pregunta les faci pertinents; si no, es podran estudiar com a exemples. El gràfic circular i el d'anell poden representar intencionadament la mateixa composició per permetre'n una comparació crítica. El boxplot resumeix la distribució municipal, però no identifica per si sol la posició geogràfica dels valors.
 
+### Demostracions computades amb R
+
+Aquest manual també demostra com generar figures completes amb codi R dins del flux de Quarto. Els exemples següents no formen part de la selecció final de figures, sinó que mostren com una mateixa pregunta es pot respondre amb les eines de càlcul i estadística; el codi font es guarda com a fonts computables de Quarto i es regenera amb la cadena d'integració del llibre.
+
+El primer exemple és un boxplot del percentatge d'habitatge no principal dels 22 municipis del Tarragonès. La distribució és fortament asimètrica: la majoria de municipis se situen per sota del 35 %, mentre que uns pocs casos (Roda de Berà, Salou, Altafulla, Creixell i Torredembarra) superen clarament el valor de la mediana i apareixen marcats com a casos extrems o bé com a punts de la part alta dels bigotis. El diagrama s'ha generat amb R a partir de les mateixes dades processades de la pràctica del projecte territorial, de manera que l'exemple no requereix cap paquet addicional.
+
+![Boxplot del percentatge d'habitatge no principal dels municipis del Tarragonès (2021), generat amb R]({{ site.baseurl }}/assets/quarto/data-visualization/boxplot-demo-tarragones.qmd "Boxplot horitzontal generat amb R i Quarto a partir de les dades processades de la pràctica territorial. La caixa abasta els quartils, la línia central la mediana i els cercles a l'esquerra els valors baixos de la distribució."){: data-figure-width="48rem"}
+
+El segon exemple és un diagrama alluvial construït amb el paquet `ggalluvial` i el conjunt `Titanic` de la base de R. L'alluvial no respon a cap pregunta del Tarragonès, sinó que il·lustra la geometria de fluxos successius: els passatgers es descomponen per classe, després per sexe i finalment per supervivència, i l'ample de cada flux és proporcional al nombre de persones. Aquesta mena de gràfic seria l'apropiat si en algun moment del projecte es disposés de dades de fluxos turístics reals (procedència, mitjà d'arribada o tipus d'allotjament).
+
+![Alluvial del passatge del Titanic per classe, sexe i supervivència, generat amb R i ggalluvial]({{ site.baseurl }}/assets/quarto/data-visualization/alluvial-demo-titanic.qmd "Diagrama alluvial generat amb R i ggalluvial a partir del conjunt Titanic de la base de R. Cada columna és una variable i l'ample dels fluxos, el recompte de persones."){: data-figure-width="50rem"}
+
 ### Selecció de dues o tres figures candidates
 
 La sèrie completa serveix per aprendre i comparar, mentre que el repertori restant continua sent opcional i analític. S'exportaran exactament dues o tres figures candidates que expliquin aspectes complementaris. El capítol 9 farà la selecció final de dues o tres peces visuals en total, comptant també els mapes. Per a la demostració del Tarragonès, una combinació coherent de candidates seria:
