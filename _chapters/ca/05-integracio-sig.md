@@ -145,7 +145,7 @@ La selecció respon una condició temporal dins del projecte; no modifica necess
 
 ### Preparar la taula externa
 
-Durant aquest capítol es crearà o regenerarà el full `map_export` a partir dels fulls coherents `municipal` i `indicators`. Contindrà una taula plana amb una fila per municipi i només els camps necessaris per al flux guiat: codi i nom municipals, l'indicador relatiu seleccionat, la població total i/o el total d'habitatges que després permetran demostrar els símbols proporcionals. S'exportarà com a CSV UTF-8 amb noms de camp breus i comprensibles. Aquesta exportació és una còpia de transferència: si canvia una fórmula, s'ha de regenerar des del mateix llibre, no corregir el CSV a mà.
+Durant aquest capítol es crearà o regenerarà el full `map_export` a partir de `municipal`, `indicators_demography` i `indicators_housing`. Contindrà una fila per municipi, només els camps necessaris i un camp d'estat. Un resultat no calculable s'exportarà com a nul amb un estat explicatiu, mai com a zero o com el text `#N/A`. El CSV UTF-8 és una còpia de transferència: si canvia una fórmula, s'ha de regenerar des del llibre, no corregir-lo a mà.
 
 La primera fila contindrà una única capçalera. No s'hi inclouran cel·les combinades, subtotals, notes de presentació, gràfics ni files comarcals barrejades amb els municipis. Els codis han de conservar la longitud i els zeros inicials; els valors absents es distingiran dels zeros; i els indicadors calculats s'exportaran amb el valor resultant. El CSV no substitueix les fórmules ni el diccionari conservats al llibre.
 
@@ -155,13 +155,17 @@ Un CSV no conserva per si sol el tipus de cada camp. En importar-lo a QGIS, el c
 
 La importació no acaba quan la taula apareix al projecte. Cal revisar caràcters, separadors, camps, files i interpretació dels valors. El nombre de registres ha de coincidir amb les files municipals de `map_export`, els codis s'han de conservar com a text quan l'esquema ho requereixi i els indicadors han de continuar sent numèrics.
 
-Abans d'unir, almenys dos municipis i dos indicadors es contrastaran amb el full `indicators`. Aquesta comprovació separa els errors d'exportació dels errors que es puguin produir després durant la unió.
+Abans d'unir, almenys dos municipis i dos indicadors es contrastaran amb `indicators_demography` i `indicators_housing`. Aquesta comprovació separa els errors d'exportació dels errors que es puguin produir després durant la unió.
 
 ### Coordenades a punts
 
 Algunes fonts no arriben com una capa de municipis, sinó com una taula amb coordenades. Pot passar amb equipaments turístics, punts d'informació, allotjaments, recursos patrimonials o adreces geocodificades. En aquest cas, QGIS pot carregar el CSV com a capa de text delimitat i crear geometries puntuals a partir dels camps X i Y. La decisió crítica és indicar el CRS correcte de les coordenades originals: longitud i latitud en graus solen correspondre a `EPSG:4326`, mentre que coordenades UTM del projecte haurien d'estar en metres i documentar-se com `EPSG:25831`.
 
-La capa de punts és opcional i només es crearà si l'activitat utilitza efectivament una taula amb coordenades. No forma part del resultat obligatori de la unió municipal.
+La demostració de coordenades utilitzarà el Directori anual de centres docents de la Generalitat. Primer es filtraran els centres de Vila-seca per obtenir un conjunt petit i comprovable; després es podrà ampliar al Tarragonès per resumir recomptes municipals. La font conté coordenades ETRS89 / UTM 31N, longitud i latitud, adreça i codi municipal de sis dígits. El punt representa l'entrada del centre, no tota la parcel·la, la capacitat ni la població atesa.
+
+La mateixa taula es carregarà una vegada amb X/Y UTM i `EPSG:25831` i una altra amb longitud/latitud i `EPSG:4326`. Les dues capes han de coincidir després de la reprojecció al vol. La captura conservarà el diàleg de text delimitat amb els camps X i Y, el CRS d'origen i la previsualització de tipus; no cal capturar la capa ja carregada si el mapa exportat mostra millor el resultat.
+
+Com a ampliació de geocodificació s'utilitzarà un subconjunt reduït d'allotjaments convencionals de Vila-seca del Registre de Turisme de Catalunya. Es conservaran l'adreça original, el resultat retornat pel geocodificador de l'ICGC, els codis territorials, les coordenades i un estat d'èxit, ambigüitat o revisió manual. No s'inclouran noms de titulars ni altres camps personals que no siguin necessaris. El registre descriu oferta inscrita, no obertura, disponibilitat, ocupació o pernoctacions.
 
 No totes les coordenades UTM d'una taula s'han de convertir automàticament en punts. Si la font identifica una quadrícula, com les [quadrícules UTM de l'ICGC](https://www.icgc.cat/es/Geoinformacion-y-mapas/Datos-y-productos/Geoinformacion-cartografica/Cuadriculas-UTM) amb [codis MGRS del tipus `31TCG213911`](https://www.icgc.cat/es/Ayuda/Preguntas-frecuentes/Coordenadas-de-tipo-31TCG213911), la dada representa una cel·la. El parell E/N associat permet situar la cantonada de referència del quadrat i dona nom al polígon, però no descriu per si sol el centre ni un objecte puntual. En aquests casos convé carregar o construir la capa poligonal de quadrícula i, només si l'objectiu cartogràfic ho justifica, derivar-ne un punt auxiliar documentat {% cite icgcQuadriculesUtmEspecificacions2026 %}.
 
@@ -217,23 +221,23 @@ La pràctica relaciona la geometria municipal validada amb els indicadors del ll
 
 >>>>> L'activitat deixa el projecte QGIS preparat amb una unió municipal comprovada, dues consultes reproduïbles i un informe de control al `README.md`.
 >>>>>
->>>>> - Regenerar `map_export` i `data/processed/municipal_indicators_tarragones_2021.csv` des del llibre sense corregir manualment la còpia de transferència.
+>>>>> - Regenerar `map_export` i `data/processed/municipal-indicators-tarragones-2021.csv` des del llibre sense corregir manualment la còpia de transferència.
 >>>>> - Comprovar abans de la unió les entitats, les files, les claus úniques, els duplicats, els tipus de camp i una mostra de valors.
 >>>>> - Normalitzar les claus en camps nous i unir només els indicadors necessaris a la capa municipal validada.
 >>>>> - Verificar que el nombre de geometries no canvia i registrar coincidències, absències i files no utilitzades.
->>>>> - Contrastar manualment tres municipis, inclosos un valor habitual i un cas extrem, amb els fulls `municipal` i `indicators`.
+>>>>> - Contrastar manualment tres municipis, inclosos un valor habitual i un cas extrem, amb `municipal` i els fulls `indicators_*`.
 >>>>> - Conservar dues consultes de QGIS amb l'expressió, el recompte i els codis municipals seleccionats.
->>>>> - Mantenir `qgis/tigit_tarragones.qgz`, el CSV, la capa espacial i qualsevol GeoPackage derivat amb rutes relatives i funcions diferenciades.
+>>>>> - Mantenir `qgis/tigit-05-integracio-sig.qgz`, el CSV, la capa espacial i qualsevol GeoPackage derivat amb rutes relatives i funcions diferenciades.
 
 ### Entrades i resultats de la unió municipal
 
-Per al Tarragonès es continuarà `qgis/tigit_tarragones.qgz` amb `data/processed/municipis_tarragones_epsg25831.gpkg` quan s'hagi materialitzat al capítol 4 i amb el llibre únic, del qual es crearà o regenerarà `map_export` des dels fulls coherents `municipal` i `indicators`. La còpia de transferència serà `data/processed/municipal_indicators_tarragones_2021.csv` i inclourà codi i nom municipals, l'indicador relatiu seleccionat, població total i/o total d'habitatges. Els noms de comarca i any s'adaptaran al territori i al període del projecte.
+Per al Tarragonès es continuarà `qgis/tigit-05-integracio-sig.qgz` amb `data/processed/tarragones-boundaries-icgc-20260120.gpkg` i amb el llibre únic, del qual es crearà o regenerarà `map_export` des de `municipal` i els fulls `indicators_*`. La còpia de transferència serà `data/processed/municipal-indicators-tarragones-2021.csv` i inclourà codi i nom municipals, percentatge d'habitatge no principal, població total i habitatges totals. Els noms s'adaptaran al territori i al període del projecte.
 
 El projecte conservarà la unió entre la capa municipal i el CSV, mentre que el `README.md` recollirà l'informe de la unió. Com a evidència de pràctica es conservaran també tres comprovacions manuals de municipis i dues consultes de QGIS amb els recomptes i els codis resultants.
 
 ### Comprovar les entrades
 
-El projecte QGIS del capítol 4, la capa comarcal validada i els fulls `municipal` i `indicators` constitueixen les entrades. Després de crear o regenerar `map_export` i el CSV de transferència, abans de la unió s'anotaran el nombre d'entitats, el nombre de files, les claus úniques i els possibles duplicats. La clau territorial es triarà a partir de la documentació, no només perquè dos camps mostrin valors semblants.
+El projecte QGIS del capítol 4, la capa comarcal validada i els fulls `municipal`, `indicators_demography` i `indicators_housing` constitueixen les entrades. Després de crear o regenerar `map_export` i el CSV de transferència, abans de la unió s'anotaran el nombre d'entitats, el nombre de files, les claus úniques i els possibles duplicats. La clau territorial es triarà a partir de la documentació, no només perquè dos camps mostrin valors semblants.
 
 ### Preparar les claus i executar la unió
 
@@ -276,10 +280,11 @@ El projecte s'ha de poder obrir i revisar sense perdre fitxers. S'utilitzarà el
 ::: table "Evidències de la integració SIG"
 | Ubicació | Evidència | Contingut mínim |
 | --- | --- | --- |
-| `data/processed` | Llibre únic actualitzat | Fulls `municipal`, `indicators` i `map_export` coherents |
-| `data/processed` | `municipal_indicators_tarragones_2021.csv` | UTF-8, una fila per municipi, codi i nom, indicador relatiu i totals necessaris per als símbols proporcionals |
+| `data/processed` | Llibre únic actualitzat | Fulls `municipal`, `indicators_demography`, `indicators_housing` i `map_export` coherents |
+| `data/processed` | `municipal-indicators-tarragones-2021.csv` | UTF-8, una fila per municipi, codi i nom, indicador relatiu, totals, nul i estat separats |
 | `qgis` | Projecte QGIS continuat | Capa municipal, taula importada, unió, grups i rutes relatives |
-| `qgis` | Capa de punts, si s'utilitzen coordenades | Camps X/Y, CRS d'origen, punts creats i comprovació espacial |
+| `qgis` | Centres docents de Vila-seca i, si s'amplia, del Tarragonès | Camps X/Y, `EPSG:25831` i `EPSG:4326`, punts coincidents i codi municipal verificat |
+| `qgis` | Allotjaments geocodificats, com a ampliació | Adreça d'entrada, resultat, coordenades, codi territorial i estat de revisió, sense camps personals innecessaris |
 | `data/processed` o `qgis` | Capa materialitzada, només per compartir | Geometries i indicadors units en un GeoPackage derivat portable |
 | `README.md` | Informe i evidència de pràctica | Claus, normalització, cardinalitat, recomptes, absències, tres casos contrastats i dues consultes amb recompte i codis |
 :::

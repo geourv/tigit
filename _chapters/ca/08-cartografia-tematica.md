@@ -327,7 +327,7 @@ En el cas del Tarragonès, els noms semàntics poden ser `outputs/maps/mapa_coro
 
 La pràctica compararà mapes municipals del mateix indicador construïts amb classificacions i paletes diferents. La demostració representarà el **percentatge d'habitatge no principal** al Tarragonès. Cada projecte podrà mantenir aquest indicador o justificar l'ús del percentatge de població de 65 anys o més.
 
-La **coropleta** representarà un indicador relatiu, com un percentatge o una densitat, mitjançant classes de color. Quan una magnitud absoluta aporti una lectura complementària, es produirà també un **mapa de símbols proporcionals** amb la població total o els habitatges totals disponibles i mides escalades per àrea. El mapa de context ja construït situarà el territori d'estudi i es podrà incorporar a una de les composicions o reutilitzar com a peça separada, però no s'haurà de duplicar. Totes les peces compartiran fonts, criteris de retolació i una jerarquia visual coherent.
+La **coropleta** representarà el percentatge d'habitatge no principal. La lectura complementària utilitzarà **habitatges totals** amb símbols proporcionals, perquè aquesta magnitud és el denominador directe de l'indicador i permet comparar pes relatiu i volum. Els símbols se situaran en un punt interior segur del municipi, no en un centroide que pugui caure fora del polígon, i l'àrea visual serà proporcional a la dada. El mapa de context ja construït situarà el territori d'estudi i es podrà incorporar a una composició, sense reconstruir-lo.
 
 ### Verificar l'indicador unit a la capa
 
@@ -411,4 +411,5 @@ Abans d'acceptar el mapa cal verificar que:
 | Capítol 6 / composició | Mapa de context reutilitzat | Peça existent incorporada o referenciada, sense exigir-ne una reconstrucció independent |
 | `README.md` | Registre de classificació | Camp, unitat, mètode, classes, punts de tall, paleta i justificació |
 | `README.md` | Control d'accessibilitat | Escala de grisos, simulació cromàtica, contrast i ajustos aplicats |
+| `captures` | Classificació i proporcionalitat | Simbologia graduada amb punts de tall visibles i assistent de mida amb camp, escala i llegenda de referència |
 :::

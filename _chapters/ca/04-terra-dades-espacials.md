@@ -299,6 +299,16 @@ Cada entitat espacial combina una forma i un registre alfanumèric. Aquesta rela
 
 Una entitat municipal pot estar formada per una geometria multipart si inclou fragments territorials separats. També pot contenir errors geomètrics o un nivell de detall inadequat per a l'escala del mapa. La validesa de la forma, la presència d'un identificador i la data territorial són controls diferents: una geometria pot ser tècnicament vàlida i, alhora, correspondre a una delimitació antiga.
 
+## Activitat prèvia: llegir coordenades en una taula
+
+Abans d'obrir QGIS, s'inspeccionarà a Calc o Excel el CSV del Directori de centres educatius. Es filtrarà el curs 2025/2026 i el municipi de Vila-seca, codi `431711`, i es compararan quatre camps: coordenada UTM X, coordenada UTM Y, longitud i latitud. La font declara les coordenades UTM en ETRS89 / UTM zona 31N, `EPSG:25831`, i les geogràfiques en longitud i latitud. Aquesta informació forma part de la dada: els nombres no permeten crear punts correctes si s'ignoren l'ordre, les unitats o el CRS.
+
+La inspecció comprovarà que X i Y UTM tenen ordres de magnitud compatibles amb metres a Catalunya, mentre que longitud i latitud s'expressen en graus decimals. Es revisarà una fila coneguda, es comptaran coordenades buides o duplicades i s'anotarà que el punt representa l'entrada del centre, no tota la parcel·la ni la població atesa. Encara no es crearà cap geometria.
+
+>>>>> Aquesta activitat deixa preparada una taula de 17 centres de Vila-seca i una fitxa breu dels camps X/Y, les unitats, el CRS i les incidències detectades.
+
+La captura necessària mostrarà al full de càlcul les columnes de codi, centre, UTM X/Y i longitud/latitud, amb el filtre de Vila-seca visible. El capítol següent reutilitzarà exactament aquests camps al diàleg de text delimitat de QGIS i comprovarà que les dues parelles de coordenades produeixen punts coincidents.
+
 ## Activitat: preparar la base espacial de la comarca
 
 L'activitat prepara una base espacial municipal fiable per continuar el projecte: abans de representar indicadors, cal comprovar la procedència, la geometria, els codis territorials i el sistema de referència de la capa, i distingir una assignació de CRS d'una reprojecció.
@@ -309,12 +319,14 @@ L'activitat prepara una base espacial municipal fiable per continuar el projecte
 >>>>> - Inspeccionar a QGIS l'esquema, l'extensió, les unitats, el nombre d'entitats i almenys un municipi conegut.
 >>>>> - Seleccionar la comarca amb una clau territorial documentada i comprovar la presència i la unicitat dels codis municipals.
 >>>>> - Diagnosticar el desplaçament ED50–ETRS89 i justificar si correspon assignar informació absent o reprojeccionar coordenades definides.
->>>>> - Desar, quan calgui, `data/processed/municipis_tarragones_epsg25831.gpkg` en `EPSG:25831` sense modificar la font original.
+>>>>> - Desar `data/processed/tarragones-boundaries-icgc-20260120.gpkg` amb les escales necessàries i sense modificar la font original.
 >>>>> - Verificar geometria, CRS, extensió, recomptes, codis i ordres de magnitud abans de continuar el projecte.
 
 ### Fonts, fitxers i resultats de la preparació espacial
 
-Per al Tarragonès s'utilitzaran la capa oficial completa de límits municipals identificada al `README.md`, el projecte `qgis/tigit_tarragones.qgz` i, quan calgui filtrar o reprojeccionar, la capa derivada `data/processed/municipis_tarragones_epsg25831.gpkg`. La parella diagnòstica ED50/ETRS89 serà proporcionada pel professorat: no se'n pressuposen els noms de fitxer, però el `README.md` n'identificarà cada fitxer, el tipus de geometria i el CRS. Els noms territorials dels fitxers s'adaptaran a la comarca del projecte.
+Per al Tarragonès s'utilitzarà el GeoPackage oficial **Divisions administratives v2.2, gener de 2026**, de l'ICGC, amb llicència CC BY 4.0 i CRS `EPSG:25831`. El fitxer conté diverses capes i escales: la demostració utilitzarà municipis a 1:250.000 per al mapa comarcal, una versió generalitzada per al requadre provincial i municipis a 1:50.000 per comprovar Vila-seca. Obrir un GeoPackage no exigeix administrar una base de dades: en aquesta activitat funciona com un contenidor amb diverses capes, semblant a un llibre amb diversos fulls.
+
+El projecte conservarà la fita `qgis/tigit-04-dades-espacials.qgz` i la capa derivada compacta `data/processed/tarragones-boundaries-icgc-20260120.gpkg`. La data de la geometria no es confondrà amb el període 2021 de les dades estadístiques. La parella diagnòstica ED50/ETRS89 continuarà sent un exercici separat i no contaminarà la geometria canònica.
 
 El mateix projecte QGIS continuarà als capítols següents. La font municipal oficial completa es conservarà sense modificacions dins del projecte i servirà per obtenir o derivar el context provincial; l'auditoria espacial i la diagnosi de CRS quedaran documentades al `README.md`.
 
@@ -342,7 +354,7 @@ La resolució haurà d'identificar els dos CRS, descriure el desplaçament obser
 
 ### Preparar la capa de treball
 
-Quan sigui necessari filtrar o reprojeccionar, la selecció del Tarragonès es desarà a la ubicació canònica `data/processed/municipis_tarragones_epsg25831.gpkg`. La font original continuarà a `data/raw`, i el projecte utilitzarà rutes relatives perquè la carpeta es pugui moure sense perdre les capes.
+La selecció del Tarragonès i les capes de context es desaran a `data/processed/tarragones-boundaries-icgc-20260120.gpkg`. No cal reprojeccionar-les perquè la font ja declara `EPSG:25831`; documentar que no s'ha aplicat cap transformació també és una decisió tècnica. El ZIP original es podrà regenerar a partir de la URL i el checksum documentats, i el projecte utilitzarà rutes relatives.
 
 ### Validar la base espacial municipal
 
@@ -362,8 +374,9 @@ Abans de continuar s'han de comprovar aquests punts:
 | Ubicació | Evidència | Contingut mínim |
 | --- | --- | --- |
 | `data/raw` | Capa municipal original | Fitxers complets sense modificar i documentació de procedència |
-| `qgis` | `tigit_tarragones.qgz` | Font municipal oficial completa, context provincial que proporciona o se'n deriva, CRS, rutes relatives i selecció comprovada |
-| `data/processed` | `municipis_tarragones_epsg25831.gpkg`, si cal | Municipis seleccionats, codi territorial preservat i `EPSG:25831` explícit |
+| `qgis` | `tigit-04-dades-espacials.qgz` | Font oficial, capes multiescala, CRS, rutes relatives i selecció comprovada |
+| `data/processed` | `tarragones-boundaries-icgc-20260120.gpkg` | Municipis a 1:250.000, comarca, província, Vila-seca a 1:50.000 i capitals necessàries |
 | `README.md` | Auditoria de la capa | Productor, versió, llicència, geometria, entitats, camps clau, CRS, unitats i extensió |
 | `README.md` | Diagnosi ED50–ETRS89 | Cada fitxer identificat amb nom, geometria i CRS; desplaçament, operació justificada i comprovació posterior |
+| `captures` | Subcapes i propietats espacials | Diàleg de subcapes del GeoPackage i propietats amb geometria, entitats, extensió i `EPSG:25831` visibles |
 :::

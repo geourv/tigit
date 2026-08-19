@@ -164,11 +164,13 @@ L'ordre de lectura ha de conduir de la pregunta a l'evidència i de l'evidència
 
 Abans d'aplicar tipografies i colors es dibuixarà un esquema simple amb blocs per al títol, les mètriques, els gràfics, els mapes, la interpretació i les fonts. Aquest esquema permet comprovar si la peça principal disposa de prou espai i si el recorregut de lectura és recognoscible.
 
+El mockup es pot preparar amb rectangles i textos provisionals a Inkscape o, com a alternativa ràpida, en una diapositiva de PowerPoint configurada a mida A3 vertical. PowerPoint serveix per provar la jerarquia, no per crear un segon màster analític: el document final es reconstruirà i conservarà en SVG d'Inkscape.
+
 L'espai no s'ha de repartir de manera uniforme. El mapa o la figura que sosté el resultat principal pot ocupar més superfície; les fonts i notes poden ser secundàries sense deixar de ser llegibles. Si totes les peces tenen el mateix pes, la jerarquia desapareix.
 
 ### Document, retícula i marges
 
-La configuració inicial del document determinarà la mida final, l'alineació i l'espai disponible per jerarquitzar continguts. La retícula estableix columnes, alineacions i separacions repetibles; els marges protegeixen la informació dels límits de la pàgina i de possibles talls d'impressió.
+La demostració utilitzarà **A3 vertical, 297 × 420 mm**, amb marges de `15 mm`, una retícula de sis columnes i separacions de `6 mm`. Aquesta mida permet combinar mapa, gràfic ordenat, mètriques i interpretació sense reduir-los fins a perdre llegibilitat. Si es demana una versió A4, s'haurà de redissenyar; reduir l'A3 automàticament també redueix textos, traços i símbols.
 
 La retícula és una ajuda, no una obligació d'omplir totes les cel·les. Els elements relacionats han de compartir alineacions i proximitat, mentre que els blocs diferents necessiten separació suficient. Les guies no apareixeran a l'exportació final.
 
@@ -191,6 +193,10 @@ Un mapa o un gràfic no s'ha d'estirar per omplir un espai, perquè es deformari
 ### Tipografia i jerarquia
 
 Famílies, cossos, pesos i espaiat han de distingir nivells d'informació sense multiplicar estils innecessaris. Una jerarquia compacta pot resoldre's amb una o dues famílies, pocs pesos i una escala coherent per al títol, subtítols, cos, etiquetes i fonts.
+
+Com a punt de partida per a l'A3, el títol utilitzarà `30–34 pt`, l'entrada `15–17 pt`, les mètriques principals `24–30 pt`, el cos `11,5–13 pt`, les etiquetes de mapes i gràfics `10,5–12 pt` i les fonts o notes `9–10 pt`. No són valors decoratius obligatoris: són llindars inicials que s'han de provar impresos o al 100% de zoom. Una font de `9 pt` en A3 queda per sota de `7 pt` si la pàgina es redueix a A4.
+
+La captura d'Inkscape mostrarà la pàgina A3, les guies dels marges i columnes i el panell de capes o objectes. No cal capturar selectors tipogràfics o diàlegs d'exportació si no resolen cap dubte específic.
 
 La tipografia es comprovarà a la mida real del document. Reduir les fonts per encabir una peça massa carregada no resol el problema d'arquitectura. Primer s'han d'eliminar redundàncies, escurçar textos i donar més espai a la informació prioritària.
 

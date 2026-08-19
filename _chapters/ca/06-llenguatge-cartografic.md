@@ -463,6 +463,43 @@ Un mapa pot estar rotat per aprofitar millor el suport, seguir una costa, adapta
 
 La **retolació** selecciona, jerarquitza i col·loca noms i altres textos perquè identifiquin elements geogràfics sense ambigüitat. Inclou topònims, valors puntuals, anotacions, unitats, textos de llegenda i crèdits breus. No és una capa decorativa que s'afegeix al final: forma part del llenguatge del mapa i pot confirmar o desfer la jerarquia construïda amb símbols i colors. Les etiquetes no han de competir amb la variable principal. Tipografia, mida, posició, espaiament, contrast i ús d'halo formen part de la decisió; per això la retolació s'ha de revisar en la mida final i no només dins de la interfície de QGIS {% cite brewerDesigningBetterMaps2005 %}.
 
+#### Famílies, variants, pesos i estils
+
+Una **família tipogràfica** és un sistema de signes relacionats, com Roboto, Noto Sans, Liberation Sans o DejaVu Serif. Dins d'una mateixa família poden existir variants de pes, amplada i estil: regular, negreta, lleugera, condensada, cursiva o negreta cursiva. La **cursiva** no és una família independent, sinó una variant dissenyada per canviar el ritme i la forma de les lletres. Tampoc no s'ha de confondre el pes amb la mida: un text de `10 pt` pot ser regular o negreta i ocupar la mateixa alçada nominal, però tenir una presència visual i un consum de tinta diferents.
+
+Les famílies **amb serifa** incorporen petits acabaments als traços; les **sans serif** o de pal sec prescindeixen d'aquests remats; les **monoespaiades** assignen una amplada semblant a cada caràcter; i les famílies **display** estan pensades per a títols o usos de gran mida, no necessàriament per a etiquetes petites. Aquestes categories ajuden a descriure una font, però no determinen automàticament el suport correcte. Una sans serif mediocre pot funcionar pitjor en pantalla que una serif ben dibuixada, i una serif massa fina pot perdre's en un mapa imprès. La decisió s'ha de provar amb els cossos, accents, xifres, topònims i fons reals del projecte.
+
+::: table "Famílies i variants tipogràfiques"
+| Recurs | Funció possible | Risc que cal comprovar |
+| --- | --- | --- |
+| Serif | Text narratiu, notes o identitat editorial | Serifes massa fines o confusió en cossos petits |
+| Sans serif | Etiquetes, llegendes, gràfics i interfícies | Uniformitat excessiva si no hi ha jerarquia de pes i mida |
+| Monoespaiada | Codis, coordenades o fragments tècnics breus | Amplada excessiva i aspecte de codi en text ordinari |
+| Negreta | Prioritat, municipi destacat o títol | Convertir massa elements en prioritaris |
+| Cursiva | Convenció per a hidrografia, relleu o èmfasi puntual | Pèrdua de llegibilitat o ús merament decoratiu |
+| Condensada | Etiquetes amb poc espai, si la família la proporciona | Comprimir artificialment una font o ajuntar massa les lletres |
+:::
+
+No s'utilitzaran negretes o cursives simulades si existeix la variant real. Un programa pot inclinar o engruixir artificialment una font que no disposa d'aquell estil, però el resultat pot deformar els caràcters i variar entre Calc, QGIS, Inkscape i el PDF. Per construir jerarquia és preferible treballar amb una família que ofereixi regular, negreta i cursiva reals, i limitar el nombre de variants.
+
+#### Fonts instal·lades, llicència i portabilitat
+
+Els programes no porten necessàriament totes les fonts dins del document. Calc, Excel, QGIS i Inkscape consulten les fonts instal·lades al sistema operatiu; per això un fitxer pot canviar d'aspecte quan s'obre en un altre ordinador. Windows, Linux i macOS inclouen repertoris diferents, i una font disponible a l'aula pot no existir a l'ordinador on es revisa o imprimeix el treball. Abans d'adoptar una família cal comprovar que conté accents catalans, ela geminada, signes matemàtics, percentatges i les xifres necessàries.
+
+Si el repertori instal·lat no és suficient, se'n poden afegir fonts noves. A Windows es poden instal·lar des del fitxer de font o mitjançant la configuració del sistema, seguint les instruccions de [Microsoft per afegir fonts](https://support.microsoft.com/office/add-a-font-b7c5f17c-4426-4b53-967f-455339c564c1). En Linux, el procediment depèn de la distribució i de l'entorn d'escriptori: es pot utilitzar el gestor de fonts o instal·lar-les per a l'usuari, habitualment dins de `~/.local/share/fonts`, i actualitzar la memòria cau amb `fc-cache`. Instal·lar una font requereix permisos adequats i reiniciar les aplicacions que ja estaven obertes.
+
+[Roboto](https://fonts.google.com/specimen/Roboto) és una candidata habitual, però no és obligatòria ni està instal·lada en tots els equips. Noto Sans, Liberation Sans i DejaVu Sans són alternatives lliures amb bona cobertura; Liberation Sans, a més, pot facilitar la compatibilitat mètrica amb documents que esperen Arial. La selecció final registrarà família, variant, procedència i llicència. Descarregar un fitxer de font d'una web desconeguda pot introduir problemes de llicència o seguretat; cal utilitzar repositoris oficials o reconeguts.
+
+En exportar, el PDF ha d'incrustar les fonts o aplicar una substitució deliberada. Convertir text a traçats evita algunes substitucions, però augmenta la mida, impedeix editar i cercar el text i empitjora l'accessibilitat; no serà l'opció predeterminada. El fitxer es revisarà en un segon visor o equip i amb `pdffonts` quan el professorat prepari el material de demostració.
+
+#### Tipografia i consum de tinta o tòner
+
+Algunes fonts i variants utilitzen traços més fins o menys superfície impresa i poden reduir tinta o tòner a la mateixa mida. També existeixen fonts amb perforacions internes pensades perquè els buits desapareguin visualment en cossos petits. Tanmateix, no hi ha una font universalment més sostenible en qualsevol document. Una família ampla pot consumir menys tinta per caràcter però necessitar més línies o pàgines; una variant massa lleugera pot obligar a augmentar la mida; i una font perforada pot perdre qualitat segons la impressora i el cos.
+
+La prova adequada combina llegibilitat i recursos: mateix text, mateixa mida aparent, mateix suport i configuració d'impressió. També influeixen més en el consum total la impressió a doble cara, el mode esborrany, la quantitat de superfícies fosques, el nombre de còpies i la simplificació del document. En mapes i infografies, reduir grans fons saturats o trames innecessàries acostuma a ser més rellevant que substituir una sola família tipogràfica. No es sacrificarà la llegibilitat ni l'accessibilitat per obtenir una reducció de tinta no mesurada.
+
+>> **Prova tipogràfica del projecte.** Abans de fixar la família, prepareu una mostra amb `Tarragonès`, `Vila-seca`, `l'Espluga de Francolí`, `10,5%`, `EPSG:25831`, una coordenada UTM i una línia de font o crèdit. Compareu regular, negreta i cursiva a la mida final, tant en pantalla com en PDF. Registreu la família escollida i una alternativa disponible per si falla la incrustació.
+
 La jerarquia tipogràfica es pot entendre abans de mirar cap mapa. Un rètol comercial de carrer, per exemple, no reparteix l'atenció de manera neutral: una paraula domina per mida, color, pes i contrast; altres línies expliquen la condició de l'oferta, la marca o el detall secundari; i alguns textos queden deliberadament en un nivell molt baix. El mecanisme és el mateix que després cal disciplinar en cartografia. El lector no llegeix totes les paraules alhora, sinó que entra per un nivell dominant i continua per nivells més petits si necessita més informació.
 
 ![Rètol comercial de carrer amb una jerarquia tipogràfica molt marcada per mida, pes, color, posició i contrast]({{ site.baseurl }}/assets/img/cartographic-language/typographic-hierarchy.png "La jerarquia tipogràfica guia l'ordre de lectura: mida, pes, color, majúscules, posició i contrast indiquen què s'ha de veure primer i què queda com a informació secundària. Llicència: pendent de revisar."){: data-figure-width="44rem"}
@@ -529,15 +566,16 @@ La pràctica construirà el **mapa de context** de la miniinfografia, encara sen
 
 >>>>> L'activitat aplica els criteris del capítol a una composició de QGIS i conserva una comparació revisable del resultat.
 >>>>>
->>>>> - Continuar `qgis/tigit_tarragones.qgz` amb la font municipal oficial i la capa filtrada ja validades.
+>>>>> - Continuar `qgis/tigit-06-llenguatge-cartografic.qgz` amb la font municipal oficial i la capa filtrada ja validades.
 >>>>> - Construir el mapa principal i decidir si un requadre provincial millora realment la localització.
+>>>>> - Fixar una família tipogràfica, variants reals i una alternativa disponible, i comprovar els caràcters del projecte.
 >>>>> - Exportar `context_tarragones_2021_automatic.pdf` i `context_tarragones_2021.pdf` a la mateixa mida final.
 >>>>> - Comparar retolació, escala, detall, orientació i jerarquia entre els dos PDF.
 >>>>> - Registrar al `README.md` les comprovacions i la justificació dels canvis aplicats.
 
 ### Entrades i mapes de context resultants
 
-Per al Tarragonès es continuarà `qgis/tigit_tarragones.qgz`. El projecte mantindrà la font municipal oficial completa del capítol 4, que proporciona o permet derivar el context provincial, i la capa filtrada del Tarragonès, sense recrear ni tornar a descarregar les geometries. Abans d'obrir la composició es fixaran la mida i l'orientació finals. Els noms de comarca i any s'adaptaran al territori i al període del projecte.
+Per al Tarragonès es continuarà la fita com `qgis/tigit-06-llenguatge-cartografic.qgz`. El GeoPackage multiescala de l'ICGC proporcionarà municipis, comarca i província sense recrear ni tornar a descarregar les geometries. Natural Earth només s'afegirà si el producte necessita un localitzador europeu o mundial: no substituirà les divisions oficials del Tarragonès ni de Tarragona. Abans d'obrir la composició es fixaran la mida, l'orientació i l'espai que el mapa ocuparà a la infografia.
 
 Es generaran dos PDF vectorials a `outputs/maps`: `context_tarragones_2021_automatic.pdf`, amb la configuració inicial d'etiquetatge automàtic, i `context_tarragones_2021.pdf`, amb la retolació revisada. El `README.md` en compararà els canvis a la mateixa mida final i conservarà el registre cartogràfic. El mapa revisat serà una entrada explícita del mapa temàtic del capítol 8 i de la miniinfografia del capítol 9.
 
@@ -550,7 +588,7 @@ El procediment general serà aquest:
 1. crear una composició dins del projecte QGIS i definir-ne la mida i l'orientació finals;
 2. afegir un marc principal amb l'extensió de la comarca i comprovar-ne l'escala;
 3. ordenar i estilitzar les capes perquè la comarca domini i el context quedi en segon terme;
-4. configurar l'etiquetatge municipal i resoldre els conflictes a la mida final;
+4. preparar la prova tipogràfica, registrar la família i configurar l'etiquetatge municipal amb variants reals;
 5. afegir un segon marc provincial només si millora la localització;
 6. completar títol, escala, orientació, fonts i crèdits després d'estabilitzar els marcs;
 7. exportar la versió amb etiquetatge automàtic, obrir-la fora de QGIS i corregir la composició editable abans de generar la versió revisada.
@@ -582,6 +620,7 @@ Abans d'acceptar el mapa cal verificar que:
 7. la font, la versió, l'autoria i els crèdits es poden recuperar;
 8. els textos i traços continuen sent llegibles a la mida final;
 9. el PDF conserva vectors, tipografies i proporcions quan s'obre fora de QGIS; en obrir-lo a Inkscape, els límits i textos vectorials es poden ampliar sense pixelació i seleccionar com a objectes.
+10. la família escollida, les variants, la llicència i l'alternativa estan registrades, i les fonts queden incrustades o substituïdes de manera deliberada.
 
 ### Evidències del mapa de context
 
@@ -592,4 +631,6 @@ Abans d'acceptar el mapa cal verificar que:
 | `outputs/maps` | `context_tarragones_2021_automatic.pdf` | Composició inicial amb etiquetatge automàtic, a la mida final i en format vectorial |
 | `outputs/maps` | `context_tarragones_2021.pdf` | Versió revisada amb extensió final, topònims, escala funcional, fonts i crèdits en format vectorial |
 | `README.md` | Comparació i registre cartogràfic | Comparació dels dos PDF a la mateixa mida, escala, detall omès, prioritats de retolació, orientació i decisió sobre el requadre |
+| `README.md` | Registre tipogràfic | Família, regular/negreta/cursiva, procedència, llicència, alternativa, caràcters comprovats i resultat de la incrustació al PDF |
+| `captures` | Prova tipogràfica | Mostra a mida final amb topònims, xifres, percentatge, coordenada i crèdit; no cal capturar el procés d'instal·lació de la font |
 :::

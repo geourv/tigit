@@ -873,7 +873,7 @@ Els exemples de fórmules utilitzen sovint noms de funció en anglès i separado
 >>>>> - Copiar cel·les, rangs, valors i fórmules sense perdre la traçabilitat.
 >>>>> - Distingir referències relatives, absolutes i entre fulls.
 >>>>> - Separar valor, tipus i format abans de calcular.
->>>>> - Preparar codis, correspondències, dates, absències i fórmules de comprovació.
+>>>>> - Preparar codis, correspondències, absències i fórmules de comprovació, i reconèixer camps temporals.
 >>>>> - Entendre per què les fórmules són més reproduïbles que una resposta d'un LLM.
 
 ### Orientar-se en el llibre, el full i la graella
@@ -899,6 +899,18 @@ Les fórmules comencen amb `=` i poden combinar valors, referències, operadors 
 
 Aquest nucli permet transferir l'aprenentatge entre programes. Entendre la diferència entre rang, valor i format, o el sentit d'una funció condicional, és més útil que memoritzar la posició exacta d'un botó. En un full de càlcul és més important saber dir què es vol fer —sumar un rang, buscar una correspondència, separar un codi, comptar absències o fixar un denominador— que recordar on es troben totes les funcions i eines de la interfície. Les funcions avançades, els gràfics disponibles, les taules dinàmiques, les macros, l'automatització i el treball col·laboratiu sí que poden variar considerablement.
 
+Les eines del full de càlcul s'introdueixen de manera progressiva al llarg del manual. Aquest capítol no ha d'anticipar totes les fórmules que s'utilitzaran després:
+
+::: table "Progressió del full de càlcul al manual"
+| Capítol | Operacions principals | Resultat acumulatiu |
+| --- | --- | --- |
+| 1. Preparació de dades | Importar, tipar, filtrar, copiar, referenciar, netejar text, buscar claus i comprovar absències o duplicats | `source_*`, `prepared_*`, `municipal`, `checks` i `dictionary` |
+| 2. Indicadors | Percentatges, ràtios, densitats, divisió segura, arrodoniment de presentació i agregats ponderats | `indicators_demography`, `indicators_housing` i `indicators_summary` |
+| 3. Visualització | `SUMIFS`, `COUNTIFS`, canvis entre files, taules dinàmiques, rangs auxiliars i gràfics | `charts_data`, pivots i fulls `chart_*` |
+| 5. Integració SIG | Selecció de camps, estat dels nuls, taula plana i exportació CSV | `map_export` i CSV de transferència |
+| 7. Teoria del color | HEX, RGB, potències, luminància, contrast i registre de paletes | `palette` i proves vectorials |
+:::
+
 Els programes de full de càlcul incorporen llistats explorables de funcions, assistents, categories i exemples. També es pot demanar ajuda a la documentació, al professorat o a un model de llenguatge quan cal construir una fórmula més complexa. Aquesta ajuda només és segura si la persona que treballa sap explicar l'operació i comprovar-ne el resultat: cap assistent substitueix la revisió dels rangs, dels tipus de dada, de les referències absolutes i del valor obtingut en una fila de prova.
 
 ![Esquema d'un assistent de funcions amb caixa de cerca, categories, resultats i comprovació]({{ site.baseurl }}/assets/img/data-sources/spreadsheet-function-browser.svg "Useu el cercador de funcions per passar d'una operació formulada amb paraules a una fórmula concreta; després reviseu rangs, separadors, referències i resultat amb una fila de prova. El menú real, els noms i els separadors poden canviar segons l'aplicació i la configuració regional. Esquema d'elaboració pròpia d'un assistent de funcions.")
@@ -919,6 +931,8 @@ No totes les habilitats tenen el mateix nivell de dificultat ni el mateix rendim
 | 9 | Resums i taules dinàmiques | Agrupar per comarca, tipologia o categoria; resumir totals, mitjanes i recomptes | Explorar patrons sense alterar la taula original |
 | 10 | Importació avançada i automatització | Power Query, OpenRefine, scripts o connexions a API | Repetir processos quan el treball manual deixa de ser segur |
 :::
+
+En aquest capítol es practiquen sobretot els nivells 1–4, la preparació de codis del nivell 6 i els controls del nivell 8. Els càlculs d'indicadors del nivell 5 corresponen al capítol 2; les taules dinàmiques i els resums que alimenten figures es desenvolupen al capítol 3. La taula descriu el recorregut del curs, no una llista d'operacions que s'hagin de dominar totes abans de preparar la primera font.
 
 >> **Practicar amb un projecte mascota.** La millor manera de guanyar fluïdesa és mantenir un petit projecte propi al marge de les activitats del curs: una base de dades de pel·lícules, cançons, restaurants, llocs visitats, comerços amb valoracions pròpies o lectures pendents. Un projecte així permet practicar codis, categories, dates, filtres, fórmules, taules dinàmiques i gràfics amb dades que resulten familiars. Si més endavant s'hi volen incorporar valoracions o informació recollida del web, cal aplicar les mateixes cauteles que en qualsevol font externa.
 
@@ -955,7 +969,7 @@ Una referència **relativa** canvia quan la fórmula es copia. En `=B2+C2`, copi
 
 La referència absoluta és útil quan moltes files han d'utilitzar un mateix valor: una taxa de conversió, un total comarcal, una data de referència o un llindar. Si `B2:B23` conté la població municipal i `B25` conté el total comarcal, la fórmula `=B2/$B$25*100` calcula el pes del primer municipi i es pot copiar cap avall sense que el denominador deixi d'apuntar al total. Si s'escrivís `=B2/B25*100`, en copiar-la una fila avall el denominador passaria a `B26`, que podria estar buit o contenir una altra cosa.
 
-Les fórmules també poden apuntar a altres fulls. Una referència com `raw_population!B2` indica la cel·la `B2` del full `raw_population`. Si el nom del full conté espais, moltes aplicacions escriuen la referència amb cometes simples, com `'Població 2021'!B2`. Aquesta capacitat permet conservar els fulls `raw_*` sense tocar i construir fulls preparats que llegeixen les dades originals mitjançant fórmules, consultes o passos documentats.
+Les fórmules també poden apuntar a altres fulls. Una referència com `source_population!B2` indica la cel·la `B2` del full `source_population`. Si el nom del full conté espais, moltes aplicacions escriuen la referència amb cometes simples, com `'Població 2021'!B2`. Aquesta capacitat permet conservar els fulls `source_*` sense tocar i construir fulls `prepared_*` que llegeixen les dades importades mitjançant fórmules, consultes o passos documentats.
 
 ::: table "Comportament de les referències quan es copien"
 | Fórmula original | Si es copia una fila avall | Lectura |
@@ -964,7 +978,7 @@ Les fórmules també poden apuntar a altres fulls. Una referència com `raw_popu
 | `=B2/$B$25` | `=B3/$B$25` | El numerador canvia, el total queda fixat |
 | `=$B2/C2` | `=$B3/C3` | La columna del primer terme queda fixada |
 | `=B$2+C2` | `=B$2+C3` | La fila del primer terme queda fixada |
-| `=raw_population!B2` | `=raw_population!B3` | La fórmula llegeix un altre full i manté la relació entre files |
+| `=source_population!B2` | `=source_population!B3` | La fórmula llegeix un altre full i manté la relació entre files |
 :::
 
 ### La taula rectangular com a objectiu
@@ -1060,33 +1074,12 @@ Les fórmules no només calculen nombres. També poden classificar files, neteja
 | Eliminar espais sobrants | <code>=TRIM(B2)</code> | Neteja espais inicials, finals o repetits en un text |
 | Obtenir els dos primers caràcters | <code>=LEFT(A2,2)</code> | Permet extreure un prefix, com el codi provincial |
 | Construir una etiqueta | <code>=A2&" - "&B2</code> | Uneix codi i nom en un text de lectura |
-| Classificar amb una condició | <code>=IF(D2&gt;=10000,"gran","petit")</code> | Assigna una categoria segons un llindar documentat |
 | Detectar una absència | <code>=IF(ISBLANK(D2),"revisar","ok")</code> | Marca files que necessiten comprovació |
-| Combinar condicions | <code>=IF(AND(D2&gt;0,E2&gt;0),D2/E2,"")</code> | Només calcula si numerador i denominador són vàlids |
 :::
 
-Les categories creades amb condicions no són neutrals. Si es decideix que un municipi és «gran» a partir de 10.000 habitants, aquest llindar ha d'estar justificat o, com a mínim, documentat. Una condició pot ajudar a revisar dades, però també pot amagar matisos si converteix una variable contínua en dues etiquetes massa simples.
+Les condicions d'indicadors, com evitar una divisió per zero o distingir un numerador absent, es desenvoluparan al capítol 2 quan ja s'hagin definit numerador, denominador i unitat. En aquest capítol, `IF` s'utilitza només per marcar incidències de preparació.
 
-### Operacions numèriques i arrodoniment
-
-Les operacions numèriques bàsiques del curs no són complicades, però sí que exigeixen coherència. Sumar una població té sentit si totes les files representen municipis compatibles; calcular una densitat exigeix dividir població per superfície; i obtenir un percentatge obliga a identificar quin total fa de denominador. Una fórmula curta pot ser tècnicament correcta i, alhora, respondre una pregunta equivocada si barreja períodes, unitats o escales.
-
-::: table "Operacions numèriques habituals"
-| Operació | Fórmula orientativa | Pregunta que resol |
-| --- | --- | --- |
-| Sumar una columna | <code>=SUM(D2:D23)</code> | Quin total tenen els municipis seleccionats? |
-| Calcular una diferència | <code>=D2-C2</code> | Quina variació hi ha entre dues columnes comparables? |
-| Calcular un percentatge | <code>=D2/C2*100</code> | Quin pes té una part sobre el total? |
-| Calcular una ràtio | <code>=F2/D2</code> | Quantes unitats d'una variable corresponen a una altra? |
-| Evitar divisió per zero | <code>=IF(C2=0,"",D2/C2)</code> | La fórmula només calcula si el denominador és vàlid |
-| Arrodonir un resultat | <code>=ROUND(D2/C2*100,1)</code> | Quin valor arrodonit es vol comunicar o exportar? |
-:::
-
-El format i l'arrodoniment no són el mateix. Si una cel·la conté `12,3456` i es mostra amb un decimal, el valor intern pot continuar sent `12,3456`. Si s'aplica `ROUND(A2,1)`, el resultat calculat passa a ser `12,3`. En general, convé conservar els valors de treball amb precisió suficient i controlar l'arrodoniment només en els resultats que es comuniquen, sempre indicant unitat i criteri. Canviar només el format pot ser adequat per llegir millor una taula; arrodonir amb una fórmula canvia la dada derivada i ha de ser una decisió explícita.
-
-Les mitjanes també demanen criteri. La mitjana simple dels percentatges municipals no equival necessàriament al percentatge comarcal. Per calcular el pes comarcal d'habitatge no principal, cal sumar habitatges no principals i dividir pel total d'habitatges, no fer la mitjana dels percentatges de cada municipi. Aquesta idea es desenvoluparà al capítol 2, però des d'ara cal recordar que una funció estadística només és correcta si la unitat d'observació i el denominador són adequats.
-
-### Operacions amb dates
+### Ampliació opcional: operacions amb dates
 
 Una data no és un text decoratiu. Els fulls de càlcul solen desar-la com un nombre de sèrie i aplicar-hi un format de calendari. En molts llibres, aquest nombre representa dies transcorreguts des d'una data d'origen propera a 1900; en altres sistemes informàtics és habitual representar instants com a segons o mil·lisegons transcorreguts des de l'1 de gener de 1970, l'anomenada època Unix. Això permet ordenar, restar dates i sumar durades, però també genera resultats aparentment absurds si es confon el valor intern amb el que es mostra.
 
@@ -1231,11 +1224,13 @@ La demostració començarà a la pàgina de cada taula, no en una API. Això obl
 
 Abans de descarregar massivament, és útil seguir un municipi de control. Vila-seca pot servir a l'aula perquè és conegut pel grup i apareix dins del Tarragonès: permet comprovar si el codi municipal, el nom, la comarca, la població i els habitatges arriben correctament a cada pas. Després, la mateixa lògica s'ha d'aplicar a tots els municipis del territori assignat; no s'ha de preparar només el municipi de demostració si el projecte demana una comarca.
 
-1. Obriu [Població. Per sexe i edat any a any](https://www.idescat.cat/pub/?id=censph&n=10&hist=taules%2Fv2%2Fcensph%2F10%2F5975%2Fmun%2Fdata%3FAGE%3DTOTAL%5Ecl%3D1%2C1%2Fc%3D3%2Fr%3D1%2Ft%3D-1c%3B0d%2C1%3B-2c%3B-3c%2Fe%3D0), reviseu que l'any seleccionat sigui **2021**, que el concepte sigui població i que el nivell territorial sigui **municipi**. Descarregueu el total i els grups de 0–14, 15–64 i 65 anys o més; si la taula mostra sexe, utilitzeu el total de tots els sexes o documenteu qualsevol altra selecció.
-2. Obriu [Habitatges. Per tipus d'habitatge](https://www.idescat.cat/pub/?id=censph&n=30&lang=ca), manteniu l'any 2021, seleccioneu **tots els municipis** i descarregueu la taula.
-3. Descarregueu la taula de [codis de municipis i comarques](https://www.idescat.cat/codis/?id=50&n=9&lang=ca). Aquesta correspondència permet identificar els municipis de la comarca sense filtrar només pel nom.
-4. Obriu [Superfície, densitat i entitats singulars](https://www.idescat.cat/pub/?id=inddt&n=396&lang=ca) i descarregueu la superfície municipal disponible.
+1. Descarregueu primer la taula de [codis de municipis i comarques](https://www.idescat.cat/codis/?id=50&n=9&lang=ca). Aquesta correspondència permet identificar els municipis del Tarragonès amb el codi de comarca `36` i obtenir els 22 codis municipals sense filtrar només pel nom.
+2. Obriu [Població. Per sexe i edat any a any](https://www.idescat.cat/pub/?id=censph&n=10&lang=ca), reviseu que l'any seleccionat sigui **2021**, que el concepte sigui població, que el sexe sigui **total** i que el nivell territorial sigui **municipi**. Seleccioneu els municipis identificats al pas anterior i conserveu les edats simples i el total. Els grups `0–14`, `15–64` i `65+` es construiran després al llibre; no s'han de substituir per la taula de grans grups actual, que utilitza els intervals `0–15` i `16–64`.
+3. Obriu [Habitatges. Per tipus d'habitatge](https://www.idescat.cat/pub/?id=censph&n=30&lang=ca), manteniu l'any 2021, seleccioneu **tots els municipis** i descarregueu la taula.
+4. Obriu [Superfície, densitat i entitats singulars](https://www.idescat.cat/pub/?id=inddt&n=396&lang=ca), seleccioneu el nivell municipal i reviseu quin període declara la descàrrega. Si la superfície publicada correspon a una edició posterior, cal comprovar que no hi ha hagut cap canvi territorial rellevant per als municipis analitzats i registrar aquesta diferència; no s'ha de presentar automàticament com una dada de 2021.
 5. Deseu els fitxers tal com arriben a `data/raw` i registreu-ne l'URL, la data d'accés, l'any de referència i qualsevol selecció aplicada.
+
+La selecció de població també es pot conservar mitjançant l'[API de Taules de l'Idescat](https://www.idescat.cat/dev/api/taules/). En la demostració docent, la resposta JSON-stat fixa `YEAR=2021`, `SEX=TOTAL`, les 22 claus municipals del Tarragonès i totes les edats simples. Aquesta via no substitueix la lectura de la pàgina ni de les metadades: serveix per deixar una consulta exacta i repetible quan la interfície gràfica manté part de la selecció dins de l'estat de la sessió.
 
 >> **La fitxa de fonts també és una dada del projecte.** Una fila del full `sources` ha de permetre entendre quin recurs s'ha usat sense tornar a preguntar-ho oralment: productor, títol exacte, URL de la taula, any o període, data d'accés, llicència, format descarregat i selecció aplicada. Si una descàrrega es pot repetir amb una URL o una API, aquesta adreça completa s'ha de conservar.
 
@@ -1296,7 +1291,9 @@ Es conservaran tres nivells de dades:
 
 No s'ha de corregir manualment el fitxer original. Una correcció feta directament sobre una cel·la pot ser impossible de detectar després. En canvi, una columna nova, una consulta de Power Query o un full de correspondències deixa visible la regla aplicada.
 
-L'estructura proposada separa `data/raw` de `data/processed`. Tot el treball tabular es farà en **un únic llibre**. El patró canònic del nom és `territorial_context_<comarca>.xlsx`; per exemple, la demostració utilitza `territorial_context_tarragones.xlsx`. També és acceptable el patró canònic `territorial_context_<comarca>.ods` si l'equip treballa de manera consistent amb LibreOffice Calc. No es crearà un llibre per a cada font ni còpies com `final2.xlsx`. Dins del llibre, els noms dels fulls han de seguir el mateix criteri que els noms de fitxers: han de dir quina unitat treballen, si són originals importats, taules preparades, indicadors o gràfics.
+L'estructura proposada separa `data/raw` de `data/processed`. Tot el treball tabular es farà en **un únic llibre acumulatiu**, però se'n conservaran fites docents deliberades. La demostració comença amb `tigit-01-preparacio-dades.xlsx`; abans de calcular indicadors se'n derivarà `tigit-02-indicadors-territorials.xlsx`, i abans de construir figures se'n derivarà `tigit-03-semiologia-visualitzacio.xlsx`. El número i el nom identifiquen el capítol que ha produït aquell estat, no una còpia arbitrària com `final2.xlsx`.
+
+El territori i el període no formen part del nom estable del llibre editable perquè es documenten a `project`, `sources` i `dictionary` i poden actualitzar-se sense canviar la identitat del projecte. En canvi, les figures, els mapes i la infografia exportats sí que inclouran fenomen, territori i període al nom, perquè s'han de poder interpretar quan circulin fora del llibre. Dins del llibre, els noms dels fulls també han de descriure la seva funció; afegir un cognom com `indicators_demography` o `charts_housing` és preferible a acumular operacions independents en un únic full difícil de revisar.
 
 ::: table "Fulls del llibre acumulatiu"
 | Full | Funció |
@@ -1304,17 +1301,24 @@ L'estructura proposada separa `data/raw` de `data/processed`. Tot el treball tab
 | `project` | Pregunta, territori, autoria, aplicació, configuració regional i ubicació de treball |
 | `sources` | Productor, taula, URL, any, data d'accés, llicència i notes |
 | `dictionary` | Definicions dels camps, tipus, unitats, fonts i tractament d'absències |
-| `raw_municipal` | Còpia importada de codis, comarca, municipi, superfície i altres camps territorials de base |
-| `raw_population` | Còpia importada de la taula de població de 2021, si arriba separada de la base municipal |
-| `raw_housing` | Còpia importada de la taula d'habitatges de 2021 |
+| `source_codes` | Taula importada amb les capçaleres i els valors publicats per la font de codis |
+| `source_surface` | Taula importada amb les capçaleres i els valors publicats per la font territorial |
+| `source_population` | Resposta de població desplegada amb les dimensions originals `YEAR`, `MUN`, `AGE`, `SEX` i `CONCEPT` |
+| `source_housing` | Taula importada amb les categories d'habitatge publicades per Idescat |
+| `prepared_codes` | Codis i noms normalitzats per filtrar i relacionar taules |
+| `prepared_surface` | Superfície convertida a un camp numèric amb unitat i estat explícits |
+| `prepared_population` | Edat simple interpretada numèricament i camps preparats per reagrupar-la |
+| `prepared_housing` | Categories seleccionades i camps numèrics preparats per a l'anàlisi |
 | `checks` | Regles de transformació aplicades, recompte de files, duplicats, absències, sumes i incidències |
 | `municipal` | Taula preparada per a l'anàlisi, amb una fila per municipi i variables de base |
-| `indicators` | Indicadors municipals de població i habitatge, amb numeradors, denominadors i fórmules visibles |
-| `charts` | Taules auxiliars i gràfics editables derivats dels indicadors |
-| `map_export` | Taula plana que es reutilitzarà més endavant als mapes |
+| `indicators_*` | A partir del capítol 2, indicadors agrupats per funció, amb numeradors, denominadors i fórmules visibles |
+| `pivot_*` | Taules dinàmiques d'exploració o control quan aportin una comprovació que convé conservar |
+| `charts_*` | A partir del capítol 3, una o poques figures relacionades amb les seves taules auxiliars editables |
 :::
 
-Els fulls `raw_*` no se sobreescriuran amb correccions manuals. Els fulls següents es construiran copiant per referència, amb fórmules, consultes o passos documentats. `municipal` referenciarà els fulls `raw_*`, mentre que `indicators` referenciarà exclusivament `municipal`; així la traça no se salta la taula preparada. Si cal corregir un valor, no s'ha de substituir silenciosament: cal afegir una columna de tractament i registrar la regla aplicada i la incidència a `checks`; la definició del camp i el tractament d'absències quedaran a `dictionary`. Aquest flux és més complex que copiar i enganxar valors, però és el procediment més reproduïble que es pot aconseguir amb fulls de càlcul sense passar encara a programació.
+Els fitxers de `data/raw` i els fulls `source_*` no se sobreescriuran amb correccions manuals. Els noms de columna propis del projecte apareixeran només a `prepared_*`: aquest canvi de vocabulari fa visible que ja s'ha interpretat i transformat la font. `municipal` referenciarà els fulls `prepared_*`, mentre que els futurs `indicators_*` referenciaran exclusivament `municipal`; així la traça no se salta cap fase. Si cal corregir un valor, no s'ha de substituir silenciosament: cal afegir una columna de tractament i registrar la regla aplicada i la incidència a `checks`; la definició del camp i el tractament d'absències quedaran a `dictionary`.
+
+Els filtres s'utilitzaran des d'aquest capítol per inspeccionar nivells territorials, seleccionar la comarca, localitzar absències i revisar duplicats. Una taula dinàmica pot servir per recomptar municipis per comarca, resumir categories o comprovar que una importació conserva la cobertura prevista. No substituirà, però, la taula `municipal` ni les fórmules auditables dels indicadors: la seva funció serà explorar o controlar una estructura que continua documentada als fulls canònics.
 
 ### Fer la inspecció inicial amb el full de càlcul
 
@@ -1395,6 +1399,27 @@ La preparació ha de deixar un rastre revisable perquè l'equip pugui reconstrui
 | `data/processed` | `municipal` | Una fila per municipi, codis com a text, unitats explícites i valors absents documentats |
 | `data/processed` | `checks` i `dictionary` | Regles i incidències a `checks`; definicions dels camps a `dictionary` |
 :::
+
+### Començar amb el paquet de pràctiques
+
+El projecte es pot iniciar construint manualment totes les carpetes i els fulls anteriors, però aquesta preparació mecànica pot consumir temps sense afegir una decisió analítica nova. El [paquet inicial del projecte pràctic]({{ site.baseurl }}/assets/downloads/tigit-01-preparacio-dades-student.zip) proporciona una estructura comuna perquè el grup pugui concentrar-se en la lectura de les fonts, la importació, les referències, els filtres, les comprovacions i la construcció de la taula municipal.
+
+El ZIP conté `tigit-01-preparacio-dades.xlsx`, les carpetes `data`, `qgis`, `outputs`, `sandbox`, `dist` i `captures`, i un `README.md` de partida. El llibre diferencia els fulls `source_*`, que reben l'estructura publicada, dels fulls `prepared_*`, que incorporen noms, tipus i regles propis del projecte; `municipal` integra després les quatre famílies. No incorpora les dades d'Idescat ni una solució resolta: cada equip encara ha de visitar les taules, comprovar-ne les metadades, fer les seleccions, descarregar els originals i importar-los.
+
+Per utilitzar-lo sense perdre la traça:
+
+1. descarregueu el ZIP i extraieu-lo complet en una carpeta amb permisos d'escriptura;
+2. no obriu ni editeu el llibre directament dins del ZIP;
+3. manteniu juntes les carpetes del projecte i no canvieu encara el nom de `tigit-01-preparacio-dades.xlsx`;
+4. completeu `project` amb autoria, aplicació i configuració regional;
+5. deseu cada descàrrega original a `data/raw` sense canviar-ne el nom ni el contingut;
+6. completeu una fila de `sources` per cada recurs abans de transformar-lo;
+7. importeu cada taula al full `source_*` corresponent, conserveu els codis com a text i no hi substituïu les capçaleres de la font;
+8. registreu a `checks` els recomptes, duplicats, absències i incidències abans de construir `municipal`.
+
+>>>> **El paquet inicial no és una plantilla per omplir a cegues.** Les capçaleres anticipen el resultat que es vol obtenir, però poden no coincidir amb l'estructura exacta de la descàrrega. Primer cal diagnosticar el fitxer rebut; després s'ha de decidir com separar, remodelar o referenciar els camps sense alterar-ne el significat.
+
+El professorat de pràctiques disposa d'un paquet docent separat que afegeix la guia de desenvolupament, els criteris de demostració, les captures pendents i les eines de regeneració. Aquest material s'actualitzarà a mesura que es validin les descàrregues reals i les fites `-02`, `-03` i posteriors; el paquet públic de l'estudiant continuarà distingint clarament el punt de partida dels resultats resolts.
 
 La carpeta `outputs` encara no ha de contenir la infografia final. Les figures que es generin al capítol 3 s'hi desaran com a resultats intermedis reutilitzables; els mapes s'afegiran després des de QGIS, i el document final de síntesi s'exportarà més endavant a `dist`. Aquesta separació ajuda a no confondre una activitat de preparació amb el producte final, però també deixa clar que el producte final dependrà de la qualitat d'aquesta base.
 

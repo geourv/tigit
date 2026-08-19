@@ -1,0 +1,1095 @@
+course,year,centre_code,centre_name,nature,municipality_code,municipality,county
+2020/2021,2020,43000251,Escola La Portalada,Públic,430120,Altafulla,Tarragonès
+2020/2021,2020,43007488,Llar d'infants Francesc Blanch i Ribé,Públic,430120,Altafulla,Tarragonès
+2020/2021,2020,43009977,Institut d'Altafulla,Públic,430120,Altafulla,Tarragonès
+2020/2021,2020,43010402,Escola El Roquissar,Públic,430120,Altafulla,Tarragonès
+2020/2021,2020,43011297,Llar d'infants Hort de Pau,Públic,430120,Altafulla,Tarragonès
+2020/2021,2020,43011674,Esc. de Música Municipal d'Altafulla,Públic,430120,Altafulla,Tarragonès
+2020/2021,2020,43010499,CFA Pau Casals,Públic,430430,El Catllar,Tarragonès
+2020/2021,2020,43011261,Llar d'infants L'Agulla del Catllar,Públic,430430,El Catllar,Tarragonès
+2020/2021,2020,43012745,Jigsaw British School,Privat,430430,El Catllar,Tarragonès
+2020/2021,2020,43012812,Institut Escola L'Agulla,Públic,430430,El Catllar,Tarragonès
+2020/2021,2020,43000895,Escola Mossèn Ramon Bergadà,Públic,430477,Constantí,Tarragonès
+2020/2021,2020,43000949,Escola agrària Mas Bové,Públic,430477,Constantí,Tarragonès
+2020/2021,2020,43005893,Escola Centcelles,Públic,430477,Constantí,Tarragonès
+2020/2021,2020,43007646,Institut de Constantí,Públic,430477,Constantí,Tarragonès
+2020/2021,2020,43010451,Llar d'infants Gu-gu,Públic,430477,Constantí,Tarragonès
+2020/2021,2020,43005364,Escola Les Eres,Públic,430509,Creixell,Tarragonès
+2020/2021,2020,43009667,Llar d'infants Municipal de Creixell,Públic,430509,Creixell,Tarragonès
+2020/2021,2020,43011649,Llar d'infants Nova Guarderia,Públic,430509,Creixell,Tarragonès
+2020/2021,2020,43012241,Escola Bressol L'Estel de Mar,Públic,430509,Creixell,Tarragonès
+2020/2021,2020,43001735,Escola Ventura Gassol,Públic,430957,El Morell,Tarragonès
+2020/2021,2020,43008407,Institut El Morell,Públic,430957,El Morell,Tarragonès
+2020/2021,2020,43009931,Llar d'infants del Morell,Públic,430957,El Morell,Tarragonès
+2020/2021,2020,43012231,Esc. de Música Municipal El Morell,Públic,430957,El Morell,Tarragonès
+2020/2021,2020,43005467,Escola Les Codinetes,Públic,430976,La Nou de Gaià,Tarragonès
+2020/2021,2020,43011042,Llar d'infants La Palmera,Públic,430976,La Nou de Gaià,Tarragonès
+2020/2021,2020,43001826,Escola Sant Sebastià,Públic,431009,Els Pallaresos,Tarragonès
+2020/2021,2020,43009564,LLI privada Can Petits,Privat,431009,Els Pallaresos,Tarragonès
+2020/2021,2020,43010591,Escola Arquitecte Jujol,Públic,431009,Els Pallaresos,Tarragonès
+2020/2021,2020,43010748,Institut Els Pallaresos,Públic,431009,Els Pallaresos,Tarragonès
+2020/2021,2020,43012563,Escola Bressol Els Pallaresos,Públic,431009,Els Pallaresos,Tarragonès
+2020/2021,2020,43007476,Llar d'infants Perafort,Públic,431037,Perafort,Tarragonès
+2020/2021,2020,43009886,Escola Josep Veciana,Públic,431037,Perafort,Tarragonès
+2020/2021,2020,43005480,Escola Mare de Déu del Lledó,Públic,431093,La Pobla de Mafumet,Tarragonès
+2020/2021,2020,43008936,Llar d'infants L'Esquirol,Públic,431093,La Pobla de Mafumet,Tarragonès
+2020/2021,2020,43012186,Llar d'infants Nou Esquirol,Públic,431093,La Pobla de Mafumet,Tarragonès
+2020/2021,2020,43012885,CENAFE La Pobla de Mafumet,Privat,431093,La Pobla de Mafumet,Tarragonès
+2020/2021,2020,43005145,Escola Els Ametllers,Públic,431114,La Pobla de Montornès,Tarragonès
+2020/2021,2020,43010271,Llar d'infants Sol Solet,Públic,431114,La Pobla de Montornès,Tarragonès
+2020/2021,2020,43005157,Escola Montoliu,Públic,431264,La Riera de Gaià,Tarragonès
+2020/2021,2020,43010049,Llar d'infants Les Monges,Públic,431264,La Riera de Gaià,Tarragonès
+2020/2021,2020,43002776,Escola Salvador Espriu,Públic,431310,Roda de Berà,Tarragonès
+2020/2021,2020,43009928,Llar d'infants Els Petitons,Públic,431310,Roda de Berà,Tarragonès
+2020/2021,2020,43011194,Escola El Cucurull,Públic,431310,Roda de Berà,Tarragonès
+2020/2021,2020,43011418,Institut Roda de Berà,Públic,431310,Roda de Berà,Tarragonès
+2020/2021,2020,43005662,Escola Josep Nin,Públic,431359,Salomó,Tarragonès
+2020/2021,2020,43012678,Llar d'infants El Til·ler,Públic,431359,Salomó,Tarragonès
+2020/2021,2020,43003082,Escola Guillem de Claramunt,Públic,431444,La Secuita,Tarragonès
+2020/2021,2020,43012770,Escola Bressol Municipal els Guillemets,Públic,431444,La Secuita,Tarragonès
+2020/2021,2020,43003136,Escola Bonavista,Públic,431482,Tarragona,Tarragonès
+2020/2021,2020,43003151,Joan XXIII,Privat,431482,Tarragona,Tarragonès
+2020/2021,2020,43003227,Escola Sant Salvador,Públic,431482,Tarragona,Tarragonès
+2020/2021,2020,43003306,Escola Serrallo,Públic,431482,Tarragona,Tarragonès
+2020/2021,2020,43003321,Escola Sant Pere i Sant Pau,Públic,431482,Tarragona,Tarragonès
+2020/2021,2020,43003410,Joan Roig,Privat,431482,Tarragona,Tarragonès
+2020/2021,2020,43003461,Tic-Tac,Privat,431482,Tarragona,Tarragonès
+2020/2021,2020,43003483,Lestonnac-l'Ensenyança,Privat,431482,Tarragona,Tarragonès
+2020/2021,2020,43003495,Mare de Déu del Carme,Privat,431482,Tarragona,Tarragonès
+2020/2021,2020,43003501,El Carme,Privat,431482,Tarragona,Tarragonès
+2020/2021,2020,43003525,Dominiques Tarragona,Privat,431482,Tarragona,Tarragonès
+2020/2021,2020,43003537,La Salle,Privat,431482,Tarragona,Tarragonès
+2020/2021,2020,43003549,Vedruna Sagrat Cor Tarragona,Privat,431482,Tarragona,Tarragonès
+2020/2021,2020,43003550,Santa Teresa de Jesús,Privat,431482,Tarragona,Tarragonès
+2020/2021,2020,43003586,Sant Pau Apòstol,Privat,431482,Tarragona,Tarragonès
+2020/2021,2020,43003616,CEE San Rafael,Públic,431482,Tarragona,Tarragonès
+2020/2021,2020,43003631,Estela,Privat,431482,Tarragona,Tarragonès
+2020/2021,2020,43003641,Institut Antoni de Martí i Franquès,Públic,431482,Tarragona,Tarragonès
+2020/2021,2020,43003653,Institut Comte de Rius,Públic,431482,Tarragona,Tarragonès
+2020/2021,2020,43003690,Escola de Pràctiques,Públic,431482,Tarragona,Tarragonès
+2020/2021,2020,43003707,Mare Nostrum,Privat,431482,Tarragona,Tarragonès
+2020/2021,2020,43003719,Espallargas,Privat,431482,Tarragona,Tarragonès
+2020/2021,2020,43003720,Escola El Miracle,Públic,431482,Tarragona,Tarragonès
+2020/2021,2020,43003732,Institut Pons d'Icart,Públic,431482,Tarragona,Tarragonès
+2020/2021,2020,43003756,Escola Torreforta,Públic,431482,Tarragona,Tarragonès
+2020/2021,2020,43003768,Escola Els Àngels,Públic,431482,Tarragona,Tarragonès
+2020/2021,2020,43003793,La Salle Torreforta,Privat,431482,Tarragona,Tarragonès
+2020/2021,2020,43005169,Escola Pau Delclòs,Públic,431482,Tarragona,Tarragonès
+2020/2021,2020,43005170,Escola La Floresta,Públic,431482,Tarragona,Tarragonès
+2020/2021,2020,43005686,Escola Riu Clar,Públic,431482,Tarragona,Tarragonès
+2020/2021,2020,43005704,Institut Francesc Vidal i Barraquer,Públic,431482,Tarragona,Tarragonès
+2020/2021,2020,43005731,La Muntanyeta,Privat,431482,Tarragona,Tarragonès
+2020/2021,2020,43005911,Escola Campclar,Públic,431482,Tarragona,Tarragonès
+2020/2021,2020,43005959,Escola Cèsar August,Públic,431482,Tarragona,Tarragonès
+2020/2021,2020,43006125,Institut Campclar,Públic,431482,Tarragona,Tarragonès
+2020/2021,2020,43006162,Solc,Privat,431482,Tarragona,Tarragonès
+2020/2021,2020,43006253,EASD de Tarragona,Públic,431482,Tarragona,Tarragonès
+2020/2021,2020,43006265,Escola de Dansa Artemis,Privat,431482,Tarragona,Tarragonès
+2020/2021,2020,43006277,Cons. de Música de Tarragona,Públic,431482,Tarragona,Tarragonès
+2020/2021,2020,43006563,Escola Marcel·lí Domingo,Públic,431482,Tarragona,Tarragonès
+2020/2021,2020,43006630,Institut Pere Martell,Públic,431482,Tarragona,Tarragonès
+2020/2021,2020,43006940,EOI de Tarragona,Públic,431482,Tarragona,Tarragonès
+2020/2021,2020,43007051,CFA Josepa Massanés i Dalmau,Públic,431482,Tarragona,Tarragonès
+2020/2021,2020,43007117,Escola Pax,Públic,431482,Tarragona,Tarragonès
+2020/2021,2020,43007713,Llar d'infants El Ninot,Públic,431482,Tarragona,Tarragonès
+2020/2021,2020,43007725,Llar d'infants La Taronja,Públic,431482,Tarragona,Tarragonès
+2020/2021,2020,43007853,Llar d'infants La Baldufa,Públic,431482,Tarragona,Tarragonès
+2020/2021,2020,43007981,Bao Bab,Privat,431482,Tarragona,Tarragonès
+2020/2021,2020,43008390,Institut Torreforta,Públic,431482,Tarragona,Tarragonès
+2020/2021,2020,43008432,Institut Sant Pere i Sant Pau,Públic,431482,Tarragona,Tarragonès
+2020/2021,2020,43008501,Institut Pont del Diable,Públic,431482,Tarragona,Tarragonès
+2020/2021,2020,43008560,Àngel de la Guarda,Privat,431482,Tarragona,Tarragonès
+2020/2021,2020,43008687,LLI privada Yo-Ni,Privat,431482,Tarragona,Tarragonès
+2020/2021,2020,43008729,CFA Tarragona,Públic,431482,Tarragona,Tarragonès
+2020/2021,2020,43008766,Esc. de Música Municipal,Públic,431482,Tarragona,Tarragonès
+2020/2021,2020,43008778,CFA Fòrum,Públic,431482,Tarragona,Tarragonès
+2020/2021,2020,43008791,Esc. de Música de la Diputació de Tarragona,Públic,431482,Tarragona,Tarragonès
+2020/2021,2020,43008997,LLI privada El Niuet,Privat,431482,Tarragona,Tarragonès
+2020/2021,2020,43009175,L'Alba i La Cigonya,Privat,431482,Tarragona,Tarragonès
+2020/2021,2020,43009230,Escola Tarragona,Públic,431482,Tarragona,Tarragonès
+2020/2021,2020,43009369,Escola Saavedra,Públic,431482,Tarragona,Tarragonès
+2020/2021,2020,43009448,Cent.Prof.Dansa Artemis,Privat,431482,Tarragona,Tarragonès
+2020/2021,2020,43009539,LLI privada Baobad-rosa,Privat,431482,Tarragona,Tarragonès
+2020/2021,2020,43009576,Esc. de Música Estudi de Música,Privat,431482,Tarragona,Tarragonès
+2020/2021,2020,43009722,Institut Cal·lípolis,Públic,431482,Tarragona,Tarragonès
+2020/2021,2020,43010256,Llar d'infants El Serrallo,Públic,431482,Tarragona,Tarragonès
+2020/2021,2020,43010281,LLI privada El Bosquet,Privat,431482,Tarragona,Tarragonès
+2020/2021,2020,43010396,Escola de Ponent,Públic,431482,Tarragona,Tarragonès
+2020/2021,2020,43010438,Llar d'infants El Miracle,Públic,431482,Tarragona,Tarragonès
+2020/2021,2020,43010700,CASASFORMACIÓN.ES,Privat,431482,Tarragona,Tarragonès
+2020/2021,2020,43010876,Escola l'Arrabassada,Públic,431482,Tarragona,Tarragonès
+2020/2021,2020,43010955,Llar d'infants Sant Pere i Sant Pau,Públic,431482,Tarragona,Tarragonès
+2020/2021,2020,43010979,Llar d'infants Sant Salvador,Públic,431482,Tarragona,Tarragonès
+2020/2021,2020,43011479,Institut Tarragona,Públic,431482,Tarragona,Tarragonès
+2020/2021,2020,43011561,Llar d'infants L'Arrabassada,Públic,431482,Tarragona,Tarragonès
+2020/2021,2020,43012125,Novatècnica,Privat,431482,Tarragona,Tarragonès
+2020/2021,2020,43012162,Llar d'infants Bonavista,Públic,431482,Tarragona,Tarragonès
+2020/2021,2020,43012216,Llar d'infants Cèsar August,Públic,431482,Tarragona,Tarragonès
+2020/2021,2020,43012447,Bettatur,Privat,431482,Tarragona,Tarragonès
+2020/2021,2020,43012629,Aula Magna,Privat,431482,Tarragona,Tarragonès
+2020/2021,2020,43012642,LLI privada Xino-Xano Joan XXIII,Privat,431482,Tarragona,Tarragonès
+2020/2021,2020,43012708,CEOP,Privat,431482,Tarragona,Tarragonès
+2020/2021,2020,43012897,AFENTD,Privat,431482,Tarragona,Tarragonès
+2020/2021,2020,43012939,Òrgan Gestor del Complex Educatiu de Tarragona,Públic,431482,Tarragona,Tarragonès
+2020/2021,2020,43012976,Institut Escola Mediterrani,Públic,431482,Tarragona,Tarragonès
+2020/2021,2020,43013002,A. Hospitalària H.de dia salut mental infanto juvenil deTarragona,Públic,431482,Tarragona,Tarragonès
+2020/2021,2020,43013063,LLI privada Teresianes-Jaycar,Privat,431482,Tarragona,Tarragonès
+2020/2021,2020,43003884,Escola Antoni Roig,Públic,431536,Torredembarra,Tarragonès
+2020/2021,2020,43006851,Escola Molí de Vent,Públic,431536,Torredembarra,Tarragonès
+2020/2021,2020,43006952,Institut Torredembarra,Públic,431536,Torredembarra,Tarragonès
+2020/2021,2020,43007661,Institut Ramon de la Torre,Públic,431536,Torredembarra,Tarragonès
+2020/2021,2020,43009242,Escola L'Antina,Públic,431536,Torredembarra,Tarragonès
+2020/2021,2020,43009643,Llar d'infants El Cirerer,Públic,431536,Torredembarra,Tarragonès
+2020/2021,2020,43009746,Esc. de Música Municipal de Torredembarra,Públic,431536,Torredembarra,Tarragonès
+2020/2021,2020,43010918,Escola de Dansa Centrescènic,Privat,431536,Torredembarra,Tarragonès
+2020/2021,2020,43011650,EB privada La Casa de les Fades,Privat,431536,Torredembarra,Tarragonès
+2020/2021,2020,43012253,Llar d'infants Els Gegants de la Torre,Públic,431536,Torredembarra,Tarragonès
+2020/2021,2020,43012794,Centre d'Estudis Eqüestres Torredembarra,Privat,431536,Torredembarra,Tarragonès
+2020/2021,2020,43004864,Escola Pere Virgili,Públic,431665,Vilallonga del Camp,Tarragonès
+2020/2021,2020,43010104,Llar d'infants Patufet,Públic,431665,Vilallonga del Camp,Tarragonès
+2020/2021,2020,43004979,Escola Torroja i Miret,Públic,431711,Vila-seca,Tarragonès
+2020/2021,2020,43005005,Escola Sant Bernat Calvó,Públic,431711,Vila-seca,Tarragonès
+2020/2021,2020,43005947,Escola Cal·lípolis,Públic,431711,Vila-seca,Tarragonès
+2020/2021,2020,43005972,Institut Ramon Barbat i Miracle,Públic,431711,Vila-seca,Tarragonès
+2020/2021,2020,43006241,Escola La Plana,Públic,431711,Vila-seca,Tarragonès
+2020/2021,2020,43006289,Cons. de Música de Vila-seca,Públic,431711,Vila-seca,Tarragonès
+2020/2021,2020,43006332,Escola Mestral,Públic,431711,Vila-seca,Tarragonès
+2020/2021,2020,43008158,LLI privada Pineda,Privat,431711,Vila-seca,Tarragonès
+2020/2021,2020,43008523,Institut Vila-seca,Públic,431711,Vila-seca,Tarragonès
+2020/2021,2020,43008742,Esc. de Música Municipal de Vila-seca,Públic,431711,Vila-seca,Tarragonès
+2020/2021,2020,43010086,CFA Vilaseca,Públic,431711,Vila-seca,Tarragonès
+2020/2021,2020,43010426,LLI privada La Formiga,Privat,431711,Vila-seca,Tarragonès
+2020/2021,2020,43010530,Escola Miramar,Públic,431711,Vila-seca,Tarragonès
+2020/2021,2020,43011492,Escola La Canaleta,Públic,431711,Vila-seca,Tarragonès
+2020/2021,2020,43011595,Llar d'infants Fartets,Públic,431711,Vila-seca,Tarragonès
+2020/2021,2020,43012551,Llar d'infants Les Vimeteres,Públic,431711,Vila-seca,Tarragonès
+2020/2021,2020,43004931,Escola Santa Maria del Mar,Públic,439057,Salou,Tarragonès
+2020/2021,2020,43004967,Elisabeth,Privat,439057,Salou,Tarragonès
+2020/2021,2020,43006393,Escola Europa,Públic,439057,Salou,Tarragonès
+2020/2021,2020,43007026,LLI privada Nou Esplai,Privat,439057,Salou,Tarragonès
+2020/2021,2020,43007518,Esc. de Música Municipal,Públic,439057,Salou,Tarragonès
+2020/2021,2020,43007543,Institut Jaume I,Públic,439057,Salou,Tarragonès
+2020/2021,2020,43009451,Escola Salou,Públic,439057,Salou,Tarragonès
+2020/2021,2020,43010153,Escola Vora Mar,Públic,439057,Salou,Tarragonès
+2020/2021,2020,43010347,Institut Marta Mata,Públic,439057,Salou,Tarragonès
+2020/2021,2020,43010921,Llar d'infants La Balena Blava,Públic,439057,Salou,Tarragonès
+2020/2021,2020,43011200,EOI de Salou,Públic,439057,Salou,Tarragonès
+2020/2021,2020,43011765,CFA Àgora,Públic,439057,Salou,Tarragonès
+2020/2021,2020,43012022,Llar d'infants Cavallet de Mar,Públic,439057,Salou,Tarragonès
+2020/2021,2020,43012666,EIC,Privat,439057,Salou,Tarragonès
+2020/2021,2020,43003185,Escola La Canonja,Públic,439076,La Canonja,Tarragonès
+2020/2021,2020,43008237,LLI privada Mare de Déu de l'Esperança,Privat,439076,La Canonja,Tarragonès
+2020/2021,2020,43008481,Institut Collblanc,Públic,439076,La Canonja,Tarragonès
+2021/2022,2021,43000251,Escola La Portalada,Públic,430120,Altafulla,Tarragonès
+2021/2022,2021,43007488,Llar d'infants Francesc Blanch i Ribé,Públic,430120,Altafulla,Tarragonès
+2021/2022,2021,43009977,Institut d'Altafulla,Públic,430120,Altafulla,Tarragonès
+2021/2022,2021,43010402,Escola El Roquissar,Públic,430120,Altafulla,Tarragonès
+2021/2022,2021,43011297,Llar d'infants Hort de Pau,Públic,430120,Altafulla,Tarragonès
+2021/2022,2021,43011674,Esc. de Música Municipal d'Altafulla,Públic,430120,Altafulla,Tarragonès
+2021/2022,2021,43010499,CFA Pau Casals,Públic,430430,El Catllar,Tarragonès
+2021/2022,2021,43011261,Llar d'infants L'Agulla del Catllar,Públic,430430,El Catllar,Tarragonès
+2021/2022,2021,43012745,The British School of Costa Daurada,Privat,430430,El Catllar,Tarragonès
+2021/2022,2021,43012812,Institut Escola L'Agulla,Públic,430430,El Catllar,Tarragonès
+2021/2022,2021,43000895,Escola Mossèn Ramon Bergadà,Públic,430477,Constantí,Tarragonès
+2021/2022,2021,43000949,Escola agrària Mas Bové,Públic,430477,Constantí,Tarragonès
+2021/2022,2021,43005893,Escola Centcelles,Públic,430477,Constantí,Tarragonès
+2021/2022,2021,43007646,Institut de Constantí,Públic,430477,Constantí,Tarragonès
+2021/2022,2021,43010451,Llar d'infants Gu-gu,Públic,430477,Constantí,Tarragonès
+2021/2022,2021,43005364,Escola Les Eres,Públic,430509,Creixell,Tarragonès
+2021/2022,2021,43009667,Llar d'infants Municipal de Creixell,Públic,430509,Creixell,Tarragonès
+2021/2022,2021,43011649,Llar d'infants Nova Guarderia,Públic,430509,Creixell,Tarragonès
+2021/2022,2021,43012241,Escola Bressol L'Estel de Mar,Públic,430509,Creixell,Tarragonès
+2021/2022,2021,43001735,Escola Ventura Gassol,Públic,430957,El Morell,Tarragonès
+2021/2022,2021,43008407,Institut El Morell,Públic,430957,El Morell,Tarragonès
+2021/2022,2021,43009931,Llar d'infants del Morell,Públic,430957,El Morell,Tarragonès
+2021/2022,2021,43012231,Esc. de Música Municipal El Morell,Públic,430957,El Morell,Tarragonès
+2021/2022,2021,43005467,Escola Les Codinetes,Públic,430976,La Nou de Gaià,Tarragonès
+2021/2022,2021,43011042,Llar d'infants La Palmera,Públic,430976,La Nou de Gaià,Tarragonès
+2021/2022,2021,43001826,Escola Sant Sebastià,Públic,431009,Els Pallaresos,Tarragonès
+2021/2022,2021,43009564,LLI privada Can Petits,Privat,431009,Els Pallaresos,Tarragonès
+2021/2022,2021,43010591,Escola Arquitecte Jujol,Públic,431009,Els Pallaresos,Tarragonès
+2021/2022,2021,43010748,Institut Els Pallaresos,Públic,431009,Els Pallaresos,Tarragonès
+2021/2022,2021,43012563,Escola Bressol Els Pallaresos,Públic,431009,Els Pallaresos,Tarragonès
+2021/2022,2021,43007476,Llar d'infants Perafort,Públic,431037,Perafort,Tarragonès
+2021/2022,2021,43009886,Escola Josep Veciana,Públic,431037,Perafort,Tarragonès
+2021/2022,2021,43005480,Escola Mare de Déu del Lledó,Públic,431093,La Pobla de Mafumet,Tarragonès
+2021/2022,2021,43008936,Llar d'infants L'Esquirol,Públic,431093,La Pobla de Mafumet,Tarragonès
+2021/2022,2021,43012186,Llar d'infants Nou Esquirol,Públic,431093,La Pobla de Mafumet,Tarragonès
+2021/2022,2021,43012885,CENAFE La Pobla de Mafumet,Privat,431093,La Pobla de Mafumet,Tarragonès
+2021/2022,2021,43005145,Escola Els Ametllers,Públic,431114,La Pobla de Montornès,Tarragonès
+2021/2022,2021,43010271,Llar d'infants Sol Solet,Públic,431114,La Pobla de Montornès,Tarragonès
+2021/2022,2021,43005157,Escola Montoliu,Públic,431264,La Riera de Gaià,Tarragonès
+2021/2022,2021,43010049,Llar d'infants Les Monges,Públic,431264,La Riera de Gaià,Tarragonès
+2021/2022,2021,43002776,Escola Salvador Espriu,Públic,431310,Roda de Berà,Tarragonès
+2021/2022,2021,43009928,Llar d'infants Els Petitons,Públic,431310,Roda de Berà,Tarragonès
+2021/2022,2021,43011194,Escola El Cucurull,Públic,431310,Roda de Berà,Tarragonès
+2021/2022,2021,43011418,Institut Roda de Berà,Públic,431310,Roda de Berà,Tarragonès
+2021/2022,2021,43005662,Escola Josep Nin,Públic,431359,Salomó,Tarragonès
+2021/2022,2021,43012678,Llar d'infants El Til·ler,Públic,431359,Salomó,Tarragonès
+2021/2022,2021,43003082,Escola Guillem de Claramunt,Públic,431444,La Secuita,Tarragonès
+2021/2022,2021,43012770,Escola Bressol Municipal els Guillemets,Públic,431444,La Secuita,Tarragonès
+2021/2022,2021,43003136,Escola Bonavista,Públic,431482,Tarragona,Tarragonès
+2021/2022,2021,43003151,Joan XXIII,Privat,431482,Tarragona,Tarragonès
+2021/2022,2021,43003227,Escola Sant Salvador,Públic,431482,Tarragona,Tarragonès
+2021/2022,2021,43003306,Escola Serrallo,Públic,431482,Tarragona,Tarragonès
+2021/2022,2021,43003321,Escola Sant Pere i Sant Pau,Públic,431482,Tarragona,Tarragonès
+2021/2022,2021,43003410,Joan Roig,Privat,431482,Tarragona,Tarragonès
+2021/2022,2021,43003461,Tic-Tac,Privat,431482,Tarragona,Tarragonès
+2021/2022,2021,43003483,Lestonnac-l'Ensenyança,Privat,431482,Tarragona,Tarragonès
+2021/2022,2021,43003495,Mare de Déu del Carme,Privat,431482,Tarragona,Tarragonès
+2021/2022,2021,43003501,El Carme,Privat,431482,Tarragona,Tarragonès
+2021/2022,2021,43003525,Dominiques Tarragona,Privat,431482,Tarragona,Tarragonès
+2021/2022,2021,43003537,La Salle,Privat,431482,Tarragona,Tarragonès
+2021/2022,2021,43003549,Vedruna Sagrat Cor Tarragona,Privat,431482,Tarragona,Tarragonès
+2021/2022,2021,43003550,Santa Teresa de Jesús,Privat,431482,Tarragona,Tarragonès
+2021/2022,2021,43003586,Sant Pau Apòstol,Privat,431482,Tarragona,Tarragonès
+2021/2022,2021,43003616,CEE San Rafael,Públic,431482,Tarragona,Tarragonès
+2021/2022,2021,43003631,Estela,Privat,431482,Tarragona,Tarragonès
+2021/2022,2021,43003641,Institut Antoni de Martí i Franquès,Públic,431482,Tarragona,Tarragonès
+2021/2022,2021,43003653,Institut Comte de Rius,Públic,431482,Tarragona,Tarragonès
+2021/2022,2021,43003690,Escola de Pràctiques,Públic,431482,Tarragona,Tarragonès
+2021/2022,2021,43003707,Mare Nostrum,Privat,431482,Tarragona,Tarragonès
+2021/2022,2021,43003719,Espallargas,Privat,431482,Tarragona,Tarragonès
+2021/2022,2021,43003720,Escola El Miracle,Públic,431482,Tarragona,Tarragonès
+2021/2022,2021,43003732,Institut Pons d'Icart,Públic,431482,Tarragona,Tarragonès
+2021/2022,2021,43003756,Escola Torreforta,Públic,431482,Tarragona,Tarragonès
+2021/2022,2021,43003768,Escola Els Àngels,Públic,431482,Tarragona,Tarragonès
+2021/2022,2021,43003793,La Salle Torreforta,Privat,431482,Tarragona,Tarragonès
+2021/2022,2021,43005169,Escola Pau Delclòs,Públic,431482,Tarragona,Tarragonès
+2021/2022,2021,43005170,Escola La Floresta,Públic,431482,Tarragona,Tarragonès
+2021/2022,2021,43005686,Escola Riu Clar,Públic,431482,Tarragona,Tarragonès
+2021/2022,2021,43005704,Institut Francesc Vidal i Barraquer,Públic,431482,Tarragona,Tarragonès
+2021/2022,2021,43005731,La Muntanyeta,Privat,431482,Tarragona,Tarragonès
+2021/2022,2021,43005911,Escola Campclar,Públic,431482,Tarragona,Tarragonès
+2021/2022,2021,43005959,Escola Cèsar August,Públic,431482,Tarragona,Tarragonès
+2021/2022,2021,43006125,Institut Campclar,Públic,431482,Tarragona,Tarragonès
+2021/2022,2021,43006162,Solc,Privat,431482,Tarragona,Tarragonès
+2021/2022,2021,43006253,EASD de Tarragona,Públic,431482,Tarragona,Tarragonès
+2021/2022,2021,43006265,Escola de Dansa Artemis,Privat,431482,Tarragona,Tarragonès
+2021/2022,2021,43006277,Cons. de Música de Tarragona,Públic,431482,Tarragona,Tarragonès
+2021/2022,2021,43006563,Escola Marcel·lí Domingo,Públic,431482,Tarragona,Tarragonès
+2021/2022,2021,43006630,Institut Pere Martell,Públic,431482,Tarragona,Tarragonès
+2021/2022,2021,43006940,EOI de Tarragona,Públic,431482,Tarragona,Tarragonès
+2021/2022,2021,43007051,CFA Josepa Massanés i Dalmau,Públic,431482,Tarragona,Tarragonès
+2021/2022,2021,43007117,Escola Pax,Públic,431482,Tarragona,Tarragonès
+2021/2022,2021,43007713,Llar d'infants El Ninot,Públic,431482,Tarragona,Tarragonès
+2021/2022,2021,43007725,Llar d'infants La Taronja,Públic,431482,Tarragona,Tarragonès
+2021/2022,2021,43007853,Llar d'infants La Baldufa,Públic,431482,Tarragona,Tarragonès
+2021/2022,2021,43007981,Bao Bab,Privat,431482,Tarragona,Tarragonès
+2021/2022,2021,43008390,Institut Torreforta,Públic,431482,Tarragona,Tarragonès
+2021/2022,2021,43008432,Institut Sant Pere i Sant Pau,Públic,431482,Tarragona,Tarragonès
+2021/2022,2021,43008501,Institut Pont del Diable,Públic,431482,Tarragona,Tarragonès
+2021/2022,2021,43008560,Àngel de la Guarda,Privat,431482,Tarragona,Tarragonès
+2021/2022,2021,43008687,LLI privada Yo-Ni,Privat,431482,Tarragona,Tarragonès
+2021/2022,2021,43008729,CFA Tarragona,Públic,431482,Tarragona,Tarragonès
+2021/2022,2021,43008766,Esc. de Música Municipal,Públic,431482,Tarragona,Tarragonès
+2021/2022,2021,43008778,CFA Fòrum,Públic,431482,Tarragona,Tarragonès
+2021/2022,2021,43008791,Esc. de Música de la Diputació de Tarragona,Públic,431482,Tarragona,Tarragonès
+2021/2022,2021,43008997,LLI privada El Niuet,Privat,431482,Tarragona,Tarragonès
+2021/2022,2021,43009175,L'Alba i La Cigonya,Privat,431482,Tarragona,Tarragonès
+2021/2022,2021,43009230,Escola Tarragona,Públic,431482,Tarragona,Tarragonès
+2021/2022,2021,43009369,Escola Saavedra,Públic,431482,Tarragona,Tarragonès
+2021/2022,2021,43009539,LLI privada Baobad-rosa,Privat,431482,Tarragona,Tarragonès
+2021/2022,2021,43009576,Esc. de Música Estudi de Música,Privat,431482,Tarragona,Tarragonès
+2021/2022,2021,43009722,Institut Cal·lípolis,Públic,431482,Tarragona,Tarragonès
+2021/2022,2021,43010256,Llar d'infants El Serrallo,Públic,431482,Tarragona,Tarragonès
+2021/2022,2021,43010281,LLI privada El Bosquet,Privat,431482,Tarragona,Tarragonès
+2021/2022,2021,43010396,Escola de Ponent,Públic,431482,Tarragona,Tarragonès
+2021/2022,2021,43010438,Llar d'infants El Miracle,Públic,431482,Tarragona,Tarragonès
+2021/2022,2021,43010700,CASASFORMACIÓN.ES,Privat,431482,Tarragona,Tarragonès
+2021/2022,2021,43010876,Escola l'Arrabassada,Públic,431482,Tarragona,Tarragonès
+2021/2022,2021,43010955,Llar d'infants Sant Pere i Sant Pau,Públic,431482,Tarragona,Tarragonès
+2021/2022,2021,43010979,Llar d'infants Sant Salvador,Públic,431482,Tarragona,Tarragonès
+2021/2022,2021,43011479,Institut Tarragona,Públic,431482,Tarragona,Tarragonès
+2021/2022,2021,43011561,Llar d'infants L'Arrabassada,Públic,431482,Tarragona,Tarragonès
+2021/2022,2021,43012125,Novatècnica,Privat,431482,Tarragona,Tarragonès
+2021/2022,2021,43012162,Llar d'infants Bonavista,Públic,431482,Tarragona,Tarragonès
+2021/2022,2021,43012216,Llar d'infants Cèsar August,Públic,431482,Tarragona,Tarragonès
+2021/2022,2021,43012447,Bettatur,Privat,431482,Tarragona,Tarragonès
+2021/2022,2021,43012629,Aula Magna,Privat,431482,Tarragona,Tarragonès
+2021/2022,2021,43012642,LLI privada Xino-Xano Joan XXIII,Privat,431482,Tarragona,Tarragonès
+2021/2022,2021,43012708,CEOP,Privat,431482,Tarragona,Tarragonès
+2021/2022,2021,43012897,AFENTD,Privat,431482,Tarragona,Tarragonès
+2021/2022,2021,43012939,Òrgan Gestor del Complex Educatiu de Tarragona,Públic,431482,Tarragona,Tarragonès
+2021/2022,2021,43012976,Institut Escola Mediterrani,Públic,431482,Tarragona,Tarragonès
+2021/2022,2021,43013002,A. Hospitalària H.de dia salut mental infanto juvenil deTarragona,Públic,431482,Tarragona,Tarragonès
+2021/2022,2021,43013063,LLI privada Teresianes-Jaycar,Privat,431482,Tarragona,Tarragonès
+2021/2022,2021,43013166,Centre de Formació CBS,Privat,431482,Tarragona,Tarragonès
+2021/2022,2021,43003884,Escola Antoni Roig,Públic,431536,Torredembarra,Tarragonès
+2021/2022,2021,43006851,Escola Molí de Vent,Públic,431536,Torredembarra,Tarragonès
+2021/2022,2021,43006952,Institut Torredembarra,Públic,431536,Torredembarra,Tarragonès
+2021/2022,2021,43007661,Institut Ramon de la Torre,Públic,431536,Torredembarra,Tarragonès
+2021/2022,2021,43009242,Escola L'Antina,Públic,431536,Torredembarra,Tarragonès
+2021/2022,2021,43009643,Llar d'infants El Cirerer,Públic,431536,Torredembarra,Tarragonès
+2021/2022,2021,43009746,Esc. de Música Municipal de Torredembarra,Públic,431536,Torredembarra,Tarragonès
+2021/2022,2021,43010918,Escola de Dansa Centrescènic,Privat,431536,Torredembarra,Tarragonès
+2021/2022,2021,43011650,EB privada La Casa de les Fades,Privat,431536,Torredembarra,Tarragonès
+2021/2022,2021,43012253,Llar d'infants Els Gegants de la Torre,Públic,431536,Torredembarra,Tarragonès
+2021/2022,2021,43012794,Centre d'Estudis Eqüestres Torredembarra,Privat,431536,Torredembarra,Tarragonès
+2021/2022,2021,43004864,Escola Pere Virgili,Públic,431665,Vilallonga del Camp,Tarragonès
+2021/2022,2021,43010104,Llar d'infants Patufet,Públic,431665,Vilallonga del Camp,Tarragonès
+2021/2022,2021,43004979,Escola Torroja i Miret,Públic,431711,Vila-seca,Tarragonès
+2021/2022,2021,43005005,Escola Sant Bernat Calvó,Públic,431711,Vila-seca,Tarragonès
+2021/2022,2021,43005947,Escola Cal·lípolis,Públic,431711,Vila-seca,Tarragonès
+2021/2022,2021,43005972,Institut Ramon Barbat i Miracle,Públic,431711,Vila-seca,Tarragonès
+2021/2022,2021,43006241,Escola La Plana,Públic,431711,Vila-seca,Tarragonès
+2021/2022,2021,43006289,Cons. de Música de Vila-seca,Públic,431711,Vila-seca,Tarragonès
+2021/2022,2021,43006332,Escola Mestral,Públic,431711,Vila-seca,Tarragonès
+2021/2022,2021,43008158,LLI privada Pineda,Privat,431711,Vila-seca,Tarragonès
+2021/2022,2021,43008523,Institut Vila-seca,Públic,431711,Vila-seca,Tarragonès
+2021/2022,2021,43008742,Esc. de Música Municipal de Vila-seca,Públic,431711,Vila-seca,Tarragonès
+2021/2022,2021,43010086,CFA Vilaseca,Públic,431711,Vila-seca,Tarragonès
+2021/2022,2021,43010426,LLI privada La Formiga,Privat,431711,Vila-seca,Tarragonès
+2021/2022,2021,43010530,Escola Miramar,Públic,431711,Vila-seca,Tarragonès
+2021/2022,2021,43011492,Escola La Canaleta,Públic,431711,Vila-seca,Tarragonès
+2021/2022,2021,43011595,Llar d'infants Fartets,Públic,431711,Vila-seca,Tarragonès
+2021/2022,2021,43012551,Llar d'infants Les Vimeteres,Públic,431711,Vila-seca,Tarragonès
+2021/2022,2021,43004931,Escola Santa Maria del Mar,Públic,439057,Salou,Tarragonès
+2021/2022,2021,43004967,Elisabeth,Privat,439057,Salou,Tarragonès
+2021/2022,2021,43006393,Escola Europa,Públic,439057,Salou,Tarragonès
+2021/2022,2021,43007026,LLI privada Nou Esplai,Privat,439057,Salou,Tarragonès
+2021/2022,2021,43007518,Esc. de Música Municipal,Públic,439057,Salou,Tarragonès
+2021/2022,2021,43007543,Institut Jaume I,Públic,439057,Salou,Tarragonès
+2021/2022,2021,43009451,Escola Salou,Públic,439057,Salou,Tarragonès
+2021/2022,2021,43010153,Escola Vora Mar,Públic,439057,Salou,Tarragonès
+2021/2022,2021,43010347,Institut Marta Mata,Públic,439057,Salou,Tarragonès
+2021/2022,2021,43010921,Llar d'infants La Balena Blava,Públic,439057,Salou,Tarragonès
+2021/2022,2021,43011200,EOI de Salou,Públic,439057,Salou,Tarragonès
+2021/2022,2021,43011765,CFA Àgora,Públic,439057,Salou,Tarragonès
+2021/2022,2021,43012022,Llar d'infants Cavallet de Mar,Públic,439057,Salou,Tarragonès
+2021/2022,2021,43012666,EIC,Privat,439057,Salou,Tarragonès
+2021/2022,2021,43003185,Escola La Canonja,Públic,439076,La Canonja,Tarragonès
+2021/2022,2021,43008237,LLI privada Mare de Déu de l'Esperança,Privat,439076,La Canonja,Tarragonès
+2021/2022,2021,43008481,Institut Collblanc,Públic,439076,La Canonja,Tarragonès
+2022/2023,2022,43000251,Escola La Portalada,Públic,430120,Altafulla,Tarragonès
+2022/2023,2022,43007488,Llar d'infants Francesc Blanch i Ribé,Públic,430120,Altafulla,Tarragonès
+2022/2023,2022,43009977,Institut d'Altafulla,Públic,430120,Altafulla,Tarragonès
+2022/2023,2022,43010402,Escola El Roquissar,Públic,430120,Altafulla,Tarragonès
+2022/2023,2022,43011297,Llar d'infants Hort de Pau,Públic,430120,Altafulla,Tarragonès
+2022/2023,2022,43011674,Esc. de Música Municipal d'Altafulla,Públic,430120,Altafulla,Tarragonès
+2022/2023,2022,43010499,CFA Pau Casals,Públic,430430,El Catllar,Tarragonès
+2022/2023,2022,43011261,Llar d'infants L'Agulla del Catllar,Públic,430430,El Catllar,Tarragonès
+2022/2023,2022,43012745,The British School of Costa Daurada,Privat,430430,El Catllar,Tarragonès
+2022/2023,2022,43012812,Institut Escola L'Agulla,Públic,430430,El Catllar,Tarragonès
+2022/2023,2022,43000895,Escola Mossèn Ramon Bergadà,Públic,430477,Constantí,Tarragonès
+2022/2023,2022,43000949,Escola agrària Mas Bové,Públic,430477,Constantí,Tarragonès
+2022/2023,2022,43005893,Escola Centcelles,Públic,430477,Constantí,Tarragonès
+2022/2023,2022,43007646,Institut de Constantí,Públic,430477,Constantí,Tarragonès
+2022/2023,2022,43010451,Llar d'infants Gu-gu,Públic,430477,Constantí,Tarragonès
+2022/2023,2022,43005364,Escola Les Eres,Públic,430509,Creixell,Tarragonès
+2022/2023,2022,43009667,Llar d'infants Municipal de Creixell,Públic,430509,Creixell,Tarragonès
+2022/2023,2022,43011649,Llar d'infants Nova Guarderia,Públic,430509,Creixell,Tarragonès
+2022/2023,2022,43012241,Escola Bressol L'Estel de Mar,Públic,430509,Creixell,Tarragonès
+2022/2023,2022,43001735,Escola Ventura Gassol,Públic,430957,El Morell,Tarragonès
+2022/2023,2022,43008407,Institut El Morell,Públic,430957,El Morell,Tarragonès
+2022/2023,2022,43009931,Llar d'infants Dolça del Morell,Públic,430957,El Morell,Tarragonès
+2022/2023,2022,43012231,Esc. de Música Municipal El Morell,Públic,430957,El Morell,Tarragonès
+2022/2023,2022,43005467,Escola Les Codinetes,Públic,430976,La Nou de Gaià,Tarragonès
+2022/2023,2022,43011042,Llar d'infants La Palmera,Públic,430976,La Nou de Gaià,Tarragonès
+2022/2023,2022,43001826,Escola Sant Sebastià,Públic,431009,Els Pallaresos,Tarragonès
+2022/2023,2022,43009564,LLI privada Can Petits,Privat,431009,Els Pallaresos,Tarragonès
+2022/2023,2022,43010591,Escola Arquitecte Jujol,Públic,431009,Els Pallaresos,Tarragonès
+2022/2023,2022,43010748,Institut Els Pallaresos,Públic,431009,Els Pallaresos,Tarragonès
+2022/2023,2022,43012563,Escola Bressol Els Pallaresos,Públic,431009,Els Pallaresos,Tarragonès
+2022/2023,2022,43007476,Llar d'infants Perafort,Públic,431037,Perafort,Tarragonès
+2022/2023,2022,43009886,Escola Josep Veciana,Públic,431037,Perafort,Tarragonès
+2022/2023,2022,43005480,Escola Mare de Déu del Lledó,Públic,431093,La Pobla de Mafumet,Tarragonès
+2022/2023,2022,43008936,Llar d'infants L'Esquirol,Públic,431093,La Pobla de Mafumet,Tarragonès
+2022/2023,2022,43012186,Llar d'infants Nou Esquirol,Públic,431093,La Pobla de Mafumet,Tarragonès
+2022/2023,2022,43012885,CENAFE La Pobla de Mafumet,Privat,431093,La Pobla de Mafumet,Tarragonès
+2022/2023,2022,43005145,Escola Els Ametllers,Públic,431114,La Pobla de Montornès,Tarragonès
+2022/2023,2022,43010271,Llar d'infants Sol Solet,Públic,431114,La Pobla de Montornès,Tarragonès
+2022/2023,2022,43005157,Escola Montoliu,Públic,431264,La Riera de Gaià,Tarragonès
+2022/2023,2022,43010049,Llar d'infants Les Monges,Públic,431264,La Riera de Gaià,Tarragonès
+2022/2023,2022,43002776,Escola Salvador Espriu,Públic,431310,Roda de Berà,Tarragonès
+2022/2023,2022,43009928,Llar d'infants Els Petitons,Públic,431310,Roda de Berà,Tarragonès
+2022/2023,2022,43011194,Escola El Cucurull,Públic,431310,Roda de Berà,Tarragonès
+2022/2023,2022,43011418,Institut Roda de Berà,Públic,431310,Roda de Berà,Tarragonès
+2022/2023,2022,43005662,Escola Josep Nin,Públic,431359,Salomó,Tarragonès
+2022/2023,2022,43012678,Llar d'infants El Til·ler,Públic,431359,Salomó,Tarragonès
+2022/2023,2022,43003082,Escola Guillem de Claramunt,Públic,431444,La Secuita,Tarragonès
+2022/2023,2022,43012770,Escola Bressol Municipal els Guillemets,Públic,431444,La Secuita,Tarragonès
+2022/2023,2022,43003136,Escola Bonavista,Públic,431482,Tarragona,Tarragonès
+2022/2023,2022,43003151,Joan XXIII,Privat,431482,Tarragona,Tarragonès
+2022/2023,2022,43003227,Escola Sant Salvador,Públic,431482,Tarragona,Tarragonès
+2022/2023,2022,43003306,Escola Serrallo,Públic,431482,Tarragona,Tarragonès
+2022/2023,2022,43003321,Escola Sant Pere i Sant Pau,Públic,431482,Tarragona,Tarragonès
+2022/2023,2022,43003410,Joan Roig,Privat,431482,Tarragona,Tarragonès
+2022/2023,2022,43003461,Tic-Tac,Privat,431482,Tarragona,Tarragonès
+2022/2023,2022,43003483,Lestonnac-l'Ensenyança,Privat,431482,Tarragona,Tarragonès
+2022/2023,2022,43003495,Mare de Déu del Carme,Privat,431482,Tarragona,Tarragonès
+2022/2023,2022,43003501,El Carme,Privat,431482,Tarragona,Tarragonès
+2022/2023,2022,43003525,Dominiques Tarragona,Privat,431482,Tarragona,Tarragonès
+2022/2023,2022,43003537,La Salle,Privat,431482,Tarragona,Tarragonès
+2022/2023,2022,43003549,Vedruna Sagrat Cor Tarragona,Privat,431482,Tarragona,Tarragonès
+2022/2023,2022,43003550,Santa Teresa de Jesús,Privat,431482,Tarragona,Tarragonès
+2022/2023,2022,43003586,Sant Pau Apòstol,Privat,431482,Tarragona,Tarragonès
+2022/2023,2022,43003616,CEE San Rafael,Públic,431482,Tarragona,Tarragonès
+2022/2023,2022,43003631,Estela,Privat,431482,Tarragona,Tarragonès
+2022/2023,2022,43003641,Institut Antoni de Martí i Franquès,Públic,431482,Tarragona,Tarragonès
+2022/2023,2022,43003653,Institut Comte de Rius,Públic,431482,Tarragona,Tarragonès
+2022/2023,2022,43003690,Escola de Pràctiques,Públic,431482,Tarragona,Tarragonès
+2022/2023,2022,43003707,Mare Nostrum,Privat,431482,Tarragona,Tarragonès
+2022/2023,2022,43003719,Espallargas,Privat,431482,Tarragona,Tarragonès
+2022/2023,2022,43003720,Escola El Miracle,Públic,431482,Tarragona,Tarragonès
+2022/2023,2022,43003732,Institut Pons d'Icart,Públic,431482,Tarragona,Tarragonès
+2022/2023,2022,43003756,Escola Torreforta,Públic,431482,Tarragona,Tarragonès
+2022/2023,2022,43003768,Escola Els Àngels,Públic,431482,Tarragona,Tarragonès
+2022/2023,2022,43003793,La Salle Torreforta,Privat,431482,Tarragona,Tarragonès
+2022/2023,2022,43005169,Escola Pau Delclòs,Públic,431482,Tarragona,Tarragonès
+2022/2023,2022,43005170,Escola La Floresta,Públic,431482,Tarragona,Tarragonès
+2022/2023,2022,43005686,Escola Riu Clar,Públic,431482,Tarragona,Tarragonès
+2022/2023,2022,43005704,Institut Francesc Vidal i Barraquer,Públic,431482,Tarragona,Tarragonès
+2022/2023,2022,43005731,La Muntanyeta,Privat,431482,Tarragona,Tarragonès
+2022/2023,2022,43005911,Escola Campclar,Públic,431482,Tarragona,Tarragonès
+2022/2023,2022,43005959,Escola Cèsar August,Públic,431482,Tarragona,Tarragonès
+2022/2023,2022,43006125,Institut Campclar,Públic,431482,Tarragona,Tarragonès
+2022/2023,2022,43006162,Solc,Privat,431482,Tarragona,Tarragonès
+2022/2023,2022,43006253,EASD de Tarragona,Públic,431482,Tarragona,Tarragonès
+2022/2023,2022,43006265,Escola de Dansa Artemis,Privat,431482,Tarragona,Tarragonès
+2022/2023,2022,43006277,Cons. de Música de Tarragona,Públic,431482,Tarragona,Tarragonès
+2022/2023,2022,43006563,Escola Marcel·lí Domingo,Públic,431482,Tarragona,Tarragonès
+2022/2023,2022,43006630,Institut Pere Martell,Públic,431482,Tarragona,Tarragonès
+2022/2023,2022,43006940,EOI de Tarragona,Públic,431482,Tarragona,Tarragonès
+2022/2023,2022,43007051,CFA Josepa Massanés i Dalmau,Públic,431482,Tarragona,Tarragonès
+2022/2023,2022,43007117,Escola Pax,Públic,431482,Tarragona,Tarragonès
+2022/2023,2022,43007713,Llar d'infants El Ninot,Públic,431482,Tarragona,Tarragonès
+2022/2023,2022,43007725,Llar d'infants La Taronja,Públic,431482,Tarragona,Tarragonès
+2022/2023,2022,43007853,Llar d'infants La Baldufa,Públic,431482,Tarragona,Tarragonès
+2022/2023,2022,43007981,Bao Bab,Privat,431482,Tarragona,Tarragonès
+2022/2023,2022,43008390,Institut Torreforta,Públic,431482,Tarragona,Tarragonès
+2022/2023,2022,43008432,Institut Sant Pere i Sant Pau,Públic,431482,Tarragona,Tarragonès
+2022/2023,2022,43008501,Institut Pont del Diable,Públic,431482,Tarragona,Tarragonès
+2022/2023,2022,43008560,Àngel de la Guarda,Privat,431482,Tarragona,Tarragonès
+2022/2023,2022,43008687,LLI privada Yo-Ni,Privat,431482,Tarragona,Tarragonès
+2022/2023,2022,43008729,CFA Tarragona,Públic,431482,Tarragona,Tarragonès
+2022/2023,2022,43008766,Esc. de Música Municipal,Públic,431482,Tarragona,Tarragonès
+2022/2023,2022,43008778,CFA Fòrum,Públic,431482,Tarragona,Tarragonès
+2022/2023,2022,43008791,Esc. de Música de la Diputació de Tarragona,Públic,431482,Tarragona,Tarragonès
+2022/2023,2022,43008997,LLI privada El Niuet,Privat,431482,Tarragona,Tarragonès
+2022/2023,2022,43009175,L'Alba i La Cigonya,Privat,431482,Tarragona,Tarragonès
+2022/2023,2022,43009230,Escola Tarragona,Públic,431482,Tarragona,Tarragonès
+2022/2023,2022,43009369,Escola Saavedra,Públic,431482,Tarragona,Tarragonès
+2022/2023,2022,43009539,LLI privada Baobad-rosa,Privat,431482,Tarragona,Tarragonès
+2022/2023,2022,43009576,Esc. de Música Estudi de Música,Privat,431482,Tarragona,Tarragonès
+2022/2023,2022,43009722,Institut Cal·lípolis,Públic,431482,Tarragona,Tarragonès
+2022/2023,2022,43010256,Llar d'infants El Serrallo,Públic,431482,Tarragona,Tarragonès
+2022/2023,2022,43010281,LLI privada El Bosquet,Privat,431482,Tarragona,Tarragonès
+2022/2023,2022,43010396,Escola de Ponent,Públic,431482,Tarragona,Tarragonès
+2022/2023,2022,43010438,Llar d'infants El Miracle,Públic,431482,Tarragona,Tarragonès
+2022/2023,2022,43010700,CASASFORMACIÓN.ES,Privat,431482,Tarragona,Tarragonès
+2022/2023,2022,43010955,Llar d'infants Sant Pere i Sant Pau,Públic,431482,Tarragona,Tarragonès
+2022/2023,2022,43010979,Llar d'infants Sant Salvador,Públic,431482,Tarragona,Tarragonès
+2022/2023,2022,43011479,Institut Tarragona,Públic,431482,Tarragona,Tarragonès
+2022/2023,2022,43011561,Llar d'infants L'Arrabassada,Públic,431482,Tarragona,Tarragonès
+2022/2023,2022,43012125,Novatècnica,Privat,431482,Tarragona,Tarragonès
+2022/2023,2022,43012162,Llar d'infants Bonavista,Públic,431482,Tarragona,Tarragonès
+2022/2023,2022,43012216,Llar d'infants Cèsar August,Públic,431482,Tarragona,Tarragonès
+2022/2023,2022,43012447,Bettatur,Privat,431482,Tarragona,Tarragonès
+2022/2023,2022,43012629,Aula Magna,Privat,431482,Tarragona,Tarragonès
+2022/2023,2022,43012642,LLI privada Xino-Xano Joan XXIII,Privat,431482,Tarragona,Tarragonès
+2022/2023,2022,43012708,CEOP,Privat,431482,Tarragona,Tarragonès
+2022/2023,2022,43012897,AFENTD,Privat,431482,Tarragona,Tarragonès
+2022/2023,2022,43012939,Òrgan Gestor del Complex Educatiu de Tarragona,Públic,431482,Tarragona,Tarragonès
+2022/2023,2022,43012976,Institut Escola Mediterrani,Públic,431482,Tarragona,Tarragonès
+2022/2023,2022,43013002,A. Hospitalària H.de dia salut mental infanto juvenil deTarragona,Públic,431482,Tarragona,Tarragonès
+2022/2023,2022,43013063,LLI privada Teresianes-Jaycar,Privat,431482,Tarragona,Tarragonès
+2022/2023,2022,43013166,Centre de Formació CBS,Privat,431482,Tarragona,Tarragonès
+2022/2023,2022,43013191,Institut Escola L'Arrabassada,Públic,431482,Tarragona,Tarragonès
+2022/2023,2022,43013233,Ilerna Tarragona,Privat,431482,Tarragona,Tarragonès
+2022/2023,2022,43003884,Escola Antoni Roig,Públic,431536,Torredembarra,Tarragonès
+2022/2023,2022,43006851,Escola Molí de Vent,Públic,431536,Torredembarra,Tarragonès
+2022/2023,2022,43006952,Institut Torredembarra,Públic,431536,Torredembarra,Tarragonès
+2022/2023,2022,43007661,Institut Ramon de la Torre,Públic,431536,Torredembarra,Tarragonès
+2022/2023,2022,43009242,Escola L'Antina,Públic,431536,Torredembarra,Tarragonès
+2022/2023,2022,43009643,Llar d'infants El Cirerer,Públic,431536,Torredembarra,Tarragonès
+2022/2023,2022,43009746,Esc. de Música Municipal de Torredembarra,Públic,431536,Torredembarra,Tarragonès
+2022/2023,2022,43010918,Escola de Dansa Centrescènic,Privat,431536,Torredembarra,Tarragonès
+2022/2023,2022,43011650,EB privada La Casa de les Fades,Privat,431536,Torredembarra,Tarragonès
+2022/2023,2022,43012253,Llar d'infants Els Gegants de la Torre,Públic,431536,Torredembarra,Tarragonès
+2022/2023,2022,43012794,Centre d'Estudis Eqüestres Torredembarra,Privat,431536,Torredembarra,Tarragonès
+2022/2023,2022,43004864,Escola Pere Virgili,Públic,431665,Vilallonga del Camp,Tarragonès
+2022/2023,2022,43010104,Llar d'infants Patufet,Públic,431665,Vilallonga del Camp,Tarragonès
+2022/2023,2022,43004979,Escola Torroja i Miret,Públic,431711,Vila-seca,Tarragonès
+2022/2023,2022,43005005,Escola Sant Bernat Calvó,Públic,431711,Vila-seca,Tarragonès
+2022/2023,2022,43005947,Escola Cal·lípolis,Públic,431711,Vila-seca,Tarragonès
+2022/2023,2022,43005972,Institut Ramon Barbat i Miracle,Públic,431711,Vila-seca,Tarragonès
+2022/2023,2022,43006241,Escola La Plana,Públic,431711,Vila-seca,Tarragonès
+2022/2023,2022,43006289,Cons. de Música de Vila-seca,Públic,431711,Vila-seca,Tarragonès
+2022/2023,2022,43006332,Escola Mestral,Públic,431711,Vila-seca,Tarragonès
+2022/2023,2022,43008158,LLI privada Pineda,Privat,431711,Vila-seca,Tarragonès
+2022/2023,2022,43008523,Institut Vila-seca,Públic,431711,Vila-seca,Tarragonès
+2022/2023,2022,43008742,Esc. de Música Municipal de Vila-seca,Públic,431711,Vila-seca,Tarragonès
+2022/2023,2022,43010086,CFA Vilaseca,Públic,431711,Vila-seca,Tarragonès
+2022/2023,2022,43010426,EB privada L'Estel,Privat,431711,Vila-seca,Tarragonès
+2022/2023,2022,43010530,Escola Miramar,Públic,431711,Vila-seca,Tarragonès
+2022/2023,2022,43011492,Escola La Canaleta,Públic,431711,Vila-seca,Tarragonès
+2022/2023,2022,43011595,Llar d'infants Fartets,Públic,431711,Vila-seca,Tarragonès
+2022/2023,2022,43012551,Llar d'infants Les Vimeteres,Públic,431711,Vila-seca,Tarragonès
+2022/2023,2022,43004931,Escola Santa Maria del Mar,Públic,439057,Salou,Tarragonès
+2022/2023,2022,43004967,Elisabeth,Privat,439057,Salou,Tarragonès
+2022/2023,2022,43006393,Escola Europa,Públic,439057,Salou,Tarragonès
+2022/2023,2022,43007026,LLI privada Nou Esplai,Privat,439057,Salou,Tarragonès
+2022/2023,2022,43007518,Esc. de Música Municipal,Públic,439057,Salou,Tarragonès
+2022/2023,2022,43007543,Institut Jaume I,Públic,439057,Salou,Tarragonès
+2022/2023,2022,43009451,Escola Salou,Públic,439057,Salou,Tarragonès
+2022/2023,2022,43010153,Escola Vora Mar,Públic,439057,Salou,Tarragonès
+2022/2023,2022,43010347,Institut Marta Mata,Públic,439057,Salou,Tarragonès
+2022/2023,2022,43010921,Llar d'infants La Balena Blava,Públic,439057,Salou,Tarragonès
+2022/2023,2022,43011200,EOI de Salou,Públic,439057,Salou,Tarragonès
+2022/2023,2022,43011765,CFA Àgora,Públic,439057,Salou,Tarragonès
+2022/2023,2022,43012022,Llar d'infants Cavallet de Mar,Públic,439057,Salou,Tarragonès
+2022/2023,2022,43012666,EIC,Privat,439057,Salou,Tarragonès
+2022/2023,2022,43003185,Escola La Canonja,Públic,439076,La Canonja,Tarragonès
+2022/2023,2022,43008237,LLI privada Mare de Déu de l'Esperança,Privat,439076,La Canonja,Tarragonès
+2022/2023,2022,43008481,Institut Collblanc,Públic,439076,La Canonja,Tarragonès
+2023/2024,2023,43000251,Escola La Portalada,Públic,430120,Altafulla,Tarragonès
+2023/2024,2023,43007488,Llar d'infants Francesc Blanch i Ribé,Públic,430120,Altafulla,Tarragonès
+2023/2024,2023,43009977,Institut d'Altafulla,Públic,430120,Altafulla,Tarragonès
+2023/2024,2023,43010402,Escola El Roquissar,Públic,430120,Altafulla,Tarragonès
+2023/2024,2023,43011297,Llar d'infants Hort de Pau,Públic,430120,Altafulla,Tarragonès
+2023/2024,2023,43011674,Esc. de Música Municipal d'Altafulla,Públic,430120,Altafulla,Tarragonès
+2023/2024,2023,43010499,CFA Pau Casals,Públic,430430,El Catllar,Tarragonès
+2023/2024,2023,43011261,Llar d'infants L'Agulla del Catllar,Públic,430430,El Catllar,Tarragonès
+2023/2024,2023,43012745,The British School of Costa Daurada,Privat,430430,El Catllar,Tarragonès
+2023/2024,2023,43012812,Institut Escola L'Agulla,Públic,430430,El Catllar,Tarragonès
+2023/2024,2023,43000895,Escola Mossèn Ramon Bergadà,Públic,430477,Constantí,Tarragonès
+2023/2024,2023,43000949,Escola agrària Mas Bové,Públic,430477,Constantí,Tarragonès
+2023/2024,2023,43005893,Escola Centcelles,Públic,430477,Constantí,Tarragonès
+2023/2024,2023,43007646,Institut de Constantí,Públic,430477,Constantí,Tarragonès
+2023/2024,2023,43010451,Llar d'infants Gu-gu,Públic,430477,Constantí,Tarragonès
+2023/2024,2023,43005364,Escola Les Eres,Públic,430509,Creixell,Tarragonès
+2023/2024,2023,43009667,Llar d'infants Municipal de Creixell,Públic,430509,Creixell,Tarragonès
+2023/2024,2023,43011649,Llar d'infants Nova Guarderia,Públic,430509,Creixell,Tarragonès
+2023/2024,2023,43012241,Escola Bressol L'Estel de Mar,Públic,430509,Creixell,Tarragonès
+2023/2024,2023,43001735,Escola Ventura Gassol,Públic,430957,El Morell,Tarragonès
+2023/2024,2023,43008407,Institut El Morell,Públic,430957,El Morell,Tarragonès
+2023/2024,2023,43009931,Llar d'infants Dolça del Morell,Públic,430957,El Morell,Tarragonès
+2023/2024,2023,43012231,Esc. de Música Municipal El Morell,Públic,430957,El Morell,Tarragonès
+2023/2024,2023,43005467,Escola Les Codinetes,Públic,430976,La Nou de Gaià,Tarragonès
+2023/2024,2023,43011042,Llar d'infants La Palmera,Públic,430976,La Nou de Gaià,Tarragonès
+2023/2024,2023,43001826,Escola Sant Sebastià,Públic,431009,Els Pallaresos,Tarragonès
+2023/2024,2023,43009564,LLI privada Can Petits,Privat,431009,Els Pallaresos,Tarragonès
+2023/2024,2023,43010591,Escola Arquitecte Jujol,Públic,431009,Els Pallaresos,Tarragonès
+2023/2024,2023,43010748,Institut Els Pallaresos,Públic,431009,Els Pallaresos,Tarragonès
+2023/2024,2023,43012563,Escola Bressol Els Pallaresos,Públic,431009,Els Pallaresos,Tarragonès
+2023/2024,2023,43007476,Llar d'infants Perafort,Públic,431037,Perafort,Tarragonès
+2023/2024,2023,43009886,Escola Josep Veciana,Públic,431037,Perafort,Tarragonès
+2023/2024,2023,43005480,Escola Mare de Déu del Lledó,Públic,431093,La Pobla de Mafumet,Tarragonès
+2023/2024,2023,43008936,Llar d'infants L'Esquirol,Públic,431093,La Pobla de Mafumet,Tarragonès
+2023/2024,2023,43012186,Llar d'infants Nou Esquirol,Públic,431093,La Pobla de Mafumet,Tarragonès
+2023/2024,2023,43012885,CENAFE La Pobla de Mafumet,Privat,431093,La Pobla de Mafumet,Tarragonès
+2023/2024,2023,43005145,Escola Els Ametllers,Públic,431114,La Pobla de Montornès,Tarragonès
+2023/2024,2023,43010271,Llar d'infants Sol Solet,Públic,431114,La Pobla de Montornès,Tarragonès
+2023/2024,2023,43005157,Escola Montoliu,Públic,431264,La Riera de Gaià,Tarragonès
+2023/2024,2023,43010049,Llar d'infants Les Monges,Públic,431264,La Riera de Gaià,Tarragonès
+2023/2024,2023,43002776,Escola Salvador Espriu,Públic,431310,Roda de Berà,Tarragonès
+2023/2024,2023,43009928,Llar d'infants Els Petitons,Públic,431310,Roda de Berà,Tarragonès
+2023/2024,2023,43011194,Escola El Cucurull,Públic,431310,Roda de Berà,Tarragonès
+2023/2024,2023,43011418,Institut Roda de Berà,Públic,431310,Roda de Berà,Tarragonès
+2023/2024,2023,43005662,Escola Josep Nin,Públic,431359,Salomó,Tarragonès
+2023/2024,2023,43012678,Llar d'infants El Til·ler,Públic,431359,Salomó,Tarragonès
+2023/2024,2023,43003082,Escola Guillem de Claramunt,Públic,431444,La Secuita,Tarragonès
+2023/2024,2023,43012770,Escola Bressol Municipal els Guillemets,Públic,431444,La Secuita,Tarragonès
+2023/2024,2023,43003136,Escola Bonavista,Públic,431482,Tarragona,Tarragonès
+2023/2024,2023,43003151,Joan XXIII,Privat,431482,Tarragona,Tarragonès
+2023/2024,2023,43003227,Escola Sant Salvador,Públic,431482,Tarragona,Tarragonès
+2023/2024,2023,43003306,Escola Serrallo,Públic,431482,Tarragona,Tarragonès
+2023/2024,2023,43003321,Escola Sant Pere i Sant Pau,Públic,431482,Tarragona,Tarragonès
+2023/2024,2023,43003410,Joan Roig,Privat,431482,Tarragona,Tarragonès
+2023/2024,2023,43003461,Tic-Tac,Privat,431482,Tarragona,Tarragonès
+2023/2024,2023,43003483,Lestonnac-l'Ensenyança,Privat,431482,Tarragona,Tarragonès
+2023/2024,2023,43003495,Mare de Déu del Carme,Privat,431482,Tarragona,Tarragonès
+2023/2024,2023,43003501,El Carme,Privat,431482,Tarragona,Tarragonès
+2023/2024,2023,43003525,Dominiques Tarragona,Privat,431482,Tarragona,Tarragonès
+2023/2024,2023,43003537,La Salle,Privat,431482,Tarragona,Tarragonès
+2023/2024,2023,43003549,Vedruna Sagrat Cor Tarragona,Privat,431482,Tarragona,Tarragonès
+2023/2024,2023,43003550,Santa Teresa de Jesús,Privat,431482,Tarragona,Tarragonès
+2023/2024,2023,43003586,Sant Pau Apòstol,Privat,431482,Tarragona,Tarragonès
+2023/2024,2023,43003616,CEE San Rafael,Públic,431482,Tarragona,Tarragonès
+2023/2024,2023,43003631,Estela,Privat,431482,Tarragona,Tarragonès
+2023/2024,2023,43003641,Institut Antoni de Martí i Franquès,Públic,431482,Tarragona,Tarragonès
+2023/2024,2023,43003653,Institut Comte de Rius,Públic,431482,Tarragona,Tarragonès
+2023/2024,2023,43003690,Escola de Pràctiques,Públic,431482,Tarragona,Tarragonès
+2023/2024,2023,43003707,Mare Nostrum,Privat,431482,Tarragona,Tarragonès
+2023/2024,2023,43003719,Espallargas,Privat,431482,Tarragona,Tarragonès
+2023/2024,2023,43003720,Escola El Miracle,Públic,431482,Tarragona,Tarragonès
+2023/2024,2023,43003732,Institut Pons d'Icart,Públic,431482,Tarragona,Tarragonès
+2023/2024,2023,43003756,Escola Torreforta,Públic,431482,Tarragona,Tarragonès
+2023/2024,2023,43003768,Escola Els Àngels,Públic,431482,Tarragona,Tarragonès
+2023/2024,2023,43003793,La Salle Torreforta,Privat,431482,Tarragona,Tarragonès
+2023/2024,2023,43005169,Escola Pau Delclòs,Públic,431482,Tarragona,Tarragonès
+2023/2024,2023,43005170,Escola La Floresta,Públic,431482,Tarragona,Tarragonès
+2023/2024,2023,43005686,Escola Riu Clar,Públic,431482,Tarragona,Tarragonès
+2023/2024,2023,43005704,Institut Francesc Vidal i Barraquer,Públic,431482,Tarragona,Tarragonès
+2023/2024,2023,43005731,La Muntanyeta,Privat,431482,Tarragona,Tarragonès
+2023/2024,2023,43005911,Escola Campclar,Públic,431482,Tarragona,Tarragonès
+2023/2024,2023,43005959,Escola Cèsar August,Públic,431482,Tarragona,Tarragonès
+2023/2024,2023,43006125,Institut Campclar,Públic,431482,Tarragona,Tarragonès
+2023/2024,2023,43006162,Solc,Privat,431482,Tarragona,Tarragonès
+2023/2024,2023,43006253,EASD de Tarragona,Públic,431482,Tarragona,Tarragonès
+2023/2024,2023,43006265,Escola de Dansa Artemis,Privat,431482,Tarragona,Tarragonès
+2023/2024,2023,43006277,Cons. de Música de Tarragona,Públic,431482,Tarragona,Tarragonès
+2023/2024,2023,43006563,Escola Marcel·lí Domingo,Públic,431482,Tarragona,Tarragonès
+2023/2024,2023,43006630,Institut Pere Martell,Públic,431482,Tarragona,Tarragonès
+2023/2024,2023,43006940,EOI de Tarragona,Públic,431482,Tarragona,Tarragonès
+2023/2024,2023,43007051,CFA Josepa Massanés i Dalmau,Públic,431482,Tarragona,Tarragonès
+2023/2024,2023,43007117,Escola Pax,Públic,431482,Tarragona,Tarragonès
+2023/2024,2023,43007713,Llar d'infants El Ninot,Públic,431482,Tarragona,Tarragonès
+2023/2024,2023,43007725,Llar d'infants La Taronja,Públic,431482,Tarragona,Tarragonès
+2023/2024,2023,43007853,Llar d'infants La Baldufa,Públic,431482,Tarragona,Tarragonès
+2023/2024,2023,43007981,Bao Bab,Privat,431482,Tarragona,Tarragonès
+2023/2024,2023,43008390,Institut Torreforta,Públic,431482,Tarragona,Tarragonès
+2023/2024,2023,43008432,Institut Sant Pere i Sant Pau,Públic,431482,Tarragona,Tarragonès
+2023/2024,2023,43008501,Institut Pont del Diable,Públic,431482,Tarragona,Tarragonès
+2023/2024,2023,43008560,Àngel de la Guarda,Privat,431482,Tarragona,Tarragonès
+2023/2024,2023,43008687,LLI privada Yo-Ni,Privat,431482,Tarragona,Tarragonès
+2023/2024,2023,43008729,CFA Tarragona,Públic,431482,Tarragona,Tarragonès
+2023/2024,2023,43008766,Esc. de Música Municipal,Públic,431482,Tarragona,Tarragonès
+2023/2024,2023,43008778,CFA Fòrum,Públic,431482,Tarragona,Tarragonès
+2023/2024,2023,43008791,Esc. de Música de la Diputació de Tarragona,Públic,431482,Tarragona,Tarragonès
+2023/2024,2023,43008997,LLI privada El Niuet,Privat,431482,Tarragona,Tarragonès
+2023/2024,2023,43009175,L'Alba i La Cigonya,Privat,431482,Tarragona,Tarragonès
+2023/2024,2023,43009230,Escola Tarragona,Públic,431482,Tarragona,Tarragonès
+2023/2024,2023,43009369,Escola Saavedra,Públic,431482,Tarragona,Tarragonès
+2023/2024,2023,43009539,LLI privada Baobad-rosa,Privat,431482,Tarragona,Tarragonès
+2023/2024,2023,43009576,Esc. de Música Estudi de Música,Privat,431482,Tarragona,Tarragonès
+2023/2024,2023,43009722,Institut Cal·lípolis,Públic,431482,Tarragona,Tarragonès
+2023/2024,2023,43010256,Llar d'infants El Serrallo,Públic,431482,Tarragona,Tarragonès
+2023/2024,2023,43010281,LLI privada El Bosquet,Privat,431482,Tarragona,Tarragonès
+2023/2024,2023,43010396,Escola de Ponent,Públic,431482,Tarragona,Tarragonès
+2023/2024,2023,43010438,Llar d'infants El Miracle,Públic,431482,Tarragona,Tarragonès
+2023/2024,2023,43010700,CASASFORMACIÓN.ES,Privat,431482,Tarragona,Tarragonès
+2023/2024,2023,43010955,Llar d'infants Sant Pere i Sant Pau,Públic,431482,Tarragona,Tarragonès
+2023/2024,2023,43010979,Llar d'infants Sant Salvador,Públic,431482,Tarragona,Tarragonès
+2023/2024,2023,43011479,Institut Tarragona,Públic,431482,Tarragona,Tarragonès
+2023/2024,2023,43011561,Llar d'infants L'Arrabassada,Públic,431482,Tarragona,Tarragonès
+2023/2024,2023,43012125,Novatècnica,Privat,431482,Tarragona,Tarragonès
+2023/2024,2023,43012162,Llar d'infants Bonavista,Públic,431482,Tarragona,Tarragonès
+2023/2024,2023,43012216,Llar d'infants Cèsar August,Públic,431482,Tarragona,Tarragonès
+2023/2024,2023,43012447,Bettatur,Privat,431482,Tarragona,Tarragonès
+2023/2024,2023,43012629,Aula Magna,Privat,431482,Tarragona,Tarragonès
+2023/2024,2023,43012642,LLI privada Xino-Xano Joan XXIII,Privat,431482,Tarragona,Tarragonès
+2023/2024,2023,43012708,CEOP,Privat,431482,Tarragona,Tarragonès
+2023/2024,2023,43012897,AFENTD,Privat,431482,Tarragona,Tarragonès
+2023/2024,2023,43012939,Òrgan Gestor del Complex Educatiu de Tarragona,Públic,431482,Tarragona,Tarragonès
+2023/2024,2023,43012976,Institut Escola Mediterrani,Públic,431482,Tarragona,Tarragonès
+2023/2024,2023,43013002,A. Hospitalària H.de dia salut mental infanto juvenil deTarragona,Públic,431482,Tarragona,Tarragonès
+2023/2024,2023,43013063,LLI privada Teresianes-Jaycar,Privat,431482,Tarragona,Tarragonès
+2023/2024,2023,43013166,Centre de Formació CBS,Privat,431482,Tarragona,Tarragonès
+2023/2024,2023,43013191,Institut Escola L'Arrabassada,Públic,431482,Tarragona,Tarragonès
+2023/2024,2023,43013233,Ilerna Tarragona,Privat,431482,Tarragona,Tarragonès
+2023/2024,2023,43013270,Vedruna Dansa,Privat,431482,Tarragona,Tarragonès
+2023/2024,2023,43003884,Escola Antoni Roig,Públic,431536,Torredembarra,Tarragonès
+2023/2024,2023,43006851,Escola Molí de Vent,Públic,431536,Torredembarra,Tarragonès
+2023/2024,2023,43006952,Institut Torredembarra,Públic,431536,Torredembarra,Tarragonès
+2023/2024,2023,43007661,Institut Ramon de la Torre,Públic,431536,Torredembarra,Tarragonès
+2023/2024,2023,43009242,Escola L'Antina,Públic,431536,Torredembarra,Tarragonès
+2023/2024,2023,43009643,Llar d'infants El Cirerer,Públic,431536,Torredembarra,Tarragonès
+2023/2024,2023,43009746,Esc. de Música Municipal de Torredembarra,Públic,431536,Torredembarra,Tarragonès
+2023/2024,2023,43010918,Escola de Dansa Centrescènic,Privat,431536,Torredembarra,Tarragonès
+2023/2024,2023,43011650,EB privada La Casa de les Fades,Privat,431536,Torredembarra,Tarragonès
+2023/2024,2023,43012253,Llar d'infants Els Gegants de la Torre,Públic,431536,Torredembarra,Tarragonès
+2023/2024,2023,43012794,Centre d'Estudis Eqüestres Torredembarra,Privat,431536,Torredembarra,Tarragonès
+2023/2024,2023,43004864,Escola Pere Virgili,Públic,431665,Vilallonga del Camp,Tarragonès
+2023/2024,2023,43010104,Llar d'infants Patufet,Públic,431665,Vilallonga del Camp,Tarragonès
+2023/2024,2023,43004979,Escola Torroja i Miret,Públic,431711,Vila-seca,Tarragonès
+2023/2024,2023,43005005,Escola Sant Bernat Calvó,Públic,431711,Vila-seca,Tarragonès
+2023/2024,2023,43005947,Escola Cal·lípolis,Públic,431711,Vila-seca,Tarragonès
+2023/2024,2023,43005972,Institut Ramon Barbat i Miracle,Públic,431711,Vila-seca,Tarragonès
+2023/2024,2023,43006241,Escola La Plana,Públic,431711,Vila-seca,Tarragonès
+2023/2024,2023,43006289,Cons. de Música de Vila-seca,Públic,431711,Vila-seca,Tarragonès
+2023/2024,2023,43006332,Escola Mestral,Públic,431711,Vila-seca,Tarragonès
+2023/2024,2023,43008158,LLI privada Pineda,Privat,431711,Vila-seca,Tarragonès
+2023/2024,2023,43008523,Institut Vila-seca,Públic,431711,Vila-seca,Tarragonès
+2023/2024,2023,43008742,Esc. de Música Municipal de Vila-seca,Públic,431711,Vila-seca,Tarragonès
+2023/2024,2023,43010086,CFA Vilaseca,Públic,431711,Vila-seca,Tarragonès
+2023/2024,2023,43010426,EB privada L'Estel,Privat,431711,Vila-seca,Tarragonès
+2023/2024,2023,43010530,Escola Miramar,Públic,431711,Vila-seca,Tarragonès
+2023/2024,2023,43011492,Escola La Canaleta,Públic,431711,Vila-seca,Tarragonès
+2023/2024,2023,43011595,Llar d'infants Fartets,Públic,431711,Vila-seca,Tarragonès
+2023/2024,2023,43012551,Llar d'infants Les Vimeteres,Públic,431711,Vila-seca,Tarragonès
+2023/2024,2023,43004931,Escola Santa Maria del Mar,Públic,439057,Salou,Tarragonès
+2023/2024,2023,43004967,Elisabeth,Privat,439057,Salou,Tarragonès
+2023/2024,2023,43006393,Escola Europa,Públic,439057,Salou,Tarragonès
+2023/2024,2023,43007026,LLI privada Nou Esplai,Privat,439057,Salou,Tarragonès
+2023/2024,2023,43007518,Esc. de Música Municipal,Públic,439057,Salou,Tarragonès
+2023/2024,2023,43007543,Institut Jaume I,Públic,439057,Salou,Tarragonès
+2023/2024,2023,43009451,Escola Salou,Públic,439057,Salou,Tarragonès
+2023/2024,2023,43010153,Escola Vora Mar,Públic,439057,Salou,Tarragonès
+2023/2024,2023,43010347,Institut Marta Mata,Públic,439057,Salou,Tarragonès
+2023/2024,2023,43010921,Llar d'infants La Balena Blava,Públic,439057,Salou,Tarragonès
+2023/2024,2023,43011200,EOI de Salou,Públic,439057,Salou,Tarragonès
+2023/2024,2023,43011765,CFA Àgora,Públic,439057,Salou,Tarragonès
+2023/2024,2023,43012022,Llar d'infants Cavallet de Mar,Públic,439057,Salou,Tarragonès
+2023/2024,2023,43012666,EIC,Privat,439057,Salou,Tarragonès
+2023/2024,2023,43003185,Escola La Canonja,Públic,439076,La Canonja,Tarragonès
+2023/2024,2023,43008237,LLI privada Mare de Déu de l'Esperança,Privat,439076,La Canonja,Tarragonès
+2023/2024,2023,43008481,Institut Collblanc,Públic,439076,La Canonja,Tarragonès
+2024/2025,2024,43000251,Escola La Portalada,Públic,430120,Altafulla,Tarragonès
+2024/2025,2024,43007488,Llar d'infants Francesc Blanch i Ribé,Públic,430120,Altafulla,Tarragonès
+2024/2025,2024,43009977,Institut d'Altafulla,Públic,430120,Altafulla,Tarragonès
+2024/2025,2024,43010402,Escola El Roquissar,Públic,430120,Altafulla,Tarragonès
+2024/2025,2024,43011297,Llar d'infants Hort de Pau,Públic,430120,Altafulla,Tarragonès
+2024/2025,2024,43011674,Esc. de Música Municipal d'Altafulla,Públic,430120,Altafulla,Tarragonès
+2024/2025,2024,43010499,CFA Pau Casals,Públic,430430,El Catllar,Tarragonès
+2024/2025,2024,43011261,Llar d'infants L'Agulla del Catllar,Públic,430430,El Catllar,Tarragonès
+2024/2025,2024,43012745,The British School of Costa Daurada,Privat,430430,El Catllar,Tarragonès
+2024/2025,2024,43012812,Institut Escola L'Agulla,Públic,430430,El Catllar,Tarragonès
+2024/2025,2024,43000895,Escola Mossèn Ramon Bergadà,Públic,430477,Constantí,Tarragonès
+2024/2025,2024,43000949,Escola agrària Mas Bové,Públic,430477,Constantí,Tarragonès
+2024/2025,2024,43005893,Escola Centcelles,Públic,430477,Constantí,Tarragonès
+2024/2025,2024,43007646,Institut de Constantí,Públic,430477,Constantí,Tarragonès
+2024/2025,2024,43010451,Llar d'infants Gu-gu,Públic,430477,Constantí,Tarragonès
+2024/2025,2024,43005364,Escola Les Eres,Públic,430509,Creixell,Tarragonès
+2024/2025,2024,43009667,Llar d'infants Municipal de Creixell,Públic,430509,Creixell,Tarragonès
+2024/2025,2024,43011649,Llar d'infants Nova Guarderia,Públic,430509,Creixell,Tarragonès
+2024/2025,2024,43012241,Escola Bressol L'Estel de Mar,Públic,430509,Creixell,Tarragonès
+2024/2025,2024,43001735,Escola Ventura Gassol,Públic,430957,El Morell,Tarragonès
+2024/2025,2024,43008407,Institut El Morell,Públic,430957,El Morell,Tarragonès
+2024/2025,2024,43009931,Llar d'infants Dolça del Morell,Públic,430957,El Morell,Tarragonès
+2024/2025,2024,43012231,Esc. de Música Municipal El Morell,Públic,430957,El Morell,Tarragonès
+2024/2025,2024,43005467,Escola Les Codinetes,Públic,430976,La Nou de Gaià,Tarragonès
+2024/2025,2024,43011042,Llar d'infants La Palmera,Públic,430976,La Nou de Gaià,Tarragonès
+2024/2025,2024,43001826,Escola Sant Sebastià,Públic,431009,Els Pallaresos,Tarragonès
+2024/2025,2024,43009564,LLI privada Can Petits,Privat,431009,Els Pallaresos,Tarragonès
+2024/2025,2024,43010591,Escola Arquitecte Jujol,Públic,431009,Els Pallaresos,Tarragonès
+2024/2025,2024,43010748,Institut Els Pallaresos,Públic,431009,Els Pallaresos,Tarragonès
+2024/2025,2024,43012563,Escola Bressol Els Pallaresos,Públic,431009,Els Pallaresos,Tarragonès
+2024/2025,2024,43007476,Llar d'infants Perafort,Públic,431037,Perafort,Tarragonès
+2024/2025,2024,43009886,Escola Josep Veciana,Públic,431037,Perafort,Tarragonès
+2024/2025,2024,43005480,Escola Mare de Déu del Lledó,Públic,431093,La Pobla de Mafumet,Tarragonès
+2024/2025,2024,43008936,Llar d'infants L'Esquirol,Públic,431093,La Pobla de Mafumet,Tarragonès
+2024/2025,2024,43012186,Llar d'infants Nou Esquirol,Públic,431093,La Pobla de Mafumet,Tarragonès
+2024/2025,2024,43012885,CENAFE La Pobla de Mafumet,Privat,431093,La Pobla de Mafumet,Tarragonès
+2024/2025,2024,43005145,Escola Els Ametllers,Públic,431114,La Pobla de Montornès,Tarragonès
+2024/2025,2024,43010271,Llar d'infants Sol Solet,Públic,431114,La Pobla de Montornès,Tarragonès
+2024/2025,2024,43005157,Escola Montoliu,Públic,431264,La Riera de Gaià,Tarragonès
+2024/2025,2024,43010049,Llar d'infants Les Monges,Públic,431264,La Riera de Gaià,Tarragonès
+2024/2025,2024,43002776,Escola Salvador Espriu,Públic,431310,Roda de Berà,Tarragonès
+2024/2025,2024,43009928,Llar d'infants Els Petitons,Públic,431310,Roda de Berà,Tarragonès
+2024/2025,2024,43011194,Escola El Cucurull,Públic,431310,Roda de Berà,Tarragonès
+2024/2025,2024,43011418,Institut Roda de Berà,Públic,431310,Roda de Berà,Tarragonès
+2024/2025,2024,43005662,Escola Josep Nin,Públic,431359,Salomó,Tarragonès
+2024/2025,2024,43012678,Llar d'infants El Til·ler,Públic,431359,Salomó,Tarragonès
+2024/2025,2024,43003082,Escola Guillem de Claramunt,Públic,431444,La Secuita,Tarragonès
+2024/2025,2024,43012770,Escola Bressol Municipal els Guillemets,Públic,431444,La Secuita,Tarragonès
+2024/2025,2024,43003136,Escola Bonavista,Públic,431482,Tarragona,Tarragonès
+2024/2025,2024,43003151,Joan XXIII,Privat,431482,Tarragona,Tarragonès
+2024/2025,2024,43003227,Escola Sant Salvador,Públic,431482,Tarragona,Tarragonès
+2024/2025,2024,43003306,Escola Serrallo,Públic,431482,Tarragona,Tarragonès
+2024/2025,2024,43003321,Escola Sant Pere i Sant Pau,Públic,431482,Tarragona,Tarragonès
+2024/2025,2024,43003410,Joan Roig,Privat,431482,Tarragona,Tarragonès
+2024/2025,2024,43003461,Tic-Tac,Privat,431482,Tarragona,Tarragonès
+2024/2025,2024,43003483,Lestonnac-l'Ensenyança,Privat,431482,Tarragona,Tarragonès
+2024/2025,2024,43003495,Mare de Déu del Carme,Privat,431482,Tarragona,Tarragonès
+2024/2025,2024,43003501,El Carme,Privat,431482,Tarragona,Tarragonès
+2024/2025,2024,43003525,Dominiques Tarragona,Privat,431482,Tarragona,Tarragonès
+2024/2025,2024,43003537,La Salle,Privat,431482,Tarragona,Tarragonès
+2024/2025,2024,43003549,Vedruna Sagrat Cor Tarragona,Privat,431482,Tarragona,Tarragonès
+2024/2025,2024,43003550,Santa Teresa de Jesús,Privat,431482,Tarragona,Tarragonès
+2024/2025,2024,43003586,Sant Pau Apòstol,Privat,431482,Tarragona,Tarragonès
+2024/2025,2024,43003616,CEE San Rafael,Públic,431482,Tarragona,Tarragonès
+2024/2025,2024,43003631,Estela,Privat,431482,Tarragona,Tarragonès
+2024/2025,2024,43003641,Institut Antoni de Martí i Franquès,Públic,431482,Tarragona,Tarragonès
+2024/2025,2024,43003653,Institut Comte de Rius,Públic,431482,Tarragona,Tarragonès
+2024/2025,2024,43003690,Escola de Pràctiques,Públic,431482,Tarragona,Tarragonès
+2024/2025,2024,43003707,Mare Nostrum,Privat,431482,Tarragona,Tarragonès
+2024/2025,2024,43003719,Espallargas,Privat,431482,Tarragona,Tarragonès
+2024/2025,2024,43003720,Escola El Miracle,Públic,431482,Tarragona,Tarragonès
+2024/2025,2024,43003732,Institut Pons d'Icart,Públic,431482,Tarragona,Tarragonès
+2024/2025,2024,43003756,Escola Torreforta,Públic,431482,Tarragona,Tarragonès
+2024/2025,2024,43003768,Escola Els Àngels,Públic,431482,Tarragona,Tarragonès
+2024/2025,2024,43003793,La Salle Torreforta,Privat,431482,Tarragona,Tarragonès
+2024/2025,2024,43005169,Escola Pau Delclòs,Públic,431482,Tarragona,Tarragonès
+2024/2025,2024,43005170,Escola La Floresta,Públic,431482,Tarragona,Tarragonès
+2024/2025,2024,43005686,Escola Riu Clar,Públic,431482,Tarragona,Tarragonès
+2024/2025,2024,43005704,Institut Francesc Vidal i Barraquer,Públic,431482,Tarragona,Tarragonès
+2024/2025,2024,43005731,La Muntanyeta,Privat,431482,Tarragona,Tarragonès
+2024/2025,2024,43005911,Escola Campclar,Públic,431482,Tarragona,Tarragonès
+2024/2025,2024,43005959,Escola Cèsar August,Públic,431482,Tarragona,Tarragonès
+2024/2025,2024,43006125,Institut Campclar,Públic,431482,Tarragona,Tarragonès
+2024/2025,2024,43006162,Solc,Privat,431482,Tarragona,Tarragonès
+2024/2025,2024,43006253,EASD de Tarragona,Públic,431482,Tarragona,Tarragonès
+2024/2025,2024,43006265,Escola de Dansa Artemis,Privat,431482,Tarragona,Tarragonès
+2024/2025,2024,43006277,Cons. de Música de Tarragona,Públic,431482,Tarragona,Tarragonès
+2024/2025,2024,43006563,Escola Marcel·lí Domingo,Públic,431482,Tarragona,Tarragonès
+2024/2025,2024,43006630,Institut Pere Martell,Públic,431482,Tarragona,Tarragonès
+2024/2025,2024,43006940,EOI de Tarragona,Públic,431482,Tarragona,Tarragonès
+2024/2025,2024,43007051,CFA Josepa Massanés i Dalmau,Públic,431482,Tarragona,Tarragonès
+2024/2025,2024,43007117,Escola Pax,Públic,431482,Tarragona,Tarragonès
+2024/2025,2024,43007713,Llar d'infants El Ninot,Públic,431482,Tarragona,Tarragonès
+2024/2025,2024,43007725,Llar d'infants La Taronja,Públic,431482,Tarragona,Tarragonès
+2024/2025,2024,43007853,Llar d'infants La Baldufa,Públic,431482,Tarragona,Tarragonès
+2024/2025,2024,43007981,Bao Bab,Privat,431482,Tarragona,Tarragonès
+2024/2025,2024,43008390,Institut Torreforta,Públic,431482,Tarragona,Tarragonès
+2024/2025,2024,43008432,Institut Sant Pere i Sant Pau,Públic,431482,Tarragona,Tarragonès
+2024/2025,2024,43008501,Institut Pont del Diable,Públic,431482,Tarragona,Tarragonès
+2024/2025,2024,43008560,Àngel de la Guarda,Privat,431482,Tarragona,Tarragonès
+2024/2025,2024,43008687,LLI privada Yo-Ni,Privat,431482,Tarragona,Tarragonès
+2024/2025,2024,43008729,CFA Tarragona,Públic,431482,Tarragona,Tarragonès
+2024/2025,2024,43008766,Esc. de Música Municipal,Públic,431482,Tarragona,Tarragonès
+2024/2025,2024,43008778,CFA Fòrum,Públic,431482,Tarragona,Tarragonès
+2024/2025,2024,43008791,Esc. de Música de la Diputació de Tarragona,Públic,431482,Tarragona,Tarragonès
+2024/2025,2024,43008997,LLI privada El Niuet,Privat,431482,Tarragona,Tarragonès
+2024/2025,2024,43009175,L'Alba i La Cigonya,Privat,431482,Tarragona,Tarragonès
+2024/2025,2024,43009230,Escola Tarragona,Públic,431482,Tarragona,Tarragonès
+2024/2025,2024,43009369,Escola Saavedra,Públic,431482,Tarragona,Tarragonès
+2024/2025,2024,43009539,LLI privada Baobad-rosa,Privat,431482,Tarragona,Tarragonès
+2024/2025,2024,43009576,Esc. de Música Estudi de Música,Privat,431482,Tarragona,Tarragonès
+2024/2025,2024,43009722,Institut Cal·lípolis,Públic,431482,Tarragona,Tarragonès
+2024/2025,2024,43010256,Llar d'infants El Serrallo,Públic,431482,Tarragona,Tarragonès
+2024/2025,2024,43010281,LLI privada El Bosquet,Privat,431482,Tarragona,Tarragonès
+2024/2025,2024,43010396,Escola de Ponent,Públic,431482,Tarragona,Tarragonès
+2024/2025,2024,43010438,Llar d'infants El Miracle,Públic,431482,Tarragona,Tarragonès
+2024/2025,2024,43010700,CASASFORMACIÓN.ES,Privat,431482,Tarragona,Tarragonès
+2024/2025,2024,43010955,Llar d'infants Sant Pere i Sant Pau,Públic,431482,Tarragona,Tarragonès
+2024/2025,2024,43010979,Llar d'infants Sant Salvador,Públic,431482,Tarragona,Tarragonès
+2024/2025,2024,43011479,Institut Tarragona,Públic,431482,Tarragona,Tarragonès
+2024/2025,2024,43011561,Llar d'infants L'Arrabassada,Públic,431482,Tarragona,Tarragonès
+2024/2025,2024,43012125,Novatècnica,Privat,431482,Tarragona,Tarragonès
+2024/2025,2024,43012162,Llar d'infants Bonavista,Públic,431482,Tarragona,Tarragonès
+2024/2025,2024,43012216,Llar d'infants Cèsar August,Públic,431482,Tarragona,Tarragonès
+2024/2025,2024,43012447,Bettatur,Privat,431482,Tarragona,Tarragonès
+2024/2025,2024,43012629,Aula Magna,Privat,431482,Tarragona,Tarragonès
+2024/2025,2024,43012642,LLI privada Xino-Xano Joan XXIII,Privat,431482,Tarragona,Tarragonès
+2024/2025,2024,43012708,CEOP,Privat,431482,Tarragona,Tarragonès
+2024/2025,2024,43012897,AFENTD,Privat,431482,Tarragona,Tarragonès
+2024/2025,2024,43012939,Òrgan Gestor del Complex Educatiu de Tarragona,Públic,431482,Tarragona,Tarragonès
+2024/2025,2024,43012976,Institut Escola Mediterrani,Públic,431482,Tarragona,Tarragonès
+2024/2025,2024,43013002,HDA Hospital de Dia de Tarragona - HDA,Públic,431482,Tarragona,Tarragonès
+2024/2025,2024,43013063,LLI privada Teresianes-Jaycar,Privat,431482,Tarragona,Tarragonès
+2024/2025,2024,43013166,Centre de Formació CBS,Privat,431482,Tarragona,Tarragonès
+2024/2025,2024,43013191,Institut Escola L'Arrabassada,Públic,431482,Tarragona,Tarragonès
+2024/2025,2024,43013233,Ilerna Tarragona,Privat,431482,Tarragona,Tarragonès
+2024/2025,2024,43013270,Vedruna Dansa,Privat,431482,Tarragona,Tarragonès
+2024/2025,2024,43003884,Escola Antoni Roig,Públic,431536,Torredembarra,Tarragonès
+2024/2025,2024,43006851,Escola Molí de Vent,Públic,431536,Torredembarra,Tarragonès
+2024/2025,2024,43006952,Institut Torredembarra,Públic,431536,Torredembarra,Tarragonès
+2024/2025,2024,43007661,Institut Ramon de la Torre,Públic,431536,Torredembarra,Tarragonès
+2024/2025,2024,43009242,Escola L'Antina,Públic,431536,Torredembarra,Tarragonès
+2024/2025,2024,43009643,Llar d'infants El Cirerer,Públic,431536,Torredembarra,Tarragonès
+2024/2025,2024,43009746,Esc. de Música Municipal de Torredembarra,Públic,431536,Torredembarra,Tarragonès
+2024/2025,2024,43010918,Escola de Dansa Centrescènic,Privat,431536,Torredembarra,Tarragonès
+2024/2025,2024,43011650,EB privada La Casa de les Fades,Privat,431536,Torredembarra,Tarragonès
+2024/2025,2024,43012253,Llar d'infants Els Gegants de la Torre,Públic,431536,Torredembarra,Tarragonès
+2024/2025,2024,43012794,Centre d'Estudis Eqüestres Torredembarra,Privat,431536,Torredembarra,Tarragonès
+2024/2025,2024,43004864,Escola Pere Virgili,Públic,431665,Vilallonga del Camp,Tarragonès
+2024/2025,2024,43010104,Llar d'infants Patufet,Públic,431665,Vilallonga del Camp,Tarragonès
+2024/2025,2024,43004979,Escola Torroja i Miret,Públic,431711,Vila-seca,Tarragonès
+2024/2025,2024,43005005,Escola Sant Bernat Calvó,Públic,431711,Vila-seca,Tarragonès
+2024/2025,2024,43005947,Escola Cal·lípolis,Públic,431711,Vila-seca,Tarragonès
+2024/2025,2024,43005972,Institut Ramon Barbat i Miracle,Públic,431711,Vila-seca,Tarragonès
+2024/2025,2024,43006241,Escola La Plana,Públic,431711,Vila-seca,Tarragonès
+2024/2025,2024,43006289,Cons. de Música de Vila-seca,Públic,431711,Vila-seca,Tarragonès
+2024/2025,2024,43006332,Escola Mestral,Públic,431711,Vila-seca,Tarragonès
+2024/2025,2024,43008158,LLI privada Pineda,Privat,431711,Vila-seca,Tarragonès
+2024/2025,2024,43008523,Institut Vila-seca,Públic,431711,Vila-seca,Tarragonès
+2024/2025,2024,43008742,Esc. de Música Municipal de Vila-seca,Públic,431711,Vila-seca,Tarragonès
+2024/2025,2024,43010086,CFA Vilaseca,Públic,431711,Vila-seca,Tarragonès
+2024/2025,2024,43010426,EB privada L'Estel,Privat,431711,Vila-seca,Tarragonès
+2024/2025,2024,43010530,Escola Miramar,Públic,431711,Vila-seca,Tarragonès
+2024/2025,2024,43011492,Escola La Canaleta,Públic,431711,Vila-seca,Tarragonès
+2024/2025,2024,43011595,Llar d'infants Fartets,Públic,431711,Vila-seca,Tarragonès
+2024/2025,2024,43012551,Llar d'infants Les Vimeteres,Públic,431711,Vila-seca,Tarragonès
+2024/2025,2024,43013348,Escola de Dansa África Aguilar,Privat,431711,Vila-seca,Tarragonès
+2024/2025,2024,43004931,Escola Santa Maria del Mar,Públic,439057,Salou,Tarragonès
+2024/2025,2024,43004967,Elisabeth,Privat,439057,Salou,Tarragonès
+2024/2025,2024,43006393,Escola Europa,Públic,439057,Salou,Tarragonès
+2024/2025,2024,43007026,LLI privada Nou Esplai,Privat,439057,Salou,Tarragonès
+2024/2025,2024,43007518,Esc. de Música Municipal,Públic,439057,Salou,Tarragonès
+2024/2025,2024,43007543,Institut Jaume I,Públic,439057,Salou,Tarragonès
+2024/2025,2024,43009451,Escola Salou,Públic,439057,Salou,Tarragonès
+2024/2025,2024,43010153,Escola Vora Mar,Públic,439057,Salou,Tarragonès
+2024/2025,2024,43010347,Institut Marta Mata,Públic,439057,Salou,Tarragonès
+2024/2025,2024,43010921,Llar d'infants La Balena Blava,Públic,439057,Salou,Tarragonès
+2024/2025,2024,43011200,EOI de Salou,Públic,439057,Salou,Tarragonès
+2024/2025,2024,43011765,CFA Àgora,Públic,439057,Salou,Tarragonès
+2024/2025,2024,43012022,Llar d'infants Cavallet de Mar,Públic,439057,Salou,Tarragonès
+2024/2025,2024,43012666,EIC,Privat,439057,Salou,Tarragonès
+2024/2025,2024,43003185,Escola La Canonja,Públic,439076,La Canonja,Tarragonès
+2024/2025,2024,43008237,LLI privada Mare de Déu de l'Esperança,Privat,439076,La Canonja,Tarragonès
+2024/2025,2024,43008481,Institut Collblanc,Públic,439076,La Canonja,Tarragonès
+2025/2026,2025,43000251,Escola La Portalada,Públic,430120,Altafulla,Tarragonès
+2025/2026,2025,43007488,Llar d'infants Francesc Blanch i Ribé,Públic,430120,Altafulla,Tarragonès
+2025/2026,2025,43009977,Institut d'Altafulla,Públic,430120,Altafulla,Tarragonès
+2025/2026,2025,43010402,Escola El Roquissar,Públic,430120,Altafulla,Tarragonès
+2025/2026,2025,43011297,Llar d'infants Hort de Pau,Públic,430120,Altafulla,Tarragonès
+2025/2026,2025,43011674,Esc. de Música Municipal d'Altafulla,Públic,430120,Altafulla,Tarragonès
+2025/2026,2025,43010499,CFA Pau Casals,Públic,430430,El Catllar,Tarragonès
+2025/2026,2025,43011261,Llar d'infants L'Agulla del Catllar,Públic,430430,El Catllar,Tarragonès
+2025/2026,2025,43012745,The British School of Costa Daurada,Privat,430430,El Catllar,Tarragonès
+2025/2026,2025,43012812,Institut Escola L'Agulla,Públic,430430,El Catllar,Tarragonès
+2025/2026,2025,43000895,Escola Mossèn Ramon Bergadà,Públic,430477,Constantí,Tarragonès
+2025/2026,2025,43000949,Escola agrària Mas Bové,Públic,430477,Constantí,Tarragonès
+2025/2026,2025,43005893,Escola Centcelles,Públic,430477,Constantí,Tarragonès
+2025/2026,2025,43007646,Institut de Constantí,Públic,430477,Constantí,Tarragonès
+2025/2026,2025,43010451,Llar d'infants Gu-gu,Públic,430477,Constantí,Tarragonès
+2025/2026,2025,43005364,Escola Les Eres,Públic,430509,Creixell,Tarragonès
+2025/2026,2025,43009667,Llar d'infants Municipal de Creixell,Públic,430509,Creixell,Tarragonès
+2025/2026,2025,43011649,Llar d'infants Nova Guarderia,Públic,430509,Creixell,Tarragonès
+2025/2026,2025,43012241,Escola Bressol L'Estel de Mar,Públic,430509,Creixell,Tarragonès
+2025/2026,2025,43001735,Escola Ventura Gassol,Públic,430957,El Morell,Tarragonès
+2025/2026,2025,43008407,Institut El Morell,Públic,430957,El Morell,Tarragonès
+2025/2026,2025,43009931,Llar d'infants Dolça del Morell,Públic,430957,El Morell,Tarragonès
+2025/2026,2025,43012231,Esc. de Música Municipal El Morell,Públic,430957,El Morell,Tarragonès
+2025/2026,2025,43005467,Escola Les Codinetes,Públic,430976,La Nou de Gaià,Tarragonès
+2025/2026,2025,43011042,Llar d'infants La Palmera,Públic,430976,La Nou de Gaià,Tarragonès
+2025/2026,2025,43001826,Escola Sant Sebastià,Públic,431009,Els Pallaresos,Tarragonès
+2025/2026,2025,43009564,LLI privada Can Petits,Privat,431009,Els Pallaresos,Tarragonès
+2025/2026,2025,43010748,Institut Els Pallaresos,Públic,431009,Els Pallaresos,Tarragonès
+2025/2026,2025,43012563,Escola Bressol Els Pallaresos,Públic,431009,Els Pallaresos,Tarragonès
+2025/2026,2025,43007476,Llar d'infants Perafort,Públic,431037,Perafort,Tarragonès
+2025/2026,2025,43009886,Escola Josep Veciana,Públic,431037,Perafort,Tarragonès
+2025/2026,2025,43005480,Escola Mare de Déu del Lledó,Públic,431093,La Pobla de Mafumet,Tarragonès
+2025/2026,2025,43008936,Llar d'infants L'Esquirol,Públic,431093,La Pobla de Mafumet,Tarragonès
+2025/2026,2025,43012186,Llar d'infants Nou Esquirol,Públic,431093,La Pobla de Mafumet,Tarragonès
+2025/2026,2025,43012885,CENAFE La Pobla de Mafumet,Privat,431093,La Pobla de Mafumet,Tarragonès
+2025/2026,2025,43005145,Escola Els Ametllers,Públic,431114,La Pobla de Montornès,Tarragonès
+2025/2026,2025,43010271,Llar d'infants Sol Solet,Públic,431114,La Pobla de Montornès,Tarragonès
+2025/2026,2025,43005157,Escola Montoliu,Públic,431264,La Riera de Gaià,Tarragonès
+2025/2026,2025,43010049,Llar d'infants Les Monges,Públic,431264,La Riera de Gaià,Tarragonès
+2025/2026,2025,43002776,Escola Salvador Espriu,Públic,431310,Roda de Berà,Tarragonès
+2025/2026,2025,43009928,Llar d'infants Els Petitons,Públic,431310,Roda de Berà,Tarragonès
+2025/2026,2025,43011194,Escola El Cucurull,Públic,431310,Roda de Berà,Tarragonès
+2025/2026,2025,43011418,Institut Roda de Berà,Públic,431310,Roda de Berà,Tarragonès
+2025/2026,2025,43005662,Escola Josep Nin,Públic,431359,Salomó,Tarragonès
+2025/2026,2025,43012678,Llar d'infants El Til·ler,Públic,431359,Salomó,Tarragonès
+2025/2026,2025,43003082,Escola Guillem de Claramunt,Públic,431444,La Secuita,Tarragonès
+2025/2026,2025,43012770,Escola Bressol Municipal els Guillemets,Públic,431444,La Secuita,Tarragonès
+2025/2026,2025,43003136,Escola Bonavista,Públic,431482,Tarragona,Tarragonès
+2025/2026,2025,43003151,Joan XXIII,Privat,431482,Tarragona,Tarragonès
+2025/2026,2025,43003227,Escola Sant Salvador,Públic,431482,Tarragona,Tarragonès
+2025/2026,2025,43003306,Escola Serrallo,Públic,431482,Tarragona,Tarragonès
+2025/2026,2025,43003321,Escola Sant Pere i Sant Pau,Públic,431482,Tarragona,Tarragonès
+2025/2026,2025,43003410,Joan Roig,Privat,431482,Tarragona,Tarragonès
+2025/2026,2025,43003461,Tic-Tac,Privat,431482,Tarragona,Tarragonès
+2025/2026,2025,43003483,Lestonnac-l'Ensenyança,Privat,431482,Tarragona,Tarragonès
+2025/2026,2025,43003495,Mare de Déu del Carme,Privat,431482,Tarragona,Tarragonès
+2025/2026,2025,43003501,El Carme,Privat,431482,Tarragona,Tarragonès
+2025/2026,2025,43003525,Dominiques Tarragona,Privat,431482,Tarragona,Tarragonès
+2025/2026,2025,43003537,La Salle,Privat,431482,Tarragona,Tarragonès
+2025/2026,2025,43003549,Vedruna Tarragona,Privat,431482,Tarragona,Tarragonès
+2025/2026,2025,43003550,Santa Teresa de Jesús,Privat,431482,Tarragona,Tarragonès
+2025/2026,2025,43003586,Sant Pau Apòstol,Privat,431482,Tarragona,Tarragonès
+2025/2026,2025,43003616,CEE San Rafael,Públic,431482,Tarragona,Tarragonès
+2025/2026,2025,43003631,Estela,Privat,431482,Tarragona,Tarragonès
+2025/2026,2025,43003641,Institut Antoni de Martí i Franquès,Públic,431482,Tarragona,Tarragonès
+2025/2026,2025,43003653,Institut Comte de Rius,Públic,431482,Tarragona,Tarragonès
+2025/2026,2025,43003690,Escola de Pràctiques,Públic,431482,Tarragona,Tarragonès
+2025/2026,2025,43003707,Mare Nostrum,Privat,431482,Tarragona,Tarragonès
+2025/2026,2025,43003719,Espallargas,Privat,431482,Tarragona,Tarragonès
+2025/2026,2025,43003720,Escola El Miracle,Públic,431482,Tarragona,Tarragonès
+2025/2026,2025,43003732,Institut Pons d'Icart,Públic,431482,Tarragona,Tarragonès
+2025/2026,2025,43003756,Escola Torreforta,Públic,431482,Tarragona,Tarragonès
+2025/2026,2025,43003768,Escola Els Àngels,Públic,431482,Tarragona,Tarragonès
+2025/2026,2025,43003793,La Salle Torreforta,Privat,431482,Tarragona,Tarragonès
+2025/2026,2025,43005169,Escola Pau Delclòs,Públic,431482,Tarragona,Tarragonès
+2025/2026,2025,43005170,Escola La Floresta,Públic,431482,Tarragona,Tarragonès
+2025/2026,2025,43005686,Escola Riu Clar,Públic,431482,Tarragona,Tarragonès
+2025/2026,2025,43005704,Institut Francesc Vidal i Barraquer,Públic,431482,Tarragona,Tarragonès
+2025/2026,2025,43005731,La Muntanyeta,Privat,431482,Tarragona,Tarragonès
+2025/2026,2025,43005911,Escola Campclar,Públic,431482,Tarragona,Tarragonès
+2025/2026,2025,43005959,Escola Cèsar August,Públic,431482,Tarragona,Tarragonès
+2025/2026,2025,43006125,Institut Campclar,Públic,431482,Tarragona,Tarragonès
+2025/2026,2025,43006162,Solc,Privat,431482,Tarragona,Tarragonès
+2025/2026,2025,43006253,EASD de Tarragona,Públic,431482,Tarragona,Tarragonès
+2025/2026,2025,43006265,Escola de Dansa Artemis,Privat,431482,Tarragona,Tarragonès
+2025/2026,2025,43006277,Cons. de Música de Tarragona,Públic,431482,Tarragona,Tarragonès
+2025/2026,2025,43006563,Escola Marcel·lí Domingo,Públic,431482,Tarragona,Tarragonès
+2025/2026,2025,43006630,Institut Pere Martell,Públic,431482,Tarragona,Tarragonès
+2025/2026,2025,43006940,EOI de Tarragona,Públic,431482,Tarragona,Tarragonès
+2025/2026,2025,43007051,CFA Josepa Massanés i Dalmau,Públic,431482,Tarragona,Tarragonès
+2025/2026,2025,43007117,Escola Pax,Públic,431482,Tarragona,Tarragonès
+2025/2026,2025,43007713,Llar d'infants El Ninot,Públic,431482,Tarragona,Tarragonès
+2025/2026,2025,43007725,Llar d'infants La Taronja,Públic,431482,Tarragona,Tarragonès
+2025/2026,2025,43007853,Llar d'infants La Baldufa,Públic,431482,Tarragona,Tarragonès
+2025/2026,2025,43007981,Bao Bab,Privat,431482,Tarragona,Tarragonès
+2025/2026,2025,43008390,Institut Torreforta,Públic,431482,Tarragona,Tarragonès
+2025/2026,2025,43008432,Institut Sant Pere i Sant Pau,Públic,431482,Tarragona,Tarragonès
+2025/2026,2025,43008501,Institut Pont del Diable,Públic,431482,Tarragona,Tarragonès
+2025/2026,2025,43008560,Àngel de la Guarda,Privat,431482,Tarragona,Tarragonès
+2025/2026,2025,43008687,LLI privada Yo-Ni,Privat,431482,Tarragona,Tarragonès
+2025/2026,2025,43008729,CFA Tarragona,Públic,431482,Tarragona,Tarragonès
+2025/2026,2025,43008766,Esc. de Música Municipal,Públic,431482,Tarragona,Tarragonès
+2025/2026,2025,43008778,CFA Fòrum,Públic,431482,Tarragona,Tarragonès
+2025/2026,2025,43008791,Esc. de Música de la Diputació de Tarragona,Públic,431482,Tarragona,Tarragonès
+2025/2026,2025,43009175,L'Alba i La Cigonya,Privat,431482,Tarragona,Tarragonès
+2025/2026,2025,43009230,Escola Tarragona,Públic,431482,Tarragona,Tarragonès
+2025/2026,2025,43009369,Escola Saavedra,Públic,431482,Tarragona,Tarragonès
+2025/2026,2025,43009539,LLI privada Baobad-rosa,Privat,431482,Tarragona,Tarragonès
+2025/2026,2025,43009576,Esc. de Música Estudi de Música,Privat,431482,Tarragona,Tarragonès
+2025/2026,2025,43009722,Institut Cal·lípolis,Públic,431482,Tarragona,Tarragonès
+2025/2026,2025,43010256,Llar d'infants El Serrallo,Públic,431482,Tarragona,Tarragonès
+2025/2026,2025,43010281,LLI privada El Bosquet,Privat,431482,Tarragona,Tarragonès
+2025/2026,2025,43010396,Escola de Ponent,Públic,431482,Tarragona,Tarragonès
+2025/2026,2025,43010438,Llar d'infants El Miracle,Públic,431482,Tarragona,Tarragonès
+2025/2026,2025,43010700,CASASFORMACIÓN.ES,Privat,431482,Tarragona,Tarragonès
+2025/2026,2025,43010955,Llar d'infants Sant Pere i Sant Pau,Públic,431482,Tarragona,Tarragonès
+2025/2026,2025,43010979,Llar d'infants Sant Salvador,Públic,431482,Tarragona,Tarragonès
+2025/2026,2025,43011479,Institut Tarragona,Públic,431482,Tarragona,Tarragonès
+2025/2026,2025,43011561,Llar d'infants L'Arrabassada,Públic,431482,Tarragona,Tarragonès
+2025/2026,2025,43012125,Novatècnica,Privat,431482,Tarragona,Tarragonès
+2025/2026,2025,43012162,Llar d'infants Bonavista,Públic,431482,Tarragona,Tarragonès
+2025/2026,2025,43012216,Llar d'infants Cèsar August,Públic,431482,Tarragona,Tarragonès
+2025/2026,2025,43012447,Bettatur,Privat,431482,Tarragona,Tarragonès
+2025/2026,2025,43012629,Aula Magna,Privat,431482,Tarragona,Tarragonès
+2025/2026,2025,43012642,LLI privada Xino-Xano Joan XXIII,Privat,431482,Tarragona,Tarragonès
+2025/2026,2025,43012708,CEOP,Privat,431482,Tarragona,Tarragonès
+2025/2026,2025,43012897,AFENTD,Privat,431482,Tarragona,Tarragonès
+2025/2026,2025,43012939,Òrgan Gestor del Complex Educatiu de Tarragona,Públic,431482,Tarragona,Tarragonès
+2025/2026,2025,43012976,Institut Escola Mediterrani,Públic,431482,Tarragona,Tarragonès
+2025/2026,2025,43013002,HDA Hospital de Dia de Tarragona - HDA,Públic,431482,Tarragona,Tarragonès
+2025/2026,2025,43013063,LLI privada Teresianes-Jaycar,Privat,431482,Tarragona,Tarragonès
+2025/2026,2025,43013166,Centre de Formació CBS,Privat,431482,Tarragona,Tarragonès
+2025/2026,2025,43013191,Institut Escola L'Arrabassada,Públic,431482,Tarragona,Tarragonès
+2025/2026,2025,43013233,Ilerna Tarragona,Privat,431482,Tarragona,Tarragonès
+2025/2026,2025,43013270,Vedruna Dansa,Privat,431482,Tarragona,Tarragonès
+2025/2026,2025,43013361,Llar d'infants Baobab-Lestonnac,Privat,431482,Tarragona,Tarragonès
+2025/2026,2025,43003884,Escola Antoni Roig,Públic,431536,Torredembarra,Tarragonès
+2025/2026,2025,43006851,Escola Molí de Vent,Públic,431536,Torredembarra,Tarragonès
+2025/2026,2025,43006952,Institut Torredembarra,Públic,431536,Torredembarra,Tarragonès
+2025/2026,2025,43007661,Institut Ramon de la Torre,Públic,431536,Torredembarra,Tarragonès
+2025/2026,2025,43009242,Escola L'Antina,Públic,431536,Torredembarra,Tarragonès
+2025/2026,2025,43009643,Llar d'infants El Cirerer,Públic,431536,Torredembarra,Tarragonès
+2025/2026,2025,43009746,Esc. de Música Municipal de Torredembarra,Públic,431536,Torredembarra,Tarragonès
+2025/2026,2025,43010918,Escola de Dansa Centrescènic,Privat,431536,Torredembarra,Tarragonès
+2025/2026,2025,43011650,EB privada La Casa de les Fades,Privat,431536,Torredembarra,Tarragonès
+2025/2026,2025,43012253,Llar d'infants Els Gegants de la Torre,Públic,431536,Torredembarra,Tarragonès
+2025/2026,2025,43012794,Centre d'Estudis Eqüestres Torredembarra,Privat,431536,Torredembarra,Tarragonès
+2025/2026,2025,43004864,Escola Pere Virgili,Públic,431665,Vilallonga del Camp,Tarragonès
+2025/2026,2025,43010104,Llar d'infants Patufet,Públic,431665,Vilallonga del Camp,Tarragonès
+2025/2026,2025,43004979,Escola Torroja i Miret,Públic,431711,Vila-seca,Tarragonès
+2025/2026,2025,43005005,Escola Sant Bernat Calvó,Públic,431711,Vila-seca,Tarragonès
+2025/2026,2025,43005947,Escola Cal·lípolis,Públic,431711,Vila-seca,Tarragonès
+2025/2026,2025,43005972,Institut Ramon Barbat i Miracle,Públic,431711,Vila-seca,Tarragonès
+2025/2026,2025,43006241,Escola La Plana,Públic,431711,Vila-seca,Tarragonès
+2025/2026,2025,43006289,Cons. de Música de Vila-seca,Públic,431711,Vila-seca,Tarragonès
+2025/2026,2025,43006332,Escola Mestral,Públic,431711,Vila-seca,Tarragonès
+2025/2026,2025,43008158,LLI privada Pineda,Privat,431711,Vila-seca,Tarragonès
+2025/2026,2025,43008523,Institut Vila-seca,Públic,431711,Vila-seca,Tarragonès
+2025/2026,2025,43008742,Esc. de Música Municipal de Vila-seca,Públic,431711,Vila-seca,Tarragonès
+2025/2026,2025,43010086,CFA Vilaseca,Públic,431711,Vila-seca,Tarragonès
+2025/2026,2025,43010426,EB privada L'Estel,Privat,431711,Vila-seca,Tarragonès
+2025/2026,2025,43010530,Escola Miramar,Públic,431711,Vila-seca,Tarragonès
+2025/2026,2025,43011492,Escola La Canaleta,Públic,431711,Vila-seca,Tarragonès
+2025/2026,2025,43011595,Llar d'infants Fartets,Públic,431711,Vila-seca,Tarragonès
+2025/2026,2025,43012551,Llar d'infants Les Vimeteres,Públic,431711,Vila-seca,Tarragonès
+2025/2026,2025,43013348,Escola de Dansa África Aguilar,Privat,431711,Vila-seca,Tarragonès
+2025/2026,2025,43004931,Escola Santa Maria del Mar,Públic,439057,Salou,Tarragonès
+2025/2026,2025,43004967,Elisabeth,Privat,439057,Salou,Tarragonès
+2025/2026,2025,43006393,Escola Europa,Públic,439057,Salou,Tarragonès
+2025/2026,2025,43007026,LLI privada Nou Esplai,Privat,439057,Salou,Tarragonès
+2025/2026,2025,43007518,Esc. de Música Municipal,Públic,439057,Salou,Tarragonès
+2025/2026,2025,43007543,Institut Jaume I,Públic,439057,Salou,Tarragonès
+2025/2026,2025,43009451,Escola Salou,Públic,439057,Salou,Tarragonès
+2025/2026,2025,43010153,Escola Vora Mar,Públic,439057,Salou,Tarragonès
+2025/2026,2025,43010347,Institut Marta Mata,Públic,439057,Salou,Tarragonès
+2025/2026,2025,43010921,Llar d'infants La Balena Blava,Públic,439057,Salou,Tarragonès
+2025/2026,2025,43011200,EOI de Salou,Públic,439057,Salou,Tarragonès
+2025/2026,2025,43011765,CFA Àgora,Públic,439057,Salou,Tarragonès
+2025/2026,2025,43012022,Llar d'infants Cavallet de Mar,Públic,439057,Salou,Tarragonès
+2025/2026,2025,43012666,EIC,Privat,439057,Salou,Tarragonès
+2025/2026,2025,43003185,Escola La Canonja,Públic,439076,La Canonja,Tarragonès
+2025/2026,2025,43008237,LLI privada Mare de Déu de l'Esperança,Privat,439076,La Canonja,Tarragonès
+2025/2026,2025,43008481,Institut Collblanc,Públic,439076,La Canonja,Tarragonès

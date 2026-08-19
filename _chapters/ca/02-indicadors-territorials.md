@@ -22,7 +22,7 @@ Aquest capítol amplia, per tant, la dimensió pràctica del llibre comarcal. Ab
 >>>>> - Distingir les funcions dels sistemes oficials, els estudis de recerca i els quadres de comandament.
 >>>>> - Distingir mesura, indicador simple, indicador compost i indicador indirecte, i validar-ne la relació amb el fenomen d'interès.
 >>>>> - Justificar el numerador, el denominador, la unitat i el factor d'escala d'una mesura útil.
->>>>> - Calcular indicadors municipals i agregats comarcals reproduïbles al full `indicators`.
+>>>>> - Calcular indicadors municipals i agregats comarcals reproduïbles als fulls `indicators_demography`, `indicators_housing` i `indicators_summary`.
 >>>>> - Interpretar patrons, contrastos i casos extrems sense presentar-los com a causes demostrades.
 >>>>> - Validar fórmules, compatibilitat, cobertura, absències i resultats abans de documentar-los.
 
@@ -309,9 +309,9 @@ Un indicador descriu un patró, però no n'estableix automàticament la causa. U
 
 ### Punt de partida i abast de la demostració guiada
 
-L'activitat continua en el mateix llibre acumulatiu del capítol 1 i es resol amb Excel o Calc. El punt de partida és `municipal`, amb una fila per municipi i els camps de codi i nom territorial, població total, població de 0–14, 15–64 i 65 anys o més, habitatges totals, principals i no principals, i superfície. L'abast de la demostració guiada és calcular al full `indicators` els sis indicadors següents per a tots els municipis, obtenir els agregats comarcals a partir dels numeradors i denominadors, i actualitzar `dictionary`, `checks` i `README.md`. No s'incorporarà cap font nova, llevat que la necessitat, la procedència i el tractament quedin documentats.
+L'activitat continua en el mateix llibre acumulatiu del capítol 1 i es resol amb Excel o Calc. Abans de començar es conservarà `tigit-01-preparacio-dades.xlsx` i es crearà `tigit-02-indicadors-territorials.xlsx`. L'abast de la demostració guiada és calcular els quatre indicadors demogràfics a `indicators_demography`, els dos d'habitatge a `indicators_housing` i els agregats comarcals a `indicators_summary`, i actualitzar `dictionary`, `checks` i `README.md`.
 
-Els sis indicadors de la taula següent concreten l'abast de la demostració guiada i permeten seguir un mateix exemple de principi a fi. El full `indicators` conservarà el codi i el nom de cada municipi, les variables de partida i les fórmules. En el projecte, la selecció efectiva d'indicadors es farà segons els camps compatibles disponibles i la pregunta acordada; pot coincidir amb aquesta sèrie o adoptar-ne només les construccions pertinents.
+Els sis indicadors de la taula següent concreten l'abast de la demostració guiada i permeten seguir un mateix exemple de principi a fi. Cada full conservarà el codi i el nom de cada municipi, les variables de partida i les fórmules necessàries per revisar el resultat. La separació evita un full excessivament ample i permet treballar una família d'indicadors sense perdre de vista els components. En el projecte, la selecció efectiva d'indicadors es farà segons els camps compatibles disponibles i la pregunta acordada; pot coincidir amb aquesta sèrie o adoptar-ne només les construccions pertinents.
 
 La demostració utilitza població i habitatge perquè aquestes variables construeixen el context i diversos denominadors necessaris per interpretar un territori. No mesura encara l'activitat turística. Per calcular intensitat, densitat, estacionalitat o rendibilitat turística caldria incorporar pernoctacions, places, establiments, ocupació, despesa o altres dades amb cobertura territorial i temporal compatible. L'habitatge no principal no s'utilitzarà com a indicador indirecte de l'activitat turística. Els indicadors turístics de la taula anterior funcionen com a model per a una ampliació posterior quan es disposi d'una font adequada.
 
@@ -319,21 +319,44 @@ La pregunta «on pesa més la població gran?» es tradueix, per exemple, en tre
 
 >>>>> L'activitat transforma les dades municipals preparades en indicadors documentats que continuaran alimentant els gràfics del llibre comarcal.
 >>>>>
->>>>> - Construir al full `indicators` els indicadors municipals amb numeradors, denominadors, unitats i fórmules visibles.
+>>>>> - Construir als fulls `indicators_*` els indicadors municipals amb numeradors, denominadors, unitats i fórmules visibles.
 >>>>> - Calcular els agregats comarcals a partir de les sumes compatibles, sense fer mitjanes simples de percentatges municipals.
 >>>>> - Validar divisions, absències, cobertura, totals i casos extrems mitjançant comprovacions reproduïbles.
 >>>>> - Interpretar contrastos territorials com a patrons descriptius i distingir-los de les hipòtesis causals.
->>>>> - Documentar definicions, limitacions i comprovacions a `dictionary`, `checks` i `README.md` perquè el full alimenti `charts`.
+>>>>> - Documentar definicions, limitacions i comprovacions a `dictionary`, `checks` i `README.md` perquè els resultats alimentin `charts_data`.
+
+### Percentatges, ràtios i arrodoniment al full
+
+Aquest capítol introdueix les fórmules quantitatives que el capítol 1 havia deixat pendents. Ja no es tracta només de comprovar si una cel·la és numèrica o si un codi està duplicat, sinó de relacionar una mesura amb el denominador que correspon a la pregunta.
+
+::: table "Operacions numèriques dels indicadors"
+| Operació | Fórmula orientativa | Pregunta que resol |
+| --- | --- | --- |
+| Total compatible | <code>=SUM(D2:D23)</code> | Quin volum sumen els municipis amb la mateixa definició i període? |
+| Diferència | <code>=D2-C2</code> | Quin canvi o contrast hi ha entre dues mesures compatibles? |
+| Percentatge | <code>=D2/C2*100</code> | Quin pes té una part dins del seu total? |
+| Ràtio escalada | <code>=F2/D2*1000</code> | Quantes unitats corresponen a cada 1.000 unitats del denominador? |
+| Densitat | <code>=D2/S2</code> | Quina magnitud correspon a cada unitat de superfície? |
+| Divisió validada | <code>=IF(AND(ISNUMBER(D2),ISNUMBER(C2),C2&gt;0),D2/C2*100,NA())</code> | Es pot calcular l'indicador sense fabricar un zero? |
+:::
+
+El format i l'arrodoniment no són el mateix. Mostrar `12,3456` amb un decimal no modifica el valor intern; `ROUND(A2,1)` retorna una dada derivada igual a `12,3`. Els fulls `indicators_*` conservaran la precisió necessària per revisar i reutilitzar els càlculs. L'arrodoniment s'aplicarà als textos, etiquetes o exportacions quan la comunicació ho exigeixi, no abans de calcular agregats o classes.
+
+Tampoc no es farà una mitjana simple de percentatges municipals per obtenir el valor comarcal. El percentatge comarcal d'habitatge no principal es calcula sumant els habitatges no principals compatibles i dividint-los per la suma dels habitatges totals. Aquesta operació pondera implícitament cada municipi segons el seu denominador i es desenvolupa a `indicators_summary`.
+
+Cada fórmula calculable s'acompanyarà d'un estat, com `ok`, `missing_numerator`, `denominator_zero` o `incompatible_period`. `NA()` pot mantenir visible un resultat no calculable dins del llibre i evitar que un gràfic el representi com a zero. Quan el capítol 5 generi el CSV per a QGIS, l'error es convertirà en un valor nul i l'estat s'exportarà en un camp separat; mai no es transformarà en zero ni en el text literal `#N/A`.
 
 ### Fórmules, unitats i casos no calculables
 
-Si la població total és a `D2`, la població de 0 a 14 anys a `E2`, la de 65 anys o més a `F2`, els habitatges totals a `G2`, els no principals a `H2` i la superfície a `I2`, aquestes fórmules expressen quatre mesures revisables:
+Al full `indicators_demography`, la població total ocupa `C`, la població de 0 a 14 anys `D`, la de 65 anys o més `E` i la superfície `F`. Al full `indicators_housing`, la població total ocupa `C`, els habitatges totals `D`, els principals `E` i els no principals `F`. Les sis fórmules de la primera fila municipal són:
 
 ```text
-=IF(AND(ISNUMBER(F2),ISNUMBER(D2),D2>0),F2/D2*100,NA())
-=IF(AND(ISNUMBER(F2),ISNUMBER(E2),E2>0),F2/E2*100,NA())
-=IF(AND(ISNUMBER(H2),ISNUMBER(G2),G2>0),H2/G2*100,NA())
-=IF(AND(ISNUMBER(D2),ISNUMBER(I2),I2>0),D2/I2,NA())
+indicators_demography!G2 =IF(AND(ISNUMBER(D2),ISNUMBER(C2),C2>0),D2/C2*100,NA())
+indicators_demography!H2 =IF(AND(ISNUMBER(E2),ISNUMBER(C2),C2>0),E2/C2*100,NA())
+indicators_demography!I2 =IF(AND(ISNUMBER(E2),ISNUMBER(D2),D2>0),E2/D2*100,NA())
+indicators_demography!J2 =IF(AND(ISNUMBER(C2),ISNUMBER(F2),F2>0),C2/F2,NA())
+indicators_housing!G2 =IF(AND(ISNUMBER(F2),ISNUMBER(D2),D2>0),F2/D2*100,NA())
+indicators_housing!H2 =IF(AND(ISNUMBER(C2),ISNUMBER(E2),E2>0),C2/E2,NA())
 ```
 
 Les condicions comproven que el numerador i el denominador siguin numèrics i que el denominador sigui superior a zero. `NA()` manté visible que l'indicador no es pot calcular, en lloc de fabricar un zero. Una cel·la buida, una dada no disponible i un zero observat no signifiquen el mateix. Els noms de les funcions i el separador d'arguments poden aparèixer localitzats segons l'aplicació, l'idioma i la configuració regional; cal adaptar-ne la sintaxi sense canviar la lògica de la prova.
@@ -389,11 +412,11 @@ Cada fórmula es calcularà per a tots els municipis. La taula permetrà observa
 ::: table "Evidències del càlcul i la interpretació d'indicadors"
 | Ubicació | Evidència | Contingut mínim |
 | --- | --- | --- |
-| `data/processed` | Llibre de treball actualitzat | Dades preparades, fórmules visibles i full `indicators` |
+| `data/processed` | `tigit-02-indicadors-territorials.xlsx` | Dades preparades, fórmules visibles i fulls `indicators_demography`, `indicators_housing` i `indicators_summary` |
 | `data/processed` | Diccionari ampliat | Pregunta, fórmula, unitat, factor d'escala, tipus de construcció, relació amb el fenomen, ús i limitacions |
 | `data/processed` | Taula analítica | Una fila per municipi, numeradors, denominadors i indicadors |
 | `data/processed` | Comprovacions | Totals, casos absents, divisions impossibles i revisió d'extrems |
 | `README.md` | Nota interpretativa | Utilitat prevista, patró observat, hipòtesi i límit de cada indicador seleccionat |
 :::
 
-El full `indicators` quedarà calculat i documentat dins del llibre únic, acompanyat d'una justificació de com es construeix cada indicador, quina relació té amb el fenomen, per a què pot ser útil i quines precaucions requereix. Aquesta evidència no exigeix crear indicadors compostos ni indirectes. El capítol 3 utilitzarà aquests mateixos rangs per construir figures destinades a comparació, exploració i divulgació; no s'han de transcriure manualment a un altre llibre.
+Els fulls `indicators_*` quedaran calculats i documentats dins del llibre únic, acompanyats d'una justificació de com es construeix cada indicador, quina relació té amb el fenomen, per a què pot ser útil i quines precaucions requereix. Aquesta evidència no exigeix crear indicadors compostos ni indirectes. El capítol 3 utilitzarà aquests mateixos rangs per construir figures destinades a comparació, exploració i divulgació; no s'han de transcriure manualment a un altre llibre.

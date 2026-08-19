@@ -243,21 +243,21 @@ La coherència cromàtica també ajuda a separar tres llenguatges que sovint es 
 
 ## Activitat: preparar el registre cromàtic del projecte
 
-La demostració guiada converteix els criteris del capítol en decisions que es podran reutilitzar en la resta del projecte. Parteix d'un gràfic candidat del capítol de semiologia gràfica, prepara el registre cromàtic al `README.md` i aplica la paleta a una prova del gràfic per comprovar-la sobre una peça real abans d'arribar a la cartografia i a la síntesi final.
+La demostració guiada converteix els criteris del capítol en decisions que es podran reutilitzar en la resta del projecte. Es conservarà el llibre del capítol 3 i es crearà `tigit-07-teoria-color.xlsx`, que afegirà el full `palette` i mantindrà editables els gràfics previs. El registre no serà una llista externa: els codis i les funcions del color quedaran al mateix llibre que alimenta les figures.
 
 >>>>> L'activitat prepara una paleta reproduïble sobre un gràfic i deixa documentats els criteris que després s'aplicaran al mapa temàtic.
 >>>>>
 >>>>> - Inventariar les funcions del color per a dades, nuls, accents, fons, límits i text.
 >>>>> - Capturar o seleccionar colors i registrar-ne els codis HEX i RGB exactes.
 >>>>> - Crear al `README.md` el registre cromàtic amb funcions, origen, comprovacions i ajustos.
->>>>> - Aplicar la paleta al gràfic i conservar `outputs/prova_paleta_tarragones_habitatge_no_principal.svg` com a prova vectorial.
+>>>>> - Aplicar un color neutre i un accent redundant per a Vila-seca al gràfic ordenat i conservar la prova en SVG i PDF vectorials.
 >>>>> - Validar la prova en grisos i amb simulació cromàtica.
 
 ### Entrades i resultats del registre cromàtic
 
-Per començar es disposa d'un gràfic candidat del capítol de semiologia gràfica. La demostració defineix una paleta seqüencial per a l'indicador relatiu principal, una paleta qualitativa per a categories o elements de referència, un color d'accent i els tractaments de nuls, fons, límits i text. Cada color es registra amb el codi HEX i els canals RGB exactes, i el conjunt es comprova en escala de grisos i amb una simulació de deficiències de visió cromàtica.
+Per començar es disposa dels gràfics del capítol de semiologia gràfica. La demostració separa tres nivells: colors de context i identitat per a fons, text o accents; colors qualitatius per distingir sèries; i rampes seqüencials o divergents pensades per a dades cartogràfiques. Barrejar aquests nivells pot convertir un color institucional o decoratiu en una classe de dades sense justificació.
 
-Els resultats de treball són la secció `## Registre cromàtic` al `README.md` de l'arrel i una prova de la paleta aplicada al gràfic, desada directament a `outputs` com `outputs/prova_paleta_tarragones_habitatge_no_principal.svg`. Els noms s'adapten al territori i a l'indicador de cada projecte. Més endavant, l'activitat de cartografia temàtica aplicarà la mateixa paleta a una mostra municipal i afegirà al registre el resultat de la comprovació cartogràfica.
+Els resultats de treball són la secció `## Registre cromàtic` al `README.md`, el full `palette` del llibre i una prova aplicada al gràfic ordenat. Totes les barres comparables mantindran un color neutre; Vila-seca podrà rebre un accent que també s'indicarà amb etiqueta o contorn perquè la distinció no depengui només del color. La rampa seqüencial destinada a la coropleta es provarà com una tira de mostres, però els intervals de classe no es fixaran fins al capítol 8.
 
 La pràctica d'aquest capítol prepararà les decisions de color que s'utilitzaran després en gràfics, cartografia temàtica, QGIS i infografia. No es tracta d'escollir una paleta definitiva per gust, sinó de documentar opcions compatibles amb el tipus de dada i provar-les sobre peces reals o mostres controlades.
 
@@ -275,6 +275,8 @@ El procediment serà breu. Primer s'obrirà la imatge de mostra i s'escollirà u
 
 La selecció inicial inclourà una paleta seqüencial per a l'indicador relatiu principal, una paleta qualitativa per a categories o elements de referència i un color d'accent per al territori d'estudi o per a una anotació. També fixarà els colors de nuls, fons, límits i text. En aquest capítol, les paletes es provaran sobre un gràfic candidat del capítol de semiologia gràfica; la prova sobre una capa municipal i la classificació definitiva es faran després, en la cartografia temàtica.
 
+[Adobe Color](https://color.adobe.com/) es pot utilitzar per explorar harmonies, extreure colors d'una imatge o construir una paleta de context. L'estudiant copiarà els codis HEX escollits a les files `adobe_candidate` del full `palette` i n'indicarà la funció prevista. Aquest origen no demostra que la paleta sigui adequada per representar dades ordenades. Per a mapes, [ColorBrewer](https://colorbrewer2.org/) ajudarà a seleccionar rampes segons tipus de dada, nombre de classes i condicions d'impressió o accessibilitat.
+
 ### Registrar codis i decisions
 
 El registre cromàtic indicarà:
@@ -287,13 +289,27 @@ El registre cromàtic indicarà:
 6. resultat de la prova en escala de grisos o simulació cromàtica;
 7. ajustos aplicats i motiu.
 
+El full calcularà els canals RGB a partir del codi HEX. Si `E2` conté `#D55E00`, les fórmules compatibles amb Calc i Excel 365 són:
+
+```text
+=HEX2DEC(MID(E2,2,2))
+=HEX2DEC(MID(E2,4,2))
+=HEX2DEC(MID(E2,6,2))
+```
+
+També convertirà els canals sRGB a valors lineals per calcular luminància relativa i contrast aproximat amb blanc i negre. Aquest càlcul ajuda a detectar textos o símbols problemàtics, però no substitueix la prova sobre la mida, el fons i la geometria reals. Les files conservaran camps per a la prova en grisos, la simulació de deficiències cromàtiques i les notes de revisió.
+
+La paleta qualitativa d'edats s'aplicarà a les barres apilades; el gràfic ordenat mantindrà totes les barres amb un gris blavós neutral i destacarà Vila-seca amb un taronja que també queda identificat pel text; i la piràmide utilitzarà dos colors divergents. Les mostres BuGn i RdBu es conservaran com a candidates per als mapes, però no fixaran encara els punts de tall.
+
 ### Evidències del registre cromàtic
 
 ::: table "Evidències del registre cromàtic"
 | Ubicació | Evidència | Contingut mínim |
 | --- | --- | --- |
 | `README.md` | Registre cromàtic | Funcions, codis HEX o RGB, origen de la paleta o mostra i comprovacions realitzades |
-| `outputs` | `prova_paleta_tarragones_habitatge_no_principal.svg` | Paleta aplicada a un gràfic candidat, amb colors i textos vectorials comprovables |
+| `data/processed` | `tigit-07-teoria-color.xlsx` | Full `palette`, fórmules HEX/RGB, luminància, contrast, files Adobe Color i mostres ColorBrewer |
+| `outputs/figures` | `palette-proof-non-principal-housing-tarragones-2021.svg` i `.pdf` | Color neutre, accent redundant de Vila-seca, colors i textos vectorials comprovables |
+| `captures` | Comprovació a Inkscape | Un objecte vectorial seleccionat i el codi HEX o RGBA visible al panell d'emplenat i contorn |
 :::
 
 La decisió cromàtica quedarà preparada quan es pugui reconstruir en un altre programa i explicar per què cada color ajuda la lectura. Els capítols de cartografia i SIG utilitzaran aquest registre per classificar i simbolitzar el mapa temàtic municipal sense redissenyar la paleta a ull.

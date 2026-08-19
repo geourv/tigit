@@ -1,0 +1,24 @@
+year,municipality_code,municipality,population,table_id,source,source_url
+2000,431711,Vila-seca,13133,1063,"Idescat, a partir del Padró continu de l'INE.",https://api.idescat.cat/taules/v2/pmh/1180/1063/mun/data?lang=ca&MUN=431711&SEX=TOTAL&AGE=TOTAL
+2001,431711,Vila-seca,13420.0,1063,"Idescat, a partir del Padró continu de l'INE.",https://api.idescat.cat/taules/v2/pmh/1180/1063/mun/data?lang=ca&MUN=431711&SEX=TOTAL&AGE=TOTAL
+2002,431711,Vila-seca,13927,1063,"Idescat, a partir del Padró continu de l'INE.",https://api.idescat.cat/taules/v2/pmh/1180/1063/mun/data?lang=ca&MUN=431711&SEX=TOTAL&AGE=TOTAL
+2003,431711,Vila-seca,14377,1063,"Idescat, a partir del Padró continu de l'INE.",https://api.idescat.cat/taules/v2/pmh/1180/1063/mun/data?lang=ca&MUN=431711&SEX=TOTAL&AGE=TOTAL
+2004,431711,Vila-seca,14998,1063,"Idescat, a partir del Padró continu de l'INE.",https://api.idescat.cat/taules/v2/pmh/1180/1063/mun/data?lang=ca&MUN=431711&SEX=TOTAL&AGE=TOTAL
+2005,431711,Vila-seca,15875,1063,"Idescat, a partir del Padró continu de l'INE.",https://api.idescat.cat/taules/v2/pmh/1180/1063/mun/data?lang=ca&MUN=431711&SEX=TOTAL&AGE=TOTAL
+2006,431711,Vila-seca,17305,1063,"Idescat, a partir del Padró continu de l'INE.",https://api.idescat.cat/taules/v2/pmh/1180/1063/mun/data?lang=ca&MUN=431711&SEX=TOTAL&AGE=TOTAL
+2007,431711,Vila-seca,18678,1063,"Idescat, a partir del Padró continu de l'INE.",https://api.idescat.cat/taules/v2/pmh/1180/1063/mun/data?lang=ca&MUN=431711&SEX=TOTAL&AGE=TOTAL
+2008,431711,Vila-seca,20039,1063,"Idescat, a partir del Padró continu de l'INE.",https://api.idescat.cat/taules/v2/pmh/1180/1063/mun/data?lang=ca&MUN=431711&SEX=TOTAL&AGE=TOTAL
+2009,431711,Vila-seca,20866,1063,"Idescat, a partir del Padró continu de l'INE.",https://api.idescat.cat/taules/v2/pmh/1180/1063/mun/data?lang=ca&MUN=431711&SEX=TOTAL&AGE=TOTAL
+2010,431711,Vila-seca,21373,1063,"Idescat, a partir del Padró continu de l'INE.",https://api.idescat.cat/taules/v2/pmh/1180/1063/mun/data?lang=ca&MUN=431711&SEX=TOTAL&AGE=TOTAL
+2011,431711,Vila-seca,21839,1063,"Idescat, a partir del Padró continu de l'INE.",https://api.idescat.cat/taules/v2/pmh/1180/1063/mun/data?lang=ca&MUN=431711&SEX=TOTAL&AGE=TOTAL
+2012,431711,Vila-seca,22052,1063,"Idescat, a partir del Padró continu de l'INE.",https://api.idescat.cat/taules/v2/pmh/1180/1063/mun/data?lang=ca&MUN=431711&SEX=TOTAL&AGE=TOTAL
+2013,431711,Vila-seca,21689,1063,"Idescat, a partir del Padró continu de l'INE.",https://api.idescat.cat/taules/v2/pmh/1180/1063/mun/data?lang=ca&MUN=431711&SEX=TOTAL&AGE=TOTAL
+2014,431711,Vila-seca,21923,8078,"Idescat, a partir del Padró continu de l'INE.",https://api.idescat.cat/taules/v2/pmh/1180/8078/mun/data?lang=ca&MUN=431711&SEX=TOTAL&AGE=TOTAL
+2015,431711,Vila-seca,22332,8078,"Idescat, a partir del Padró continu de l'INE.",https://api.idescat.cat/taules/v2/pmh/1180/8078/mun/data?lang=ca&MUN=431711&SEX=TOTAL&AGE=TOTAL
+2016,431711,Vila-seca,21935,8078,"Idescat, a partir del Padró continu de l'INE.",https://api.idescat.cat/taules/v2/pmh/1180/8078/mun/data?lang=ca&MUN=431711&SEX=TOTAL&AGE=TOTAL
+2017,431711,Vila-seca,21993,8078,"Idescat, a partir del Padró continu de l'INE.",https://api.idescat.cat/taules/v2/pmh/1180/8078/mun/data?lang=ca&MUN=431711&SEX=TOTAL&AGE=TOTAL
+2018,431711,Vila-seca,22107,8078,"Idescat, a partir del Padró continu de l'INE.",https://api.idescat.cat/taules/v2/pmh/1180/8078/mun/data?lang=ca&MUN=431711&SEX=TOTAL&AGE=TOTAL
+2019,431711,Vila-seca,22187,8078,"Idescat, a partir del Padró continu de l'INE.",https://api.idescat.cat/taules/v2/pmh/1180/8078/mun/data?lang=ca&MUN=431711&SEX=TOTAL&AGE=TOTAL
+2020,431711,Vila-seca,22555,8078,"Idescat, a partir del Padró continu de l'INE.",https://api.idescat.cat/taules/v2/pmh/1180/8078/mun/data?lang=ca&MUN=431711&SEX=TOTAL&AGE=TOTAL
+2021,431711,Vila-seca,22522,8078,"Idescat, a partir del Padró continu de l'INE.",https://api.idescat.cat/taules/v2/pmh/1180/8078/mun/data?lang=ca&MUN=431711&SEX=TOTAL&AGE=TOTAL
+2022,431711,Vila-seca,22681,8078,"Idescat, a partir del Padró continu de l'INE.",https://api.idescat.cat/taules/v2/pmh/1180/8078/mun/data?lang=ca&MUN=431711&SEX=TOTAL&AGE=TOTAL

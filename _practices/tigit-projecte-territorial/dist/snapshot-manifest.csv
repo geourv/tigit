@@ -1,0 +1,6 @@
+role,chapter,file,sheet_count,sheets_added_from_previous_teaching_snapshot
+student,chapter-01,student/chapter-01/tigit-01-preparacio-dades.xlsx,13,"project,sources,dictionary,source_codes,source_surface,source_population,source_housing,prepared_codes,prepared_surface,prepared_population,prepared_housing,checks,municipal"
+teaching,chapter-01,teaching/chapter-01/tigit-01-preparacio-dades.xlsx,14,"checks,dictionary,municipal,pivot_county_control,prepared_codes,prepared_housing,prepared_population,prepared_surface,project,source_codes,source_housing,source_population,source_surface,sources"
+teaching,chapter-02,teaching/chapter-02/tigit-02-indicadors-territorials.xlsx,17,"indicators_demography,indicators_housing,indicators_summary"
+teaching,chapter-03,teaching/chapter-03/tigit-03-semiologia-visualitzacio.xlsx,33,"chart_00_audit,chart_01_age_structure,chart_02_nonprincipal,chart_03_scatter,chart_04_housing_donut,chart_05_population_time,chart_06_population_pyramid,chart_07_housing_histogram,charts_data,histogram_data,pivot_population_age_sex,prepared_population_pyramid,prepared_population_time,pyramid_data,source_population_pyramid,source_population_time"
+teaching,chapter-07,teaching/chapter-07/tigit-07-teoria-color.xlsx,34,palette
