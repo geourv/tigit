@@ -1,0 +1,87 @@
+---
+title: "Coropleta problemàtica: recomptes absoluts d'habitatge no principal del Tarragonès"
+lang: ca
+ref: choropleth_housing_absolute_bad
+format:
+  gfm:
+    output-file: choropleth-housing-absolute-bad.generated.md
+execute:
+  echo: false
+  warning: false
+  message: false
+execute-dir: project
+unaltraweb_compute:
+  engine: r
+  mode: figure
+  inputs:
+    - _practices/tigit-projecte-territorial/data/processed/tarragones-boundaries-icgc-20260120.gpkg
+    - _practices/tigit-projecte-territorial/data/processed/municipal-indicators-tarragones-2021.csv
+  outputs:
+    - assets/img/thematic-cartography/choropleth-absolute-counts-bad-tarragones-2021.svg
+---
+
+```{r}
+find_project_root <- function(start) {
+  path <- normalizePath(start, winslash = "/", mustWork = FALSE)
+  repeat {
+    if (file.exists(file.path(path, ".unaltraweb", "computations.yml"))) {
+      return(path)
+    }
+    parent <- dirname(path)
+    if (identical(parent, path)) {
+      stop("Project root not found: missing .unaltraweb/computations.yml")
+    }
+    path <- parent
+  }
+}
+
+root <- find_project_root(getwd())
+suppressPackageStartupMessages(library(sf))
+suppressPackageStartupMessages(library(ggplot2))
+
+gpkg <- file.path(root, "_practices/tigit-projecte-territorial/data/processed/tarragones-boundaries-icgc-20260120.gpkg")
+mun <- sf::st_read(gpkg, layer = "municipalities_250k", quiet = TRUE)
+
+indicators <- read.csv(
+  file.path(root, "_practices/tigit-projecte-territorial/data/processed/municipal-indicators-tarragones-2021.csv"),
+  fileEncoding = "UTF-8"
+)
+
+## Unió per codi municipal: cal igualar formats.
+mun$CODIMUNI <- as.character(mun$CODIMUNI)
+indicators$mun_code <- as.character(indicators$mun_code)
+indicators$mun_code <- ifelse(nchar(indicators$mun_code) == 5, paste0("0", indicators$mun_code), indicators$mun_code)
+
+d <- merge(mun, indicators, by.x = "CODIMUNI", by.y = "mun_code", all.x = TRUE)
+stopifnot(nrow(d) == 22, any(!is.na(d$housing_non_main)))
+
+## Exemple problemàtic: recompte absolut en coropleta, paleta automàtica i absències amagades.
+fig <- ggplot(d) +
+  geom_sf(aes(fill = housing_non_main), color = "#ffffff", linewidth = 0.3) +
+  scale_fill_distiller(
+    palette = "Blues",
+    direction = 1,
+    na.value = "#d8dde2",
+    name = "Habitatges no\nprincipals"
+  ) +
+  labs(
+    title = "Habitatge no principal als municipis del Tarragonès",
+    subtitle = "Recompte absolut, 2021: el mapa convida a llegir la mida de l'àrea com si fos intensitat",
+    caption = "Exemple didàctic: recomte absolut en coropleta, llegenda automàtica i absències representades amb una classe gris." 
+  ) +
+  theme_void() +
+  theme(
+    plot.title = element_text(face = "bold", size = 13, hjust = 0, color = "#17202a"),
+    plot.subtitle = element_text(size = 10, color = "#52616b", hjust = 0, margin = margin(b = 6)),
+    plot.caption = element_text(size = 8, color = "#52616b", hjust = 0, margin = margin(t = 6)),
+    legend.title = element_text(face = "bold", size = 9, color = "#17202a"),
+    legend.text = element_text(color = "#52616b", size = 8),
+    legend.position = "right"
+  )
+
+output <- file.path(root, "assets/img/thematic-cartography/choropleth-absolute-counts-bad-tarragones-2021.svg")
+dir.create(dirname(output), showWarnings = FALSE, recursive = TRUE)
+ggsave(output, fig, width = 7, height = 7.5, device = svglite::svglite)
+```
+
+![Coropleta problemàtica del recompte absolut d'habitatge no principal als municipis del Tarragonès]({{ site.baseurl }}/assets/img/thematic-cartography/choropleth-absolute-counts-bad-tarragones-2021.svg "El recompte absolut en coropleta fa que els municipis amb més parc d'habitatges, com Tarragona, Salou o Vila-seca, dominin visualment tot i que el seu percentatge relatiu sigui moderat. L'absència es represenaria amb el gris. Exemple didàctic construït amb dades reals del Tarragonès (2021).")

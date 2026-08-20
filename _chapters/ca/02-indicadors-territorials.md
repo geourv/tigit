@@ -26,6 +26,45 @@ Aquest capítol amplia, per tant, la dimensió pràctica del llibre comarcal. Ab
 >>>>> - Interpretar patrons, contrastos i casos extrems sense presentar-los com a causes demostrades.
 >>>>> - Validar fórmules, compatibilitat, cobertura, absències i resultats abans de documentar-los.
 
+## Estadística i comunicació de dades
+
+Els indicadors no es poden entendre del tot al marge de l'estadística, però tampoc no es poden confondre amb ella. Abans de calcular el primer percentatge, cal situar què fa l'estadística, què fa aquesta assignatura i on passa la frontera entre l'una i l'altra. Aquesta frontera és doblement útil: ajuda a reconèixer què es pot afirmar amb un indicador i evita que un curs de visualització de dades es converteixi en una repetició de les assignatures d'estadística i de tècniques quantitatives que l'estudiant ja ha cursat o cursa.
+
+L'estadística es pot dividir, de manera esquemàtica i prou acurada per a aquest curs, en dos grans blocs. L'estadística **descriptiva** organitza, resumeix i representa les dades observades: calcula percentatges, ràtios, mitjanes, dispersions i associacions, i les mostra en taules, gràfics i mapes. L'estadística **inferencial**, en canvi, va més enllà del conjunt observat: a partir d'una mostra estima paràmetres de la població, construeix intervals de confiança i contrasta hipòtesis. Les dues responen preguntes diferents i exigeixen requisits diferents.
+
+>>>>> En acabar la secció, cal poder situar la comunicació de dades dins de l'estadística i explicar què fa i què no fa aquesta assignatura.
+>>>>>
+>>>>> - Distingir l'estadística descriptiva de la inferencial i posar-hi exemples concrets.
+>>>>> - Explicar per què els indicadors del llibre comarcal són estadística descriptiva.
+>>>>> - Justificar la complementarietat d'aquest curs amb les assignatures d'estadística i de tècniques quantitatives.
+>>>>> - Reconèixer les afirmacions que un indicador descriptiu pot sostenir i les que exigeixen inferència.
+
+### Estadística descriptiva i inferencial
+
+La diferència entre descriure i inferir és el primer vocabulari estadístic que ha de dominar qui es dedica a visualitzar dades, perquè molts errors d'interpretació neixen de creure que descriure equival a demostrar. Els indicadors del llibre comarcal —percentatges, ràtios i densitats— són estadística descriptiva: resumeixen i posen en relació el conjunt de municipis observats. Quan es calcula el percentatge d'habitatge no principal del Tarragonès i es comparen els municipis entre si, no es fa cap afirmació sobre territoris que no són al llibre: es descriu i es compara la informació disponible. Per això l'estadística descriptiva no necessita mostres: treballa amb els casos observats o amb aquells que s'han pogut registrar.
+
+L'estadística inferencial és una altra manera de treballar. Quan només es disposa d'una mostra i es vol dir alguna cosa sobre la població sencera —per exemple, quan una enquesta de pocs milers de llars pretén estimar la despesa turística de la regió— cal dissenyar la mostra amb un procediment conegut, assumir un model de probabilitat i quantificar la incertesa amb intervals de confiança i contrastos d'hipòtesis. El resultat no és un valor únic, sinó un valor amb una incertesa associada, i la seva validesa depèn del mostreig i dels supòsits del model.
+
+::: table "Dues branques de l'estadística i què fan"
+| | Estadística descriptiva | Estadística inferencial |
+| --- | --- | --- |
+| Pregunta que respon | Què mostren les dades observades? | Què es pot afirmar sobre una població més àmplia a partir d'una mostra? |
+| Materials | Conjunt de casos observat: municipis, sèries, registres disponibles | Mostra obtinguda amb un procediment conegut i un model de probabilitat |
+| Operacions típiques | Percentatges, ràtios, mitjanes, dispersió, associacions, taules, gràfics, mapes | Estimació de paràmetres, intervals de confiança, contrast d'hipòtesis |
+| Producte habitual | Descripció i comparació d'un territori o d'un període | Afirmació sobre el conjunt més ampli, amb incertesa quantificada |
+| En aquesta assignatura | És el punt de partida habitual | No és l'objectiu del curs |
+:::
+
+Aquesta taula no ordena les dues branques per importància: cada una respon una pregunta i imposa les seves precaucions. El manual se centra en la part descriptiva i, sobretot, en la comunicació visual del resultat. Per a una introducció sistemàtica als mètodes estadístics de les ciències socials, des de la descripció fins a la inferència, es pot consultar el manual d'Agresti i Finlay {% cite agrestiStatisticalMethodsSocial2009 %}.
+
+### Una assignatura complementària a les tècniques quantitatives
+
+Aquest manual no pretén ensenyar estadística de nou ni substituir les assignatures que l'estudiant ja té. Les assignatures d'estadística i de tècniques quantitatives ensenyen a calcular i validar mesures, a estimar, a contrastar hipòtesis i a quantificar la incertesa amb rigor. Aquesta assignatura se centra en una altra feina, complementària i posterior: decidir què es representa, com es codifica visualment, per a qui es fa i amb quins límits, a partir d'indicadors i de resultats que ja s'haurien de poder llegir críticament.
+
+La complementarietat es pot resumir amb dues preguntes. A una assignatura d'estadística es pregunta «Què es pot inferir d'aquestes dades i amb quina incertesa?». En aquesta assignatura es pregunta «Aquesta representació permet una lectura honesta, comparable i clara del que mostren les dades?». Les dues preguntes no competeixen: un resultat ben calculat es pot comunicar malament, i una representació clara no arregla una inferència mal feta. El curs treballa la segona i suposa que la primera s'estudia en paral·lel.
+
+>> **La tria d'un percentatge, el denominador, les classes d'un mapa o les etiquetes d'un gràfic no són decoració, sinó decisions que determinen què pot llegir el públic.** L'estadística descriptiva i la seva comunicació són, en aquest sentit, una mateixa feina d'honestedat: explicar què s'ha fet i què no permet dir el resultat.
+
 ## Per què es construeixen indicadors
 
 Les dades originals acostumen a descriure observacions concretes: persones residents, habitatges, pernoctacions, places d'allotjament o superfície. Aquestes magnituds són indispensables, però una pregunta territorial sol exigir alguna transformació. El nombre d'habitatges no principals informa del volum; el seu percentatge dins del parc residencial informa de composició. La població informa de grandària; els habitants per quilòmetre quadrat informen de concentració.

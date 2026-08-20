@@ -1,0 +1,106 @@
+---
+title: "Anell: habitatges principals i no principals del Tarragonès (2021)"
+lang: ca
+ref: housing_donut_tarragones
+format:
+  gfm:
+    output-file: housing-donut-tarragones.generated.md
+execute:
+  echo: false
+  warning: false
+  message: false
+execute-dir: project
+unaltraweb_compute:
+  engine: r
+  mode: figure
+  inputs:
+    - _practices/tigit-projecte-territorial/data/processed/municipal-indicators-tarragones-2021.csv
+  outputs:
+    - assets/img/data-visualization/housing-donut-tarragones-2021.svg
+---
+
+```{r}
+find_project_root <- function(start) {
+  path <- normalizePath(start, winslash = "/", mustWork = FALSE)
+  repeat {
+    if (file.exists(file.path(path, ".unaltraweb", "computations.yml"))) {
+      return(path)
+    }
+    parent <- dirname(path)
+    if (identical(parent, path)) {
+      stop("Project root not found: missing .unaltraweb/computations.yml")
+    }
+    path <- parent
+  }
+}
+
+root <- find_project_root(getwd())
+suppressPackageStartupMessages(library(ggplot2))
+
+indicators <- read.csv(
+  file.path(root, "_practices/tigit-projecte-territorial/data/processed/municipal-indicators-tarragones-2021.csv"),
+  fileEncoding = "UTF-8"
+)
+
+## Descomposa el parc comarcal en principals i no principals a partir dels totals municipals.
+principal <- sum(indicators$housing_total) - sum(indicators$housing_non_main)
+no_principal <- sum(indicators$housing_non_main)
+total <- principal + no_principal
+
+## Geometria de l'anell: cada part es converteix en un tros d'anell entre dos angles.
+## Treballarem en radi i angle amb coord_polar(theta = "y").
+parts <- data.frame(
+  nom = c("Habitatges principals", "Habitatges no principals"),
+  valor = c(principal, no_principal),
+  stringsAsFactors = FALSE
+)
+parts$frac <- parts$valor / total
+parts$ymax <- cumsum(parts$frac)
+parts$ymin <- c(0, head(parts$ymax, -1))
+parts$pct <- paste0(format(round(parts$frac * 100, 1), decimal.mark = ","), "%")
+
+## Marquem el forat central: en coord_polar theta="y", l'eix x és el radi.
+## Amb xmin/xmax limitem el gruix de l'anell i xlim obre el forat.
+ring <- 1.8
+parts$xmin <- 0.55 * ring
+parts$xmax <- ring
+
+parts$xmid <- (parts$xmin + parts$xmax) / 2
+parts$ymid <- (parts$ymin + parts$ymax) / 2
+
+fig <- ggplot(parts, aes(ymin = ymin, ymax = ymax, xmin = xmin, xmax = xmax)) +
+  geom_rect(aes(fill = nom), color = "white", linewidth = 0.6) +
+  geom_text(
+    aes(x = xmid, y = ymid, label = pct),
+    size = 3.4,
+    color = "#17202a",
+    fontface = "bold"
+  ) +
+  coord_polar(theta = "y") +
+  scale_fill_manual(
+    values = c(
+      "Habitatges principals" = "#2171b5",
+      "Habitatges no principals" = "#9ecae1"
+    ),
+    name = NULL
+  ) +
+  scale_x_continuous(limits = c(0, ring + 0.2), expand = c(0, 0)) +
+  labs(
+    title = "Habitatges principals i no principals del Tarragonès (2021)",
+    caption = paste0("Total comarcal: ", format(total, big.mark = ".", decimal.mark = ","),
+                     " habitatges. Font: Idescat, habitatges per tipus d'habitatge, 2021.")
+  ) +
+  theme_void() +
+  theme(
+    plot.title = element_text(face = "bold", size = 13, hjust = 0.5, color = "#17202a"),
+    plot.caption = element_text(size = 8, color = "#52616b", hjust = 0.5, margin = margin(t = 8)),
+    legend.position = "bottom",
+    legend.text = element_text(color = "#52616b")
+  )
+
+output <- file.path(root, "assets/img/data-visualization/housing-donut-tarragones-2021.svg")
+dir.create(dirname(output), showWarnings = FALSE, recursive = TRUE)
+ggsave(output, fig, width = 8, height = 6, device = svglite::svglite)
+```
+
+![Anell dels habitatges principals i no principals de la comarca del Tarragonès el 2021]({{ site.baseurl }}/assets/img/data-visualization/housing-donut-tarragones-2021.svg "Un anell és una manera compacta de resumir poques parts d'un únic total. Aquí el total és el parc d'habitatges de la comarca: les dues parts reconstruixen el 100% i el percentatge indica el pes de cadascuna. Amb més parts o més municipis, les barres apilades es llegeixen millor.")

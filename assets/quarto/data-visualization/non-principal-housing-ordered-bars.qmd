@@ -1,0 +1,82 @@
+---
+title: "Barres ordenades: habitatge no principal als municipis del Tarragonès (2021)"
+lang: ca
+ref: bars_non_principal_housing
+format:
+  gfm:
+    output-file: non-principal-housing-ordered-bars.generated.md
+execute:
+  echo: false
+  warning: false
+  message: false
+execute-dir: project
+unaltraweb_compute:
+  engine: r
+  mode: figure
+  inputs:
+    - _practices/tigit-projecte-territorial/data/processed/municipal-indicators-tarragones-2021.csv
+  outputs:
+    - assets/img/data-visualization/project-non-principal-housing-tarragones-2021.svg
+---
+
+```{r}
+find_project_root <- function(start) {
+  path <- normalizePath(start, winslash = "/", mustWork = FALSE)
+  repeat {
+    if (file.exists(file.path(path, ".unaltraweb", "computations.yml"))) {
+      return(path)
+    }
+    parent <- dirname(path)
+    if (identical(parent, path)) {
+      stop("Project root not found: missing .unaltraweb/computations.yml")
+    }
+    path <- parent
+  }
+}
+
+root <- find_project_root(getwd())
+library(ggplot2)
+
+theme_tigit <- function(base_size = 12) {
+  theme_minimal(base_size = base_size) +
+    theme(
+      panel.grid.minor = element_blank(),
+      panel.grid.major = element_line(color = "#e6ebf0", linewidth = 0.35),
+      axis.line = element_line(color = "#17202a", linewidth = 0.4),
+      axis.ticks = element_line(color = "#17202a", linewidth = 0.3),
+      axis.title = element_text(color = "#17202a", face = "bold"),
+      axis.text = element_text(color = "#52616b"),
+      plot.title = element_text(face = "bold", size = 13, hjust = 0, color = "#17202a"),
+      plot.caption = element_text(size = 8, color = "#52616b", hjust = 0, margin = margin(t = 8)),
+      legend.title = element_text(face = "bold", color = "#17202a"),
+      legend.text = element_text(color = "#52616b"),
+      legend.position = "top",
+      plot.margin = margin(8, 12, 8, 8)
+    )
+}
+
+indicators <- read.csv(
+  file.path(root, "_practices/tigit-projecte-territorial/data/processed/municipal-indicators-tarragones-2021.csv"),
+  fileEncoding = "UTF-8"
+)
+indicators <- indicators[order(indicators$housing_non_main_pct), ]
+indicators$municipality <- factor(indicators$municipality, levels = indicators$municipality)
+
+fig <- ggplot(indicators, aes(x = housing_non_main_pct, y = municipality)) +
+  geom_col(width = 0.72, fill = "#2171b5") +
+  scale_x_continuous(
+    expand = expansion(mult = c(0, 0.06)),
+    labels = function(x) paste0(x, "%")
+  ) +
+  labs(
+    title = "Habitatge no principal als municipis del Tarragonès (2021)",
+    x = "Percentatge",
+    y = NULL,
+    caption = "Font: Idescat, habitatges per tipus d'habitatge, 2021."
+  ) +
+  theme_tigit()
+
+output <- file.path(root, "assets/img/data-visualization/project-non-principal-housing-tarragones-2021.svg")
+dir.create(dirname(output), showWarnings = FALSE, recursive = TRUE)
+ggsave(output, fig, width = 9, height = 5.8, device = svglite::svglite)
+```

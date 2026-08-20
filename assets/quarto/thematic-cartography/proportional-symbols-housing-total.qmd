@@ -1,0 +1,95 @@
+---
+title: "Símbols proporcionals: habitatges totals als municipis del Tarragonès"
+lang: ca
+ref: proportional_symbols_housing_tarragones
+format:
+  gfm:
+    output-file: proportional-symbols-housing-tarragones.generated.md
+execute:
+  echo: false
+  warning: false
+  message: false
+execute-dir: project
+unaltraweb_compute:
+  engine: r
+  mode: figure
+  inputs:
+    - _practices/tigit-projecte-territorial/data/processed/tarragones-boundaries-icgc-20260120.gpkg
+    - _practices/tigit-projecte-territorial/data/processed/municipal-indicators-tarragones-2021.csv
+  outputs:
+    - assets/img/thematic-cartography/proportional-symbols-housing-total-tarragones-2021.svg
+---
+
+```{r}
+find_project_root <- function(start) {
+  path <- normalizePath(start, winslash = "/", mustWork = FALSE)
+  repeat {
+    if (file.exists(file.path(path, ".unaltraweb", "computations.yml"))) {
+      return(path)
+    }
+    parent <- dirname(path)
+    if (identical(parent, path)) {
+      stop("Project root not found: missing .unaltraweb/computations.yml")
+    }
+    path <- parent
+  }
+}
+
+root <- find_project_root(getwd())
+suppressPackageStartupMessages(library(sf))
+suppressPackageStartupMessages(library(ggplot2))
+
+gpkg <- file.path(root, "_practices/tigit-projecte-territorial/data/processed/tarragones-boundaries-icgc-20260120.gpkg")
+mun <- sf::st_read(gpkg, layer = "municipalities_250k", quiet = TRUE)
+
+indicators <- read.csv(
+  file.path(root, "_practices/tigit-projecte-territorial/data/processed/municipal-indicators-tarragones-2021.csv"),
+  fileEncoding = "UTF-8"
+)
+
+## Unió per codi municipal: cal igualar formats.
+mun$CODIMUNI <- as.character(mun$CODIMUNI)
+indicators$mun_code <- as.character(indicators$mun_code)
+indicators$mun_code <- ifelse(nchar(indicators$mun_code) == 5, paste0("0", indicators$mun_code), indicators$mun_code)
+
+d <- merge(mun, indicators, by.x = "CODIMUNI", by.y = "mun_code", all.x = TRUE)
+stopifnot(nrow(d) == 22, any(!is.na(d$housing_total)))
+
+## Punt interior segur per a cada municipi per situar-hi el símbol.
+d$point <- sf::st_point_on_surface(st_geometry(d))
+d$lng <- st_coordinates(d$point)[, 1]
+d$lat <- st_coordinates(d$point)[, 2]
+
+## Mapes comarcal de fons (blanc) i símbols proporcionals escalats per àrea.
+fig <- ggplot(d) +
+  geom_sf(fill = "#eef2f5", color = "#9aa7b3", linewidth = 0.35) +
+  geom_point(
+    aes(x = lng, y = lat, size = housing_total),
+    color = "#2171b5",
+    alpha = 0.75
+  ) +
+  scale_size_area(
+    max_size = 18,
+    name = "Habitatges\ntotals"
+  ) +
+  labs(
+    title = "Habitatges totals als municipis del Tarragonès (2021)",
+    subtitle = "Símbols proporcionals: l'àrea del cercle és proporcional al recompte",
+    caption = "Cada cercle es situa en un punt interior del municipi i l'àrea visual és proporcional al nombre d'habitatges. Font: Idescat, habitatges per tipus d'habitatge, 2021."
+  ) +
+  theme_void() +
+  theme(
+    plot.title = element_text(face = "bold", size = 13, hjust = 0, color = "#17202a"),
+    plot.subtitle = element_text(size = 10, color = "#52616b", hjust = 0, margin = margin(b = 6)),
+    plot.caption = element_text(size = 8, color = "#52616b", hjust = 0, margin = margin(t = 6)),
+    legend.title = element_text(face = "bold", size = 9, color = "#17202a"),
+    legend.text = element_text(color = "#52616b", size = 8),
+    legend.position = "right"
+  )
+
+output <- file.path(root, "assets/img/thematic-cartography/proportional-symbols-housing-total-tarragones-2021.svg")
+dir.create(dirname(output), showWarnings = FALSE, recursive = TRUE)
+ggsave(output, fig, width = 7, height = 7.5, device = svglite::svglite)
+```
+
+![Símbols proporcionals dels habitatges totals als municipis del Tarragonès]({{ site.baseurl }}/assets/img/thematic-cartography/proportional-symbols-housing-total-tarragones-2021.svg "La mida del cercle codifica el volum absolut d'habitatges municipals; l'àrea, no el radi, és proporcional al valor. La llegenda mostra valors de referència de mida. Exemple didàctic construït amb dades reals del Tarragonès (2021).")

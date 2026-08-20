@@ -92,9 +92,9 @@ La lectura crítica dels mapes parteix d'una idea incòmoda però necessària: u
 
 Molts errors cartogràfics són versions espacials d'errors de gràfics. Una coropleta basada en recomptes absoluts fa que una àrea territorial sembli intensitat; una classificació massa dramàtica pot fabricar contrast; una llegenda automàtica pot ocultar unitats, decimals o valors absents; i una paleta atractiva pot suggerir un ordre que les dades no tenen. El mapa continua semblant tècnic perquè surt de QGIS, però el problema és anterior a l'exportació.
 
-::: subfigures a+b "Comparació amb dades esquemàtiques entre una coropleta problemàtica i una versió revisada. La subfigura a pinta recomptes absoluts de places turístiques sobre municipis, tot i que una coropleta requereix una unitat comparable i un denominador justificat, i confon una absència amb la classe més baixa; la subfigura b representa un indicador normalitzat, separa els valors sense dades i fa explícita la unitat de lectura. Figures d'elaboració pròpia."
-![Mapa de coropletes problemàtic que usa recomptes absoluts, una llegenda automàtica i cap tractament visible dels valors absents]({{ site.baseurl }}/assets/img/thematic-cartography/choropleth-absolute-counts-bad.svg "Coropleta problemàtica: recompte absolut, llegenda automàtica i absència amagada")
-![Mapa de coropletes revisat que usa places per mil residents, una paleta seqüencial i una classe separada per als valors sense dades]({{ site.baseurl }}/assets/img/thematic-cartography/choropleth-normalized-reviewed.svg "Coropleta revisada: indicador normalitzat, unitat explícita i absències separades")
+::: subfigures a+b "Comparació entre una coropleta problemàtica i una versió revisada, construïdes amb dades reals del Tarragonès (2021). La subfigura a pinta recomptes absoluts d'habitatge no principal sobre municipis, tot i que una coropleta requereix una unitat comparable i un denominador justificat, i confon volum amb intensitat territorial; la subfigura b representa un indicador normalitzat —el percentatge respecte del parc residencial—, fa explícites les classes i la unitat de lectura i separa els valors sense dades. Figures d'elaboració pròpia a partir de l'Idescat i de l'ICGC."
+![Mapa de coropletes problemàtic que usa recomptes absoluts d'habitatge no principal, una llegenda automàtica i un tractament poc explícit dels valors absents]({{ site.baseurl }}/assets/quarto/thematic-cartography/choropleth-housing-absolute-bad.qmd "Coropleta problemàtica: recompte absolut d'habitatge no principal, llegenda automàtica i absència poc visible")
+![Mapa de coropletes revisat que usa el percentatge d'habitatge no principal, una paleta seqüencial, classes explícites i una categoria separada per als valors sense dades]({{ site.baseurl }}/assets/quarto/thematic-cartography/choropleth-housing-normalized-reviewed.qmd "Coropleta revisada: percentatge d'habitatge no principal, unitat explícita, classes quantils i absències separades")
 :::
 
 >>>> **Una coropleta no és adequada només perquè el camp sigui numèric.** Abans de pintar municipis cal decidir si la dada expressa intensitat comparable. Si el camp és un recompte absolut, cal normalitzar-lo o utilitzar símbols proporcionals; si el valor falta, s'ha de separar del zero.
@@ -129,6 +129,10 @@ D_2 = D_1\sqrt{\frac{X_2}{X_1}}
 $$
 
 Quadruplicar una dada només duplica el diàmetre. Si el diàmetre creixés directament amb el valor, les diferències d'àrea quedarien exagerades. En un mapa, a més, cal comprovar que els cercles no ocultin la geometria de base, que no suggereixin una precisió espacial falsa i que la llegenda de mides permeti llegir ordres de magnitud.
+
+Amb els habitatges totals dels municipis del Tarragonès es pot veure com funciona aquesta regla amb dades reals: cada cercle se situa en un punt interior del seu municipi i la seva àrea és proporcional al recompte. Tarragona, Salou i Vila-seca concentren les superfícies més grans, mentre que la llegenda ofereix valors de referència per llegir-ne la mida sense haver de llegir el recompte exacte de cada municipi:
+
+![Símbols proporcionals dels habitatges totals dels municipis del Tarragonès (2021)]({{ site.baseurl }}/assets/quarto/thematic-cartography/proportional-symbols-housing-total.qmd "Cada cercle se situa en un punt interior del municipi i la seva àrea és proporcional al nombre d'habitatges totals. La llegenda mostra valors de referència per llegir ordres de magnitud. Font: Idescat, habitatges per tipus d'habitatge, 2021."){: data-figure-width="48rem"}
 
 ## Isolínies i superfícies contínues
 

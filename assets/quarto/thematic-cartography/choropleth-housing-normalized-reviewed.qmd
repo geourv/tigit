@@ -1,0 +1,92 @@
+---
+title: "Coropleta revisada: percentatge d'habitatge no principal del Tarragonès"
+lang: ca
+ref: choropleth_housing_normalized_reviewed
+format:
+  gfm:
+    output-file: choropleth-housing-normalized-reviewed.generated.md
+execute:
+  echo: false
+  warning: false
+  message: false
+execute-dir: project
+unaltraweb_compute:
+  engine: r
+  mode: figure
+  inputs:
+    - _practices/tigit-projecte-territorial/data/processed/tarragones-boundaries-icgc-20260120.gpkg
+    - _practices/tigit-projecte-territorial/data/processed/municipal-indicators-tarragones-2021.csv
+  outputs:
+    - assets/img/thematic-cartography/choropleth-normalized-reviewed-tarragones-2021.svg
+---
+
+```{r}
+find_project_root <- function(start) {
+  path <- normalizePath(start, winslash = "/", mustWork = FALSE)
+  repeat {
+    if (file.exists(file.path(path, ".unaltraweb", "computations.yml"))) {
+      return(path)
+    }
+    parent <- dirname(path)
+    if (identical(parent, path)) {
+      stop("Project root not found: missing .unaltraweb/computations.yml")
+    }
+    path <- parent
+  }
+}
+
+root <- find_project_root(getwd())
+suppressPackageStartupMessages(library(sf))
+suppressPackageStartupMessages(library(ggplot2))
+suppressPackageStartupMessages(library(classInt))
+
+gpkg <- file.path(root, "_practices/tigit-projecte-territorial/data/processed/tarragones-boundaries-icgc-20260120.gpkg")
+mun <- sf::st_read(gpkg, layer = "municipalities_250k", quiet = TRUE)
+
+indicators <- read.csv(
+  file.path(root, "_practices/tigit-projecte-territorial/data/processed/municipal-indicators-tarragones-2021.csv"),
+  fileEncoding = "UTF-8"
+)
+
+## Unió per codi municipal: cal igualar formats.
+mun$CODIMUNI <- as.character(mun$CODIMUNI)
+indicators$mun_code <- as.character(indicators$mun_code)
+indicators$mun_code <- ifelse(nchar(indicators$mun_code) == 5, paste0("0", indicators$mun_code), indicators$mun_code)
+
+d <- merge(mun, indicators, by.x = "CODIMUNI", by.y = "mun_code", all.x = TRUE)
+stopifnot(nrow(d) == 22, any(!is.na(d$housing_non_main_pct)))
+
+## Exemple revisat: percentatge normalitzat, classes quantils explícites i absències separades.
+cls <- classIntervals(d$housing_non_main_pct[!is.na(d$housing_non_main_pct)], n = 5, style = "quantile")
+d$class <- cut(d$housing_non_main_pct, breaks = cls$brks, include.lowest = TRUE)
+
+fig <- ggplot(d) +
+  geom_sf(aes(fill = class), color = "#ffffff", linewidth = 0.3) +
+  scale_fill_brewer(
+    palette = "Blues",
+    direction = 1,
+    drop = FALSE,
+    na.value = "#e8eaed",
+    name = "% habitatge\nno principal"
+  ) +
+  labs(
+    title = "Percentatge d'habitatge no principal al Tarragonès (2021)",
+    subtitle = "Indicador normalitzat, classes quantils i absències separades de la llegenda",
+    caption = "Percentatge d'habitatge no principal sobre el total municipal. Font: Idescat, habitatges per tipus d'habitatge, 2021."
+  ) +
+  theme_void() +
+  theme(
+    plot.title = element_text(face = "bold", size = 13, hjust = 0, color = "#17202a"),
+    plot.subtitle = element_text(size = 10, color = "#52616b", hjust = 0, margin = margin(b = 6)),
+    plot.caption = element_text(size = 8, color = "#52616b", hjust = 0, margin = margin(t = 6)),
+    legend.title = element_text(face = "bold", size = 9, color = "#17202a"),
+    legend.text = element_text(color = "#52616b", size = 8),
+    legend.position = "right"
+  )
+
+output <- file.path(root, "assets/img/thematic-cartography/choropleth-normalized-reviewed-tarragones-2021.svg")
+dir.create(dirname(output), showWarnings = FALSE, recursive = TRUE)
+ggsave(output, fig, width = 7, height = 7.5, device = svglite::svglite)
+```
+
+![Coropleta del percentatge d'habitatge no principal als municipis del Tarragonès, amb classes quantils explícites]({{ site.baseurl }}/assets/img/thematic-cartography/choropleth-normalized-reviewed-tarragones-2021.svg "L'indicador normalitzat permet comparar la intensitat entre municipis independents de la mida del parc. Les classes quantils reparteixen aproximadament el mateix nombre de municipis per classe i la llegenda mostra els límits exactes. Exemple didàctic construït amb dades reals del Tarragonès (2021).")

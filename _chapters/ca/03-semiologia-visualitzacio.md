@@ -12,7 +12,9 @@ part: Continguts
 manual_references: true
 ---
 
-Representar dades significa codificar-les visualment. Aquest capítol introdueix la semiologia gràfica a partir de taules i gràfics, abans d'aplicar-la al mapa. El color apareixerà com una variable visual, però el seu desenvolupament sistemàtic quedarà per al capítol de teoria del color, perquè és una decisió transversal que afecta gràfics, mapes, accessibilitat i infografia. La classificació cartogràfica es treballarà més endavant, un cop introduït el llenguatge propi del mapa i la integració amb QGIS. La idea d'un sistema de signes visuals parteix de la semiologia de Bertin i es pot connectar amb una introducció contemporània i aplicada a la visualització de dades {% cite bertinSemiologyGraphics2010 wilkeFundamentalsDataVisualization2019 %}.
+Representar dades significa codificar-les visualment. Aquest capítol parteix de la semiologia de Jacques Bertin, que estudia com punts, línies, àrees i variables visuals construeixen diagrames, xarxes i mapes. La connecta, amb cautela, amb la gramàtica de gràfics de Leland Wilkinson i amb la seva implementació per capes a `ggplot2`: són marcs complementaris, no llistes de regles que garanteixin per si soles una figura correcta. La pregunta, la definició de les dades i la tasca del lector continuen precedint la sintaxi gràfica {% cite bertinSemiologyGraphics2010 wilkinsonGrammarGraphics2005 wickhamGgplot2Book2026 munznerVisualizationAnalysisDesign2014 wilkeFundamentalsDataVisualization2019 %}.
+
+El color apareixerà com un canal visual, però el seu desenvolupament sistemàtic quedarà per al capítol de teoria del color, perquè afecta gràfics, mapes, accessibilitat i infografia. La classificació cartogràfica es treballarà més endavant, un cop introduït el llenguatge propi del mapa i la integració amb QGIS.
 
 >>>>> En acabar el capítol, cal poder seleccionar, construir, revisar i exportar figures que responguin una pregunta territorial sense deformar les dades.
 >>>>>
@@ -59,19 +61,48 @@ Valors absoluts, percentatges, ràtios, densitats i índexs no són intercanviab
 
 Una base petita també canvia la lectura: dos municipis poden tenir el mateix percentatge sobre totals molt diferents. Quan aquest contrast sigui rellevant, el gràfic pot necessitar una anotació, una taula auxiliar o una figura complementària de volums. Una absència no es converteix en zero; es deixa fora del càlcul que no pot realitzar-se i se'n conserva l'estat.
 
-## Gramàtica de la codificació visual
+## Semiologia i gramàtica de la representació
 
-Tots els gràfics del capítol, encara que tinguin noms diferents, combinen el mateix vocabulari: dades, marques, canals visuals, escales i text. Escollir un gràfic consisteix a decidir quina combinació fa més directa la tasca de lectura.
+Tots els gràfics del capítol, encara que tinguin noms diferents, combinen dades i decisions visuals. Bertin proporciona el vocabulari semiològic de marques i variables visuals. Wilkinson formalitza una gramàtica més àmplia que combina dades, transformacions, escales, elements geomètrics, coordenades i guies. Munzner relaciona atributs de les dades i tasques amb marques i canals perceptius. El manual utilitza aquests marcs per analitzar figures, però no els presenta com si fossin una sola teoria indistinta {% cite bertinSemiologyGraphics2010 wilkinsonGrammarGraphics2005 munznerVisualizationAnalysisDesign2014 %}.
+
+En aquest manual, **camp** designa una columna concreta del llibre o de la taula; en termes analítics, aquell camp implementa una variable o atribut. El camp `housing_non_main_pct` és la columna; el percentatge d'habitatge no principal és la variable; la longitud d'una barra és el canal que la representa. Aquesta distinció evita atribuir al programari una teoria que pertany a la relació entre dades i representació.
+
+### Elements bàsics d'un gràfic
+
+Per revisar les figures del curs, adoptarem una **pauta didàctica de sis components**: dades, marques, canals visuals, escales, sistema de coordenades i guies de lectura. Aquesta enumeració és una síntesi operativa del manual, inspirada en els marcs anteriors; no és una citació literal ni la descomposició única proposada per Bertin, Wilkinson o Wickham. Serveix per no oblidar cap decisió quan es passa d'una columna del llibre a una figura.
+
+::: table "Elements bàsics d'un gràfic i funció que tenen en la lectura"
+| Element | Què aporta | Exemple del projecte |
+| --- | --- | --- |
+| Dades (unitat d'observació, variables) | Defineix què es compara i amb quina unitat | El municipi com a fila i el seu percentatge com a valor |
+| Marca (punt, línia, barra, sector, àrea) | Representa cada observació visiblement | Una barra per municipi |
+| Canal visual (posició, longitud, forma, to) | Tradueix la dada en una propietat de la marca | La longitud de la barra codifica el percentatge |
+| Escala (lineal, logarítmica, ordinal, de colors) | Assigna valors a posicions, mides o colors | Eix de percentatges amb origen zero |
+| Coordenades (cartesians, polars, divergents) | Ordenen les marques en el pla | Barres horitzontals ordenades de més alta a més baixa |
+| Guies (títol, eixos, unitats, llegenda, font) | Expliquen com interpretar la figura | Títol que indica territori, període i unitat |
+:::
+
+En coordenades cartesianes, els dos eixos tenen noms propis. L'eix **horitzontal** és l'eix d'**abscisses** i se sol referir com a $x$; l'eix **vertical** és l'eix d'**ordenades** i se sol referir com a $y$. Cada eix és una escala que assigna una posició a un valor: a l'abscissa hi sol anar la variable que ordena les observacions (categories, anys, un percentatge) i a l'ordenada la magnitud que es compara, tot i que la decisió pot girar-se quan convé llegir etiquetes llargues. El nom de l'eix no depèn del contingut, sinó de l'orientació: en un gràfic de barres horitzontals, el percentatge continua sent el valor, però es llegeix sobre l'abscissa en lloc de sobre l'ordenada.
+
+Les guies han de retolar l'eix amb la unitat, no repetir sencerament el títol. Si el títol ja diu «Habitatge no principal als municipis del Tarragonès (2021)», l'etiqueta de l'eix pot quedar en «Percentatge» i les marques de l'escala poden afegir el símbol `%`; tornificar el mateix enunciat al títol i a l'eix satura la lectura sense aportar informació. El títol respon a «què és aquesta figura?»; els eixos responen a «sobre quina escala vull llegir cada valor?».
+
+L'ordre anterior tampoc és un algoritme inflexible. Normalment es comença per dades i tasca, es prova una marca i uns canals i després s'ajusten escala, coordenades i guies. La revisió pot obligar a tornar enrere: una etiqueta il·legible pot exigir barres horitzontals; una escala inadequada pot fer canviar de barres a punts; i una absència pot requerir revisar la taula abans del gràfic.
+
+### Capes i components a `ggplot2`
+
+La gramàtica per capes de `ggplot2` fa operativa una part d'aquest raonament. Una figura combina un conjunt de **dades**, un mapatge d'atributs a propietats estètiques amb `aes()`, una o més geometries `geom_*`, transformacions estadístiques, escales, un sistema de coordenades i, si cal, facetes. El **tema** controla elements no vinculats directament a les dades, com tipografia, fons, quadrícula o posició de la llegenda {% cite wickhamGgplot2Book2026 %}.
+
+Separar capes ajuda a diagnosticar. Si el problema és que `x` i `y` estan intercanviats, no es resol canviant el tema. Si les barres no comencen a zero, cal revisar l'escala o la geometria. Si una categoria no és distingible, cal revisar el mapatge i l'escala de color. `ggplot2` és una implementació especialment explícita, però les mateixes preguntes es poden fer davant d'un gràfic de Calc o Excel encara que la interfície no mostri les capes amb aquests noms.
 
 ### Marques i unitats representades
 
-Les **marques** són els objectes visibles que representen observacions: punts, línies, barres, sectors o àrees. Una barra té forma rectangular, però la dada quantitativa es llegeix principalment mitjançant la seva longitud; un punt de dispersió es llegeix per la posició; una línia temporal connecta posicions consecutives; i un municipi en un mapa és una marca superficial que conserva la geometria territorial.
+Les **marques** són els objectes visibles que representen observacions: punts, línies, barres, sectors o àrees. Aquest vocabulari deriva de la semiologia gràfica i és utilitzat també en marcs contemporanis de visualització. Una barra té forma rectangular, però la dada quantitativa es llegeix principalment mitjançant la longitud; un punt de dispersió es llegeix per posició; una línia temporal connecta posicions consecutives; i un municipi en un mapa és una marca superficial {% cite bertinSemiologyGraphics2010 munznerVisualizationAnalysisDesign2014 %}.
 
 La marca ha de correspondre a la unitat. Si una barra representa un municipi, el lector ha de poder associar-la amb un únic codi i un únic valor. Si una línia representa una sèrie, els punts han de compartir definició, periodicitat i ordre. Si un cercle representa una magnitud, és la seva àrea i no el radi allò que s'ha d'escalar.
 
 ### Canals visuals i tasques de lectura
 
-Un **canal visual** és una propietat de la marca que varia: posició, longitud, àrea, forma, orientació, textura, lluminositat o to. Els canals no tenen la mateixa capacitat. La posició sobre una escala comuna i la longitud alineada permeten comparar valors pròxims amb més precisió que l'àrea, l'angle o una diferència de color.
+Un **canal visual** és una propietat de la marca que varia: posició, longitud, àrea, forma, orientació, textura, lluminositat o to. Bertin parlava de variables visuals; la terminologia de marques i canals és habitual en la literatura contemporània. Els canals no tenen la mateixa capacitat: posició i longitud alineades permeten comparar valors pròxims amb més precisió que àrea, angle o color, una diferència recolzada també per experiments de percepció gràfica {% cite bertinSemiologyGraphics2010 clevelandMcGillGraphicalPerception1984 munznerVisualizationAnalysisDesign2014 %}.
 
 ::: table "Canals visuals, lectures i exemples"
 | Canal | Lectura principal | Exemple del projecte | Límit |
@@ -135,7 +166,12 @@ Una taula és adequada quan cal recuperar xifres exactes, codis o definicions. L
 
 Una barra representa una categoria amb una longitud. L'ordre descendent facilita trobar màxims i mínims; l'ordre cronològic o geogràfic serveix altres preguntes. Amb noms municipals llargs, les barres horitzontals permeten llegir etiquetes sense girar-les. La llegenda és redundant quan només hi ha una sèrie i el títol ja n'indica la variable.
 
-![Barres ordenades del percentatge d'habitatge no principal als municipis del Tarragonès]({{ site.baseurl }}/assets/img/data-visualization/project-non-principal-housing-tarragones-2021.svg "Cada barra és un municipi; la longitud codifica un percentatge de 2021. Figura docent regenerada des del llibre del projecte."){: data-figure-width="54rem"}
+::: subfigures a+b "La mateixa variable com a barres (a) i com a punts sobre línies fines (b), amb el mateix ordre municipal."
+![Barres ordenades del percentatge d'habitatge no principal als municipis del Tarragonès]({{ site.baseurl }}/assets/quarto/data-visualization/non-principal-housing-ordered-bars.qmd "Cada barra és un municipi; la longitud codifica un percentatge de 2021. L'ordre descendent facilita trobar els valors més alts i més baixos."){: data-figure-width="54rem"}
+![Punts al final de línia del percentatge d'habitatge no principal dels municipis del Tarragonès]({{ site.baseurl }}/assets/quarto/data-visualization/non-principal-housing-dot-plot.qmd "La línia fina uneix l'origen amb el valor i el punt marca l'extrem. Amb 22 municipis, redueix la tinta de la barra sense perdre la posició ordenada del valor."){: data-figure-width="54rem"}
+:::
+
+La versió de punts sobre línia fina (dot-plot) estalvia tinta: la barra ocupa una superfície que només serveix per unir l'origen amb el valor, i aquesta unió es pot dibuixar amb una línia prima i un punt. Wilke la recomana quan la pregunta no necessita la metàfora de volum de la barra {% cite wilkeFundamentalsDataVisualization2019 %}. La línia ha de començar a l'origen coherent amb la resta del gràfic, i l'altura de traç no ha de convertir-se en una àrea que distorsioni la percepció.
 
 La figura permet veure el rànquing, però no on és cada municipi ni quants habitatges formen el denominador. Aquestes limitacions justifiquen un mapa i una mètrica absoluta complementaris, no una sobrecàrrega del mateix gràfic.
 
@@ -145,11 +181,17 @@ Una composició només existeix quan les parts comparteixen un total. Els grups 
 
 Un circular o un anell pot resumir poques parts d'un únic total, com habitatges principals i no principals del conjunt comarcal. Abans de construir-lo cal respondre «100% de què?» i mantenir visibles les categories absents o desconegudes. Per comparar molts municipis, les barres apilades són més eficients que una col·lecció de cercles.
 
+![Anell de la composició del parc d'habitatges del Tarragonès (2021): principals i no principals]({{ site.baseurl }}/assets/quarto/data-visualization/housing-donut-tarragones.qmd "L'anell mostra la part principals i no principals d'un únic total: 169.179 habitatges del Tarragonès el 2021. El buit central no porta cap dada; les etiquetes amb percentatge i magnitud eviten dependre només de l'angle. Font: Idescat, habitatges per tipus d'habitatge, 2021."){: data-figure-width="40rem"}
+
+![Estructura d'edats per grans grups dels municipis del Tarragonès, 2021]({{ site.baseurl }}/assets/quarto/data-visualization/age-structure-tarragones.qmd "Cada barra representa un municipi i equival al 100% de la seva població. La longitud de cada segment codifica el percentatge d'un grup d'edat i el color l'identifica; l'ordenació per pes relatiu dels 65+ facilita comparar perfils."){: data-figure-width="54rem"}
+
+La sèrie del Tarragonès evidencia perfils molt diferents entre municipis: en uns quants el pes relatiu dels 65+ supera clarament la mitjana de la comarca, mentre que en d'altres domina la franja 15–64. Coses com aquesta expliquen que la composició sigui una de les famílies més útils quan la pregunta és comparar «com és» cada territori, no «quant val» l'indicador.
+
 ### Seguir una evolució: línies
 
 Una línia connecta observacions perquè l'ordre temporal és part de la dada. La sèrie de població de Vila-seca utilitza una definició anual comparable del Padró entre 2000 i 2022. Cada punt és un any; la línia ajuda a seguir canvis de ritme, però no demostra quina causa els ha produït ni autoritza a extrapolar-los.
 
-![Evolució anual de la població de Vila-seca entre 2000 i 2022]({{ site.baseurl }}/assets/img/data-visualization/project-population-vila-seca-2000-2022.svg "La posició vertical codifica població i la posició horitzontal ordena els anys. Font: Idescat a partir del Padró continu de l'INE."){: data-figure-width="52rem"}
+![Evolució anual de la població de Vila-seca entre 2000 i 2022]({{ site.baseurl }}/assets/quarto/data-visualization/population-vila-seca-series-line.qmd "La posició vertical codifica la població i la posició horitzontal ordena els anys. Font: Idescat, a partir del Padró continu de l'INE."){: data-figure-width="52rem"}
 
 La relació d'aspecte, el rang vertical i la selecció d'anys poden fer semblar el mateix canvi més brusc o més suau. Cal mostrar període i unitat, revisar ruptures metodològiques i descriure el passat com a canvi observat, no com a previsió.
 
@@ -157,23 +199,41 @@ La relació d'aspecte, el rang vertical i la selecció d'anys poden fer semblar 
 
 Un histograma agrupa valors quantitatius en intervals i compta observacions. No mostra municipis individuals ni categories preexistents. Amb només 22 municipis, canviar l'amplada o l'origen dels intervals pot modificar molt la forma percebuda; per això s'han de publicar els límits i comprovar que les freqüències sumen 22.
 
-![Histograma municipal del percentatge d'habitatge no principal al Tarragonès]({{ site.baseurl }}/assets/img/data-visualization/project-housing-histogram-tarragones-2021.svg "Cada barra compta municipis dins d'un interval percentual. Els intervals són una decisió analítica, no categories de la font."){: data-figure-width="50rem"}
+![Histograma municipal del percentatge d'habitatge no principal al Tarragonès]({{ site.baseurl }}/assets/quarto/data-visualization/housing-histogram-tarragones.qmd "Cada barra compta municipis dins d'un interval percentual. Els intervals són una decisió analítica, no categories de la font."){: data-figure-width="50rem"}
 
 Un diagrama de caixa resumeix mediana, quartils i possibles valors extrems. És compacte per comparar distribucions, però amaga part de la forma i la localització. Un valor extrem és una observació per revisar, no un error automàtic.
+
+::: subfigures a+b "El diagrama de caixa pot descriure una sola distribució (a) o comparar diverses distribucions alineades en categories (b)."
+![Boxplot del percentatge d'habitatge no principal dels municipis del Tarragonès (2021)]({{ site.baseurl }}/assets/quarto/data-visualization/boxplot-non-main-housing-tarragones.qmd "La caixa abasta els quartils i la línia central marca la mediana; els punts superposats mostren cada municipi. Els casos més alts se surten dels bigotis i visualitzen la cua asimètrica de la distribució."){: data-figure-width="48rem"}
+![Boxplot de la longitud del sèpal per a tres espècies d'iris, on cada caixa descriu una distribució i les caixes es comparen entre si]({{ site.baseurl }}/assets/quarto/data-visualization/boxplot-species-iris.qmd "Cada caixa resumeix una espècie; comparar els centres, les dispersions i els possibles extrems permet dir ràpidament si els grups se superposen o si una espècie n'ocupa una part extrema. Dades del dataset de Fisher de 1936."){: data-figure-width="48rem"}
+:::
+
+La distribució municipal no principal és clarament asimètrica: la majoria de municipis se situen per sota del 35%, mentre que uns quants casos superen amb claredat el valor de la mediana i apareixen com a valors extrems o bé punts alts dels bigotis. La funció comparativa de la caixa es veu millor quan hi ha més d'una categoria: amb les espècies d'iris, col·locar les tres caixes sobre una mateixa escala converteix un punt de cada caixa en una pregunta de comparació (quins grups queden separats, quins se sobreposen, quin mostra més variabilitat) que una llista de resums numèrics no deixa veure tan directa.
 
 ### Explorar una relació: dispersió
 
 En una dispersió, cada punt representa una unitat amb dos valors. El codi municipal ha de garantir que `x` i `y` pertanyen al mateix municipi; emparellar per número de fila després d'ordenar una sola taula pot crear punts falsos. La posició permet llegir direcció, forma, intensitat aparent i excepcions.
 
-![Dispersió entre població de 65 anys o més i habitatge no principal als municipis del Tarragonès]({{ site.baseurl }}/assets/img/data-visualization/project-ageing-vs-housing-scatter-tarragones-2021.svg "Cada punt és un municipi identificat pel mateix codi a les dues variables. L'associació visual no demostra causalitat."){: data-figure-width="50rem"}
+::: subfigures a+b "Dues dispersions amb intensitats molt diferents: una associació aparent però dispersa (a) i una associació molt estreta i gairebé lineal (b)."
+![Dispersió entre la població de 65 anys o més i l'habitatge no principal als municipis del Tarragonès]({{ site.baseurl }}/assets/quarto/data-visualization/ageing-housing-scatter-tarragones.qmd "Cada punt és un municipi identificat pel mateix codi a les dues variables. La línia d'ajust resumeix una associació aparent, però no demostra causalitat."){: data-figure-width="48rem"}
+![Dispersió entre el total d'habitatges i la població total, amb l'equació d'ajust lineal i el coeficient de determinació]({{ site.baseurl }}/assets/quarto/data-visualization/housing-population-scatter-tarragones.qmd "Cada punt és un municipi. La recta és l'ajust de mínims quadrats: l'equació escrita a la figura permet llegir-hi un pendent aproximat, i el R² en percentatge quantifica com de prop queden els punts de la línia."){: data-figure-width="48rem"}
+:::
 
 Els punts municipals no s'uneixen amb línies perquè no formen una seqüència. Amb observacions superposades es pot utilitzar transparència; qualsevol desplaçament artificial s'ha de documentar. Una línia d'ajust resumeix una associació, però no converteix habitatge no principal en causa d'envelliment ni a l'inrevés.
+
+La comparació entre les dues dispersions fa evident un fet: la mateixa tècnica d'ajust pot resumir una relació laxa (a) i una relació molt estreta (b). A la segona, els punts queden molt a prop de la recta i el R² del 93% s'explica, en part, perquè habitatges i persones mesuren la mateixa realitat de fons —un territori gran tendeix a tenir molts habitatges i molta gent—; per això un bon ajust no implica causalitat. Consignar l'equació i el R² és un exercici de transparència: el lector veu quin resum concret s'ofereix i pot jutjar si la recta és una descripció fidel o una simplificació.
+
+La dispersió també admet una tercera variable si un canal addicional ho permet. Amb dades d'observacions individuals classificades per una espècie o un tipus, el to i la forma dels punts poden identificar la categoria sense moure cap posició:
+
+![Dispersió de la longitud del pètal i del sèpal per a tres espècies d'iris, amb to i forma com a canals identificadors]({{ site.baseurl }}/assets/quarto/data-visualization/iris-flower-scatter.qmd "Cada punt combina dues variables per posició i una categoria per to i forma. Els tres grups formen nuvols separats que es poden llegir per posició, però to i forma els identifiquen i els reforcen sense dependre d'un únic canal."){: data-figure-width="50rem"}
+
+La redundància de canals (el mateix grup dibuixat amb to i amb forma) millora l'accessibilitat i evita que la lectura depengui d'un sol senyal. Els canals redundants han de ser consistents: si to i forma contradiguessin el grup, el lector hauria de desfer una confusió que el gràfic mateix ha creat.
 
 ### Comparar perfils d'edat: piràmide de població
 
 La piràmide és una barra divergent. Les edats formen l'eix ordinal; homes i dones comparteixen escala i origen. Els valors masculins s'emmagatzemen temporalment amb signe negatiu per situar-los a l'esquerra, però la població no és negativa. Les etiquetes o el format de l'eix han d'evitar aquesta interpretació literal.
 
-![Piràmide de població de Vila-seca per grups quinquennals i sexe, 2021]({{ site.baseurl }}/assets/img/data-visualization/project-population-pyramid-vila-seca-2021.svg "SUMIFS agrupa les edats simples en intervals de cinc anys; la longitud compara recomptes a banda i banda d'un origen comú."){: data-figure-width="50rem"}
+![Piràmide de població de Vila-seca per grups quinquennals i sexe, 2021]({{ site.baseurl }}/assets/quarto/data-visualization/population-pyramid-vila-seca.qmd "Les edats simples s'agrupen en intervals de cinc anys; la longitud compara recomptes a banda i banda d'un origen comú, amb homes i dones que comparteixen escala."){: data-figure-width="50rem"}
 
 La piràmide pot treballar amb recomptes per descriure el municipi o amb percentatges per comparar territoris de grandàries diferents. La versió utilitzada ha d'indicar-ho. Grups d'edat, sexe, any i font formen part de la definició de la figura.
 
@@ -198,6 +258,22 @@ Els repertoris externs, com el [Financial Times Visual Vocabulary](https://githu
 :::
 
 Abans d'utilitzar una forma opcional cal escriure quina pregunta respon millor que una taula, una barra, una línia, una dispersió o un mapa, i indicar quin camp controla cada canal visual.
+
+L'alluvial il·lustra la geometria de fluxos successius sense respondre cap pregunta concreta del Tarragonès: serveix per veure com es descompon successivament un volum quan cada columna és una variable i l'ample de cada flux és proporcional al recompte.
+
+![Alluvial del passatge del Titanic per classe, sexe i supervivència]({{ site.baseurl }}/assets/quarto/data-visualization/alluvial-titanic-survival.qmd "Cada columna és una variable: classe, sexe i supervivència. L'ample de cada flux codifica el recompte de persones i permet seguir de quina combinació de classe i sexe sortia cada grup de supervivents."){: data-figure-width="50rem"}
+
+El pas del total per classe, després per sexe i finalment per supervivència permet comprovar sense cercar dades que la majoria de les víctimes provenien de la tercera classe i de la tripulació, mentre que a les primeres classes la proporció de supervivents és més gran. Aquesta mena de gràfic seria l'apropiat si en algun moment del projecte es disposés de dades de fluxos turístics reals, com procedència, mitjà d'arribada o tipus d'allotjament.
+
+Una variant visualment semblant és el **Sankey**. La diferència aproximada és que l'alluvial manté les barreres verticals (els estrats) com a columnes que conserven l'ordre de cada variable, mentre que en un Sankey els fluxos se solen disposar de manera que es puguin seguir com a bandes corbes entre nodes. El mateix conjunt de dades permet veure com canvia la lectura d'un estil a l'altre, sense que cap dels dos sigui automàticament superior:
+
+![Diagrama de flux de tipus Sankey del passatge del Titanic per classe, sexe i supervivència]({{ site.baseurl }}/assets/quarto/data-visualization/sankey-titanic-survival.qmd "Amb geom_flow de ggalluvial els fluxos connecten els estrats com a bandes corbes i l'ample comunica el recompte; visualment s'acosta a un Sankey. La diferència respecte de la versió alluvial és principalment de disposició dels fluxos, no del volum de dades representades."){: data-figure-width="50rem"}
+
+El **treemap** és una altra estructura opcional que encaixa quan la pregunta és «com es reparteix un total entre poques parts identificables». Requereix una jerarquia o, si més no, un conjunt de parts que sumin un àmbit definit. Amb les places d'allotjament convencional de la costa de Vila-seca es pot veure com hotels, càmpings, apartaments turístics i autocaravanes comparteixen el total de places; la superfície de cada rectangle és proporcional al recompte:
+
+![Treemap de les places d'allotjament per tipus d'establiment a Vila-seca, amb àrea proporcional als recomptes]({{ site.baseurl }}/assets/quarto/data-visualization/treemap-allotjament-vilaseca.qmd "L'àrea de cada rectangle és proporcional al total de places d'una tipologia. Els rectangles s'ordenen per ocupar el quadre d'una manera compacta; la comparació de magnituds per superfície és menys precisa que per longitud o posició, però el format compacte comunica ràpidament com es reparteix un total entre parts."){: data-figure-width="46rem"}
+
+El treemap té un límit seriós: comparar magnituds per superfície és menys precís que per longitud o posició alineada. És adequat per veure de cop com es reparteix un total i per destacar quina part domina, però no és la millor opció quan cal estimar ràtios o diferències petites entre parts. Si la jerarquia té molts nivells, la llegibilitat cau de pressa. Com amb l'alluvial, abans de decidir-ne l'ús cal escriure quina pregunta concreta respon i quin camp controla cada rectangle.
 
 ## Construir jerarquia i context
 
@@ -405,18 +481,6 @@ Cada figura haurà de respondre una pregunta sobre les diferències entre munici
 :::
 
 \* Les files d'anàlisi opcional només es construiran quan existeixin les dades que requereixen i la pregunta les faci pertinents; si no, es podran estudiar com a exemples. El gràfic circular i el d'anell poden representar intencionadament la mateixa composició per permetre'n una comparació crítica. El boxplot resumeix la distribució municipal, però no identifica per si sol la posició geogràfica dels valors.
-
-### Demostracions computades amb R
-
-Aquest manual també demostra com generar figures completes amb codi R dins del flux de Quarto. Els exemples següents no formen part de la selecció final de figures, sinó que mostren com una mateixa pregunta es pot respondre amb les eines de càlcul i estadística; el codi font es guarda com a fonts computables de Quarto i es regenera amb la cadena d'integració del llibre.
-
-El primer exemple és un boxplot del percentatge d'habitatge no principal dels 22 municipis del Tarragonès. La distribució és fortament asimètrica: la majoria de municipis se situen per sota del 35 %, mentre que uns pocs casos (Roda de Berà, Salou, Altafulla, Creixell i Torredembarra) superen clarament el valor de la mediana i apareixen marcats com a casos extrems o bé com a punts de la part alta dels bigotis. El diagrama s'ha generat amb R a partir de les mateixes dades processades de la pràctica del projecte territorial, de manera que l'exemple no requereix cap paquet addicional.
-
-![Boxplot del percentatge d'habitatge no principal dels municipis del Tarragonès (2021), generat amb R]({{ site.baseurl }}/assets/quarto/data-visualization/boxplot-demo-tarragones.qmd "Boxplot horitzontal generat amb R i Quarto a partir de les dades processades de la pràctica territorial. La caixa abasta els quartils, la línia central la mediana i els cercles a l'esquerra els valors baixos de la distribució."){: data-figure-width="48rem"}
-
-El segon exemple és un diagrama alluvial construït amb el paquet `ggalluvial` i el conjunt `Titanic` de la base de R. L'alluvial no respon a cap pregunta del Tarragonès, sinó que il·lustra la geometria de fluxos successius: els passatgers es descomponen per classe, després per sexe i finalment per supervivència, i l'ample de cada flux és proporcional al nombre de persones. Aquesta mena de gràfic seria l'apropiat si en algun moment del projecte es disposés de dades de fluxos turístics reals (procedència, mitjà d'arribada o tipus d'allotjament).
-
-![Alluvial del passatge del Titanic per classe, sexe i supervivència, generat amb R i ggalluvial]({{ site.baseurl }}/assets/quarto/data-visualization/alluvial-demo-titanic.qmd "Diagrama alluvial generat amb R i ggalluvial a partir del conjunt Titanic de la base de R. Cada columna és una variable i l'ample dels fluxos, el recompte de persones."){: data-figure-width="50rem"}
 
 ### Selecció de dues o tres figures candidates
 

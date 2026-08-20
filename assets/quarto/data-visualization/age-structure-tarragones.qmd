@@ -1,0 +1,109 @@
+---
+title: "Composició: estructura d'edats per grans grups als municipis del Tarragonès"
+lang: ca
+ref: age_structure_tarragones
+format:
+  gfm:
+    output-file: age-structure-tarragones.generated.md
+execute:
+  echo: false
+  warning: false
+  message: false
+execute-dir: project
+unaltraweb_compute:
+  engine: r
+  mode: figure
+  inputs:
+    - _practices/tigit-projecte-territorial/data/raw/poblacio-edat-tarragones-2021.csv
+  outputs:
+    - assets/img/data-visualization/age-structure-tarragones-2021.svg
+---
+
+```{r}
+find_project_root <- function(start) {
+  path <- normalizePath(start, winslash = "/", mustWork = FALSE)
+  repeat {
+    if (file.exists(file.path(path, ".unaltraweb", "computations.yml"))) {
+      return(path)
+    }
+    parent <- dirname(path)
+    if (identical(parent, path)) {
+      stop("Project root not found: missing .unaltraweb/computations.yml")
+    }
+    path <- parent
+  }
+}
+
+root <- find_project_root(getwd())
+library(ggplot2)
+
+theme_tigit <- function(base_size = 12) {
+  theme_minimal(base_size = base_size) +
+    theme(
+      panel.grid.minor = element_blank(),
+      panel.grid.major = element_line(color = "#e6ebf0", linewidth = 0.35),
+      axis.line = element_line(color = "#17202a", linewidth = 0.4),
+      axis.ticks = element_line(color = "#17202a", linewidth = 0.3),
+      axis.title = element_text(color = "#17202a", face = "bold"),
+      axis.text = element_text(color = "#52616b"),
+      plot.title = element_text(face = "bold", size = 13, hjust = 0, color = "#17202a"),
+      plot.caption = element_text(size = 8, color = "#52616b", hjust = 0, margin = margin(t = 8)),
+      legend.title = element_text(face = "bold", color = "#17202a"),
+      legend.text = element_text(color = "#52616b"),
+      legend.position = "top",
+      plot.margin = margin(8, 12, 8, 8)
+    )
+}
+
+county <- read.csv(
+  file.path(root, "_practices/tigit-projecte-territorial/data/raw/poblacio-edat-tarragones-2021.csv"),
+  fileEncoding = "UTF-8"
+)
+county <- county[county$CONCEPT == "POP" & county$SEX == "TOTAL" & !is.na(county$value), ]
+
+county$age_years <- as.integer(ifelse(county$AGE == "Y_GE100", 100, substring(county$AGE, 2)))
+county$group <- cut(
+  county$age_years,
+  breaks = c(0, 14, 64, Inf),
+  right = TRUE,
+  include.lowest = TRUE,
+  labels = c("0-14 anys", "15-64 anys", "65+ anys")
+)
+
+totals <- aggregate(value ~ municipality_name, data = county, FUN = sum)
+agg <- aggregate(value ~ municipality_name + group, data = county, FUN = sum)
+agg <- merge(agg, totals, by = "municipality_name")
+agg$pct <- 100 * agg$value.x / agg$value.y
+
+ord <- agg[agg$group == "65+ anys", ]
+ord <- ord[order(ord$pct), "municipality_name"]
+agg$municipality_name <- factor(agg$municipality_name, levels = ord)
+agg$group <- factor(agg$group, levels = c("0-14 anys", "15-64 anys", "65+ anys"))
+
+fig <- ggplot(agg, aes(x = municipality_name, y = pct, fill = group)) +
+  geom_col(position = "stack", width = 0.72) +
+  coord_flip() +
+  scale_y_continuous(
+    labels = function(x) paste0(x, "%"),
+    expand = expansion(mult = c(0, 0.02))
+  ) +
+  scale_fill_manual(
+    values = c(
+      "0-14 anys" = "#c6dbef",
+      "15-64 anys" = "#4292c6",
+      "65+ anys" = "#2171b5"
+    )
+  ) +
+  labs(
+    title = "Estructura d'edats dels municipis del Tarragonès per grans grups (2021)",
+    x = NULL,
+    y = "Percentatge de la població",
+    fill = NULL,
+    caption = "Font: Idescat, cens de 2021."
+  ) +
+  theme_tigit()
+
+output <- file.path(root, "assets/img/data-visualization/age-structure-tarragones-2021.svg")
+dir.create(dirname(output), showWarnings = FALSE, recursive = TRUE)
+ggsave(output, fig, width = 9, height = 6.5, device = svglite::svglite)
+```

@@ -1,0 +1,93 @@
+---
+title: "Boxplot: distribució del percentatge d'habitatge no principal als municipis del Tarragonès"
+lang: ca
+ref: boxplot_non_main_housing
+format:
+  gfm:
+    output-file: boxplot-non-main-housing-tarragones.generated.md
+execute:
+  echo: false
+  warning: false
+  message: false
+execute-dir: project
+unaltraweb_compute:
+  engine: r
+  mode: figure
+  inputs:
+    - _practices/tigit-projecte-territorial/data/processed/municipal-indicators-tarragones-2021.csv
+  outputs:
+    - assets/img/data-visualization/boxplot-housing-non-main-tarragones-2021.svg
+---
+
+```{r}
+find_project_root <- function(start) {
+  path <- normalizePath(start, winslash = "/", mustWork = FALSE)
+  repeat {
+    if (file.exists(file.path(path, ".unaltraweb", "computations.yml"))) {
+      return(path)
+    }
+    parent <- dirname(path)
+    if (identical(parent, path)) {
+      stop("Project root not found: missing .unaltraweb/computations.yml")
+    }
+    path <- parent
+  }
+}
+
+root <- find_project_root(getwd())
+library(ggplot2)
+
+theme_tigit <- function(base_size = 12) {
+  theme_minimal(base_size = base_size) +
+    theme(
+      panel.grid.minor = element_blank(),
+      panel.grid.major = element_line(color = "#e6ebf0", linewidth = 0.35),
+      axis.line = element_line(color = "#17202a", linewidth = 0.4),
+      axis.ticks = element_line(color = "#17202a", linewidth = 0.3),
+      axis.title = element_text(color = "#17202a", face = "bold"),
+      axis.text = element_text(color = "#52616b"),
+      plot.title = element_text(face = "bold", size = 13, hjust = 0, color = "#17202a"),
+      plot.caption = element_text(size = 8, color = "#52616b", hjust = 0, margin = margin(t = 8)),
+      legend.title = element_text(face = "bold", color = "#17202a"),
+      legend.text = element_text(color = "#52616b"),
+      legend.position = "top",
+      plot.margin = margin(8, 12, 8, 8)
+    )
+}
+
+indicators <- read.csv(
+  file.path(root, "_practices/tigit-projecte-territorial/data/processed/municipal-indicators-tarragones-2021.csv"),
+  fileEncoding = "UTF-8"
+)
+
+fig <- ggplot(indicators, aes(x = "Municipis", y = housing_non_main_pct)) +
+  geom_boxplot(
+    fill = "#c6dbef",
+    color = "#2171b5",
+    linewidth = 0.7,
+    outlier.color = "#b2182b",
+    outlier.shape = 21,
+    outlier.fill = "#b2182b",
+    outlier.size = 2.4,
+    width = 0.45
+  ) +
+  geom_point(
+    position = position_jitter(width = 0.06, seed = 42),
+    color = "#2171b5",
+    alpha = 0.35,
+    size = 1.6
+  ) +
+  coord_flip() +
+  labs(
+    title = "Distribució del percentatge d'habitatge no principal dels municipis del Tarragonès (2021)",
+    x = NULL,
+    y = "Percentatge d'habitatge no principal",
+    caption = "La caixa abasta els quartils, la línia central la mediana i els punts superposats, cada municipi. n = 22 municipis. Font: Idescat, habitatges per tipus d'habitatge, 2021."
+  ) +
+  theme_tigit() +
+  theme(axis.text.y = element_blank())
+
+output <- file.path(root, "assets/img/data-visualization/boxplot-housing-non-main-tarragones-2021.svg")
+dir.create(dirname(output), showWarnings = FALSE, recursive = TRUE)
+ggsave(output, fig, width = 8, height = 4.5, device = svglite::svglite)
+```

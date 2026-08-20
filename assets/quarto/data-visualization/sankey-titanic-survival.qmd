@@ -1,10 +1,10 @@
 ---
-title: "Alluvial de demostració: supervivència al Titanic"
+title: "Diagrama de flux tipus Sankey: supervivència al Titanic per classe i sexe"
 lang: ca
-ref: alluvial_demo_titanic
+ref: sankey_titanic_survival
 format:
   gfm:
-    output-file: alluvial-demo-titanic.generated.md
+    output-file: sankey-titanic-survival.generated.md
 execute:
   echo: false
   warning: false
@@ -14,7 +14,7 @@ unaltraweb_compute:
   engine: r
   mode: figure
   outputs:
-    - assets/img/data-visualization/alluvial-titanic-demo.svg
+    - assets/img/data-visualization/sankey-titanic-survival.svg
 ---
 
 ```{r}
@@ -39,9 +39,7 @@ library(ggalluvial)
 titanic <- as.data.frame(Titanic)
 
 labels_ca <- list(
-  Class = c(
-    "1a classe", "2a classe", "3a classe", "Tripulació"
-  ),
+  Class = c("1a classe", "2a classe", "3a classe", "Tripulació"),
   Sex = c("Homes", "Dones"),
   Survived = c("No", "Sí")
 )
@@ -52,14 +50,14 @@ titanic$Survived <- factor(titanic$Survived, levels = c("No", "Yes"), labels = l
 
 fig <- ggplot(
   titanic,
-  aes(
-    y = Freq,
-    axis1 = Class,
-    axis2 = Sex,
-    axis3 = Survived
-  )
+  aes(y = Freq, axis1 = Class, axis2 = Sex, axis3 = Survived)
 ) +
-  geom_alluvium(aes(fill = Class), width = 1 / 12) +
+  geom_flow(
+    aes(fill = Class),
+    width = 1 / 12,
+    knot.pos = 0.4,
+    alpha = 0.9
+  ) +
   geom_stratum(width = 1 / 12, fill = "#d8e1e6", color = "#17202a", linewidth = 0.3) +
   geom_label(
     stat = "stratum",
@@ -91,9 +89,9 @@ fig <- ggplot(
     axis.text.y = element_blank()
   )
 
-output <- file.path(root, "assets/img/data-visualization/alluvial-titanic-demo.svg")
+output <- file.path(root, "assets/img/data-visualization/sankey-titanic-survival.svg")
 dir.create(dirname(output), showWarnings = FALSE, recursive = TRUE)
 ggsave(output, fig, width = 9, height = 6, device = svglite::svglite)
 ```
 
-![Alluvial del passatge del Titanic per classe, sexe i supervivència, amb el conjunt `Titanic` de la base de R]({{ site.baseurl }}/assets/img/data-visualization/alluvial-titanic-demo.svg "Diagrama alluvial generat amb R i ggalluvial a partir del conjunt de dades Titanic de la base de R; la cartelleria il·lustra com es descomponen successivament els fluxos."){: data-figure-width="50rem"}
+![Diagrama de flux de tipus Sankey per classe, sexe i supervivència al Titanic, generat amb geom_flow de ggalluvial]({{ site.baseurl }}/assets/img/data-visualization/sankey-titanic-survival.svg "Amb geom_flow els fluxos s'arrosseguen entre nodes consecutius com a ribbons corbs i l'ample comunica la magnitud. Visualment s'assembla a un Sankey, però continua sent un diagrama d'estrats amb fluxos connectats; la diferència respecte de l'alluvial depèn de com s'ordenen i s'hidratain els fluxos.")

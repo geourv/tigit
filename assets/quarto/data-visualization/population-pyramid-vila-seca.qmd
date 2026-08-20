@@ -1,0 +1,94 @@
+---
+title: "Piràmide de població per grups quinquennals i sexe, Vila-seca 2021"
+lang: ca
+ref: population_pyramid_vila_seca
+format:
+  gfm:
+    output-file: population-pyramid-vila-seca.generated.md
+execute:
+  echo: false
+  warning: false
+  message: false
+execute-dir: project
+unaltraweb_compute:
+  engine: r
+  mode: figure
+  inputs:
+    - _practices/tigit-projecte-territorial/data/raw/poblacio-vila-seca-edat-sexe-2021.csv
+  outputs:
+    - assets/img/data-visualization/project-population-pyramid-vila-seca-2021.svg
+---
+
+```{r}
+find_project_root <- function(start) {
+  path <- normalizePath(start, winslash = "/", mustWork = FALSE)
+  repeat {
+    if (file.exists(file.path(path, ".unaltraweb", "computations.yml"))) {
+      return(path)
+    }
+    parent <- dirname(path)
+    if (identical(parent, path)) {
+      stop("Project root not found: missing .unaltraweb/computations.yml")
+    }
+    path <- parent
+  }
+}
+
+root <- find_project_root(getwd())
+library(ggplot2)
+
+theme_tigit <- function(base_size = 12) {
+  theme_minimal(base_size = base_size) +
+    theme(
+      panel.grid.minor = element_blank(),
+      panel.grid.major = element_line(color = "#e6ebf0", linewidth = 0.35),
+      axis.line = element_line(color = "#17202a", linewidth = 0.4),
+      axis.ticks = element_line(color = "#17202a", linewidth = 0.3),
+      axis.title = element_text(color = "#17202a", face = "bold"),
+      axis.text = element_text(color = "#52616b"),
+      plot.title = element_text(face = "bold", size = 13, hjust = 0, color = "#17202a"),
+      plot.caption = element_text(size = 8, color = "#52616b", hjust = 0, margin = margin(t = 8)),
+      legend.title = element_text(face = "bold", color = "#17202a"),
+      legend.text = element_text(color = "#52616b"),
+      legend.position = "top",
+      plot.margin = margin(8, 12, 8, 8)
+    )
+}
+
+pyramid <- read.csv(
+  file.path(root, "_practices/tigit-projecte-territorial/data/raw/poblacio-vila-seca-edat-sexe-2021.csv"),
+  fileEncoding = "UTF-8"
+)
+
+pyramid$age_bin <- cut(
+  pyramid$age_years,
+  breaks = c(seq(0, 100, by = 5), Inf),
+  right = FALSE,
+  labels = c(paste(seq(0, 95, by = 5), seq(4, 99, by = 5), sep = "-"), "100 i més")
+)
+pyramid$sex <- ifelse(pyramid$sex == "M", "Homes", "Dones")
+
+agg <- aggregate(population ~ age_bin + sex, data = pyramid, FUN = sum)
+agg$value <- ifelse(agg$sex == "Homes", -agg$population, agg$population)
+
+fig <- ggplot(agg, aes(x = age_bin, y = value, fill = sex)) +
+  geom_col(width = 0.9, position = "identity") +
+  geom_hline(yintercept = 0, color = "#17202a", linewidth = 0.4) +
+  scale_y_continuous(
+    labels = function(x) format(abs(x), big.mark = ".", decimal.mark = ",", scientific = FALSE, trim = TRUE)
+  ) +
+  scale_fill_manual(values = c(Homes = "#2171b5", Dones = "#9ecae1")) +
+  coord_flip() +
+  labs(
+    title = "Piràmide de població de Vila-seca per grups d'edat i sexe, 2021",
+    x = NULL,
+    y = "Habitants",
+    fill = NULL,
+    caption = "Font: Idescat, cens de 2021."
+  ) +
+  theme_tigit()
+
+output <- file.path(root, "assets/img/data-visualization/project-population-pyramid-vila-seca-2021.svg")
+dir.create(dirname(output), showWarnings = FALSE, recursive = TRUE)
+ggsave(output, fig, width = 8, height = 7.5, device = svglite::svglite)
+```
