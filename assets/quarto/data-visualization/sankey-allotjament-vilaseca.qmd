@@ -1,0 +1,315 @@
+---
+title: "Diagrama de Sankey: places d'allotjament registrades a Vila-seca"
+lang: ca
+ref: sankey_allotjament_vilaseca
+format:
+  gfm:
+    output-file: sankey-allotjament-vilaseca.generated.md
+execute:
+  echo: false
+  warning: false
+  message: false
+execute-dir: project
+unaltraweb_compute:
+  engine: python
+  mode: figure
+  inputs:
+    - _practices/tigit-projecte-territorial/data/processed/tourism-accommodation-vila-seca-geocoding.csv
+  outputs:
+    - assets/img/data-visualization/sankey-allotjament-vilaseca.svg
+---
+
+```{python}
+from pathlib import Path
+
+import matplotlib as mpl
+import matplotlib.pyplot as plt
+import pandas as pd
+from matplotlib.path import Path as MplPath
+from matplotlib.patches import PathPatch, Rectangle
+
+
+def find_project_root(start):
+    path = Path(start).resolve()
+    while not (path / ".unaltraweb" / "computations.yml").is_file():
+        if path.parent == path:
+            raise RuntimeError("Project root not found: missing .unaltraweb/computations.yml")
+        path = path.parent
+    return path
+
+
+def format_count(value):
+    return f"{int(value):,}".replace(",", ".")
+
+
+def format_percentage(value, total):
+    return f"{100 * value / total:.1f}".replace(".", ",")
+
+
+root = find_project_root(Path.cwd())
+source = root / "_practices/tigit-projecte-territorial/data/processed/tourism-accommodation-vila-seca-geocoding.csv"
+data = pd.read_csv(source)
+data["registered_places"] = pd.to_numeric(data["registered_places"], errors="raise")
+
+expected_types = ["Hotels", "Càmpings", "Apartaments Turístics", "Autocaravanes"]
+if len(data) != 17 or data["registered_places"].sum() != 9985:
+    raise RuntimeError("Unexpected Vila-seca accommodation snapshot: expected 17 establishments and 9,985 places")
+if set(data["establishment_type"]) != set(expected_types):
+    raise RuntimeError("Unexpected establishment types in the Vila-seca accommodation snapshot")
+if set(data["municipality"]) != {"Vila-seca"}:
+    raise RuntimeError("The accommodation snapshot must contain only Vila-seca records")
+
+
+def category_group(row):
+    category = row["category"]
+    if row["establishment_type"] == "Hotels" and category not in {"4 estrelles superior", "4 estrelles"}:
+        return "Altres categories d'hotel"
+    return category
+
+
+data["category_group"] = data.apply(category_group, axis=1)
+category_order = [
+    "4 estrelles superior",
+    "4 estrelles",
+    "Altres categories d'hotel",
+    "3 estrelles",
+    "Sense categoritzar",
+]
+
+type_values = data.groupby("establishment_type")["registered_places"].sum().reindex(expected_types)
+category_values = data.groupby("category_group")["registered_places"].sum().reindex(category_order)
+flows = data.groupby(["establishment_type", "category_group"])["registered_places"].sum()
+total = int(data["registered_places"].sum())
+
+if type_values.isna().any() or category_values.isna().any():
+    raise RuntimeError("Missing a required type or category in the accommodation flow")
+if int(type_values.sum()) != total or int(category_values.sum()) != total:
+    raise RuntimeError("The accommodation flows do not conserve the registered-place total")
+
+type_colors = {
+    "Hotels": "#2878a5",
+    "Càmpings": "#2a9d8f",
+    "Apartaments Turístics": "#e9b949",
+    "Autocaravanes": "#d96c4d",
+}
+
+mpl.rcParams.update(
+    {
+        "font.family": "DejaVu Sans",
+        "svg.fonttype": "none",
+        "svg.hashsalt": "tigit-sankey-allotjament-vilaseca",
+    }
+)
+
+gap = 0.018
+scale = (0.70 - gap * (len(category_order) - 1)) / total
+node_width = 0.022
+x_total, x_type, x_category = 0.08, 0.43, 0.80
+
+
+def node_layout(order, values):
+    height = sum(values[item] * scale for item in order) + gap * (len(order) - 1)
+    cursor = 0.50 + height / 2
+    layout = {}
+    for item in order:
+        top = cursor
+        bottom = top - values[item] * scale
+        layout[item] = (bottom, top)
+        cursor = bottom - gap
+    return layout
+
+
+total_height = total * scale
+total_node = {"Vila-seca": (0.50 - total_height / 2, 0.50 + total_height / 2)}
+type_nodes = node_layout(expected_types, type_values)
+category_nodes = node_layout(category_order, category_values)
+
+
+def draw_ribbon(ax, x0, interval0, x1, interval1, color, alpha=0.70):
+    bottom0, top0 = interval0
+    bottom1, top1 = interval1
+    control0 = x0 + 0.45 * (x1 - x0)
+    control1 = x1 - 0.45 * (x1 - x0)
+    vertices = [
+        (x0, bottom0),
+        (control0, bottom0),
+        (control1, bottom1),
+        (x1, bottom1),
+        (x1, top1),
+        (control1, top1),
+        (control0, top0),
+        (x0, top0),
+        (x0, bottom0),
+    ]
+    codes = [
+        MplPath.MOVETO,
+        MplPath.CURVE4,
+        MplPath.CURVE4,
+        MplPath.CURVE4,
+        MplPath.LINETO,
+        MplPath.CURVE4,
+        MplPath.CURVE4,
+        MplPath.CURVE4,
+        MplPath.CLOSEPOLY,
+    ]
+    ax.add_patch(PathPatch(MplPath(vertices, codes), facecolor=color, edgecolor="none", alpha=alpha))
+
+
+total_cursor = total_node["Vila-seca"][1]
+for establishment_type in expected_types:
+    value = type_values[establishment_type]
+    interval = (total_cursor - value * scale, total_cursor)
+    draw_ribbon(
+        plt.gca(),
+        x_total + node_width,
+        interval,
+        x_type,
+        type_nodes[establishment_type],
+        type_colors[establishment_type],
+    )
+    total_cursor -= value * scale
+
+type_cursors = {item: interval[1] for item, interval in type_nodes.items()}
+category_cursors = {item: interval[1] for item, interval in category_nodes.items()}
+for establishment_type in expected_types:
+    for category in category_order:
+        value = int(flows.get((establishment_type, category), 0))
+        if not value:
+            continue
+        source_interval = (type_cursors[establishment_type] - value * scale, type_cursors[establishment_type])
+        target_interval = (category_cursors[category] - value * scale, category_cursors[category])
+        draw_ribbon(
+            plt.gca(),
+            x_type + node_width,
+            source_interval,
+            x_category,
+            target_interval,
+            type_colors[establishment_type],
+            alpha=0.66,
+        )
+        type_cursors[establishment_type] -= value * scale
+        category_cursors[category] -= value * scale
+
+fig = plt.gcf()
+fig.set_size_inches(11, 6.2)
+fig.set_facecolor("white")
+ax = plt.gca()
+ax.set_facecolor("white")
+ax.set_xlim(-0.16, 1.12)
+ax.set_ylim(0, 1)
+ax.set_axis_off()
+
+
+def draw_nodes(nodes, x, colors):
+    for name, (bottom, top) in nodes.items():
+        ax.add_patch(
+            Rectangle(
+                (x, bottom),
+                node_width,
+                top - bottom,
+                facecolor=colors[name],
+                edgecolor="#17202a",
+                linewidth=0.7,
+                zorder=4,
+            )
+        )
+
+
+draw_nodes(total_node, x_total, {"Vila-seca": "#263746"})
+draw_nodes(type_nodes, x_type, type_colors)
+draw_nodes(category_nodes, x_category, {item: "#dce5ea" for item in category_order})
+
+label_box = {"facecolor": "white", "edgecolor": "none", "alpha": 0.88, "pad": 1.8}
+ax.text(
+    x_total - 0.012,
+    0.50,
+    f"Allotjament convencional\n{format_count(total)} places",
+    ha="right",
+    va="center",
+    fontsize=10.5,
+    fontweight="bold",
+    color="#17202a",
+)
+
+type_label_offsets = {"Apartaments Turístics": 0.018, "Autocaravanes": -0.018}
+for name, (bottom, top) in type_nodes.items():
+    value = int(type_values[name])
+    ax.text(
+        x_type + node_width + 0.010,
+        (bottom + top) / 2 + type_label_offsets.get(name, 0),
+        f"{name}\n{format_count(value)} · {format_percentage(value, total)} %",
+        ha="left",
+        va="center",
+        fontsize=8.4,
+        color="#17202a",
+        bbox=label_box,
+        zorder=5,
+    )
+
+category_labels = {
+    "4 estrelles superior": "4 estrelles superior",
+    "4 estrelles": "4 estrelles",
+    "Altres categories d'hotel": "Altres categories d'hotel¹",
+    "3 estrelles": "3 estrelles",
+    "Sense categoritzar": "Sense categoritzar",
+}
+for name, (bottom, top) in category_nodes.items():
+    value = int(category_values[name])
+    ax.text(
+        x_category + node_width + 0.010,
+        (bottom + top) / 2,
+        f"{category_labels[name]}\n{format_count(value)} · {format_percentage(value, total)} %",
+        ha="left",
+        va="center",
+        fontsize=8.5,
+        color="#17202a",
+        bbox=label_box,
+        zorder=5,
+    )
+
+for x, label in [
+    (x_total, "TOTAL MUNICIPAL"),
+    (x_type, "TIPUS D'ESTABLIMENT"),
+    (x_category, "CATEGORIA REGISTRAL"),
+]:
+    ax.text(x + node_width / 2, 0.915, label, ha="center", va="bottom", fontsize=8.5, fontweight="bold", color="#52616b")
+
+fig.suptitle(
+    "Com es reparteixen 9.985 places d'allotjament registrades a Vila-seca",
+    x=0.5,
+    y=0.98,
+    fontsize=15,
+    fontweight="bold",
+    color="#17202a",
+)
+fig.text(
+    0.5,
+    0.925,
+    "Capacitat administrativa registrada: no representa ocupació, pernoctacions ni desplaçaments de persones",
+    ha="center",
+    fontsize=9.5,
+    color="#3f4d55",
+)
+fig.text(
+    0.02,
+    0.022,
+    "¹ Inclou 5 estrelles, 1 estrella i la categoria «No aplica».\n"
+    "Font: Generalitat de Catalunya, Registre de Turisme de Catalunya (t2h3-cgys). "
+    "Dades actualitzades el 31-07-2026; consulta 22-08-2026. Sense habitatges d'ús turístic ni llars compartides.",
+    ha="left",
+    va="bottom",
+    fontsize=7.5,
+    color="#52616b",
+)
+fig.subplots_adjust(left=0.02, right=0.98, top=0.90, bottom=0.11)
+
+output = root / "assets/img/data-visualization/sankey-allotjament-vilaseca.svg"
+output.parent.mkdir(parents=True, exist_ok=True)
+fig.savefig(output, format="svg", facecolor="white", metadata={"Date": None})
+plt.close(fig)
+
+svg = output.read_text(encoding="utf-8")
+output.write_text("\n".join(line.rstrip() for line in svg.splitlines()) + "\n", encoding="utf-8")
+```
+
+![Diagrama de Sankey de les places d'allotjament convencional registrades a Vila-seca, des del total municipal fins al tipus d'establiment i la categoria registral]({{ site.baseurl }}/assets/img/data-visualization/sankey-allotjament-vilaseca.svg "Diagrama de Sankey d'un balanç territorial: el gruix de cada flux codifica places registrades i el total de 9.985 es conserva entre el municipi, els tipus d'establiment i les categories agrupades. La figura representa capacitat administrativa, no ocupació ni mobilitat turística.")

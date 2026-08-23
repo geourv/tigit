@@ -7,12 +7,13 @@ COMPUTE_R_IMAGE ?=
 COMPUTE_SOURCE ?=
 COMPUTE_CONFIRM_OVERWRITE ?= 0
 COMPUTE_STALE_ONLY ?= 0
+COMPUTE_MODE ?=
 COMPUTE_DOCKER_BUILD_NETWORK ?= default
 COMPUTE_CORE ?= $(if $(strip $(LOCAL_CORE)),$(LOCAL_CORE),../unaltraweb)
 COMPUTE_CONTROL_IMAGE ?= ghcr.io/dosquartsdedocs/unaltraweb-compute-python@sha256:18cb269811bd4005800382da25a480ec2bca7eac8d0501ad1ef36bad1c0f8cd9
 PORT ?= 4000
 HOST ?= 0.0.0.0
-BASEURL ?= /unaltraweb-template
+BASEURL ?= /tigit
 SITE_PROFILE ?=
 DEVELOPER_MODE ?= $(if $(filter unaltraweb-template,$(notdir $(CURDIR))),true,false)
 PROFILE_DEMO_TITLES ?= $(if $(filter unaltraweb-template,$(notdir $(CURDIR))),1,0)
@@ -25,11 +26,13 @@ OPEN_DELAY ?= 25
 VISUAL_PROFILES ?= unaltreselfie unaltreprojecte unaltremanual unaltredocs
 DOC_SCREENSHOTS_DIR ?= assets/img/screenshots
 DOC_SCREENSHOTS ?= home-light-chromium.png project-home-chromium.png manual-home-chromium.png unaltredocs-home-chromium.png
-START_PATH ?= /en/
+START_PATH ?= /ca/
 LIVERELOAD ?= --livereload
 LIVERELOAD_PORT ?= 35729
 LOCAL_CORE ?= $(if $(wildcard ../unaltraweb/unaltraweb.gemspec),../unaltraweb,)
 DIAVISUALS_DIR ?= ../diavisuals
+VEGAVISUALS_DIR ?= ../vegavisuals
+VEGAVISUALS_CLI ?=
 DIAVISUALS_COMPAT_PROFILE ?= compat/mermaid-11.4.2-plantuml-1.2026.1.env
 DIAGRAM_STYLE_FAMILY ?= benizar
 DIAGRAMS_FIND_DIRS ?= assets/diagrams
@@ -92,7 +95,7 @@ THEME_UPDATE_LOCAL_ENV = BUNDLE_LOCAL__UNALTRAWEB=/srv/unaltraweb
 THEME_UPDATE_ARGS = --local
 endif
 
-.PHONY: bootstrap theme-update local-core-check local-gemfile profile-config dev-config python-deps bundle-install open open-url profile-compose-local-core serve serve-native serve-profile serve-unaltreselfie serve-unaltreprojecte serve-unaltremanual serve-unaltredocs serve-allprofiles build build-native manual-pdf manual-pdf-image manual-pdf-status manual-pdf-build manual-pdf-publish publish publish-native test test-native screenshots screenshots-all docs-screenshots documentation-screenshots screenshots-docs down down-profiles metrics-scimago-fetch metrics-scimago-fetch-native metrics-update metrics-update-native metrics-update-all metrics-check metrics-check-native cv-preview cv-preview-native diagrams docker-serve docker-serve-local docker-build docker-build-local docker-down open-local render-smoke render-smoke-local serve-local build-local compute-core-check manual-compute-status manual-compute-check manual-compute-render manual-compute-render-figures manual-compute-image-python manual-compute-image-r manual-compute-images manual-compute-rstudio
+.PHONY: bootstrap theme-update local-core-check local-gemfile profile-config dev-config python-deps bundle-install open open-url profile-compose-local-core serve serve-native serve-profile serve-unaltreselfie serve-unaltreprojecte serve-unaltremanual serve-unaltredocs serve-allprofiles build build-native manual-pdf manual-pdf-image manual-pdf-status manual-pdf-check manual-pdf-build manual-pdf-publish manual-pdf-sync publish publish-native test test-native screenshots screenshots-all docs-screenshots documentation-screenshots screenshots-docs down down-profiles metrics-scimago-fetch metrics-scimago-fetch-native metrics-update metrics-update-native metrics-update-all metrics-check metrics-check-native cv-preview cv-preview-native diagrams docker-serve docker-serve-local docker-build docker-build-local docker-down open-local render-smoke render-smoke-local serve-local build-local compute-core-check manual-compute-status manual-compute-check manual-compute-render manual-compute-render-figures manual-compute-image-python manual-compute-image-r manual-compute-images manual-compute-rstudio visualization-status visualization-check visualization-render
 
 bootstrap:
 	docker run --rm --user "$(LOCAL_UID):$(LOCAL_GID)" -e HOME=/tmp -v "$(CURDIR):/srv/jekyll" -w /srv/jekyll $(DOCKER_IMAGE) bash -lc 'bundle install && python3 -m pip install --break-system-packages --user -r requirements.txt'
@@ -111,17 +114,33 @@ compute-core-check:
 
 manual-compute-status manual-compute-check:
 	@if test -f "$(COMPUTE_CORE)/Makefile"; then \
-	  $(MAKE) -C "$(COMPUTE_CORE)" $@ PROJECT="$(CURDIR)" COMPUTE_PYTHON_IMAGE="$(COMPUTE_PYTHON_IMAGE)" COMPUTE_R_IMAGE="$(COMPUTE_R_IMAGE)" COMPUTE_SOURCE="$(COMPUTE_SOURCE)"; \
+	  $(MAKE) -C "$(COMPUTE_CORE)" $@ PROJECT="$(CURDIR)" COMPUTE_PYTHON_IMAGE="$(COMPUTE_PYTHON_IMAGE)" COMPUTE_R_IMAGE="$(COMPUTE_R_IMAGE)" COMPUTE_SOURCE="$(COMPUTE_SOURCE)" COMPUTE_MODE="$(COMPUTE_MODE)"; \
 	else \
 	  if ! docker image inspect "$(COMPUTE_CONTROL_IMAGE)" >/dev/null 2>&1; then docker pull "$(COMPUTE_CONTROL_IMAGE)"; fi; \
-	  docker run --rm --user "$(LOCAL_UID):$(LOCAL_GID)" --network none --read-only --cap-drop ALL --security-opt no-new-privileges --pids-limit 64 --cpus 1 --memory 512m --tmpfs /tmp:rw,noexec,nosuid,size=64m -e HOME=/tmp -e COMPUTE_PYTHON_IMAGE="$(COMPUTE_PYTHON_IMAGE)" -e COMPUTE_R_IMAGE="$(COMPUTE_R_IMAGE)" -v "$(CURDIR):/project:ro" -w /project --entrypoint python3 "$(COMPUTE_CONTROL_IMAGE)" /opt/unaltraweb/computations/render.py $(patsubst manual-compute-%,%,$@) --project /project $(if $(strip $(COMPUTE_SOURCE)),--source "$(COMPUTE_SOURCE)",); \
+	  docker run --rm --user "$(LOCAL_UID):$(LOCAL_GID)" --network none --read-only --cap-drop ALL --security-opt no-new-privileges --pids-limit 64 --cpus 1 --memory 512m --tmpfs /tmp:rw,noexec,nosuid,size=64m -e HOME=/tmp -e COMPUTE_PYTHON_IMAGE="$(COMPUTE_PYTHON_IMAGE)" -e COMPUTE_R_IMAGE="$(COMPUTE_R_IMAGE)" -v "$(CURDIR):/project:ro" -w /project --entrypoint python3 "$(COMPUTE_CONTROL_IMAGE)" /opt/unaltraweb/computations/render.py $(patsubst manual-compute-%,%,$@) --project /project $(if $(strip $(COMPUTE_SOURCE)),--source "$(COMPUTE_SOURCE)",) $(if $(strip $(COMPUTE_MODE)),--mode "$(COMPUTE_MODE)",); \
 	fi
 
 manual-compute-render manual-compute-image-python manual-compute-image-r manual-compute-images manual-compute-rstudio: compute-core-check
-	$(MAKE) -C "$(COMPUTE_CORE)" $@ PROJECT="$(CURDIR)" COMPUTE_PYTHON_IMAGE="$(COMPUTE_PYTHON_IMAGE)" COMPUTE_R_IMAGE="$(COMPUTE_R_IMAGE)" COMPUTE_SOURCE="$(COMPUTE_SOURCE)" COMPUTE_CONFIRM_OVERWRITE="$(COMPUTE_CONFIRM_OVERWRITE)" COMPUTE_STALE_ONLY="$(COMPUTE_STALE_ONLY)" COMPUTE_DOCKER_BUILD_NETWORK="$(COMPUTE_DOCKER_BUILD_NETWORK)"
+	$(MAKE) -C "$(COMPUTE_CORE)" $@ PROJECT="$(CURDIR)" COMPUTE_PYTHON_IMAGE="$(COMPUTE_PYTHON_IMAGE)" COMPUTE_R_IMAGE="$(COMPUTE_R_IMAGE)" COMPUTE_SOURCE="$(COMPUTE_SOURCE)" COMPUTE_CONFIRM_OVERWRITE="$(COMPUTE_CONFIRM_OVERWRITE)" COMPUTE_STALE_ONLY="$(COMPUTE_STALE_ONLY)" COMPUTE_MODE="$(COMPUTE_MODE)" COMPUTE_DOCKER_BUILD_NETWORK="$(COMPUTE_DOCKER_BUILD_NETWORK)"
 
 manual-compute-render-figures: compute-core-check
-	$(MAKE) manual-compute-render COMPUTE_STALE_ONLY=1
+	$(MAKE) manual-compute-render COMPUTE_STALE_ONLY=1 COMPUTE_MODE=figure
+
+visualization-status visualization-check visualization-render:
+	@if test ! -f ".vegavisuals.yml"; then \
+	  printf '%s\n' 'No .vegavisuals.yml; skipping visualization $(patsubst visualization-%,%,$@).'; \
+	elif test -f "$(COMPUTE_CORE)/Makefile"; then \
+	  $(MAKE) -C "$(COMPUTE_CORE)" $@ PROJECT="$(CURDIR)" VEGAVISUALS_PATH="$(abspath $(VEGAVISUALS_DIR))" VEGAVISUALS_CLI="$(VEGAVISUALS_CLI)"; \
+	elif test -n "$(strip $(VEGAVISUALS_CLI))"; then \
+	  "$(VEGAVISUALS_CLI)" --project "$(CURDIR)" $(patsubst visualization-%,%,$@); \
+	elif test -f "$(abspath $(VEGAVISUALS_DIR))/src/vegavisuals/cli.py"; then \
+	  PYTHONPATH="$(abspath $(VEGAVISUALS_DIR))/src$${PYTHONPATH:+:$$PYTHONPATH}" $(PYTHON) -m vegavisuals.cli --project "$(CURDIR)" $(patsubst visualization-%,%,$@); \
+	elif command -v vegavisuals >/dev/null 2>&1; then \
+	  vegavisuals --project "$(CURDIR)" $(patsubst visualization-%,%,$@); \
+	else \
+	  printf '%s\n' 'vegavisuals CLI not found. Set VEGAVISUALS_CLI or VEGAVISUALS_DIR, or install vegavisuals.' >&2; \
+	  exit 1; \
+	fi
 
 local-gemfile:
 	@if test -n "$(LOCAL_CORE)"; then \
@@ -211,7 +230,7 @@ profile-compose-local-core: local-core-check
 	  rm -f "$(PROFILE_COMPOSE_LOCAL_CORE_FILE)"; \
 	fi
 
-serve-profile: manual-compute-render-figures profile-compose-local-core
+serve-profile: manual-compute-render-figures visualization-check manual-pdf-sync profile-compose-local-core
 	@case "$(PROFILE)" in \
 	  unaltreselfie) url="$(UNALTRESELFIE_URL)"; service="unaltreselfie" ;; \
 	  unaltreprojecte) url="$(UNALTREPROJECTE_URL)"; service="unaltreprojecte" ;; \
@@ -235,7 +254,7 @@ serve-unaltremanual:
 serve-unaltredocs:
 	$(MAKE) serve-profile PROFILE=unaltredocs
 
-serve-allprofiles: profile-compose-local-core
+serve-allprofiles: visualization-check manual-pdf-sync profile-compose-local-core
 	@printf 'Serving all demo profiles. This starts multiple Jekyll servers and can be heavy.\n'
 	@printf 'unaltreselfie:   %s\nunaltreprojecte: %s\nunaltremanual:   %s\nunaltredocs:     %s\n' "$(UNALTRESELFIE_URL)" "$(UNALTREPROJECTE_URL)" "$(UNALTREMANUAL_URL)" "$(UNALTREDOCS_URL)"
 	@printf 'Opening only unaltreselfie; use the developer switcher to move between profiles.\n'
@@ -243,7 +262,7 @@ serve-allprofiles: profile-compose-local-core
 	  xdg-open "$(UNALTRESELFIE_URL)" >/dev/null 2>&1 || sensible-browser "$(UNALTRESELFIE_URL)" >/dev/null 2>&1 || true) & \
 	docker compose $(PROFILE_COMPOSE_FILES) up unaltreselfie unaltreprojecte unaltremanual unaltredocs
 
-serve: local-core-check
+serve: manual-compute-render-figures visualization-check manual-pdf-sync local-core-check
 	@printf 'Local URL: %s\n' "$(LOCAL_URL)"
 	@(sleep 45; xdg-open "$(LOCAL_URL)" >/dev/null 2>&1 || true) & \
 	docker run --name "$(CONTAINER)" --rm -it --user "$(LOCAL_UID):$(LOCAL_GID)" -e HOME=/tmp $(DOCKER_PORTS) -v "$(CURDIR):/srv/jekyll" $(DOCKER_CORE_VOLUME) -w /srv/jekyll $(DOCKER_IMAGE) bash -lc 'make serve-native $(DOCKER_LOCAL_CORE) PORT=$(PORT) HOST=$(HOST) LIVERELOAD="$(LIVERELOAD)" LIVERELOAD_PORT=$(LIVERELOAD_PORT) SITE_PROFILE="$(SITE_PROFILE)"'
@@ -257,7 +276,7 @@ serve-native serve-local: profile-config dev-config python-deps bundle-install
 	serve_config="$$active_config,$(DEV_CONFIG)"; \
 	JEKYLL_ENV=development PYTHONUSERBASE="$(abspath $(PYTHONUSERBASE))" PIP_CACHE_DIR="$(abspath $(PIP_CACHE_DIR))" PATH="$(abspath $(PYTHONUSERBASE))/bin:$(PATH)" BUNDLE_GEMFILE="$$gemfile" BUNDLE_APP_CONFIG=$(abspath $(LOCAL_BUNDLE_APP_CONFIG)) BUNDLE_PATH=$(abspath $(LOCAL_BUNDLE_PATH)) $(BUNDLE) exec jekyll serve --config "$$serve_config" --host $(HOST) --port $(PORT) $(SERVE_LIVERELOAD_ARGS) --destination "$(SERVE_DESTINATION)" --disable-disk-cache
 
-build: local-core-check manual-compute-render-figures
+build: local-core-check manual-compute-render-figures visualization-check manual-pdf-sync
 	docker run --rm --user "$(LOCAL_UID):$(LOCAL_GID)" -e HOME=/tmp -v "$(CURDIR):/srv/jekyll" $(DOCKER_CORE_VOLUME) -w /srv/jekyll $(DOCKER_IMAGE) bash -lc 'make build-native $(DOCKER_LOCAL_CORE) SITE_PROFILE="$(SITE_PROFILE)"'
 
 build-native build-local: profile-config python-deps bundle-install
@@ -268,16 +287,19 @@ build-native build-local: profile-config python-deps bundle-install
 	if test -n "$(SITE_PROFILE)"; then active_config="$$active_config,$(PROFILE_CONFIG)"; fi; \
 	JEKYLL_ENV=production PYTHONUSERBASE="$(abspath $(PYTHONUSERBASE))" PIP_CACHE_DIR="$(abspath $(PIP_CACHE_DIR))" PATH="$(abspath $(PYTHONUSERBASE))/bin:$(PATH)" BUNDLE_GEMFILE="$$gemfile" BUNDLE_APP_CONFIG=$(abspath $(LOCAL_BUNDLE_APP_CONFIG)) BUNDLE_PATH=$(abspath $(LOCAL_BUNDLE_PATH)) $(BUNDLE) exec jekyll build --config "$$active_config" --disable-disk-cache
 
-manual-pdf: manual-pdf-build
+manual-pdf: manual-pdf-sync
 
 manual-pdf-image: local-core-check
 	@test -n "$(LOCAL_CORE)" || (printf 'Set LOCAL_CORE to build the local manual PDF image.\n' && exit 1)
 	docker build -f "$(abspath $(LOCAL_CORE))/scripts/manual/Dockerfile" -t "$(MANUAL_PDF_IMAGE)" "$(abspath $(LOCAL_CORE))/scripts/manual"
 
-manual-pdf-status manual-pdf-build manual-pdf-publish: $(if $(strip $(LOCAL_CORE)),manual-pdf-image,)
+manual-pdf-status manual-pdf-check manual-pdf-build manual-pdf-publish manual-pdf-sync: visualization-check $(if $(strip $(LOCAL_CORE)),manual-pdf-image,)
 
 manual-pdf-status:
 	docker run --rm --user "$(LOCAL_UID):$(LOCAL_GID)" -e HOME=/tmp -v "$(CURDIR):/project" -w /project "$(MANUAL_PDF_IMAGE)" status --project /project $(if $(strip $(MANUAL_PDF_LANG)),--language "$(MANUAL_PDF_LANG)",)
+
+manual-pdf-check:
+	docker run --rm --user "$(LOCAL_UID):$(LOCAL_GID)" -e HOME=/tmp -v "$(CURDIR):/project" -w /project "$(MANUAL_PDF_IMAGE)" check --project /project $(if $(strip $(MANUAL_PDF_LANG)),--language "$(MANUAL_PDF_LANG)",)
 
 manual-pdf-build:
 	docker run --rm --user "$(LOCAL_UID):$(LOCAL_GID)" -e HOME=/tmp -v "$(CURDIR):/project" -w /project "$(MANUAL_PDF_IMAGE)" build --project /project $(if $(strip $(MANUAL_PDF_LANG)),--language "$(MANUAL_PDF_LANG)",)
@@ -285,7 +307,11 @@ manual-pdf-build:
 manual-pdf-publish:
 	docker run --rm --user "$(LOCAL_UID):$(LOCAL_GID)" -e HOME=/tmp -v "$(CURDIR):/project" -w /project "$(MANUAL_PDF_IMAGE)" publish --project /project $(if $(strip $(MANUAL_PDF_LANG)),--language "$(MANUAL_PDF_LANG)",) $(if $(filter 1 true TRUE yes YES y Y,$(MANUAL_PDF_PUBLISH_DRY_RUN)),--dry-run,)
 
+manual-pdf-sync:
+	docker run --rm --user "$(LOCAL_UID):$(LOCAL_GID)" -e HOME=/tmp -v "$(CURDIR):/project" -w /project "$(MANUAL_PDF_IMAGE)" sync --project /project $(if $(strip $(MANUAL_PDF_LANG)),--language "$(MANUAL_PDF_LANG)",)
+
 publish: build
+	$(MAKE) manual-pdf-check MANUAL_PDF_LANG=
 	docker run --rm --user "$(LOCAL_UID):$(LOCAL_GID)" -e HOME=/tmp -e PUBLISH_REMOTE="$(PUBLISH_REMOTE)" -e PUBLISH_BRANCH="$(PUBLISH_BRANCH)" -e PUBLISH_SOURCE="$(PUBLISH_SOURCE)" -e PUBLISH_WORKTREE="$(PUBLISH_WORKTREE)" -e PUBLISH_DRY_RUN="$(PUBLISH_DRY_RUN)" -e PUBLISH_PREPARE_ONLY=1 -v "$(CURDIR):/srv/jekyll" $(DOCKER_CORE_VOLUME) -w /srv/jekyll $(DOCKER_IMAGE) bash -lc 'make publish-native $(DOCKER_LOCAL_CORE)'
 	@case "$(PUBLISH_DRY_RUN)" in \
 	  1|true|TRUE|yes|YES|y|Y) \
@@ -381,6 +407,7 @@ diagrams:
 			    printf '\''DIAVISUALS mermaid %s -> %s\n'\'' "$$src" "$$out"; \
 			    /diavisuals/tools/style-diagram-source.sh mermaid "$(DIAGRAM_STYLE_FAMILY)" "$$src" "$$styled"; \
 			    mmdc -i "$$styled" -o "$$out" -c "/diavisuals/styles/mermaid/$(DIAGRAM_STYLE_FAMILY)-mermaid.json" -p "$(DIAGRAMS_CACHE_DIR)/puppeteer.json"; \
+			    python3 /diavisuals/tools/normalize-mermaid-svg.py "$$out"; \
 			    ;; \
 			  *.puml|*.plantuml|*.uml) \
 			    styled="$(DIAGRAMS_CACHE_DIR)/$${src%.*}.styled.puml"; \
@@ -396,7 +423,7 @@ diagrams:
 		done < <(find $(DIAGRAMS_FIND_DIRS) -type f \( -name "*.mmd" -o -name "*.mermaid" -o -name "*.puml" -o -name "*.plantuml" -o -name "*.uml" \) | sort); \
 		if test "$$found" -eq 0; then printf '\''No Mermaid or PlantUML sources found.\n'\''; fi'
 
-test test-native render-smoke render-smoke-local: local-core-check
+test test-native render-smoke render-smoke-local: manual-compute-render-figures visualization-check manual-pdf-sync local-core-check
 	@mkdir -p tmp/render-smoke
 	@set -e; \
 	server_log="tmp/render-smoke/jekyll.log"; \
@@ -411,7 +438,7 @@ test test-native render-smoke render-smoke-local: local-core-check
 	  sleep 2; \
 	done; \
 	if test "$$ready" != "1"; then docker logs $$server_cid >&2 || true; exit 1; fi; \
-	docker run --rm --user "$(LOCAL_UID):$(LOCAL_GID)" -e HOME=/tmp --network host --ipc=host -e BASE_URL="http://127.0.0.1:$(PORT)$(BASEURL)" -e RENDER_OUT="tmp/render-smoke" -e SITE_PROFILE="$(SITE_PROFILE)" -e START_PATH="$(START_PATH)" -v "$(CURDIR):/work" -w /work $(PLAYWRIGHT_IMAGE) bash -lc 'npm install --no-save --no-package-lock @playwright/test@1.56.1 >/tmp/playwright-npm.log && npx playwright test tests/render-smoke.spec.mjs --browser=chromium --output=tmp/render-smoke/test-results'
+	docker run --rm --user "$(LOCAL_UID):$(LOCAL_GID)" -e HOME=/tmp --network host --ipc=host -e BASE_URL="http://127.0.0.1:$(PORT)$(BASEURL)" -e RENDER_OUT="tmp/render-smoke" -e SITE_PROFILE="$(SITE_PROFILE)" -e START_PATH="$(START_PATH)" -e DEVELOPER_MODE="$(DEVELOPER_MODE)" -v "$(CURDIR):/work" -w /work $(PLAYWRIGHT_IMAGE) bash -lc 'npm install --no-save --no-package-lock @playwright/test@1.56.1 >/tmp/playwright-npm.log && npx playwright test tests/render-smoke.spec.mjs --browser=chromium --output=tmp/render-smoke/test-results $(PLAYWRIGHT_ARGS)'
 
 screenshots screenshots-all: local-core-check
 	@mkdir -p tmp/render-smoke

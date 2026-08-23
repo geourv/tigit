@@ -10,7 +10,7 @@ content_status: draft
 permalink: /ca/
 nav: false
 show_chapter_index: false
-cover_image: /assets/img/manual-cover-cat.png
+cover_image: /assets/img/manual-cover-ca.png
 cover_alt: Manual de Tècniques d'informació geogràfica i turística
 figure_captions: true
 ---
@@ -56,7 +56,7 @@ El manual desenvoluparà una diagnosi de **població i habitatge d'una comarca t
 
 ### Cicle de treball del manual
 
-![Cicle de treball del manual]({{ site.baseurl }}/assets/diagrams/manual-flow.mmd "Cicle adaptat de descobriment de coneixement territorial: de la pregunta i les dades a la interpretació i la comunicació")
+![Cicle de treball del manual]({{ site.baseurl }}/assets/diagrams/manual-flow.mmd "Cicle adaptat de descobriment de coneixement territorial: de la pregunta i les dades a la interpretació i la comunicació"){: data-figure-width-web="38rem" data-figure-width-pdf="31rem"}
 
 ## Metodologia de treball
 

@@ -2,11 +2,12 @@ import { expect, test } from "@playwright/test";
 import { mkdirSync } from "node:fs";
 import { join } from "node:path";
 
-const baseUrl = (process.env.BASE_URL || "http://127.0.0.1:4000/unaltraweb-template").replace(/\/$/, "");
+const baseUrl = (process.env.BASE_URL || "http://127.0.0.1:4000/tigit").replace(/\/$/, "");
 const renderOut = process.env.RENDER_OUT || "tmp/render-smoke";
-const activeProfile = process.env.SITE_PROFILE || "unaltreselfie";
-const startPath = process.env.START_PATH || "/en/";
+const activeProfile = process.env.SITE_PROFILE || "unaltremanual";
+const startPath = process.env.START_PATH || "/ca/";
 const isDocsProfile = activeProfile === "unaltredocs";
+const developerMode = process.env.DEVELOPER_MODE === "true";
 
 mkdirSync(renderOut, { recursive: true });
 
@@ -40,7 +41,7 @@ async function expectThemeState(page, theme) {
   const integrationTheme = theme === "dark" ? "dark" : "light";
   const expectedBg = {
     light: ["#fff", "#ffffff"],
-    sepia: ["#f3eacb"],
+    cafe: ["#f3eacb"],
     dark: ["#1c1c1d"],
   }[theme];
 
@@ -145,6 +146,7 @@ test("profile page renders and supports theme modes", async ({ page }, testInfo)
 });
 
 test("developer mode exposes the local profile switcher", async ({ page }) => {
+  test.skip(!developerMode, "developer mode only");
   await page.goto(siteUrl(startPath));
   await expect(page.locator(".developer-mode-switcher")).toBeVisible();
   await expect(page.locator(".developer-mode-switcher")).toContainText("Developer mode");
@@ -380,7 +382,7 @@ test("project profile renders real project pages", async ({ page }, testInfo) =>
 
 
 test("manual profile renders a multilingual handbook", async ({ page }, testInfo) => {
-  test.skip(activeProfile !== "unaltremanual", "unaltremanual profile only");
+  test.skip(activeProfile !== "unaltremanual" || startPath !== "/en/", "English template manual fixture only");
 
   await page.goto(siteUrl("/en/"));
   await expect(page.locator("html")).toHaveAttribute("data-site-profile", "unaltremanual");
@@ -705,6 +707,62 @@ test("manual profile renders a multilingual handbook", async ({ page }, testInfo
   await page.screenshot({ path: join(renderOut, `manual-ca-chapter-${testInfo.project.name}.png`), fullPage: true });
 });
 
+test("TIGIT manual home starts at chapter zero and credits its authors and tools", async ({ page }, testInfo) => {
+  test.skip(activeProfile !== "unaltremanual", "unaltremanual profile only");
+
+  await page.goto(siteUrl("/ca/"));
+  await expect(page.locator(".manual-cover h1 .hd-num")).toHaveCount(0);
+  await expect(page.locator(".manual-home-link .manual-chapter-number")).toHaveText("0");
+  await expect(page.locator(".manual-home .manual-content h2 .hd-num").first()).toHaveText("0.1");
+  await expect(page.locator(".manual-download")).toHaveAttribute("href", /\/tigit\/assets\/pdf\/tigit-ca\.pdf$/);
+  await expect(page.locator(".manual-download")).toHaveAttribute("download", "");
+
+  await page.setViewportSize({ width: 1600, height: 900 });
+  const manualFlowBox = await page.locator(".md-figure:has(img[src$='manual-flow.mmd.svg']) .md-figure-inner").boundingBox();
+  if (!manualFlowBox) throw new Error("The manual workflow diagram is not measurable");
+  expect(manualFlowBox.width).toBeLessThanOrEqual(610);
+
+  const footer = page.locator("footer");
+  await expect(footer).toContainText("Els autors");
+  await expect(footer).not.toContainText("Universitat Rovira i Virgili");
+  await expect(footer.locator(".footer-product-credit")).toContainText("unaltraweb");
+  await expect(footer.locator(".footer-brand-link")).toHaveText("dosquartsdedocs");
+  await expect(footer.locator(".footer-product-credit .footer-logo-stack")).toHaveCount(1);
+
+  await page.goto(siteUrl("/ca/chapters/fonts-preparacio-dades/"));
+  const sourceVerificationBox = await page.locator(".md-figure:has(img[src$='data-source-verification.mmd.svg']) .md-figure-inner").boundingBox();
+  const sourceLevelsBox = await page.locator(".md-figure:has(img[src$='data-source-levels.mmd.svg']) .md-figure-inner").boundingBox();
+  const accessModesBox = await page.locator(".md-figure:has(img[src$='data-access-modes.mmd.svg']) .md-figure-inner").boundingBox();
+  const preparationPipelineBox = await page.locator(".md-figure:has(img[src$='data-preparation-pipeline.mmd.svg']) .md-figure-inner").boundingBox();
+  if (!sourceVerificationBox || !sourceLevelsBox || !accessModesBox || !preparationPipelineBox) {
+    throw new Error("The data-source diagrams are not measurable");
+  }
+  expect(sourceVerificationBox.width).toBeLessThanOrEqual(562);
+  expect(sourceLevelsBox.width).toBeLessThanOrEqual(546);
+  expect(preparationPipelineBox.width).toBeLessThanOrEqual(818);
+  expect(accessModesBox.width).toBeGreaterThan(sourceVerificationBox.width);
+
+  await page.goto(siteUrl("/ca/chapters/color/"));
+  const retinaFigure = page.locator(".md-subfigure-set:has(img[src$='schematic-eye-retina-cells-ca.svg'])");
+  await expect(retinaFigure).toHaveAttribute("data-layout", "a+b/c");
+  await expect(retinaFigure.locator(".md-subfigure-row")).toHaveCount(2);
+  await expect(retinaFigure.locator(".md-subfigure-row").first()).toHaveAttribute("data-count", "2");
+  await expect(retinaFigure.locator(".md-subfigure-row").nth(1)).toHaveAttribute("data-count", "1");
+  await expect(retinaFigure.locator(".md-subfigure img")).toHaveCount(3);
+  await expectImageLoaded(retinaFigure.locator("img[src$='schematic-human-eye-ca.svg']"));
+  await expectImageLoaded(retinaFigure.locator("img[src$='rod-cone-photoreceptors-ca.svg']"));
+  const retinaLocation = retinaFigure.locator("img[src$='schematic-eye-retina-cells-ca.svg']");
+  await expectImageLoaded(retinaLocation);
+  await expect(retinaLocation).toHaveAttribute("data-figure-width-web", "62rem");
+  await expect(retinaLocation).toHaveAttribute("data-figure-width-pdf", "100%");
+  await expect(retinaLocation.locator("xpath=..")).toHaveAttribute("style", /--md-subfigure-image-width: 62rem/);
+  await retinaFigure.scrollIntoViewIfNeeded();
+  await page.screenshot({ path: join(renderOut, `manual-color-retina-${testInfo.project.name}.png`) });
+
+  await page.setViewportSize({ width: 390, height: 740 });
+  await expectNoHorizontalOverflow(page);
+});
+
 test("unaltredocs profile renders the documentation collection", async ({ page }, testInfo) => {
   test.skip(!isDocsProfile, "unaltredocs profile only");
 
@@ -915,10 +973,10 @@ test("unaltredocs profile renders the documentation collection", async ({ page }
 
 test("coffee mode uses coffee accents", async ({ page }) => {
   await page.goto(siteUrl(startPath));
-  await page.evaluate(() => localStorage.setItem("theme", "sepia"));
+  await page.evaluate(() => localStorage.setItem("theme", "cafe"));
   await page.reload();
 
-  await expectThemeState(page, "sepia");
+  await expectThemeState(page, "cafe");
   await expectCoffeeAccent(page);
   if (isDocsProfile) {
     await expect(page.locator("[data-documentation-theme-label]")).toContainText("Coffee");
@@ -930,7 +988,7 @@ test("theme toggle rotates through explicit modes", async ({ page }) => {
   await page.evaluate(() => localStorage.setItem("theme", "system"));
   await page.reload();
 
-  const expectedSettings = ["light", "sepia", "dark", "system"];
+  const expectedSettings = ["light", "cafe", "dark", "system"];
   for (const expected of expectedSettings) {
     const themeEvent = page.evaluate(() => {
       return new Promise((resolve) => {
@@ -961,9 +1019,9 @@ test("callout shorthand upgrades nested blockquotes", async ({ page }, testInfo)
   });
 
   await expect(page.locator("[data-callout-fixture] > blockquote").first()).not.toHaveClass(/uw-callout/);
-  await expect(page.locator("[data-callout-fixture] [data-callout='info']")).toContainText("NOTE");
+  await expect(page.locator("[data-callout-fixture] [data-callout='info']")).toContainText("NOTA");
   await expect(page.locator("[data-callout-fixture] [data-callout='info']")).toContainText("Info callout");
-  await expect(page.locator("[data-callout-fixture] [data-callout='objectives']")).toContainText("LEARNING OBJECTIVES");
+  await expect(page.locator("[data-callout-fixture] [data-callout='objectives']")).toContainText("OBJECTIUS D'APRENENTATGE");
   await expect(page.locator("[data-callout-fixture] [data-callout='objectives']")).toContainText("Learning goals");
   await page.locator("[data-callout-fixture]").scrollIntoViewIfNeeded();
   await page.screenshot({ path: join(renderOut, `callouts-${activeProfile}-${testInfo.project.name}.png`), fullPage: true });
@@ -1142,7 +1200,7 @@ test("publication page does not overflow on mobile", async ({ page }, testInfo) 
   }
 
   if (activeProfile === "unaltremanual") {
-    await page.goto(siteUrl("/en/chapters/figures-diagrams/"));
+    await page.goto(siteUrl("/ca/chapters/fonts-preparacio-dades/"));
     await page.evaluate(() => localStorage.setItem("unaltrawebManualSidebarCollapsed", "false"));
     await page.reload();
     await expect(page.locator(".manual-layout")).toBeVisible();
@@ -1174,7 +1232,7 @@ test("publication page does not overflow on mobile", async ({ page }, testInfo) 
     await page.locator(".manual-navbar-toc-toggle").click();
     await expect(page.locator(".manual-layout")).toHaveClass(/manual-sidebar-collapsed/);
     await expectNoHorizontalOverflow(page);
-    await page.screenshot({ path: join(renderOut, `manual-mobile-${testInfo.project.name}.png`), fullPage: true });
+    await page.screenshot({ path: join(renderOut, `manual-mobile-${testInfo.project.name}.png`) });
     return;
   }
 
@@ -1216,4 +1274,26 @@ test("publication page does not overflow on mobile", async ({ page }, testInfo) 
   }
   await expectNoHorizontalOverflow(page);
   await page.screenshot({ path: join(renderOut, `${activeProfile}-publications-mobile-${testInfo.project.name}.png`), fullPage: true });
+});
+
+test("Vega pilot renders on desktop and mobile", async ({ page }) => {
+  test.skip(activeProfile !== "unaltremanual", "unaltremanual profile only");
+  const imageSelector = "img[src$='non-principal-housing-ordered-bars-tarragones-2021.svg']";
+
+  for (const viewport of [
+    { width: 1280, height: 900 },
+    { width: 390, height: 844 },
+  ]) {
+    await page.setViewportSize(viewport);
+    await page.goto(siteUrl("/ca/chapters/semiologia-visualitzacio/"));
+    const image = page.locator(imageSelector);
+    await expect(image).toHaveCount(1);
+    await expect(image).toHaveAttribute(
+      "alt",
+      "Barres ordenades del percentatge d'habitatge no principal als municipis del Tarragonès",
+    );
+    await expect(image).toHaveAttribute("data-figure-width", "54rem");
+    await expectImageLoaded(image);
+    await expectNoHorizontalOverflow(page);
+  }
 });

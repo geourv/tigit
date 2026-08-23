@@ -1,5 +1,5 @@
 ---
-title: "Treemap: places d'allotjament per tipus d'establiment a Vila-seca"
+title: "Treemap: establiments amb més places d'allotjament a Vila-seca"
 lang: ca
 ref: treemap_allotjament_vilaseca
 format:
@@ -14,7 +14,7 @@ unaltraweb_compute:
   engine: r
   mode: figure
   inputs:
-    - _practices/tigit-projecte-territorial/data/raw/allotjaments-vila-seca-convencionals.csv
+    - _practices/tigit-projecte-territorial/data/processed/tourism-accommodation-vila-seca-geocoding.csv
   outputs:
     - assets/img/data-visualization/treemap-allotjament-vilaseca.svg
 ---
@@ -35,113 +35,161 @@ find_project_root <- function(start) {
 }
 
 root <- find_project_root(getwd())
-suppressPackageStartupMessages(library(ggplot2))
+suppressPackageStartupMessages({
+  library(ggplot2)
+  library(treemapify)
+})
 
 allotjaments <- read.csv(
-  file.path(root, "_practices/tigit-projecte-territorial/data/raw/allotjaments-vila-seca-convencionals.csv"),
-  fileEncoding = "UTF-8"
+  file.path(
+    root,
+    "_practices/tigit-projecte-territorial/data/processed/tourism-accommodation-vila-seca-geocoding.csv"
+  ),
+  fileEncoding = "UTF-8",
+  stringsAsFactors = FALSE,
+  check.names = FALSE
 )
 
-d <- aggregate(
-  as.numeric(as.character(total_places)) ~ tipus_establiment,
-  data = allotjaments,
-  FUN = sum,
-  na.rm = TRUE
-)
-names(d) <- c("tipus", "places")
-d$tipus <- factor(
-  d$tipus,
-  levels = c("Hotels", "Càmpings", "Apartaments Turístics", "Autocaravanes")
-)
-d <- d[!is.na(d$tipus), ]
-d <- d[order(d$places, decreasing = TRUE), ]
+allotjaments$registered_places <- as.numeric(allotjaments$registered_places)
+allotjaments <- allotjaments[
+  !is.na(allotjaments$registered_places) &
+    allotjaments$registered_places > 0 &
+    nzchar(trimws(allotjaments$public_name)),
+  c(
+    "registration_number",
+    "establishment_type",
+    "public_name",
+    "registered_places",
+    "source_url"
+  )
+]
+allotjaments <- allotjaments[
+  order(-allotjaments$registered_places, allotjaments$registration_number),
+]
 
-## Layout squarified per a un treemap (algorisme constructiu senzill)
-squarify <- function(areas, x0 = 0, y0 = 0, w = 1, h = 1) {
-  areas <- sort(areas, decreasing = TRUE)
-  total <- sum(areas)
-  n <- length(areas)
-  sx <- x0
-  sy <- y0
-  sw <- w
-  sh <- h
-  out <- data.frame(x = numeric(0), y = numeric(0), w = numeric(0), h = numeric(0))
-  i <- 1
-  while (i <= n) {
-    ## orientació segons el costat més llarg
-    if (sw >= sh) {
-      ## fila horitzontal: cada cel·la ocupa l'alçada proporcional
-      remaining <- areas[i:n]
-      row_sum <- sum(remaining)
-      row_h <- sh
-      each_w <- remaining * sw / row_sum
-      cx <- sx
-      for (k in seq_len(n - i + 1)) {
-        out <- rbind(out, data.frame(x = cx, y = sy, w = each_w[k], h = row_h))
-        cx <- cx + each_w[k]
-      }
-      break
-    } else {
-      ## columna vertical: cada cel·la ocupa l'amplada proporcional
-      remaining <- areas[i:n]
-      row_sum <- sum(remaining)
-      row_w <- sw
-      each_h <- remaining * sh / row_sum
-      cy <- sy
-      for (k in seq_len(n - i + 1)) {
-        out <- rbind(out, data.frame(x = sx, y = cy, w = row_w, h = each_h[k]))
-        cy <- cy + each_h[k]
-      }
-      break
-    }
-  }
-  out
+# Aquest tall és editorial, no una categoria del registre. Si canvia la
+# instantània oficial, cal revisar de nou tant el tall com el titular.
+stopifnot(
+  nrow(allotjaments) == 17L,
+  sum(allotjaments$registered_places) == 9985
+)
+
+top5 <- allotjaments[seq_len(5L),]
+resta <- allotjaments[-seq_len(5L),]
+
+noms_breus <- c(
+  "HT-000669" = "Estival Park Salou",
+  "HT-000855" = "Gold River",
+  "KT-000085" = "Càmping La Pineda",
+  "HT-000760" = "Hotel PortAventura",
+  "HT-000739" = "Palas Pineda"
+)
+noms_etiqueta <- c(
+  "HT-000669" = "Estival Park\nSalou",
+  "HT-000855" = "Gold River",
+  "KT-000085" = "Càmping\nLa Pineda",
+  "HT-000760" = "Hotel\nPortAventura",
+  "HT-000739" = "Palas Pineda"
+)
+stopifnot(all(top5$registration_number %in% names(noms_breus)))
+
+d <- data.frame(
+  registration_number = c("ALTRES", top5$registration_number),
+  nom = c(
+    sprintf("Altres %d establiments", nrow(resta)),
+    unname(noms_breus[top5$registration_number])
+  ),
+  nom_etiqueta = c(
+    sprintf("Altres %d\nestabliments", nrow(resta)),
+    unname(noms_etiqueta[top5$registration_number])
+  ),
+  places = c(sum(resta$registered_places), top5$registered_places),
+  grup = c(
+    "Altres establiments",
+    rep("Cinc establiments amb més places", nrow(top5))
+  ),
+  stringsAsFactors = FALSE
+)
+d <- d[order(-d$places, d$registration_number),]
+d$percentatge <- d$places / sum(d$places)
+
+format_places <- function(x) {
+  format(x, big.mark = ".", scientific = FALSE, trim = TRUE)
 }
 
-## assignem àrees proporcionals a les places (escala en píxels lògics)
-sc <- squarify(d$places, 0, 0, 100, 61)
-d$x <- sc$x; d$y <- sc$y; d$w <- sc$w; d$h <- sc$h
+format_percent <- function(x) {
+  formatC(100 * x, format = "f", digits = 1, decimal.mark = ",")
+}
 
-pal <- c(
-  "Hotels" = "#2171b5",
-  "Càmpings" = "#6b8fb5",
-  "Apartaments Turístics" = "#a9c4e0",
-  "Autocaravanes" = "#d3dce0"
+d$etiqueta <- paste0(
+  d$nom_etiqueta,
+  "\n",
+  format_places(d$places),
+  " places\n",
+  format_percent(d$percentatge),
+  " %"
+)
+d$grup <- factor(
+  d$grup,
+  levels = c("Cinc establiments amb més places", "Altres establiments")
 )
 
-fig <- ggplot(d, aes(xmin = x, ymin = y, xmax = x + w, ymax = y + h)) +
-  geom_rect(
-    aes(fill = tipus),
-    color = "white",
-    linewidth = 0.8,
-    alpha = 0.95
+fig <- ggplot(d, aes(area = places, fill = grup, label = etiqueta)) +
+  treemapify::geom_treemap(
+    layout = "squarified",
+    start = "topleft",
+    colour = "#ffffff",
+    linewidth = 1.3
   ) +
-  geom_text(
-    aes(x = x + w / 2, y = y + h / 2, label = sprintf("%s\n%d places", tipus, places)),
-    size = 3.3,
-    color = "#ffffff",
+  treemapify::geom_treemap_text(
+    layout = "squarified",
+    start = "topleft",
+    place = "centre",
+    grow = FALSE,
+    reflow = FALSE,
+    min.size = 8.5,
+    padding.x = grid::unit(1.5, "mm"),
+    padding.y = grid::unit(1.5, "mm"),
+    colour = "#17202a",
+    size = 13,
+    lineheight = 0.95,
     fontface = "bold"
   ) +
-  scale_fill_manual(values = pal) +
-  coord_equal() +
-  labs(
-    title = "Places d'allotjament per tipus d'establiment a Vila-seca",
-    caption = "Font: registre d'allotjaments de la costa de Vila-seca (dades de la pràctica), total de places."
+  scale_fill_manual(
+    values = c(
+      "Cinc establiments amb més places" = "#9ecae1",
+      "Altres establiments" = "#d9e2e8"
+    ),
+    guide = "none"
   ) +
-  theme_minimal(base_size = 12) +
+  labs(
+    title = "Els cinc establiments amb més capacitat reuneixen el 66,3 % de les places",
+    subtitle = "Allotjament convencional registrat al municipi de Vila-seca",
+    caption = paste(
+      "Font: Generalitat de Catalunya, Departament d'Empresa i Treball,",
+      "Registre de Turisme de Catalunya (t2h3-cgys).",
+      "Dades actualitzades el 31-07-2026; consulta 22-08-2026.",
+      "Municipi de Vila-seca; sense habitatges d'ús turístic ni llars compartides.",
+      "Places registrades, no ocupació.",
+      sep = "\n"
+    )
+  ) +
+  theme_void(base_size = 12) +
   theme(
-    panel.grid = element_blank(),
-    axis.title = element_blank(),
-    axis.text = element_blank(),
-    axis.ticks = element_blank(),
-    plot.title = element_text(face = "bold", size = 13, hjust = 0, color = "#17202a"),
-    plot.caption = element_text(size = 8, color = "#52616b", hjust = 0, margin = margin(t = 8)),
-    legend.position = "none"
+    plot.title = element_text(face = "bold", size = 13, colour = "#17202a"),
+    plot.subtitle = element_text(size = 10.5, colour = "#3f4d55", margin = margin(b = 8)),
+    plot.caption = element_text(
+      size = 7.5,
+      colour = "#52616b",
+      hjust = 0,
+      margin = margin(t = 8)
+    ),
+    plot.margin = margin(12, 12, 10, 12)
   )
 
 output <- file.path(root, "assets/img/data-visualization/treemap-allotjament-vilaseca.svg")
 dir.create(dirname(output), showWarnings = FALSE, recursive = TRUE)
-ggsave(output, fig, width = 8, height = 6, device = svglite::svglite)
+ggsave(output, fig, width = 8, height = 5.5, units = "in", bg = "white", device = svglite::svglite)
 ```
 
-![Treemap de les places d'allotjament per tipus d'establiment a Vila-seca, amb àrea proporcional als recomptes]({{ site.baseurl }}/assets/img/data-visualization/treemap-allotjament-vilaseca.svg "L'àrea de cada rectangle és proporcional al total de places d'una tipologia. Els rectangles s'ordenen per ocupar el quadre d'una manera compacta; la comparació de magnituds per superfície és menys precisa que per longitud o posició, però el format compacte comunica ràpidament com es reparteix un total entre parts.")
+![Treemap de les 9.985 places registrades als allotjaments convencionals del municipi de Vila-seca: els cinc establiments amb més places sumen 6.616 places, el 66,3 %, i els altres dotze en sumen 3.369, el 33,7 %]({{ site.baseurl }}/assets/img/data-visualization/treemap-allotjament-vilaseca.svg "Cada rectangle representa un establiment entre els cinc amb més capacitat o l'agregat dels altres dotze. L'àrea és proporcional a les places registrades; la figura mostra concentració, no ocupació ni pernoctacions.")

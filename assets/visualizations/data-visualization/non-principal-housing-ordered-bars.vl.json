@@ -1,0 +1,82 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "description": "Percentatge d'habitatge no principal als municipis del Tarragonès, ordenat de més a menys.",
+  "title": {
+    "text": "Habitatge no principal als municipis del Tarragonès (2021)",
+    "subtitle": "Font: Idescat, habitatges per tipus d'habitatge, 2021."
+  },
+  "data": {
+    "url": "../../../_practices/tigit-projecte-territorial/data/processed/municipal-indicators-tarragones-2021.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "year": "number",
+        "housing_non_main_pct": "number"
+      }
+    }
+  },
+  "transform": [
+    {
+      "filter": "datum.year === 2021 && datum.indicator_status === 'ok' && isValid(datum.housing_non_main_pct)"
+    }
+  ],
+  "width": 560,
+  "height": {
+    "step": 18
+  },
+  "config": {
+    "background": "#FFFFFF"
+  },
+  "mark": {
+    "type": "bar",
+    "size": 13,
+    "cornerRadiusEnd": 2
+  },
+  "encoding": {
+    "x": {
+      "field": "housing_non_main_pct",
+      "type": "quantitative",
+      "scale": {
+        "domain": [0, 70],
+        "nice": false,
+        "zero": true
+      },
+      "axis": {
+        "title": "Percentatge",
+        "values": [0, 20, 40, 60],
+        "labelExpr": "datum.label + '%'"
+      }
+    },
+    "y": {
+      "field": "municipality",
+      "type": "nominal",
+      "sort": {
+        "field": "housing_non_main_pct",
+        "order": "descending"
+      },
+      "axis": {
+        "title": null,
+        "labelLimit": 190,
+        "labelPadding": 6
+      }
+    },
+    "color": {
+      "datum": "Habitatge no principal",
+      "type": "nominal",
+      "legend": null
+    },
+    "tooltip": [
+      {
+        "field": "municipality",
+        "type": "nominal",
+        "title": "Municipi"
+      },
+      {
+        "field": "housing_non_main_pct",
+        "type": "quantitative",
+        "title": "Habitatge no principal (%)",
+        "format": ".1f"
+      }
+    ]
+  }
+}

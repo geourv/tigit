@@ -42,6 +42,7 @@ suppressPackageStartupMessages(library(classInt))
 
 gpkg <- file.path(root, "_practices/tigit-projecte-territorial/data/processed/tarragones-boundaries-icgc-20260120.gpkg")
 mun <- sf::st_read(gpkg, layer = "municipalities_250k", quiet = TRUE)
+comarca <- sf::st_read(gpkg, layer = "comarca_250k", quiet = TRUE)
 
 indicators <- read.csv(
   file.path(root, "_practices/tigit-projecte-territorial/data/processed/municipal-indicators-tarragones-2021.csv"),
@@ -54,39 +55,58 @@ indicators$mun_code <- as.character(indicators$mun_code)
 indicators$mun_code <- ifelse(nchar(indicators$mun_code) == 5, paste0("0", indicators$mun_code), indicators$mun_code)
 
 d <- merge(mun, indicators, by.x = "CODIMUNI", by.y = "mun_code", all.x = TRUE)
-stopifnot(nrow(d) == 22, any(!is.na(d$housing_non_main_pct)))
+stopifnot(
+  nrow(d) == 22,
+  !anyNA(d$housing_non_main_pct),
+  all(d$indicator_status == "ok")
+)
 
-## Exemple revisat: percentatge normalitzat, classes quantils explícites i absències separades.
-cls <- classIntervals(d$housing_non_main_pct[!is.na(d$housing_non_main_pct)], n = 5, style = "quantile")
-d$class <- cut(d$housing_non_main_pct, breaks = cls$brks, include.lowest = TRUE)
+## Exemple revisat: percentatge normalitzat i classes quantils explícites.
+cls <- classIntervals(d$housing_non_main_pct, n = 5, style = "quantile")
+format_percent <- function(x) formatC(x, format = "f", digits = 1, decimal.mark = ",")
+class_labels <- paste0(
+  format_percent(head(cls$brks, -1)),
+  "–",
+  format_percent(tail(cls$brks, -1))
+)
+d$class <- cut(
+  d$housing_non_main_pct,
+  breaks = cls$brks,
+  labels = class_labels,
+  include.lowest = TRUE
+)
 
 fig <- ggplot(d) +
   geom_sf(aes(fill = class), color = "#ffffff", linewidth = 0.3) +
+  geom_sf(data = comarca, fill = NA, color = "#36454f", linewidth = 0.45) +
   scale_fill_brewer(
     palette = "Blues",
     direction = 1,
     drop = FALSE,
     na.value = "#e8eaed",
-    name = "% habitatge\nno principal"
+    name = "% d'habitatge no principal (límits arrodonits)",
+    guide = guide_legend(
+      title.position = "top",
+      title.hjust = 0.5,
+      nrow = 2,
+      byrow = TRUE,
+      keywidth = grid::unit(9, "mm"),
+      keyheight = grid::unit(4, "mm")
+    )
   ) +
-  labs(
-    title = "Percentatge d'habitatge no principal al Tarragonès (2021)",
-    subtitle = "Indicador normalitzat, classes quantils i absències separades de la llegenda",
-    caption = "Percentatge d'habitatge no principal sobre el total municipal. Font: Idescat, habitatges per tipus d'habitatge, 2021."
-  ) +
-  theme_void() +
+  coord_sf(datum = NA) +
+  theme_void(base_size = 11) +
   theme(
-    plot.title = element_text(face = "bold", size = 13, hjust = 0, color = "#17202a"),
-    plot.subtitle = element_text(size = 10, color = "#52616b", hjust = 0, margin = margin(b = 6)),
-    plot.caption = element_text(size = 8, color = "#52616b", hjust = 0, margin = margin(t = 6)),
-    legend.title = element_text(face = "bold", size = 9, color = "#17202a"),
-    legend.text = element_text(color = "#52616b", size = 8),
-    legend.position = "right"
+    legend.title = element_text(face = "bold", size = 10, color = "#17202a"),
+    legend.text = element_text(color = "#52616b", size = 8.5),
+    legend.position = "bottom",
+    legend.margin = margin(t = 2),
+    plot.margin = margin(5, 5, 2, 5)
   )
 
 output <- file.path(root, "assets/img/thematic-cartography/choropleth-normalized-reviewed-tarragones-2021.svg")
 dir.create(dirname(output), showWarnings = FALSE, recursive = TRUE)
-ggsave(output, fig, width = 7, height = 7.5, device = svglite::svglite)
+ggsave(output, fig, width = 4, height = 3.2, units = "in", bg = "white", device = svglite::svglite)
 ```
 
-![Coropleta del percentatge d'habitatge no principal als municipis del Tarragonès, amb classes quantils explícites]({{ site.baseurl }}/assets/img/thematic-cartography/choropleth-normalized-reviewed-tarragones-2021.svg "L'indicador normalitzat permet comparar la intensitat entre municipis independents de la mida del parc. Les classes quantils reparteixen aproximadament el mateix nombre de municipis per classe i la llegenda mostra els límits exactes. Exemple didàctic construït amb dades reals del Tarragonès (2021).")
+![Coropleta del percentatge d'habitatge no principal als 22 municipis del Tarragonès, amb cinc classes quantils]({{ site.baseurl }}/assets/img/thematic-cartography/choropleth-normalized-reviewed-tarragones-2021.svg "L'indicador normalitzat permet comparar municipis independentment de la mida del parc residencial. Les classes quantils reparteixen aproximadament el mateix nombre de municipis per classe; la llegenda mostra els límits arrodonits a una decimal.")

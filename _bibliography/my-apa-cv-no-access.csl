@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0" demote-non-dropping-particle="never">
   <info>
-    <title>My American Psychological Association 6th edition (curriculum vitae, bold title, sorted by descending date and document type)</title>
+    <title>My American Psychological Association 6th edition (curriculum vitae, bold title, alphabetical bibliography)</title>
     <title-short>my-APA-cv</title-short>
     <link href="http://www.zotero.org/styles/apa-cv" rel="template"/>
     <author>
@@ -11,7 +11,7 @@
     <category citation-format="author-date"/>
     <category field="psychology"/>
     <category field="generic-base"/>
-    <summary>APA style for CVs, sorting by date (descending), then title, then author. Separating document types and with bold title</summary>
+    <summary>APA style with bold titles and an alphabetical author-date bibliography.</summary>
     <updated>2016-07-19T04:33:40+00:00</updated>
     <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
   </info>
@@ -442,22 +442,16 @@
     </choose>
   </macro>
 
-<macro name="sort-key">
-<choose>
-<if type="article-journal article-magazine" match="any">
-<text value="1"/>
-</if>
-<else-if type="book chapter" match="any">
-<text value="2"/>
-</else-if>
-<else-if type="paper-conference" match="any">
-<text value="3"/>
-</else-if>
-<else>
-<text value="4"/>
-</else>
-</choose>
-</macro>
+  <macro name="access">
+    <choose>
+      <if variable="DOI">
+        <text variable="DOI" prefix="https://doi.org/"/>
+      </if>
+      <else-if variable="URL">
+        <text variable="URL"/>
+      </else-if>
+    </choose>
+  </macro>
 
   <citation et-al-min="6" et-al-use-first="1" et-al-subsequent-min="3" et-al-subsequent-use-first="1" disambiguate-add-year-suffix="true" disambiguate-add-names="true" disambiguate-add-givenname="true" collapse="year" givenname-disambiguation-rule="primary-name">
     <sort>
@@ -474,10 +468,9 @@
   </citation>
   <bibliography hanging-indent="true" et-al-min="6" et-al-use-first="6" et-al-use-last="true" entry-spacing="0" line-spacing="2">
     <sort>
-<key macro="sort-key"/>
-      <key macro="issued-sort" sort="descending"/>
-      <key macro="title"/>
       <key macro="author"/>
+      <key macro="issued-sort"/>
+      <key macro="title"/>
     </sort>
     <layout>
       <group suffix=".">
@@ -495,6 +488,7 @@
         </group>
       </group>
       <text macro="original-date" prefix=" "/>
+      <text macro="access" prefix=" " suffix="."/>
     </layout>
   </bibliography>
 </style>

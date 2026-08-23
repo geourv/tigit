@@ -159,7 +159,7 @@
 <text x='67.53' y='423.93' text-anchor='middle' style='font-size: 9.60px;fill: #4D4D4D; font-family: "Nimbus Sans";' textLength='29.31px' lengthAdjust='spacingAndGlyphs'>Classe</text>
 <text x='324.00' y='423.93' text-anchor='middle' style='font-size: 9.60px;fill: #4D4D4D; font-family: "Nimbus Sans";' textLength='21.28px' lengthAdjust='spacingAndGlyphs'>Sexe</text>
 <text x='580.47' y='423.93' text-anchor='middle' style='font-size: 9.60px;fill: #4D4D4D; font-family: "Nimbus Sans";' textLength='60.27px' lengthAdjust='spacingAndGlyphs'>Supervivència</text>
-<text x='324.00' y='16.18' text-anchor='middle' style='font-size: 14.00px; font-weight: bold;fill: #17202A; font-family: "Nimbus Sans";' textLength='363.19px' lengthAdjust='spacingAndGlyphs'>Passatgers del Titanic per classe, sexe i supervivència</text>
+<text x='324.00' y='16.18' text-anchor='middle' style='font-size: 14.00px; font-weight: bold;fill: #17202A; font-family: "Nimbus Sans";' textLength='398.33px' lengthAdjust='spacingAndGlyphs'>Persones a bord del Titanic per classe, sexe i supervivència</text>
 </g>
 </g>
 </svg>

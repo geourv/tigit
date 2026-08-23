@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="792pt" height="446.4pt" viewBox="0 0 792 446.4" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.5, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 446.4
+L 792 446.4
+L 792 0
+L 0 0
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 171.468 301.226572
+C 259.1424 301.226572 278.6256 291.70486 366.3 291.70486
+L 366.3 100.712304
+C 278.6256 100.712304 259.1424 110.234016 171.468 110.234016
+z
+" clip-path="url(#p720d1f2483)" style="fill: #2878a5; opacity: 0.7"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 171.468 323.58408
+C 259.1424 323.58408 278.6256 320.410176 366.3 320.410176
+L 366.3 298.052668
+C 278.6256 298.052668 259.1424 301.226572 171.468 301.226572
+z
+" clip-path="url(#p720d1f2483)" style="fill: #2a9d8f; opacity: 0.7"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 171.468 329.483977
+C 259.1424 329.483977 278.6256 332.657881 366.3 332.657881
+L 366.3 326.757984
+C 278.6256 326.757984 259.1424 323.58408 171.468 323.58408
+z
+" clip-path="url(#p720d1f2483)" style="fill: #e9b949; opacity: 0.7"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 171.468 331.701984
+C 259.1424 331.701984 278.6256 341.223696 366.3 341.223696
+L 366.3 339.005689
+C 278.6256 339.005689 259.1424 329.483977 171.468 329.483977
+z
+" clip-path="url(#p720d1f2483)" style="fill: #d96c4d; opacity: 0.7"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 379.368 196.862894
+C 472.3884 196.862894 493.0596 193.68899 586.08 193.68899
+L 586.08 97.5384
+C 493.0596 97.5384 472.3884 100.712304 379.368 100.712304
+z
+" clip-path="url(#p720d1f2483)" style="fill: #2878a5; opacity: 0.66"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 379.368 281.368949
+C 472.3884 281.368949 493.0596 284.542853 586.08 284.542853
+L 586.08 200.036798
+C 493.0596 200.036798 472.3884 196.862894 379.368 196.862894
+z
+" clip-path="url(#p720d1f2483)" style="fill: #2878a5; opacity: 0.66"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 379.368 291.70486
+C 472.3884 291.70486 493.0596 301.226572 586.08 301.226572
+L 586.08 290.890661
+C 493.0596 290.890661 472.3884 281.368949 379.368 281.368949
+z
+" clip-path="url(#p720d1f2483)" style="fill: #2878a5; opacity: 0.66"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 379.368 320.410176
+C 472.3884 320.410176 493.0596 329.931888 586.08 329.931888
+L 586.08 307.57438
+C 493.0596 307.57438 472.3884 298.052668 379.368 298.052668
+z
+" clip-path="url(#p720d1f2483)" style="fill: #2a9d8f; opacity: 0.66"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 379.368 332.657881
+C 472.3884 332.657881 493.0596 342.179593 586.08 342.179593
+L 586.08 336.279696
+C 493.0596 336.279696 472.3884 326.757984 379.368 326.757984
+z
+" clip-path="url(#p720d1f2483)" style="fill: #e9b949; opacity: 0.66"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 379.368 341.223696
+C 472.3884 341.223696 493.0596 344.3976 586.08 344.3976
+L 586.08 342.179593
+C 493.0596 342.179593 472.3884 339.005689 379.368 339.005689
+z
+" clip-path="url(#p720d1f2483)" style="fill: #d96c4d; opacity: 0.66"/>
+   </g>
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'DejaVu Sans'; fill: #17202a" transform="translate(1.264734 217.945477)">Allotjament convencional</text>
+    <text style="font-weight: 700; font-size: 10.5px; font-family: 'DejaVu Sans'; fill: #17202a" transform="translate(76.608797 229.785211)">9.985 places</text>
+   </g>
+   <g id="text_2">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #52616b" x="164.934" y="72.848026" transform="rotate(-0 164.934 72.848026)">TOTAL MUNICIPAL</text>
+   </g>
+   <g id="text_3">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #52616b" x="372.834" y="72.848026" transform="rotate(-0 372.834 72.848026)">TIPUS D'ESTABLIMENT</text>
+   </g>
+   <g id="text_4">
+    <text style="font-weight: 700; font-size: 8.5px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #52616b" x="592.614" y="72.848026" transform="rotate(-0 592.614 72.848026)">CATEGORIA REGISTRAL</text>
+   </g>
+   <g id="patch_12">
+    <path d="M 158.4 331.701984
+L 171.468 331.701984
+L 171.468 110.234016
+L 158.4 110.234016
+z
+" clip-path="url(#p720d1f2483)" style="fill: #263746; stroke: #17202a; stroke-width: 0.7; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 366.3 291.70486
+L 379.368 291.70486
+L 379.368 100.712304
+L 366.3 100.712304
+z
+" clip-path="url(#p720d1f2483)" style="fill: #2878a5; stroke: #17202a; stroke-width: 0.7; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_14">
+    <path d="M 366.3 320.410176
+L 379.368 320.410176
+L 379.368 298.052668
+L 366.3 298.052668
+z
+" clip-path="url(#p720d1f2483)" style="fill: #2a9d8f; stroke: #17202a; stroke-width: 0.7; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_15">
+    <path d="M 366.3 332.657881
+L 379.368 332.657881
+L 379.368 326.757984
+L 366.3 326.757984
+z
+" clip-path="url(#p720d1f2483)" style="fill: #e9b949; stroke: #17202a; stroke-width: 0.7; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_16">
+    <path d="M 366.3 341.223696
+L 379.368 341.223696
+L 379.368 339.005689
+L 366.3 339.005689
+z
+" clip-path="url(#p720d1f2483)" style="fill: #d96c4d; stroke: #17202a; stroke-width: 0.7; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_17">
+    <path d="M 586.08 193.68899
+L 599.148 193.68899
+L 599.148 97.5384
+L 586.08 97.5384
+z
+" clip-path="url(#p720d1f2483)" style="fill: #dce5ea; stroke: #17202a; stroke-width: 0.7; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_18">
+    <path d="M 586.08 284.542853
+L 599.148 284.542853
+L 599.148 200.036798
+L 586.08 200.036798
+z
+" clip-path="url(#p720d1f2483)" style="fill: #dce5ea; stroke: #17202a; stroke-width: 0.7; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_19">
+    <path d="M 586.08 301.226572
+L 599.148 301.226572
+L 599.148 290.890661
+L 586.08 290.890661
+z
+" clip-path="url(#p720d1f2483)" style="fill: #dce5ea; stroke: #17202a; stroke-width: 0.7; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_20">
+    <path d="M 586.08 329.931888
+L 599.148 329.931888
+L 599.148 307.57438
+L 586.08 307.57438
+z
+" clip-path="url(#p720d1f2483)" style="fill: #dce5ea; stroke: #17202a; stroke-width: 0.7; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_21">
+    <path d="M 586.08 344.3976
+L 599.148 344.3976
+L 599.148 336.279696
+L 586.08 336.279696
+z
+" clip-path="url(#p720d1f2483)" style="fill: #dce5ea; stroke: #17202a; stroke-width: 0.7; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_5">
+    <g id="patch_22">
+     <path d="M 383.544 206.740476
+L 448.482562 206.740476
+L 448.482562 185.676688
+L 383.544 185.676688
+z
+" style="fill: #ffffff; opacity: 0.88"/>
+    </g>
+    <text style="font-size: 8.4px; font-family: 'DejaVu Sans'; fill: #17202a" transform="translate(385.308 193.823376)">Hotels</text>
+    <text style="font-size: 8.4px; font-family: 'DejaVu Sans'; fill: #17202a" transform="translate(385.308 203.229538)">8.611 · 86,2 %</text>
+   </g>
+   <g id="text_6">
+    <g id="patch_23">
+     <path d="M 383.544 319.931316
+L 448.482562 319.931316
+L 448.482562 298.531528
+L 383.544 298.531528
+z
+" style="fill: #ffffff; opacity: 0.88"/>
+    </g>
+    <text style="font-size: 8.4px; font-family: 'DejaVu Sans'; fill: #17202a" transform="translate(385.308 307.014216)">Càmpings</text>
+    <text style="font-size: 8.4px; font-family: 'DejaVu Sans'; fill: #17202a" transform="translate(385.308 316.420378)">1.008 · 10,1 %</text>
+   </g>
+   <g id="text_7">
+    <g id="patch_24">
+     <path d="M 383.544 334.060018
+L 478.172625 334.060018
+L 478.172625 312.660231
+L 383.544 312.660231
+z
+" style="fill: #ffffff; opacity: 0.88"/>
+    </g>
+    <text style="font-size: 8.4px; font-family: 'DejaVu Sans'; fill: #17202a" transform="translate(385.308 321.142918)">Apartaments Turístics</text>
+    <text style="font-size: 8.4px; font-family: 'DejaVu Sans'; fill: #17202a" transform="translate(385.308 330.549081)">266 · 2,7 %</text>
+   </g>
+   <g id="text_8">
+    <g id="patch_25">
+     <path d="M 383.544 356.994394
+L 449.928938 356.994394
+L 449.928938 335.930607
+L 383.544 335.930607
+z
+" style="fill: #ffffff; opacity: 0.88"/>
+    </g>
+    <text style="font-size: 8.4px; font-family: 'DejaVu Sans'; fill: #17202a" transform="translate(385.308 344.077294)">Autocaravanes</text>
+    <text style="font-size: 8.4px; font-family: 'DejaVu Sans'; fill: #17202a" transform="translate(385.308 353.483457)">100 · 1,0 %</text>
+   </g>
+   <g id="text_9">
+    <g id="patch_26">
+     <path d="M 603.303 156.270968
+L 688.580578 156.270968
+L 688.580578 134.956422
+L 603.303 134.956422
+z
+" style="fill: #ffffff; opacity: 0.88"/>
+    </g>
+    <text style="font-size: 8.5px; font-family: 'DejaVu Sans'; fill: #17202a" transform="translate(605.088 143.200093)">4 estrelles superior</text>
+    <text style="font-size: 8.5px; font-family: 'DejaVu Sans'; fill: #17202a" transform="translate(605.088 152.718234)">4.335 · 43,4 %</text>
+   </g>
+   <g id="text_10">
+    <g id="patch_27">
+     <path d="M 603.303 252.947099
+L 669.014641 252.947099
+L 669.014641 231.632552
+L 603.303 231.632552
+z
+" style="fill: #ffffff; opacity: 0.88"/>
+    </g>
+    <text style="font-size: 8.5px; font-family: 'DejaVu Sans'; fill: #17202a" transform="translate(605.088 239.876224)">4 estrelles</text>
+    <text style="font-size: 8.5px; font-family: 'DejaVu Sans'; fill: #17202a" transform="translate(605.088 249.394365)">3.810 · 38,2 %</text>
+   </g>
+   <g id="text_11">
+    <g id="patch_28">
+     <path d="M 603.303 306.71589
+L 713.953078 306.71589
+L 713.953078 285.401343
+L 603.303 285.401343
+z
+" style="fill: #ffffff; opacity: 0.88"/>
+    </g>
+    <text style="font-size: 8.5px; font-family: 'DejaVu Sans'; fill: #17202a" transform="translate(605.088 293.645015)">Altres categories d'hotel¹</text>
+    <text style="font-size: 8.5px; font-family: 'DejaVu Sans'; fill: #17202a" transform="translate(605.088 303.163156)">466 · 4,7 %</text>
+   </g>
+   <g id="text_12">
+    <g id="patch_29">
+     <path d="M 603.303 329.410407
+L 669.014641 329.410407
+L 669.014641 308.09586
+L 603.303 308.09586
+z
+" style="fill: #ffffff; opacity: 0.88"/>
+    </g>
+    <text style="font-size: 8.5px; font-family: 'DejaVu Sans'; fill: #17202a" transform="translate(605.088 316.339532)">3 estrelles</text>
+    <text style="font-size: 8.5px; font-family: 'DejaVu Sans'; fill: #17202a" transform="translate(605.088 325.857673)">1.008 · 10,1 %</text>
+   </g>
+   <g id="text_13">
+    <g id="patch_30">
+     <path d="M 603.303 350.995921
+L 686.640187 350.995921
+L 686.640187 329.681374
+L 603.303 329.681374
+z
+" style="fill: #ffffff; opacity: 0.88"/>
+    </g>
+    <text style="font-size: 8.5px; font-family: 'DejaVu Sans'; fill: #17202a" transform="translate(605.088 337.925046)">Sense categoritzar</text>
+    <text style="font-size: 8.5px; font-family: 'DejaVu Sans'; fill: #17202a" transform="translate(605.088 347.443187)">366 · 3,7 %</text>
+   </g>
+  </g>
+  <g id="text_14">
+   <text style="font-weight: 700; font-size: 15px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #17202a" x="396" y="20.325656" transform="rotate(-0 396 20.325656)">Com es reparteixen 9.985 places d'allotjament registrades a Vila-seca</text>
+  </g>
+  <g id="text_15">
+   <text style="font-size: 9.5px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #3f4d55" x="396" y="33.48" transform="rotate(-0 396 33.48)">Capacitat administrativa registrada: no representa ocupació, pernoctacions ni desplaçaments de persones</text>
+  </g>
+  <g id="text_16">
+   <text style="font-size: 7.5px; font-family: 'DejaVu Sans'; fill: #52616b" transform="translate(15.84 426.261075)">¹ Inclou 5 estrelles, 1 estrella i la categoria «No aplica».</text>
+   <text style="font-size: 7.5px; font-family: 'DejaVu Sans'; fill: #52616b" transform="translate(15.84 435.019434)">Font: Generalitat de Catalunya, Registre de Turisme de Catalunya (t2h3-cgys). Dades actualitzades el 31-07-2026; consulta 22-08-2026. Sense habitatges d'ús turístic ni llars compartides.</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p720d1f2483">
+   <rect x="15.84" y="44.64" width="760.32" height="352.656"/>
+  </clipPath>
+ </defs>
+</svg>

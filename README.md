@@ -16,7 +16,15 @@ Aquest repositori és un lloc `unaltraweb` amb perfil `unaltremanual`. El manual
 ```bash
 make build
 make serve SITE_PROFILE=unaltremanual
+make visualization-status
+make visualization-render
+make visualization-check
+make test
+make manual-pdf-sync MANUAL_PDF_LANG=ca
+make manual-pdf-check
 ```
+
+Cal renderitzar les visualitzacions Vega declarades a `.vegavisuals.yml` abans de publicar-les; el build rebutja artefactes absents o desactualitzats. `make serve`, `make build`, `make test` i `make publish` regeneren i sincronitzen el PDF i la coberta públics abans de renderitzar el web, de manera que la descàrrega sempre correspon al mateix estat del manual.
 
 La web pública prevista és:
 

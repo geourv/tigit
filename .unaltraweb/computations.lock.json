@@ -58,7 +58,7 @@
         },
         {
           "path": "requirements-compute.R",
-          "sha256": "37c95a48770d46abcfd6536b5d1482e96507b3eddee8c7bde6bc1eef690afd6c"
+          "sha256": "8195a00459224580c308746f5238afa54bd655bba24d659dcbbdd1f7a8575344"
         },
         {
           "path": ".unaltraweb/computations.yml",
@@ -66,7 +66,7 @@
         }
       ],
       "engine": "r",
-      "fingerprint": "a4ff90397cfa8c3d336021c111b5239bf551a01621fc12aae2d08faeaabfb928",
+      "fingerprint": "422de303fbfaa77630fa9503cf8384c28ef23d1396aba666ccd4c7a3082baa77",
       "image": {
         "engine": "r",
         "environment": "local",
@@ -76,7 +76,7 @@
       "image_identity": {
         "available": "true",
         "digest": "",
-        "id": "sha256:873721b4cb9527ddaee56d897c1d1352d80b77e77387264071bdf9c91dc31dcf"
+        "id": "sha256:afeabe9291c1130a81e21b32ea053d485f584339e795e0097afe25115938aaa2"
       },
       "mode": "figure",
       "outputs": [
@@ -86,7 +86,7 @@
           "size": 25829
         }
       ],
-      "rendered_at": "2026-08-19T22:14:43+00:00"
+      "rendered_at": "2026-08-22T10:35:05+00:00"
     },
     "assets/quarto/data-visualization/ageing-housing-scatter-tarragones.qmd": {
       "dependencies": [
@@ -104,7 +104,7 @@
         },
         {
           "path": "requirements-compute.R",
-          "sha256": "37c95a48770d46abcfd6536b5d1482e96507b3eddee8c7bde6bc1eef690afd6c"
+          "sha256": "8195a00459224580c308746f5238afa54bd655bba24d659dcbbdd1f7a8575344"
         },
         {
           "path": ".unaltraweb/computations.yml",
@@ -112,7 +112,7 @@
         }
       ],
       "engine": "r",
-      "fingerprint": "189fef6286ad7438373597ab41c25ef62136e2d625d8f959b7ea96b27c84bd30",
+      "fingerprint": "b97da91dcb2306e4c57f3b206ec6e0980ceb75d665a487416df4998678c465d9",
       "image": {
         "engine": "r",
         "environment": "local",
@@ -122,7 +122,7 @@
       "image_identity": {
         "available": "true",
         "digest": "",
-        "id": "sha256:873721b4cb9527ddaee56d897c1d1352d80b77e77387264071bdf9c91dc31dcf"
+        "id": "sha256:afeabe9291c1130a81e21b32ea053d485f584339e795e0097afe25115938aaa2"
       },
       "mode": "figure",
       "outputs": [
@@ -132,13 +132,13 @@
           "size": 15386
         }
       ],
-      "rendered_at": "2026-08-19T22:14:34+00:00"
+      "rendered_at": "2026-08-22T10:35:09+00:00"
     },
     "assets/quarto/data-visualization/alluvial-titanic-survival.qmd": {
       "dependencies": [
         {
           "path": "assets/quarto/data-visualization/alluvial-titanic-survival.qmd",
-          "sha256": "5511d10c39779af6e7bed24588294cde952bfb499754f40e922fc20f982c3b25"
+          "sha256": "f061add2c2ffd053d559ce6cf12a9036977ae9db4dc41d647a5596564764b4d6"
         },
         {
           "path": "Dockerfile.compute-r",
@@ -146,7 +146,7 @@
         },
         {
           "path": "requirements-compute.R",
-          "sha256": "37c95a48770d46abcfd6536b5d1482e96507b3eddee8c7bde6bc1eef690afd6c"
+          "sha256": "8195a00459224580c308746f5238afa54bd655bba24d659dcbbdd1f7a8575344"
         },
         {
           "path": ".unaltraweb/computations.yml",
@@ -154,7 +154,7 @@
         }
       ],
       "engine": "r",
-      "fingerprint": "6e78bbb2163faebdc6c2f05aa3e5e548ee0ec35930b4a8027bd8ad65e0def39c",
+      "fingerprint": "ac8727c390c3ed9dd76d552873d7e9b291159308c463b383c7644f156b718279",
       "image": {
         "engine": "r",
         "environment": "local",
@@ -164,17 +164,17 @@
       "image_identity": {
         "available": "true",
         "digest": "",
-        "id": "sha256:873721b4cb9527ddaee56d897c1d1352d80b77e77387264071bdf9c91dc31dcf"
+        "id": "sha256:afeabe9291c1130a81e21b32ea053d485f584339e795e0097afe25115938aaa2"
       },
       "mode": "figure",
       "outputs": [
         {
           "path": "assets/img/data-visualization/alluvial-titanic-demo.svg",
-          "sha256": "0bb5d036e9f80f8d73c4628547f496dd309e2044f17bdd946a3954cd85a0df68",
-          "size": 227451
+          "sha256": "f96c41c59fc892d3b97eaa12c603d30f075401735dd8fcc2c272211b319c3c31",
+          "size": 227456
         }
       ],
-      "rendered_at": "2026-08-19T21:53:16+00:00"
+      "rendered_at": "2026-08-22T10:35:12+00:00"
     },
     "assets/quarto/data-visualization/boxplot-non-main-housing-tarragones.qmd": {
       "dependencies": [
@@ -192,7 +192,7 @@
         },
         {
           "path": "requirements-compute.R",
-          "sha256": "37c95a48770d46abcfd6536b5d1482e96507b3eddee8c7bde6bc1eef690afd6c"
+          "sha256": "8195a00459224580c308746f5238afa54bd655bba24d659dcbbdd1f7a8575344"
         },
         {
           "path": ".unaltraweb/computations.yml",
@@ -200,7 +200,7 @@
         }
       ],
       "engine": "r",
-      "fingerprint": "5b23d901c904b8ac6a908c97b8213a5317143364a3cf5c22be277681354d080b",
+      "fingerprint": "cad510a8dec602efe2301d32d69f4fae508539402414956da98278a4c625b536",
       "image": {
         "engine": "r",
         "environment": "local",
@@ -210,7 +210,7 @@
       "image_identity": {
         "available": "true",
         "digest": "",
-        "id": "sha256:873721b4cb9527ddaee56d897c1d1352d80b77e77387264071bdf9c91dc31dcf"
+        "id": "sha256:afeabe9291c1130a81e21b32ea053d485f584339e795e0097afe25115938aaa2"
       },
       "mode": "figure",
       "outputs": [
@@ -220,7 +220,7 @@
           "size": 8916
         }
       ],
-      "rendered_at": "2026-08-19T22:14:47+00:00"
+      "rendered_at": "2026-08-22T10:35:15+00:00"
     },
     "assets/quarto/data-visualization/boxplot-species-iris.qmd": {
       "dependencies": [
@@ -234,7 +234,7 @@
         },
         {
           "path": "requirements-compute.R",
-          "sha256": "37c95a48770d46abcfd6536b5d1482e96507b3eddee8c7bde6bc1eef690afd6c"
+          "sha256": "8195a00459224580c308746f5238afa54bd655bba24d659dcbbdd1f7a8575344"
         },
         {
           "path": ".unaltraweb/computations.yml",
@@ -242,7 +242,7 @@
         }
       ],
       "engine": "r",
-      "fingerprint": "1b2c0548105fba85c7ff9b5c969515bf37aec17ce1217ce5c7ac8aae4e29b7af",
+      "fingerprint": "d64233aaa127528e13925d83881f5a191a14488d08667b07eba00be3b44dd52c",
       "image": {
         "engine": "r",
         "environment": "local",
@@ -252,7 +252,7 @@
       "image_identity": {
         "available": "true",
         "digest": "",
-        "id": "sha256:873721b4cb9527ddaee56d897c1d1352d80b77e77387264071bdf9c91dc31dcf"
+        "id": "sha256:afeabe9291c1130a81e21b32ea053d485f584339e795e0097afe25115938aaa2"
       },
       "mode": "figure",
       "outputs": [
@@ -262,7 +262,7 @@
           "size": 29034
         }
       ],
-      "rendered_at": "2026-08-19T23:06:03+00:00"
+      "rendered_at": "2026-08-22T10:35:18+00:00"
     },
     "assets/quarto/data-visualization/housing-donut-tarragones.qmd": {
       "dependencies": [
@@ -280,7 +280,7 @@
         },
         {
           "path": "requirements-compute.R",
-          "sha256": "37c95a48770d46abcfd6536b5d1482e96507b3eddee8c7bde6bc1eef690afd6c"
+          "sha256": "8195a00459224580c308746f5238afa54bd655bba24d659dcbbdd1f7a8575344"
         },
         {
           "path": ".unaltraweb/computations.yml",
@@ -288,7 +288,7 @@
         }
       ],
       "engine": "r",
-      "fingerprint": "c50fe344d656b7c751c89af94ff29738ea9151e0071c6e386364cc7bda2a7b48",
+      "fingerprint": "bc0905806977301b2aa7e143aaf67cba2f1c8d816f1ee7ee6e861371410bc938",
       "image": {
         "engine": "r",
         "environment": "local",
@@ -298,7 +298,7 @@
       "image_identity": {
         "available": "true",
         "digest": "",
-        "id": "sha256:873721b4cb9527ddaee56d897c1d1352d80b77e77387264071bdf9c91dc31dcf"
+        "id": "sha256:afeabe9291c1130a81e21b32ea053d485f584339e795e0097afe25115938aaa2"
       },
       "mode": "figure",
       "outputs": [
@@ -308,7 +308,7 @@
           "size": 7837
         }
       ],
-      "rendered_at": "2026-08-19T23:06:06+00:00"
+      "rendered_at": "2026-08-22T10:35:21+00:00"
     },
     "assets/quarto/data-visualization/housing-histogram-tarragones.qmd": {
       "dependencies": [
@@ -326,7 +326,7 @@
         },
         {
           "path": "requirements-compute.R",
-          "sha256": "37c95a48770d46abcfd6536b5d1482e96507b3eddee8c7bde6bc1eef690afd6c"
+          "sha256": "8195a00459224580c308746f5238afa54bd655bba24d659dcbbdd1f7a8575344"
         },
         {
           "path": ".unaltraweb/computations.yml",
@@ -334,7 +334,7 @@
         }
       ],
       "engine": "r",
-      "fingerprint": "f41e253c5ddcfe97724b9bc37cfe759ff4c046a05133d512d9e83a1f4508fc73",
+      "fingerprint": "e8d34d755d5037a9b078b5d6c8fc36b03e87901d10d5e08b550c47fec9cab173",
       "image": {
         "engine": "r",
         "environment": "local",
@@ -344,7 +344,7 @@
       "image_identity": {
         "available": "true",
         "digest": "",
-        "id": "sha256:873721b4cb9527ddaee56d897c1d1352d80b77e77387264071bdf9c91dc31dcf"
+        "id": "sha256:afeabe9291c1130a81e21b32ea053d485f584339e795e0097afe25115938aaa2"
       },
       "mode": "figure",
       "outputs": [
@@ -354,7 +354,7 @@
           "size": 8454
         }
       ],
-      "rendered_at": "2026-08-19T22:14:29+00:00"
+      "rendered_at": "2026-08-22T10:35:24+00:00"
     },
     "assets/quarto/data-visualization/housing-population-scatter-tarragones.qmd": {
       "dependencies": [
@@ -372,7 +372,7 @@
         },
         {
           "path": "requirements-compute.R",
-          "sha256": "37c95a48770d46abcfd6536b5d1482e96507b3eddee8c7bde6bc1eef690afd6c"
+          "sha256": "8195a00459224580c308746f5238afa54bd655bba24d659dcbbdd1f7a8575344"
         },
         {
           "path": ".unaltraweb/computations.yml",
@@ -380,7 +380,7 @@
         }
       ],
       "engine": "r",
-      "fingerprint": "4f0d0c7b4a6ec76546bdc97bd910d805b4015ca4aac931e8a62ded4cac76994e",
+      "fingerprint": "07eed72f1584e273a49e77fbd87e18f4ba1bb265d69582281d93fb838b4d3d7d",
       "image": {
         "engine": "r",
         "environment": "local",
@@ -390,7 +390,7 @@
       "image_identity": {
         "available": "true",
         "digest": "",
-        "id": "sha256:873721b4cb9527ddaee56d897c1d1352d80b77e77387264071bdf9c91dc31dcf"
+        "id": "sha256:afeabe9291c1130a81e21b32ea053d485f584339e795e0097afe25115938aaa2"
       },
       "mode": "figure",
       "outputs": [
@@ -400,7 +400,7 @@
           "size": 14765
         }
       ],
-      "rendered_at": "2026-08-19T23:06:10+00:00"
+      "rendered_at": "2026-08-22T10:35:29+00:00"
     },
     "assets/quarto/data-visualization/iris-flower-scatter.qmd": {
       "dependencies": [
@@ -414,7 +414,7 @@
         },
         {
           "path": "requirements-compute.R",
-          "sha256": "37c95a48770d46abcfd6536b5d1482e96507b3eddee8c7bde6bc1eef690afd6c"
+          "sha256": "8195a00459224580c308746f5238afa54bd655bba24d659dcbbdd1f7a8575344"
         },
         {
           "path": ".unaltraweb/computations.yml",
@@ -422,7 +422,7 @@
         }
       ],
       "engine": "r",
-      "fingerprint": "6aac2c36ee2d5befccfd361ada62446268fe844c6400988be2852ec31ff3952d",
+      "fingerprint": "de11c28eb7ce5bc67fd7d077c4d62a51161ea64ccdc6e3e9d95e2af6e31ae2f7",
       "image": {
         "engine": "r",
         "environment": "local",
@@ -432,7 +432,7 @@
       "image_identity": {
         "available": "true",
         "digest": "",
-        "id": "sha256:873721b4cb9527ddaee56d897c1d1352d80b77e77387264071bdf9c91dc31dcf"
+        "id": "sha256:afeabe9291c1130a81e21b32ea053d485f584339e795e0097afe25115938aaa2"
       },
       "mode": "figure",
       "outputs": [
@@ -442,7 +442,7 @@
           "size": 27322
         }
       ],
-      "rendered_at": "2026-08-19T21:53:07+00:00"
+      "rendered_at": "2026-08-22T10:35:32+00:00"
     },
     "assets/quarto/data-visualization/non-principal-housing-dot-plot.qmd": {
       "dependencies": [
@@ -460,7 +460,7 @@
         },
         {
           "path": "requirements-compute.R",
-          "sha256": "37c95a48770d46abcfd6536b5d1482e96507b3eddee8c7bde6bc1eef690afd6c"
+          "sha256": "8195a00459224580c308746f5238afa54bd655bba24d659dcbbdd1f7a8575344"
         },
         {
           "path": ".unaltraweb/computations.yml",
@@ -468,7 +468,7 @@
         }
       ],
       "engine": "r",
-      "fingerprint": "67d5c33249f04bb925b7aa8e1f97ff696bb703e1ebc9203a1da26ca121479178",
+      "fingerprint": "f61c8081a32967f73097110d9680216a7db1696dbcaaf1c7734ef785f0f66c3e",
       "image": {
         "engine": "r",
         "environment": "local",
@@ -478,7 +478,7 @@
       "image_identity": {
         "available": "true",
         "digest": "",
-        "id": "sha256:873721b4cb9527ddaee56d897c1d1352d80b77e77387264071bdf9c91dc31dcf"
+        "id": "sha256:afeabe9291c1130a81e21b32ea053d485f584339e795e0097afe25115938aaa2"
       },
       "mode": "figure",
       "outputs": [
@@ -488,53 +488,7 @@
           "size": 18658
         }
       ],
-      "rendered_at": "2026-08-19T22:14:25+00:00"
-    },
-    "assets/quarto/data-visualization/non-principal-housing-ordered-bars.qmd": {
-      "dependencies": [
-        {
-          "path": "assets/quarto/data-visualization/non-principal-housing-ordered-bars.qmd",
-          "sha256": "05d4bf90f904aa32729ecb72bed801f5982eeff23158f711f952dff81a2ec76e"
-        },
-        {
-          "path": "_practices/tigit-projecte-territorial/data/processed/municipal-indicators-tarragones-2021.csv",
-          "sha256": "d762d55fbbfb085493fe3af39c9ae8e458c1422f41a4467a2f37202cc5f1baac"
-        },
-        {
-          "path": "Dockerfile.compute-r",
-          "sha256": "db3cb03be6f48b81f1abfcf7b2a3177c0206e7c76fb46765a81c625faa34fc49"
-        },
-        {
-          "path": "requirements-compute.R",
-          "sha256": "37c95a48770d46abcfd6536b5d1482e96507b3eddee8c7bde6bc1eef690afd6c"
-        },
-        {
-          "path": ".unaltraweb/computations.yml",
-          "sha256": "301b44c41e8a0e500dd5ffda7410b4221a63711479a41a06eb98b5aae8abd0b3"
-        }
-      ],
-      "engine": "r",
-      "fingerprint": "713c2210b0d4b08e1b00811e0f76657c6e605e18d398dbc271015aa9721513cd",
-      "image": {
-        "engine": "r",
-        "environment": "local",
-        "image": "tigit-compute-r:local",
-        "source": "environment:COMPUTE_R_IMAGE"
-      },
-      "image_identity": {
-        "available": "true",
-        "digest": "",
-        "id": "sha256:873721b4cb9527ddaee56d897c1d1352d80b77e77387264071bdf9c91dc31dcf"
-      },
-      "mode": "figure",
-      "outputs": [
-        {
-          "path": "assets/img/data-visualization/project-non-principal-housing-tarragones-2021.svg",
-          "sha256": "4ab46c8d01853498047d9d1aec462ad60bfbbf7d306dcd25d30690509bdb7325",
-          "size": 16810
-        }
-      ],
-      "rendered_at": "2026-08-19T22:14:20+00:00"
+      "rendered_at": "2026-08-22T10:35:35+00:00"
     },
     "assets/quarto/data-visualization/population-pyramid-vila-seca.qmd": {
       "dependencies": [
@@ -552,7 +506,7 @@
         },
         {
           "path": "requirements-compute.R",
-          "sha256": "37c95a48770d46abcfd6536b5d1482e96507b3eddee8c7bde6bc1eef690afd6c"
+          "sha256": "8195a00459224580c308746f5238afa54bd655bba24d659dcbbdd1f7a8575344"
         },
         {
           "path": ".unaltraweb/computations.yml",
@@ -560,7 +514,7 @@
         }
       ],
       "engine": "r",
-      "fingerprint": "d90d47fa6b863981c3cd41b3096f7cbaaad8edd1709d01c4a61284b130807dbd",
+      "fingerprint": "4e359f6c353b7e5a1bdf8354c05f4636e935f53ed7320fb888c0039fd6422844",
       "image": {
         "engine": "r",
         "environment": "local",
@@ -570,7 +524,7 @@
       "image_identity": {
         "available": "true",
         "digest": "",
-        "id": "sha256:873721b4cb9527ddaee56d897c1d1352d80b77e77387264071bdf9c91dc31dcf"
+        "id": "sha256:afeabe9291c1130a81e21b32ea053d485f584339e795e0097afe25115938aaa2"
       },
       "mode": "figure",
       "outputs": [
@@ -580,7 +534,7 @@
           "size": 20592
         }
       ],
-      "rendered_at": "2026-08-19T22:14:39+00:00"
+      "rendered_at": "2026-08-22T10:35:41+00:00"
     },
     "assets/quarto/data-visualization/population-vila-seca-series-line.qmd": {
       "dependencies": [
@@ -598,7 +552,7 @@
         },
         {
           "path": "requirements-compute.R",
-          "sha256": "37c95a48770d46abcfd6536b5d1482e96507b3eddee8c7bde6bc1eef690afd6c"
+          "sha256": "8195a00459224580c308746f5238afa54bd655bba24d659dcbbdd1f7a8575344"
         },
         {
           "path": ".unaltraweb/computations.yml",
@@ -606,7 +560,7 @@
         }
       ],
       "engine": "r",
-      "fingerprint": "791ce5d25e235b4e0ed42e79b82e0cd1b7662a64a15fae39dd67702a451c8e6b",
+      "fingerprint": "4ed1715c4e474747823c9b1293818a5a15dea70d11573832112eda99ff70f27e",
       "image": {
         "engine": "r",
         "environment": "local",
@@ -616,7 +570,7 @@
       "image_identity": {
         "available": "true",
         "digest": "",
-        "id": "sha256:873721b4cb9527ddaee56d897c1d1352d80b77e77387264071bdf9c91dc31dcf"
+        "id": "sha256:afeabe9291c1130a81e21b32ea053d485f584339e795e0097afe25115938aaa2"
       },
       "mode": "figure",
       "outputs": [
@@ -626,59 +580,63 @@
           "size": 12067
         }
       ],
-      "rendered_at": "2026-08-19T21:53:44+00:00"
+      "rendered_at": "2026-08-22T10:35:44+00:00"
     },
-    "assets/quarto/data-visualization/sankey-titanic-survival.qmd": {
+    "assets/quarto/data-visualization/sankey-allotjament-vilaseca.qmd": {
       "dependencies": [
         {
-          "path": "assets/quarto/data-visualization/sankey-titanic-survival.qmd",
-          "sha256": "42314c07143699a042cb01b4d85fb0ae9b8459063c60dec2161a2a25924ac15f"
+          "path": "assets/quarto/data-visualization/sankey-allotjament-vilaseca.qmd",
+          "sha256": "16978717a17aea3a72311203aa50d87c1d7f6c7b07552e29669e6e680b55f881"
         },
         {
-          "path": "Dockerfile.compute-r",
-          "sha256": "db3cb03be6f48b81f1abfcf7b2a3177c0206e7c76fb46765a81c625faa34fc49"
+          "path": "_practices/tigit-projecte-territorial/data/processed/tourism-accommodation-vila-seca-geocoding.csv",
+          "sha256": "e8d5761a28ee4773c9667ba0223afc451e8b6128b619fa84a63dc4a1335c4214"
         },
         {
-          "path": "requirements-compute.R",
-          "sha256": "37c95a48770d46abcfd6536b5d1482e96507b3eddee8c7bde6bc1eef690afd6c"
+          "path": "Dockerfile.compute-python",
+          "sha256": "fde14d6d24d14f2ad0adc23caac835506e35a4fe3acce3a505f9228391351b74"
+        },
+        {
+          "path": "requirements-compute.txt",
+          "sha256": "d93c6c5c1ed8278b7a58a7f6c1633feac56ff1cbd371a09d142fa3e89fbeddc4"
         },
         {
           "path": ".unaltraweb/computations.yml",
           "sha256": "301b44c41e8a0e500dd5ffda7410b4221a63711479a41a06eb98b5aae8abd0b3"
         }
       ],
-      "engine": "r",
-      "fingerprint": "e4420412d03e0f65642f9db52ac1f4e824005a25f04fe0ec58a8362bb7be5a3b",
+      "engine": "python",
+      "fingerprint": "44cf7d0be663bf0b9b1716d7843eeadd3fd182039e4cfce7446677b5988f17e4",
       "image": {
-        "engine": "r",
+        "engine": "python",
         "environment": "local",
-        "image": "tigit-compute-r:local",
-        "source": "environment:COMPUTE_R_IMAGE"
+        "image": "tigit-compute-python:local",
+        "source": "environment:COMPUTE_PYTHON_IMAGE"
       },
       "image_identity": {
         "available": "true",
         "digest": "",
-        "id": "sha256:873721b4cb9527ddaee56d897c1d1352d80b77e77387264071bdf9c91dc31dcf"
+        "id": "sha256:719b6ad00f89fabd01fd1fe543bb80c76e8bcb3b537bd8bb66342e3c900c015c"
       },
       "mode": "figure",
       "outputs": [
         {
-          "path": "assets/img/data-visualization/sankey-titanic-survival.svg",
-          "sha256": "c16ab04bb5b6da3ddc876fef6a9c1c41834ed5ef7309371ad235956c461a6a3a",
-          "size": 93159
+          "path": "assets/img/data-visualization/sankey-allotjament-vilaseca.svg",
+          "sha256": "bd4c3d83fb97309060a0e8841add9079e944d074e9d6ecdd21825ed66847505f",
+          "size": 12851
         }
       ],
-      "rendered_at": "2026-08-19T23:06:13+00:00"
+      "rendered_at": "2026-08-23T10:23:32+00:00"
     },
     "assets/quarto/data-visualization/treemap-allotjament-vilaseca.qmd": {
       "dependencies": [
         {
           "path": "assets/quarto/data-visualization/treemap-allotjament-vilaseca.qmd",
-          "sha256": "1dab8d1b703db68f16bdda5ca28a064d6bf8319f01ff154a0086124371167068"
+          "sha256": "49e3048a1079c09346dbaf044e51f3834d5d3e41293825e7d6e9382c768dd725"
         },
         {
-          "path": "_practices/tigit-projecte-territorial/data/raw/allotjaments-vila-seca-convencionals.csv",
-          "sha256": "4c547163863b005b84fd17538850345a6b0d88f3213c387967c05be381715c5e"
+          "path": "_practices/tigit-projecte-territorial/data/processed/tourism-accommodation-vila-seca-geocoding.csv",
+          "sha256": "e8d5761a28ee4773c9667ba0223afc451e8b6128b619fa84a63dc4a1335c4214"
         },
         {
           "path": "Dockerfile.compute-r",
@@ -686,7 +644,7 @@
         },
         {
           "path": "requirements-compute.R",
-          "sha256": "37c95a48770d46abcfd6536b5d1482e96507b3eddee8c7bde6bc1eef690afd6c"
+          "sha256": "8195a00459224580c308746f5238afa54bd655bba24d659dcbbdd1f7a8575344"
         },
         {
           "path": ".unaltraweb/computations.yml",
@@ -694,7 +652,7 @@
         }
       ],
       "engine": "r",
-      "fingerprint": "3c6554e7013d4c42e803fc4fae67234bbfb4c518a5dfd47b3169c672893e0cbd",
+      "fingerprint": "9fc1e431fabdb2007c038a9bc292d5f729bd04417d68bff3575cde2e75f34ae5",
       "image": {
         "engine": "r",
         "environment": "local",
@@ -704,23 +662,23 @@
       "image_identity": {
         "available": "true",
         "digest": "",
-        "id": "sha256:873721b4cb9527ddaee56d897c1d1352d80b77e77387264071bdf9c91dc31dcf"
+        "id": "sha256:afeabe9291c1130a81e21b32ea053d485f584339e795e0097afe25115938aaa2"
       },
       "mode": "figure",
       "outputs": [
         {
           "path": "assets/img/data-visualization/treemap-allotjament-vilaseca.svg",
-          "sha256": "24030e81fbfe44ae048cc686e9231d77da98fdf1fbca1c43d166553f3421c0c0",
-          "size": 4491
+          "sha256": "c66ba3a568644008eca85085b1f283b76dd4c863f77c425bfe13edde5c4e99c4",
+          "size": 12093
         }
       ],
-      "rendered_at": "2026-08-20T11:36:59+00:00"
+      "rendered_at": "2026-08-21T22:38:08+00:00"
     },
     "assets/quarto/thematic-cartography/choropleth-housing-absolute-bad.qmd": {
       "dependencies": [
         {
           "path": "assets/quarto/thematic-cartography/choropleth-housing-absolute-bad.qmd",
-          "sha256": "2961a8019553f4dda1a15bf90457141eb4014e3b4adf5526c28f346fafeb4b06"
+          "sha256": "e6b131b8260968e25c1bd3305e8cd17cca8bfdacefcd21f78595c3a135d02193"
         },
         {
           "path": "_practices/tigit-projecte-territorial/data/processed/tarragones-boundaries-icgc-20260120.gpkg",
@@ -736,7 +694,7 @@
         },
         {
           "path": "requirements-compute.R",
-          "sha256": "37c95a48770d46abcfd6536b5d1482e96507b3eddee8c7bde6bc1eef690afd6c"
+          "sha256": "8195a00459224580c308746f5238afa54bd655bba24d659dcbbdd1f7a8575344"
         },
         {
           "path": ".unaltraweb/computations.yml",
@@ -744,7 +702,7 @@
         }
       ],
       "engine": "r",
-      "fingerprint": "29ba395a5fafbdf2ebe64c8146ef7400f4d60901d16d09fb332dec9ca7237971",
+      "fingerprint": "a4194663b91f74f9b37bbcf4ff59b6fce0af438b179cc310f91061a43ad85143",
       "image": {
         "engine": "r",
         "environment": "local",
@@ -754,23 +712,23 @@
       "image_identity": {
         "available": "true",
         "digest": "",
-        "id": "sha256:873721b4cb9527ddaee56d897c1d1352d80b77e77387264071bdf9c91dc31dcf"
+        "id": "sha256:afeabe9291c1130a81e21b32ea053d485f584339e795e0097afe25115938aaa2"
       },
       "mode": "figure",
       "outputs": [
         {
           "path": "assets/img/thematic-cartography/choropleth-absolute-counts-bad-tarragones-2021.svg",
-          "sha256": "144db394b0a70a631f3daf95af41dd5be9cdd38df1723dbd77654fc6445a8c84",
-          "size": 101042
+          "sha256": "031d7f415d6ad3b78f2f3ab07573dd96fcbf6c52ee2ad774c3b4cb4cb1bef5f4",
+          "size": 152496
         }
       ],
-      "rendered_at": "2026-08-19T23:06:20+00:00"
+      "rendered_at": "2026-08-21T22:41:12+00:00"
     },
     "assets/quarto/thematic-cartography/choropleth-housing-normalized-reviewed.qmd": {
       "dependencies": [
         {
           "path": "assets/quarto/thematic-cartography/choropleth-housing-normalized-reviewed.qmd",
-          "sha256": "8d308f3f9373d643e46ab8e1ef139c36e9145c8a1335d8920023bf93adc92189"
+          "sha256": "a760d746b64004cea7c699407c52253a2aca1b7e71d42ea82a7f3f79331ae814"
         },
         {
           "path": "_practices/tigit-projecte-territorial/data/processed/tarragones-boundaries-icgc-20260120.gpkg",
@@ -786,7 +744,7 @@
         },
         {
           "path": "requirements-compute.R",
-          "sha256": "37c95a48770d46abcfd6536b5d1482e96507b3eddee8c7bde6bc1eef690afd6c"
+          "sha256": "8195a00459224580c308746f5238afa54bd655bba24d659dcbbdd1f7a8575344"
         },
         {
           "path": ".unaltraweb/computations.yml",
@@ -794,7 +752,7 @@
         }
       ],
       "engine": "r",
-      "fingerprint": "c6c9e7bfea092dc6b1a24c17134a98e9a4864a7bfa42fd8f81a36dd06b416283",
+      "fingerprint": "a9f3a8bb435f583b9d2aa233d4169cbd3f518cfabb879213c8c1b739791149ee",
       "image": {
         "engine": "r",
         "environment": "local",
@@ -804,17 +762,17 @@
       "image_identity": {
         "available": "true",
         "digest": "",
-        "id": "sha256:873721b4cb9527ddaee56d897c1d1352d80b77e77387264071bdf9c91dc31dcf"
+        "id": "sha256:afeabe9291c1130a81e21b32ea053d485f584339e795e0097afe25115938aaa2"
       },
       "mode": "figure",
       "outputs": [
         {
           "path": "assets/img/thematic-cartography/choropleth-normalized-reviewed-tarragones-2021.svg",
-          "sha256": "b381f46628d07da60df24fc92ab1f1c3df005967781c09f9ddb24aae0aaa1400",
-          "size": 101190
+          "sha256": "9c9553958154759a8c6401528e04a256ecec686fe428d4d1ec9824a002b2a5be",
+          "size": 152617
         }
       ],
-      "rendered_at": "2026-08-19T23:06:23+00:00"
+      "rendered_at": "2026-08-21T22:41:17+00:00"
     },
     "assets/quarto/thematic-cartography/proportional-symbols-housing-total.qmd": {
       "dependencies": [
@@ -836,7 +794,7 @@
         },
         {
           "path": "requirements-compute.R",
-          "sha256": "37c95a48770d46abcfd6536b5d1482e96507b3eddee8c7bde6bc1eef690afd6c"
+          "sha256": "8195a00459224580c308746f5238afa54bd655bba24d659dcbbdd1f7a8575344"
         },
         {
           "path": ".unaltraweb/computations.yml",
@@ -844,7 +802,7 @@
         }
       ],
       "engine": "r",
-      "fingerprint": "fdbef7a6e841478e7348915b21e7bd021c20d076ee5663677fcb9b72c694dc9e",
+      "fingerprint": "822d0e5931e7173d40004135dd507e2b3e3955cb63c762d6b744980014684a3a",
       "image": {
         "engine": "r",
         "environment": "local",
@@ -854,7 +812,7 @@
       "image_identity": {
         "available": "true",
         "digest": "",
-        "id": "sha256:873721b4cb9527ddaee56d897c1d1352d80b77e77387264071bdf9c91dc31dcf"
+        "id": "sha256:afeabe9291c1130a81e21b32ea053d485f584339e795e0097afe25115938aaa2"
       },
       "mode": "figure",
       "outputs": [
@@ -864,7 +822,7 @@
           "size": 103615
         }
       ],
-      "rendered_at": "2026-08-19T23:06:27+00:00"
+      "rendered_at": "2026-08-22T10:35:47+00:00"
     }
   },
   "version": 1

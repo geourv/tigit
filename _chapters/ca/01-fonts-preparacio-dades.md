@@ -101,7 +101,7 @@ El curs utilitza el descobriment de coneixement en bases de dades, o **KDD** (*k
 
 Aquest cicle es pot relacionar amb la jerarquia dades-informació-coneixement-saviesa, sovint coneguda com a DIKW. Rowley en revisa les representacions i mostra que és una jerarquia molt utilitzada, però també discutida, perquè no sempre hi ha acord sobre què transforma les dades en informació, la informació en coneixement i el coneixement en saviesa {% cite rowleyWisdomHierarchy2007 %}. Per això aquí s'utilitza com una guia crítica, no com una escala automàtica. Una observació es converteix en dada quan queda codificada amb unitat, temps, lloc i mètode. Les dades es converteixen en informació quan s'hi afegeixen context, metadades i comparació. L'anàlisi busca patrons, diferències i relacions. El coneixement apareix quan aquests resultats es contrasten amb definicions, teoria, experiència territorial i altres fonts. La saviesa pràctica no és només saber més: és usar aquest coneixement amb criteri, experiència i valors explícits per orientar una decisió.
 
-![Cicle d'elaboració de coneixement territorial]({{ site.baseurl }}/assets/img/data-sources/kdd-dikw-cycle.svg "El diagrama ajuda a llegir una dada com a part d'un procés: el repte genera observacions, les dades se seleccionen i es preparen, l'anàlisi detecta patrons i l'avaluació els converteix en coneixement útil per decidir. La decisió retorna al repte i pot obrir noves observacions. Figura d'elaboració pròpia basada en el procés KDD.")
+![Cicle d'elaboració de coneixement territorial]({{ site.baseurl }}/assets/img/data-sources/kdd-dikw-cycle.svg "El diagrama ajuda a llegir una dada com a part d'un procés: el repte genera observacions, les dades se seleccionen i es preparen, l'anàlisi detecta patrons i l'avaluació els converteix en coneixement útil per decidir. La decisió retorna al repte i pot obrir noves observacions. Figura d'elaboració pròpia basada en el procés KDD."){: data-figure-width-web="37rem"}
 
 El diagrama també mostra un retorn: una decisió o una política pot reformular el repte inicial i generar noves observacions. Si una destinació limita l'accés a un espai natural, canvia la mobilitat o regula l'allotjament, el coneixement acumulat no tanca el problema; obliga a observar què ha passat després. Aquesta és la diferència entre una dada aïllada i una pràctica informada: l'aprenentatge es reaprofita, però continua sotmès a revisió.
 
@@ -438,7 +438,7 @@ Una xifra trobada en una xarxa social, en un pseudomitjà, en una infografia sen
 
 Hi ha una excepció metodològica important: si la pregunta estudia què es diu a les xarxes o què respon un LLM, aquests continguts poden convertir-se en dades primàries de la recerca. En aquest cas encara cal definir la mostra, el període, el model o servei, les limitacions, l'ètica i el procediment de recollida. Estudiar un rumor no converteix el rumor en un fet.
 
-![Circuit de verificació d'una font]({{ site.baseurl }}/assets/diagrams/data-source-verification.mmd "Seguiu aquest circuit abans d'incorporar una dada al projecte: relacioneu la pregunta amb el productor, reviseu metodologia, cobertura i llicència, contrasteu el resultat i conserveu una còpia original documentada.")
+![Circuit de verificació d'una font]({{ site.baseurl }}/assets/diagrams/data-source-verification.mmd "Seguiu aquest circuit abans d'incorporar una dada al projecte: relacioneu la pregunta amb el productor, reviseu metodologia, cobertura i llicència, contrasteu el resultat i conserveu una còpia original documentada."){: data-figure-width-web="34rem" data-figure-width-pdf="35rem"}
 
 ### Dades personals, agregació i secret estadístic
 
@@ -524,7 +524,7 @@ Les metadades poden aparèixer en una pàgina metodològica, una fitxa de catàl
 
 Una capa no és qualsevol tema d'una taula. Una taula de població municipal continua sent una dada plana encara que després es vulgui cartografiar; només esdevé una capa de treball quan s'uneix a una geometria municipal, conté coordenades o s'obre en un SIG com a recurs espacial. Per això cal distingir la distribució tabular, que conserva valors i dimensions, de la capa geoespacial, que afegeix geometria, sistema de referència i extensió.
 
-![Camins que cal documentar segons si la font és una taula, una resposta tabular, una dada geoespacial o un servei cartogràfic]({{ site.baseurl }}/assets/diagrams/data-source-levels.mmd "Documenteu el camí que porta fins a la dada final: el catàleg ajuda a descobrir el recurs, el conjunt defineix què mesura, les dades planes segueixen una ruta tabular, les dades espacials segueixen una ruta geoespacial, i una taula només esdevé capa quan s'uneix amb geometria o coordenades.")
+![Camins que cal documentar segons si la font és una taula, una resposta tabular, una dada geoespacial o un servei cartogràfic]({{ site.baseurl }}/assets/diagrams/data-source-levels.mmd "Documenteu el camí que porta fins a la dada final: el catàleg ajuda a descobrir el recurs, el conjunt defineix què mesura, les dades planes segueixen una ruta tabular, les dades espacials segueixen una ruta geoespacial, i una taula només esdevé capa quan s'uneix amb geometria o coordenades."){: data-figure-width-web="34rem"}
 
 El diagrama no descriu una jerarquia obligatòria en tots els portals. Una taula estadística descarregada directament pot no tenir cap capa; un servei de consulta pot retornar una taula sense cap geometria; un fitxer geoespacial pot contenir diverses capes sense que hi hagi cap servei web actiu; i un servei cartogràfic pot permetre veure una ortofoto sense descarregar-ne els píxels originals. La utilitat és recordar que la dada final no s'explica només pel fitxer que queda al disc. També s'ha de conservar el camí que ha portat fins a aquell fitxer, resposta o capa derivada.
 
@@ -1250,7 +1250,7 @@ Les dades descarregades rarament es poden analitzar de manera immediata. Poden c
 
 La preparació no és una operació mecànica que «neteja» qualsevol irregularitat. Cada canvi implica una decisió sobre el significat de les dades. El procés ha de separar els errors corregibles dels valors desconeguts i de les diferències conceptuals que no es poden harmonitzar legítimament.
 
-![Cadena de preparació de dades]({{ site.baseurl }}/assets/diagrams/data-preparation-pipeline.mmd "Conserveu cada pas de preparació: còpia original, importació, neteja, normalització, validació, taula analítica i productes finals han de poder relacionar-se entre si.")
+![Cadena de preparació de dades]({{ site.baseurl }}/assets/diagrams/data-preparation-pipeline.mmd "Conserveu cada pas de preparació: còpia original, importació, neteja, normalització, validació, taula analítica i productes finals han de poder relacionar-se entre si."){: data-figure-width-web="42rem" data-figure-width-pdf="51rem"}
 
 ### Eines de preparació segons el problema
 

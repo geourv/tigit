@@ -1,0 +1,11 @@
+version: 1
+profile: vl-convert-1.9.0
+family: benizar
+visualizations:
+  - name: non-principal-housing-ordered-bars
+    source: assets/visualizations/data-visualization/non-principal-housing-ordered-bars.vl.json
+    output: assets/img/data-visualization/non-principal-housing-ordered-bars-tarragones-2021.svg
+    engine: vega-lite
+    format: svg
+    inputs:
+      - _practices/tigit-projecte-territorial/data/processed/municipal-indicators-tarragones-2021.csv
