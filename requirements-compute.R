@@ -8,3 +8,4 @@
 # - alluvial:   ggalluvial required below (Titanic dataset ships with R base)
 install.packages("ggalluvial", repos = "https://cloud.r-project.org")
 install.packages("treemapify", repos = "https://cloud.r-project.org")
+install.packages("cartogramR", repos = "https://cloud.r-project.org")

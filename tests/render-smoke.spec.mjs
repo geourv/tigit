@@ -763,6 +763,175 @@ test("TIGIT manual home starts at chapter zero and credits its authors and tools
   await expectNoHorizontalOverflow(page);
 });
 
+test("TIGIT cartographic figures render on desktop and mobile", async ({ page }, testInfo) => {
+  test.skip(activeProfile !== "unaltremanual", "unaltremanual profile only");
+  const cartographicFigureNames = [
+    "scale-calculations.svg",
+    "generalization-three-scales.svg",
+    "generalization-operations.svg",
+    "generalization-algorithms.svg",
+    "final-output-inspection.svg",
+    "minimum-mapping-unit-tarragones.svg",
+    "terrain-relief-volcano.svg",
+    "contour-profile-volcano.svg",
+    "map-symbols-relationships.svg",
+    "typographic-specimens.svg",
+  ];
+
+  for (const viewport of [
+    { width: 1600, height: 900 },
+    { width: 390, height: 740 },
+  ]) {
+    await page.setViewportSize(viewport);
+    await page.goto(siteUrl("/ca/chapters/llenguatge-cartografic/"));
+    for (const name of cartographicFigureNames) {
+      const image = page.locator(`img[src$='${name}']`);
+      await expect(image).toHaveCount(1);
+      if (name === "minimum-mapping-unit-tarragones.svg") {
+        await expect(image).toHaveAttribute("data-figure-width-web", "38rem");
+        await expect(image).toHaveAttribute("data-figure-width-pdf", "90%");
+      } else {
+        await expect(image).toHaveAttribute("data-figure-width", "54rem");
+      }
+      await expectImageLoaded(image);
+    }
+    await expect(page.locator("img[src$='minimum-mapping-unit.svg']")).toHaveCount(0);
+    await expect(page.locator("img[src$='relief-representation-methods.svg']")).toHaveCount(0);
+    await expectNoHorizontalOverflow(page);
+
+    await page.goto(siteUrl("/ca/chapters/cartografia-tematica/"));
+    for (const { name, pdfWidth } of [
+      { name: "thematic-methods-tarragones-2021.svg", pdfWidth: "90%" },
+      { name: "population-proportional-symbols-catalonia-2025.svg", pdfWidth: "82%" },
+      { name: "population-cartogram-catalonia-2025.svg", pdfWidth: "90%" },
+    ]) {
+      const image = page.locator(`img[src$='${name}']`);
+      await expect(image).toHaveCount(1);
+      await expect(image).toHaveAttribute("data-figure-width-web", "38rem");
+      await expect(image).toHaveAttribute("data-figure-width-pdf", pdfWidth);
+      await expectImageLoaded(image);
+    }
+    const nightlifeVariables = page.locator("img[src$='visual-variables-nightlife-map.svg']");
+    await expect(nightlifeVariables).toHaveCount(1);
+    await expect(nightlifeVariables).toHaveAttribute("data-figure-width-web", "58rem");
+    await expect(nightlifeVariables).toHaveAttribute("data-figure-width-pdf", "90%");
+    await expectImageLoaded(nightlifeVariables);
+    await expect(page.locator("img[src$='thematic-map-types.svg']")).toHaveCount(0);
+    await expect(page.locator("img[src$='cartogram-anamorphic-principle.svg']")).toHaveCount(0);
+    await expect(page.locator("img[src$='choropleth-cartogram-tarragones-2021.svg']")).toHaveCount(0);
+    await expectNoHorizontalOverflow(page);
+    for (const name of [
+      "population-proportional-symbols-catalonia-2025.svg",
+      "population-cartogram-catalonia-2025.svg",
+    ]) {
+      const figure = page.locator(`.md-figure:has(img[src$='${name}'])`);
+      await figure.screenshot({
+        path: join(renderOut, `manual-${name.replace(".svg", "")}-${viewport.width}-${testInfo.project.name}.png`),
+      });
+    }
+    await nightlifeVariables.evaluate((node) => node.scrollIntoView({ block: "center" }));
+    await page.screenshot({
+      path: join(renderOut, `manual-visual-variables-nightlife-map-${viewport.width}-${testInfo.project.name}.png`),
+      animations: "disabled",
+    });
+  }
+});
+
+test("TIGIT circular chart examples render on desktop and mobile", async ({ page }, testInfo) => {
+  test.skip(activeProfile !== "unaltremanual", "unaltremanual profile only");
+  const figureNames = [
+    "pie-chart-audit.svg",
+    "chart-catalonia-landuse-2005.png",
+    "landuse-catalonia-2005-infographic.svg",
+  ];
+
+  for (const viewport of [
+    { width: 1600, height: 900 },
+    { width: 390, height: 740 },
+  ]) {
+    await page.setViewportSize(viewport);
+    await page.goto(siteUrl("/ca/chapters/semiologia-visualitzacio/"));
+    for (const name of figureNames) {
+      const image = page.locator(`img[src$='${name}']`);
+      await expect(image).toHaveCount(1);
+      await expectImageLoaded(image);
+    }
+    await expectNoHorizontalOverflow(page);
+    for (const name of figureNames) {
+      await page.locator(`img[src$='${name}']`).evaluate((node) => node.scrollIntoView({ block: "center" }));
+      await page.screenshot({
+        path: join(renderOut, `manual-${name.replace(/\.(png|svg)$/, "")}-${viewport.width}-${testInfo.project.name}.png`),
+        animations: "disabled",
+      });
+    }
+  }
+});
+
+test("TIGIT temporal reading examples render on desktop and mobile", async ({ page }, testInfo) => {
+  test.skip(activeProfile !== "unaltremanual", "unaltremanual profile only");
+  const figures = [
+    { name: "mermaid-timeline.mmd.svg", width: "54rem" },
+    { name: "mermaid-gantt.mmd.svg", width: "48rem" },
+    { name: "based-on-true-true-story-information-is-beautiful-2022.png", webWidth: "58rem", pdfWidth: "78%" },
+  ];
+
+  for (const viewport of [
+    { width: 1600, height: 900 },
+    { width: 390, height: 740 },
+  ]) {
+    await page.setViewportSize(viewport);
+    await page.goto(siteUrl("/ca/chapters/semiologia-visualitzacio/"));
+    await expect(page.locator("h3", { hasText: "Representar el temps" })).toBeVisible();
+    for (const { name, width, webWidth, pdfWidth } of figures) {
+      const image = page.locator(`img[src$='${name}']`);
+      await expect(image).toHaveCount(1);
+      if (width) {
+        await expect(image).toHaveAttribute("data-figure-width", width);
+      } else {
+        await expect(image).toHaveAttribute("data-figure-width-web", webWidth);
+        await expect(image).toHaveAttribute("data-figure-width-pdf", pdfWidth);
+      }
+      await expectImageLoaded(image);
+      await image.evaluate((node) => node.scrollIntoView({ block: "center" }));
+      await page.screenshot({
+        path: join(renderOut, `manual-${name.replace(/\.(mmd\.svg|png)$/, "")}-${viewport.width}-${testInfo.project.name}.png`),
+        animations: "disabled",
+      });
+    }
+    await expect(page.locator(".md-figure:has(img[src$='based-on-true-true-story-information-is-beautiful-2022.png']) .md-figcaption")).toContainText(
+      "exclòs de la llicència Creative Commons",
+    );
+    await expectNoHorizontalOverflow(page);
+  }
+});
+
+test("TIGIT multivariable scatter example renders on desktop and mobile", async ({ page }, testInfo) => {
+  test.skip(activeProfile !== "unaltremanual", "unaltremanual profile only");
+
+  for (const viewport of [
+    { width: 1600, height: 900 },
+    { width: 390, height: 740 },
+  ]) {
+    await page.setViewportSize(viewport);
+    await page.goto(siteUrl("/ca/chapters/semiologia-visualitzacio/"));
+    await expect(page.locator("h4", { hasText: "Reconstruir la base de dades" })).toBeVisible();
+    const image = page.locator("img[src$='best-in-show-data-dog-information-is-beautiful-2014.png']");
+    await expect(image).toHaveCount(1);
+    await expect(image).toHaveAttribute("data-figure-width-web", "58rem");
+    await expect(image).toHaveAttribute("data-figure-width-pdf", "88%");
+    await expectImageLoaded(image);
+    await expect(page.locator(".md-figure:has(img[src$='best-in-show-data-dog-information-is-beautiful-2014.png']) .md-figcaption")).toContainText(
+      "exclòs de la llicència Creative Commons",
+    );
+    await expectNoHorizontalOverflow(page);
+    await image.evaluate((node) => node.scrollIntoView({ block: "center" }));
+    await page.screenshot({
+      path: join(renderOut, `manual-best-in-show-data-dog-${viewport.width}-${testInfo.project.name}.png`),
+      animations: "disabled",
+    });
+  }
+});
+
 test("unaltredocs profile renders the documentation collection", async ({ page }, testInfo) => {
   test.skip(!isDocsProfile, "unaltredocs profile only");
 

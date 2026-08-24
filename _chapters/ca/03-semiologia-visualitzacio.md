@@ -78,11 +78,19 @@ Per revisar les figures del curs, adoptarem una **pauta didàctica de sis compon
 | Marca (punt, línia, barra, sector, àrea) | Representa cada observació visiblement | Una barra per municipi |
 | Canal visual (posició, longitud, forma, to) | Tradueix la dada en una propietat de la marca | La longitud de la barra codifica el percentatge |
 | Escala (lineal, logarítmica, ordinal, de colors) | Assigna valors a posicions, mides o colors | Eix de percentatges amb origen zero |
-| Coordenades (cartesians, polars, divergents) | Ordenen les marques en el pla | Barres horitzontals ordenades de més alta a més baixa |
+| Coordenades (cartesianes o polars) | Ordenen les marques en el pla | Barres horitzontals ordenades de més alta a més baixa |
 | Guies (títol, eixos, unitats, llegenda, font) | Expliquen com interpretar la figura | Títol que indica territori, període i unitat |
 :::
 
-En coordenades cartesianes, els dos eixos tenen noms propis. L'eix **horitzontal** és l'eix d'**abscisses** i se sol referir com a $x$; l'eix **vertical** és l'eix d'**ordenades** i se sol referir com a $y$. Cada eix és una escala que assigna una posició a un valor: a l'abscissa hi sol anar la variable que ordena les observacions (categories, anys, un percentatge) i a l'ordenada la magnitud que es compara, tot i que la decisió pot girar-se quan convé llegir etiquetes llargues. El nom de l'eix no depèn del contingut, sinó de l'orientació: en un gràfic de barres horitzontals, el percentatge continua sent el valor, però es llegeix sobre l'abscissa en lloc de sobre l'ordenada.
+### Eixos visibles i coordenades ocultes
+
+Un sistema de coordenades organitza les marques dins del pla i permet relacionar una posició amb una dada. L'eix és l'escala conceptual que fa aquesta assignació; la línia, les marques de graduació i els números que el dibuixen són guies. Per tant, ocultar la línia d'un eix no elimina necessàriament l'escala que estructura la figura. Aprendre a llegir un gràfic implica reconstruir aquest esquelet, encara que el disseny l'hagi deixat implícit.
+
+En coordenades **cartesianes**, els dos eixos tenen noms propis. L'eix **horitzontal** és l'eix d'**abscisses** i se sol referir com a $x$; l'eix **vertical** és l'eix d'**ordenades** i se sol referir com a $y$. Cada eix és una escala que assigna una posició a un valor: a l'abscissa hi sol anar la variable que ordena les observacions (categories, anys, un percentatge) i a l'ordenada la magnitud que es compara, tot i que la decisió pot girar-se quan convé llegir etiquetes llargues. El nom de l'eix no depèn del contingut, sinó de l'orientació: en un gràfic de barres horitzontals, el percentatge continua sent el valor, però es llegeix sobre l'abscissa en lloc de sobre l'ordenada.
+
+En coordenades **polars**, una posició es descriu mitjançant l'angle respecte d'una direcció inicial i la distància al centre o radi. Això no significa que qualsevol gràfic circular representi dues variables. En un circular o un anell ordinari, la volta completa és el total i cada part ocupa un interval angular; el radi es manté constant i no aporta una segona dada. Hi ha, doncs, una sola escala quantitativa activa, plegada al voltant del centre i sovint sense graduacions visibles. En canvi, un gràfic de barres radials pot situar categories per angle i magnituds per radi: en aquest cas cal identificar i retolar totes dues assignacions.
+
+Canviar de coordenades transforma la geometria i també la comparació perceptiva. Una barra cartesiana facilita comparar extrems sobre una escala comuna; quan es plega en un cercle, la mateixa magnitud es pot llegir com a angle, arc, radi o àrea segons el disseny. Abans d'interpretar una figura convé preguntar on és l'origen, en quina direcció augmenta cada escala, quina unitat utilitza i quina propietat visible (posició, longitud, angle o àrea) porta realment la dada. Els elements que no varien, com el radi constant d'un anell, formen part de la disposició i no s'han d'interpretar com una variable.
 
 Les guies han de retolar l'eix amb la unitat, no repetir sencerament el títol. Si el títol ja diu «Habitatge no principal als municipis del Tarragonès (2021)», l'etiqueta de l'eix pot quedar en «Percentatge» i les marques de l'escala poden afegir el símbol `%`; tornificar el mateix enunciat al títol i a l'eix satura la lectura sense aportar informació. El títol respon a «què és aquesta figura?»; els eixos responen a «sobre quina escala vull llegir cada valor?».
 
@@ -181,19 +189,55 @@ Una composició només existeix quan les parts comparteixen un total. Els grups 
 
 Un circular o un anell pot resumir poques parts d'un únic total, com habitatges principals i no principals del conjunt comarcal. Abans de construir-lo cal respondre «100% de què?» i mantenir visibles les categories absents o desconegudes. Per comparar molts municipis, les barres apilades són més eficients que una col·lecció de cercles.
 
-![Anell de la composició del parc d'habitatges del Tarragonès (2021): principals i no principals]({{ site.baseurl }}/assets/quarto/data-visualization/housing-donut-tarragones.qmd "L'anell mostra la part principals i no principals d'un únic total: 169.179 habitatges del Tarragonès el 2021. El buit central no porta cap dada; les etiquetes amb percentatge i magnitud eviten dependre només de l'angle. Font: Idescat, habitatges per tipus d'habitatge, 2021."){: data-figure-width="40rem"}
+![Anell de la composició del parc d'habitatges del Tarragonès (2021): principals i no principals]({{ site.baseurl }}/assets/quarto/data-visualization/housing-donut-tarragones.qmd "L'anell mostra les parts d'habitatges principals i no principals d'un únic total: 169.179 habitatges del Tarragonès el 2021. El buit central no porta cap dada; les etiquetes amb percentatge i magnitud eviten dependre només de l'angle. Font: Idescat, habitatges per tipus d'habitatge, 2021."){: data-figure-width="40rem"}
+
+Per llegir aquest anell cal començar pel total de 169.179 habitatges, seguir la volta completa com una escala del 0 al 100% i associar cada interval angular amb la categoria indicada pel color i l'etiqueta. El buit central i el gruix constant de l'anell no representen dades. Aquesta reconstrucció de l'eix ocult permet distingir la codificació quantitativa de les decisions de composició.
+
+Un gràfic circular pot quedar-se en una codificació mínima o convertir-se en el punt de partida d'una composició explicativa. La diferència no és només decorativa: afegir títol, context, etiquetes, text i icones canvia l'ordre de lectura i acosta la peça a una infografia. La comparació següent permet auditar aquesta progressió sense assumir que més elaboració sempre significa més claredat o més evidència.
+
+::: subfigures a+b/c "Del gràfic circular insuficient a la composició infogràfica. La subfigura a és una recreació docent pròpia d'un gràfic sense variable, categories, període, total ni font. Les subfigures b i c són elaboracions pròpies del material docent TIGIT a partir de les mateixes dades d'ocupació del sòl del CREAF, 2005."
+![Gràfic circular amb quatre percentatges, però sense títol, categories, període, total ni font]({{ site.baseurl }}/assets/img/data-visualization/pie-chart-audit.svg "Els sectors sumen 100%, però els percentatges sols no permeten saber què es mesura ni què representa cada color.")
+![Gràfic circular de l'ocupació del sòl de Catalunya el 2005, amb categories i etiquetes directes]({{ site.baseurl }}/assets/img/data-visualization/chart-catalonia-landuse-2005.png "El títol, el territori, l'any, les categories i els percentatges converteixen els sectors en una composició interpretable. Elaboració pròpia a partir de dades del CREAF.")
+![Infografia sobre l'ocupació del sòl de Catalunya el 2005 que destaca el pes conjunt dels terrenys forestals i agrícoles]({{ site.baseurl }}/assets/img/data-visualization/landuse-catalonia-2005-infographic.svg "La peça reorganitza les mateixes dades del gràfic circular amb una afirmació principal, xifres jerarquitzades, pictogrames i font visible. Elaboració pròpia a partir de dades del CREAF.")
+:::
+
+La subfigura `a` falla abans de discutir si els angles són fàcils de comparar: quatre percentatges i quatre colors no identifiquen la variable ni les categories, i tampoc no permeten verificar el total o la procedència. La subfigura `b` resol aquesta mancança amb un títol, un àmbit, un any i etiquetes directes. Encara conserva els límits del circular: el sector de les aigües continentals és difícil d'estimar i una barra ordenada facilitaria comparar diferències petites.
+
+La subfigura `c` fa un pas cap a la [infografia que es desenvoluparà al capítol 9]({{ site.baseurl }}/ca/chapters/infografia-sintesi/): reprèn les mateixes dades de `b`, però substitueix l'ordre neutre de les categories per una afirmació principal —el 93% del sòl és forestal o agrícola— i una jerarquia de xifres, textos i pictogrames. La font, el territori i l'any continuen visibles; la força narrativa no ha d'eliminar la traçabilitat ni afegir una conclusió que les dades no permetin sostenir.
 
 ![Estructura d'edats per grans grups dels municipis del Tarragonès, 2021]({{ site.baseurl }}/assets/quarto/data-visualization/age-structure-tarragones.qmd "Gràfic de barres apilades al 100%: cada barra representa un municipi i equival al 100% de la seva població. La longitud de cada segment codifica el percentatge d'un grup d'edat i el color l'identifica; l'ordenació per pes relatiu dels 65+ facilita comparar perfils."){: data-figure-width="54rem"}
 
 La sèrie del Tarragonès evidencia perfils molt diferents entre municipis: en uns quants el pes relatiu dels 65+ supera clarament la mitjana de la comarca, mentre que en d'altres domina la franja 15–64. Coses com aquesta expliquen que la composició sigui una de les famílies més útils quan la pregunta és comparar «com és» cada territori, no «quant val» l'indicador.
 
-### Seguir una evolució: línies
+### Representar el temps: evolució, esdeveniments i durades
+
+El temps acostuma a situar-se a l'eix d'abscisses perquè l'esquerra-dreta ofereix una direcció de lectura estable i permet reservar l'eix d'ordenades per a una magnitud. És una convenció molt estesa, no una propietat natural del temps: una cronologia pot ser vertical i un calendari pot organitzar-se com una matriu. El criteri essencial és que la direcció, l'interval i les absències siguin recognoscibles i que posicions igualment separades només representin intervals iguals quan l'escala ho garanteix.
+
+#### Seguir una magnitud amb una línia
 
 Una línia connecta observacions perquè l'ordre temporal és part de la dada. La sèrie de població de Vila-seca utilitza una definició anual comparable del Padró entre 2000 i 2022. Cada punt és un any; la línia ajuda a seguir canvis de ritme, però no demostra quina causa els ha produït ni autoritza a extrapolar-los.
 
 ![Evolució anual de la població de Vila-seca entre 2000 i 2022]({{ site.baseurl }}/assets/quarto/data-visualization/population-vila-seca-series-line.qmd "Gràfic de línia temporal: la posició vertical codifica la població i la posició horitzontal ordena els anys. Font: Idescat, a partir del Padró continu de l'INE."){: data-figure-width="52rem"}
 
 La relació d'aspecte, el rang vertical i la selecció d'anys poden fer semblar el mateix canvi més brusc o més suau. Cal mostrar període i unitat, revisar ruptures metodològiques i descriure el passat com a canvi observat, no com a previsió.
+
+#### Ordenar fites i planificar durades
+
+Una **cronologia** selecciona fites i en fa visible l'ordre. Pot utilitzar una escala temporal proporcional, però també pot repartir els esdeveniments amb separacions regulars només per facilitar-ne la lectura. En aquest segon cas, la posició indica «abans» i «després», però la distància gràfica no mesura quant temps ha passat. Alternar les etiquetes per damunt i per sota de la línia acostuma a ser una decisió de composició, no una segona variable.
+
+![Cronologia conceptual de la traça d'una figura, des de la font fins a la publicació]({{ site.baseurl }}/assets/diagrams/data-visualization/mermaid-timeline.mmd "Cronologia conceptual: la posició horitzontal ordena quatre fites, però la separació entre elles no representa una durada mesurada. Figura d'elaboració pròpia."){: data-figure-width="54rem"}
+
+Un **diagrama de Gantt** representa intervals: cada barra comença i acaba en una posició temporal i cada fila identifica una tasca o un grup. La longitud informa de la durada; la superposició mostra simultaneïtat; i una barra que comença quan n'acaba una altra pot expressar una seqüència planificada. Aquesta coincidència no demostra per si sola una dependència: si una tasca no pot començar fins que una altra acabi, el diagrama o el text ho ha d'indicar explícitament.
+
+![Diagrama de Gantt esquemàtic del cicle breu d'una figura reproduïble]({{ site.baseurl }}/assets/diagrams/data-visualization/mermaid-gantt.mmd "Diagrama de Gantt docent: l'eix horitzontal és una escala de calendari, les files separen fases i la longitud de cada barra mostra la durada. Les dates són esquemàtiques i no constitueixen el calendari del curs. Figura d'elaboració pròpia."){: data-figure-width="48rem"}
+
+#### Llegir el temps quan l'eix no es dibuixa
+
+No totes les representacions temporals necessiten una línia contínua ni un eix graduat visible. A [*Based on a True True Story?*](https://informationisbeautiful.net/visualizations/based-on-a-true-true-story/), cada pel·lícula es converteix en una franja que avança de l'inici al final. Les escenes ocupen intervals obtinguts a partir dels minuts d'inici i final, i el color les classifica com a certes, aproximades, falses o desconegudes segons el criteri editorial seleccionat. L'eix temporal queda ocult perquè no es dibuixen marques ni minuts, però l'ordre i l'amplada dels segments permeten seguir la successió i la durada relativa de les escenes. L'eix vertical només separa pel·lícules; no representa una segona magnitud.
+
+![Captura de «Based on a True True Story?», amb quatre pel·lícules descompostes en intervals temporals acolorits segons el grau de veracitat atribuït a cada escena]({{ site.baseurl }}/assets/img/data-visualization/based-on-true-true-story-information-is-beautiful-2022.png "«Based on a True True Story?», publicada el 2016 i actualitzada el 2022. Disseny i concepte: David McCandless; recerca: Stephanie Starling i David McCandless; codi: Omid Kashan. © Information is Beautiful. Reproducció segons el permís gratuït per a usos educatius no comercials; aquest recurs queda exclòs de la llicència Creative Commons del manual."){: data-figure-width-web="58rem" data-figure-width-pdf="78%"}
+
+La lectura és ràpida perquè combina dos canals separats: la posició i l'amplada expliquen quan passa cada escena i quant dura, mentre que el to n'identifica la categoria. Les franges tenen la mateixa amplada total i normalitzen pel·lícules de durades diferents; per tant, permeten comparar-ne la composició relativa, no alinear el mateix minut entre títols. El percentatge resumeix la classificació seleccionada, però no substitueix la seqüència: dues pel·lícules poden obtenir una proporció semblant i distribuir les escenes falses en moments molt diferents. La [visualització interactiva](https://informationisbeautiful.net/visualizations/based-on-a-true-true-story/) permet consultar cada interval i les [dades publicades pels autors](https://docs.google.com/spreadsheets/d/1sJDpzYH_sMYuYHqkmZeJGIq_TEXGDjboYdSoew7UjZ8/edit#gid=1961296402) en documenten l'inici, el final, la classificació i les fonts.
 
 ### Examinar una distribució: histograma i diagrama de caixa
 
@@ -228,6 +272,21 @@ La dispersió també admet una tercera variable si un canal addicional ho permet
 ![Dispersió de la longitud del pètal i del sèpal per a tres espècies d'iris, amb to i forma com a canals identificadors]({{ site.baseurl }}/assets/quarto/data-visualization/iris-flower-scatter.qmd "Gràfic de dispersió amb to i forma: cada punt combina dues variables per posició i una categoria per to i forma. Els tres grups formen nuvols separats que es poden llegir per posició, però to i forma els identifiquen i els reforcen sense dependre d'un únic canal."){: data-figure-width="50rem"}
 
 La redundància de canals (el mateix grup dibuixat amb to i amb forma) millora l'accessibilitat i evita que la lectura depengui d'un sol senyal. Els canals redundants han de ser consistents: si to i forma contradiguessin el grup, el lector hauria de desfer una confusió que el gràfic mateix ha creat.
+
+#### Reconstruir la base de dades d'una dispersió multivariable
+
+Una visualització acabada també es pot llegir en sentit invers: de les marques visibles cap a la taula que les hauria de fer possibles. [*Best in Show: The Ultimate Data Dog*](https://informationisbeautiful.net/visualizations/best-in-show-whats-the-top-data-dog/) és una dispersió en què els punts s'han substituït per siluetes de races de gos. Abans de consultar les dades, convé formular una hipòtesi sobre l'estructura de la base:
+
+1. Quina és la unitat d'observació i quantes files aproximades hi hauria?
+2. Quins camps calen per situar, acolorir, orientar, dimensionar i retolar cada marca?
+3. Quins camps semblen observacions de partida i quin sembla un indicador derivat?
+4. Si la popularitat original és un rànquing, com s'hauria de transformar o invertir perquè «més amunt» signifiqui «més popular»?
+
+![«Best in Show: The Ultimate Data Dog», dispersió multivariable que compara la puntuació composta i la popularitat de diverses races de gos]({{ site.baseurl }}/assets/img/data-visualization/best-in-show-data-dog-information-is-beautiful-2014.png "«Best in Show: The Ultimate Data Dog», publicada el 2014. Concepte i disseny: David McCandless; recerca: Miriam Quick; il·lustracions de gossos: Andrew Park. © Information is Beautiful. Reproducció de la imatge original segons el permís gratuït per a usos educatius no comercials; aquest recurs queda exclòs de la llicència Creative Commons del manual."){: data-figure-width-web="58rem" data-figure-width-pdf="88%"}
+
+La hipòtesi mínima és una fila per raça i camps per al nom, la popularitat, la puntuació composta, la talla, el grup i la intel·ligència. La posició horitzontal codifica la puntuació creada pels autors a partir d'intel·ligència, costos, longevitat, cures, afeccions i gana; la vertical ordena la popularitat; el to separa grups de races; la mida de la silueta indica la talla; l'orientació distingeix els dos extrems de la classificació d'intel·ligència; i el text identifica la raça. La forma pictòrica ajuda a reconèixer-la, però també ocupa més espai i produeix més solapaments que un punt geomètric.
+
+Reconstruir aquesta correspondència no valida automàticament l'índex. Encara cal obrir les [dades publicades](https://docs.google.com/spreadsheets/d/1l_HfF5EaN-QgnLc2UYdCc7L2CVrk0p3VdGB1godOyhk/edit), comprovar les definicions, les fonts, els sentits de les escales i la manera com s'han combinat els components. La figura és útil perquè mostra que una dispersió pot incorporar molts canals, però també perquè obliga a distingir dades observades, categories, transformacions i decisions editorials.
 
 ### Comparar perfils d'edat: piràmide de població
 

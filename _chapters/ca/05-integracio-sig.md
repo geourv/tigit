@@ -34,6 +34,8 @@ Durant els anys setanta i vuitanta, les millores en bases de dades, emmagatzemat
 
 ![Cronologia sintètica de l'evolució dels SIG, des de l'anàlisi espacial i els primers sistemes institucionals fins als SIG web, mòbils i connectats]({{ site.baseurl }}/assets/img/gis/gis-history-timeline.svg "La història dels SIG combina avenços conceptuals, dades, bases de dades, informàtica, observació de la Terra, posicionament per satèl·lit, xarxes i comunitats de programari. Cronologia sintètica: les etapes se superposen i no substitueixen completament les tecnologies anteriors. Esquema docent d'elaboració pròpia."){: data-figure-width="58rem"}
 
+La cronologia s'ha de llegir d'esquerra a dreta com una successió de fases àmplies. La posició horitzontal n'indica l'ordre, però les separacions regulars entre cercles no mesuren amb precisió la durada de cada etapa; les caixes alternen per damunt i per sota només per evitar solapaments. Tampoc no representa una substitució completa: que els SIG web apareguin després dels SIG d'escriptori no significa que aquests hagin desaparegut, i els períodes se superposen tal com adverteix el peu.
+
 ### GPS, GNSS i dades de posició
 
 El **GNSS** és el conjunt de sistemes globals de navegació per satèl·lit. GPS és el sistema dels Estats Units; Galileo, GLONASS i BeiDou són altres constel·lacions globals. En el llenguatge quotidià es diu sovint «GPS» per referir-se al receptor o a qualsevol posicionament per satèl·lit, però la distinció ajuda a entendre que un telèfon pot combinar senyals de sistemes diferents.
@@ -56,6 +58,8 @@ Aquesta definició diferencia tres nivells. **QGIS** és una aplicació informà
 >>>>> - Identificar quin component o procediment cal revisar quan un resultat territorial és incomplet o enganyós.
 
 ![Components d'un sistema d'informació geogràfica: persones, dades, mètodes, programari i infraestructura connectats per una pregunta territorial]({{ site.baseurl }}/assets/img/gis/gis-components.svg "Cap component funciona aïlladament: la pregunta orienta el sistema i el control de qualitat relaciona persones, dades, mètodes, programari i infraestructura. Esquema docent d'elaboració pròpia."){: data-figure-width="52rem"}
+
+Aquest esquema no és una seqüència temporal. La pregunta ocupa el centre perquè organitza el sistema, i els cinc components que l'envolten s'han d'interpretar com a parts interdependents, no com passos que cal seguir en l'ordre de les agulles del rellotge. Les connexions expressen relació; el contorn exterior del control de qualitat indica una responsabilitat transversal que afecta tots els components.
 
 Les **persones** formulen la pregunta, decideixen els criteris i interpreten els resultats. Les **dades** aporten geometries, atributs, temps i metadades. Els **mètodes** defineixen com es capturen, transformen, relacionen i validen. El **programari** implementa les operacions, des de QGIS fins a una base de dades o un servei web. La **infraestructura** inclou ordinadors, receptors, servidors, xarxes i emmagatzematge. El control de qualitat travessa tots cinc components: un algoritme correcte aplicat a una dada inadequada, o una dada precisa interpretada amb un criteri erroni, pot produir un resultat enganyós.
 

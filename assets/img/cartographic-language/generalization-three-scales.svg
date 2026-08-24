@@ -41,8 +41,8 @@
         <path d="M64,-10 C91,54 109,113 150,296" class="roadMajor"/>
         <path d="M-8,73 L304,73 M-8,111 L304,111 M-8,149 L304,149 M-8,225 L304,225" class="roadMinor"/>
         <path d="M31,-6 L31,291 M69,-6 L69,291 M107,-6 L107,291 M188,-6 L188,291 M230,-6 L230,291 M270,-6 L270,291" class="roadMinor"/>
-        <path d="M5,52 L82,33 L122,66 L105,118 L38,116 Z" class="green"/>
-        <path d="M193,205 L278,190 L292,250 L214,269 Z" class="green"/>
+        <path d="M5,57 C18,43 52,36 79,32 C98,35 116,49 122,65 C124,83 115,105 104,116 C83,123 54,121 37,115 C21,100 9,77 5,57 Z" class="green"/>
+        <path d="M193,218 C207,202 243,195 276,190 C286,202 292,230 292,249 C276,260 241,268 215,269 C202,258 194,236 193,218 Z" class="green"/>
         <g class="urban">
           <rect x="44" y="86" width="10" height="6"/>
           <rect x="62" y="86" width="11" height="6"/>
@@ -93,9 +93,9 @@
         <path d="M-10,54 L83,86 L158,70 L303,102" class="roadMinor" stroke-width="2.4"/>
         <path d="M24,286 C87,247 155,228 314,215" class="roadMinor" stroke-width="2.4"/>
         <path d="M-5,128 C55,113 105,123 173,101 C218,86 255,94 310,80" class="boundary"/>
-        <path d="M103,118 L190,116 L213,176 L166,216 L98,196 L70,150 Z" class="urban2"/>
-        <path d="M35,34 L83,25 L104,55 L82,92 L39,82 Z" class="green"/>
-        <path d="M218,188 L284,170 L312,232 L242,259 Z" class="green"/>
+        <rect x="70" y="116" width="143" height="100" class="urban2"/>
+        <path d="M35,42 C46,31 66,26 82,25 C94,31 103,43 104,55 C101,69 91,85 81,92 C66,93 48,88 39,82 C34,70 32,53 35,42 Z" class="green"/>
+        <path d="M218,198 C231,185 262,176 283,170 C296,181 307,210 312,231 C298,245 266,256 242,259 C229,247 220,218 218,198 Z" class="green"/>
       </g>
     </g>
     <text x="24" y="405" class="small">El nucli s'agrega, la xarxa menor</text>

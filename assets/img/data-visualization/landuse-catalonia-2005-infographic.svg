@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Infografia de l'ocupaci&#243; del s&#242;l de Catalunya, 2005</title>
+  <desc id="desc">Composici&#243; pr&#242;pia que destaca que el 93 per cent del s&#242;l &#233;s forestal o agr&#237;cola i mant&#233; visibles les quatre categories publicades pel CREAF.</desc>
+  <rect width="1200" height="760" fill="#f7f3ea"/>
+  <rect width="1200" height="18" fill="#315d70"/>
+
+  <g font-family="DejaVu Sans, Arial, sans-serif">
+    <text x="70" y="72" font-size="21" font-weight="700" letter-spacing="2.5" fill="#315d70">OCUPACI&#211; DEL S&#210;L &#183; CATALUNYA, 2005</text>
+    <text x="70" y="137" font-size="49" font-weight="700" fill="#17202a">93 de cada 100 hect&#224;rees</text>
+    <text x="70" y="194" font-size="49" font-weight="700" fill="#17202a">s&#243;n forestals o agr&#237;coles</text>
+    <text x="72" y="240" font-size="23" fill="#52616b">Quatre dades, una jerarquia clara i totes les parts visibles.</text>
+
+    <g transform="translate(70 284)">
+      <rect width="500" height="318" rx="18" fill="#28634f"/>
+      <text x="32" y="105" font-size="98" font-weight="700" fill="#ffffff">63%</text>
+      <text x="34" y="154" font-size="32" font-weight="700" fill="#ffffff">Terrenys forestals</text>
+      <text x="34" y="194" font-size="21" fill="#dcebe3">Gaireb&#233; dues terceres parts</text>
+      <text x="34" y="223" font-size="21" fill="#dcebe3">del territori.</text>
+      <g transform="translate(330 158)" fill="#b9d7c8" opacity="0.9">
+        <path d="M70 0 18 88h30L7 151h126L92 88h30z"/>
+        <rect x="62" y="151" width="17" height="48" rx="4"/>
+        <path d="M151 48 113 111h22l-30 48h93l-28-48h21z"/>
+        <rect x="145" y="159" width="14" height="34" rx="3"/>
+      </g>
+    </g>
+
+    <g transform="translate(594 284)">
+      <rect width="536" height="184" rx="18" fill="#f0aa45"/>
+      <text x="30" y="91" font-size="76" font-weight="700" fill="#17202a">30%</text>
+      <text x="31" y="133" font-size="29" font-weight="700" fill="#17202a">Terrenys agr&#237;coles</text>
+      <g transform="translate(330 31)" fill="none" stroke="#9b5a19" stroke-width="8" stroke-linecap="round" opacity="0.76">
+        <path d="M0 120c42-52 86-78 152-92"/>
+        <path d="M38 139c43-45 84-64 133-75"/>
+        <path d="M84 147c32-25 61-38 96-44"/>
+      </g>
+    </g>
+
+    <g transform="translate(594 488)">
+      <rect width="326" height="114" rx="18" fill="#bf4a35"/>
+      <text x="26" y="68" font-size="53" font-weight="700" fill="#ffffff">6,2%</text>
+      <text x="210" y="49" font-size="18" font-weight="700" fill="#ffffff">Zones</text>
+      <text x="210" y="75" font-size="15" font-weight="700" fill="#ffffff">urbanitzades</text>
+      <g transform="translate(151 39) scale(0.65)" fill="#f3c7bd">
+        <rect x="0" y="23" width="25" height="45"/>
+        <rect x="30" y="4" width="24" height="64"/>
+        <rect x="59" y="31" width="20" height="37"/>
+      </g>
+    </g>
+
+    <g transform="translate(940 488)">
+      <rect width="190" height="114" rx="18" fill="#327fa0"/>
+      <text x="22" y="55" font-size="42" font-weight="700" fill="#ffffff">0,53%</text>
+      <text x="22" y="87" font-size="15" font-weight="700" fill="#ffffff">Aig&#252;es continentals</text>
+    </g>
+
+    <line x1="70" y1="648" x2="1130" y2="648" stroke="#c8c0b3" stroke-width="2"/>
+    <text x="70" y="687" font-size="19" fill="#52616b">Percentatges publicats; la difer&#232;ncia fins al 100% respon a l'arrodoniment.</text>
+    <text x="70" y="720" font-size="19" fill="#52616b">Font: CREAF, ocupaci&#243; del s&#242;l de Catalunya, 2005.</text>
+    <text x="1130" y="720" text-anchor="end" font-size="19" font-weight="700" fill="#315d70">Elaboraci&#243; pr&#242;pia TIGIT</text>
+  </g>
+</svg>

@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="720" viewBox="0 0 1240 720" role="img" aria-labelledby="title desc">
+  <title id="title">Douglas-Peucker i envolupant convexa en la generalització cartogràfica</title>
+  <desc id="desc">El panell esquerre mostra com la distància perpendicular màxima i una tolerància determinen els vèrtexs conservats per Douglas-Peucker. El panell dret calcula el polígon convex mínim que conté un grup d’habitatges.</desc>
+  <defs>
+    <style>
+      .bg { fill: #ffffff; }
+      .card { fill: #ffffff; stroke: #cbd6db; stroke-width: 1.6; }
+      .title { font: 700 28px Arial, 'Liberation Sans', sans-serif; fill: #17202a; }
+      .subtitle { font: 16px Arial, 'Liberation Sans', sans-serif; fill: #52616b; }
+      .heading { font: 700 21px Arial, 'Liberation Sans', sans-serif; fill: #17202a; }
+      .stage { font: 700 16px Arial, 'Liberation Sans', sans-serif; fill: #365b6d; }
+      .body { font: 14px Arial, 'Liberation Sans', sans-serif; fill: #52616b; }
+      .note { font: 700 14px Arial, 'Liberation Sans', sans-serif; fill: #8c3225; }
+      .source { fill: none; stroke: #aeb8bf; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+      .baseline { fill: none; stroke: #2c83c5; stroke-width: 2.4; stroke-dasharray: 8 6; }
+      .result { fill: none; stroke: #365b6d; stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; }
+      .vertex { fill: #ffffff; stroke: #6f7d85; stroke-width: 1.5; }
+      .kept { fill: #d65f43; stroke: #8c3225; stroke-width: 1.5; }
+      .distance { fill: none; stroke: #d65f43; stroke-width: 2.2; stroke-dasharray: 5 4; }
+      .house { fill: #c99d75; stroke: #8b6548; stroke-width: 1.4; }
+      .house-faded { fill: #c99d75; stroke: #8b6548; stroke-width: 1.2; opacity: .45; }
+      .hull { fill: #dce9d3; fill-opacity: .78; stroke: #5f9259; stroke-width: 3; stroke-linejoin: round; }
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#365b6d"/>
+    </marker>
+  </defs>
+  <rect class="bg" width="1240" height="720"/>
+  <text x="40" y="44" class="title">Algorismes de suport a la generalització</text>
+  <text x="40" y="69" class="subtitle">Automatitzen una operació geomètrica; no decideixen per si sols què és important conservar.</text>
+  <rect x="40" y="92" width="760" height="578" rx="10" class="card"/>
+  <text x="70" y="130" class="heading">Simplificació: Douglas-Peucker</text>
+  <text x="70" y="164" class="stage">1. Es compara la línia amb el segment entre els extrems</text>
+  <polyline points="85.0,302.0 136.2,285.2 181.0,313.2 225.8,265.6 277.0,251.6 328.2,274.0 373.0,229.2 430.6,246.0 475.4,204.0 533.0,220.8 584.2,195.6 641.8,223.6 725.0,184.4" class="source"/>
+  <line x1="85.0" y1="302.0" x2="725.0" y2="184.4" class="baseline"/>
+  <line x1="181.0" y1="313.2" x2="157.5" y2="288.7" class="distance"/>
+  <circle cx="85.0" cy="302.0" r="4.2" class="vertex"/>
+  <circle cx="136.2" cy="285.2" r="4.2" class="vertex"/>
+  <circle cx="181.0" cy="313.2" r="4.2" class="vertex"/>
+  <circle cx="225.8" cy="265.6" r="4.2" class="vertex"/>
+  <circle cx="277.0" cy="251.6" r="4.2" class="vertex"/>
+  <circle cx="328.2" cy="274.0" r="4.2" class="vertex"/>
+  <circle cx="373.0" cy="229.2" r="4.2" class="vertex"/>
+  <circle cx="430.6" cy="246.0" r="4.2" class="vertex"/>
+  <circle cx="475.4" cy="204.0" r="4.2" class="vertex"/>
+  <circle cx="533.0" cy="220.8" r="4.2" class="vertex"/>
+  <circle cx="584.2" cy="195.6" r="4.2" class="vertex"/>
+  <circle cx="641.8" cy="223.6" r="4.2" class="vertex"/>
+  <circle cx="725.0" cy="184.4" r="4.2" class="vertex"/>
+  <circle cx="181.0" cy="313.2" r="6" class="kept"/>
+  <text x="179.2" y="300.9" class="note">d màx. = 0.95 &gt; ε</text>
+  <text x="85" y="361" class="body">Com que la distància màxima supera la tolerància, el vèrtex es conserva i la línia es divideix.</text>
+  <text x="70" y="410" class="stage">2. El test es repeteix recursivament a cada fragment</text>
+  <polyline points="85.0,557.0 136.2,540.2 181.0,568.2 225.8,520.6 277.0,506.6 328.2,529.0 373.0,484.2 430.6,501.0 475.4,459.0 533.0,475.8 584.2,450.6 641.8,478.6 725.0,439.4" class="source"/>
+  <polyline points="85.0,557.0 136.2,540.2 181.0,568.2 225.8,520.6 328.2,529.0 475.4,459.0 641.8,478.6 725.0,439.4" class="result"/>
+  <circle cx="85.0" cy="557.0" r="3.6" class="vertex"/>
+  <circle cx="136.2" cy="540.2" r="3.6" class="vertex"/>
+  <circle cx="181.0" cy="568.2" r="3.6" class="vertex"/>
+  <circle cx="225.8" cy="520.6" r="3.6" class="vertex"/>
+  <circle cx="277.0" cy="506.6" r="3.6" class="vertex"/>
+  <circle cx="328.2" cy="529.0" r="3.6" class="vertex"/>
+  <circle cx="373.0" cy="484.2" r="3.6" class="vertex"/>
+  <circle cx="430.6" cy="501.0" r="3.6" class="vertex"/>
+  <circle cx="475.4" cy="459.0" r="3.6" class="vertex"/>
+  <circle cx="533.0" cy="475.8" r="3.6" class="vertex"/>
+  <circle cx="584.2" cy="450.6" r="3.6" class="vertex"/>
+  <circle cx="641.8" cy="478.6" r="3.6" class="vertex"/>
+  <circle cx="725.0" cy="439.4" r="3.6" class="vertex"/>
+  <circle cx="85.0" cy="557.0" r="5.5" class="kept"/>
+  <circle cx="136.2" cy="540.2" r="5.5" class="kept"/>
+  <circle cx="181.0" cy="568.2" r="5.5" class="kept"/>
+  <circle cx="225.8" cy="520.6" r="5.5" class="kept"/>
+  <circle cx="328.2" cy="529.0" r="5.5" class="kept"/>
+  <circle cx="475.4" cy="459.0" r="5.5" class="kept"/>
+  <circle cx="641.8" cy="478.6" r="5.5" class="kept"/>
+  <circle cx="725.0" cy="439.4" r="5.5" class="kept"/>
+  <text x="85" y="620" class="body">Resultat amb ε = 0,75: es conserven 8 dels 13 vèrtexs originals.</text>
+  <text x="85" y="646" class="body">Una tolerància més gran elimina més detall i pot alterar forma, connexions o topologia.</text>
+  <rect x="830" y="92" width="370" height="578" rx="10" class="card"/>
+  <text x="855" y="130" class="heading">Agregació: envolupant convexa</text>
+  <text x="855" y="158" class="body">Objectes detallats</text>
+  <rect x="872" y="214" width="27" height="19" class="house"/>
+  <rect x="915" y="199" width="30" height="21" class="house"/>
+  <rect x="961" y="225" width="25" height="18" class="house"/>
+  <rect x="1001" y="195" width="31" height="22" class="house"/>
+  <rect x="1046" y="236" width="27" height="19" class="house"/>
+  <rect x="1091" y="210" width="28" height="20" class="house"/>
+  <rect x="925" y="257" width="28" height="19" class="house"/>
+  <rect x="975" y="269" width="31" height="20" class="house"/>
+  <rect x="1031" y="274" width="27" height="19" class="house"/>
+  <rect x="1080" y="260" width="30" height="20" class="house"/>
+  <line x1="1015" y1="315" x2="1015" y2="372" stroke="#365b6d" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <text x="855" y="397" class="body">Polígon agregat</text>
+  <polygon points="872.0,419.0 915.0,404.0 1001.0,400.0 1032.0,400.0 1119.0,415.0 1119.0,435.0 1110.0,485.0 1058.0,498.0 1031.0,498.0 975.0,494.0 925.0,481.0 872.0,438.0" class="hull"/>
+  <rect x="872" y="419" width="27" height="19" class="house-faded"/>
+  <rect x="915" y="404" width="30" height="21" class="house-faded"/>
+  <rect x="961" y="430" width="25" height="18" class="house-faded"/>
+  <rect x="1001" y="400" width="31" height="22" class="house-faded"/>
+  <rect x="1046" y="441" width="27" height="19" class="house-faded"/>
+  <rect x="1091" y="415" width="28" height="20" class="house-faded"/>
+  <rect x="925" y="462" width="28" height="19" class="house-faded"/>
+  <rect x="975" y="474" width="31" height="20" class="house-faded"/>
+  <rect x="1031" y="479" width="27" height="19" class="house-faded"/>
+  <rect x="1080" y="465" width="30" height="20" class="house-faded"/>
+  <text x="855" y="552" class="body">L’envolupant convexa és el polígon convex</text>
+  <text x="855" y="574" class="body">més petit que conté tots els objectes.</text>
+  <text x="855" y="607" class="body">És reproduïble, però també pot incorporar</text>
+  <text x="855" y="629" class="body">espais buits i ocultar l’estructura interna.</text>
+  <text x="620" y="704" text-anchor="middle" class="subtitle">El paràmetre, l’escala de sortida i la revisió visual continuen sent decisions cartogràfiques.</text>
+</svg>

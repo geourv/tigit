@@ -14,17 +14,16 @@
       .water { fill: none; stroke: #2c83c5; stroke-width: 5; stroke-linecap: round; }
       .rail { fill: none; stroke: #365b6d; stroke-width: 4; stroke-linecap: round; }
       .area { fill: #cfe3ea; stroke: #365b6d; stroke-width: 1.4; }
+      .quarry { font: 58px 'DejaVu Sans', 'Liberation Sans', sans-serif; fill: #365b6d; }
     </style>
     <pattern id="abstractHatch" patternUnits="userSpaceOnUse" width="9" height="9" patternTransform="rotate(35)">
       <line x1="0" y1="0" x2="0" y2="9" stroke="#7a5195" stroke-width="1.3"/>
     </pattern>
-    <pattern id="forestPattern" patternUnits="userSpaceOnUse" width="24" height="24">
-      <circle cx="8" cy="8" r="5" fill="#5a9f70"/>
-      <circle cx="18" cy="17" r="4" fill="#3f7d58"/>
-    </pattern>
     <pattern id="orchardPattern" patternUnits="userSpaceOnUse" width="22" height="22">
-      <circle cx="6" cy="6" r="3.5" fill="#3f7d58"/>
-      <circle cx="16" cy="16" r="3.5" fill="#3f7d58"/>
+      <rect width="22" height="22" fill="#f2e7cf"/>
+      <path d="M0,11 H22 M11,0 V22" stroke="#d2bea0" stroke-width="1"/>
+      <circle cx="11" cy="11" r="4.5" fill="#ffffff" stroke="#3f7d58" stroke-width="2"/>
+      <circle cx="11" cy="11" r="1.4" fill="#8b6548"/>
     </pattern>
     <marker id="arrowBlue" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
       <path d="M0,0 L0,6 L9,3 z" fill="#16697a"/>
@@ -34,7 +33,6 @@
   <g transform="translate(40 115)">
     <rect x="0" y="0" width="1100" height="520" class="panel"/>
     <rect x="0" y="0" width="1100" height="66" class="head"/>
-    <rect x="0" y="48" width="1100" height="18" class="head"/>
     <line x1="180" y1="0" x2="180" y2="520" stroke="#d5dde2" stroke-width="1.5"/>
     <line x1="455" y1="0" x2="455" y2="520" stroke="#d5dde2" stroke-width="1.5"/>
     <line x1="670" y1="0" x2="670" y2="520" stroke="#d5dde2" stroke-width="1.5"/>
@@ -63,7 +61,7 @@
     <text x="24" y="287" class="label">Associatiu</text>
     <text x="205" y="269" class="small">Algun tret recorda el fenomen:</text>
     <text x="205" y="291" class="small">forma, color, textura o gest gràfic.</text>
-    <text x="205" y="313" class="small">Accelera la lectura, pero cal control.</text>
+    <text x="205" y="313" class="small">Accelera la lectura, però cal control.</text>
     <path d="M528,297 L528,256 L541,256 L541,281 L554,271 L554,281 L568,271 L568,281 L582,271 L582,297 Z" fill="#cfe3ea" stroke="#365b6d" stroke-width="2"/>
     <text x="556" y="325" text-anchor="middle" class="tiny">indústria</text>
     <line x1="710" y1="277" x2="845" y2="277" class="rail"/>
@@ -76,19 +74,14 @@
       <line x1="825" y1="268" x2="825" y2="286"/>
     </g>
     <text x="777" y="325" text-anchor="middle" class="tiny">ferrocarril</text>
-    <rect x="945" y="246" width="92" height="58" fill="url(#forestPattern)" stroke="#365b6d" stroke-width="2"/>
+    <rect x="945" y="246" width="92" height="58" fill="#70a979" stroke="#365b6d" stroke-width="2"/>
     <text x="991" y="325" text-anchor="middle" class="tiny">bosc</text>
 
     <text x="24" y="438" class="label">Convencional</text>
     <text x="205" y="420" class="small">El significat depèn d'un acord repetit:</text>
     <text x="205" y="442" class="small">sèries cartogràfiques, llegendes,</text>
     <text x="205" y="464" class="small">normes institucionals o hàbits d'usuari.</text>
-    <g transform="translate(562 425)">
-      <line x1="-20" y1="-20" x2="20" y2="20" stroke="#365b6d" stroke-width="5" stroke-linecap="round"/>
-      <line x1="20" y1="-20" x2="-20" y2="20" stroke="#365b6d" stroke-width="5" stroke-linecap="round"/>
-      <line x1="-27" y1="-27" x2="-13" y2="-27" stroke="#365b6d" stroke-width="5" stroke-linecap="round"/>
-      <line x1="13" y1="-27" x2="27" y2="-27" stroke="#365b6d" stroke-width="5" stroke-linecap="round"/>
-    </g>
+    <text x="562" y="453" text-anchor="middle" class="quarry">&#9874;</text>
     <text x="562" y="476" text-anchor="middle" class="tiny">pedrera</text>
     <path d="M710,434 C730,414 752,454 774,434 C796,414 818,454 845,434" class="water"/>
     <text x="777" y="476" text-anchor="middle" class="tiny">riu</text>

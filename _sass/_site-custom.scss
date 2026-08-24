@@ -11,3 +11,13 @@
 // html[data-theme="cafe"] {
 //   --global-theme-color: #6f4e1f;
 // }
+
+@media (max-width: 575px) {
+  .container[role="main"] .manual-content code {
+    overflow-wrap: anywhere;
+  }
+
+  .container[role="main"] .manual-content .md-table code {
+    white-space: normal;
+  }
+}

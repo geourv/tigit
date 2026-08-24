@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1044" height="590" viewBox="0 0 1044 590" role="img" aria-labelledby="title desc">
+  <title id="title">Comparació de famílies i variants tipogràfiques amb el topònim Vila-seca</title>
+  <desc id="desc">La mateixa etiqueta Vila-seca es mostra amb una família sans serif, una família serif i una família monoespaiada, i després en regular, negreta, cursiva i negreta cursiva dins de DejaVu Sans.</desc>
+  <defs>
+    <style>
+      .panel { fill: #ffffff; stroke: #d5dde2; stroke-width: 1.5; }
+      .card { fill: #f7fbfa; stroke: #d5dde2; stroke-width: 1.4; }
+      .section { font: 700 20px 'DejaVu Sans', sans-serif; fill: #17202a; }
+      .kind { font: 700 14px 'DejaVu Sans', sans-serif; fill: #365b6d; letter-spacing: .4px; }
+      .family { font: 14px 'DejaVu Sans', sans-serif; fill: #52616b; }
+      .note { font: 14px 'DejaVu Sans', sans-serif; fill: #52616b; }
+      .sans { font: 36px 'DejaVu Sans', sans-serif; fill: #17202a; }
+      .serif { font: 36px 'DejaVu Serif', serif; fill: #17202a; }
+      .mono { font: 36px 'DejaVu Sans Mono', monospace; fill: #17202a; }
+      .glyph-sans { font: 18px 'DejaVu Sans', sans-serif; fill: #52616b; }
+      .glyph-serif { font: 18px 'DejaVu Serif', serif; fill: #52616b; }
+      .glyph-mono { font: 18px 'DejaVu Sans Mono', monospace; fill: #52616b; }
+      .variant { font-family: 'DejaVu Sans', sans-serif; font-size: 31px; fill: #17202a; }
+    </style>
+  </defs>
+
+  <rect x="1" y="1" width="1042" height="588" rx="4" class="panel"/>
+  <text x="22" y="35" class="section">La mateixa etiqueta en tres famílies</text>
+
+  <g transform="translate(20 52)">
+    <rect width="1004" height="94" rx="4" class="card"/>
+    <text x="18" y="34" class="kind">SANS SERIF</text>
+    <text x="18" y="59" class="family">DejaVu Sans</text>
+    <line x1="190" y1="14" x2="190" y2="80" stroke="#d5dde2" stroke-width="1.4"/>
+    <text x="220" y="61" class="sans">Vila-seca</text>
+    <text x="580" y="55" class="glyph-sans">Tarragonès · l·l · 10,5 %</text>
+  </g>
+
+  <g transform="translate(20 156)">
+    <rect width="1004" height="94" rx="4" class="card"/>
+    <text x="18" y="34" class="kind">SERIF</text>
+    <text x="18" y="59" class="family">DejaVu Serif</text>
+    <line x1="190" y1="14" x2="190" y2="80" stroke="#d5dde2" stroke-width="1.4"/>
+    <text x="220" y="61" class="serif">Vila-seca</text>
+    <text x="580" y="55" class="glyph-serif">Tarragonès · l·l · 10,5 %</text>
+  </g>
+
+  <g transform="translate(20 260)">
+    <rect width="1004" height="94" rx="4" class="card"/>
+    <text x="18" y="34" class="kind">MONOESPAIADA</text>
+    <text x="18" y="59" class="family">DejaVu Sans Mono</text>
+    <line x1="190" y1="14" x2="190" y2="80" stroke="#d5dde2" stroke-width="1.4"/>
+    <text x="220" y="61" class="mono">Vila-seca</text>
+    <text x="580" y="55" class="glyph-mono">Tarragonès · l·l · 10,5 %</text>
+  </g>
+
+  <text x="22" y="393" class="section">Variants reals dins de DejaVu Sans</text>
+
+  <g transform="translate(20 410)">
+    <rect width="241" height="122" rx="4" class="card"/>
+    <text x="16" y="28" class="kind">REGULAR</text>
+    <text x="16" y="82" class="variant" font-weight="400">Vila-seca</text>
+  </g>
+  <g transform="translate(274 410)">
+    <rect width="241" height="122" rx="4" class="card"/>
+    <text x="16" y="28" class="kind">NEGRETA</text>
+    <text x="16" y="82" class="variant" font-weight="700">Vila-seca</text>
+  </g>
+  <g transform="translate(528 410)">
+    <rect width="241" height="122" rx="4" class="card"/>
+    <text x="16" y="28" class="kind">CURSIVA</text>
+    <text x="16" y="82" class="variant" font-style="italic" font-weight="400">Vila-seca</text>
+  </g>
+  <g transform="translate(782 410)">
+    <rect width="242" height="122" rx="4" class="card"/>
+    <text x="16" y="28" class="kind">NEGRETA CURSIVA</text>
+    <text x="16" y="82" class="variant" font-style="italic" font-weight="700">Vila-seca</text>
+  </g>
+
+  <text x="522" y="566" text-anchor="middle" class="note">Mateixa mida nominal: canvien l'amplada, el ritme, la densitat i la presència visual.</text>
+</svg>

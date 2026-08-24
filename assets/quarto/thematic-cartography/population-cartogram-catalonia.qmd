@@ -1,0 +1,281 @@
+---
+title: "Cartograma comarcal de població estimada de Catalunya"
+lang: ca
+ref: population_cartogram_catalonia
+format:
+  gfm:
+    output-file: population-cartogram-catalonia.generated.md
+execute:
+  echo: false
+  warning: false
+  message: false
+execute-dir: project
+unaltraweb_compute:
+  engine: r
+  mode: figure
+  inputs:
+    - _practices/tigit-projecte-territorial/data/processed/catalonia-counties-icgc-20260120.gpkg
+    - _practices/tigit-projecte-territorial/data/raw/mpiscatalunya.csv
+    - _practices/tigit-projecte-territorial/data/raw/t396mun.csv
+  outputs:
+    - assets/img/thematic-cartography/population-proportional-symbols-catalonia-2025.svg
+    - assets/img/thematic-cartography/population-cartogram-catalonia-2025.svg
+---
+
+```{r}
+find_project_root <- function(start) {
+  path <- normalizePath(start, winslash = "/", mustWork = FALSE)
+  repeat {
+    if (file.exists(file.path(path, ".unaltraweb", "computations.yml"))) {
+      return(path)
+    }
+    parent <- dirname(path)
+    if (identical(parent, path)) {
+      stop("Project root not found: missing .unaltraweb/computations.yml")
+    }
+    path <- parent
+  }
+}
+
+root <- find_project_root(getwd())
+suppressPackageStartupMessages(library(sf))
+suppressPackageStartupMessages(library(ggplot2))
+suppressPackageStartupMessages(library(cartogramR))
+
+counties <- sf::st_read(
+  file.path(root, "_practices/tigit-projecte-territorial/data/processed/catalonia-counties-icgc-20260120.gpkg"),
+  layer = "counties_250k",
+  quiet = TRUE
+)
+municipality_index <- read.csv(
+  file.path(root, "_practices/tigit-projecte-territorial/data/raw/mpiscatalunya.csv"),
+  sep = ";", skip = 3, colClasses = "character", check.names = FALSE,
+  fileEncoding = "UTF-8"
+)
+geographic_indicators <- read.csv2(
+  file.path(root, "_practices/tigit-projecte-territorial/data/raw/t396mun.csv"),
+  skip = 4,
+  colClasses = c("character", "character", "numeric", "numeric", "numeric"),
+  check.names = FALSE,
+  fileEncoding = "UTF-8"
+)
+
+names(municipality_index)[1:4] <- c("mun_code", "mun_name", "county_code", "county_name")
+names(geographic_indicators)[1:5] <- c("mun_code", "mun_name", "area_km2", "density", "entities")
+municipal_data <- merge(
+  municipality_index[, c("mun_code", "county_code", "county_name")],
+  geographic_indicators[, c("mun_code", "area_km2", "density")],
+  by = "mun_code"
+)
+municipal_data$population <- municipal_data$area_km2 * municipal_data$density
+county_data <- aggregate(
+  cbind(area_km2, population) ~ county_code + county_name,
+  data = municipal_data,
+  FUN = sum
+)
+county_data$population <- round(county_data$population)
+counties <- merge(counties, county_data, by.x = "CODICOMAR", by.y = "county_code", all.x = TRUE, sort = FALSE)
+
+stopifnot(
+  nrow(municipal_data) == 947,
+  nrow(county_data) == 43,
+  nrow(counties) == 43,
+  !anyNA(counties$population),
+  all(counties$NOMCOMAR[counties$CODICOMAR != "39"] == counties$county_name[counties$CODICOMAR != "39"]),
+  counties$NOMCOMAR[counties$CODICOMAR == "39"] == "Val d'Aran",
+  counties$county_name[counties$CODICOMAR == "39"] == "Aran"
+)
+
+# Tiny offshore components become distracting filaments under strong distortion.
+primary_geometry <- lapply(sf::st_geometry(counties), function(geometry) {
+  parts <- sf::st_cast(sf::st_sfc(geometry, crs = sf::st_crs(counties)), "POLYGON")
+  parts[[which.max(as.numeric(sf::st_area(parts)))]]
+})
+sf::st_geometry(counties) <- sf::st_cast(
+  sf::st_sfc(primary_geometry, crs = sf::st_crs(counties)),
+  "MULTIPOLYGON"
+)
+counties <- sf::st_simplify(counties, dTolerance = 200, preserveTopology = TRUE)
+
+counties$expansion_factor <-
+  (counties$population / sum(counties$population)) /
+  (counties$area_km2 / sum(counties$area_km2))
+counties$expansion_class <- cut(
+  counties$expansion_factor,
+  breaks = c(-Inf, 0.5, 0.8, 1.25, 2, Inf),
+  labels = c("< 0,5×", "0,5-0,8×", "0,8-1,25×", "1,25-2×", "> 2×"),
+  right = FALSE
+)
+
+population_points <- sf::st_point_on_surface(counties)
+population_map <- ggplot() +
+  geom_sf(data = counties, fill = "#e5ebef", color = "#7f929e", linewidth = 0.45) +
+  geom_sf(
+    data = population_points,
+    aes(size = population),
+    shape = 21, fill = "#4f8fae", color = "#315d70", stroke = 0.5, alpha = 0.78
+  ) +
+  scale_size_area(
+    max_size = 27,
+    breaks = c(100000, 500000, 1500000),
+    labels = c("100.000", "500.000", "1.500.000"),
+    name = "Població estimada (habitants)"
+  ) +
+  coord_sf(datum = NA) +
+  labs(
+    title = "Població estimada de Catalunya, 2025",
+    subtitle = "L'àrea de cada cercle és proporcional a la població estimada"
+  ) +
+  theme_void(base_family = "DejaVu Sans") +
+  theme(
+    plot.title = element_text(face = "bold", size = 22, color = "#17202a", hjust = 0),
+    plot.subtitle = element_text(size = 18, color = "#52616b", hjust = 0, margin = margin(b = 8)),
+    plot.background = element_rect(fill = "white", color = NA),
+    panel.background = element_rect(fill = "#f8fafc", color = "#d8e0e6", linewidth = 0.55),
+    plot.margin = margin(16, 18, 12, 18),
+    legend.position = "bottom",
+    legend.direction = "horizontal",
+    legend.title = element_text(size = 17, color = "#315d70"),
+    legend.text = element_text(size = 16, color = "#52616b"),
+    legend.key = element_rect(fill = "white", color = NA),
+    legend.margin = margin(t = 4),
+    legend.box.spacing = grid::unit(2, "mm")
+  ) +
+  guides(size = guide_legend(title.position = "top", nrow = 1))
+
+population_output <- file.path(
+  root,
+  "assets/img/thematic-cartography/population-proportional-symbols-catalonia-2025.svg"
+)
+dir.create(dirname(population_output), showWarnings = FALSE, recursive = TRUE)
+svglite::svglite(population_output, width = 9.4, height = 7.4, bg = "white")
+print(population_map)
+grDevices::dev.off()
+
+cartogram_result <- cartogramR::cartogramR(
+  counties,
+  count = "population",
+  method = "gsm",
+  options = list(
+    L = 512,
+    relerror = 0.02,
+    maxit = 50,
+    center = "point_on_surface"
+  )
+)
+cartogram_counties <- cartogram_result$cartogram
+cartogram_counties <- sf::st_make_valid(cartogram_counties)
+
+cartogram_share <- as.numeric(sf::st_area(cartogram_counties))
+cartogram_share <- cartogram_share / sum(cartogram_share)
+target_share <- cartogram_counties$population / sum(cartogram_counties$population)
+mean_area_error <- mean(abs(cartogram_share - target_share) / target_share)
+stopifnot(is.finite(mean_area_error), mean_area_error < 0.05)
+
+focus_names <- c("Barcelonès", "Segrià")
+cartogram_labels <- sf::st_point_on_surface(cartogram_counties[cartogram_counties$NOMCOMAR %in% focus_names, ])
+cartogram_labels$label_color <- ifelse(cartogram_labels$NOMCOMAR == "Barcelonès", "white", "#17202a")
+
+palette <- c(
+  "< 0,5×" = "#4f8fae",
+  "0,5-0,8×" = "#a9cbdc",
+  "0,8-1,25×" = "#e8e5dc",
+  "1,25-2×" = "#efb366",
+  "> 2×" = "#c94f3d"
+)
+map_theme <- theme_void(base_family = "DejaVu Sans") +
+  theme(
+    plot.title = element_text(face = "bold", size = 20, color = "#17202a", hjust = 0),
+    plot.subtitle = element_text(size = 19, color = "#52616b", hjust = 0, margin = margin(b = 5)),
+    plot.background = element_rect(fill = "#f8fafc", color = "#d8e0e6", linewidth = 0.55),
+    plot.margin = margin(9, 9, 9, 9),
+    legend.position = "none"
+  )
+
+territorial_map <- ggplot(counties) +
+  geom_sf(aes(fill = expansion_class), color = "#ffffff", linewidth = 0.32) +
+  scale_fill_manual(values = palette, drop = FALSE) +
+  coord_sf(datum = NA) +
+  labs(
+    title = "Mapa territorial",
+    subtitle = "Àrea = superfície real"
+  ) +
+  map_theme
+
+cartogram_map <- ggplot(cartogram_counties) +
+  geom_sf(aes(fill = expansion_class), color = "#ffffff", linewidth = 0.32) +
+  geom_sf_text(
+    data = cartogram_labels,
+    aes(label = NOMCOMAR, color = label_color),
+    family = "DejaVu Sans", size = 6.7, fontface = "bold"
+  ) +
+  scale_fill_manual(values = palette, drop = FALSE) +
+  scale_color_identity() +
+  coord_sf(datum = NA) +
+  labs(
+    title = "Cartograma contigu",
+    subtitle = "Àrea ≈ població; veïnatges conservats"
+  ) +
+  map_theme
+
+output <- file.path(root, "assets/img/thematic-cartography/population-cartogram-catalonia-2025.svg")
+dir.create(dirname(output), showWarnings = FALSE, recursive = TRUE)
+svglite::svglite(output, width = 11.5, height = 7.8, bg = "white")
+grid::grid.newpage()
+grid::grid.rect(gp = grid::gpar(fill = "white", col = NA))
+layout <- grid::grid.layout(
+  nrow = 3,
+  ncol = 2,
+  heights = grid::unit(c(0.18, 0.65, 0.17), "npc"),
+  widths = grid::unit(c(0.5, 0.5), "npc")
+)
+grid::pushViewport(grid::viewport(layout = layout))
+grid::grid.text(
+  "Població estimada de Catalunya per comarques, 2025",
+  x = grid::unit(0.035, "npc"), y = grid::unit(0.68, "npc"), just = c("left", "center"),
+  vp = grid::viewport(layout.pos.row = 1, layout.pos.col = 1:2),
+  gp = grid::gpar(fontfamily = "DejaVu Sans", fontsize = 22, fontface = "bold", col = "#17202a")
+)
+grid::grid.text(
+  "L'àrea representa població; el color indica la direcció de la deformació.",
+  x = grid::unit(0.035, "npc"), y = grid::unit(0.27, "npc"), just = c("left", "center"),
+  vp = grid::viewport(layout.pos.row = 1, layout.pos.col = 1:2),
+  gp = grid::gpar(fontfamily = "DejaVu Sans", fontsize = 19, col = "#52616b")
+)
+print(territorial_map, vp = grid::viewport(layout.pos.row = 2, layout.pos.col = 1))
+print(cartogram_map, vp = grid::viewport(layout.pos.row = 2, layout.pos.col = 2))
+
+footer <- grid::viewport(layout.pos.row = 3, layout.pos.col = 1:2)
+grid::grid.roundrect(
+  x = 0.5, y = 0.52, width = 0.94, height = 0.72, r = grid::unit(2.5, "mm"),
+  vp = footer,
+  gp = grid::gpar(fill = "#eef5f8", col = "#c7dce5", lwd = 0.8)
+)
+legend_x <- c(0.07, 0.25, 0.43, 0.61, 0.79)
+legend_labels <- c("< 0,5×", "0,5-0,8×", "0,8-1,25×", "1,25-2×", "> 2×")
+for (i in seq_along(legend_x)) {
+  grid::grid.rect(
+    x = grid::unit(legend_x[i], "npc"), y = grid::unit(0.64, "npc"),
+    width = grid::unit(0.025, "npc"), height = grid::unit(0.18, "npc"),
+    vp = footer,
+    gp = grid::gpar(fill = palette[[legend_labels[i]]], col = "white", lwd = 0.6)
+  )
+  grid::grid.text(
+    legend_labels[i],
+    x = grid::unit(legend_x[i] + 0.025, "npc"), y = grid::unit(0.64, "npc"), just = c("left", "center"),
+    vp = footer,
+    gp = grid::gpar(fontfamily = "DejaVu Sans", fontsize = 17, col = "#315d70")
+  )
+}
+grid::grid.text(
+  "Negativa < 0,8×  |  Gairebé neutra = 0,8-1,25×  |  Positiva > 1,25×",
+  x = grid::unit(0.05, "npc"), y = grid::unit(0.27, "npc"), just = c("left", "center"),
+  vp = footer,
+  gp = grid::gpar(fontfamily = "DejaVu Sans", fontsize = 17, col = "#52616b")
+)
+grDevices::dev.off()
+```
+
+![Població estimada de les comarques de Catalunya representada amb símbols proporcionals]({{ site.baseurl }}/assets/img/thematic-cartography/population-proportional-symbols-catalonia-2025.svg "L'àrea dels cercles és proporcional a la població estimada de cada comarca.")
+
+![Comparació de les comarques de Catalunya abans i després d'una deformació contigua proporcional a la població estimada]({{ site.baseurl }}/assets/img/thematic-cartography/population-cartogram-catalonia-2025.svg "El mapa territorial conserva la superfície real. El cartograma contigu conserva els veïnatges i aproxima l'àrea de cada comarca al seu pes demogràfic; el Barcelonès s'expandeix i el Segrià es contrau.")

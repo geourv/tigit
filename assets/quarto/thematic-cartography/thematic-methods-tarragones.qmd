@@ -1,0 +1,192 @@
+---
+title: "Mètodes temàtics aplicats al Tarragonès"
+lang: ca
+ref: thematic_methods_tarragones
+format:
+  gfm:
+    output-file: thematic-methods-tarragones.generated.md
+execute:
+  echo: false
+  warning: false
+  message: false
+execute-dir: project
+unaltraweb_compute:
+  engine: r
+  mode: figure
+  inputs:
+    - _practices/tigit-projecte-territorial/data/processed/tarragones-boundaries-icgc-20260120.gpkg
+    - _practices/tigit-projecte-territorial/data/processed/municipal-indicators-tarragones-2021.csv
+  outputs:
+    - assets/img/thematic-cartography/thematic-methods-tarragones-2021.svg
+---
+
+```{r}
+find_project_root <- function(start) {
+  path <- normalizePath(start, winslash = "/", mustWork = FALSE)
+  repeat {
+    if (file.exists(file.path(path, ".unaltraweb", "computations.yml"))) {
+      return(path)
+    }
+    parent <- dirname(path)
+    if (identical(parent, path)) {
+      stop("Project root not found: missing .unaltraweb/computations.yml")
+    }
+    path <- parent
+  }
+}
+
+root <- find_project_root(getwd())
+suppressPackageStartupMessages(library(sf))
+suppressPackageStartupMessages(library(ggplot2))
+
+gpkg <- file.path(root, "_practices/tigit-projecte-territorial/data/processed/tarragones-boundaries-icgc-20260120.gpkg")
+municipalities <- sf::st_read(gpkg, layer = "municipalities_250k", quiet = TRUE)
+county <- sf::st_read(gpkg, layer = "comarca_250k", quiet = TRUE)
+seats <- sf::st_read(gpkg, layer = "municipality_seats", quiet = TRUE)
+indicators <- read.csv(
+  file.path(root, "_practices/tigit-projecte-territorial/data/processed/municipal-indicators-tarragones-2021.csv"),
+  fileEncoding = "UTF-8"
+)
+
+municipalities$CODIMUNI <- as.character(municipalities$CODIMUNI)
+seats$CODIMUNI <- as.character(seats$CODIMUNI)
+indicators$mun_code <- as.character(indicators$mun_code)
+indicators$mun_code <- ifelse(nchar(indicators$mun_code) == 5, paste0("0", indicators$mun_code), indicators$mun_code)
+d <- merge(municipalities, indicators, by.x = "CODIMUNI", by.y = "mun_code", all.x = TRUE)
+seat_data <- merge(seats, indicators, by.x = "CODIMUNI", by.y = "mun_code", all.x = TRUE)
+seat_xy <- sf::st_coordinates(sf::st_cast(seat_data, "POINT"))
+seat_data$x <- seat_xy[, 1]
+seat_data$y <- seat_xy[, 2]
+
+stopifnot(
+  nrow(d) == 22,
+  nrow(seat_data) == 22,
+  !anyNA(d$housing_non_main_pct),
+  !anyNA(seat_data$housing_total),
+  all(d$indicator_status == "ok")
+)
+
+palette_blue <- c("#edf8fb", "#b3dce8", "#66b2c9", "#2b83ba", "#155b8a")
+bbox <- sf::st_bbox(county)
+
+map_theme <- theme_void(base_family = "DejaVu Sans") +
+  theme(
+    plot.title = element_text(face = "bold", size = 20, color = "#17202a", hjust = 0),
+    plot.subtitle = element_text(size = 19, color = "#52616b", hjust = 0, margin = margin(b = 4)),
+    plot.background = element_rect(fill = "#f8fafc", color = "#d8e0e6", linewidth = 0.55),
+    plot.margin = margin(8, 8, 8, 8),
+    legend.position = "none"
+  )
+
+choropleth <- ggplot(d) +
+  geom_sf(aes(fill = housing_non_main_pct), color = "#ffffff", linewidth = 0.25) +
+  geom_sf(data = county, fill = NA, color = "#36454f", linewidth = 0.5) +
+  scale_fill_gradientn(colors = palette_blue, limits = range(d$housing_non_main_pct)) +
+  coord_sf(datum = NA, xlim = c(bbox["xmin"], bbox["xmax"]), ylim = c(bbox["ymin"], bbox["ymax"])) +
+  labs(title = "Coropleta", subtitle = "Color = % no principal") +
+  map_theme
+
+proportional <- ggplot() +
+  geom_sf(data = d, fill = "#edf1f4", color = "#aeb9c2", linewidth = 0.25) +
+  geom_point(
+    data = sf::st_drop_geometry(seat_data),
+    aes(x = x, y = y, size = housing_total),
+    shape = 21, fill = "#e76f51", color = "#8f3024", stroke = 0.45, alpha = 0.80
+  ) +
+  geom_sf(data = county, fill = NA, color = "#36454f", linewidth = 0.5) +
+  scale_size_area(max_size = 16) +
+  coord_sf(datum = NA, xlim = c(bbox["xmin"], bbox["xmax"]), ylim = c(bbox["ymin"], bbox["ymax"])) +
+  labs(title = "Símbols proporcionals", subtitle = "Àrea = habitatges totals") +
+  map_theme
+
+point_map <- ggplot() +
+  geom_sf(data = d, fill = "#edf1f4", color = "#c5ced5", linewidth = 0.25) +
+  geom_point(
+    data = sf::st_drop_geometry(seat_data), aes(x = x, y = y),
+    shape = 21, size = 3.0, fill = "#6a51a3", color = "white", stroke = 0.55
+  ) +
+  geom_sf(data = county, fill = NA, color = "#36454f", linewidth = 0.5) +
+  coord_sf(datum = NA, xlim = c(bbox["xmin"], bbox["xmax"]), ylim = c(bbox["ymin"], bbox["ymax"])) +
+  labs(title = "Mapa puntual", subtitle = "Posició = 22 capitals") +
+  map_theme
+
+pie_sector <- function(cx, cy, radius, start, end, group, category) {
+  angles <- seq(start, end, length.out = max(12, ceiling(abs(end - start) * 24)))
+  data.frame(
+    x = c(cx, cx + radius * cos(angles), cx),
+    y = c(cy, cy + radius * sin(angles), cy),
+    group = group,
+    category = category
+  )
+}
+
+selected_codes <- c("431482", "439057", "431711", "431536")
+selected <- sf::st_drop_geometry(seat_data[match(selected_codes, seat_data$CODIMUNI), ])
+selected$display_x <- c(356000, 342200, 341800, 369000)
+selected$display_y <- c(4550700, 4549800, 4555700, 4557600)
+selected$short_name <- c("TGN", "Salou", "Vila-\nseca", "Torre-\ndembarra")
+
+pie_data <- do.call(rbind, lapply(seq_len(nrow(selected)), function(i) {
+  ratio <- selected$housing_non_main[i] / selected$housing_total[i]
+  split <- -pi / 2 + 2 * pi * ratio
+  rbind(
+    pie_sector(selected$display_x[i], selected$display_y[i], 1550, -pi / 2, split, paste0(i, "-non"), "No principal"),
+    pie_sector(selected$display_x[i], selected$display_y[i], 1550, split, 3 * pi / 2, paste0(i, "-main"), "Principal")
+  )
+}))
+
+cartodiagram <- ggplot() +
+  geom_sf(data = d, fill = "#edf1f4", color = "#c5ced5", linewidth = 0.25) +
+  geom_segment(
+    data = selected,
+    aes(x = x, y = y, xend = display_x, yend = display_y),
+    color = "#8d99a3", linewidth = 0.45
+  ) +
+  geom_polygon(
+    data = pie_data,
+    aes(x = x, y = y, group = group, fill = category),
+    color = "white", linewidth = 0.35
+  ) +
+  geom_text(
+    data = selected,
+    aes(x = display_x, y = display_y - 2050, label = short_name),
+    family = "DejaVu Sans", size = 6.8, color = "#36454f"
+  ) +
+  geom_sf(data = county, fill = NA, color = "#36454f", linewidth = 0.5) +
+  scale_fill_manual(values = c("No principal" = "#2a9d8f", "Principal" = "#d8e0e6")) +
+  coord_sf(datum = NA, xlim = c(bbox["xmin"], bbox["xmax"]), ylim = c(bbox["ymin"], bbox["ymax"])) +
+  labs(title = "Cartodiagrama", subtitle = "Verd = no principal | gris = principal") +
+  map_theme
+
+methods_output <- file.path(root, "assets/img/thematic-cartography/thematic-methods-tarragones-2021.svg")
+dir.create(dirname(methods_output), showWarnings = FALSE, recursive = TRUE)
+svglite::svglite(methods_output, width = 11.5, height = 9.6, bg = "white")
+grid::grid.newpage()
+grid::grid.rect(gp = grid::gpar(fill = "white", col = NA))
+methods_layout <- grid::grid.layout(
+  nrow = 3,
+  ncol = 2,
+  heights = grid::unit(c(0.16, 0.42, 0.42), "npc"),
+  widths = grid::unit(c(0.5, 0.5), "npc")
+)
+grid::pushViewport(grid::viewport(layout = methods_layout))
+grid::grid.text(
+  "Quatre mètodes, quatre preguntes territorials",
+  x = grid::unit(0.03, "npc"), y = grid::unit(0.68, "npc"), just = c("left", "center"),
+  vp = grid::viewport(layout.pos.row = 1, layout.pos.col = 1:2),
+  gp = grid::gpar(fontfamily = "DejaVu Sans", fontsize = 22, fontface = "bold", col = "#17202a")
+)
+grid::grid.text(
+  "Mateix territori; cada mètode respon una pregunta diferent.",
+  x = grid::unit(0.03, "npc"), y = grid::unit(0.27, "npc"), just = c("left", "center"),
+  vp = grid::viewport(layout.pos.row = 1, layout.pos.col = 1:2),
+  gp = grid::gpar(fontfamily = "DejaVu Sans", fontsize = 19, col = "#52616b")
+)
+print(choropleth, vp = grid::viewport(layout.pos.row = 2, layout.pos.col = 1))
+print(proportional, vp = grid::viewport(layout.pos.row = 2, layout.pos.col = 2))
+print(point_map, vp = grid::viewport(layout.pos.row = 3, layout.pos.col = 1))
+print(cartodiagram, vp = grid::viewport(layout.pos.row = 3, layout.pos.col = 2))
+grDevices::dev.off()
+```
+
+![Quatre mètodes de representació temàtica aplicats als municipis del Tarragonès]({{ site.baseurl }}/assets/img/thematic-cartography/thematic-methods-tarragones-2021.svg "La coropleta representa intensitat, els símbols proporcionals representen volum, el mapa puntual localitza les capitals municipals i els cartodiagrames comparen la composició residencial de quatre municipis.")

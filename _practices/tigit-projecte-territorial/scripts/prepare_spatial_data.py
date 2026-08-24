@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Download ICGC divisions and build a compact Tarragones GeoPackage."""
+"""Download ICGC divisions and build compact teaching GeoPackages."""
 
 from __future__ import annotations
 
@@ -16,7 +16,8 @@ CACHE_DIR = REPOSITORY_ROOT / "tmp"
 EXTRACT_DIR = CACHE_DIR / "spatial-source"
 ZIP_PATH = CACHE_DIR / "divisions-administratives-v2r2-20260120.zip"
 SOURCE_GPKG = EXTRACT_DIR / "divisions-administratives-v2r2-20260120.gpkg"
-OUTPUT_GPKG = PROJECT_ROOT / "data" / "processed" / "tarragones-boundaries-icgc-20260120.gpkg"
+TARRAGONES_OUTPUT_GPKG = PROJECT_ROOT / "data" / "processed" / "tarragones-boundaries-icgc-20260120.gpkg"
+CATALONIA_COUNTIES_OUTPUT_GPKG = PROJECT_ROOT / "data" / "processed" / "catalonia-counties-icgc-20260120.gpkg"
 
 URL = "https://datacloud.icgc.cat/datacloud/divisions-administratives/gpkg/divisions-administratives-v2r2-20260120.zip"
 SHA256 = "563fb7d81e143509d88569a9e8fe86d7c44ae9ce9e96c75b888379a7f0554162"
@@ -41,10 +42,10 @@ def ogr2ogr(*arguments: str) -> None:
 
 
 def build() -> None:
-    OUTPUT_GPKG.parent.mkdir(parents=True, exist_ok=True)
-    if OUTPUT_GPKG.exists():
-        OUTPUT_GPKG.unlink()
-    ogr2ogr("-f", "GPKG", str(OUTPUT_GPKG), str(SOURCE_GPKG), "_64_municipis-250000", "-where", "CODICOMAR = '36'", "-nln", "municipalities_250k")
+    TARRAGONES_OUTPUT_GPKG.parent.mkdir(parents=True, exist_ok=True)
+    if TARRAGONES_OUTPUT_GPKG.exists():
+        TARRAGONES_OUTPUT_GPKG.unlink()
+    ogr2ogr("-f", "GPKG", str(TARRAGONES_OUTPUT_GPKG), str(SOURCE_GPKG), "_64_municipis-250000", "-where", "CODICOMAR = '36'", "-nln", "municipalities_250k")
     layers = (
         ("_54_comarques-250000", "CODICOMAR = '36'", "comarca_250k"),
         ("_36_provincies-1000000", "CODIPROV = '43'", "province_1000k"),
@@ -52,10 +53,23 @@ def build() -> None:
         ("_10_caps-municipi", "CODICOMAR = '36'", "municipality_seats"),
     )
     for source_layer, where, target_layer in layers:
-        ogr2ogr("-update", "-append", str(OUTPUT_GPKG), str(SOURCE_GPKG), source_layer, "-where", where, "-nln", target_layer)
+        ogr2ogr("-update", "-append", str(TARRAGONES_OUTPUT_GPKG), str(SOURCE_GPKG), source_layer, "-where", where, "-nln", target_layer)
+
+    if CATALONIA_COUNTIES_OUTPUT_GPKG.exists():
+        CATALONIA_COUNTIES_OUTPUT_GPKG.unlink()
+    ogr2ogr(
+        "-f",
+        "GPKG",
+        str(CATALONIA_COUNTIES_OUTPUT_GPKG),
+        str(SOURCE_GPKG),
+        "_54_comarques-250000",
+        "-nln",
+        "counties_250k",
+    )
 
 
 if __name__ == "__main__":
     download()
     build()
-    print(OUTPUT_GPKG)
+    print(TARRAGONES_OUTPUT_GPKG)
+    print(CATALONIA_COUNTIES_OUTPUT_GPKG)

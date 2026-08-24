@@ -1,75 +1,159 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="914" height="329" viewBox="38 93 914 329" role="img" aria-labelledby="title desc">
-  <title id="title">Operacions principals de generalitzacio cartografica</title>
-  <desc id="desc">La figura compara una font detallada amb seleccio, simplificacio, agregacio, desplacament i exageracio sobre petits esquemes cartografics.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1300" height="800" viewBox="0 0 1300 800" role="img" aria-labelledby="title desc">
+  <title id="title">Operacions principals de generalització cartogràfica</title>
+  <desc id="desc">Una font detallada gran a escala 1:10.000 es compara amb cinc sortides més petites a escala 1:20.000: selecció, simplificació, agregació, desplaçament i exageració.</desc>
   <defs>
     <style>
-      .panel{fill:#fff;stroke:#d8d2c5;stroke-width:1.5}.txt{font-family:Arial,Helvetica,sans-serif;fill:#2b2b2b}.small{font-size:14px}.label{font-size:12px;fill:#555}.water{fill:none;stroke:#5796c7;stroke-width:3;stroke-linecap:round}.road{fill:none;stroke:#707070;stroke-width:3;stroke-linecap:round}.minor{fill:none;stroke:#c8c8c8;stroke-width:1.5;stroke-linecap:round}.area{fill:#dce9d3;stroke:#75a36d;stroke-width:1.5}.built{fill:#d7b18f;stroke:#9b765b;stroke-width:1}.symbol{fill:#d65f43;stroke:#7f2f22;stroke-width:1}.arrow{stroke:#999;stroke-width:2;marker-end:url(#arrow)}
+      .card{fill:#fff;stroke:#d5dde2;stroke-width:2}.map{fill:#f7fbfa;stroke:#365b6d;stroke-width:1.8}.txt{font-family:Arial,'Liberation Sans',sans-serif;fill:#17202a}.title{font-size:18px;font-weight:700}.scale{font-size:14px;fill:#52616b}.note{font-size:13px;fill:#52616b}.map-label{font-size:12px;font-weight:700;fill:#404b52}.river{fill:none;stroke:#3182bd;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}.river-small{fill:none;stroke:#3182bd;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}.road-halo{fill:none;stroke:#fff;stroke-width:9;stroke-linecap:round;stroke-linejoin:round}.road{fill:none;stroke:#5e6670;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}.road-small-halo{fill:none;stroke:#fff;stroke-width:6;stroke-linecap:round;stroke-linejoin:round}.road-small{fill:none;stroke:#5e6670;stroke-width:3.4;stroke-linecap:round;stroke-linejoin:round}.minor{fill:none;stroke:#b8c1c7;stroke-width:1.7;stroke-linecap:round}.forest{fill:#cfe4c4;stroke:#60945b;stroke-width:2}.forest-small{fill:#cfe4c4;stroke:#60945b;stroke-width:1.5}.house{fill:#c79a72;stroke:#815d42;stroke-width:1.2}.aggregate{fill:#c79a72;fill-opacity:.82;stroke:#815d42;stroke-width:2.2;stroke-linejoin:round}.service{fill:#d65f43;stroke:#7f2f22;stroke-width:1.4}.service-alt{fill:#f2a65a;stroke:#7f2f22;stroke-width:1.4}.anchor{fill:#fff;stroke:#7f2f22;stroke-width:1.4;stroke-dasharray:3 2}.leader{fill:none;stroke:#7f2f22;stroke-width:1.4;stroke-dasharray:4 3}.flow{fill:none;stroke:#8b989f;stroke-width:2.2;marker-end:url(#arrow)}.scale-note{font-size:16px;font-weight:700;fill:#365b6d;text-anchor:middle}.scale-subnote{font-size:13px;fill:#52616b;text-anchor:middle}
     </style>
-    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#999"/></marker>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#8b989f"/>
+    </marker>
+    <clipPath id="large-map"><rect width="480" height="240"/></clipPath>
+    <clipPath id="small-map"><rect width="240" height="120"/></clipPath>
   </defs>
-  <g transform="translate(40,105)">
-    <rect width="280" height="150" class="panel"/>
-    <text x="18" y="30" class="txt small" font-weight="700">Font detallada</text>
-    <g transform="translate(0 12) scale(1 .72)">
-      <path d="M35,166 C74,120 96,143 128,86 C153,42 199,58 246,38" class="water"/>
-      <path d="M42,52 C95,70 131,118 246,156" class="road"/>
-      <path d="M61,142 C89,120 122,128 151,111 C184,91 205,103 234,84" class="minor"/>
-      <path d="M48,96 C84,80 99,100 121,82 C147,61 169,80 185,64" class="minor"/>
-      <polygon points="172,120 224,113 241,151 196,174 160,155" class="area"/>
-      <rect x="75" y="92" width="16" height="11" class="built"/><rect x="96" y="100" width="18" height="12" class="built"/><rect x="118" y="91" width="14" height="11" class="built"/><rect x="132" y="112" width="17" height="13" class="built"/><rect x="154" y="101" width="14" height="12" class="built"/>
-      <circle cx="221" cy="71" r="4" class="symbol"/><circle cx="235" cy="69" r="3" class="symbol"/><circle cx="215" cy="83" r="3" class="symbol"/>
+
+  <text x="650" y="48" class="txt scale-note">Canvi d’escala i de mida de representació</text>
+  <text x="650" y="72" class="txt scale-subnote">La mateixa àrea passa d’una font gran a 1:10.000 a sortides petites a 1:20.000.</text>
+
+  <path d="M390 302 C350 262 337 189 330 151" class="flow"/>
+  <path d="M390 502 C350 548 337 637 330 667" class="flow"/>
+  <path d="M910 302 C950 262 963 189 970 151" class="flow"/>
+  <path d="M910 400 L970 400" class="flow"/>
+  <path d="M910 510 C950 548 963 637 970 667" class="flow"/>
+
+  <g transform="translate(390 210)">
+    <rect width="520" height="380" rx="8" class="card"/>
+    <text x="20" y="31" class="txt title">Font detallada</text>
+    <text x="20" y="53" class="txt scale">Escala gran · 1:10.000</text>
+    <g transform="translate(20 70)">
+      <rect width="480" height="240" class="map"/>
+      <g clip-path="url(#large-map)">
+        <path d="M-10 208 C66 166 116 204 188 151 C269 89 348 119 490 47" class="river"/>
+        <path d="M-12 181 C94 163 190 145 492 154" class="road-halo"/>
+        <path d="M-12 181 C94 163 190 145 492 154" class="road"/>
+        <path d="M62 -8 C91 42 106 95 129 249" class="minor"/>
+        <path d="M19 82 C93 92 153 77 215 55 C292 28 371 43 467 19" class="minor"/>
+        <path d="M37 123 C91 111 130 117 190 96 C257 72 315 82 376 68" class="minor"/>
+        <path d="M34 218 C104 195 171 187 259 182" class="minor"/>
+        <path d="M338 148 C352 125 398 119 432 137 C468 156 464 197 427 214 C389 231 347 209 332 181 C327 169 330 157 338 148 Z" class="forest"/>
+        <g>
+          <rect x="143" y="103" width="18" height="12" class="house"/>
+          <rect x="170" y="111" width="21" height="13" class="house"/>
+          <rect x="200" y="101" width="17" height="12" class="house"/>
+          <rect x="226" y="117" width="19" height="14" class="house"/>
+          <rect x="254" y="105" width="18" height="12" class="house"/>
+          <rect x="156" y="136" width="19" height="12" class="house"/>
+          <rect x="184" y="144" width="17" height="13" class="house"/>
+          <rect x="213" y="135" width="21" height="14" class="house"/>
+          <rect x="244" y="145" width="19" height="12" class="house"/>
+          <rect x="270" y="132" width="17" height="13" class="house"/>
+        </g>
+        <circle cx="380" cy="69" r="5" class="service"/>
+        <circle cx="411" cy="62" r="4" class="service-alt"/>
+        <circle cx="402" cy="86" r="4" class="service"/>
+        <text x="40" y="174" class="txt map-label">carretera</text>
+        <text x="177" y="93" class="txt map-label">habitatges</text>
+        <text x="373" y="183" class="txt map-label">bosc</text>
+        <text x="372" y="49" class="txt map-label">serveis</text>
+      </g>
     </g>
+    <text x="20" y="335" class="txt note">Carrers menors, edificis individuals, contorn del bosc</text>
+    <text x="20" y="356" class="txt note">i posicions originals encara són distingibles.</text>
   </g>
 
-  <line x1="335" y1="205" x2="382" y2="205" class="arrow"/>
-
-  <g transform="translate(395,95)">
-    <rect width="250" height="150" class="panel"/>
-    <text x="16" y="28" class="txt small" font-weight="700">Seleccio</text>
-    <path d="M30,118 C65,85 88,98 117,58 C141,28 179,41 221,28" class="water"/>
-    <path d="M32,45 C80,58 116,90 220,116" class="road"/>
-    <polygon points="160,86 205,82 220,110 182,128 148,113" class="area"/>
-    <text x="16" y="136" class="txt label">Es retiren elements secundaris.</text>
+  <g transform="translate(20 20)">
+    <rect width="300" height="230" rx="8" class="card"/>
+    <text x="20" y="29" class="txt title">Selecció</text>
+    <text x="20" y="49" class="txt scale">Sortida · 1:20.000</text>
+    <g transform="translate(30 60)">
+      <rect width="240" height="120" class="map"/>
+      <g clip-path="url(#small-map)">
+        <path d="M-5 104 C33 83 58 102 94 76 C135 45 174 60 245 24" class="river-small"/>
+        <path d="M-6 91 C47 82 95 73 246 77" class="road-small-halo"/>
+        <path d="M-6 91 C47 82 95 73 246 77" class="road-small"/>
+        <path d="M169 74 C176 63 199 60 216 69 C234 78 232 99 214 107 C194 116 174 105 166 91 C164 85 165 79 169 74 Z" class="forest-small"/>
+        <rect x="72" y="52" width="10" height="7" class="house"/>
+        <rect x="100" y="51" width="10" height="7" class="house"/>
+        <rect x="127" y="53" width="10" height="7" class="house"/>
+        <rect x="108" y="68" width="11" height="7" class="house"/>
+      </g>
+    </g>
+    <text x="20" y="204" class="txt note">S’omet la xarxa menor i part</text>
+    <text x="20" y="220" class="txt note">dels edificis secundaris.</text>
   </g>
 
-  <g transform="translate(700,95)">
-    <rect width="250" height="150" class="panel"/>
-    <text x="16" y="28" class="txt small" font-weight="700">Simplificacio</text>
-    <path d="M30,116 C78,86 106,79 129,54 C155,29 184,42 221,28" class="water"/>
-    <path d="M32,45 C94,64 136,90 220,116" class="road"/>
-    <polygon points="160,88 205,82 220,110 183,128 150,114" class="area"/>
-    <text x="16" y="136" class="txt label">Es redueix detall sense canviar sentit.</text>
+  <g transform="translate(20 550)">
+    <rect width="300" height="230" rx="8" class="card"/>
+    <text x="20" y="29" class="txt title">Simplificació</text>
+    <text x="20" y="49" class="txt scale">Sortida · 1:20.000</text>
+    <g transform="translate(30 60)">
+      <rect width="240" height="120" class="map"/>
+      <g clip-path="url(#small-map)">
+        <path d="M-5 104 C66 93 94 65 145 51 S205 43 245 24" class="river-small"/>
+        <path d="M-6 91 L95 73 L246 77" class="road-small-halo"/>
+        <path d="M-6 91 L95 73 L246 77" class="road-small"/>
+        <path d="M169 74 C185 60 215 64 224 80 C232 96 214 109 194 109 C174 108 158 90 169 74 Z" class="forest-small"/>
+        <path d="M70 52 L104 48 L139 55 L144 73 L122 82 L84 79 L70 65 Z" class="aggregate"/>
+      </g>
+    </g>
+    <text x="20" y="204" class="txt note">Es redueixen vèrtexs, revolts</text>
+    <text x="20" y="220" class="txt note">i irregularitats del contorn.</text>
   </g>
 
-  <g transform="translate(90,270)">
-    <rect width="250" height="150" class="panel"/>
-    <text x="16" y="28" class="txt small" font-weight="700">Agregacio</text>
-    <path d="M30,116 C78,86 106,79 129,54 C155,29 184,42 221,28" class="water"/>
-    <path d="M32,45 C94,64 136,90 220,116" class="road"/>
-    <rect x="80" y="78" width="74" height="42" class="built"/>
-    <text x="16" y="136" class="txt label">Diverses peces formen una categoria.</text>
+  <g transform="translate(980 20)">
+    <rect width="300" height="230" rx="8" class="card"/>
+    <text x="20" y="29" class="txt title">Agregació</text>
+    <text x="20" y="49" class="txt scale">Sortida · 1:20.000</text>
+    <g transform="translate(30 60)">
+      <rect width="240" height="120" class="map"/>
+      <g clip-path="url(#small-map)">
+        <path d="M-5 104 C33 83 58 102 94 76 C135 45 174 60 245 24" class="river-small"/>
+        <path d="M-6 91 C47 82 95 73 246 77" class="road-small-halo"/>
+        <path d="M-6 91 C47 82 95 73 246 77" class="road-small"/>
+        <path d="M68 50 L101 45 L137 50 L148 69 L132 83 L91 82 L72 70 Z" class="aggregate"/>
+      </g>
+    </g>
+    <text x="20" y="204" class="txt note">Un polígon envoltant agrupa</text>
+    <text x="20" y="220" class="txt note">els rectangles dels habitatges.</text>
   </g>
 
-  <g transform="translate(395,270)">
-    <rect width="250" height="150" class="panel"/>
-    <text x="16" y="28" class="txt small" font-weight="700">Desplacament</text>
-    <path d="M30,116 C78,86 106,79 129,54 C155,29 184,42 221,28" class="water"/>
-    <path d="M32,45 C94,64 136,90 220,116" class="road"/>
-    <circle cx="134" cy="92" r="8" class="symbol"/>
-    <circle cx="160" cy="85" r="8" fill="#f7b267" stroke="#7f2f22" stroke-width="1"/>
-    <line x1="142" y1="90" x2="152" y2="86" stroke="#7f2f22" stroke-width="1.5"/>
-    <text x="16" y="136" class="txt label">Se separen simbols que se solapen.</text>
+  <g transform="translate(980 285)">
+    <rect width="300" height="230" rx="8" class="card"/>
+    <text x="20" y="29" class="txt title">Desplaçament</text>
+    <text x="20" y="49" class="txt scale">Sortida · 1:20.000</text>
+    <g transform="translate(30 60)">
+      <rect width="240" height="120" class="map"/>
+      <g clip-path="url(#small-map)">
+        <path d="M-5 104 C33 83 58 102 94 76 C135 45 174 60 245 24" class="river-small"/>
+        <path d="M-6 91 C47 82 95 73 246 77" class="road-small-halo"/>
+        <path d="M-6 91 C47 82 95 73 246 77" class="road-small"/>
+        <circle cx="190" cy="35" r="4" class="anchor"/>
+        <circle cx="206" cy="43" r="4" class="anchor"/>
+        <path d="M190 39 L188 68 M206 47 L210 65" class="leader"/>
+        <circle cx="188" cy="72" r="7" class="service"/>
+        <circle cx="210" cy="69" r="7" class="service-alt"/>
+      </g>
+    </g>
+    <text x="20" y="204" class="txt note">Els símbols s’acosten a la carretera;</text>
+    <text x="20" y="220" class="txt note">la línia conserva la posició original.</text>
   </g>
 
-  <g transform="translate(700,270)">
-    <rect width="250" height="150" class="panel"/>
-    <text x="16" y="28" class="txt small" font-weight="700">Exageracio</text>
-    <path d="M30,116 C78,86 106,79 129,54 C155,29 184,42 221,28" class="water"/>
-    <path d="M32,45 C94,64 136,90 220,116" class="road"/>
-    <circle cx="177" cy="78" r="17" class="symbol"/>
-    <text x="16" y="130" class="txt label">
-      <tspan x="16" dy="0">Un element petit es fa visible</tspan>
-      <tspan x="16" dy="14">si es essencial.</tspan>
-    </text>
+  <g transform="translate(980 550)">
+    <rect width="300" height="230" rx="8" class="card"/>
+    <text x="20" y="29" class="txt title">Exageració</text>
+    <text x="20" y="49" class="txt scale">Sortida · 1:20.000</text>
+    <g transform="translate(30 60)">
+      <rect width="240" height="120" class="map"/>
+      <g clip-path="url(#small-map)">
+        <path d="M-5 104 C33 83 58 102 94 76 C135 45 174 60 245 24" class="river-small"/>
+        <path d="M-6 91 C47 82 95 73 246 77" class="road-small-halo"/>
+        <path d="M-6 91 C47 82 95 73 246 77" class="road-small"/>
+        <circle cx="202" cy="39" r="4" class="anchor"/>
+        <path d="M202 43 L205 63" class="leader"/>
+        <circle cx="206" cy="70" r="14" class="service"/>
+      </g>
+    </g>
+    <text x="20" y="204" class="txt note">El servei s’amplia i es desplaça</text>
+    <text x="20" y="220" class="txt note">mínimament per evitar el conflicte.</text>
   </g>
 </svg>

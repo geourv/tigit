@@ -1,5 +1,140 @@
 {
   "records": {
+    "assets/quarto/cartographic-language/generalization-algorithms.qmd": {
+      "dependencies": [
+        {
+          "path": "assets/quarto/cartographic-language/generalization-algorithms.qmd",
+          "sha256": "23edcb3b9f01def9acd8709ec0b5706335ef5fa2dbde32aba01d1d44e22b6580"
+        },
+        {
+          "path": "Dockerfile.compute-python",
+          "sha256": "fde14d6d24d14f2ad0adc23caac835506e35a4fe3acce3a505f9228391351b74"
+        },
+        {
+          "path": "requirements-compute.txt",
+          "sha256": "d93c6c5c1ed8278b7a58a7f6c1633feac56ff1cbd371a09d142fa3e89fbeddc4"
+        },
+        {
+          "path": ".unaltraweb/computations.yml",
+          "sha256": "301b44c41e8a0e500dd5ffda7410b4221a63711479a41a06eb98b5aae8abd0b3"
+        }
+      ],
+      "engine": "python",
+      "fingerprint": "604615d7645f997a7e2eb8bf8a22e7b489a0253a739b55d820c24f5866ac9292",
+      "image": {
+        "engine": "python",
+        "environment": "local",
+        "image": "tigit-compute-python:local",
+        "source": "environment:COMPUTE_PYTHON_IMAGE"
+      },
+      "image_identity": {
+        "available": "true",
+        "digest": "",
+        "id": "sha256:719b6ad00f89fabd01fd1fe543bb80c76e8bcb3b537bd8bb66342e3c900c015c"
+      },
+      "mode": "figure",
+      "outputs": [
+        {
+          "path": "assets/img/cartographic-language/generalization-algorithms.svg",
+          "sha256": "f517f13d151911d5dc69d327a38dd587b3d36dfa88dab26b44301386dec9909e",
+          "size": 8251
+        }
+      ],
+      "rendered_at": "2026-08-23T19:13:04+00:00"
+    },
+    "assets/quarto/cartographic-language/minimum-mapping-unit-tarragones.qmd": {
+      "dependencies": [
+        {
+          "path": "assets/quarto/cartographic-language/minimum-mapping-unit-tarragones.qmd",
+          "sha256": "126fad6c2f5b9a3f364a1fffa793a98a35499e409d315450b616a582b70723ae"
+        },
+        {
+          "path": "_practices/tigit-projecte-territorial/data/processed/tarragones-boundaries-icgc-20260120.gpkg",
+          "sha256": "5f01e06748c3fa7655ab06f84a981d73646c0569addb9ebcfc81e1848eb68f16"
+        },
+        {
+          "path": "Dockerfile.compute-r",
+          "sha256": "db3cb03be6f48b81f1abfcf7b2a3177c0206e7c76fb46765a81c625faa34fc49"
+        },
+        {
+          "path": "requirements-compute.R",
+          "sha256": "9512adde0ddffcd24dcd3321cb882eabb1097e31d6f7da7bbfa8f3b45136d190"
+        },
+        {
+          "path": ".unaltraweb/computations.yml",
+          "sha256": "301b44c41e8a0e500dd5ffda7410b4221a63711479a41a06eb98b5aae8abd0b3"
+        }
+      ],
+      "engine": "r",
+      "fingerprint": "12ba0028815920d31905ef259613807d776e14c348cf24f9dcae48ab3854cc95",
+      "image": {
+        "engine": "r",
+        "environment": "local",
+        "image": "tigit-compute-r:local",
+        "source": "environment:COMPUTE_R_IMAGE"
+      },
+      "image_identity": {
+        "available": "true",
+        "digest": "",
+        "id": "sha256:32093bf261521f44f0e8f3baa3a2115d82fa7accb8b2c4185b511b86347ec7a1"
+      },
+      "mode": "figure",
+      "outputs": [
+        {
+          "path": "assets/img/cartographic-language/minimum-mapping-unit-tarragones.svg",
+          "sha256": "bb8614a8d297ecac752be9cbcec1de128fbdeebe31c29cf95207218e211757b9",
+          "size": 316492
+        }
+      ],
+      "rendered_at": "2026-08-23T22:47:11+00:00"
+    },
+    "assets/quarto/cartographic-language/terrain-relief-volcano.qmd": {
+      "dependencies": [
+        {
+          "path": "assets/quarto/cartographic-language/terrain-relief-volcano.qmd",
+          "sha256": "94fbbb8770b7e7d855ccd55a0c6c81360158aabc56efce7040326ce72aea879a"
+        },
+        {
+          "path": "Dockerfile.compute-r",
+          "sha256": "db3cb03be6f48b81f1abfcf7b2a3177c0206e7c76fb46765a81c625faa34fc49"
+        },
+        {
+          "path": "requirements-compute.R",
+          "sha256": "9512adde0ddffcd24dcd3321cb882eabb1097e31d6f7da7bbfa8f3b45136d190"
+        },
+        {
+          "path": ".unaltraweb/computations.yml",
+          "sha256": "301b44c41e8a0e500dd5ffda7410b4221a63711479a41a06eb98b5aae8abd0b3"
+        }
+      ],
+      "engine": "r",
+      "fingerprint": "be2599556bf1bd4b7f5609b4d6f281db4d2b8442e3fd6596dd4863292f47ea9d",
+      "image": {
+        "engine": "r",
+        "environment": "local",
+        "image": "tigit-compute-r:local",
+        "source": "environment:COMPUTE_R_IMAGE"
+      },
+      "image_identity": {
+        "available": "true",
+        "digest": "",
+        "id": "sha256:32093bf261521f44f0e8f3baa3a2115d82fa7accb8b2c4185b511b86347ec7a1"
+      },
+      "mode": "figure",
+      "outputs": [
+        {
+          "path": "assets/img/cartographic-language/terrain-relief-volcano.svg",
+          "sha256": "7624d0f4fc3c2a9391133fed03a3b9b2bfc4ac7e95dea4a1fd8f9a3b51d08650",
+          "size": 42310
+        },
+        {
+          "path": "assets/img/cartographic-language/contour-profile-volcano.svg",
+          "sha256": "484b8d7c6b2d163f996369baed787b66ca2ba573803595d6a4bdb24184d39be7",
+          "size": 44502
+        }
+      ],
+      "rendered_at": "2026-08-23T22:47:18+00:00"
+    },
     "assets/quarto/color-cartography/palette-reference-swatches.qmd": {
       "dependencies": [
         {
@@ -58,7 +193,7 @@
         },
         {
           "path": "requirements-compute.R",
-          "sha256": "8195a00459224580c308746f5238afa54bd655bba24d659dcbbdd1f7a8575344"
+          "sha256": "9512adde0ddffcd24dcd3321cb882eabb1097e31d6f7da7bbfa8f3b45136d190"
         },
         {
           "path": ".unaltraweb/computations.yml",
@@ -66,7 +201,7 @@
         }
       ],
       "engine": "r",
-      "fingerprint": "422de303fbfaa77630fa9503cf8384c28ef23d1396aba666ccd4c7a3082baa77",
+      "fingerprint": "2b16eacc987a23ed61f271245c7554e099fa29ecc64bb67d88e2932fdf08d4a7",
       "image": {
         "engine": "r",
         "environment": "local",
@@ -76,7 +211,7 @@
       "image_identity": {
         "available": "true",
         "digest": "",
-        "id": "sha256:afeabe9291c1130a81e21b32ea053d485f584339e795e0097afe25115938aaa2"
+        "id": "sha256:32093bf261521f44f0e8f3baa3a2115d82fa7accb8b2c4185b511b86347ec7a1"
       },
       "mode": "figure",
       "outputs": [
@@ -86,7 +221,7 @@
           "size": 25829
         }
       ],
-      "rendered_at": "2026-08-22T10:35:05+00:00"
+      "rendered_at": "2026-08-23T22:47:21+00:00"
     },
     "assets/quarto/data-visualization/ageing-housing-scatter-tarragones.qmd": {
       "dependencies": [
@@ -104,7 +239,7 @@
         },
         {
           "path": "requirements-compute.R",
-          "sha256": "8195a00459224580c308746f5238afa54bd655bba24d659dcbbdd1f7a8575344"
+          "sha256": "9512adde0ddffcd24dcd3321cb882eabb1097e31d6f7da7bbfa8f3b45136d190"
         },
         {
           "path": ".unaltraweb/computations.yml",
@@ -112,7 +247,7 @@
         }
       ],
       "engine": "r",
-      "fingerprint": "b97da91dcb2306e4c57f3b206ec6e0980ceb75d665a487416df4998678c465d9",
+      "fingerprint": "c6372c7c8eae509d18c33e0bb920b56e0be53eb59528945a6d807d4fc87ef0b6",
       "image": {
         "engine": "r",
         "environment": "local",
@@ -122,7 +257,7 @@
       "image_identity": {
         "available": "true",
         "digest": "",
-        "id": "sha256:afeabe9291c1130a81e21b32ea053d485f584339e795e0097afe25115938aaa2"
+        "id": "sha256:32093bf261521f44f0e8f3baa3a2115d82fa7accb8b2c4185b511b86347ec7a1"
       },
       "mode": "figure",
       "outputs": [
@@ -132,7 +267,7 @@
           "size": 15386
         }
       ],
-      "rendered_at": "2026-08-22T10:35:09+00:00"
+      "rendered_at": "2026-08-23T22:47:25+00:00"
     },
     "assets/quarto/data-visualization/alluvial-titanic-survival.qmd": {
       "dependencies": [
@@ -146,7 +281,7 @@
         },
         {
           "path": "requirements-compute.R",
-          "sha256": "8195a00459224580c308746f5238afa54bd655bba24d659dcbbdd1f7a8575344"
+          "sha256": "9512adde0ddffcd24dcd3321cb882eabb1097e31d6f7da7bbfa8f3b45136d190"
         },
         {
           "path": ".unaltraweb/computations.yml",
@@ -154,7 +289,7 @@
         }
       ],
       "engine": "r",
-      "fingerprint": "ac8727c390c3ed9dd76d552873d7e9b291159308c463b383c7644f156b718279",
+      "fingerprint": "f645d6f595a0664f2a6732b0c9d17256bf3b2a824c096c550986459088c8f151",
       "image": {
         "engine": "r",
         "environment": "local",
@@ -164,7 +299,7 @@
       "image_identity": {
         "available": "true",
         "digest": "",
-        "id": "sha256:afeabe9291c1130a81e21b32ea053d485f584339e795e0097afe25115938aaa2"
+        "id": "sha256:32093bf261521f44f0e8f3baa3a2115d82fa7accb8b2c4185b511b86347ec7a1"
       },
       "mode": "figure",
       "outputs": [
@@ -174,7 +309,7 @@
           "size": 227456
         }
       ],
-      "rendered_at": "2026-08-22T10:35:12+00:00"
+      "rendered_at": "2026-08-23T22:47:28+00:00"
     },
     "assets/quarto/data-visualization/boxplot-non-main-housing-tarragones.qmd": {
       "dependencies": [
@@ -192,7 +327,7 @@
         },
         {
           "path": "requirements-compute.R",
-          "sha256": "8195a00459224580c308746f5238afa54bd655bba24d659dcbbdd1f7a8575344"
+          "sha256": "9512adde0ddffcd24dcd3321cb882eabb1097e31d6f7da7bbfa8f3b45136d190"
         },
         {
           "path": ".unaltraweb/computations.yml",
@@ -200,7 +335,7 @@
         }
       ],
       "engine": "r",
-      "fingerprint": "cad510a8dec602efe2301d32d69f4fae508539402414956da98278a4c625b536",
+      "fingerprint": "219e7f647980a352eba91e6262bd9a29241d8d063331d036f0f22845a8711234",
       "image": {
         "engine": "r",
         "environment": "local",
@@ -210,7 +345,7 @@
       "image_identity": {
         "available": "true",
         "digest": "",
-        "id": "sha256:afeabe9291c1130a81e21b32ea053d485f584339e795e0097afe25115938aaa2"
+        "id": "sha256:32093bf261521f44f0e8f3baa3a2115d82fa7accb8b2c4185b511b86347ec7a1"
       },
       "mode": "figure",
       "outputs": [
@@ -220,7 +355,7 @@
           "size": 8916
         }
       ],
-      "rendered_at": "2026-08-22T10:35:15+00:00"
+      "rendered_at": "2026-08-23T22:47:31+00:00"
     },
     "assets/quarto/data-visualization/boxplot-species-iris.qmd": {
       "dependencies": [
@@ -234,7 +369,7 @@
         },
         {
           "path": "requirements-compute.R",
-          "sha256": "8195a00459224580c308746f5238afa54bd655bba24d659dcbbdd1f7a8575344"
+          "sha256": "9512adde0ddffcd24dcd3321cb882eabb1097e31d6f7da7bbfa8f3b45136d190"
         },
         {
           "path": ".unaltraweb/computations.yml",
@@ -242,7 +377,7 @@
         }
       ],
       "engine": "r",
-      "fingerprint": "d64233aaa127528e13925d83881f5a191a14488d08667b07eba00be3b44dd52c",
+      "fingerprint": "8e336dd9659ef55d1dc36a48c7cb97ca1189a43f40f427e225024b8d36c7b23d",
       "image": {
         "engine": "r",
         "environment": "local",
@@ -252,7 +387,7 @@
       "image_identity": {
         "available": "true",
         "digest": "",
-        "id": "sha256:afeabe9291c1130a81e21b32ea053d485f584339e795e0097afe25115938aaa2"
+        "id": "sha256:32093bf261521f44f0e8f3baa3a2115d82fa7accb8b2c4185b511b86347ec7a1"
       },
       "mode": "figure",
       "outputs": [
@@ -262,7 +397,7 @@
           "size": 29034
         }
       ],
-      "rendered_at": "2026-08-22T10:35:18+00:00"
+      "rendered_at": "2026-08-23T22:47:34+00:00"
     },
     "assets/quarto/data-visualization/housing-donut-tarragones.qmd": {
       "dependencies": [
@@ -280,7 +415,7 @@
         },
         {
           "path": "requirements-compute.R",
-          "sha256": "8195a00459224580c308746f5238afa54bd655bba24d659dcbbdd1f7a8575344"
+          "sha256": "9512adde0ddffcd24dcd3321cb882eabb1097e31d6f7da7bbfa8f3b45136d190"
         },
         {
           "path": ".unaltraweb/computations.yml",
@@ -288,7 +423,7 @@
         }
       ],
       "engine": "r",
-      "fingerprint": "bc0905806977301b2aa7e143aaf67cba2f1c8d816f1ee7ee6e861371410bc938",
+      "fingerprint": "7c8f4991d271b9618c975511a04e8dcc2203ae4a4e5778e70639ef62872c8741",
       "image": {
         "engine": "r",
         "environment": "local",
@@ -298,7 +433,7 @@
       "image_identity": {
         "available": "true",
         "digest": "",
-        "id": "sha256:afeabe9291c1130a81e21b32ea053d485f584339e795e0097afe25115938aaa2"
+        "id": "sha256:32093bf261521f44f0e8f3baa3a2115d82fa7accb8b2c4185b511b86347ec7a1"
       },
       "mode": "figure",
       "outputs": [
@@ -308,7 +443,7 @@
           "size": 7837
         }
       ],
-      "rendered_at": "2026-08-22T10:35:21+00:00"
+      "rendered_at": "2026-08-23T22:47:36+00:00"
     },
     "assets/quarto/data-visualization/housing-histogram-tarragones.qmd": {
       "dependencies": [
@@ -326,7 +461,7 @@
         },
         {
           "path": "requirements-compute.R",
-          "sha256": "8195a00459224580c308746f5238afa54bd655bba24d659dcbbdd1f7a8575344"
+          "sha256": "9512adde0ddffcd24dcd3321cb882eabb1097e31d6f7da7bbfa8f3b45136d190"
         },
         {
           "path": ".unaltraweb/computations.yml",
@@ -334,7 +469,7 @@
         }
       ],
       "engine": "r",
-      "fingerprint": "e8d34d755d5037a9b078b5d6c8fc36b03e87901d10d5e08b550c47fec9cab173",
+      "fingerprint": "3d0f7f68e1791d05504a04320ca80167281d923e542dac72c27353b6c0778187",
       "image": {
         "engine": "r",
         "environment": "local",
@@ -344,7 +479,7 @@
       "image_identity": {
         "available": "true",
         "digest": "",
-        "id": "sha256:afeabe9291c1130a81e21b32ea053d485f584339e795e0097afe25115938aaa2"
+        "id": "sha256:32093bf261521f44f0e8f3baa3a2115d82fa7accb8b2c4185b511b86347ec7a1"
       },
       "mode": "figure",
       "outputs": [
@@ -354,7 +489,7 @@
           "size": 8454
         }
       ],
-      "rendered_at": "2026-08-22T10:35:24+00:00"
+      "rendered_at": "2026-08-23T22:47:39+00:00"
     },
     "assets/quarto/data-visualization/housing-population-scatter-tarragones.qmd": {
       "dependencies": [
@@ -372,7 +507,7 @@
         },
         {
           "path": "requirements-compute.R",
-          "sha256": "8195a00459224580c308746f5238afa54bd655bba24d659dcbbdd1f7a8575344"
+          "sha256": "9512adde0ddffcd24dcd3321cb882eabb1097e31d6f7da7bbfa8f3b45136d190"
         },
         {
           "path": ".unaltraweb/computations.yml",
@@ -380,7 +515,7 @@
         }
       ],
       "engine": "r",
-      "fingerprint": "07eed72f1584e273a49e77fbd87e18f4ba1bb265d69582281d93fb838b4d3d7d",
+      "fingerprint": "c7418b43ca8c2fa953e9ceb832482461a39480d5126742df42fb7ab4cd730141",
       "image": {
         "engine": "r",
         "environment": "local",
@@ -390,7 +525,7 @@
       "image_identity": {
         "available": "true",
         "digest": "",
-        "id": "sha256:afeabe9291c1130a81e21b32ea053d485f584339e795e0097afe25115938aaa2"
+        "id": "sha256:32093bf261521f44f0e8f3baa3a2115d82fa7accb8b2c4185b511b86347ec7a1"
       },
       "mode": "figure",
       "outputs": [
@@ -400,7 +535,7 @@
           "size": 14765
         }
       ],
-      "rendered_at": "2026-08-22T10:35:29+00:00"
+      "rendered_at": "2026-08-23T22:47:43+00:00"
     },
     "assets/quarto/data-visualization/iris-flower-scatter.qmd": {
       "dependencies": [
@@ -414,7 +549,7 @@
         },
         {
           "path": "requirements-compute.R",
-          "sha256": "8195a00459224580c308746f5238afa54bd655bba24d659dcbbdd1f7a8575344"
+          "sha256": "9512adde0ddffcd24dcd3321cb882eabb1097e31d6f7da7bbfa8f3b45136d190"
         },
         {
           "path": ".unaltraweb/computations.yml",
@@ -422,7 +557,7 @@
         }
       ],
       "engine": "r",
-      "fingerprint": "de11c28eb7ce5bc67fd7d077c4d62a51161ea64ccdc6e3e9d95e2af6e31ae2f7",
+      "fingerprint": "ba86667ec262f2a75823967c158f6b5c0398dd9c99c0e5d93f87f2cc2ffa7eb5",
       "image": {
         "engine": "r",
         "environment": "local",
@@ -432,7 +567,7 @@
       "image_identity": {
         "available": "true",
         "digest": "",
-        "id": "sha256:afeabe9291c1130a81e21b32ea053d485f584339e795e0097afe25115938aaa2"
+        "id": "sha256:32093bf261521f44f0e8f3baa3a2115d82fa7accb8b2c4185b511b86347ec7a1"
       },
       "mode": "figure",
       "outputs": [
@@ -442,7 +577,7 @@
           "size": 27322
         }
       ],
-      "rendered_at": "2026-08-22T10:35:32+00:00"
+      "rendered_at": "2026-08-23T22:47:46+00:00"
     },
     "assets/quarto/data-visualization/non-principal-housing-dot-plot.qmd": {
       "dependencies": [
@@ -460,7 +595,7 @@
         },
         {
           "path": "requirements-compute.R",
-          "sha256": "8195a00459224580c308746f5238afa54bd655bba24d659dcbbdd1f7a8575344"
+          "sha256": "9512adde0ddffcd24dcd3321cb882eabb1097e31d6f7da7bbfa8f3b45136d190"
         },
         {
           "path": ".unaltraweb/computations.yml",
@@ -468,7 +603,7 @@
         }
       ],
       "engine": "r",
-      "fingerprint": "f61c8081a32967f73097110d9680216a7db1696dbcaaf1c7734ef785f0f66c3e",
+      "fingerprint": "2ea01747ae1e5cc142bfc64c2df50a3a943c34093840a40e42ebfca566eb70b9",
       "image": {
         "engine": "r",
         "environment": "local",
@@ -478,7 +613,7 @@
       "image_identity": {
         "available": "true",
         "digest": "",
-        "id": "sha256:afeabe9291c1130a81e21b32ea053d485f584339e795e0097afe25115938aaa2"
+        "id": "sha256:32093bf261521f44f0e8f3baa3a2115d82fa7accb8b2c4185b511b86347ec7a1"
       },
       "mode": "figure",
       "outputs": [
@@ -488,7 +623,7 @@
           "size": 18658
         }
       ],
-      "rendered_at": "2026-08-22T10:35:35+00:00"
+      "rendered_at": "2026-08-23T22:47:49+00:00"
     },
     "assets/quarto/data-visualization/population-pyramid-vila-seca.qmd": {
       "dependencies": [
@@ -506,7 +641,7 @@
         },
         {
           "path": "requirements-compute.R",
-          "sha256": "8195a00459224580c308746f5238afa54bd655bba24d659dcbbdd1f7a8575344"
+          "sha256": "9512adde0ddffcd24dcd3321cb882eabb1097e31d6f7da7bbfa8f3b45136d190"
         },
         {
           "path": ".unaltraweb/computations.yml",
@@ -514,7 +649,7 @@
         }
       ],
       "engine": "r",
-      "fingerprint": "4e359f6c353b7e5a1bdf8354c05f4636e935f53ed7320fb888c0039fd6422844",
+      "fingerprint": "54006c0b8cb1600630a5701d4b54f594e6c263d454ebe5414497918fe74d5875",
       "image": {
         "engine": "r",
         "environment": "local",
@@ -524,7 +659,7 @@
       "image_identity": {
         "available": "true",
         "digest": "",
-        "id": "sha256:afeabe9291c1130a81e21b32ea053d485f584339e795e0097afe25115938aaa2"
+        "id": "sha256:32093bf261521f44f0e8f3baa3a2115d82fa7accb8b2c4185b511b86347ec7a1"
       },
       "mode": "figure",
       "outputs": [
@@ -534,7 +669,7 @@
           "size": 20592
         }
       ],
-      "rendered_at": "2026-08-22T10:35:41+00:00"
+      "rendered_at": "2026-08-23T22:47:52+00:00"
     },
     "assets/quarto/data-visualization/population-vila-seca-series-line.qmd": {
       "dependencies": [
@@ -552,7 +687,7 @@
         },
         {
           "path": "requirements-compute.R",
-          "sha256": "8195a00459224580c308746f5238afa54bd655bba24d659dcbbdd1f7a8575344"
+          "sha256": "9512adde0ddffcd24dcd3321cb882eabb1097e31d6f7da7bbfa8f3b45136d190"
         },
         {
           "path": ".unaltraweb/computations.yml",
@@ -560,7 +695,7 @@
         }
       ],
       "engine": "r",
-      "fingerprint": "4ed1715c4e474747823c9b1293818a5a15dea70d11573832112eda99ff70f27e",
+      "fingerprint": "0abfc53d2b4174963803e57df15030bcab1d5f23e87f076b5921e6e7cbabe399",
       "image": {
         "engine": "r",
         "environment": "local",
@@ -570,7 +705,7 @@
       "image_identity": {
         "available": "true",
         "digest": "",
-        "id": "sha256:afeabe9291c1130a81e21b32ea053d485f584339e795e0097afe25115938aaa2"
+        "id": "sha256:32093bf261521f44f0e8f3baa3a2115d82fa7accb8b2c4185b511b86347ec7a1"
       },
       "mode": "figure",
       "outputs": [
@@ -580,7 +715,7 @@
           "size": 12067
         }
       ],
-      "rendered_at": "2026-08-22T10:35:44+00:00"
+      "rendered_at": "2026-08-23T22:47:55+00:00"
     },
     "assets/quarto/data-visualization/sankey-allotjament-vilaseca.qmd": {
       "dependencies": [
@@ -644,7 +779,7 @@
         },
         {
           "path": "requirements-compute.R",
-          "sha256": "8195a00459224580c308746f5238afa54bd655bba24d659dcbbdd1f7a8575344"
+          "sha256": "9512adde0ddffcd24dcd3321cb882eabb1097e31d6f7da7bbfa8f3b45136d190"
         },
         {
           "path": ".unaltraweb/computations.yml",
@@ -652,7 +787,7 @@
         }
       ],
       "engine": "r",
-      "fingerprint": "9fc1e431fabdb2007c038a9bc292d5f729bd04417d68bff3575cde2e75f34ae5",
+      "fingerprint": "870ea79475a1e69fd07716bb4f86626d503f4b0d3b4af4a0f810a32b0c977c7b",
       "image": {
         "engine": "r",
         "environment": "local",
@@ -662,7 +797,7 @@
       "image_identity": {
         "available": "true",
         "digest": "",
-        "id": "sha256:afeabe9291c1130a81e21b32ea053d485f584339e795e0097afe25115938aaa2"
+        "id": "sha256:32093bf261521f44f0e8f3baa3a2115d82fa7accb8b2c4185b511b86347ec7a1"
       },
       "mode": "figure",
       "outputs": [
@@ -672,7 +807,7 @@
           "size": 12093
         }
       ],
-      "rendered_at": "2026-08-21T22:38:08+00:00"
+      "rendered_at": "2026-08-23T22:47:57+00:00"
     },
     "assets/quarto/thematic-cartography/choropleth-housing-absolute-bad.qmd": {
       "dependencies": [
@@ -694,7 +829,7 @@
         },
         {
           "path": "requirements-compute.R",
-          "sha256": "8195a00459224580c308746f5238afa54bd655bba24d659dcbbdd1f7a8575344"
+          "sha256": "9512adde0ddffcd24dcd3321cb882eabb1097e31d6f7da7bbfa8f3b45136d190"
         },
         {
           "path": ".unaltraweb/computations.yml",
@@ -702,7 +837,7 @@
         }
       ],
       "engine": "r",
-      "fingerprint": "a4194663b91f74f9b37bbcf4ff59b6fce0af438b179cc310f91061a43ad85143",
+      "fingerprint": "e319c6092e3950b35691cb5328a7ba20c8fda5a175cdc165a4e19fc06f37f136",
       "image": {
         "engine": "r",
         "environment": "local",
@@ -712,7 +847,7 @@
       "image_identity": {
         "available": "true",
         "digest": "",
-        "id": "sha256:afeabe9291c1130a81e21b32ea053d485f584339e795e0097afe25115938aaa2"
+        "id": "sha256:32093bf261521f44f0e8f3baa3a2115d82fa7accb8b2c4185b511b86347ec7a1"
       },
       "mode": "figure",
       "outputs": [
@@ -722,7 +857,7 @@
           "size": 152496
         }
       ],
-      "rendered_at": "2026-08-21T22:41:12+00:00"
+      "rendered_at": "2026-08-23T22:48:01+00:00"
     },
     "assets/quarto/thematic-cartography/choropleth-housing-normalized-reviewed.qmd": {
       "dependencies": [
@@ -744,7 +879,7 @@
         },
         {
           "path": "requirements-compute.R",
-          "sha256": "8195a00459224580c308746f5238afa54bd655bba24d659dcbbdd1f7a8575344"
+          "sha256": "9512adde0ddffcd24dcd3321cb882eabb1097e31d6f7da7bbfa8f3b45136d190"
         },
         {
           "path": ".unaltraweb/computations.yml",
@@ -752,7 +887,7 @@
         }
       ],
       "engine": "r",
-      "fingerprint": "a9f3a8bb435f583b9d2aa233d4169cbd3f518cfabb879213c8c1b739791149ee",
+      "fingerprint": "c31ef61791e102c188c226e3f2b343b9a115a5b402fe7c9a566bf43f7cbf4b64",
       "image": {
         "engine": "r",
         "environment": "local",
@@ -762,7 +897,7 @@
       "image_identity": {
         "available": "true",
         "digest": "",
-        "id": "sha256:afeabe9291c1130a81e21b32ea053d485f584339e795e0097afe25115938aaa2"
+        "id": "sha256:32093bf261521f44f0e8f3baa3a2115d82fa7accb8b2c4185b511b86347ec7a1"
       },
       "mode": "figure",
       "outputs": [
@@ -772,7 +907,66 @@
           "size": 152617
         }
       ],
-      "rendered_at": "2026-08-21T22:41:17+00:00"
+      "rendered_at": "2026-08-23T22:48:04+00:00"
+    },
+    "assets/quarto/thematic-cartography/population-cartogram-catalonia.qmd": {
+      "dependencies": [
+        {
+          "path": "assets/quarto/thematic-cartography/population-cartogram-catalonia.qmd",
+          "sha256": "5733c463dac185f705fc67cecb1c5dc92a5ebbc4ec706fa29cb6a43ec78309c4"
+        },
+        {
+          "path": "_practices/tigit-projecte-territorial/data/processed/catalonia-counties-icgc-20260120.gpkg",
+          "sha256": "20e4e2c53a867722efc1d3b4e2860f76cfad44b34f36d82106b8e9c7a4b7a88e"
+        },
+        {
+          "path": "_practices/tigit-projecte-territorial/data/raw/mpiscatalunya.csv",
+          "sha256": "9af28ea1bf7c915f6a53638130557a4be5d3bddbf3dcc5add71c90fd1e194cdd"
+        },
+        {
+          "path": "_practices/tigit-projecte-territorial/data/raw/t396mun.csv",
+          "sha256": "c0fa64ebad44a057317b9dca5cd285ae2214e6beb9ea2ef41de5215e91c7dbd2"
+        },
+        {
+          "path": "Dockerfile.compute-r",
+          "sha256": "db3cb03be6f48b81f1abfcf7b2a3177c0206e7c76fb46765a81c625faa34fc49"
+        },
+        {
+          "path": "requirements-compute.R",
+          "sha256": "9512adde0ddffcd24dcd3321cb882eabb1097e31d6f7da7bbfa8f3b45136d190"
+        },
+        {
+          "path": ".unaltraweb/computations.yml",
+          "sha256": "301b44c41e8a0e500dd5ffda7410b4221a63711479a41a06eb98b5aae8abd0b3"
+        }
+      ],
+      "engine": "r",
+      "fingerprint": "f0e7c1592d10eb38650add28b1846d57deae045aa40ab58575c3f5f9620293dd",
+      "image": {
+        "engine": "r",
+        "environment": "local",
+        "image": "tigit-compute-r:local",
+        "source": "environment:COMPUTE_R_IMAGE"
+      },
+      "image_identity": {
+        "available": "true",
+        "digest": "",
+        "id": "sha256:32093bf261521f44f0e8f3baa3a2115d82fa7accb8b2c4185b511b86347ec7a1"
+      },
+      "mode": "figure",
+      "outputs": [
+        {
+          "path": "assets/img/thematic-cartography/population-proportional-symbols-catalonia-2025.svg",
+          "sha256": "3cc3bda58ff5dcffdcdaa3aee0ba095adc72c853b6af2ac03dcdc1f1d0b4b27f",
+          "size": 115384
+        },
+        {
+          "path": "assets/img/thematic-cartography/population-cartogram-catalonia-2025.svg",
+          "sha256": "ae032f3bd5e5bd2a8f84a8de4cf0326e11153186c54f075fbe029476a11bee49",
+          "size": 217284
+        }
+      ],
+      "rendered_at": "2026-08-24T11:20:44+00:00"
     },
     "assets/quarto/thematic-cartography/proportional-symbols-housing-total.qmd": {
       "dependencies": [
@@ -794,7 +988,7 @@
         },
         {
           "path": "requirements-compute.R",
-          "sha256": "8195a00459224580c308746f5238afa54bd655bba24d659dcbbdd1f7a8575344"
+          "sha256": "9512adde0ddffcd24dcd3321cb882eabb1097e31d6f7da7bbfa8f3b45136d190"
         },
         {
           "path": ".unaltraweb/computations.yml",
@@ -802,7 +996,7 @@
         }
       ],
       "engine": "r",
-      "fingerprint": "822d0e5931e7173d40004135dd507e2b3e3955cb63c762d6b744980014684a3a",
+      "fingerprint": "a366c3f96a233b256dead3e216857447b1d4d1b0570f5993addf4baf49d1fafa",
       "image": {
         "engine": "r",
         "environment": "local",
@@ -812,7 +1006,7 @@
       "image_identity": {
         "available": "true",
         "digest": "",
-        "id": "sha256:afeabe9291c1130a81e21b32ea053d485f584339e795e0097afe25115938aaa2"
+        "id": "sha256:32093bf261521f44f0e8f3baa3a2115d82fa7accb8b2c4185b511b86347ec7a1"
       },
       "mode": "figure",
       "outputs": [
@@ -822,7 +1016,57 @@
           "size": 103615
         }
       ],
-      "rendered_at": "2026-08-22T10:35:47+00:00"
+      "rendered_at": "2026-08-23T22:48:07+00:00"
+    },
+    "assets/quarto/thematic-cartography/thematic-methods-tarragones.qmd": {
+      "dependencies": [
+        {
+          "path": "assets/quarto/thematic-cartography/thematic-methods-tarragones.qmd",
+          "sha256": "a8d7128977b3b3d980f8d938c705201451abfa2cb03794db850757b8cd8c2b80"
+        },
+        {
+          "path": "_practices/tigit-projecte-territorial/data/processed/tarragones-boundaries-icgc-20260120.gpkg",
+          "sha256": "5f01e06748c3fa7655ab06f84a981d73646c0569addb9ebcfc81e1848eb68f16"
+        },
+        {
+          "path": "_practices/tigit-projecte-territorial/data/processed/municipal-indicators-tarragones-2021.csv",
+          "sha256": "d762d55fbbfb085493fe3af39c9ae8e458c1422f41a4467a2f37202cc5f1baac"
+        },
+        {
+          "path": "Dockerfile.compute-r",
+          "sha256": "db3cb03be6f48b81f1abfcf7b2a3177c0206e7c76fb46765a81c625faa34fc49"
+        },
+        {
+          "path": "requirements-compute.R",
+          "sha256": "9512adde0ddffcd24dcd3321cb882eabb1097e31d6f7da7bbfa8f3b45136d190"
+        },
+        {
+          "path": ".unaltraweb/computations.yml",
+          "sha256": "301b44c41e8a0e500dd5ffda7410b4221a63711479a41a06eb98b5aae8abd0b3"
+        }
+      ],
+      "engine": "r",
+      "fingerprint": "ef63f64f9d31c3ee5022b87a232024b37929928894a4f682667bb937cb3e6c9a",
+      "image": {
+        "engine": "r",
+        "environment": "local",
+        "image": "tigit-compute-r:local",
+        "source": "environment:COMPUTE_R_IMAGE"
+      },
+      "image_identity": {
+        "available": "true",
+        "digest": "",
+        "id": "sha256:32093bf261521f44f0e8f3baa3a2115d82fa7accb8b2c4185b511b86347ec7a1"
+      },
+      "mode": "figure",
+      "outputs": [
+        {
+          "path": "assets/img/thematic-cartography/thematic-methods-tarragones-2021.svg",
+          "sha256": "9ef259bca6a7bb8b1375551a5fde0e8694e205a023288d1a3ffc022d91dc64dc",
+          "size": 644970
+        }
+      ],
+      "rendered_at": "2026-08-23T22:46:43+00:00"
     }
   },
   "version": 1

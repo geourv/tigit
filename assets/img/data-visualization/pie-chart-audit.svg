@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="480" viewBox="0 0 720 480" role="img" aria-labelledby="title desc">
+  <title id="title">Gràfic circular problemàtic amb percentatges sense categories</title>
+  <desc id="desc">Quatre sectors indiquen 84,6%, 12,4%, 2,1% i 0,9%, però la figura no identifica la variable, les categories, el període, el total ni la font.</desc>
+  <rect width="720" height="480" fill="#ffffff"/>
+  <g stroke="#17202a" stroke-width="2">
+    <path d="M300 240 L470 240 A170 170 0 1 1 396.4 100.1 Z" fill="#c58a18"/>
+    <path d="M300 240 L396.4 100.1 A170 170 0 0 1 466.9 208.2 Z" fill="#6f8f32"/>
+    <path d="M300 240 L466.9 208.2 A170 170 0 0 1 469.7 230.4 Z" fill="#c7461b"/>
+    <path d="M300 240 L469.7 230.4 A170 170 0 0 1 470 240 Z" fill="#e7a216"/>
+  </g>
+  <g fill="none" stroke="#52616b" stroke-width="2">
+    <path d="M145 309 L83 335 L45 335"/>
+    <path d="M422 120 L485 78 L525 78"/>
+    <path d="M454 192 L516 171 L556 171"/>
+    <path d="M470 236 L532 236 L572 236"/>
+  </g>
+  <g fill="#17202a" font-family="DejaVu Sans, sans-serif" font-size="24">
+    <text x="4" y="343">84,6%</text>
+    <text x="535" y="86">12,4%</text>
+    <text x="566" y="179">2,1%</text>
+    <text x="582" y="244">0,9%</text>
+  </g>
+</svg>

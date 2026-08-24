@@ -440,6 +440,8 @@ Hi ha una excepció metodològica important: si la pregunta estudia què es diu 
 
 ![Circuit de verificació d'una font]({{ site.baseurl }}/assets/diagrams/data-source-verification.mmd "Seguiu aquest circuit abans d'incorporar una dada al projecte: relacioneu la pregunta amb el productor, reviseu metodologia, cobertura i llicència, contrasteu el resultat i conserveu una còpia original documentada."){: data-figure-width-web="34rem" data-figure-width-pdf="35rem"}
 
+Aquest circuit es llegeix seguint les fletxes des de la pregunta inicial. Els rectangles representen accions o resultats, mentre que els rombes formulen decisions i obren branques etiquetades amb «Sí» i «No». La proximitat entre dues caixes no implica cap pas si no hi ha una fletxa que les connecti; quan una branca porta a descartar la font o a buscar una alternativa, no s'ha de continuar pel camí principal com si la decisió hagués estat afirmativa.
+
 ### Dades personals, agregació i secret estadístic
 
 Les dades poden no aparèixer «crues» encara que provinguin d'un registre oficial. Moltes fonts administratives i estadístiques parteixen d'informació individualitzada sobre persones, llars, empreses, targetes, terminals o vehicles, però allò que es publica és una versió agregada, anonimitzada, arrodonida o filtrada. Aquesta transformació no és un defecte: és una condició jurídica i metodològica perquè la informació sigui útil sense revelar identitats ni comportaments particulars.

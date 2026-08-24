@@ -8,4 +8,4 @@ La font espacial és `divisions-administratives-v2r2-20260120`, publicada per l'
 - SHA-256: `563fb7d81e143509d88569a9e8fe86d7c44ae9ce9e96c75b888379a7f0554162`.
 - CRS: ETRS89 / UTM zona 31N, `EPSG:25831`.
 
-El ZIP complet i el GeoPackage de 116 MB s'emmagatzemen temporalment a `tmp/` i no es versionen. `make spatial-data` comprova el checksum i genera `data/processed/tarragones-boundaries-icgc-20260120.gpkg`, un derivat compacte amb les escales necessàries per a la comarca, la província i el control de Vila-seca.
+El ZIP complet i el GeoPackage de 116 MB s'emmagatzemen temporalment a `tmp/` i no es versionen. `make spatial-data` comprova el checksum i genera dos derivats compactes: `data/processed/tarragones-boundaries-icgc-20260120.gpkg`, amb les escales necessàries per a la comarca, la província i el control de Vila-seca, i `data/processed/catalonia-counties-icgc-20260120.gpkg`, amb les 43 comarques a escala 1:250.000.

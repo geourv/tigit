@@ -1,0 +1,137 @@
+---
+title: "Àrea mínima cartografiable aplicada als municipis del Tarragonès"
+lang: ca
+ref: minimum_mapping_unit_tarragones
+format:
+  gfm:
+    output-file: minimum-mapping-unit-tarragones.generated.md
+execute:
+  echo: false
+  warning: false
+  message: false
+execute-dir: project
+unaltraweb_compute:
+  engine: r
+  mode: figure
+  inputs:
+    - _practices/tigit-projecte-territorial/data/processed/tarragones-boundaries-icgc-20260120.gpkg
+  outputs:
+    - assets/img/cartographic-language/minimum-mapping-unit-tarragones.svg
+---
+
+```{r}
+find_project_root <- function(start) {
+  path <- normalizePath(start, winslash = "/", mustWork = FALSE)
+  repeat {
+    if (file.exists(file.path(path, ".unaltraweb", "computations.yml"))) {
+      return(path)
+    }
+    parent <- dirname(path)
+    if (identical(parent, path)) {
+      stop("Project root not found: missing .unaltraweb/computations.yml")
+    }
+    path <- parent
+  }
+}
+
+root <- find_project_root(getwd())
+suppressPackageStartupMessages(library(sf))
+suppressPackageStartupMessages(library(ggplot2))
+
+gpkg <- file.path(root, "_practices/tigit-projecte-territorial/data/processed/tarragones-boundaries-icgc-20260120.gpkg")
+municipalities <- sf::st_read(gpkg, layer = "municipalities_250k", quiet = TRUE)
+county <- sf::st_read(gpkg, layer = "comarca_250k", quiet = TRUE)
+
+# A 5 mm square at 1:250,000 represents 1,250 m per side, or 156.25 ha.
+threshold_ha <- 156.25
+parts <- suppressWarnings(sf::st_cast(municipalities, "POLYGON"))
+parts$area_ha <- as.numeric(sf::st_area(parts)) / 10000
+small <- parts[parts$area_ha < threshold_ha, ]
+kept <- parts[parts$area_ha >= threshold_ha, ]
+small_points <- sf::st_point_on_surface(small)
+
+stopifnot(
+  nrow(municipalities) == 22,
+  nrow(small) == 6,
+  setequal(unique(small$NOMMUNI), c("Perafort", "el Morell", "el Catllar"))
+)
+
+map_theme <- theme_void(base_family = "DejaVu Sans") +
+  theme(
+    plot.title = element_text(face = "bold", size = 20, color = "#17202a", hjust = 0),
+    plot.subtitle = element_text(size = 19, color = "#52616b", hjust = 0, margin = margin(b = 5)),
+    plot.background = element_rect(fill = "#f8fafc", color = "#d8e0e6", linewidth = 0.6),
+    plot.margin = margin(9, 9, 9, 9)
+  )
+
+source_map <- ggplot() +
+  geom_sf(data = parts, fill = "#dfe8ef", color = "#ffffff", linewidth = 0.28) +
+  geom_sf(data = small, fill = "#e76f51", color = "#9f3326", linewidth = 0.45) +
+  geom_sf(data = county, fill = NA, color = "#36454f", linewidth = 0.55) +
+  coord_sf(datum = NA) +
+  labs(
+    title = "1. Font: tots els components",
+    subtitle = "Sis fragments es mantenen com a àrees."
+  ) +
+  map_theme
+
+output_map <- ggplot() +
+  geom_sf(data = kept, fill = "#d7e8f5", color = "#ffffff", linewidth = 0.28) +
+  geom_sf(data = small_points, shape = 21, size = 3.2, stroke = 0.7, fill = "#e76f51", color = "#9f3326") +
+  geom_sf(data = county, fill = NA, color = "#36454f", linewidth = 0.55) +
+  coord_sf(datum = NA) +
+  labs(
+    title = "2. Sortida: canvi de marca",
+    subtitle = "A 1:250.000 passen a símbols visibles."
+  ) +
+  map_theme
+
+output <- file.path(root, "assets/img/cartographic-language/minimum-mapping-unit-tarragones.svg")
+dir.create(dirname(output), showWarnings = FALSE, recursive = TRUE)
+svglite::svglite(output, width = 11.5, height = 7.4, bg = "white")
+grid::grid.newpage()
+grid::grid.rect(gp = grid::gpar(fill = "white", col = NA))
+layout <- grid::grid.layout(
+  nrow = 3,
+  ncol = 2,
+  heights = grid::unit(c(0.18, 0.65, 0.17), "npc"),
+  widths = grid::unit(c(0.5, 0.5), "npc")
+)
+grid::pushViewport(grid::viewport(layout = layout))
+grid::grid.text(
+  "Àrea mínima cartografiable: una decisió de representació",
+  x = grid::unit(0.035, "npc"), y = grid::unit(0.70, "npc"), just = c("left", "center"),
+  vp = grid::viewport(layout.pos.row = 1, layout.pos.col = 1:2),
+  gp = grid::gpar(fontfamily = "DejaVu Sans", fontsize = 22, fontface = "bold", col = "#17202a")
+)
+grid::grid.text(
+  "Divisions municipals de l'ICGC al Tarragonès",
+  x = grid::unit(0.035, "npc"), y = grid::unit(0.27, "npc"), just = c("left", "center"),
+  vp = grid::viewport(layout.pos.row = 1, layout.pos.col = 1:2),
+  gp = grid::gpar(fontfamily = "DejaVu Sans", fontsize = 19, col = "#52616b")
+)
+print(source_map, vp = grid::viewport(layout.pos.row = 2, layout.pos.col = 1, xscale = c(0, 1)))
+print(output_map, vp = grid::viewport(layout.pos.row = 2, layout.pos.col = 2, xscale = c(0, 1)))
+
+footer_vp <- grid::viewport(layout.pos.row = 3, layout.pos.col = 1:2)
+grid::grid.roundrect(
+  x = 0.5, y = 0.52, width = 0.94, height = 0.70, r = grid::unit(2.5, "mm"),
+  vp = footer_vp,
+  gp = grid::gpar(fill = "#fff4ec", col = "#efc6ae", lwd = 0.8)
+)
+grid::grid.text(
+  "Criteri docent: 5 mm × 5 mm a 1:250.000 = 156,25 ha",
+  x = grid::unit(0.05, "npc"), y = grid::unit(0.64, "npc"), just = c("left", "center"),
+  vp = footer_vp,
+  gp = grid::gpar(fontfamily = "DejaVu Sans", fontsize = 19, fontface = "bold", col = "#8a3f2a")
+)
+grid::grid.text(
+  "Perafort: 3  |  el Morell: 2  |  el Catllar: 1. Forma exacta: ampliar el mapa.",
+  x = grid::unit(0.05, "npc"), y = grid::unit(0.34, "npc"), just = c("left", "center"),
+  vp = footer_vp,
+  gp = grid::gpar(fontfamily = "DejaVu Sans", fontsize = 19, col = "#52616b")
+)
+grDevices::dev.off()
+```
+
+![Aplicació de l'àrea mínima cartografiable a sis components municipals petits del Tarragonès]({{ site.baseurl }}/assets/img/cartographic-language/minimum-mapping-unit-tarragones.svg "La font conserva sis components de Perafort, el Morell i el Catllar per sota de 156,25 ha. En una sortida comarcal a 1:250.000, la figura els substitueix per símbols visibles; si cal consultar-ne la forma exacta, cal una escala més gran.")

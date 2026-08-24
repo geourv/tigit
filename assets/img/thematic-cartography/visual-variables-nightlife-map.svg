@@ -1,0 +1,214 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Variables visuals aplicades a un mapa d'oci nocturn</title>
+  <desc id="desc">Tres mapes conceptuals comparen marques puntuals per representar locals, marques lineals per representar fluxos als carrers i marques superficials per representar la densitat de locals als barris.</desc>
+  <defs>
+    <style>
+      .canvas { fill: #f6f1e6; }
+      .card { fill: #ffffff; stroke: #d7ddd8; stroke-width: 1.5; }
+      .map-frame { fill: #fbfaf6; stroke: #d7ddd8; stroke-width: 1.2; }
+      .district { fill: #f0eee7; stroke: #ffffff; stroke-width: 3; stroke-linejoin: round; }
+      .boundary { fill: none; stroke: #667780; stroke-width: 2; stroke-linejoin: round; }
+      .road { fill: none; stroke: #c7ceca; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+      .road-minor { fill: none; stroke: #dde2de; stroke-width: 2; stroke-linecap: round; }
+      .title { font: 700 32px Arial, 'Liberation Sans', sans-serif; fill: #18313a; }
+      .subtitle { font: 17px Arial, 'Liberation Sans', sans-serif; fill: #52636b; }
+      .panel-title { font: 700 21px Arial, 'Liberation Sans', sans-serif; fill: #18313a; }
+      .question { font: 15px Arial, 'Liberation Sans', sans-serif; fill: #52636b; }
+      .legend-title { font: 700 14px Arial, 'Liberation Sans', sans-serif; fill: #18313a; letter-spacing: .5px; }
+      .body { font: 14px Arial, 'Liberation Sans', sans-serif; fill: #354850; }
+      .small { font: 12px Arial, 'Liberation Sans', sans-serif; fill: #52636b; }
+      .tiny { font: 11px Arial, 'Liberation Sans', sans-serif; fill: #52636b; }
+      .tag { fill: #e8eeee; }
+      .tag-text { font: 700 12px Arial, 'Liberation Sans', sans-serif; fill: #31505a; letter-spacing: .45px; }
+      .rule { stroke: #e2e6e2; stroke-width: 1; }
+      .venue-ring { stroke: #ffffff; stroke-width: 2; }
+      .icon-light { color: #ffffff; }
+      .icon-dark { color: #18313a; }
+      .flow { fill: none; stroke: #d35f3f; stroke-linecap: round; stroke-linejoin: round; }
+    </style>
+    <pattern id="no-data" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(35)">
+      <rect width="10" height="10" fill="#eef0ed"/>
+      <line x1="0" y1="0" x2="0" y2="10" stroke="#89969a" stroke-width="2"/>
+    </pattern>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#d35f3f"/>
+    </marker>
+    <symbol id="beer" viewBox="0 0 24 24">
+      <path d="M5 6h10v13H5zM15 9h3.2a2.3 2.3 0 0 1 0 4.6H15M8 9v7M12 9v7M5 6h10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="wine" viewBox="0 0 24 24">
+      <path d="M7 4h10l-1.2 5.2a4.8 4.8 0 0 1-9.6 0zM12 14v5M8.5 20h7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="cocktail" viewBox="0 0 24 24">
+      <path d="M4 5h16l-8 8zM12 13v6M8 20h8M16.8 5l2.7-2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="neutral-map" viewBox="0 0 340 240">
+      <g>
+        <path class="district" d="M18 26 105 18 111 93 55 115 16 95Z"/>
+        <path class="district" d="M105 18 213 30 210 105 111 93Z"/>
+        <path class="district" d="M213 30 313 22 324 98 266 125 210 105Z"/>
+        <path class="district" d="M16 95 55 115 111 93 172 137 158 220 70 211 25 226 12 155Z"/>
+        <path class="district" d="M111 93 210 105 205 161 158 220 172 137Z"/>
+        <path class="district" d="M210 105 266 125 324 98 294 210 205 225 158 220 205 161Z"/>
+      </g>
+      <g>
+        <path class="road" d="M5 123C75 108 118 118 172 137s109 21 165-15"/>
+        <path class="road" d="M92 4c19 59 14 108 35 232"/>
+        <path class="road" d="M235 4c-24 65-11 132-33 232"/>
+        <path class="road-minor" d="M3 190c69-20 125-6 187-25s104-1 146 24"/>
+        <path class="road-minor" d="M30 48c62 39 113 42 166 20s87-21 130 2"/>
+        <path class="road-minor" d="M41 222C85 173 159 111 300 31"/>
+      </g>
+      <path class="boundary" d="M18 26 105 18 213 30 313 22 324 98 294 210 205 225 158 220 70 211 25 226 12 155 16 95Z"/>
+    </symbol>
+  </defs>
+
+  <rect width="1200" height="760" class="canvas"/>
+  <text x="30" y="47" class="title">Una pregunta territorial, tres implantacions</text>
+  <text x="30" y="77" class="subtitle">Les variables visuals només tenen sentit després de decidir què representa cada registre i amb quina geometria.</text>
+  <g transform="translate(946 27)">
+    <rect width="224" height="32" rx="16" class="tag"/>
+    <text x="112" y="21" text-anchor="middle" class="tag-text">EXEMPLE CONCEPTUAL · DADES FICTÍCIES</text>
+  </g>
+
+  <!-- Point implantation -->
+  <g>
+    <rect x="24" y="104" width="376" height="628" rx="18" class="card"/>
+    <text x="46" y="140" class="panel-title">Locals · marques puntuals</text>
+    <text x="46" y="166" class="question">On és cada local i quines característiques té?</text>
+    <g transform="translate(42 187)">
+      <rect width="340" height="240" rx="12" class="map-frame"/>
+      <use href="#neutral-map" xlink:href="#neutral-map" width="340" height="240"/>
+      <g transform="translate(69 57)">
+        <circle r="20" fill="#4f9aa2" class="venue-ring"/>
+        <use href="#beer" xlink:href="#beer" x="-13" y="-13" width="26" height="26" class="icon-light"/>
+      </g>
+      <g transform="translate(191 50)">
+        <circle r="10" fill="#b9dde0" class="venue-ring"/>
+        <use href="#wine" xlink:href="#wine" x="-8" y="-8" width="16" height="16" class="icon-dark"/>
+      </g>
+      <g transform="translate(280 84)">
+        <circle r="30" fill="#165d67" class="venue-ring"/>
+        <use href="#cocktail" xlink:href="#cocktail" x="-17" y="-17" width="34" height="34" class="icon-light"/>
+      </g>
+      <g transform="translate(137 158)">
+        <circle r="20" fill="#165d67" class="venue-ring"/>
+        <use href="#wine" xlink:href="#wine" x="-13" y="-13" width="26" height="26" class="icon-light"/>
+      </g>
+      <g transform="translate(251 184)">
+        <circle r="10" fill="#4f9aa2" class="venue-ring"/>
+        <use href="#beer" xlink:href="#beer" x="-8" y="-8" width="16" height="16" class="icon-light"/>
+      </g>
+      <g transform="translate(75 207)">
+        <circle r="10" fill="#b9dde0" class="venue-ring"/>
+        <use href="#cocktail" xlink:href="#cocktail" x="-8" y="-8" width="16" height="16" class="icon-dark"/>
+      </g>
+    </g>
+    <text x="46" y="461" class="legend-title">LLEGENDA DEL SÍMBOL COMPOST</text>
+    <line x1="46" y1="471" x2="378" y2="471" class="rule"/>
+    <text x="46" y="499" class="body">Pictograma · tipus</text>
+    <g transform="translate(212 484)" class="icon-dark">
+      <use href="#beer" xlink:href="#beer" width="24" height="24"/>
+      <use href="#wine" xlink:href="#wine" x="58" width="24" height="24"/>
+      <use href="#cocktail" xlink:href="#cocktail" x="116" width="24" height="24"/>
+      <text x="12" y="38" text-anchor="middle" class="tiny">pub</text>
+      <text x="70" y="38" text-anchor="middle" class="tiny">vins</text>
+      <text x="128" y="38" text-anchor="middle" class="tiny">còctels</text>
+    </g>
+    <text x="46" y="553" class="body">Àrea · aforament</text>
+    <g transform="translate(233 549)">
+      <circle cx="0" cy="11" r="7" fill="#4f9aa2"/>
+      <circle cx="53" cy="11" r="14" fill="#4f9aa2"/>
+      <circle cx="116" cy="11" r="21" fill="#4f9aa2"/>
+      <text x="0" y="43" text-anchor="middle" class="tiny">50</text>
+      <text x="53" y="43" text-anchor="middle" class="tiny">200</text>
+      <text x="116" y="43" text-anchor="middle" class="tiny">450</text>
+    </g>
+    <text x="46" y="617" class="body">Lluminositat · preu mitjà</text>
+    <g transform="translate(253 601)">
+      <rect width="31" height="22" rx="4" fill="#b9dde0"/>
+      <rect x="38" width="31" height="22" rx="4" fill="#4f9aa2"/>
+      <rect x="76" width="31" height="22" rx="4" fill="#165d67"/>
+      <text x="15.5" y="38" text-anchor="middle" class="tiny">€</text>
+      <text x="53.5" y="38" text-anchor="middle" class="tiny">€€</text>
+      <text x="91.5" y="38" text-anchor="middle" class="tiny">€€€</text>
+    </g>
+    <g transform="translate(46 679)">
+      <rect width="332" height="34" rx="8" class="tag"/>
+      <text x="166" y="22" text-anchor="middle" class="tag-text">FILA: UN LOCAL · GEOMETRIA: PUNT</text>
+    </g>
+  </g>
+
+  <!-- Linear implantation -->
+  <g>
+    <rect x="412" y="104" width="376" height="628" rx="18" class="card"/>
+    <text x="434" y="140" class="panel-title">Carrers · marques lineals</text>
+    <text x="434" y="166" class="question">Per quins trams circula l'activitat nocturna?</text>
+    <g transform="translate(430 187)">
+      <rect width="340" height="240" rx="12" class="map-frame"/>
+      <use href="#neutral-map" xlink:href="#neutral-map" width="340" height="240"/>
+      <path d="M5 123C75 108 118 118 172 137s109 21 165-15" class="flow" stroke-width="11" marker-end="url(#arrow)"/>
+      <path d="M92 4c19 59 14 108 35 232" class="flow" stroke-width="6" marker-end="url(#arrow)"/>
+      <path d="M41 222C85 173 159 111 300 31" class="flow" stroke-width="3" marker-end="url(#arrow)"/>
+    </g>
+    <text x="434" y="461" class="legend-title">LLEGENDA DEL FLUX</text>
+    <line x1="434" y1="471" x2="766" y2="471" class="rule"/>
+    <text x="434" y="505" class="body">Amplada · pas estimat</text>
+    <g transform="translate(603 488)">
+      <line x1="0" y1="7" x2="68" y2="7" class="flow" stroke-width="3"/>
+      <line x1="0" y1="31" x2="68" y2="31" class="flow" stroke-width="6"/>
+      <line x1="0" y1="60" x2="68" y2="60" class="flow" stroke-width="11"/>
+      <text x="78" y="11" class="tiny">100 persones/h</text>
+      <text x="78" y="35" class="tiny">400 persones/h</text>
+      <text x="78" y="64" class="tiny">800 persones/h</text>
+    </g>
+    <text x="434" y="589" class="body">Fletxa · sentit del flux</text>
+    <line x1="609" y1="584" x2="718" y2="584" class="flow" stroke-width="5" marker-end="url(#arrow)"/>
+    <text x="434" y="636" class="small">Cal una observació o un model per tram;</text>
+    <text x="434" y="654" class="small">la proximitat als locals no mesura el flux.</text>
+    <g transform="translate(434 679)">
+      <rect width="332" height="34" rx="8" class="tag"/>
+      <text x="166" y="22" text-anchor="middle" class="tag-text">FILA: UN TRAM · GEOMETRIA: LÍNIA</text>
+    </g>
+  </g>
+
+  <!-- Areal implantation -->
+  <g>
+    <rect x="800" y="104" width="376" height="628" rx="18" class="card"/>
+    <text x="822" y="140" class="panel-title">Barris · marques superficials</text>
+    <text x="822" y="166" class="question">Quins barris concentren més oferta?</text>
+    <g transform="translate(818 187)">
+      <rect width="340" height="240" rx="12" class="map-frame"/>
+      <path d="M18 26 105 18 111 93 55 115 16 95Z" fill="#dcebed" stroke="#ffffff" stroke-width="3"/>
+      <path d="M105 18 213 30 210 105 111 93Z" fill="#9bcbd0" stroke="#ffffff" stroke-width="3"/>
+      <path d="M213 30 313 22 324 98 266 125 210 105Z" fill="#4f9aa2" stroke="#ffffff" stroke-width="3"/>
+      <path d="M16 95 55 115 111 93 172 137 158 220 70 211 25 226 12 155Z" fill="#dcebed" stroke="#ffffff" stroke-width="3"/>
+      <path d="M111 93 210 105 205 161 158 220 172 137Z" fill="#165d67" stroke="#ffffff" stroke-width="3"/>
+      <path d="M210 105 266 125 324 98 294 210 205 225 158 220 205 161Z" fill="url(#no-data)" stroke="#ffffff" stroke-width="3"/>
+      <path class="boundary" d="M18 26 105 18 213 30 313 22 324 98 294 210 205 225 158 220 70 211 25 226 12 155 16 95Z"/>
+    </g>
+    <text x="822" y="461" class="legend-title">LLEGENDA DE LA COROPLETA</text>
+    <line x1="822" y1="471" x2="1154" y2="471" class="rule"/>
+    <text x="822" y="499" class="body">Densitat de locals (locals/km²)</text>
+    <g transform="translate(822 514)">
+      <rect width="68" height="30" fill="#dcebed"/>
+      <rect x="68" width="68" height="30" fill="#9bcbd0"/>
+      <rect x="136" width="68" height="30" fill="#4f9aa2"/>
+      <rect x="204" width="68" height="30" fill="#165d67"/>
+      <text x="34" y="49" text-anchor="middle" class="tiny">0–2</text>
+      <text x="102" y="49" text-anchor="middle" class="tiny">2–5</text>
+      <text x="170" y="49" text-anchor="middle" class="tiny">5–10</text>
+      <text x="238" y="49" text-anchor="middle" class="tiny">més de 10</text>
+    </g>
+    <g transform="translate(822 584)">
+      <rect width="38" height="26" fill="url(#no-data)" stroke="#89969a"/>
+      <text x="50" y="18" class="body">sense dades</text>
+    </g>
+    <text x="822" y="636" class="small">La superfície rep un indicador comparable,</text>
+    <text x="822" y="654" class="small">no el recompte brut de locals del barri.</text>
+    <g transform="translate(822 679)">
+      <rect width="332" height="34" rx="8" class="tag"/>
+      <text x="166" y="22" text-anchor="middle" class="tag-text">FILA: UN BARRI · GEOMETRIA: POLÍGON</text>
+    </g>
+  </g>
+</svg>

@@ -48,13 +48,27 @@ El mètode s'ha de decidir abans de la paleta. Un **mapa de coropletes** represe
 
 En termes de semiologia gràfica, cada mètode combina un tipus de marca amb una variable visual dominant. Una coropleta utilitza marques superficials i les ordena amb valor o color seqüencial; els símbols proporcionals utilitzen marques puntuals i codifiquen la magnitud amb la mida; un mapa de fluxos treballa amb marques lineals i pot variar amplada, direcció o valor; i una isolínia confia sobretot en la posició i la separació entre línies. Aquesta traducció ajuda a veure per què la paleta no pot decidir-se sola: abans cal saber quin signe farà la feina principal.
 
+### De la variable visual a la implantació cartogràfica
+
+La [matriu general de marques i canals del capítol 3]({{ site.baseurl }}/ca/chapters/semiologia-visualitzacio/#canals-visuals-i-tasques-de-lectura) mostra combinacions formalment possibles. En cartografia, la **implantació** concreta com existeix el fenomen al mapa: un local es pot representar com un punt, un tram de carrer com una línia i un barri com una àrea. Canviar d'implantació no és aplicar un altre estil a la mateixa columna; sovint significa canviar la unitat d'observació, la geometria i la pregunta.
+
+Un cas d'oci nocturn permet fer visible aquesta diferència. Una taula de locals pot tenir una fila per establiment, coordenades, tipus, aforament i preu mitjà. Al mapa puntual, un símbol compost pot reservar el pictograma per al tipus de local, l'àrea del cercle per a l'aforament i una progressió de lluminositat per al preu. Una taula de carrers, en canvi, necessita una fila per tram i una observació o un model de pas nocturn; l'amplada de la línia pot representar persones per hora i una fletxa, el sentit del flux. Finalment, una coropleta de barris exigeix agregar els locals a cada polígon i construir un indicador comparable, com locals per quilòmetre quadrat, abans d'aplicar una rampa clara-fosca.
+
+![Tres implantacions cartogràfiques d'un cas conceptual d'oci nocturn: símbols puntuals per als locals, línies d'amplada variable per al flux als carrers i una coropleta de densitat per barris]({{ site.baseurl }}/assets/img/thematic-cartography/visual-variables-nightlife-map.svg "Exemple conceptual amb dades fictícies. Els pictogrames, el mapa esquemàtic i la composició són d'elaboració pròpia. La figura aplica les variables visuals a marques puntuals, lineals i superficials sense reproduir la matriu legacy sense autoria."){: data-figure-width-web="58rem" data-figure-width-pdf="90%"}
+
+>>>> **Reflexió: dissenyar la llegenda abans del mapa.** Trieu una pregunta sobre pubs o altres llocs per sortir i escriviu una fila fictícia de la taula que necessitaríeu. Indiqueu la unitat d'observació, la geometria, el camp i la unitat de cada canal visual. Si voleu representar «qualitat», definiu abans què significa i com s'observa: una categoria oficial, una valoració mitjana, el nombre de ressenyes o una auditoria no són la mateixa variable. Decidiu també si la pregunta demana localitzar establiments, mesurar fluxos per carrers o comparar una intensitat entre barris; una icona atractiva no resol aquesta decisió.
+
+La llegenda és la prova d'aquest raonament. La forma d'una copa pot identificar un tipus de local, però no expressa bé una magnitud; una icona més gran pot representar aforament si la seva àrea segueix una escala, però comparar mides de pictogrames diferents és menys precís que comparar cercles comuns; i una coropleta no ha d'omplir barris amb el recompte brut si la seva superfície o població fa injusta la comparació. Cada signe ha de correspondre a un camp recuperable de la base i a una operació que el lector pugui explicar.
+
 La figura següent permet veure que una coropleta pot combinar més d'una decisió visual. El blau fosc identifica els països on l'espanyol té estatus de llengua oficial; aquesta és una distinció qualitativa. En canvi, els estats dels Estats Units es classifiquen segons el percentatge de població que parla espanyol i es representen amb una progressió de blaus més o menys intensos. Per tant, el mapa no només "pinta territoris": utilitza color per separar tipus de situació i valor o intensitat per ordenar classes percentuals. La llegenda és imprescindible per saber on canvia la variable representada i quins intervals de classe s'han triat.
 
 ![Mapa mundial sobre la presència de l'espanyol, amb països on té estatus oficial i estats dels Estats Units classificats segons percentatge de població que parla espanyol]({{ site.baseurl }}/assets/img/legacy/spanish-speakers-choropleth-map.png "Exemple de coropleta que combina una categoria qualitativa amb classes percentuals ordenades. Llicència: pendent de revisar."){: data-figure-width="54rem"}
 
-Altres mètodes responen a estructures diferents. Un mapa de punts assigna una quantitat constant a cada punt; un mapa de fluxos representa moviments o connexions mitjançant línies; i una isolínia uneix posicions amb el mateix valor d'un fenomen considerat continu, interpolat o modelat. Les corbes de nivell o isohipses només en són el cas més conegut: també hi ha isòbares de pressió atmosfèrica, isotermes de temperatura, isohietes de precipitació, isòbates de profunditat o isòcrones de temps de desplaçament. No tots aquests mètodes s'aplicaran al projecte comarcal, però ajuden a entendre que la forma del fenomen precedeix la selecció de la simbologia.
+Altres mètodes responen a estructures diferents. Un mapa puntual localitza entitats o observacions; un mapa de fluxos representa moviments o connexions mitjançant línies; una isolínia uneix posicions amb el mateix valor d'un fenomen continu, interpolat o modelat; i un cartodiagrama situa petits gràfics sobre el territori. No tots aquests mètodes s'aplicaran al projecte comarcal, però ajuden a entendre que la forma del fenomen precedeix la selecció de la simbologia.
 
-![Sis esquemes de mapes temàtics: coropleta, símbols proporcionals, punts, fluxos, isolínies i cartodiagrama]({{ site.baseurl }}/assets/img/thematic-cartography/thematic-map-types.svg "El mètode cartogràfic ha de respondre al tipus de dada: intensitat, volum, presència, moviment, continuïtat o composició localitzada. Les geometries són esquemàtiques i no representen cap comarca real. Figura d'elaboració pròpia."){: data-figure-width="54rem"}
+La comparació següent manté el Tarragonès com a territori comú i canvia la pregunta i la marca principal. La coropleta mostra el percentatge d'habitatge no principal; els cercles proporcionals, el total d'habitatges; el mapa puntual, les 22 capitals municipals; i els cartodiagrames, la composició entre habitatge principal i no principal en quatre municipis. No són quatre estils intercanviables per a una mateixa columna: cada panell respon a una estructura de dades diferent.
+
+![Quatre mètodes de representació temàtica aplicats als municipis del Tarragonès]({{ site.baseurl }}/assets/img/thematic-cartography/thematic-methods-tarragones-2021.svg "La coropleta representa una intensitat relativa; els símbols proporcionals, un volum absolut; el mapa puntual localitza les capitals municipals; i els cartodiagrames comparen una composició. Dades d'habitatge: Idescat, 2021. Divisions i capitals municipals: ICGC, 20 de gener de 2026, CC BY 4.0."){: data-figure-width-web="38rem" data-figure-width-pdf="90%"}
 
 ### Pregunta, dada i mètode
 
@@ -140,7 +154,20 @@ Amb els habitatges totals dels municipis del Tarragonès es pot veure com funcio
 
 ### Valors iguals, no només relleu
 
-Una **isolínia** és una línia que uneix punts amb el mateix valor d'una variable. La corba de nivell o **isohipsa** uneix punts amb la mateixa altitud, però el mateix principi s'utilitza per a moltes altres lectures geogràfiques. Una **isòbara** uneix punts amb la mateixa pressió atmosfèrica; una **isoterma**, punts amb la mateixa temperatura; una **isohieta**, punts amb la mateixa precipitació acumulada; una **isòbata**, punts amb la mateixa profunditat; i una **isòcrona**, punts que comparteixen el mateix temps d'accés segons un model de mobilitat. En tots els casos la pregunta no és només com es dibuixa la línia, sinó què vol dir que dos punts tinguin "el mateix valor".
+Una **isolínia** és una línia que uneix punts amb el mateix valor d'una variable. El prefix **iso-** prové del grec *ísos*, que significa «igual». La paraula que el segueix identifica què es manté igual al llarg de la línia. La corba de nivell és, per tant, una isolínia d'altitud i també rep el nom d'**isohipsa**; no és, però, l'únic cas d'aquesta família.
+
+::: table "Vocabulari de les isolínies"
+| Terme | Què es manté igual | Exemple d'unitat o model |
+| --- | --- | --- |
+| Isohipsa o corba de nivell | Altitud | Metres sobre el nivell mitjà del mar |
+| Isòbara | Pressió atmosfèrica | Hectopascals reduïts al nivell del mar |
+| Isoterma | Temperatura | Graus Celsius en un instant o període definit |
+| Isohieta | Precipitació acumulada | Mil·límetres en un període definit |
+| Isòbata | Profunditat | Metres respecte d'una referència vertical |
+| Isòcrona | Temps de desplaçament o d'accés | Minuts segons una xarxa, un mode i unes velocitats |
+:::
+
+El nom no garanteix que la línia sigui vàlida. En tots els casos cal preguntar què vol dir «igual», quines observacions o quin model produeixen la superfície i amb quina incertesa s'han traçat les línies.
 
 El cas de les isòbares ajuda a separar el vocabulari del relleu. En un mapa de superfície meteorològica, les línies no representen muntanyes ni pendents del terreny, sinó pressió atmosfèrica reduïda al nivell del mar. La distància entre isòbares suggereix el gradient de pressió: quan estan molt juntes, el canvi de pressió és més intens i pot associar-se a vents més forts. L'[anàlisi de superfície del Weather Prediction Center del 28 d'abril de 2002](https://commons.wikimedia.org/wiki/File:2002-04-28_2100_UTC_WPC_surface_analysis.jpg) mostra centres d'alta i baixa pressió, fronts i altres límits atmosfèrics; els productes del National Weather Service són de domini públic si no indiquen el contrari, segons l'[avís legal del National Weather Service](https://www.weather.gov/disclaimer/).
 
@@ -152,7 +179,7 @@ Les isolínies només són defensables si el fenomen admet una lectura contínua
 
 ### Canviar l'espai per mostrar pes
 
-Un **cartograma** o mapa anamòrfic modifica la mida o la forma dels territoris per fer que la superfície representada respongui a una magnitud, com població, PIB, places turístiques o pernoctacions. És un cas cartogràfic particular del **principi de proporcionalitat de tinta**: la quantitat d'àrea impresa o acolorida que veu el lector ha de mantenir una relació proporcional amb la dada. Si $x_i$ és el valor d'un territori, $X$ és la suma de tots els valors i $A$ és l'àrea total del cartograma, el criteri ideal és:
+Un **cartograma** o mapa anamòrfic modifica la mida o la forma dels territoris per fer que la superfície representada respongui a una magnitud, com població, PIB, places turístiques o pernoctacions. És un cas cartogràfic particular del [**principi de proporcionalitat de tinta** explicat al capítol 3]({{ site.baseurl }}/ca/chapters/semiologia-visualitzacio/#proporcionalitat-origen-i-superfície-visible): la quantitat d'àrea impresa o acolorida que veu el lector ha de mantenir una relació proporcional amb la dada. Si $x_i$ és el valor d'un territori, $X$ és la suma de tots els valors i $A$ és l'àrea total del cartograma, el criteri ideal és:
 
 $$
 \frac{A_i}{A} = \frac{x_i}{X}
@@ -162,7 +189,35 @@ Aquesta igualtat no diu que el territori sigui físicament més gran, sinó que 
 
 La clau matemàtica és distingir propietats **geomètriques** i propietats **topològiques**. La geometria mesura distàncies, angles, posicions, formes i àrees; la topologia descriu relacions que poden continuar sent vàlides encara que l'espai es deformi, sobretot el veïnatge: què toca amb què, quines unitats continuen connectades i quin ordre relacional es manté. Un cartograma contigu intenta conservar aquesta topologia d'adjacències mentre deforma els polígons per ajustar-ne l'àrea a la magnitud representada. Un cartograma no contigu permet separar-los o canviar-los de mida sense mantenir totes les vores; un cartograma de cercles substitueix territoris per cercles o altres formes proporcionals. Cap d'aquestes variants és una versió més "real" del mapa: totes canvien la propietat que el lector ha d'observar.
 
-![Comparació entre un mapa territorial convencional, un cartograma contigu esquemàtic i un cartograma de cercles en què la mida respon a una magnitud]({{ site.baseurl }}/assets/img/thematic-cartography/cartogram-anamorphic-principle.svg "Els cartogrames fan visible el pes d'una magnitud sacrificant part de la forma, la distància o la familiaritat territorial. És un esquema conceptual sense dades reals ni geometries administratives. Figura d'elaboració pròpia."){: data-figure-width="54rem"}
+Abans de deformar el territori, convé veure la variable que dirigirà la transformació. El mapa següent conserva les superfícies i les posicions comarcals i representa la població estimada amb cercles proporcionals. La llegenda està expressada en habitants i l'àrea de cada cercle, no el radi, respon a la magnitud. Aquesta vista permet reconèixer on es concentra la població sense confondre el recompte absolut amb una intensitat acolorida sobre tota la comarca.
+
+![Població estimada de les comarques de Catalunya representada amb símbols proporcionals, 2025]({{ site.baseurl }}/assets/img/thematic-cartography/population-proportional-symbols-catalonia-2025.svg "L'àrea dels cercles és proporcional a la població estimada. El mapa conserva la geometria comarcal i prepara la comparació amb el cartograma. Pes demogràfic estimat a partir dels indicadors municipals de superfície i densitat de l'Idescat, 2025. Divisions comarcals: ICGC, 20 de gener de 2026, CC BY 4.0."){: data-figure-width-web="38rem" data-figure-width-pdf="82%"}
+
+#### Llegir i comentar la deformació
+
+Per comentar un cartograma cal comparar la quota de la variable amb la quota de superfície real, no limitar-se a dir que la forma ha canviat. Si $S_i/S$ és la proporció de superfície real d'una comarca, el **factor de deformació** $d_i$ es pot expressar com:
+
+$$
+d_i = \frac{x_i/X}{S_i/S}
+$$
+
+Una **distorsió positiva** té $d_i>1$: la comarca necessita més superfície visual perquè concentra una quota de població superior a la seva quota de territori. Una **distorsió negativa** té $d_i<1$: la seva quota de població és inferior a la quota territorial i el cartograma la contrau. La distorsió és **neutra** quan $d_i=1$, però aquest valor exacte és poc habitual; per facilitar la lectura, la figura agrupa com a *gairebé neutres* els factors entre `0,8×` i `1,25×`, dos llindars recíprocs que expressen canvis moderats. En un cartograma de població, aquest factor també equival a comparar la densitat de cada comarca amb la densitat mitjana del conjunt.
+
+::: table "Direcció de la deformació en un cartograma"
+| Distorsió | Factor ideal | Lectura correcta |
+| --- | --- | --- |
+| Negativa | $d_i<1$ | La superfície visual es contrau perquè la quota de població és menor que la quota territorial |
+| Neutra | $d_i=1$ | La quota de població i la quota territorial coincideixen; la superfície no necessita canviar |
+| Positiva | $d_i>1$ | La superfície visual s'expandeix perquè la quota de població supera la quota territorial |
+:::
+
+La comparació següent manté les mateixes 43 comarques i el mateix pes demogràfic, però canvia l'espai que ocupa cada unitat. A l'esquerra, el mapa territorial conserva les superfícies reals. A la dreta, el cartograma contigu deforma els polígons perquè l'àrea visual s'aproximi a la quota de població, alhora que intenta conservar els veïnatges. El Barcelonès, gairebé imperceptible en el mapa territorial, presenta una distorsió positiva forta; el Segrià mostra una distorsió negativa, i moltes comarques del Pirineu i de l'interior occidental es contrauen. Aquest comentari no significa que hagin guanyat o perdut població: descriu la relació entre població estimada i superfície dins del mateix període.
+
+Els colors permeten seguir cada comarca entre els dos panells i indiquen la direcció del canvi, no la seva població. La llegenda mostra el factor de deformació: els blaus corresponen a distorsions negatives, el to central a situacions gairebé neutres i els colors càlids a distorsions positives. L'àrea del cartograma és el canal que representa la població. Per interpretar el patró convé observar també si les expansions o contraccions formen concentracions territorials, quins veïnatges es conserven i quines formes o distàncies deixen de ser comparables.
+
+El pes de 2025 és una estimació reproduïble calculada com a superfície municipal multiplicada per la densitat publicada i agregada per comarca. Com que la densitat està arrodonida, el resultat serveix per construir i interpretar la deformació, però no substitueix un recompte oficial exacte de població.
+
+![Comparació de les comarques de Catalunya abans i després d'una deformació contigua proporcional a la població estimada de 2025]({{ site.baseurl }}/assets/img/thematic-cartography/population-cartogram-catalonia-2025.svg "El mapa territorial conserva la superfície real. El cartograma contigu conserva els veïnatges i aproxima l'àrea de cada comarca al seu pes demogràfic: el Barcelonès s'expandeix i el Segrià es contrau. Pes demogràfic estimat a partir dels indicadors municipals de superfície i densitat de l'Idescat, 2025. Divisions comarcals: ICGC, 20 de gener de 2026, CC BY 4.0."){: data-figure-width-web="38rem" data-figure-width-pdf="90%"}
 
 El cartograma següent aplica aquest principi a la població europea de 2018. Cada quadrat representa `500.000` persones, de manera que Alemanya, França, el Regne Unit, Itàlia, Espanya, Polònia, Ucraïna o la part europea de Rússia ocupen una presència visual molt diferent de la que tindrien en un mapa territorial convencional. La forma encara conserva prou referències per reconèixer Europa, però la lectura ja no és de distància ni de superfície real: és una lectura del pes demogràfic.
 
