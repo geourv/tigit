@@ -1,0 +1,165 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Criteris de col·locació d’etiquetes per a punts, línies i àrees</title>
+  <desc id="desc">Tres seccions mostren la prioritat de candidats al voltant d’un punt, col·lisions i desplaçament amb línia de crida, textos llegibles que segueixen carreteres i rius, i etiquetes d’àrea centrades dins del polígon. Una nota final recorda que la col·locació automàtica resol candidats i conflictes, però necessita revisió final.</desc>
+  <defs>
+    <style>
+      .page-title { font: 700 25px 'DejaVu Sans', Arial, sans-serif; fill: #17202a; }
+      .intro { font: 16px 'DejaVu Sans', Arial, sans-serif; fill: #52616b; }
+      .card { fill: #ffffff; stroke: #d5dde2; stroke-width: 1.5; }
+      .divider { stroke: #d5dde2; stroke-width: 1.4; }
+      .section-no { font: 700 13px 'DejaVu Sans', Arial, sans-serif; fill: #365b6d; letter-spacing: .7px; }
+      .section-title { font: 700 20px 'DejaVu Sans', Arial, sans-serif; fill: #17202a; }
+      .section-note { font: 14px 'DejaVu Sans', Arial, sans-serif; fill: #52616b; }
+      .demo-title { font: 700 14px 'DejaVu Sans', Arial, sans-serif; fill: #315e65; letter-spacing: .3px; }
+      .problem-title { font: 700 14px 'DejaVu Sans', Arial, sans-serif; fill: #8a3e27; letter-spacing: .3px; }
+      .body { font: 14px 'DejaVu Sans', Arial, sans-serif; fill: #394852; }
+      .point { fill: #17202a; stroke: #ffffff; stroke-width: 2; }
+      .candidate { fill: #f7f9f9; stroke: #8d9da5; stroke-width: 1.2; stroke-dasharray: 5 3; }
+      .candidate-best { fill: #edf3f1; stroke: #477a72; stroke-width: 2; }
+      .candidate-text { font: 13px 'DejaVu Sans', Arial, sans-serif; fill: #25313a; }
+      .rank { fill: #ffffff; stroke: #52616b; stroke-width: 1.2; }
+      .rank-best { fill: #315e65; stroke: #315e65; stroke-width: 1.2; }
+      .rank-text { font: 700 11px 'DejaVu Sans', Arial, sans-serif; fill: #25313a; }
+      .rank-text-best { font: 700 11px 'DejaVu Sans', Arial, sans-serif; fill: #ffffff; }
+      .collision-label { fill: #fff0e8; fill-opacity: .94; stroke: #b95435; stroke-width: 1.5; }
+      .label-text { font: 700 13px 'DejaVu Sans', Arial, sans-serif; fill: #17202a; }
+      .overlap { fill: #b95435; fill-opacity: .25; stroke: #a54028; stroke-width: 1; }
+      .leader { fill: none; stroke: #52616b; stroke-width: 1.7; }
+      .displaced { fill: #ffffff; stroke: #477a72; stroke-width: 1.5; }
+      .road-halo { fill: none; stroke: #ffffff; stroke-width: 11; stroke-linecap: round; stroke-linejoin: round; }
+      .road { fill: none; stroke: #8f6a48; stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; }
+      .river { fill: none; stroke: #2f7fa9; stroke-width: 5; stroke-linecap: round; }
+      .line-label { font: 700 15px 'DejaVu Sans', Arial, sans-serif; fill: #25313a; paint-order: stroke fill; stroke: #ffffff; stroke-width: 5; stroke-linejoin: round; }
+      .river-label { font: italic 15px 'DejaVu Sans', Arial, sans-serif; fill: #245f7e; paint-order: stroke fill; stroke: #ffffff; stroke-width: 5; stroke-linejoin: round; }
+      .problem-line { fill: none; stroke: #9c7350; stroke-width: 5; stroke-linecap: round; }
+      .conflict-ring { fill: #ffffff; fill-opacity: .7; stroke: #a54028; stroke-width: 2.5; stroke-dasharray: 5 3; }
+      .conflict-x { font: 700 22px 'DejaVu Sans', Arial, sans-serif; fill: #a54028; }
+      .area { fill: #cbdcbd; stroke: #5f8059; stroke-width: 2; stroke-linejoin: round; }
+      .area-problem { fill: #e4d8b9; stroke: #8a7442; stroke-width: 2; stroke-linejoin: round; }
+      .area-label { font: 700 18px 'DejaVu Sans', Arial, sans-serif; fill: #25313a; letter-spacing: .4px; paint-order: stroke fill; stroke: #ffffff; stroke-width: 5; }
+      .outside-label { font: 700 17px 'DejaVu Sans', Arial, sans-serif; fill: #83391f; paint-order: stroke fill; stroke: #ffffff; stroke-width: 5; }
+      .bbox { fill: none; stroke: #b95435; stroke-width: 1.5; stroke-dasharray: 6 4; }
+      .footer { fill: #edf3f1; stroke: #b8cbc7; stroke-width: 1.4; }
+      .footer-head { font: 700 14px 'DejaVu Sans', Arial, sans-serif; fill: #315e65; }
+      .footer-text { font: 14px 'DejaVu Sans', Arial, sans-serif; fill: #25313a; }
+    </style>
+    <path id="road-good" d="M190 89C315 39 492 45 712 98"/>
+    <path id="river-good" d="M200 149C343 114 510 125 714 154"/>
+    <path id="road-bad" d="M766 148C798 26 852 174 902 65C947 -20 1004 174 1137 82"/>
+    <path id="river-bad" d="M758 99C875 84 1007 116 1140 100"/>
+  </defs>
+
+  <rect width="1200" height="760" fill="#ffffff"/>
+  <text x="24" y="34" class="page-title">Etiquetes: posició, recorregut i revisió</text>
+  <text x="24" y="60" class="intro">Una etiqueta ha de conservar l’ancoratge, evitar conflictes i ser llegible a la mida final.</text>
+
+  <g transform="translate(20 78)">
+    <rect width="1160" height="195" rx="6" class="card"/>
+    <line x1="160" y1="0" x2="160" y2="195" class="divider"/>
+    <line x1="740" y1="0" x2="740" y2="195" class="divider"/>
+    <text x="18" y="31" class="section-no">1 · PUNTS</text>
+    <text x="18" y="58" class="section-title">Prioritat</text>
+    <text x="18" y="81" class="section-title">i ancoratge</text>
+    <text x="18" y="118" class="section-note">Provar, resoldre</text>
+    <text x="18" y="138" class="section-note">i, si cal,</text>
+    <text x="18" y="158" class="section-note">desplaçar.</text>
+
+    <text x="180" y="25" class="demo-title">PREFERIT · primer candidat lliure</text>
+    <rect x="267" y="51" width="152" height="31" rx="3" class="candidate"/>
+    <text x="292" y="71" class="candidate-text">Museu del Port</text>
+    <circle cx="278" cy="51" r="10" class="rank"/>
+    <text x="278" y="55" text-anchor="middle" class="rank-text">2</text>
+    <rect x="451" y="51" width="152" height="31" rx="3" class="candidate-best"/>
+    <text x="476" y="71" class="candidate-text">Museu del Port</text>
+    <circle cx="462" cy="51" r="10" class="rank-best"/>
+    <text x="462" y="55" text-anchor="middle" class="rank-text-best">1</text>
+    <rect x="267" y="119" width="152" height="31" rx="3" class="candidate"/>
+    <text x="292" y="139" class="candidate-text">Museu del Port</text>
+    <circle cx="278" cy="150" r="10" class="rank"/>
+    <text x="278" y="154" text-anchor="middle" class="rank-text">4</text>
+    <rect x="451" y="119" width="152" height="31" rx="3" class="candidate"/>
+    <text x="476" y="139" class="candidate-text">Museu del Port</text>
+    <circle cx="462" cy="150" r="10" class="rank"/>
+    <text x="462" y="154" text-anchor="middle" class="rank-text">3</text>
+    <circle cx="435" cy="101" r="8" class="point"/>
+    <text x="180" y="171" class="body">Ordre habitual: superior dreta → superior esquerra →</text>
+    <text x="180" y="190" class="body">inferior dreta → inferior esquerra.</text>
+
+    <text x="758" y="25" class="problem-title">CONFLICTE</text>
+    <circle cx="785" cy="78" r="7" class="point"/>
+    <circle cx="837" cy="99" r="7" class="point"/>
+    <rect x="798" y="55" width="112" height="32" rx="3" class="collision-label"/>
+    <text x="809" y="76" class="label-text">Hotel Blau</text>
+    <rect x="849" y="76" width="92" height="32" rx="3" class="collision-label"/>
+    <text x="860" y="97" class="label-text">Mercat</text>
+    <rect x="849" y="76" width="61" height="11" class="overlap"/>
+    <text x="870" y="128" text-anchor="middle" class="problem-title">COL·LISIÓ</text>
+
+    <text x="968" y="25" class="demo-title">DESPLAÇAMENT</text>
+    <circle cx="995" cy="133" r="7" class="point"/>
+    <path d="M1001 128L1034 92" class="leader"/>
+    <rect x="1025" y="54" width="116" height="39" rx="3" class="displaced"/>
+    <text x="1083" y="78" text-anchor="middle" class="label-text">Far de Ponent</text>
+    <text x="758" y="168" class="body">La línia de crida conserva l’ancoratge</text>
+    <text x="758" y="187" class="body">després del desplaçament.</text>
+  </g>
+
+  <g transform="translate(20 286)">
+    <rect width="1160" height="185" rx="6" class="card"/>
+    <line x1="160" y1="0" x2="160" y2="185" class="divider"/>
+    <line x1="740" y1="0" x2="740" y2="185" class="divider"/>
+    <text x="18" y="31" class="section-no">2 · LÍNIES</text>
+    <text x="18" y="58" class="section-title">Seguir el</text>
+    <text x="18" y="81" class="section-title">recorregut</text>
+    <text x="18" y="119" class="section-note">Corba suau,</text>
+    <text x="18" y="139" class="section-note">text dret i</text>
+    <text x="18" y="159" class="section-note">sense cruïlles.</text>
+
+    <text x="180" y="25" class="demo-title">PREFERIT · text unit a una línia llegible</text>
+    <use href="#road-good" xlink:href="#road-good" class="road-halo"/>
+    <use href="#road-good" xlink:href="#road-good" class="road"/>
+    <text class="line-label"><textPath href="#road-good" xlink:href="#road-good" startOffset="32%">Carretera de la Badia</textPath></text>
+    <use href="#river-good" xlink:href="#river-good" class="river"/>
+    <text class="river-label"><textPath href="#river-good" xlink:href="#river-good" startOffset="43%">Riu Clar</textPath></text>
+
+    <text x="758" y="25" class="problem-title">PROBLEMA · corba brusca i textos en conflicte</text>
+    <use href="#road-bad" xlink:href="#road-bad" class="problem-line"/>
+    <text class="line-label"><textPath href="#road-bad" xlink:href="#road-bad" startOffset="10%">Camí del Bosc</textPath></text>
+    <use href="#river-bad" xlink:href="#river-bad" class="river"/>
+    <text class="river-label"><textPath href="#river-bad" xlink:href="#river-bad" startOffset="35%">Riu Estret</textPath></text>
+    <circle cx="922" cy="98" r="31" class="conflict-ring"/>
+    <text x="922" y="106" text-anchor="middle" class="conflict-x">×</text>
+    <text x="758" y="172" class="body">Evita girs extrems, text invertit i encreuaments.</text>
+  </g>
+
+  <g transform="translate(20 484)">
+    <rect width="1160" height="185" rx="6" class="card"/>
+    <line x1="160" y1="0" x2="160" y2="185" class="divider"/>
+    <line x1="740" y1="0" x2="740" y2="185" class="divider"/>
+    <text x="18" y="31" class="section-no">3 · ÀREES</text>
+    <text x="18" y="58" class="section-title">Dins del</text>
+    <text x="18" y="81" class="section-title">polígon</text>
+    <text x="18" y="119" class="section-note">Centre visual,</text>
+    <text x="18" y="139" class="section-note">no només centre</text>
+    <text x="18" y="159" class="section-note">de la caixa.</text>
+
+    <text x="180" y="25" class="demo-title">PREFERIT · etiqueta centrada dins de l’àrea</text>
+    <path class="area" d="M201 66L341 38L536 49L710 96L645 158L486 164L329 145L218 166Z"/>
+    <text x="455" y="98" text-anchor="middle" class="area-label">PARC DE LES</text>
+    <text x="455" y="121" text-anchor="middle" class="area-label">DUNES</text>
+
+    <text x="758" y="25" class="problem-title">PROBLEMA · centre geomètric fora de l’àrea útil</text>
+    <path class="area-problem" d="M770 44H1138V165H1022V88H886V165H770Z"/>
+    <rect x="863" y="90" width="198" height="40" rx="3" class="bbox"/>
+    <text x="962" y="116" text-anchor="middle" class="outside-label">RESERVA LITORAL</text>
+    <text x="962" y="154" text-anchor="middle" class="body">L’etiqueta cau al buit del polígon còncau.</text>
+  </g>
+
+  <g transform="translate(20 687)">
+    <rect width="1160" height="55" rx="5" class="footer"/>
+    <text x="18" y="23" class="footer-head">COL·LOCACIÓ AUTOMÀTICA</text>
+    <text x="250" y="23" class="footer-text">genera candidats → aplica prioritats → resol conflictes.</text>
+    <text x="18" y="44" class="footer-head">REVISIÓ FINAL</text>
+    <text x="138" y="44" class="footer-text">comprova ancoratges, col·lisions i lectura a la mida real de sortida.</text>
+  </g>
+</svg>

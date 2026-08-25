@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <svg role="img" aria-labelledby="title desc" xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='828.00pt' height='374.40pt' viewBox='0 0 828.00 374.40'>
-  <title id="title">Corbes de nivell i perfil topogràfic del mateix transecte</title>
-  <desc id="desc">A l'esquerra, un mapa de corbes de nivell de Maunga Whau mostra el transecte A-A prima. A la dreta, el perfil representa l'altitud de cada cel·la al llarg d'aquesta mateixa línia.</desc>
+  <title id="title">Corbes de nivell i perfil topogràfic del mateix transsecte</title>
+  <desc id="desc">A l'esquerra, un mapa de corbes de nivell de Maunga Whau mostra el transsecte A–A′. A la dreta, el perfil representa l'altitud de cada cel·la al llarg d'aquesta mateixa línia.</desc>
 <g class='svglite'>
 <defs>
   <style type='text/css'><![CDATA[
@@ -74,12 +74,12 @@
 <circle cx='79.30' cy='113.48' r='3.24' style='stroke-width: 0.71; stroke: #16697A; fill: #16697A;' />
 <circle cx='305.82' cy='113.48' r='3.24' style='stroke-width: 0.71; stroke: #16697A; fill: #16697A;' />
 <text x='83.07' y='104.41' text-anchor='middle' style='font-size: 11.38px; font-weight: bold;fill: #16697A; font-family: "Nimbus Sans";' textLength='8.22px' lengthAdjust='spacingAndGlyphs'>A</text>
-<text x='295.25' y='104.41' text-anchor='middle' style='font-size: 11.38px; font-weight: bold;fill: #16697A; font-family: "Nimbus Sans";' textLength='10.23px' lengthAdjust='spacingAndGlyphs'>A'</text>
+<text x='295.25' y='104.41' text-anchor='middle' style='font-size: 11.38px; font-weight: bold;fill: #16697A; font-family: "Nimbus Sans";' textLength='10.95px' lengthAdjust='spacingAndGlyphs'>A′</text>
 <rect x='79.30' y='41.75' width='226.52' height='324.68' style='stroke-width: 1.17; stroke: #C7D2D7;' />
 </g>
 <g clip-path='url(#cpMC4wMHw4MjguMDB8MC4wMHwzNzQuNDA=)'>
 <text x='79.30' y='32.70' style='font-size: 9.50px;fill: #52616B; font-family: "Nimbus Sans";' textLength='197.11px' lengthAdjust='spacingAndGlyphs'>Equidistància 10 m; corbes mestres cada 50 m</text>
-<text x='79.30' y='22.92' style='font-size: 13.00px; font-weight: bold;fill: #17202A; font-family: "Nimbus Sans";' textLength='197.89px' lengthAdjust='spacingAndGlyphs'>Corbes de nivell i transecte A-A'</text>
+<text x='79.30' y='22.92' style='font-size: 13.00px; font-weight: bold;fill: #17202A; font-family: "Nimbus Sans";' textLength='208.94px' lengthAdjust='spacingAndGlyphs'>Corbes de nivell i transsecte A–A′</text>
 </g>
 <defs>
   <clipPath id='cpMzg1LjEyfDgyOC4wMHwwLjAwfDM3NC40MA=='>
@@ -135,7 +135,7 @@
 <circle cx='675.50' cy='74.18' r='2.63' style='stroke-width: 0.99; stroke: #8A6945; fill: #FFFFFF;' />
 <circle cx='682.07' cy='74.18' r='2.63' style='stroke-width: 0.99; stroke: #8A6945; fill: #FFFFFF;' />
 <text x='425.85' y='293.64' style='font-size: 11.38px; font-weight: bold;fill: #16697A; font-family: "Nimbus Sans";' textLength='8.22px' lengthAdjust='spacingAndGlyphs'>A</text>
-<text x='820.03' y='293.64' text-anchor='end' style='font-size: 11.38px; font-weight: bold;fill: #16697A; font-family: "Nimbus Sans";' textLength='10.23px' lengthAdjust='spacingAndGlyphs'>A'</text>
+<text x='820.03' y='293.64' text-anchor='end' style='font-size: 11.38px; font-weight: bold;fill: #16697A; font-family: "Nimbus Sans";' textLength='10.95px' lengthAdjust='spacingAndGlyphs'>A′</text>
 <rect x='425.85' y='41.75' width='394.18' height='298.25' style='stroke-width: 1.17; stroke: #C7D2D7;' />
 </g>
 <g clip-path='url(#cpMC4wMHw4MjguMDB8MC4wMHwzNzQuNDA=)'>
@@ -154,10 +154,10 @@
 <text x='688.64' y='351.35' text-anchor='middle' style='font-size: 8.80px;fill: #52616B; font-family: "Nimbus Sans";' textLength='14.67px' lengthAdjust='spacingAndGlyphs'>400</text>
 <text x='754.33' y='351.35' text-anchor='middle' style='font-size: 8.80px;fill: #52616B; font-family: "Nimbus Sans";' textLength='14.67px' lengthAdjust='spacingAndGlyphs'>500</text>
 <text x='820.03' y='351.35' text-anchor='middle' style='font-size: 8.80px;fill: #52616B; font-family: "Nimbus Sans";' textLength='14.67px' lengthAdjust='spacingAndGlyphs'>600</text>
-<text x='622.94' y='364.03' text-anchor='middle' style='font-size: 11.00px; font-weight: bold;fill: #17202A; font-family: "Nimbus Sans";' textLength='178.44px' lengthAdjust='spacingAndGlyphs'>Distància al llarg del transecte (m)</text>
+<text x='622.94' y='364.03' text-anchor='middle' style='font-size: 11.00px; font-weight: bold;fill: #17202A; font-family: "Nimbus Sans";' textLength='184.61px' lengthAdjust='spacingAndGlyphs'>Distància al llarg del transsecte (m)</text>
 <text transform='translate(401.11,190.88) rotate(-90)' text-anchor='middle' style='font-size: 11.00px; font-weight: bold;fill: #17202A; font-family: "Nimbus Sans";' textLength='54.94px' lengthAdjust='spacingAndGlyphs'>Altitud (m)</text>
 <text x='425.85' y='32.70' style='font-size: 9.50px;fill: #52616B; font-family: "Nimbus Sans";' textLength='234.25px' lengthAdjust='spacingAndGlyphs'>Cada intersecció amb una corba correspon a una altura</text>
-<text x='425.85' y='17.45' style='font-size: 13.00px; font-weight: bold;fill: #17202A; font-family: "Nimbus Sans";' textLength='161.23px' lengthAdjust='spacingAndGlyphs'>Perfil del relleu sobre A-A'</text>
+<text x='425.85' y='17.45' style='font-size: 13.00px; font-weight: bold;fill: #17202A; font-family: "Nimbus Sans";' textLength='164.98px' lengthAdjust='spacingAndGlyphs'>Perfil del relleu sobre A–A′</text>
 </g>
 </g>
 </svg>

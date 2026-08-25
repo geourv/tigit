@@ -1,5 +1,5 @@
 ---
-title: "Treemap: establiments amb més places d'allotjament a Vila-seca"
+title: "Diagrama de rectangles: establiments amb més places d'allotjament a Vila-seca"
 lang: ca
 ref: treemap_allotjament_vilaseca
 format:
@@ -192,4 +192,4 @@ dir.create(dirname(output), showWarnings = FALSE, recursive = TRUE)
 ggsave(output, fig, width = 8, height = 5.5, units = "in", bg = "white", device = svglite::svglite)
 ```
 
-![Treemap de les 9.985 places registrades als allotjaments convencionals del municipi de Vila-seca: els cinc establiments amb més places sumen 6.616 places, el 66,3 %, i els altres dotze en sumen 3.369, el 33,7 %]({{ site.baseurl }}/assets/img/data-visualization/treemap-allotjament-vilaseca.svg "Cada rectangle representa un establiment entre els cinc amb més capacitat o l'agregat dels altres dotze. L'àrea és proporcional a les places registrades; la figura mostra concentració, no ocupació ni pernoctacions.")
+![Diagrama de rectangles de les 9.985 places registrades als allotjaments convencionals del municipi de Vila-seca: els cinc establiments amb més places sumen 6.616 places, el 66,3 %, i els altres dotze en sumen 3.369, el 33,7 %]({{ site.baseurl }}/assets/img/data-visualization/treemap-allotjament-vilaseca.svg "Cada rectangle representa un establiment entre els cinc amb més capacitat o l'agregat dels altres dotze. L'àrea és proporcional a les places registrades; la figura mostra concentració, no ocupació ni pernoctacions.")

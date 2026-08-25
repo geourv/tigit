@@ -103,25 +103,25 @@ En semiologia gràfica, el **valor** designa la progressió perceptiva de clar a
 
 Una seqüència quantitativa ha de mantenir una progressió visual recognoscible. Afegir molts tons diferents a una sèrie ordenada pot fragmentar-la en categories aparentment independents; canviar només la saturació pot produir diferències massa febles. La paleta s'ha d'avaluar com un conjunt i sobre la geometria real del mapa.
 
-### Rodes de color i relacions entre tons
+### Cercle cromàtic i relacions entre tons
 
-Una roda de color ordena els tons al voltant d'un cercle i ajuda a parlar de relacions com tons veïns, oposats o separats regularment. Aquesta representació és útil per explorar harmonies, accents i contrastos, però no garanteix que dues classes siguin llegibles en un mapa ni que una paleta sigui adequada per a una dada quantitativa. La roda tracta principalment el **to**; la lectura d'una rampa temàtica depèn també de la lluminositat, la saturació, la mida de les àrees i el fons.
+Un cercle cromàtic ordena els tons i ajuda a parlar de relacions com tons veïns, oposats o separats regularment. Aquesta representació és útil per explorar harmonies, accents i contrastos, però no garanteix que dues classes siguin llegibles en un mapa ni que una paleta sigui adequada per a una dada quantitativa. El cercle tracta principalment el **to**; la lectura d'una rampa temàtica depèn també de la lluminositat, la saturació, la mida de les àrees i el fons.
 
-Els esquemes analògics, complementaris o triàdics poden funcionar en una composició gràfica general, especialment per separar blocs d'informació o accents. En canvi, una coropleta que representa una intensitat necessita una progressió ordenada. Dos tons oposats poden semblar una diferència forta, però no indiquen per si sols quin valor és més alt. Per això la roda és un instrument d'exploració, no un criteri suficient de classificació.
+Les combinacions de colors anàlegs, complementaris o triàdics poden funcionar en una composició gràfica general, especialment per separar blocs d'informació o accents. En canvi, una coropleta que representa una intensitat necessita una progressió ordenada. Dos tons oposats poden semblar una diferència forta, però no indiquen per si sols quin valor és més alt. Per això el cercle cromàtic és un instrument d'exploració, no un criteri suficient de classificació.
 
-Les denominacions **color primari**, **secundari** i **terciari** només tenen sentit dins d'un model de mescla determinat. Els primaris són els components escollits com a base del model; no són tres colors físicament universals ni únics. Un color secundari s'obté combinant dos primaris del model. En les rodes artístiques tradicionals, un color terciari és una mescla intermèdia entre un primari i un secundari adjacent. Aquesta darrera categoria és sobretot una convenció pràctica per ordenar tons i no té una definició única en tots els sistemes.
+Les denominacions **color primari**, **secundari** i **terciari** només tenen sentit dins d'un model de mescla determinat. Els primaris són els components escollits com a base del model; no són tres colors físicament universals ni únics. Un color secundari s'obté combinant dos primaris del model. En els cercles cromàtics artístics tradicionals, un color terciari és una mescla intermèdia entre un primari i un secundari adjacent. Aquesta darrera categoria és sobretot una convenció pràctica per ordenar tons i no té una definició única en tots els sistemes.
 
 ::: table "Colors primaris, secundaris i terciaris segons el model"
 | Model | Primaris | Secundaris ideals | Terciaris o intermedis |
 | --- | --- | --- | --- |
 | RGB, mescla additiva de llum | vermell, verd i blau | groc, cian i magenta | combinacions intermèdies entre canals; la denominació terciària no és habitual ni universal |
 | CMY/CMYK, mescla subtractiva ideal | cian, magenta i groc | blau, vermell i verd | mescles intermèdies condicionades per tintes, suport i perfil d'impressió |
-| RYB, roda artística tradicional | vermell, groc i blau | taronja, verd i violeta | groc-taronja, vermell-taronja, vermell-violeta, blau-violeta, blau-verd i groc-verd |
+| RYB, cercle cromàtic artístic tradicional | vermell, groc i blau | taronja, verd i violeta | groc-taronja, vermell-taronja, vermell-violeta, blau-violeta, blau-verd i groc-verd |
 :::
 
-La mateixa paraula pot canviar de funció entre models. El magenta és secundari en RGB perquè combina llum vermella i blava, però és primari en CMY. El verd és primari en RGB, secundari en CMY i secundari en RYB. Per això una explicació sobre colors primaris ha d'indicar sempre si parla de llum, tintes, pigments artístics o d'una roda utilitzada per explorar harmonies.
+La mateixa paraula pot canviar de funció entre models. El magenta és secundari en RGB perquè combina llum vermella i blava, però és primari en CMY. El verd és primari en RGB, secundari en CMY i secundari en RYB. Per això una explicació sobre colors primaris ha d'indicar sempre si parla de llum, tintes, pigments artístics o d'un cercle cromàtic utilitzat per explorar harmonies.
 
-![Roda de color amb relacions analògiques, complementàries i triàdiques, i taula de rangs habituals per RGB, HEX, CMYK, RYB, HSL i HSV]({{ site.baseurl }}/assets/img/color-cartography/color-wheels-and-ranges.svg "La roda ajuda a pensar relacions de to, mentre que els rangs indiquen convencions habituals de codificació numèrica; cada programa pot presentar canals o percentatges amb variants, i cap dels dos recursos substitueix la prova sobre la figura final. Figura d'elaboració pròpia, 14 d'agost de 2026."){: data-figure-width="54rem"}
+![Cercle cromàtic amb colors anàlegs, complementaris i triàdics, i taula de rangs habituals per RGB, HEX, CMYK, RYB, HSL i HSV]({{ site.baseurl }}/assets/img/color-cartography/color-wheels-and-ranges.svg "El cercle cromàtic ajuda a pensar relacions de to, mentre que els rangs indiquen convencions habituals de codificació numèrica; cada programa pot presentar canals o percentatges amb variants, i cap dels dos recursos substitueix la prova sobre la figura final. Figura d'elaboració pròpia, 14 d'agost de 2026."){: data-figure-width="54rem"}
 
 ### RGB, CMYK, RYB i HSL/HSV
 
@@ -288,7 +288,7 @@ Abans d'obrir un selector cromàtic, s'identificaran les funcions del color dins
 
 La pràctica inclou la captura d'un color a partir d'una mostra visual. La pipeta o selector de color de programes com GIMP o Inkscape permet llegir el codi d'un píxel i convertir una impressió visual en una definició transportable, com un valor HEX o RGB. L'exercici pot partir d'una mostra facilitada pel professorat, per exemple el logotip de la URV, i serveix per entendre que reproduir un color no consisteix a triar-ne un de semblant, sinó a registrar-ne el codi i aplicar-lo de manera coherent.
 
-El procediment serà breu. Primer s'obrirà la imatge de mostra i s'escollirà una zona plana del color, evitant vores, ombres, antialiasing i píxels semitransparents. Després es capturarà el color amb la pipeta i s'anotarà el valor HEX i, si el programa el mostra, els canals RGB. Finalment es reproduirà el mateix color en almenys dos objectes diferents, com un rectangle d'Inkscape, una cel·la d'un full de càlcul o una capa simbòlica de QGIS. Si es treballa amb un logotip institucional real, el color capturat d'una imatge web només serveix com a exercici tècnic: per a una publicació oficial caldrà consultar sempre el manual d'identitat o els fitxers originals proporcionats per la institució.
+El procediment serà breu. Primer s'obrirà la imatge de mostra i s'escollirà una zona plana del color, evitant vores, ombres, antialiàsing i píxels semitransparents. Després es capturarà el color amb la pipeta i s'anotarà el valor HEX i, si el programa el mostra, els canals RGB. Finalment es reproduirà el mateix color en almenys dos objectes diferents, com un rectangle d'Inkscape, una cel·la d'un full de càlcul o una capa simbòlica de QGIS. Si es treballa amb un logotip institucional real, el color capturat d'una imatge web només serveix com a exercici tècnic: per a una publicació oficial caldrà consultar sempre el manual d'identitat o els fitxers originals proporcionats per la institució.
 
 ### Seleccionar i provar paletes
 

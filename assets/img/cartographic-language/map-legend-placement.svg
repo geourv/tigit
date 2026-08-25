@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">Comparació de tres ubicacions possibles per a una llegenda cartogràfica</title>
+  <desc id="desc">El mateix mapa coroplètic sintètic mostra una llegenda fora del marc, una llegenda dins d’un espai de mar realment buit i una mala ubicació que oculta límits, una ruta i un nucli. L’espai negatiu només és adequat si no cobreix informació rellevant.</desc>
+  <defs>
+    <style>
+      .page-title { font: 700 25px Arial, 'Liberation Sans', sans-serif; fill: #17202a; }
+      .intro { font: 16px Arial, 'Liberation Sans', sans-serif; fill: #52616b; }
+      .panel { fill: #ffffff; stroke: #d5dde2; stroke-width: 1.6; }
+      .panel-title { font: 700 20px Arial, 'Liberation Sans', sans-serif; fill: #17202a; }
+      .panel-sub { font: 14px Arial, 'Liberation Sans', sans-serif; fill: #52616b; }
+      .map-frame { fill: #d9edf2; stroke: #52616b; stroke-width: 1.6; }
+      .zone { stroke: #ffffff; stroke-width: 2; stroke-linejoin: round; }
+      .zone-1 { fill: #e8e4cf; }
+      .zone-2 { fill: #becfca; }
+      .zone-3 { fill: #79aaa5; }
+      .zone-4 { fill: #356f78; }
+      .coast { fill: none; stroke: #527783; stroke-width: 2.1; }
+      .river { fill: none; stroke: #2f7fa9; stroke-width: 3.5; stroke-linecap: round; }
+      .route-halo { fill: none; stroke: #ffffff; stroke-width: 9; stroke-linecap: round; }
+      .route { fill: none; stroke: #9b4d2d; stroke-width: 5; stroke-linecap: round; }
+      .town { fill: #17202a; stroke: #ffffff; stroke-width: 2; }
+      .map-label { font: 700 13px Arial, 'Liberation Sans', sans-serif; fill: #17202a; paint-order: stroke fill; stroke: #ffffff; stroke-width: 3.5; }
+      .sea-label { font: italic 13px Arial, 'Liberation Sans', sans-serif; fill: #365b6d; letter-spacing: 1px; }
+      .legend { fill: #ffffff; fill-opacity: .97; stroke: #52616b; stroke-width: 1.4; }
+      .legend-title { font: 700 13px Arial, 'Liberation Sans', sans-serif; fill: #17202a; }
+      .legend-text { font: 12px Arial, 'Liberation Sans', sans-serif; fill: #25313a; }
+      .note { font: 15px Arial, 'Liberation Sans', sans-serif; fill: #394852; }
+      .good-badge { fill: #edf3f1; stroke: #9fbdb7; stroke-width: 1.3; }
+      .bad-badge { fill: #fff0e8; stroke: #c86b43; stroke-width: 1.3; }
+      .good-text { font: 700 13px Arial, 'Liberation Sans', sans-serif; fill: #315e65; letter-spacing: .35px; }
+      .bad-text { font: 700 13px Arial, 'Liberation Sans', sans-serif; fill: #83391f; letter-spacing: .35px; }
+      .warning { fill: #ffffff; stroke: #a54028; stroke-width: 3; }
+      .warning-text { font: 700 22px Arial, 'Liberation Sans', sans-serif; fill: #a54028; }
+      .empty-space { font: 700 11px Arial, 'Liberation Sans', sans-serif; fill: #315e65; letter-spacing: .6px; }
+    </style>
+    <g id="choropleth-map">
+      <rect width="345" height="286" fill="#d9edf2"/>
+      <path class="zone zone-1" d="M0 0H108L119 88L0 105Z"/>
+      <path class="zone zone-2" d="M108 0H216C219 30 229 53 207 96L119 88Z"/>
+      <path class="zone zone-3" d="M0 105L119 88L129 179L0 198Z"/>
+      <path class="zone zone-4" d="M119 88L207 96C199 127 226 141 215 170L199 211L129 179Z"/>
+      <path class="zone zone-2" d="M0 198L129 179L139 286H0Z"/>
+      <path class="zone zone-3" d="M129 179L199 211C207 236 204 259 211 286H139Z"/>
+      <path class="coast" d="M216 0C219 30 229 53 207 96C199 127 226 141 215 170C203 201 196 215 204 248C208 263 207 274 211 286"/>
+      <path class="river" d="M64 0C81 48 111 65 119 108C128 154 175 176 199 211"/>
+      <path class="route-halo" d="M18 248C71 228 91 203 129 179C165 155 184 111 207 67"/>
+      <path class="route" d="M18 248C71 228 91 203 129 179C165 155 184 111 207 67"/>
+      <circle class="town" cx="129" cy="179" r="7"/>
+      <circle class="town" cx="78" cy="78" r="5"/>
+      <circle class="town" cx="196" cy="111" r="5"/>
+      <text class="map-label" x="139" y="174">Vila Serena</text>
+      <text class="map-label" x="42" y="72">Montclar</text>
+      <text class="map-label" x="166" y="104">Bellport</text>
+      <text class="sea-label" x="283" y="253" text-anchor="middle">MAR DE CALMA</text>
+    </g>
+    <g id="vertical-legend">
+      <rect width="108" height="146" rx="3" class="legend"/>
+      <text x="10" y="21" class="legend-title">Intensitat</text>
+      <rect x="10" y="33" width="18" height="18" class="zone-1" stroke="#52616b" stroke-width=".8"/>
+      <text x="36" y="47" class="legend-text">Baixa</text>
+      <rect x="10" y="58" width="18" height="18" class="zone-2" stroke="#52616b" stroke-width=".8"/>
+      <text x="36" y="72" class="legend-text">Mitjana</text>
+      <rect x="10" y="83" width="18" height="18" class="zone-3" stroke="#52616b" stroke-width=".8"/>
+      <text x="36" y="97" class="legend-text">Alta</text>
+      <rect x="10" y="108" width="18" height="18" class="zone-4" stroke="#52616b" stroke-width=".8"/>
+      <text x="36" y="122" class="legend-text">Molt alta</text>
+    </g>
+  </defs>
+
+  <rect width="1200" height="680" fill="#ffffff"/>
+  <text x="24" y="35" class="page-title">On col·locar la llegenda?</text>
+  <text x="24" y="61" class="intro">L’espai negatiu només es pot ocupar si no cobreix cap informació rellevant.</text>
+
+  <g transform="translate(20 80)">
+    <rect width="373" height="580" rx="6" class="panel"/>
+    <text x="16" y="33" class="panel-title">1 · Fora del marc</text>
+    <text x="16" y="55" class="panel-sub">Separació neta entre mapa i clau</text>
+    <g transform="translate(14 70)">
+      <rect width="345" height="286" rx="2" class="map-frame"/>
+      <use href="#choropleth-map"/>
+    </g>
+    <g transform="translate(14 370)">
+      <rect width="345" height="92" rx="3" class="legend"/>
+      <text x="12" y="22" class="legend-title">Intensitat</text>
+      <rect x="12" y="37" width="18" height="18" class="zone-1" stroke="#52616b" stroke-width=".8"/>
+      <text x="36" y="51" class="legend-text">Baixa</text>
+      <rect x="94" y="37" width="18" height="18" class="zone-2" stroke="#52616b" stroke-width=".8"/>
+      <text x="118" y="51" class="legend-text">Mitjana</text>
+      <rect x="190" y="37" width="18" height="18" class="zone-3" stroke="#52616b" stroke-width=".8"/>
+      <text x="214" y="51" class="legend-text">Alta</text>
+      <rect x="267" y="37" width="18" height="18" class="zone-4" stroke="#52616b" stroke-width=".8"/>
+      <text x="291" y="51" class="legend-text">Molt alta</text>
+      <text x="12" y="78" class="legend-text">La llegenda no tapa el mapa.</text>
+    </g>
+    <rect x="16" y="480" width="231" height="30" rx="4" class="good-badge"/>
+    <text x="28" y="500" class="good-text">CLAR, PERÒ OCUPA ESPAI</text>
+    <text x="16" y="536" class="note">És l’opció més segura quan la</text>
+    <text x="16" y="557" class="note">composició disposa de marge.</text>
+  </g>
+
+  <g transform="translate(413 80)">
+    <rect width="373" height="580" rx="6" class="panel"/>
+    <text x="16" y="33" class="panel-title">2 · Dins d’un buit real</text>
+    <text x="16" y="55" class="panel-sub">El mar no conté dades rellevants</text>
+    <g transform="translate(14 70)">
+      <rect width="345" height="286" rx="2" class="map-frame"/>
+      <use href="#choropleth-map"/>
+      <text x="286" y="54" text-anchor="middle" class="empty-space">MAR BUIT</text>
+      <use href="#vertical-legend" x="232" y="63"/>
+    </g>
+    <rect x="16" y="384" width="116" height="30" rx="4" class="good-badge"/>
+    <text x="28" y="404" class="good-text">CORRECTE</text>
+    <text x="16" y="442" class="note">Aprofita espai negatiu sense</text>
+    <text x="16" y="464" class="note">ocultar límits, rutes ni nuclis.</text>
+    <text x="16" y="512" class="panel-sub">Condició necessària:</text>
+    <text x="16" y="535" class="note">comprovar que l’espai sigui buit</text>
+    <text x="16" y="557" class="note">en aquesta escala i per a aquest tema.</text>
+  </g>
+
+  <g transform="translate(806 80)">
+    <rect width="373" height="580" rx="6" class="panel"/>
+    <text x="16" y="33" class="panel-title">3 · Damunt de les dades</text>
+    <text x="16" y="55" class="panel-sub">Hi cap, però destrueix informació</text>
+    <g transform="translate(14 70)">
+      <rect width="345" height="286" rx="2" class="map-frame"/>
+      <use href="#choropleth-map"/>
+      <use href="#vertical-legend" x="92" y="68"/>
+      <rect x="92" y="68" width="108" height="146" rx="3" fill="none" stroke="#a54028" stroke-width="3"/>
+      <circle cx="206" cy="65" r="17" class="warning"/>
+      <text x="206" y="73" text-anchor="middle" class="warning-text">×</text>
+    </g>
+    <rect x="16" y="384" width="133" height="30" rx="4" class="bad-badge"/>
+    <text x="28" y="404" class="bad-text">INCORRECTE</text>
+    <text x="16" y="442" class="note">La caixa amaga un límit, talla la</text>
+    <text x="16" y="464" class="note">ruta i cobreix el nucli central.</text>
+    <text x="16" y="512" class="panel-sub">No és espai negatiu:</text>
+    <text x="16" y="535" class="note">és una part informativa del mapa,</text>
+    <text x="16" y="557" class="note">encara que sembli disponible.</text>
+  </g>
+</svg>

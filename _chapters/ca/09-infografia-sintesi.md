@@ -43,6 +43,8 @@ Abans de maquetar cal concretar què ha d'entendre el lector, quina informació 
 
 El públic condiciona el context necessari. Una persona que no conegui el Tarragonès pot necessitar un mapa de situació; una persona que no conegui l'indicador necessita una definició i una unitat. Adaptar-se al públic no significa simplificar fins a perdre precisió, sinó fer visibles els coneixements que no es poden donar per suposats.
 
+El suport també determina si la peça es pot recórrer sense perdre'n el fil. La infografia de 2019 [*The Worst (& Safest) Countries for Solo Female Travel*](https://asherfergusson.com/solo-female-travel-safety/), d'Asher i Lyric Fergusson, enllaça un rànquing de cinquanta destinacions amb vuit factors i les seves fonts en una composició vertical molt llarga. Aquest format permet una lectura progressiva al web, però no es pot traslladar al paper reduint tota la peça fins que càpiga en una pàgina: les etiquetes deixarien de ser llegibles. En una versió web pròpia, una previsualització d'alçada limitada hauria d'oferir ampliació o accés a la peça completa; en paper, caldria reservar diverses pàgines o dividir-la per blocs conceptuals, amb títol, llegenda i font suficients a cada part. Tallar-la mecànicament per la meitat podria separar un resultat dels factors que l'expliquen. L'exemple és també una advertència temporal: l'índex combina fonts de 2016–2018 i ponderacions editorials, de manera que no s'ha d'utilitzar com si descrivís la seguretat actual d'una destinació.
+
 ### Seleccionar evidències
 
 No tots els càlculs i mapes del projecte han d'aparèixer al resultat final. Se seleccionaran les peces que contribueixen a una mateixa explicació.
@@ -62,6 +64,8 @@ Cada peça seleccionada ha de complir una funció. Si retirar una figura no debi
 ![Infografia turística amb moltes xifres, gràfics, icones i blocs visuals, utilitzada com a material d'auditoria per revisar focus i jerarquia]({{ site.baseurl }}/assets/img/legacy/infographics-tourism.png "Una infografia carregada pot contenir moltes dades i, alhora, dificultar la pregunta principal, l'ordre de lectura, la unitat de cada valor i la relació entre peces. Llicència: pendent de revisar."){: data-figure-width="48rem"}
 
 Una auditoria d'una peça densa comença per preguntar què recordaria el lector després de trenta segons. Si la resposta és només una impressió general, però no una relació territorial concreta, la composició encara no fa una síntesi. La densitat visual pot ser útil quan el document funciona com a consulta, però la miniinfografia del curs ha de prioritzar una pregunta i unes poques evidències. La resta del projecte continuarà existint als fitxers de treball i al `README.md`; no cal que tot aparegui a la pàgina final.
+
+Una composició molt simple pot plantejar el problema contrari. La infografia sobre [com canvia un plàtan durant la maduració](https://www.foodnavigator.com/Article/2019/07/30/If-you-re-looking-for-a-banana-that-s-lower-GI-go-for-a-green-one-nutritionist-explores-benefits-of-ripe-and-unripe-bananas), atribuïda al dietista esportiu Ryan Pinto i a High Performance Nutrition Australia, converteix la forma del fruit en una seqüència d'estats. La metàfora és immediata: el color i la posició sobre el plàtan ordenen el pas de verd a madur. Tanmateix, les anotacions barregen midó, fibra, sucre, antioxidants, vitamines i recomanacions sense una escala comuna, valors mesurats ni fonts visibles dins de la peça. Serveix per distingir una **forma explicativa recognoscible** d'una **evidència verificable**: l'objecte pot organitzar la lectura, però no substitueix definicions, unitats, dades i procedència.
 
 Un exemple més focalitzat és una infografia sobre animals sacrificats al món. La peça no tracta un cas turístic, però és útil per al capítol perquè mostra com una composició pot combinar mapa, cartodiagrama, símbols proporcionals, figures icòniques i text curt per conduir una lectura. Les dades de FAOSTAT de 2011 proporcionen la traçabilitat estadística; el disseny, en canvi, construeix una història visual sobre l'escala desigual del fenomen. La imatge forma part del *Meat Atlas 2014* {% cite chemnitzBechevaMeatAtlas2014 %}.
 
@@ -95,6 +99,16 @@ L'arquitectura tradueix el missatge en una seqüència visual i distribueix l'es
 >>>>> - Aplicar colors, tipografia, alineacions i espaiat d'acord amb el registre cromàtic i la funció informativa.
 >>>>> - Comprovar que unitats, períodes, classificacions i fonts es llegeixen al lloc on s'interpreten.
 
+### Recorregut de lectura i senyals explícits
+
+La composició pot suggerir per on començar mitjançant posició, contrast, mida, alineació, proximitat i espai. En una infografia en català és raonable anticipar una entrada superior i una progressió predominant d'esquerra a dreta, però aquesta tendència és cultural i contextual. La direcció d'escriptura pot modular l'atenció visuoespacial, i la tasca o un element molt prominent pot imposar un altre recorregut {% cite rinaldiReadingDirectionAttention2014 %}. Per això no es dissenyarà només a partir d'un patró suposadament universal.
+
+Els patrons `F`, `Z` o `V` són heurístiques que poden descriure alguns dissenys, no plantilles perceptives garantides. Una pàgina textual densa, un cartell amb una gran imatge, una retícula de mapes petits i una pantalla mòbil no plantegen la mateixa cerca. Si l'ordre és preferent, la jerarquia i l'alineació poden orientar-lo. Si és obligatori, com en quatre passos metodològics o una comparació abans/després, cal numerar, connectar o titular explícitament els blocs. Una prova ocular tampoc no demostraria per si sola comprensió: cal preguntar què s'ha entès i amb quina evidència {% cite orquinThreatsValidityEyeMovement2018 %}.
+
+No totes les explicacions tenen un únic camí lineal. El diagrama [*The Tree of Life*](https://www.evogeneao.com/en/learn/tree-of-life), de Leonard Eisenberg per a Evogeneao, parteix del naixement de la Terra, desplega el temps geològic cap a l'exterior i ramifica els grans grups d'éssers vius fins al present. Les branques, el color i les línies de temps permeten seguir ascendències diferents dins d'una mateixa estructura. La forma d'arbre explica una relació que una llista ordenada comunicaria malament, però també introdueix una perspectiva. El mateix autor adverteix que la composició privilegia el punt de vista humà, comprimeix la diversitat bacteriana, omet moltes branques extingides i només aproxima algunes dates. Fer visibles aquestes distorsions forma part de l'explicació; una metàfora potent no converteix l'esquema en una base de dades completa. Aquesta peça és d'Evogeneao, no d'Information Is Beautiful.
+
+El recorregut de la miniinfografia ha de relacionar funcions, no només posicions. La pregunta obre la lectura; l'evidència principal respon; una peça complementària matisa o contextualitza; la interpretació explica el patró; i la limitació n'acota l'abast. Les fonts poden quedar al final perquè funcionen com a verificació, però han de continuar sent llegibles i associables a les peces corresponents.
+
 ### Títol, entrada i conclusió
 
 La **jerarquia visual** organitza contrastos, posicions, mides i espais per indicar l'ordre de lectura i la importància relativa dels elements. El títol ha de formular el tema amb precisió i ocupar un nivell coherent amb aquesta funció. Una entrada breu situa la pregunta i la conclusió interpreta el patró sense repetir totes les xifres. Títols genèrics com «Anàlisi del Tarragonès» no indiquen què s'estudia; un títol informatiu identifica la relació entre població, habitatge, municipis i període.
@@ -108,6 +122,8 @@ La conclusió ha de destacar una o dues relacions sostingudes per les peces visi
 El mapa mostra la distribució espacial, el gràfic reforça una comparació i el text explica el significat i els límits. Les tres peces no han de competir ni explicar històries contradictòries.
 
 El mapa no és adequat per ordenar amb precisió tots els municipis, i el gràfic no conserva el veïnatge geogràfic. La combinació és útil quan cada peça resol una limitació de l'altra. Repetir el mateix rànquing en un mapa, una barra i una taula ocupa espai sense aportar una lectura nova.
+
+La infografia d'EL PAÍS [*El mercado exterior del vino español*](https://elpais.com/elpais/2015/04/14/media/1429040956_083284.html) mostra una combinació funcional, tot i que les dades corresponen a 2014. El mapa mundial situa els principals compradors i contraposa volum i preu mitjà; les barres comparen preus d'exportació i tipus d'envasament; la sèrie temporal mostra l'evolució de valor, volum i preu; i dos mapes d'Espanya separen volum exportat i preu per comunitat autònoma. Les peces comparteixen tema, però no repeteixen la mateixa pregunta: localitzen mercats, comparen condicions comercials, segueixen una evolució i mostren contrastos territorials. L'auditoria ha de comprovar si les escales i llegendes permeten relacionar aquests panells i si el lector pot distingir litres, euros i euros per litre sense atribuir al mapa una precisió que només ofereix el gràfic.
 
 ### Fonts, unitats i notes metodològiques
 
@@ -164,7 +180,7 @@ L'ordre de lectura ha de conduir de la pregunta a l'evidència i de l'evidència
 
 Abans d'aplicar tipografies i colors es dibuixarà un esquema simple amb blocs per al títol, les mètriques, els gràfics, els mapes, la interpretació i les fonts. Aquest esquema permet comprovar si la peça principal disposa de prou espai i si el recorregut de lectura és recognoscible.
 
-El mockup es pot preparar amb rectangles i textos provisionals a Inkscape o, com a alternativa ràpida, en una diapositiva de PowerPoint configurada a mida A3 vertical. PowerPoint serveix per provar la jerarquia, no per crear un segon màster analític: el document final es reconstruirà i conservarà en SVG d'Inkscape.
+La **maqueta preliminar** es pot preparar amb rectangles i textos provisionals a Inkscape o, com a alternativa ràpida, en una diapositiva de PowerPoint configurada a mida A3 vertical. PowerPoint serveix per provar la jerarquia, no per crear un segon màster analític: el document final es reconstruirà i conservarà en SVG d'Inkscape.
 
 L'espai no s'ha de repartir de manera uniforme. El mapa o la figura que sosté el resultat principal pot ocupar més superfície; les fonts i notes poden ser secundàries sense deixar de ser llegibles. Si totes les peces tenen el mateix pes, la jerarquia desapareix.
 
@@ -172,7 +188,13 @@ L'espai no s'ha de repartir de manera uniforme. El mapa o la figura que sosté e
 
 La demostració utilitzarà **A3 vertical, 297 × 420 mm**, amb marges de `15 mm`, una retícula de sis columnes i separacions de `6 mm`. Aquesta mida permet combinar mapa, gràfic ordenat, mètriques i interpretació sense reduir-los fins a perdre llegibilitat. Si es demana una versió A4, s'haurà de redissenyar; reduir l'A3 automàticament també redueix textos, traços i símbols.
 
-La retícula és una ajuda, no una obligació d'omplir totes les cel·les. Els elements relacionats han de compartir alineacions i proximitat, mentre que els blocs diferents necessiten separació suficient. Les guies no apareixeran a l'exportació final.
+La **retícula** és una bastida d'alineacions, no una obligació d'omplir totes les cel·les. Les columnes estableixen amplades possibles; els espais entre columnes separen blocs; els marges protegeixen la pàgina; i les línies horitzontals poden donar ritme. Els elements relacionats han de compartir alineacions i proximitat, mentre que els blocs diferents necessiten separació suficient. Les guies no apareixeran a l'exportació final. La tradició editorial sistematitza aquests recursos per donar coherència, però no elimina les decisions sobre contingut, jerarquia i espai negatiu {% cite mullerBrockmannGridSystems1981 %}.
+
+Un **esquema de caixes** assigna una funció i una extensió aproximada a cada bloc abans d'importar figures definitives. Encara no decideix tipografia, color ni detalls cartogràfics: comprova si el títol, les mètriques, el mapa, el gràfic, la interpretació, la limitació i les fonts disposen d'espai d'acord amb la seva importància. Aquesta separació evita dedicar temps a polir una peça que després no encaixa en l'argument.
+
+![Procés de composició d'una infografia A3 vertical: retícula de sis columnes, esquema de caixes funcional i resultat amb recorregut numerat]({{ site.baseurl }}/assets/img/infographics/grid-wireframe-composition.svg "Els tres panells mantenen la mateixa pàgina. La retícula ofereix alineacions; l'esquema de caixes reserva espai segons la funció; la composició final jerarquitza pregunta, evidències, interpretació, limitació i fonts. La retícula és una bastida i no obliga a omplir totes les cel·les. Figura d'elaboració pròpia."){: data-figure-width="54rem"}
+
+Cap proporció única garanteix una composició bella o clara. La proporció àuria pot generar una divisió candidata, però la recerca sobre les seves preferències estètiques mostra efectes dependents del mètode i del context, no una regla universal {% cite greenGoldenSectionAesthetics1995 %}. En el projecte, una divisió `2/3 + 1/3`, una retícula modular o un bloc asimètric només s'acceptaran si donen l'espai necessari a l'evidència principal, mantenen textos i mapes llegibles i produeixen un recorregut que la prova de lectura pugui confirmar.
 
 El document d'Inkscape es prepararà amb aquest procediment:
 

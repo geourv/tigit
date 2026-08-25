@@ -1,62 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
-  <title id="title">Infografia de l'ocupaci&#243; del s&#242;l de Catalunya, 2005</title>
-  <desc id="desc">Composici&#243; pr&#242;pia que destaca que el 93 per cent del s&#242;l &#233;s forestal o agr&#237;cola i mant&#233; visibles les quatre categories publicades pel CREAF.</desc>
-  <rect width="1200" height="760" fill="#f7f3ea"/>
-  <rect width="1200" height="18" fill="#315d70"/>
+  <title id="title">Ocupaci&#243; del s&#242;l a Catalunya, 2005</title>
+  <desc id="desc">Gr&#224;fic en anell amb quatre categories. Els terrenys forestals representen el 63,44 per cent; els agr&#237;coles, el 29,80 per cent; les zones urbanitzades, el 6,23 per cent, i les aig&#252;es continentals, el 0,53 per cent. El centre mostra un total de 3,21 milions d'hect&#224;rees.</desc>
+
+  <rect width="1200" height="760" fill="#fbfaf7"/>
 
   <g font-family="DejaVu Sans, Arial, sans-serif">
-    <text x="70" y="72" font-size="21" font-weight="700" letter-spacing="2.5" fill="#315d70">OCUPACI&#211; DEL S&#210;L &#183; CATALUNYA, 2005</text>
-    <text x="70" y="137" font-size="49" font-weight="700" fill="#17202a">93 de cada 100 hect&#224;rees</text>
-    <text x="70" y="194" font-size="49" font-weight="700" fill="#17202a">s&#243;n forestals o agr&#237;coles</text>
-    <text x="72" y="240" font-size="23" fill="#52616b">Quatre dades, una jerarquia clara i totes les parts visibles.</text>
+    <text x="600" y="82" text-anchor="middle" font-size="44" font-weight="700" fill="#17202a">Ocupaci&#243; del s&#242;l a Catalunya (2005)</text>
 
-    <g transform="translate(70 284)">
-      <rect width="500" height="318" rx="18" fill="#28634f"/>
-      <text x="32" y="105" font-size="98" font-weight="700" fill="#ffffff">63%</text>
-      <text x="34" y="154" font-size="32" font-weight="700" fill="#ffffff">Terrenys forestals</text>
-      <text x="34" y="194" font-size="21" fill="#dcebe3">Gaireb&#233; dues terceres parts</text>
-      <text x="34" y="223" font-size="21" fill="#dcebe3">del territori.</text>
-      <g transform="translate(330 158)" fill="#b9d7c8" opacity="0.9">
-        <path d="M70 0 18 88h30L7 151h126L92 88h30z"/>
-        <rect x="62" y="151" width="17" height="48" rx="4"/>
-        <path d="M151 48 113 111h22l-30 48h93l-28-48h21z"/>
-        <rect x="145" y="159" width="14" height="34" rx="3"/>
+    <g aria-label="Anell amb les quatre categories d'ocupaci&#243; del s&#242;l">
+      <path d="M600 195A225 225 0 1 1 431.76 569.4L502.795 506.32A130 130 0 1 0 600 290Z" fill="#1f6b57"/>
+      <path d="M431.76 569.4A225 225 0 0 1 507.319 214.975L546.451 301.541A130 130 0 0 0 502.795 506.32Z" fill="#e2a12e"/>
+      <path d="M507.319 214.975A225 225 0 0 1 592.548 195.123L595.695 290.071A130 130 0 0 0 546.451 301.541Z" fill="#b84b3a"/>
+      <path d="M592.548 195.123A225 225 0 0 1 600 195L600 290A130 130 0 0 0 595.695 290.071Z" fill="#287da2"/>
+
+      <g stroke="#fbfaf7" stroke-width="5">
+        <line x1="600" y1="290" x2="600" y2="195"/>
+        <line x1="502.795" y1="506.32" x2="431.76" y2="569.4"/>
+        <line x1="546.451" y1="301.541" x2="507.319" y2="214.975"/>
+        <line x1="595.695" y1="290.071" x2="592.548" y2="195.123"/>
       </g>
+
+      <text x="600" y="402" text-anchor="middle" font-size="54" font-weight="700" fill="#17202a">3,21</text>
+      <text x="600" y="437" text-anchor="middle" font-size="21" font-weight="700" fill="#52616b">milions d'hect&#224;rees</text>
+      <text x="600" y="469" text-anchor="middle" font-size="20" font-weight="700" letter-spacing="1.8" fill="#52616b">TOTAL</text>
     </g>
 
-    <g transform="translate(594 284)">
-      <rect width="536" height="184" rx="18" fill="#f0aa45"/>
-      <text x="30" y="91" font-size="76" font-weight="700" fill="#17202a">30%</text>
-      <text x="31" y="133" font-size="29" font-weight="700" fill="#17202a">Terrenys agr&#237;coles</text>
-      <g transform="translate(330 31)" fill="none" stroke="#9b5a19" stroke-width="8" stroke-linecap="round" opacity="0.76">
-        <path d="M0 120c42-52 86-78 152-92"/>
-        <path d="M38 139c43-45 84-64 133-75"/>
-        <path d="M84 147c32-25 61-38 96-44"/>
+    <g aria-label="Zones urbanitzades: 6,23 per cent">
+      <path d="M548.959 200.866 505 168H170V179" fill="none" stroke="#96392e" stroke-width="3"/>
+      <circle cx="548.959" cy="200.866" r="5" fill="#b84b3a"/>
+      <circle cx="170" cy="210" r="31" fill="#f3dfda"/>
+      <g aria-hidden="true" fill="#b84b3a">
+        <rect x="150" y="202" width="12" height="24" rx="1"/>
+        <rect x="166" y="191" width="15" height="35" rx="1"/>
+        <rect x="185" y="198" width="10" height="28" rx="1"/>
+        <rect x="146" y="226" width="53" height="4" rx="2"/>
       </g>
+      <text x="215" y="205" font-size="32" font-weight="700" fill="#96392e">6,23%</text>
+      <text x="215" y="237" font-size="24" font-weight="700" fill="#394851">Zones urbanitzades</text>
     </g>
 
-    <g transform="translate(594 488)">
-      <rect width="326" height="114" rx="18" fill="#bf4a35"/>
-      <text x="26" y="68" font-size="53" font-weight="700" fill="#ffffff">6,2%</text>
-      <text x="210" y="49" font-size="18" font-weight="700" fill="#ffffff">Zones</text>
-      <text x="210" y="75" font-size="15" font-weight="700" fill="#ffffff">urbanitzades</text>
-      <g transform="translate(151 39) scale(0.65)" fill="#f3c7bd">
-        <rect x="0" y="23" width="25" height="45"/>
-        <rect x="30" y="4" width="24" height="64"/>
-        <rect x="59" y="31" width="20" height="37"/>
+    <g aria-label="Aig&#252;es continentals: 0,53 per cent">
+      <path d="M596.274 195.031 680 168H860V179" fill="none" stroke="#246d8c" stroke-width="3"/>
+      <circle cx="596.274" cy="195.031" r="5" fill="#287da2"/>
+      <circle cx="860" cy="210" r="31" fill="#dcecf3"/>
+      <g aria-hidden="true" fill="none" stroke="#287da2" stroke-width="4" stroke-linecap="round">
+        <path d="M839 199c7 0 7 6 14 6s7-6 14-6 7 6 14 6"/>
+        <path d="M839 211c7 0 7 6 14 6s7-6 14-6 7 6 14 6"/>
+        <path d="M839 223c7 0 7 6 14 6s7-6 14-6 7 6 14 6"/>
       </g>
+      <text x="905" y="205" font-size="32" font-weight="700" fill="#246d8c">0,53%</text>
+      <text x="905" y="237" font-size="24" font-weight="700" fill="#394851">Aig&#252;es continentals</text>
     </g>
 
-    <g transform="translate(940 488)">
-      <rect width="190" height="114" rx="18" fill="#327fa0"/>
-      <text x="22" y="55" font-size="42" font-weight="700" fill="#ffffff">0,53%</text>
-      <text x="22" y="87" font-size="15" font-weight="700" fill="#ffffff">Aig&#252;es continentals</text>
+    <g aria-label="Terrenys agr&#237;coles: 29,80 per cent">
+      <path d="M379.544 375.01 335 372H120V389" fill="none" stroke="#a56a10" stroke-width="3"/>
+      <circle cx="379.544" cy="375.01" r="5" fill="#e2a12e"/>
+      <circle cx="120" cy="420" r="31" fill="#faedcf"/>
+      <g aria-hidden="true" fill="none" stroke="#a56a10" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M120 393v54"/>
+        <path d="m120 406-12-8M120 416l-14-7M120 426l-13-5M120 406l12-8M120 416l14-7M120 426l13-5"/>
+      </g>
+      <text x="165" y="415" font-size="32" font-weight="700" fill="#8b590d">29,80%</text>
+      <text x="165" y="447" font-size="24" font-weight="700" fill="#394851">S&#242;l agr&#237;cola</text>
     </g>
 
-    <line x1="70" y1="648" x2="1130" y2="648" stroke="#c8c0b3" stroke-width="2"/>
-    <text x="70" y="687" font-size="19" fill="#52616b">Percentatges publicats; la difer&#232;ncia fins al 100% respon a l'arrodoniment.</text>
-    <text x="70" y="720" font-size="19" fill="#52616b">Font: CREAF, ocupaci&#243; del s&#242;l de Catalunya, 2005.</text>
-    <text x="1130" y="720" text-anchor="end" font-size="19" font-weight="700" fill="#315d70">Elaboraci&#243; pr&#242;pia TIGIT</text>
+    <g aria-label="Terrenys forestals: 63,44 per cent">
+      <path d="M805.232 512.222 835 500H854" fill="none" stroke="#1f6b57" stroke-width="3"/>
+      <circle cx="805.232" cy="512.222" r="5" fill="#1f6b57"/>
+      <circle cx="885" cy="505" r="31" fill="#e0eee8"/>
+      <g aria-hidden="true" fill="#1f6b57">
+        <path d="m885 478-18 25h10l-14 20h44l-14-20h10z"/>
+        <rect x="881" y="522" width="8" height="10" rx="2"/>
+      </g>
+      <text x="930" y="500" font-size="32" font-weight="700" fill="#1f6b57">63,44%</text>
+      <text x="930" y="532" font-size="24" font-weight="700" fill="#394851">S&#242;l forestal</text>
+    </g>
+
+    <line x1="80" y1="682" x2="1120" y2="682" stroke="#c8c0b3" stroke-width="2"/>
+    <text x="80" y="711" font-size="18" fill="#52616b">Font: CREAF, Mapa de cobertes del s&#242;l de Catalunya, 3a edici&#243; (MCSC-3), 2005.</text>
+    <text x="1120" y="739" text-anchor="end" font-size="18" fill="#52616b">Total: 3.210.092,33 ha &#183; Elaboraci&#243; pr&#242;pia TIGIT</text>
   </g>
 </svg>

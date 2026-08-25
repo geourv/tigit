@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1076" height="628" viewBox="52 114 1076 628" role="img" aria-labelledby="title desc">
   <title id="title">Tipus específics de gràfics per a preguntes diferents</title>
-  <desc id="desc">Set panells esquemàtics mostren un diagrama de dispersió, un alluvial, un treemap, un climograma, un mapa de calor, un slopegraph i un diagrama de radar.</desc>
+  <desc id="desc">Set panells esquemàtics mostren un diagrama de dispersió, un diagrama al·luvial, un diagrama de rectangles, un climograma, un gràfic d'intensitat de colors, un gràfic de pendents i un diagrama de radar.</desc>
   <defs>
     <style>
       .panel{fill:#fff;stroke:#d8d2c5;stroke-width:1.6}.grid{stroke:#e8e2d7;stroke-width:1}.axis{stroke:#555;stroke-width:1.7}.txt{font-family:Arial,Helvetica,sans-serif;fill:#2b2b2b}.panel-title{font-size:18px;font-weight:700}.label{font-size:13px;fill:#555}.small{font-size:12px;fill:#666}.blue{fill:#3f7fb5}.blue-line{stroke:#3f7fb5;fill:none;stroke-width:3}.orange{fill:#d47a2c}.orange-line{stroke:#d47a2c;fill:none;stroke-width:3}.green{fill:#5aa06a}.green-line{stroke:#5aa06a;fill:none;stroke-width:3}.purple{fill:#8563a8}.red{fill:#c75146}.pale{fill:#f3eadb}.teal{fill:#2f8f83}.flow-blue{fill:none;stroke:#3f7fb5;stroke-width:28;stroke-linecap:round;opacity:.55}.flow-orange{fill:none;stroke:#d47a2c;stroke-width:22;stroke-linecap:round;opacity:.55}.flow-green{fill:none;stroke:#5aa06a;stroke-width:16;stroke-linecap:round;opacity:.55}.thin{stroke:#777;stroke-width:1.2;fill:none}.heat1{fill:#f3eadb}.heat2{fill:#d8e8de}.heat3{fill:#95c8b5}.heat4{fill:#3f8f83}.heat5{fill:#1f5d54}
@@ -21,7 +21,7 @@
 
   <g transform="translate(425 116)">
     <rect class="panel" width="330" height="180"/>
-    <text x="20" y="32" class="txt panel-title">Alluvial</text>
+    <text x="20" y="32" class="txt panel-title">Diagrama al·luvial</text>
     <text x="20" y="52" class="txt small">canvi de categories o fluxos</text>
     <rect x="42" y="72" width="34" height="42" class="blue"/><rect x="42" y="120" width="34" height="24" class="orange"/>
     <rect x="254" y="66" width="34" height="30" class="blue"/><rect x="254" y="102" width="34" height="28" class="green"/><rect x="254" y="136" width="34" height="18" class="orange"/>
@@ -33,7 +33,7 @@
 
   <g transform="translate(796 116)">
     <rect class="panel" width="330" height="180"/>
-    <text x="20" y="32" class="txt panel-title">Treemap</text>
+    <text x="20" y="32" class="txt panel-title">Diagrama de rectangles</text>
     <text x="20" y="52" class="txt small">parts jeràrquiques d'un total</text>
     <rect x="48" y="70" width="220" height="82" fill="#e9f1ed" stroke="#fffdf8" stroke-width="3"/>
     <rect x="48" y="70" width="96" height="82" class="teal" opacity=".85"/>
@@ -59,7 +59,7 @@
 
   <g transform="translate(610 338)">
     <rect class="panel" width="330" height="180"/>
-    <text x="20" y="32" class="txt panel-title">Mapa de calor</text>
+    <text x="20" y="32" class="txt panel-title">Gr&#224;fic d'intensitat de colors</text>
     <text x="20" y="52" class="txt small">matriu de valors o calendari</text>
     <g transform="translate(54 72)">
       <rect width="28" height="24" class="heat1"/><rect x="32" width="28" height="24" class="heat2"/><rect x="64" width="28" height="24" class="heat3"/><rect x="96" width="28" height="24" class="heat4"/><rect x="128" width="28" height="24" class="heat3"/><rect x="160" width="28" height="24" class="heat2"/>
@@ -71,7 +71,7 @@
 
   <g transform="translate(239 560)">
     <rect class="panel" width="330" height="180"/>
-    <text x="20" y="32" class="txt panel-title">Slopegraph</text>
+    <text x="20" y="32" class="txt panel-title">Gràfic de pendents</text>
     <text x="20" y="52" class="txt small">canvi entre dos moments</text>
     <line x1="92" y1="62" x2="92" y2="146" class="axis"/>
     <line x1="236" y1="62" x2="236" y2="146" class="axis"/>

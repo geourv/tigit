@@ -231,10 +231,10 @@ p_contours <- ggplot(terrain, aes(x, y)) +
   ) +
   annotate("point", x = c(min(profile$x), max(profile$x)), y = transect_y, color = "#16697a", size = 2.7) +
   annotate("text", x = min(profile$x) + 10, y = transect_y + 35, label = "A", color = "#16697a", fontface = "bold", size = 4) +
-  annotate("text", x = max(profile$x) - 28, y = transect_y + 35, label = "A'", color = "#16697a", fontface = "bold", size = 4) +
+  annotate("text", x = max(profile$x) - 28, y = transect_y + 35, label = "A′", color = "#16697a", fontface = "bold", size = 4) +
   coord_equal(expand = FALSE) +
   labs(
-    title = "Corbes de nivell i transecte A-A'",
+    title = "Corbes de nivell i transsecte A–A′",
     subtitle = "Equidistància 10 m; corbes mestres cada 50 m"
   ) +
   base_theme +
@@ -252,13 +252,13 @@ p_profile <- ggplot(profile, aes(distance, elevation)) +
     stroke = 0.7
   ) +
   annotate("text", x = min(profile$distance), y = min(profile$elevation) + 2, label = "A", hjust = 0, color = "#16697a", fontface = "bold", size = 4) +
-  annotate("text", x = max(profile$distance), y = min(profile$elevation) + 2, label = "A'", hjust = 1, color = "#16697a", fontface = "bold", size = 4) +
+  annotate("text", x = max(profile$distance), y = min(profile$elevation) + 2, label = "A′", hjust = 1, color = "#16697a", fontface = "bold", size = 4) +
   scale_x_continuous(expand = expansion(mult = c(0, 0)), breaks = seq(0, 600, by = 100)) +
   scale_y_continuous(limits = c(90, 200), breaks = seq(100, 200, by = 20), expand = expansion(mult = c(0, 0.02))) +
   labs(
-    title = "Perfil del relleu sobre A-A'",
+    title = "Perfil del relleu sobre A–A′",
     subtitle = "Cada intersecció amb una corba correspon a una altura",
-    x = "Distància al llarg del transecte (m)",
+    x = "Distància al llarg del transsecte (m)",
     y = "Altitud (m)"
   ) +
   theme_minimal(base_size = 11) +
@@ -283,11 +283,11 @@ print(p_profile, vp = grid::viewport(layout.pos.row = 1, layout.pos.col = 2))
 dev.off()
 add_svg_metadata(
   profile_output,
-  "Corbes de nivell i perfil topogràfic del mateix transecte",
-  "A l'esquerra, un mapa de corbes de nivell de Maunga Whau mostra el transecte A-A prima. A la dreta, el perfil representa l'altitud de cada cel·la al llarg d'aquesta mateixa línia."
+  "Corbes de nivell i perfil topogràfic del mateix transsecte",
+  "A l'esquerra, un mapa de corbes de nivell de Maunga Whau mostra el transsecte A–A′. A la dreta, el perfil representa l'altitud de cada cel·la al llarg d'aquesta mateixa línia."
 )
 ```
 
 ![Cotes, tintes hipsomètriques i ombrejat calculats sobre el mateix model d'altituds](../../img/cartographic-language/terrain-relief-volcano.svg)
 
-![Corbes de nivell i perfil topogràfic calculats sobre el mateix transecte](../../img/cartographic-language/contour-profile-volcano.svg)
+![Corbes de nivell i perfil topogràfic calculats sobre el mateix transsecte](../../img/cartographic-language/contour-profile-volcano.svg)

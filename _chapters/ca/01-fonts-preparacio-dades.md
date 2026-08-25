@@ -225,7 +225,7 @@ L'[Organització de les Nacions Unides per a l'Alimentació i l'Agricultura](htt
 
 El principal portal estadístic general de l'organització és [FAOSTAT](https://www.fao.org/faostat/en/#data). Ofereix accés gratuït a sèries de més de 245 països i territoris, en molts casos des de 1961, sobre agricultura, ramaderia, silvicultura, usos del sòl, comerç, seguretat alimentària i emissions. Altres sistemes de la FAO cobreixen àmbits més específics, com AQUASTAT per als recursos hídrics o FishStat per a pesca i aqüicultura.
 
-FAOSTAT permet filtrar països, productes, elements i anys i ofereix descàrregues massives. Moltes sèries incorporen **flags** o notes que indiquen si el valor és oficial, estimat, imputat o sotmès a alguna qualificació metodològica. La comparabilitat internacional és un avantatge, però una dada publicada per la FAO pot continuar procedint d'un organisme estatal i tenir una qualitat o actualització diferent de la d'un altre país.
+FAOSTAT permet filtrar països, productes, elements i anys i ofereix descàrregues massives. Moltes sèries incorporen **indicadors d'estat** o notes que indiquen si el valor és oficial, estimat, imputat o sotmès a alguna qualificació metodològica. La comparabilitat internacional és un avantatge, però una dada publicada per la FAO pot continuar procedint d'un organisme estatal i tenir una qualitat o actualització diferent de la d'un altre país.
 
 #### Banc Mundial i World Bank Data
 
@@ -276,7 +276,7 @@ En l'àmbit europeu, Eurostat és la font estadística comparativa principal. De
 
 [Eurostat](https://ec.europa.eu/eurostat/data/database) és l'oficina estadística de la Unió Europea. El seu valor principal és l'harmonització: les dades dels estats s'organitzen amb definicions i classificacions comunes per facilitar la comparació. Inclou població, economia, treball, transport, medi ambient i un bloc ampli de turisme amb capacitat d'allotjament, arribades, pernoctacions, ocupació i viatges dels residents.
 
-El **Data Browser** permet seleccionar dimensions i descarregar resultats. Eurostat també ofereix descàrrega massiva i serveis de consulta en formats tabulars i estructurats. Les taules tenen codis estables, com `demo_pjan` per a població, i moltes disposen d'un identificador digital persistent. Els flags identifiquen valors estimats, provisionals, confidencials o afectats per ruptures.
+El **Data Browser** permet seleccionar dimensions i descarregar resultats. Eurostat també ofereix descàrrega massiva i serveis de consulta en formats tabulars i estructurats. Les taules tenen codis estables, com `demo_pjan` per a població, i moltes disposen d'un identificador digital persistent. Els indicadors d'estat identifiquen valors estimats, provisionals, confidencials o afectats per ruptures.
 
 Les taules d'Eurostat es revisen i una mateixa consulta pot retornar la versió vigent en el moment d'accés. Per reproduir una activitat cal conservar el fitxer o la resposta exacta utilitzada, la data i el codi del conjunt.
 
@@ -306,7 +306,7 @@ En l'àmbit estatal, l'INE concentra bona part de l'estadística oficial; Dataes
 
 #### INE i INEbase
 
-L'[Instituto Nacional de Estadística](https://www.ine.es/) produeix censos, enquestes i estadístiques sobre població, habitatge, economia, treball, mobilitat i turisme. INEbase permet navegar per operacions i taules, seleccionar dimensions i descarregar resultats. En turisme s'hi troben estadístiques d'ocupació hotelera i extrahotelera, FRONTUR, EGATUR i turisme de residents, entre d'altres.
+L'[Instituto Nacional de Estadística](https://www.ine.es/) produeix censos, enquestes i estadístiques sobre població, habitatge, economia, treball, mobilitat i turisme. INEbase permet navegar per operacions i taules, seleccionar dimensions i descarregar resultats. En turisme s'hi troben estadístiques d'ocupació hotelera i extrahotelera, l'Estadística de moviments turístics en fronteres (FRONTUR), l'Enquesta de despesa turística (EGATUR) i el turisme de residents, entre d'altres.
 
 La desagregació varia segons l'operació: una taula pot arribar a municipis, províncies, comunitats autònomes, punts o zones turístiques. Les enquestes no són necessàriament representatives a totes les escales. Cal diferenciar també padró, cens i estimacions de població, així com dada provisional i definitiva.
 
@@ -460,10 +460,10 @@ A la pràctica, aquests marcs expliquen per què els portals poden agrupar edats
 | Telefonia mòbil | Registres generats per terminals i xarxes | Matrius origen-destinació, fluxos agregats o indicadors per zones i franges | Revisar metodologia, cobertura, biaixos i llindars de privacitat |
 | Targetes de transport | Validacions, línies, parades, títols i hores | Dades agregades o anonimitzades sota conveni o recerca controlada | Evitar reconstruir trajectòries personals o perfils identificables |
 | Enquestes pròpies | Respostes, opinions, edat, lloc, contacte o altres atributs | Taula depurada amb consentiment, minimització i anonimització | Informar participants i recollir només allò necessari |
-| GPS tracking | Trajectòries, ritmes, temps d'aturada i llocs freqüents | Indicadors agregats, traces anonimitzades o resultats resumits | Les traces poden revelar domicili, feina o hàbits personals |
+| Seguiment per GPS | Trajectòries, ritmes, temps d'aturada i llocs freqüents | Indicadors agregats, traces anonimitzades o resultats resumits | Les traces poden revelar domicili, feina o hàbits personals |
 :::
 
-Les dades de mobilitat produïdes de manera passiva són un exemple especialment important per a geografia i turisme. El Ministeri de Transports [utilitza tecnologies de Big Data i intel·ligència artificial aplicades a registres generats per terminals de telefonia mòbil](https://www.transportes.gob.es/ministerio/proyectos-singulares/estudio-de-movilidad-con-big-data) per estudiar la mobilitat a escala estatal i difon resultats oberts agregats, juntament amb metodologia per interpretar-los. En altres projectes, les dades de telefonia poden adquirir-se a empreses operadores o intermediàries ja agregades per zones, franges horàries i tipus de visitant; això permet estudiar mobilitats estacionals en destinacions litorals, però limita la verificació externa perquè l'equip investigador no controla tot el procés de generació, filtratge i anonimització dels registres originals {% cite zaragoziPassiveMobileData2021 %}. A escala regional, les dades de targetes intel·ligents de transport també poden informar sobre patrons de mobilitat turística, com mostra l'estudi sobre l'ús de transport públic a la Costa Daurada amb dades del sistema de validació del Camp de Tarragona {% cite gutierrezSmartTravelCardTourism2020 %}. Aquest tipus de dades exigeix convencions de noms, control de duplicats i traçabilitat perquè diferents persones no refacin el mateix procés ni perdin la relació entre fitxers, consultes i resultats {% cite zaragoziFileNamingConvention2020 %}. En aquests casos, el valor analític prové del volum i la granularitat temporal, però l'accés als registres originals acostuma a requerir convenis, controls estrictes i formats que preservin el secret estadístic i la privacitat. Per això cal distingir entre resultats oberts agregats, dades comprades ja agregades i microdades restringides: no ofereixen la mateixa capacitat d'auditoria ni de reproducció.
+Les dades de mobilitat produïdes de manera passiva són un exemple especialment important per a geografia i turisme. El Ministeri de Transports [utilitza tecnologies de dades massives (*big data*) i intel·ligència artificial aplicades a registres generats per terminals de telefonia mòbil](https://www.transportes.gob.es/ministerio/proyectos-singulares/estudio-de-movilidad-con-big-data) per estudiar la mobilitat a escala estatal i difon resultats oberts agregats, juntament amb metodologia per interpretar-los. En altres projectes, les dades de telefonia poden adquirir-se a empreses operadores o intermediàries ja agregades per zones, franges horàries i tipus de visitant; això permet estudiar mobilitats estacionals en destinacions litorals, però limita la verificació externa perquè l'equip investigador no controla tot el procés de generació, filtratge i anonimització dels registres originals {% cite zaragoziPassiveMobileData2021 %}. A escala regional, les dades de targetes intel·ligents de transport també poden informar sobre patrons de mobilitat turística, com mostra l'estudi sobre l'ús de transport públic a la Costa Daurada amb dades del sistema de validació del Camp de Tarragona {% cite gutierrezSmartTravelCardTourism2020 %}. Aquest tipus de dades exigeix convencions de noms, control de duplicats i traçabilitat perquè diferents persones no refacin el mateix procés ni perdin la relació entre fitxers, consultes i resultats {% cite zaragoziFileNamingConvention2020 %}. En aquests casos, el valor analític prové del volum i la granularitat temporal, però l'accés als registres originals acostuma a requerir convenis, controls estrictes i formats que preservin el secret estadístic i la privacitat. Per això cal distingir entre resultats oberts agregats, dades comprades ja agregades i microdades restringides: no ofereixen la mateixa capacitat d'auditoria ni de reproducció.
 
 Les dades recollides pel mateix estudiantat també exigeixen responsabilitat. Una enquesta amb Microsoft Forms, Google Forms o una eina similar ha d'explicar qui recull la informació, amb quina finalitat, quines preguntes són obligatòries, durant quant temps es conservaran les respostes i si es compartiran resultats. El consentiment informat no és només una casella: és la garantia que la persona participant entén què està aportant i quin ús se'n farà. Si es recullen ubicacions, fotografies, opinions sensibles, identificadors o dades de menors, cal extremar la prudència i consultar el professorat abans de continuar.
 
@@ -486,7 +486,7 @@ Abans de descarregar convé completar una fitxa breu de la font:
 | Finalitat | Per què i com es van recollir? | Es presenten xifres sense metodologia |
 | Definició | Què representa cada variable? | S'utilitzen termes com *turista* o *plaça* sense definir-los |
 | Cobertura | Quin univers, territori i període cobreix? | Es generalitza una mostra o una zona a tota la població |
-| Qualitat | Hi ha flags, errors mostrals, revisions o valors imputats? | Només es mostra el resultat més favorable |
+| Qualitat | Hi ha indicadors d'estat, errors mostrals, revisions o valors imputats? | Només es mostra el resultat més favorable |
 | Comparabilitat | Han canviat conceptes, codis o límits? | Es concatena una sèrie malgrat una ruptura metodològica |
 | Actualitat | Quina és la data de referència i d'actualització? | Es confon la data de publicació amb el període observat |
 | Accés | Es poden obtenir dades i metadades reutilitzables? | Només hi ha una captura o un gràfic sense valors |
@@ -532,7 +532,7 @@ El diagrama no descriu una jerarquia obligatòria en tots els portals. Una taula
 
 #### Eurostat: una taula estadística multidimensional
 
-El conjunt [`demo_pjan`](https://ec.europa.eu/eurostat/databrowser/view/demo_pjan/default/table?lang=en) no es descriu només amb el títol «Population on 1 January by age and sex». La fitxa mostra el codi persistent, l'identificador digital d'objecte (DOI), la font, la darrera actualització i l'enllaç a la fitxa metodològica demogràfica d'Eurostat. La resposta estructurada del servei afegeix dimensions com freqüència, unitat, edat, sexe, territori i temps. Els flags d'observació informen si un valor és provisional, estimat o afectat per una ruptura. Per interpretar una única xifra cal conservar totes les categories que la defineixen.
+El conjunt [`demo_pjan`](https://ec.europa.eu/eurostat/databrowser/view/demo_pjan/default/table?lang=en) no es descriu només amb el títol «Population on 1 January by age and sex». La fitxa mostra el codi persistent, l'identificador digital d'objecte (DOI), la font, la darrera actualització i l'enllaç a la fitxa metodològica demogràfica d'Eurostat. La resposta estructurada del servei afegeix dimensions com freqüència, unitat, edat, sexe, territori i temps. Els indicadors d'estat de les observacions informen si un valor és provisional, estimat o afectat per una ruptura. Per interpretar una única xifra cal conservar totes les categories que la defineixen.
 
 ::: table "Lectura mínima de les metadades d'Eurostat"
 | Element | Exemple a `demo_pjan` | Pregunta que resol |
@@ -615,7 +615,7 @@ Finalment, les **condicions d'un servei** poden limitar volum, freqüència de p
 
 Les plataformes privades poden ser fonts valuoses per estudiar mobilitat, imatges, ressenyes o converses públiques, però no funcionen com un arxiu públic neutral. Quan una persona crea un compte, puja contingut o utilitza una eina de consulta automatitzada, accepta unes condicions que poden regular propietat intel·lectual, permisos de visualització, ús comercial, conservació o retirada de contingut, comunicació a tercers, límits de peticions i responsabilitat sobre còpies de seguretat. Aquestes condicions poden canviar amb el temps i poden ser diferents de la llicència concreta associada a una fotografia, una ruta o una publicació.
 
-Flickr permet veure aquesta separació amb claredat. Les seves [condicions generals](https://www.flickr.com/help/terms) indiquen que l'usuari conserva els drets de propietat intel·lectual sobre el contingut que puja, però concedeix a la plataforma els permisos necessaris per prestar el servei, complir instruccions i requeriments legals, i gestionar determinades situacions de seguretat o retirada. [Les condicions d'ús de la seva API](https://www.flickr.com/help/terms/api) recorden que les fotografies són propietat dels usuaris i que una aplicació ha de respectar les llicències, la privacitat i les retirades que decideixi cada titular; també imposen límits d'ús, restriccions comercials, requisits d'atribució i la possibilitat que l'accés es modifiqui, limiti o acabi. Per tant, obtenir dades mitjançant una API no equival a adquirir un dret general sobre tot allò que la plataforma mostra.
+Flickr permet veure aquesta separació amb claredat. Les seves [condicions generals](https://www.flickr.com/help/terms) indiquen que l'usuari conserva els drets de propietat intel·lectual sobre el contingut que puja, però concedeix a la plataforma els permisos necessaris per prestar el servei, complir instruccions i requeriments legals, i gestionar determinades situacions de seguretat o retirada. [Les condicions d'ús de la seva interfície de programació d'aplicacions (API)](https://www.flickr.com/help/terms/api) recorden que les fotografies són propietat dels usuaris i que una aplicació ha de respectar les llicències, la privacitat i les retirades que decideixi cada titular; també imposen límits d'ús, restriccions comercials, requisits d'atribució i la possibilitat que l'accés es modifiqui, limiti o acabi. Per tant, obtenir dades mitjançant una API no equival a adquirir un dret general sobre tot allò que la plataforma mostra.
 
 Aquest problema no és només legal, sinó metodològic. La recerca sobre xarxes socials ha documentat que moltes plataformes han restringit l'accés programàtic que abans permetia estudiar comunicació pública a gran escala. Bruns descriu aquest gir com una «APIcalypse» que dificulta la recerca crítica perquè les plataformes controlen cada vegada més què es pot observar, amb quin volum i sota quines condicions {% cite brunsAfterAPIcalypse2019 %}. Freelon parla d'una etapa post-API en què la recerca computacional ha de combinar vies diverses, negociar accessos i acceptar que determinades dades ja no són reproduïbles amb la mateixa facilitat que abans {% cite freelonComputationalResearchPostAPI2018 %}. En un treball del curs, això obliga a documentar no només la URL o la consulta, sinó també la data, la política vigent, els permisos acceptats, els camps obtinguts, els límits aplicats i qualsevol canvi que impedeixi repetir l'extracció.
 
@@ -658,7 +658,7 @@ Un resultat és reproduïble quan una altra persona pot partir de les mateixes d
 
 La reproduïbilitat forma un espectre. Compartir només una figura ofereix molt poca capacitat de comprovació; afegir dades, codi, versions del programari, llicències i documentació redueix progressivament les ambigüitats. En projectes avançats es poden incorporar scripts i quaderns executables, control de versions, fitxers de dependències, proves automatitzades, contenidors Docker o Podman i fluxos que reconstrueixen els resultats des de l'inici {% cite zaragoziContainerTechnologies2020 %}.
 
-Els fluxos basats en LLM introdueixen més elements que cal fixar, però no són reproduïbles en el mateix sentit que una fórmula, una consulta o un script determinista. Encara que es conservin el prompt, el xat, el model declarat i la data, el mateix agent pot respondre de manera diferent, el proveïdor pot canviar el model i una versió posterior pot donar una sortida diferent. En un procés amb generació augmentada per recuperació, o RAG, caldria documentar el corpus consultat, la seva versió, el model, les instruccions, els paràmetres, el mètode de fragmentació, les representacions vectorials i la configuració de recuperació. RAG pot fer més traçable l'origen de les respostes, però no garanteix per si sol que dues execucions siguin idèntiques.
+Els fluxos basats en LLM introdueixen més elements que cal fixar, però no són reproduïbles en el mateix sentit que una fórmula, una consulta o un script determinista. Encara que es conservin la instrucció donada al model (*prompt*), el xat, el model declarat i la data, el mateix agent pot respondre de manera diferent, el proveïdor pot canviar el model i una versió posterior pot donar una sortida diferent. En un procés amb generació augmentada per recuperació (RAG, de l'anglès *retrieval-augmented generation*), caldria documentar el corpus consultat, la seva versió, el model, les instruccions, els paràmetres, el mètode de fragmentació, les representacions vectorials i la configuració de recuperació. La RAG pot fer més traçable l'origen de les respostes, però no garanteix per si sola que dues execucions siguin idèntiques.
 
 Aquestes tècniques requereixen més coneixements i infraestructura. Les bones pràctiques, però, comencen amb accions molt més senzilles: noms comprensibles, una estructura estable de carpetes, originals immutables i un registre de procedència. Una convenció compartida evita duplicacions i permet entendre un projecte sense dependre de la memòria de qui l'ha creat {% cite zaragoziFileNamingConvention2020 %}.
 
@@ -698,7 +698,7 @@ Una primera pràctica pot consistir a crear l'estructura, incorporar un fitxer o
 
 Localitzar una font no és el mateix que obtenir-ne dades analitzables. Abans de triar una eina cal distingir d'on surt la dada i per quina via s'hi accedeix. Una part del curs treballarà amb dades publicades formalment per organismes, una altra pot recollir dades pròpies amb enquestes o observació, i excepcionalment es pot extreure informació visible en una pàgina web o continguda en un document digital, com un PDF, una imatge, un escaneig o una taula incrustada. No tenen les mateixes garanties ni les mateixes obligacions: una recollida pròpia exigeix consentiment i minimització, una font publicada exigeix llegir metadades i llicència, i qualsevol extracció automatitzada exigeix permís, prudència tècnica i verificació manual.
 
-Quan les dades ja estan publicades, una mateixa institució pot oferir el mateix conjunt mitjançant una taula interactiva, un fitxer, una interfície de programació d'aplicacions —API, de l'anglès *application programming interface*— i un geoservei. No són fonts diferents: són vies d'accés amb propietats diferents.
+Quan les dades ja estan publicades, una mateixa institució pot oferir el mateix conjunt mitjançant una taula interactiva, un fitxer, una API i un geoservei. No són fonts diferents: són vies d'accés amb propietats diferents.
 
 >>>>> L'accés a les dades exigeix distingir vies diferents i decidir quina convé a cada tasca.
 >>>>>
@@ -728,7 +728,7 @@ La descàrrega és la via més senzilla per conservar una còpia exacta. Els for
 | GeoPackage | Capes vectorials o ràster en un únic fitxer | Identificar capa, geometria i sistema de referència |
 | Shapefile | Conjunt antic de fitxers vectorials (`.shp`, `.dbf`, `.shx`...) | No separar els components; noms de camp i codificació limitats |
 | GeoJSON | Objectes vectorials en text JSON | Fitxers grans i ús habitual de coordenades geogràfiques |
-| GeoTIFF | Imatge ràster georeferenciada | Comprovar resolució, sistema de referència, nombre de bandes i valor nodata |
+| GeoTIFF | Imatge ràster georeferenciada | Comprovar resolució, sistema de referència, nombre de bandes i valor sense dades (`nodata`) |
 | GML | Objectes geogràfics estructurats en XML | Esquema complex i fitxers voluminosos |
 | LAZ/LAS | Núvols de punts LiDAR | Gran volum i necessitat d'eines específiques |
 :::
@@ -737,7 +737,7 @@ La descàrrega és la via més senzilla per conservar una còpia exacta. Els for
 
 ### Accés mitjançant API
 
-Una **API** és una interfície perquè un programa demani dades a un altre sistema de manera estructurada. En una API web, la petició sol ser una URL formada per un endpoint i uns paràmetres; la resposta acostuma a ser JSON, JSON-stat, CSV o XML.
+Una **API** és una interfície perquè un programa demani dades a un altre sistema de manera estructurada. En una API web, la petició sol ser una URL formada per un punt d'accés (*endpoint*) i uns paràmetres; la resposta acostuma a ser JSON, JSON-stat, CSV o XML.
 
 L'API és útil quan cal repetir una consulta, actualitzar-la o recuperar només una part d'un conjunt gran. No elimina la necessitat d'entendre la font: una petició tècnicament correcta pot seleccionar la variable o la unitat equivocada.
 
@@ -781,7 +781,7 @@ La consulta següent recupera la població total d'Espanya el 2024 del conjunt `
 https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_pjan?lang=en&geo=ES&time=2024&age=TOTAL&sex=T
 ```
 
-Eurostat retorna JSON-stat 2.0, un format multidimensional. Els valors no s'han d'interpretar sense llegir l'ordre i les categories de les dimensions. La [documentació de les API d'Eurostat](https://ec.europa.eu/eurostat/web/user-guides/data-browser/api-data-access/api-introduction) explica els endpoints, els formats i les limitacions.
+Eurostat retorna JSON-stat 2.0, un format multidimensional. Els valors no s'han d'interpretar sense llegir l'ordre i les categories de les dimensions. La [documentació de les API d'Eurostat](https://ec.europa.eu/eurostat/web/user-guides/data-browser/api-data-access/api-introduction) explica els punts d'accés, els formats i les limitacions.
 
 #### Exemple d'un registre català
 
@@ -820,7 +820,7 @@ Els principals tipus que es trobaran al curs són:
 - **WFS:** retorna objectes vectorials amb geometria i atributs que es poden consultar i processar.
 - **OGC API Features:** ofereix objectes vectorials mitjançant una API web moderna, habitualment en GeoJSON.
 
-També existeixen WCS per a cobertures ràster i catàlegs com STAC per descobrir imatges d'observació de la Terra. Abans de connectar un servei cal consultar-ne les capacitats, les capes, el sistema de referència, l'escala i les condicions d'ús. Que una capa es pugui veure no significa que es pugui descarregar o redistribuir.
+També existeixen WCS per a cobertures ràster i catàlegs d'actius espaciotemporals (STAC, de l'anglès *SpatioTemporal Asset Catalog*) per descobrir imatges d'observació de la Terra. Abans de connectar un servei cal consultar-ne les capacitats, les capes, el sistema de referència, l'escala i les condicions d'ús. Que una capa es pugui veure no significa que es pugui descarregar o redistribuir.
 
 ::: table "Escollir un geoservei segons la tasca"
 | Necessitat | Servei més probable | Resultat esperable | Precaució |
@@ -828,7 +828,7 @@ També existeixen WCS per a cobertures ràster i catàlegs com STAC per descobri
 | Veure una ortofoto o un mapa de fons | WMS o WMTS | Imatge renderitzada | No és una capa vectorial editable |
 | Analitzar geometries i atributs | WFS o OGC API Features | Objectes vectorials | Cal revisar límits, volum i llicència |
 | Descobrir imatges de satèl·lit disponibles | STAC | Fitxes d'escenes i enllaços | La fitxa no és la imatge processada final |
-| Treballar amb una cobertura ràster | WCS o descàrrega de fitxer | Valors ràster o fitxer GeoTIFF | Cal comprovar resolució, bandes i nodata |
+| Treballar amb una cobertura ràster | WCS o descàrrega de fitxer | Valors ràster o fitxer GeoTIFF | Cal comprovar resolució, bandes i valor sense dades |
 :::
 
 >> **`GetCapabilities` abans de `GetMap`.** En un servei OGC, la petició de capacitats explica quines operacions, capes, formats i sistemes de referència ofereix el servidor. La petició de mapa o dades ja és una selecció concreta. Si es guarda només la imatge final, es perd la informació que permet reconstruir per què aquella imatge era possible i quines alternatives existien.
@@ -1042,7 +1042,7 @@ L'alineació només és un indici. Un estil pot forçar qualsevol alineació, i 
 
 Moltes pràctiques territorials consisteixen a relacionar taules mitjançant una clau comuna. Una taula pot contenir el codi municipal i la població; una altra, el mateix codi municipal i la comarca; una tercera, el codi i la superfície. La unió només és segura si el codi conserva el mateix sistema, longitud i tipus en totes les fonts. No s'han d'unir taules per la posició de les files, perquè dues descàrregues poden ordenar els municipis de manera diferent.
 
-Un cas habitual és una taula de correspondència o **lookup**: la primera columna conté el codi que es busca i una altra columna conté el valor que es vol recuperar. Si el full `lookup_comarques` té `codi_municipi` a la columna `A` i `codi_comarca` a la columna `B`, una fórmula orientativa per portar el codi de comarca al full de treball és:
+Un cas habitual és una **taula de correspondència**: la primera columna conté el codi que es busca i una altra columna conté el valor que es vol recuperar. Si el full `lookup_comarques` té `codi_municipi` a la columna `A` i `codi_comarca` a la columna `B`, una fórmula orientativa per portar el codi de comarca al full de treball és:
 
 ```text
 =XLOOKUP(A2,lookup_comarques!$A$2:$A$1000,lookup_comarques!$B$2:$B$1000,"sense correspondència")
@@ -1052,7 +1052,7 @@ La fórmula busca el valor d'`A2` dins de la columna de codis del full `lookup_c
 
 La lletra de la funció explica part de la seva història. En `VLOOKUP` o `BUSCARV`, la `V` vol dir **vertical**: la funció tradicional busca cap avall a la primera columna d'una taula i retorna una columna indicada per posició. També existeixen variants horitzontals, com `HLOOKUP` o `BUSCARH`, pensades per a taules disposades per files. `XLOOKUP`, que en algunes interfícies traduïdes pot aparèixer com `BUSCARX`, és una funció més recent i general: separa el rang on es busca del rang que es vol retornar, de manera que no obliga a comptar columnes ni a mantenir el valor retornat a la dreta de la clau. Si la versió del programa no disposa d'aquesta funció, es pot usar una alternativa, com `VLOOKUP`, `BUSCARV` o una combinació d'índex i coincidència. L'objectiu no és memoritzar una funció, sinó entendre que es busca una clau en una taula auxiliar i es retorna un camp relacionat.
 
-![Exemple d'una fórmula XLOOKUP que busca un codi municipal i retorna el codi de comarca]({{ site.baseurl }}/assets/img/data-sources/xlookup-example.svg "Llegiu la correspondència d'esquerra a dreta: el codi municipal de la taula de treball es busca a la taula auxiliar i la fórmula retorna el codi de comarca; en copiar-la cap avall, els rangs fixats amb $ continuen apuntant al lookup. Tracteu els codis com a text, no com a quantitats. Exemple d'elaboració pròpia amb dades simplificades.")
+![Exemple d'una fórmula XLOOKUP que busca un codi municipal i retorna el codi de comarca]({{ site.baseurl }}/assets/img/data-sources/xlookup-example.svg "Llegiu la correspondència d'esquerra a dreta: el codi municipal de la taula de treball es busca a la taula auxiliar i la fórmula retorna el codi de comarca; en copiar-la cap avall, els rangs fixats amb $ continuen apuntant a la taula de correspondència. Tracteu els codis com a text, no com a quantitats. Exemple d'elaboració pròpia amb dades simplificades.")
 
 ::: table "Controls abans d'una correspondència"
 | Control | Pregunta | Risc si no es revisa |
@@ -1179,7 +1179,7 @@ La reproduïbilitat exigeix saber quina operació s'ha aplicat. Una fórmula vis
 | Operació crítica, estable i recurrent | Fórmula validada, consulta o codi versionat | Facilita manteniment, autoria i control de canvis |
 :::
 
-Fer que un LLM processi repetidament cada fila pot consumir temps, diners, context i tokens per resoldre una operació que una fórmula executa de manera immediata i exacta. També crea una dependència d'un proveïdor i dificulta mantenir el procés quan canvien el model, el preu o l'extensió. En canvi, descartar sempre els LLM faria perdre una eina útil per a problemes que sí que requereixen interpretació flexible del llenguatge.
+Fer que un LLM processi repetidament cada fila pot consumir temps, diners, context i unitats de text (*tokens*) per resoldre una operació que una fórmula executa de manera immediata i exacta. També crea una dependència d'un proveïdor i dificulta mantenir el procés quan canvien el model, el preu o l'extensió. En canvi, descartar sempre els LLM faria perdre una eina útil per a problemes que sí que requereixen interpretació flexible del llenguatge.
 
 >>>> **Automatitzar no elimina la responsabilitat tècnica.** La decisió important no és si s'ha usat un LLM, sinó per què era l'eina adequada, quines dades ha rebut, com s'ha verificat el resultat i si el procediment es podrà mantenir i reutilitzar. Aquest criteri l'aporta la persona que coneix la pregunta, les dades i els límits de l'anàlisi.
 
@@ -1357,7 +1357,7 @@ Un zero indica una quantitat observada igual a zero. Una cel·la buida pot indic
 
 >>>>>> **No s'ha de convertir una absència en zero.** Aquesta substitució altera sumes, mitjanes, taxes i gràfics, i pot transformar «no es coneix» en «no existeix». Abans de convertir una columna a número cal identificar els símbols de la font i conservar-ne el significat.
 
-Les fonts utilitzen símbols i flags propis, com `:`, `..`, `c`, `p` o `e`. Abans de convertir una columna a número cal llegir la llegenda i conservar l'estat en una columna separada. Substituir tots els símbols per zero altera la informació i pot falsejar sumes, mitjanes i mapes.
+Les fonts utilitzen símbols i indicadors d'estat propis, com `:`, `..`, `c`, `p` o `e`. Abans de convertir una columna a número cal llegir la llegenda i conservar l'estat en una columna separada. Substituir tots els símbols per zero altera la informació i pot falsejar sumes, mitjanes i mapes.
 
 ### Validar les dades després de transformar-les
 

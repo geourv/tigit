@@ -1,5 +1,5 @@
 ---
-title: "Boxplot comparatiu: distribució de la longitud del sèpal per espècie d'iris"
+title: "Diagrama de caixa comparatiu: distribució de la longitud del sèpal per espècie d'iris"
 lang: ca
 ref: boxplot_species_iris
 format:
@@ -93,4 +93,4 @@ dir.create(dirname(output), showWarnings = FALSE, recursive = TRUE)
 ggsave(output, fig, width = 8, height = 4.5, device = svglite::svglite)
 ```
 
-![Boxplot de la longitud del sèpal per a les tres espècies d'iris, amb tres caixes que comparen distribucions]({{ site.baseurl }}/assets/img/data-visualization/boxplot-species-iris.svg "Cada caixa resumeix la distribució d'una espècie: mediana, quartils i extrems. Dibuixar tres caixes sobre un mateix eix permet comparar centre, dispersió i solapament entre grups, a diferència d'una única caixa que només descrivia la distribució d'un sol grup.")
+![Diagrama de caixa de la longitud del sèpal per a les tres espècies d'iris, amb tres caixes que comparen distribucions]({{ site.baseurl }}/assets/img/data-visualization/boxplot-species-iris.svg "Cada caixa resumeix la distribució d'una espècie: mediana, quartils i extrems. Dibuixar tres caixes sobre un mateix eix permet comparar centre, dispersió i solapament entre grups, a diferència d'una única caixa que només descrivia la distribució d'un sol grup.")

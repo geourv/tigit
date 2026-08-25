@@ -765,6 +765,7 @@ test("TIGIT manual home starts at chapter zero and credits its authors and tools
 
 test("TIGIT cartographic figures render on desktop and mobile", async ({ page }, testInfo) => {
   test.skip(activeProfile !== "unaltremanual", "unaltremanual profile only");
+  test.setTimeout(120_000);
   const cartographicFigureNames = [
     "scale-calculations.svg",
     "generalization-three-scales.svg",
@@ -776,6 +777,9 @@ test("TIGIT cartographic figures render on desktop and mobile", async ({ page },
     "contour-profile-volcano.svg",
     "map-symbols-relationships.svg",
     "typographic-specimens.svg",
+    "map-orientation-comparison.svg",
+    "map-legend-placement.svg",
+    "map-label-placement.svg",
   ];
 
   for (const viewport of [
@@ -783,7 +787,7 @@ test("TIGIT cartographic figures render on desktop and mobile", async ({ page },
     { width: 390, height: 740 },
   ]) {
     await page.setViewportSize(viewport);
-    await page.goto(siteUrl("/ca/chapters/llenguatge-cartografic/"));
+    await page.goto(siteUrl("/ca/chapters/llenguatge-cartografic/"), { waitUntil: "domcontentloaded" });
     for (const name of cartographicFigureNames) {
       const image = page.locator(`img[src$='${name}']`);
       await expect(image).toHaveCount(1);
@@ -794,12 +798,19 @@ test("TIGIT cartographic figures render on desktop and mobile", async ({ page },
         await expect(image).toHaveAttribute("data-figure-width", "54rem");
       }
       await expectImageLoaded(image);
+      if (["map-orientation-comparison.svg", "map-legend-placement.svg", "map-label-placement.svg"].includes(name)) {
+        await image.evaluate((node) => node.scrollIntoView({ block: "center" }));
+        await page.screenshot({
+          path: join(renderOut, `manual-${name.replace(".svg", "")}-${viewport.width}-${testInfo.project.name}.png`),
+          animations: "disabled",
+        });
+      }
     }
     await expect(page.locator("img[src$='minimum-mapping-unit.svg']")).toHaveCount(0);
     await expect(page.locator("img[src$='relief-representation-methods.svg']")).toHaveCount(0);
     await expectNoHorizontalOverflow(page);
 
-    await page.goto(siteUrl("/ca/chapters/cartografia-tematica/"));
+    await page.goto(siteUrl("/ca/chapters/cartografia-tematica/"), { waitUntil: "domcontentloaded" });
     for (const { name, pdfWidth } of [
       { name: "thematic-methods-tarragones-2021.svg", pdfWidth: "90%" },
       { name: "population-proportional-symbols-catalonia-2025.svg", pdfWidth: "82%" },
@@ -864,6 +875,47 @@ test("TIGIT circular chart examples render on desktop and mobile", async ({ page
         animations: "disabled",
       });
     }
+  }
+});
+
+test("TIGIT visual hierarchy and composition figures render on desktop and mobile", async ({ page }, testInfo) => {
+  test.skip(activeProfile !== "unaltremanual", "unaltremanual profile only");
+  test.setTimeout(120_000);
+
+  for (const viewport of [
+    { width: 1600, height: 900 },
+    { width: 390, height: 740 },
+  ]) {
+    await page.setViewportSize(viewport);
+    await page.goto(siteUrl("/ca/chapters/semiologia-visualitzacio/"), { waitUntil: "domcontentloaded" });
+    for (const name of [
+      "eye-tracking-reading.svg",
+      "visual-hierarchy-comparison.svg",
+      "reading-directions-sequence.svg",
+    ]) {
+      const image = page.locator(`img[src$='${name}']`);
+      await expect(image).toHaveCount(1);
+      await expect(image).toHaveAttribute("data-figure-width", "54rem");
+      await expectImageLoaded(image);
+      await image.evaluate((node) => node.scrollIntoView({ block: "center" }));
+      await page.screenshot({
+        path: join(renderOut, `manual-${name.replace(".svg", "")}-${viewport.width}-${testInfo.project.name}.png`),
+        animations: "disabled",
+      });
+    }
+    await expectNoHorizontalOverflow(page);
+
+    await page.goto(siteUrl("/ca/chapters/infografia-sintesi/"), { waitUntil: "domcontentloaded" });
+    const composition = page.locator("img[src$='grid-wireframe-composition.svg']");
+    await expect(composition).toHaveCount(1);
+    await expect(composition).toHaveAttribute("data-figure-width", "54rem");
+    await expectImageLoaded(composition);
+    await expectNoHorizontalOverflow(page);
+    await composition.evaluate((node) => node.scrollIntoView({ block: "center" }));
+    await page.screenshot({
+      path: join(renderOut, `manual-grid-wireframe-composition-${viewport.width}-${testInfo.project.name}.png`),
+      animations: "disabled",
+    });
   }
 });
 

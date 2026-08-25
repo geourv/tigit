@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1054" height="524" viewBox="63 123 1054 524" role="img" aria-labelledby="title desc">
-  <title id="title">Rodes de color i rangs habituals dels models cromatics</title>
-  <desc id="desc">Esquema d'una roda de color amb relacions analogues, complementaries i triadiques, i taula de rangs habituals per RGB, HEX, CMYK, RYB, HSL i HSV.</desc>
+  <title id="title">Cercle cromàtic i rangs habituals dels models cromàtics</title>
+  <desc id="desc">Esquema d'un cercle cromàtic amb colors anàlegs, complementaris i triàdics, i taula de rangs habituals per RGB, HEX, CMYK, RYB, HSL i HSV.</desc>
   <defs>
     <style>
       .panel { fill: #ffffff; stroke: #d5dde2; stroke-width: 1.6; }
@@ -15,7 +15,7 @@
   </defs>
   <g transform="translate(65 125)">
     <rect class="panel" width="490" height="520"/>
-    <text x="30" y="42" class="label">Relacions en una roda de color</text>
+    <text x="30" y="42" class="label">Relacions en un cercle cromàtic</text>
     <text x="30" y="69" class="small">un esquema per decidir, no una prova d'accessibilitat</text>
     <g transform="translate(245 250)">
       <path d="M0,-150 A150,150 0 0,1 75,-130 L0,0 Z" fill="#e53935"/>
@@ -35,21 +35,21 @@
       <polyline points="0,-145 126,73 -126,73 0,-145" class="line" opacity=".72"/>
       <path d="M-24,-146 A146,146 0 0,1 48,-138" class="line" stroke="#ffffff" stroke-width="8"/>
     </g>
-    <text x="45" y="452" class="small">Complementaris: punts oposats de la roda.</text>
-    <text x="45" y="478" class="small">Triadics: tres tons separats de manera regular.</text>
-    <text x="45" y="504" class="small">Analogics: tons veins amb transicio suau.</text>
+    <text x="45" y="452" class="small">Complementaris: punts oposats del cercle.</text>
+    <text x="45" y="478" class="small">Triàdics: tres tons separats de manera regular.</text>
+    <text x="45" y="504" class="small">Anàlegs: tons veïns amb transició suau.</text>
   </g>
 
   <g transform="translate(595 125)">
     <rect class="panel" width="520" height="520"/>
     <text x="30" y="42" class="label">Rangs habituals en selectors digitals</text>
-    <text x="30" y="69" class="small">els limits numerics han de quedar documentats al projecte</text>
+    <text x="30" y="69" class="small">els límits numèrics han de quedar documentats al projecte</text>
     <rect x="30" y="100" width="460" height="50" class="row"/>
     <text x="48" y="130" class="label">RGB</text><text x="170" y="130" class="mono">R,G,B = 0..255</text><text x="410" y="130" class="small">llum</text>
     <text x="48" y="170" class="label">HEX</text><text x="170" y="170" class="mono">#000000..#FFFFFF</text><text x="410" y="170" class="small">RGB</text>
     <rect x="30" y="190" width="460" height="50" class="row"/>
     <text x="48" y="220" class="label">CMYK</text><text x="170" y="220" class="mono">C,M,Y,K = 0..100%</text><text x="410" y="220" class="small">tinta</text>
-    <text x="48" y="260" class="label">RYB</text><text x="170" y="260" class="mono">sense rang unic</text><text x="410" y="260" class="small">art</text>
+    <text x="48" y="260" class="label">RYB</text><text x="170" y="260" class="mono">sense rang únic</text><text x="410" y="260" class="small">art</text>
     <rect x="30" y="280" width="460" height="50" class="row"/>
     <text x="48" y="310" class="label">HSL</text><text x="170" y="310" class="mono">H=0..360; S,L=0..100%</text><text x="410" y="310" class="small">L</text>
     <text x="48" y="350" class="label">HSV</text><text x="170" y="350" class="mono">H=0..360; S,V=0..100%</text><text x="410" y="350" class="small">V</text>

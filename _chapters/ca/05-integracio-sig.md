@@ -30,7 +30,7 @@ Les operacions de QGIS dels capítols anteriors formen part del mateix flux acum
 
 Els mapes, els censos i els inventaris territorials són molt anteriors als ordinadors. El canvi que va donar lloc als SIG no va consistir només a dibuixar mapes amb una màquina, sinó a representar la localització i els atributs de manera que es poguessin consultar, combinar i analitzar. Durant les dècades de 1950 i 1960, la geografia quantitativa, l'anàlisi espacial i els primers ordinadors van crear aquest entorn conceptual. El *Canada Geographic Information System*, desenvolupat per gestionar l'inventari de terres del Canadà durant els anys seixanta, se sol considerar una de les primeres implementacions de SIG a gran escala {% cite longleyGeographicInformationScience2015 %}.
 
-Durant els anys setanta i vuitanta, les millores en bases de dades, emmagatzematge, teledetecció i algoritmes espacials van permetre separar millor les dades de les representacions cartogràfiques. Als anys noranta, els ordinadors personals i les interfícies gràfiques van estendre els SIG d'escriptori més enllà de grans administracions i centres de recerca. Des de l'inici del segle XXI, la navegació per satèl·lit d'ús civil, internet, els estàndards geoespacials, el programari lliure, els telèfons mòbils i els serveis al núvol han fet que consultar o produir informació geogràfica formi part de moltes activitats quotidianes. [QGIS](https://www.qgis.org/project/overview/) s'inscriu en aquesta etapa: integra edició, anàlisi, automatització, composició cartogràfica i publicació interoperable, no només visualització.
+Durant els anys setanta i vuitanta, les millores en bases de dades, emmagatzematge, teledetecció i algorismes espacials van permetre separar millor les dades de les representacions cartogràfiques. Als anys noranta, els ordinadors personals i les interfícies gràfiques van estendre els SIG d'escriptori més enllà de grans administracions i centres de recerca. Des de l'inici del segle XXI, la navegació per satèl·lit d'ús civil, internet, els estàndards geoespacials, el programari lliure, els telèfons mòbils i els serveis al núvol han fet que consultar o produir informació geogràfica formi part de moltes activitats quotidianes. [QGIS](https://www.qgis.org/project/overview/) s'inscriu en aquesta etapa: integra edició, anàlisi, automatització, composició cartogràfica i publicació interoperable, no només visualització.
 
 ![Cronologia sintètica de l'evolució dels SIG, des de l'anàlisi espacial i els primers sistemes institucionals fins als SIG web, mòbils i connectats]({{ site.baseurl }}/assets/img/gis/gis-history-timeline.svg "La història dels SIG combina avenços conceptuals, dades, bases de dades, informàtica, observació de la Terra, posicionament per satèl·lit, xarxes i comunitats de programari. Cronologia sintètica: les etapes se superposen i no substitueixen completament les tecnologies anteriors. Esquema docent d'elaboració pròpia."){: data-figure-width="58rem"}
 
@@ -38,11 +38,11 @@ La cronologia s'ha de llegir d'esquerra a dreta com una successió de fases àmp
 
 ### GPS, GNSS i dades de posició
 
-El **GNSS** és el conjunt de sistemes globals de navegació per satèl·lit. GPS és el sistema dels Estats Units; Galileo, GLONASS i BeiDou són altres constel·lacions globals. En el llenguatge quotidià es diu sovint «GPS» per referir-se al receptor o a qualsevol posicionament per satèl·lit, però la distinció ajuda a entendre que un telèfon pot combinar senyals de sistemes diferents.
+Els **sistemes globals de navegació per satèl·lit** (GNSS, de l'anglès *Global Navigation Satellite System*) inclouen diverses constel·lacions. El sistema de posicionament global (GPS) és el sistema dels Estats Units; Galileo, GLONASS i BeiDou són altres constel·lacions globals. En el llenguatge quotidià es diu sovint «GPS» per referir-se al receptor o a qualsevol posicionament per satèl·lit, però la distinció ajuda a entendre que un telèfon pot combinar senyals de sistemes diferents.
 
 El receptor estima la distància als satèl·lits a partir del temps de propagació dels senyals. Per obtenir una posició tridimensional i corregir el desajust del rellotge del receptor necessita, en condicions ordinàries, observacions d'almenys quatre satèl·lits. El resultat depèn de la geometria dels satèl·lits visibles, l'atmosfera, els obstacles, els reflexos del senyal, el receptor i el mètode de correcció. Una coordenada obtinguda al carrer, per tant, no és una veritat exacta: ha d'anar acompanyada del sistema de referència, el moment de l'observació i una estimació de qualitat adequada a l'ús {% cite vanSickleBasicGISCoordinates2017 %}.
 
-GPS i SIG no són sinònims. Un receptor GNSS produeix posicions, tracks i marques temporals; un SIG les pot integrar amb carrers, municipis, allotjaments, relleu o indicadors per consultar-les i analitzar-les. Registrar la posició d'un recurs turístic és una operació de captura. Comprovar en quin municipi es troba, calcular-ne l'accessibilitat, detectar concentracions o combinar-lo amb dades de demanda són operacions SIG.
+GPS i SIG no són sinònims. Un receptor GNSS produeix posicions, traces i marques temporals; un SIG les pot integrar amb carrers, municipis, allotjaments, relleu o indicadors per consultar-les i analitzar-les. Registrar la posició d'un recurs turístic és una operació de captura. Comprovar en quin municipi es troba, calcular-ne l'accessibilitat, detectar concentracions o combinar-lo amb dades de demanda són operacions SIG.
 
 ## Què és un SIG
 
@@ -61,7 +61,7 @@ Aquesta definició diferencia tres nivells. **QGIS** és una aplicació informà
 
 Aquest esquema no és una seqüència temporal. La pregunta ocupa el centre perquè organitza el sistema, i els cinc components que l'envolten s'han d'interpretar com a parts interdependents, no com passos que cal seguir en l'ordre de les agulles del rellotge. Les connexions expressen relació; el contorn exterior del control de qualitat indica una responsabilitat transversal que afecta tots els components.
 
-Les **persones** formulen la pregunta, decideixen els criteris i interpreten els resultats. Les **dades** aporten geometries, atributs, temps i metadades. Els **mètodes** defineixen com es capturen, transformen, relacionen i validen. El **programari** implementa les operacions, des de QGIS fins a una base de dades o un servei web. La **infraestructura** inclou ordinadors, receptors, servidors, xarxes i emmagatzematge. El control de qualitat travessa tots cinc components: un algoritme correcte aplicat a una dada inadequada, o una dada precisa interpretada amb un criteri erroni, pot produir un resultat enganyós.
+Les **persones** formulen la pregunta, decideixen els criteris i interpreten els resultats. Les **dades** aporten geometries, atributs, temps i metadades. Els **mètodes** defineixen com es capturen, transformen, relacionen i validen. El **programari** implementa les operacions, des de QGIS fins a una base de dades o un servei web. La **infraestructura** inclou ordinadors, receptors, servidors, xarxes i emmagatzematge. El control de qualitat travessa tots cinc components: un algorisme correcte aplicat a una dada inadequada, o una dada precisa interpretada amb un criteri erroni, pot produir un resultat enganyós.
 
 ## Aplicacions i preguntes espacials
 
@@ -167,7 +167,7 @@ Algunes fonts no arriben com una capa de municipis, sinó com una taula amb coor
 
 La demostració de coordenades utilitzarà el Directori anual de centres docents de la Generalitat. Primer es filtraran els centres de Vila-seca per obtenir un conjunt petit i comprovable; després es podrà ampliar al Tarragonès per resumir recomptes municipals. La font conté coordenades ETRS89 / UTM 31N, longitud i latitud, adreça i codi municipal de sis dígits. El punt representa l'entrada del centre, no tota la parcel·la, la capacitat ni la població atesa.
 
-La mateixa taula es carregarà una vegada amb X/Y UTM i `EPSG:25831` i una altra amb longitud/latitud i `EPSG:4326`. Les dues capes han de coincidir després de la reprojecció al vol. La captura conservarà el diàleg de text delimitat amb els camps X i Y, el CRS d'origen i la previsualització de tipus; no cal capturar la capa ja carregada si el mapa exportat mostra millor el resultat.
+La mateixa taula es carregarà una vegada amb X/Y UTM i `EPSG:25831` i una altra amb longitud/latitud i `EPSG:4326`. Les dues capes han de coincidir després que QGIS les reprojecti dinàmicament al sistema de referència del projecte. La captura conservarà el diàleg de text delimitat amb els camps X i Y, el CRS d'origen i la previsualització de tipus; no cal capturar la capa ja carregada si el mapa exportat mostra millor el resultat.
 
 Com a ampliació de geocodificació s'utilitzarà un subconjunt reduït d'allotjaments convencionals de Vila-seca del Registre de Turisme de Catalunya. Es conservaran l'adreça original, el resultat retornat pel geocodificador de l'ICGC, els codis territorials, les coordenades i un estat d'èxit, ambigüitat o revisió manual. No s'inclouran noms de titulars ni altres camps personals que no siguin necessaris. El registre descriu oferta inscrita, no obertura, disponibilitat, ocupació o pernoctacions.
 
@@ -217,7 +217,7 @@ La verificació espacial identificarà municipis coneguts i contrastarà els seu
 
 Una unió configurada dins del projecte QGIS manté la dependència amb el CSV extern. És útil mentre el llibre i `map_export` continuen canviant, perquè la còpia de transferència es pot regenerar. Tanmateix, si el CSV es mou o canvia l'esquema, la unió es pot trencar.
 
-Només quan calgui compartir el resultat de manera portable fora del projecte, es podrà exportar una capa derivada a GeoPackage amb els camps ja units. Aquesta materialització és opcional i no converteix la capa en la font mestra dels indicadors: qualsevol correcció s'ha de fer al llibre, regenerar a `map_export` i repetir de manera controlada.
+Només quan calgui compartir el resultat fora del projecte, es podrà exportar una capa derivada a GeoPackage amb els camps ja units. Aquesta materialització és opcional i no converteix la capa en la font mestra dels indicadors: qualsevol correcció s'ha de fer al llibre, regenerar a `map_export` i repetir de manera controlada.
 
 ## Activitat: unir els indicadors de la comarca
 
@@ -289,6 +289,6 @@ El projecte s'ha de poder obrir i revisar sense perdre fitxers. S'utilitzarà el
 | `qgis` | Projecte QGIS continuat | Capa municipal, taula importada, unió, grups i rutes relatives |
 | `qgis` | Centres docents de Vila-seca i, si s'amplia, del Tarragonès | Camps X/Y, `EPSG:25831` i `EPSG:4326`, punts coincidents i codi municipal verificat |
 | `qgis` | Allotjaments geocodificats, com a ampliació | Adreça d'entrada, resultat, coordenades, codi territorial i estat de revisió, sense camps personals innecessaris |
-| `data/processed` o `qgis` | Capa materialitzada, només per compartir | Geometries i indicadors units en un GeoPackage derivat portable |
+| `data/processed` o `qgis` | Capa materialitzada, només per compartir | Geometries i indicadors units en un GeoPackage derivat fàcil de transferir |
 | `README.md` | Informe i evidència de pràctica | Claus, normalització, cardinalitat, recomptes, absències, tres casos contrastats i dues consultes amb recompte i codis |
 :::

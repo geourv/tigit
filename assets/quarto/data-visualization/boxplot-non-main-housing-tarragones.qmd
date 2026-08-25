@@ -1,5 +1,5 @@
 ---
-title: "Boxplot: distribució del percentatge d'habitatge no principal als municipis del Tarragonès"
+title: "Diagrama de caixa: distribució del percentatge d'habitatge no principal als municipis del Tarragonès"
 lang: ca
 ref: boxplot_non_main_housing
 format:

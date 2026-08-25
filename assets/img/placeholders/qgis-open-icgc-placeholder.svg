@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
-  <title id="title">QGIS Open ICGC screenshot placeholder</title>
-  <desc id="desc">Placeholder for a QGIS screenshot showing the Open ICGC plugin, background maps and administrative limits.</desc>
+  <title id="title">Marcador de captura de QGIS amb Open ICGC</title>
+  <desc id="desc">Marcador provisional per a una captura de QGIS que mostri el connector Open ICGC, els mapes de fons i els límits administratius.</desc>
   <rect width="960" height="540" fill="#eef4f0"/>
   <rect x="56" y="48" width="848" height="444" rx="12" fill="#ffffff" stroke="#b8c8be" stroke-width="3"/>
   <rect x="56" y="48" width="848" height="48" rx="12" fill="#2d4036"/>
@@ -22,5 +22,5 @@
   <path d="M386 396c58-72 120-96 188-70 52 20 96 10 132-30 46-52 86-60 126-24v124z" fill="#c8dfce"/>
   <path d="M386 396c64-42 124-46 180-12 64 38 124 28 180-30 34-36 62-46 86-30" fill="none" stroke="#4b8a66" stroke-width="7"/>
   <circle cx="684" cy="276" r="42" fill="#ffd166"/>
-  <text x="480" y="472" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="22" fill="#52645a">Fons de mapa, ortofoto i limits administratius</text>
+  <text x="480" y="472" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="22" fill="#52645a">Fons de mapa, ortofoto i límits administratius</text>
 </svg>

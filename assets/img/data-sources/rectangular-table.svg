@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="823" height="303" viewBox="87 84 823 303" role="img" aria-labelledby="title desc">
-  <title id="title">Taula rectangular per a l'analisi</title>
-  <desc id="desc">Esquema d'una taula analitica rectangular amb una sola fila de capcalera, una fila per municipi, variables en columnes i metadades separades.</desc>
+  <title id="title">Taula rectangular per a l'anàlisi</title>
+  <desc id="desc">Esquema d'una taula analítica rectangular amb una sola fila de capçalera, una fila per municipi, variables en columnes i metadades separades.</desc>
   <defs>
     <style>
       .head{fill:#dfeaf7}.good{fill:#eaf7ea;stroke:#4c956c;stroke-width:3}.side{fill:#fff8e6;stroke:#d49a00;stroke-width:2}.text{font-family:Arial, sans-serif;fill:#1f2933;font-size:18px}.small{font-size:15px}.tiny{font-size:13px}.label{font-weight:700}.grid{stroke:#c8d0dc;stroke-width:1}

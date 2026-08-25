@@ -86,7 +86,7 @@
   <rect x="906" y="550" width="78" height="42" class="swatch" fill="#feb078"/>
   <rect x="984" y="550" width="78" height="42" class="swatch" fill="#fcfdbf"/>
   <text x="74" y="630" class="name">cividis</text>
-  <text x="252" y="623" class="kind">uniforme i CVD</text>
+  <text x="252" y="623" class="kind">seqüencial uniforme</text>
   <text x="252" y="646" class="use">optimitzada per al daltonisme roig-verd</text>
   <rect x="516" y="604" width="78" height="42" class="swatch" fill="#00224e"/>
   <rect x="594" y="604" width="78" height="42" class="swatch" fill="#2a3f6d"/>

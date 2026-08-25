@@ -1,5 +1,5 @@
 ---
-title: "Alluvial: supervivència al Titanic per classe i sexe"
+title: "Diagrama al·luvial: supervivència al Titanic per classe i sexe"
 lang: ca
 ref: alluvial_titanic_survival
 format:
@@ -89,4 +89,4 @@ dir.create(dirname(output), showWarnings = FALSE, recursive = TRUE)
 ggsave(output, fig, width = 9, height = 6, device = svglite::svglite)
 ```
 
-![Alluvial de les persones a bord del Titanic per classe, sexe i supervivència, amb el conjunt `Titanic` de la base de R]({{ site.baseurl }}/assets/img/data-visualization/alluvial-titanic-demo.svg "Cada columna és una variable i l'ample dels fluxos codifica el recompte de persones; als extrems de cada columna es llegeix el total per categoria. Exemple amb el conjunt de dades «Titanic» de la base de R."){: data-figure-width="50rem"}
+![Diagrama al·luvial de les persones a bord del Titanic per classe, sexe i supervivència, amb el conjunt `Titanic` de la base de R]({{ site.baseurl }}/assets/img/data-visualization/alluvial-titanic-demo.svg "Cada columna és una variable i l'ample dels fluxos codifica el recompte de persones; als extrems de cada columna es llegeix el total per categoria. Exemple amb el conjunt de dades «Titanic» de la base de R."){: data-figure-width="50rem"}

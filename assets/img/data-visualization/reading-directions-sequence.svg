@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="reading-title reading-desc">
+  <title id="reading-title">Direccions de lectura i seq&#x00FC;&#x00E8;ncies expl&#x00ED;cites</title>
+  <desc id="reading-desc">La part superior compara tend&#x00E8;ncies de lectura d'esquerra a dreta i de dreta a esquerra com a convencions culturals, no universals. La part inferior contrasta blocs pr&#x00F2;xims d'ordre ambigu amb una seq&#x00FC;&#x00E8;ncia obligat&#x00F2;ria numerada de l'u al quatre.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f7f9fa; }
+      .panel { fill: #ffffff; stroke: #cbd6dc; stroke-width: 2; }
+      .ink { fill: #17202a; font-family: Arial, 'Liberation Sans', sans-serif; }
+      .muted { fill: #52616b; font-family: Arial, 'Liberation Sans', sans-serif; }
+      .section-title { fill: #17202a; font: 700 22px Arial, 'Liberation Sans', sans-serif; }
+      .subtitle { fill: #52616b; font: 16px Arial, 'Liberation Sans', sans-serif; }
+      .label { fill: #17202a; font: 700 17px Arial, 'Liberation Sans', sans-serif; }
+      .body { fill: #17202a; font: 16px Arial, 'Liberation Sans', sans-serif; }
+      .line-block { fill: #dbe8ec; }
+      .line-key { fill: #8fbdd0; }
+      .read-path { fill: none; stroke: #16697a; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; }
+      .step { fill: #eef4f5; stroke: #16697a; stroke-width: 2; }
+      .step-number { fill: #ffffff; font: 700 20px Arial, 'Liberation Sans', sans-serif; text-anchor: middle; dominant-baseline: middle; }
+      .step-label { fill: #17202a; font: 700 16px Arial, 'Liberation Sans', sans-serif; text-anchor: middle; }
+    </style>
+    <marker id="read-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#16697a"/>
+    </marker>
+    <marker id="sequence-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#365b6d"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="680" class="bg"/>
+  <g id="heading" class="ink">
+    <text x="40" y="40" font-size="28" font-weight="700">Direcci&#x00F3; de lectura i ordre visual</text>
+    <rect x="40" y="55" width="1120" height="34" rx="5" fill="#fff3d8" stroke="#d8b45c"/>
+    <text x="600" y="78" text-anchor="middle" font-size="16">S&#x00F3;n convencions i tend&#x00E8;ncies culturals, no regles universals: depenen de la llengua, el context i el disseny.</text>
+  </g>
+
+  <g id="left-to-right-panel" aria-label="Tend&#x00E8;ncia de lectura d'esquerra a dreta">
+    <rect x="40" y="108" width="540" height="220" rx="8" class="panel"/>
+    <text x="62" y="141" class="section-title">Catal&#x00E0; i alfabet llat&#x00ED;</text>
+    <text x="62" y="166" class="subtitle">Tend&#x00E8;ncia freq&#x00FC;ent: esquerra &#x2192; dreta, dalt &#x2192; baix</text>
+    <g id="latin-page" transform="translate(66 184)">
+      <rect width="488" height="119" rx="5" fill="#f7f9fa" stroke="#9fb0b8"/>
+      <rect x="18" y="17" width="190" height="13" rx="3" class="line-key"/>
+      <rect x="18" y="42" width="432" height="9" rx="3" class="line-block"/>
+      <rect x="18" y="59" width="378" height="9" rx="3" class="line-block"/>
+      <rect x="18" y="84" width="420" height="9" rx="3" class="line-block"/>
+      <rect x="18" y="101" width="332" height="9" rx="3" class="line-block"/>
+      <path d="M28 36 H443 C458 36 458 62 443 62 H30 C15 62 15 94 30 94 H432" class="read-path" marker-end="url(#read-arrow)"/>
+      <circle cx="28" cy="36" r="7" fill="#d0523c"/>
+    </g>
+  </g>
+
+  <g id="right-to-left-panel" aria-label="Convenci&#x00F3; d'escriptura de dreta a esquerra">
+    <rect x="620" y="108" width="540" height="220" rx="8" class="panel"/>
+    <text x="642" y="141" class="section-title">Escriptura de dreta a esquerra</text>
+    <text x="642" y="166" class="subtitle">Convenci&#x00F3; cultural: dreta &#x2192; esquerra dins la l&#x00ED;nia</text>
+    <g id="rtl-page" transform="translate(646 184)">
+      <rect width="488" height="119" rx="5" fill="#f7f9fa" stroke="#9fb0b8"/>
+      <rect x="280" y="17" width="190" height="13" rx="3" class="line-key"/>
+      <rect x="38" y="42" width="432" height="9" rx="3" class="line-block"/>
+      <rect x="92" y="59" width="378" height="9" rx="3" class="line-block"/>
+      <rect x="50" y="84" width="420" height="9" rx="3" class="line-block"/>
+      <rect x="138" y="101" width="332" height="9" rx="3" class="line-block"/>
+      <path d="M460 36 H45 C30 36 30 62 45 62 H458 C473 62 473 94 458 94 H56" class="read-path" marker-end="url(#read-arrow)"/>
+      <circle cx="460" cy="36" r="7" fill="#d0523c"/>
+    </g>
+  </g>
+
+  <g id="sequence-heading" class="ink">
+    <text x="40" y="371" font-size="24" font-weight="700">Quan l'ordre &#x00E9;s obligatori, cal fer-lo visible</text>
+    <text x="40" y="396" font-size="16" fill="#52616b">La proximitat agrupa elements, per&#x00F2; no defineix necess&#x00E0;riament una seq&#x00FC;&#x00E8;ncia.</text>
+  </g>
+
+  <g id="ambiguous-panel" aria-label="Blocs pr&#x00F2;xims amb ordre ambigu">
+    <rect x="40" y="414" width="540" height="228" rx="8" class="panel"/>
+    <text x="62" y="448" class="section-title">Blocs pr&#x00F2;xims: ordre ambigu</text>
+    <text x="62" y="473" class="subtitle">La posici&#x00F3; sola permet recorreguts diferents.</text>
+    <g id="ambiguous-blocks">
+      <rect x="80" y="499" width="170" height="51" rx="6" fill="#eef4f5" stroke="#9fb0b8" stroke-width="2"/>
+      <rect x="370" y="499" width="170" height="51" rx="6" fill="#eef4f5" stroke="#9fb0b8" stroke-width="2"/>
+      <rect x="80" y="567" width="170" height="51" rx="6" fill="#eef4f5" stroke="#9fb0b8" stroke-width="2"/>
+      <rect x="370" y="567" width="170" height="51" rx="6" fill="#eef4f5" stroke="#9fb0b8" stroke-width="2"/>
+      <g class="label" text-anchor="middle">
+        <text x="165" y="531">Triar</text>
+        <text x="455" y="531">Filtrar</text>
+        <text x="165" y="599">Comparar</text>
+        <text x="455" y="599">Decidir</text>
+      </g>
+      <circle cx="310" cy="558" r="25" fill="#fff3d8" stroke="#d8b45c" stroke-width="2"/>
+      <text x="310" y="566" text-anchor="middle" class="ink" font-size="26" font-weight="700">?</text>
+    </g>
+  </g>
+
+  <g id="explicit-panel" aria-label="Seq&#x00FC;&#x00E8;ncia obligat&#x00F2;ria expl&#x00ED;cita">
+    <rect x="620" y="414" width="540" height="228" rx="8" class="panel"/>
+    <text x="642" y="448" class="section-title">Seq&#x00FC;&#x00E8;ncia obligat&#x00F2;ria: ordre expl&#x00ED;cit</text>
+    <text x="642" y="473" class="subtitle">N&#x00FA;meros i fletxes fixen l'inici, els passos i el final.</text>
+    <g id="explicit-steps">
+      <line x1="754" y1="552" x2="782" y2="552" stroke="#365b6d" stroke-width="3" marker-end="url(#sequence-arrow)"/>
+      <line x1="884" y1="552" x2="912" y2="552" stroke="#365b6d" stroke-width="3" marker-end="url(#sequence-arrow)"/>
+      <line x1="1014" y1="552" x2="1042" y2="552" stroke="#365b6d" stroke-width="3" marker-end="url(#sequence-arrow)"/>
+
+      <g id="step-1">
+        <rect x="646" y="509" width="108" height="86" rx="7" class="step"/>
+        <circle cx="670" cy="529" r="17" fill="#16697a"/>
+        <text x="670" y="529" class="step-number">1</text>
+        <text x="700" y="568" class="step-label">Triar</text>
+      </g>
+      <g id="step-2">
+        <rect x="776" y="509" width="108" height="86" rx="7" class="step"/>
+        <circle cx="800" cy="529" r="17" fill="#16697a"/>
+        <text x="800" y="529" class="step-number">2</text>
+        <text x="830" y="568" class="step-label">Filtrar</text>
+      </g>
+      <g id="step-3">
+        <rect x="906" y="509" width="108" height="86" rx="7" class="step"/>
+        <circle cx="930" cy="529" r="17" fill="#16697a"/>
+        <text x="930" y="529" class="step-number">3</text>
+        <text x="960" y="568" class="step-label">Comparar</text>
+      </g>
+      <g id="step-4">
+        <rect x="1036" y="509" width="108" height="86" rx="7" class="step"/>
+        <circle cx="1060" cy="529" r="17" fill="#d0523c"/>
+        <text x="1060" y="529" class="step-number">4</text>
+        <text x="1090" y="568" class="step-label">Decidir</text>
+      </g>
+      <text x="646" y="620" class="body">Inici</text>
+      <text x="1144" y="620" text-anchor="end" class="body">Final</text>
+    </g>
+  </g>
+</svg>

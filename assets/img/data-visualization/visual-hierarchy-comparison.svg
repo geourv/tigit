@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650" role="img" aria-labelledby="hierarchy-title hierarchy-desc">
+  <title id="hierarchy-title">Comparaci&#x00F3; de tres jerarquies visuals</title>
+  <desc id="hierarchy-desc">El mateix t&#x00ED;tol, indicador, gr&#x00E0;fic, anotaci&#x00F3; i font es mostren amb una composici&#x00F3; plana, una jerarquia coherent i una composici&#x00F3; saturada.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f7f9fa; }
+      .panel { fill: #ffffff; stroke: #cbd6dc; stroke-width: 2; }
+      .ink { fill: #17202a; font-family: 'DejaVu Sans', Arial, sans-serif; }
+      .muted { fill: #52616b; font-family: 'DejaVu Sans', Arial, sans-serif; }
+      .panel-title { fill: #17202a; font: 700 23px 'DejaVu Sans', Arial, sans-serif; text-anchor: middle; }
+      .flat-text { fill: #365b6d; font: 18px 'DejaVu Sans', Arial, sans-serif; }
+      .coherent-title { fill: #17202a; font: 700 27px 'DejaVu Sans', Arial, sans-serif; }
+      .coherent-metric { fill: #16697a; font: 700 58px 'DejaVu Sans', Arial, sans-serif; }
+      .coherent-label { fill: #52616b; font: 17px 'DejaVu Sans', Arial, sans-serif; }
+      .coherent-note { fill: #17202a; font: 700 18px 'DejaVu Sans', Arial, sans-serif; }
+      .source { fill: #52616b; font: 15px 'DejaVu Sans', Arial, sans-serif; }
+      .sat-text { fill: #17202a; font-family: 'DejaVu Sans', Arial, sans-serif; font-weight: 700; }
+      .axis { stroke: #9fb0b8; stroke-width: 1.5; }
+      .bar { fill: #8fbdd0; }
+      .bar-key { fill: #16697a; }
+    </style>
+    <pattern id="sat-pattern" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="5" height="10" fill="#f2b544"/>
+      <rect x="5" width="5" height="10" fill="#fff3d8"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="650" class="bg"/>
+  <g id="heading" class="ink">
+    <text x="40" y="42" font-size="28" font-weight="700">Jerarquia visual: guiar la mirada sense afegir contingut</text>
+    <text x="40" y="68" font-size="17" fill="#52616b">Mateixos blocs, per&#x00F2; mida, contrast i espai diferents</text>
+  </g>
+
+  <g id="flat-panel" aria-label="Composici&#x00F3; plana">
+    <rect x="30" y="92" width="360" height="520" rx="8" class="panel"/>
+    <text x="210" y="127" class="panel-title">Composici&#x00F3; plana</text>
+    <line x1="48" y1="146" x2="372" y2="146" stroke="#cbd6dc" stroke-width="1.5"/>
+
+    <g id="flat-content" class="flat-text">
+      <rect x="52" y="166" width="316" height="54" fill="#eef2f4" stroke="#9fb0b8"/>
+      <text x="68" y="199">Ocupaci&#x00F3; tur&#x00ED;stica</text>
+      <rect x="52" y="231" width="316" height="54" fill="#eef2f4" stroke="#9fb0b8"/>
+      <text x="68" y="264">72%</text>
+      <rect x="52" y="296" width="316" height="150" fill="#eef2f4" stroke="#9fb0b8"/>
+      <g transform="translate(74 316)">
+        <line x1="0" y1="93" x2="254" y2="93" class="axis"/>
+        <rect x="15" y="48" width="38" height="45" fill="#78919c"/>
+        <rect x="77" y="35" width="38" height="58" fill="#78919c"/>
+        <rect x="139" y="10" width="38" height="83" fill="#78919c"/>
+        <rect x="201" y="24" width="38" height="69" fill="#78919c"/>
+        <g text-anchor="middle" class="flat-text" font-size="16">
+          <text x="34" y="117">Juny</text><text x="96" y="117">Jul.</text>
+          <text x="158" y="117">Ag.</text><text x="220" y="117">Set.</text>
+        </g>
+      </g>
+      <rect x="52" y="457" width="316" height="54" fill="#eef2f4" stroke="#9fb0b8"/>
+      <text x="68" y="490">M&#x00E0;xim a l'agost</text>
+      <rect x="52" y="522" width="316" height="54" fill="#eef2f4" stroke="#9fb0b8"/>
+      <text x="68" y="555">Font: dades simulades</text>
+    </g>
+    <text x="210" y="598" text-anchor="middle" class="muted" font-size="16">Tot competeix amb el mateix pes</text>
+  </g>
+
+  <g id="coherent-panel" aria-label="Jerarquia coherent">
+    <rect x="420" y="92" width="360" height="520" rx="8" class="panel"/>
+    <text x="600" y="127" class="panel-title">Jerarquia coherent</text>
+    <line x1="438" y1="146" x2="762" y2="146" stroke="#cbd6dc" stroke-width="1.5"/>
+
+    <g id="coherent-content">
+      <text x="452" y="179" class="coherent-label" font-weight="700">NIVELL 1 &#x00B7; DADA CLAU</text>
+      <text x="452" y="215" class="coherent-title">Ocupaci&#x00F3; tur&#x00ED;stica</text>
+      <text x="452" y="278" class="coherent-metric">72%</text>
+
+      <text x="452" y="319" class="coherent-label" font-weight="700">NIVELL 2 &#x00B7; COMPARACI&#x00D3;</text>
+      <g transform="translate(468 337)">
+        <line x1="0" y1="112" x2="270" y2="112" class="axis"/>
+        <rect x="15" y="61" width="40" height="51" class="bar"/>
+        <rect x="80" y="44" width="40" height="68" class="bar"/>
+        <rect x="145" y="12" width="40" height="100" class="bar-key"/>
+        <rect x="210" y="27" width="40" height="85" class="bar"/>
+        <g text-anchor="middle" class="muted" font-size="15">
+          <text x="35" y="135">Juny</text><text x="100" y="135">Jul.</text>
+          <text x="165" y="135">Ag.</text><text x="230" y="135">Set.</text>
+        </g>
+      </g>
+
+      <text x="452" y="508" class="coherent-label" font-weight="700">NIVELL 3 &#x00B7; CONTEXT</text>
+      <circle cx="462" cy="536" r="6" fill="#d0523c"/>
+      <text x="478" y="542" class="coherent-note">M&#x00E0;xim a l'agost</text>
+      <text x="452" y="574" class="source">Font: dades simulades</text>
+    </g>
+    <text x="600" y="591" text-anchor="middle" class="muted" font-size="14">Primer, la dada; despr&#x00E9;s, el patr&#x00F3;;</text>
+    <text x="600" y="608" text-anchor="middle" class="muted" font-size="14">finalment, el detall.</text>
+  </g>
+
+  <g id="saturated-panel" aria-label="Composici&#x00F3; saturada">
+    <rect x="810" y="92" width="360" height="520" rx="8" fill="#fff8e8" stroke="#d0523c" stroke-width="4"/>
+    <rect x="820" y="102" width="340" height="45" fill="#16697a" stroke="#17202a" stroke-width="2"/>
+    <text x="990" y="133" text-anchor="middle" fill="#ffffff" font-family="Arial, 'Liberation Sans', sans-serif" font-size="23" font-weight="700">Saturaci&#x00F3;</text>
+
+    <g id="saturated-content">
+      <rect x="828" y="161" width="324" height="59" rx="7" fill="#f2b544" stroke="#8c3225" stroke-width="3"/>
+      <rect x="833" y="166" width="314" height="49" rx="4" fill="none" stroke="#ffffff" stroke-width="2"/>
+      <text x="847" y="199" class="sat-text" font-size="23">Ocupaci&#x00F3; tur&#x00ED;stica</text>
+
+      <rect x="828" y="230" width="324" height="70" rx="7" fill="#b9dce4" stroke="#16697a" stroke-width="3"/>
+      <text x="847" y="280" class="sat-text" font-size="42">72%</text>
+      <path d="M1070 246 l13 13 27 -30" fill="none" stroke="#d0523c" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+
+      <rect x="828" y="310" width="324" height="161" rx="7" fill="url(#sat-pattern)" stroke="#17202a" stroke-width="3"/>
+      <g transform="translate(854 329)">
+        <line x1="0" y1="104" x2="270" y2="104" stroke="#17202a" stroke-width="3"/>
+        <rect x="15" y="58" width="42" height="46" fill="#16697a" stroke="#17202a" stroke-width="2"/>
+        <rect x="80" y="42" width="42" height="62" fill="#d0523c" stroke="#17202a" stroke-width="2"/>
+        <rect x="145" y="8" width="42" height="96" fill="#6f8f32" stroke="#17202a" stroke-width="2"/>
+        <rect x="210" y="24" width="42" height="80" fill="#c58a18" stroke="#17202a" stroke-width="2"/>
+        <g text-anchor="middle" class="sat-text" font-size="15">
+          <text x="36" y="126">Juny</text><text x="101" y="126">Jul.</text>
+          <text x="166" y="126">Ag.</text><text x="231" y="126">Set.</text>
+        </g>
+      </g>
+
+      <rect x="828" y="481" width="324" height="49" rx="7" fill="#ffd9d0" stroke="#d0523c" stroke-width="3"/>
+      <text x="990" y="513" text-anchor="middle" class="sat-text" font-size="19">M&#x00C0;XIM A L'AGOST!</text>
+      <rect x="828" y="540" width="324" height="43" rx="7" fill="#dce9c4" stroke="#6f8f32" stroke-width="3"/>
+      <text x="990" y="568" text-anchor="middle" class="sat-text" font-size="16">FONT: DADES SIMULADES</text>
+    </g>
+    <text x="990" y="603" text-anchor="middle" class="muted" font-size="16">Tot reclama atenci&#x00F3; alhora</text>
+  </g>
+</svg>

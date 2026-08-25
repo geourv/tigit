@@ -3,7 +3,7 @@
   <desc id="desc">Cronologia en sis etapes que relaciona anàlisi espacial, primers SIG, bases de dades, SIG d'escriptori, navegació per satèl·lit, web, programari lliure, mòbils i núvol.</desc>
   <defs>
     <style>
-      .year { font: 700 19px Arial, sans-serif; fill: #ffffff; }
+      .year { font: 700 14px Arial, sans-serif; fill: #ffffff; }
       .stage { font: 700 18px Arial, sans-serif; fill: #17202a; }
       .body { font: 15px Arial, sans-serif; fill: #334155; }
     </style>
@@ -21,35 +21,35 @@
 
   <g>
     <circle cx="125" cy="230" r="34" fill="#b8403b"/>
-    <text class="year" x="125" y="237" text-anchor="middle">1950s</text>
+    <text class="year" x="125" y="237" text-anchor="middle">1950–59</text>
     <line x1="125" y1="196" x2="125" y2="204" stroke="#b8403b" stroke-width="4"/>
     <text class="stage" x="125" y="142" text-anchor="middle">Anàlisi espacial</text>
     <text class="body" x="125" y="168" text-anchor="middle">geografia quantitativa</text>
     <text class="body" x="125" y="188" text-anchor="middle">i primers ordinadors</text>
 
     <circle cx="323" cy="230" r="34" fill="#d47b36"/>
-    <text class="year" x="323" y="237" text-anchor="middle">1960s</text>
+    <text class="year" x="323" y="237" text-anchor="middle">1960–69</text>
     <line x1="323" y1="264" x2="323" y2="256" stroke="#d47b36" stroke-width="4"/>
     <text class="stage" x="323" y="286" text-anchor="middle">Primers SIG</text>
     <text class="body" x="323" y="312" text-anchor="middle">CGIS i inventaris</text>
     <text class="body" x="323" y="332" text-anchor="middle">territorials institucionals</text>
 
     <circle cx="521" cy="230" r="34" fill="#b79b34"/>
-    <text class="year" x="521" y="237" text-anchor="middle">70-80</text>
+    <text class="year" x="521" y="237" text-anchor="middle">1970–89</text>
     <line x1="521" y1="196" x2="521" y2="204" stroke="#b79b34" stroke-width="4"/>
-    <text class="stage" x="521" y="142" text-anchor="middle">Dades i algoritmes</text>
+    <text class="stage" x="521" y="142" text-anchor="middle">Dades i algorismes</text>
     <text class="body" x="521" y="168" text-anchor="middle">bases de dades, ràster</text>
     <text class="body" x="521" y="188" text-anchor="middle">i anàlisi espacial</text>
 
     <circle cx="719" cy="230" r="34" fill="#37856f"/>
-    <text class="year" x="719" y="237" text-anchor="middle">1990s</text>
+    <text class="year" x="719" y="237" text-anchor="middle">1990–99</text>
     <line x1="719" y1="264" x2="719" y2="256" stroke="#37856f" stroke-width="4"/>
     <text class="stage" x="719" y="286" text-anchor="middle">SIG d'escriptori</text>
     <text class="body" x="719" y="312" text-anchor="middle">ordinadors personals,</text>
     <text class="body" x="719" y="332" text-anchor="middle">interfícies i nous sectors</text>
 
     <circle cx="917" cy="230" r="34" fill="#21757b"/>
-    <text class="year" x="917" y="237" text-anchor="middle">2000s</text>
+    <text class="year" x="917" y="237" text-anchor="middle">2000–09</text>
     <line x1="917" y1="196" x2="917" y2="204" stroke="#21757b" stroke-width="4"/>
     <text class="stage" x="917" y="142" text-anchor="middle">Web, GNSS i codi obert</text>
     <text class="body" x="917" y="168" text-anchor="middle">serveis interoperables,</text>

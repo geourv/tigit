@@ -77,7 +77,7 @@ rows = [
     {
         "family": "Paletes científiques",
         "name": "cividis",
-        "kind": "uniforme i CVD",
+        "kind": "seqüencial uniforme",
         "use": "optimitzada per al daltonisme roig-verd",
         "colors": ["#00224e", "#2a3f6d", "#575d6d", "#7d7c78", "#a59c74", "#d2c060", "#fee838"],
     },

@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1044" height="590" viewBox="0 0 1044 590" role="img" aria-labelledby="title desc">
   <title id="title">Comparació de famílies i variants tipogràfiques amb el topònim Vila-seca</title>
-  <desc id="desc">La mateixa etiqueta Vila-seca es mostra amb una família sans serif, una família serif i una família monoespaiada, i després en regular, negreta, cursiva i negreta cursiva dins de DejaVu Sans.</desc>
+  <desc id="desc">La mateixa etiqueta Vila-seca es mostra amb una família de pal sec, una família amb serifa i una família monoespaiada, i després en rodona, negreta, cursiva i negreta cursiva dins de DejaVu Sans.</desc>
   <defs>
     <style>
       .panel { fill: #ffffff; stroke: #d5dde2; stroke-width: 1.5; }
@@ -24,7 +24,7 @@
 
   <g transform="translate(20 52)">
     <rect width="1004" height="94" rx="4" class="card"/>
-    <text x="18" y="34" class="kind">SANS SERIF</text>
+    <text x="18" y="34" class="kind">PAL SEC</text>
     <text x="18" y="59" class="family">DejaVu Sans</text>
     <line x1="190" y1="14" x2="190" y2="80" stroke="#d5dde2" stroke-width="1.4"/>
     <text x="220" y="61" class="sans">Vila-seca</text>
@@ -33,7 +33,7 @@
 
   <g transform="translate(20 156)">
     <rect width="1004" height="94" rx="4" class="card"/>
-    <text x="18" y="34" class="kind">SERIF</text>
+    <text x="18" y="34" class="kind">AMB SERIFA</text>
     <text x="18" y="59" class="family">DejaVu Serif</text>
     <line x1="190" y1="14" x2="190" y2="80" stroke="#d5dde2" stroke-width="1.4"/>
     <text x="220" y="61" class="serif">Vila-seca</text>
@@ -53,7 +53,7 @@
 
   <g transform="translate(20 410)">
     <rect width="241" height="122" rx="4" class="card"/>
-    <text x="16" y="28" class="kind">REGULAR</text>
+    <text x="16" y="28" class="kind">RODONA REGULAR</text>
     <text x="16" y="82" class="variant" font-weight="400">Vila-seca</text>
   </g>
   <g transform="translate(274 410)">

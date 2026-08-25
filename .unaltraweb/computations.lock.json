@@ -92,7 +92,7 @@
       "dependencies": [
         {
           "path": "assets/quarto/cartographic-language/terrain-relief-volcano.qmd",
-          "sha256": "94fbbb8770b7e7d855ccd55a0c6c81360158aabc56efce7040326ce72aea879a"
+          "sha256": "a864f45b3fb9f0629b76fa857ed9e21a9d0445adb77a0eb005f7e650fc84a810"
         },
         {
           "path": "Dockerfile.compute-r",
@@ -108,7 +108,7 @@
         }
       ],
       "engine": "r",
-      "fingerprint": "be2599556bf1bd4b7f5609b4d6f281db4d2b8442e3fd6596dd4863292f47ea9d",
+      "fingerprint": "bc43e93c452a99568a316da9e2a86a033289bf5d07427fff8e4e99a48ec67e3c",
       "image": {
         "engine": "r",
         "environment": "local",
@@ -129,17 +129,17 @@
         },
         {
           "path": "assets/img/cartographic-language/contour-profile-volcano.svg",
-          "sha256": "484b8d7c6b2d163f996369baed787b66ca2ba573803595d6a4bdb24184d39be7",
-          "size": 44502
+          "sha256": "6ae860b83fd9eb0b87378ae6f9414d0a46c647028f29fe2b7d7cc5619ebe22f5",
+          "size": 44517
         }
       ],
-      "rendered_at": "2026-08-23T22:47:18+00:00"
+      "rendered_at": "2026-08-24T21:47:35+00:00"
     },
     "assets/quarto/color-cartography/palette-reference-swatches.qmd": {
       "dependencies": [
         {
           "path": "assets/quarto/color-cartography/palette-reference-swatches.qmd",
-          "sha256": "1f9d650516a41222a8fc8e62f27754b90a53ec19b715ca0a2583e38d809a16ae"
+          "sha256": "fd0566f85263d36a06552ea390e93462d6938e5450c6bb55520404aa37a83ab9"
         },
         {
           "path": "Dockerfile.compute-python",
@@ -155,7 +155,7 @@
         }
       ],
       "engine": "python",
-      "fingerprint": "2381817a836fc86c8c74c6871b33ab6be3316a909f60f3ba062c9528bf1cda2a",
+      "fingerprint": "f15f3bb0ec08edfadb3f52aba0637bb90e34c07637676596ab4ee62c1837914c",
       "image": {
         "engine": "python",
         "environment": "local",
@@ -171,11 +171,11 @@
       "outputs": [
         {
           "path": "assets/img/color-cartography/palette-reference-swatches.svg",
-          "sha256": "16098d4c9bc41a34fbfb598332c9d3a9a65b715e225b8fa4be91c3347c22c962",
-          "size": 7030
+          "sha256": "ddb92dc6a95726fe1bac1fc3993d1498951b1833d00d37f077ca1ec6685361f4",
+          "size": 7036
         }
       ],
-      "rendered_at": "2026-08-19T20:29:23+00:00"
+      "rendered_at": "2026-08-24T21:47:20+00:00"
     },
     "assets/quarto/data-visualization/age-structure-tarragones.qmd": {
       "dependencies": [
@@ -273,7 +273,7 @@
       "dependencies": [
         {
           "path": "assets/quarto/data-visualization/alluvial-titanic-survival.qmd",
-          "sha256": "f061add2c2ffd053d559ce6cf12a9036977ae9db4dc41d647a5596564764b4d6"
+          "sha256": "8a162485fd3bedfde1ac3390d39e736d3c68f80db3cf439eeaa632c4f47481ae"
         },
         {
           "path": "Dockerfile.compute-r",
@@ -289,7 +289,7 @@
         }
       ],
       "engine": "r",
-      "fingerprint": "f645d6f595a0664f2a6732b0c9d17256bf3b2a824c096c550986459088c8f151",
+      "fingerprint": "61ecba2c88d51bd07e335945c39698fec10fe69254046da659e4d9c82f340e48",
       "image": {
         "engine": "r",
         "environment": "local",
@@ -309,13 +309,13 @@
           "size": 227456
         }
       ],
-      "rendered_at": "2026-08-23T22:47:28+00:00"
+      "rendered_at": "2026-08-24T21:47:40+00:00"
     },
     "assets/quarto/data-visualization/boxplot-non-main-housing-tarragones.qmd": {
       "dependencies": [
         {
           "path": "assets/quarto/data-visualization/boxplot-non-main-housing-tarragones.qmd",
-          "sha256": "12e17f8dcac6602e244155e21c760cbfcff4087f50c4b165c60bb8cf778504ed"
+          "sha256": "c4975229ca16866a1471e0258d6ed3036575e258cb63f6fdbc6fa5295388cb7b"
         },
         {
           "path": "_practices/tigit-projecte-territorial/data/processed/municipal-indicators-tarragones-2021.csv",
@@ -335,7 +335,7 @@
         }
       ],
       "engine": "r",
-      "fingerprint": "219e7f647980a352eba91e6262bd9a29241d8d063331d036f0f22845a8711234",
+      "fingerprint": "854408bdc34dc0719aee6aafb805f2899883d721b4d5c64f154c24bb91c96ca8",
       "image": {
         "engine": "r",
         "environment": "local",
@@ -355,13 +355,13 @@
           "size": 8916
         }
       ],
-      "rendered_at": "2026-08-23T22:47:31+00:00"
+      "rendered_at": "2026-08-24T21:47:44+00:00"
     },
     "assets/quarto/data-visualization/boxplot-species-iris.qmd": {
       "dependencies": [
         {
           "path": "assets/quarto/data-visualization/boxplot-species-iris.qmd",
-          "sha256": "8740922354763c834800835d0a9af60a44182bd464afa82744d14a0fe54092fc"
+          "sha256": "5827c93121dc9ad9d5ae57a78027830bb1e6d8289c89ccf9883ad7346a0d6a7b"
         },
         {
           "path": "Dockerfile.compute-r",
@@ -377,7 +377,7 @@
         }
       ],
       "engine": "r",
-      "fingerprint": "8e336dd9659ef55d1dc36a48c7cb97ca1189a43f40f427e225024b8d36c7b23d",
+      "fingerprint": "96bdb4a72641bd769164a2f367cf9675bfcee64179de2e92f20b6b257336f550",
       "image": {
         "engine": "r",
         "environment": "local",
@@ -397,7 +397,7 @@
           "size": 29034
         }
       ],
-      "rendered_at": "2026-08-23T22:47:34+00:00"
+      "rendered_at": "2026-08-24T21:47:48+00:00"
     },
     "assets/quarto/data-visualization/housing-donut-tarragones.qmd": {
       "dependencies": [
@@ -767,7 +767,7 @@
       "dependencies": [
         {
           "path": "assets/quarto/data-visualization/treemap-allotjament-vilaseca.qmd",
-          "sha256": "49e3048a1079c09346dbaf044e51f3834d5d3e41293825e7d6e9382c768dd725"
+          "sha256": "a1c0c589b8476ff1fea2de7742d3b6e7ab8de057c0fed01137f22c2ba18df9b0"
         },
         {
           "path": "_practices/tigit-projecte-territorial/data/processed/tourism-accommodation-vila-seca-geocoding.csv",
@@ -787,7 +787,7 @@
         }
       ],
       "engine": "r",
-      "fingerprint": "870ea79475a1e69fd07716bb4f86626d503f4b0d3b4af4a0f810a32b0c977c7b",
+      "fingerprint": "2d240615cc127d497d016a44e046ce846939595fa4a956e0f9b2a69feb698414",
       "image": {
         "engine": "r",
         "environment": "local",
@@ -807,7 +807,7 @@
           "size": 12093
         }
       ],
-      "rendered_at": "2026-08-23T22:47:57+00:00"
+      "rendered_at": "2026-08-24T21:47:52+00:00"
     },
     "assets/quarto/thematic-cartography/choropleth-housing-absolute-bad.qmd": {
       "dependencies": [
