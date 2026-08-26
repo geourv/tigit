@@ -48,7 +48,7 @@ El mètode s'ha de decidir abans de la paleta. Un **mapa de coropletes** represe
 
 En termes de semiologia gràfica, cada mètode combina un tipus de marca amb una variable visual dominant. Una coropleta utilitza marques superficials i les ordena amb valor o color seqüencial; els símbols proporcionals utilitzen marques puntuals i codifiquen la magnitud amb la mida; un mapa de fluxos treballa amb marques lineals i pot variar amplada, direcció o valor; i una isolínia confia sobretot en la posició i la separació entre línies. Aquesta traducció ajuda a veure per què la paleta no pot decidir-se sola: abans cal saber quin signe farà la feina principal.
 
-### De la variable visual a la implantació cartogràfica
+### Implantació cartogràfica i variables visuals
 
 La [matriu general de marques i canals del capítol 3]({{ site.baseurl }}/ca/chapters/semiologia-visualitzacio/#canals-visuals-i-tasques-de-lectura) mostra combinacions formalment possibles. En cartografia, la **implantació** concreta com existeix el fenomen al mapa: un local es pot representar com un punt, un tram de carrer com una línia i un barri com una àrea. Canviar d'implantació no és aplicar un altre estil a la mateixa columna; sovint significa canviar la unitat d'observació, la geometria i la pregunta.
 

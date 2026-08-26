@@ -25,7 +25,7 @@ El color apareixerà com un canal visual, però el seu desenvolupament sistemàt
 >>>>> - Interpretar patrons i associacions sense convertir-los en causes o previsions no demostrades.
 >>>>> - Validar proporcions, escales, retolació, absències i integritat vectorial, i exportar dues o tres figures candidates en PDF.
 
-## De l'indicador a la pregunta visual
+## La pregunta visual orienta la representació
 
 El llibre ja conté numeradors, denominadors i indicadors revisats. Ara el problema no és calcular un percentatge, sinó decidir quina representació permet comparar-lo sense perdre el municipi, el període, la unitat o el denominador que li donen sentit. Abans d'escollir un gràfic cal identificar què representa cada fila, quina funció compleix cada camp i quina operació haurà de fer el lector.
 
@@ -342,17 +342,7 @@ Una figura no reparteix l'atenció de manera neutral. La posició, la mida, el p
 
 La jerarquia no consisteix a fer gran qualsevol element important. Un títol pot orientar sense competir amb les barres; una anotació pot destacar Vila-seca sense convertir la resta en soroll; i una font pot quedar en un nivell discret sense arribar a ser il·legible. Quan tots els elements tenen color intens, negreta, contorn o mida gran, la jerarquia desapareix perquè res no queda subordinat.
 
-### Atenció visual i seguiment de la mirada
-
-El **seguiment de la mirada** estima on dirigeix la mirada una persona mentre observa una figura. Una **fixació** és un interval relativament estable durant el qual la mirada es manté en una zona; un **moviment sacàdic** és el moviment ràpid que connecta dues fixacions. La durada, el nombre i l'ordre de les fixacions poden ajudar a estudiar quins elements s'han consultat i quin recorregut s'ha produït, però depenen de l'aparell, el calibratge, el mostreig, els llindars de detecció, la tasca i la persona. L'atenció també pot operar fora del punt exacte de mirada. Per això mirar una marca no demostra haver-la entès, acceptat ni recordat {% cite orquinThreatsValidityEyeMovement2018 %}.
-
-Les dades de la mirada es poden representar de diverses maneres. Un **recorregut de la mirada** conserva una seqüència individual mitjançant cercles i connexions; un gràfic d'intensitat de colors agrega densitat o durada sobre l'estímul; i una línia temporal permet comparar quan s'ha consultat cada àrea d'interès. Cada resum respon una pregunta diferent. El gràfic d'intensitat de colors és útil per localitzar concentracions, però elimina l'ordre temporal i pot ocultar que persones diferents han seguit recorreguts oposats. Superposar totes les trajectòries, en canvi, conserva més moviment però pot generar una trama impossible de llegir {% cite blascheckVisualizationEyeTracking2017 %}.
-
-![Fixacions i moviments sacàdics, recorregut temporal individual i gràfic d'intensitat de colors agregat aplicats al mateix estímul infogràfic]({{ site.baseurl }}/assets/img/data-visualization/eye-tracking-reading.svg "La comparació separa tres nivells d'evidència: les posicions i els salts estimats de la mirada, l'ordre temporal d'una trajectòria individual i la concentració agregada que ja no conserva ni la seqüència ni les diferències entre persones. Totes les dades són simulades i la figura és una elaboració docent pròpia."){: data-figure-width="54rem"}
-
-En una prova de lectura del projecte, aquestes mesures només tindrien sentit si abans es defineix la tasca: trobar el municipi amb el valor més alt, explicar una tendència o identificar la limitació de l'indicador. Sense una pregunta observable, acumular fixacions no permet saber si la composició funciona. La comprovació més directa continua sent demanar a la persona què ha entès, quina evidència ha utilitzat i què no ha pogut resoldre; el seguiment de la mirada pot complementar aquesta resposta, no substituir-la.
-
-### De la prominència a la jerarquia
+### Prominència i jerarquia visual
 
 La **prominència visual** descriu la capacitat d'un element per captar atenció per contrast, mida, color, aïllament o posició. La **jerarquia visual** assigna aquesta força d'acord amb una funció comunicativa. Una taca vermella pot ser molt prominent i, tanmateix, destacar una dada secundària; una jerarquia correcta fa coincidir el primer nivell amb la pregunta o l'evidència principal, reserva un segon nivell per al context i manté fonts i controls en un tercer nivell llegible. La semiologia de Bertin ajuda a jutjar com les variables visuals codifiquen dades, però no constitueix per si sola una teoria completa de composició, atenció o ordre ocular {% cite bertinSemiologyGraphics2010 maceachrenHowMapsWork1995 %}.
 
@@ -361,6 +351,16 @@ La proximitat, l'alineació i la regió comuna també agrupen elements. Una xifr
 ![La mateixa informació resolta com una composició plana, una jerarquia coherent i una composició saturada]({{ site.baseurl }}/assets/img/data-visualization/visual-hierarchy-comparison.svg "Els tres panells conserven títol, mètrica, gràfic, anotació i font. La versió plana no estableix prioritats; la versió coherent diferencia entrada, evidència i context; la versió saturada fa competir colors, vores i negretes. Figura d'elaboració pròpia."){: data-figure-width="54rem"}
 
 Una prova ràpida consisteix a observar la peça durant pocs segons, retirar-la i formular tres preguntes: quin era el tema, quina dada dominava i quin element aportava el límit o el context? La resposta no converteix la percepció en una mètrica universal, però ajuda a detectar si la jerarquia prevista coincideix amb la lectura real. Després cal tornar a la mida final i comprovar que el tercer nivell continua sent recuperable: subordinat no significa invisible.
+
+### Ampliació: atenció visual i seguiment de la mirada
+
+El **seguiment de la mirada** estima on dirigeix la mirada una persona mentre observa una figura. Una **fixació** és un interval relativament estable durant el qual la mirada es manté en una zona; un **moviment sacàdic** és el moviment ràpid que connecta dues fixacions. La durada, el nombre i l'ordre de les fixacions poden ajudar a estudiar quins elements s'han consultat i quin recorregut s'ha produït, però depenen de l'aparell, el calibratge, el mostreig, els llindars de detecció, la tasca i la persona. L'atenció també pot operar fora del punt exacte de mirada. Per això mirar una marca no demostra haver-la entès, acceptat ni recordat {% cite orquinThreatsValidityEyeMovement2018 %}.
+
+Les dades de la mirada es poden representar de diverses maneres. Un **recorregut de la mirada** conserva una seqüència individual mitjançant cercles i connexions; un gràfic d'intensitat de colors agrega densitat o durada sobre l'estímul; i una línia temporal permet comparar quan s'ha consultat cada àrea d'interès. Cada resum respon una pregunta diferent. El gràfic d'intensitat de colors és útil per localitzar concentracions, però elimina l'ordre temporal i pot ocultar que persones diferents han seguit recorreguts oposats. Superposar totes les trajectòries, en canvi, conserva més moviment però pot generar una trama impossible de llegir {% cite blascheckVisualizationEyeTracking2017 %}.
+
+![Fixacions i moviments sacàdics, recorregut temporal individual i gràfic d'intensitat de colors agregat aplicats al mateix estímul infogràfic]({{ site.baseurl }}/assets/img/data-visualization/eye-tracking-reading.svg "La comparació separa tres nivells d'evidència: les posicions i els salts estimats de la mirada, l'ordre temporal d'una trajectòria individual i la concentració agregada que ja no conserva ni la seqüència ni les diferències entre persones. Totes les dades són simulades i la figura és una elaboració docent pròpia."){: data-figure-width="54rem"}
+
+En una prova de lectura del projecte, aquestes mesures només tindrien sentit si abans es defineix la tasca: trobar el municipi amb el valor més alt, explicar una tendència o identificar la limitació de l'indicador. Sense una pregunta observable, acumular fixacions no permet saber si la composició funciona. La comprovació més directa continua sent demanar a la persona què ha entès, quina evidència ha utilitzat i què no ha pogut resoldre; el seguiment de la mirada pot complementar aquesta resposta, no substituir-la.
 
 ### Ordre de lectura, cultura i seqüència
 

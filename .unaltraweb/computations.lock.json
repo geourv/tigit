@@ -809,6 +809,48 @@
       ],
       "rendered_at": "2026-08-24T21:47:52+00:00"
     },
+    "assets/quarto/gis/gis-analysis-examples.qmd": {
+      "dependencies": [
+        {
+          "path": "assets/quarto/gis/gis-analysis-examples.qmd",
+          "sha256": "8b06e4836fdfbe4f944d765ab7ecd829f3ce1d71a0327cc41475b06d79af0600"
+        },
+        {
+          "path": "Dockerfile.compute-r",
+          "sha256": "db3cb03be6f48b81f1abfcf7b2a3177c0206e7c76fb46765a81c625faa34fc49"
+        },
+        {
+          "path": "requirements-compute.R",
+          "sha256": "9512adde0ddffcd24dcd3321cb882eabb1097e31d6f7da7bbfa8f3b45136d190"
+        },
+        {
+          "path": ".unaltraweb/computations.yml",
+          "sha256": "301b44c41e8a0e500dd5ffda7410b4221a63711479a41a06eb98b5aae8abd0b3"
+        }
+      ],
+      "engine": "r",
+      "fingerprint": "758d9389e948f864580bbbfa14f9c7d9a6f61adee3a04a1f1c462e05b98783e9",
+      "image": {
+        "engine": "r",
+        "environment": "local",
+        "image": "tigit-compute-r:local",
+        "source": "environment:COMPUTE_R_IMAGE"
+      },
+      "image_identity": {
+        "available": "true",
+        "digest": "",
+        "id": "sha256:32093bf261521f44f0e8f3baa3a2115d82fa7accb8b2c4185b511b86347ec7a1"
+      },
+      "mode": "figure",
+      "outputs": [
+        {
+          "path": "assets/img/gis/gis-analysis-examples.svg",
+          "sha256": "f68a6632246630f47e66fcd10d1a5b8ff90e6052b377a1f01304dfa082ab2519",
+          "size": 70041
+        }
+      ],
+      "rendered_at": "2026-08-26T10:04:06+00:00"
+    },
     "assets/quarto/thematic-cartography/choropleth-housing-absolute-bad.qmd": {
       "dependencies": [
         {

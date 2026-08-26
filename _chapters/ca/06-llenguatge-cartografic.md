@@ -7,7 +7,7 @@ ref: manual-cartographic-language
 profiles: [unaltremanual]
 content_status: draft
 permalink: /ca/chapters/llenguatge-cartografic/
-weight: 70
+weight: 80
 part: Continguts
 manual_references: true
 ---

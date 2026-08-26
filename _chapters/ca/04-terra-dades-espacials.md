@@ -160,6 +160,27 @@ Per comprovar el procediment sobre un mapa, es pot utilitzar aquest [mapa intera
 | `26° S · 80° O` | `26° N · 80° O` | `26° S · 100° E` | `26° N · 100° E` |
 :::
 
+#### Longitud, hora solar i hora civil
+
+Els fusos horaris s'entenen millor després de la longitud geogràfica i abans de passar a les coordenades projectades. La Terra completa aproximadament una rotació de `360°` en 24 hores solars mitjanes: `15°` de longitud corresponen a una hora i `1°`, a uns quatre minuts. Per això el migdia solar mitjà no arriba simultàniament a dos llocs situats sobre meridians diferents. Aquesta relació geomètrica explica l'origen dels fusos, però no determina per si sola l'hora que marca el rellotge civil.
+
+La coordinació de ferrocarrils, comunicacions i administracions va exigir substituir moltes hores locals per referències comunes. La Conferència Internacional del Meridià de 1884 va adoptar Greenwich com a origen de les longituds i va definir un dia universal de referència. El model teòric divideix el globus en 24 fusos d'uns `15°`, però els límits civils segueixen sovint fronteres i decisions polítiques, i els desplaçaments respecte d'UTC també poden ser de mitja hora o d'un quart d'hora. Compartir meridià no obliga a compartir hora oficial, i conèixer una longitud no basta per deduir-la {% cite planesasHoraOficialEspana2013 %}.
+
+::: table "Quatre conceptes temporals que no s'han de confondre"
+| Concepte | Què representa | Què cal conservar en unes dades |
+| --- | --- | --- |
+| Hora solar mitjana local | Posició temporal mitjana del Sol respecte del meridià del lloc | Longitud i criteri astronòmic utilitzat |
+| UTC | Referència temporal coordinada global | Instant expressat en UTC, sovint amb `Z` |
+| Desplaçament UTC | Diferència numèrica en un instant, com `+01:00` o `+02:00` | Data, hora i desplaçament explícit |
+| Zona temporal civil | Conjunt històric de regles d'un territori, com `Europe/Madrid` | Identificador de zona i versió de les regles quan sigui rellevant |
+:::
+
+A Espanya, l'hora oficial peninsular i balear es va unificar amb la referència de Greenwich a partir de 1901, mentre que les Canàries mantenen una hora menys des de 1922. L'avanç decretat el març de 1940 no es va revertir i va deixar l'hora base peninsular en un desplaçament equivalent avui a UTC+1; quan s'aplica l'horari d'estiu, s'hi afegeix temporalment una altra hora. Planesas adverteix, però, que l'ordre de 1940 no va declarar formalment l'adopció d'un fus amb aquest nom i que la documentació no sosté explicacions simplificades com l'anomenada «hora alemanya». L'hora oficial és una convenció amb història, no una conseqüència automàtica del mapa.
+
+En una base de dades, `2026-04-03T14:30:00+02:00` identifica un instant, però el desplaçament `+02:00` no explica per si sol totes les regles passades o futures del territori. Si cal convertir reserves, arribades, mobilitat o observacions entre llocs i dates, convé conservar l'instant en UTC i també la zona temporal civil d'origen. Així es poden tractar els canvis estacionals i històrics sense deduir-los només de la coordenada.
+
+>> **Lectura recomanada.** [*La hora oficial en España y sus cambios*](https://astronomia.ign.es/rknowsys-theme/images/webAstro/paginas/documentos/Anuario/lahoraoficialenespana.pdf), de Pere Planesas, documenta la formació dels fusos, la unificació horària espanyola i els canvis legals des de 1901. El PDF oficial incorpora també una actualització de gener de 2017 {% cite planesasHoraOficialEspana2013 %}.
+
 ### Reticle UTM i coordenades projectades
 
 Els sistemes projectats transformen la superfície terrestre en un pla i permeten treballar habitualment amb unitats mètriques. El [sistema UTM](https://www.usgs.gov/faqs/what-does-term-utm-mean-utm-better-or-more-accurate-latitudelongitude) divideix el món, entre 80° S i 84° N, en seixanta fusos longitudinals de 6°. Els mapes generals del reticle també mostren bandes latitudinals de 8° que s'utilitzen en referències de quadrícula: Catalunya queda al fus 31 i a la banda T. Per això una referència MGRS catalana pot començar per `31T`, com en les [quadrícules UTM de l'ICGC](https://www.icgc.cat/es/Geoinformacion-y-mapas/Datos-y-productos/Geoinformacion-cartografica/Cuadriculas-UTM). En canvi, quan parlem del CRS `ETRS89 / UTM zona 31N` ([`EPSG:25831`](https://epsg.org/crs_25831/ETRS89-UTM-zone-31N.html)), la `N` indica l'hemisferi nord, no la banda latitudinal. En aquest sistema, els eixos són **est** (*easting*, E) i **nord** (*northing*, N), en aquest ordre, i la unitat és el metre {% cite icgcQuadriculesUtmEspecificacions2026 %}.

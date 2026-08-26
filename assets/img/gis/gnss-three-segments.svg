@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="720" viewBox="0 0 900 720" role="img" aria-labelledby="title desc">
+  <title id="title">Segments espacial, de control i d'usuari d'un sistema GNSS</title>
+  <desc id="desc">Tres satèl·lits emeten senyals unidireccionals cap a un receptor professional i un telèfon. Una estació de control segueix les òrbites i els rellotges i actualitza les dades de navegació dels satèl·lits. Els receptors reben els senyals passivament i estimen posició, velocitat i temps.</desc>
+  <defs>
+    <style>
+      .heading { font-family: Arial, sans-serif; font-size: 32px; font-weight: 700; fill: #17202a; }
+      .label { font-family: Arial, sans-serif; font-size: 26px; font-weight: 700; fill: #17202a; }
+      .pill { font-family: Arial, sans-serif; font-size: 23px; font-weight: 700; fill: #ffffff; }
+      .body { font-family: Arial, sans-serif; font-size: 24px; fill: #334155; }
+      .small { font-family: Arial, sans-serif; font-size: 22px; fill: #334155; }
+    </style>
+    <marker id="signal-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#21757b"/>
+    </marker>
+    <marker id="control-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#d47b36"/>
+    </marker>
+    <g id="satellite">
+      <rect x="-24" y="-20" width="48" height="40" rx="5" fill="#e6a534" stroke="#704f16" stroke-width="3"/>
+      <rect x="-76" y="-17" width="45" height="34" fill="#445f8a" stroke="#263a60" stroke-width="3"/>
+      <rect x="31" y="-17" width="45" height="34" fill="#445f8a" stroke="#263a60" stroke-width="3"/>
+      <line x1="-61" y1="-17" x2="-61" y2="17" stroke="#9fb7d3" stroke-width="2"/>
+      <line x1="-46" y1="-17" x2="-46" y2="17" stroke="#9fb7d3" stroke-width="2"/>
+      <line x1="46" y1="-17" x2="46" y2="17" stroke="#9fb7d3" stroke-width="2"/>
+      <line x1="61" y1="-17" x2="61" y2="17" stroke="#9fb7d3" stroke-width="2"/>
+      <circle cx="0" cy="0" r="7" fill="#ffffff"/>
+      <path d="M -12 22 Q 0 42 12 22" fill="none" stroke="#704f16" stroke-width="3"/>
+    </g>
+  </defs>
+
+  <rect x="18" y="18" width="864" height="684" rx="12" fill="#ffffff" stroke="#b8c7cc" stroke-width="2"/>
+  <text class="heading" x="450" y="61" text-anchor="middle">Tres segments coordinats</text>
+
+  <rect x="55" y="84" width="790" height="225" rx="10" fill="#f2f6fb" stroke="#9fb7d3" stroke-width="2"/>
+  <rect x="75" y="100" width="275" height="42" rx="21" fill="#445f8a"/>
+  <text class="pill" x="212.5" y="130" text-anchor="middle">1. Segment espacial</text>
+  <text class="body" x="450" y="169" text-anchor="middle">Satèl·lits amb òrbites i rellotges controlats</text>
+  <text class="body" x="450" y="197" text-anchor="middle">emeten dades de posició orbital i temps.</text>
+  <use href="#satellite" transform="translate(225 255) rotate(-8)"/>
+  <use href="#satellite" transform="translate(450 225)"/>
+  <use href="#satellite" transform="translate(675 255) rotate(8)"/>
+
+  <path d="M 250 285 L 620 467" fill="none" stroke="#21757b" stroke-width="5" marker-end="url(#signal-arrow)"/>
+  <path d="M 450 262 L 650 467" fill="none" stroke="#21757b" stroke-width="5" marker-end="url(#signal-arrow)"/>
+  <path d="M 650 285 L 680 467" fill="none" stroke="#21757b" stroke-width="5" marker-end="url(#signal-arrow)"/>
+  <text class="small" x="590" y="355" text-anchor="middle" fill="#21757b">senyals unidireccionals</text>
+
+  <path d="M 165 480 Q 285 350 415 278" fill="none" stroke="#d47b36" stroke-width="5" stroke-dasharray="12 10" marker-end="url(#control-arrow)"/>
+  <text class="small" x="264" y="368" text-anchor="middle" fill="#a85f25">seguiment i actualitzacions</text>
+
+  <rect x="55" y="405" width="350" height="205" rx="10" fill="#fff8ed" stroke="#e1b274" stroke-width="2"/>
+  <rect x="75" y="421" width="300" height="42" rx="21" fill="#d47b36"/>
+  <text class="pill" x="225" y="451" text-anchor="middle">2. Segment de control</text>
+  <path d="M 78 535 Q 120 470 162 535" fill="none" stroke="#704f16" stroke-width="8"/>
+  <line x1="120" y1="505" x2="120" y2="570" stroke="#704f16" stroke-width="8"/>
+  <line x1="80" y1="570" x2="160" y2="570" stroke="#704f16" stroke-width="8"/>
+  <text class="small" x="277" y="507" text-anchor="middle">Segueixen òrbites,</text>
+  <text class="small" x="277" y="539" text-anchor="middle">rellotges i estat,</text>
+  <text class="small" x="277" y="571" text-anchor="middle">actualitzen la navegació.</text>
+
+  <rect x="495" y="405" width="350" height="205" rx="10" fill="#eef8f5" stroke="#83b8a7" stroke-width="2"/>
+  <rect x="515" y="421" width="280" height="42" rx="21" fill="#37856f"/>
+  <text class="pill" x="655" y="451" text-anchor="middle">3. Segment d'usuari</text>
+  <rect x="545" y="488" width="55" height="92" rx="8" fill="#ffffff" stroke="#17202a" stroke-width="5"/>
+  <circle cx="572.5" cy="565" r="5" fill="#17202a"/>
+  <circle cx="572.5" cy="530" r="13" fill="#21757b"/>
+  <circle cx="572.5" cy="530" r="5" fill="#ffffff"/>
+  <text class="small" x="730" y="507" text-anchor="middle">Receptors passius</text>
+  <text class="small" x="730" y="539" text-anchor="middle">estimen posició,</text>
+  <text class="small" x="730" y="571" text-anchor="middle">velocitat i temps.</text>
+
+  <rect x="55" y="637" width="790" height="44" rx="8" fill="#eaf2f3" stroke="#9eb9be" stroke-width="2"/>
+  <text class="small" x="450" y="667" text-anchor="middle">El receptor rep els senyals; no envia la seva posició als satèl·lits.</text>
+</svg>

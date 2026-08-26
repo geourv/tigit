@@ -101,8 +101,29 @@ Cal familiaritzar-se amb el sistema de fitxers de l'ordinador: crear carpetes, r
 | QGIS | Unir taules i capes, simbolitzar indicadors i elaborar mapes temàtics |
 | Inkscape | Compondre la infografia i coordinar mapes, gràfics, textos i jerarquia visual |
 | Fonts oficials de dades | Proporcionar població, habitatges, codis territorials, superfícies i límits administratius |
+| VirtLabs | Accedir remotament a aplicacions acadèmiques quan no es disposa d'un entorn local |
 | Moodle | Gestionar avisos, terminis, lliuraments, qualificacions i instruccions operatives |
 :::
+
+### Instal·lació del programari {#installacio-programari}
+
+**Es recomana instal·lar LibreOffice, QGIS i Inkscape a l'ordinador personal o portàtil abans d'iniciar les pràctiques que utilitzen cada eina.** Treballar amb un entorn propi permet practicar entre sessions, gestionar carpetes i rutes, conservar els projectes i resoldre incidències habituals. LibreOffice instal·la la suite completa, dins de la qual **Calc** és l'aplicació de full de càlcul que s'utilitzarà al manual.
+
+Les versions següents són les referències verificades l'agost de 2026. S'han escollit versions estables i, en el cas de QGIS, la versió de suport prolongat perquè prioritza l'estabilitat i la compatibilitat durant el curs.
+
+::: table "Programari recomanat per seguir les pràctiques"
+| Programari | Versió de referència | Descàrrega oficial |
+| --- | --- | --- |
+| LibreOffice Calc | LibreOffice 26.8.0, versió estable | [Descarregar LibreOffice](https://www.libreoffice.org/download/download-libreoffice/) |
+| QGIS Desktop | QGIS 3.44 LTR «Solothurn»; versió 3.44.13 en aquesta revisió | [Descarregar QGIS](https://qgis.org/download/) |
+| Inkscape | Inkscape 1.4.4, versió estable | [Descarregar Inkscape](https://inkscape.org/release/) |
+:::
+
+Abans de descarregar cal comprovar a la pàgina oficial que la versió continua marcada com a **estable** o **LTR** i triar l'instal·lador corresponent al sistema operatiu i a l'arquitectura de l'ordinador. Si el projecte publica una actualització de manteniment dins de la mateixa branca, convé instal·lar-la. Les versions de prova, desenvolupament o compilació nocturna només són adequades per experimentar i no constitueixen l'entorn de referència del curs.
+
+### Entorn personal i VirtLabs
+
+La URV proporciona llicències i serveis institucionals, i també permet accedir a aplicacions acadèmiques mitjançant [VirtLabs](https://virtlabs.urv.cat/login). Aquest entorn virtual és una alternativa quan no es pot instal·lar el programari necessari o quan cal accedir-hi des d'un altre equip. No substitueix, però, la conveniència de disposar d'un entorn local sempre que sigui possible: abans de començar una activitat cal comprovar on es desen els fitxers, com es recuperaran en una altra sessió i quines limitacions té l'entorn utilitzat.
 
 ### Fulls de càlcul recomanats
 

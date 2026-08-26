@@ -93,7 +93,7 @@ Prioritats:
 **No prioritzar**
 
 - Estacions de l'any, fusos horaris, antípodes, antecs, periecs i taxonomies exhaustives de projeccions.
-- GPS com a bloc extens; els receptors i les explicacions antigues són obsolets.
+- Catàlegs de receptors GPS antics, captures de programari de planificació i xifres de precisió fixes sense context. El mecanisme GNSS, la qualitat de les observacions i la generalització de la captura amb telèfons s'han reconstruït amb fonts actuals i figures obertes o pròpies al capítol 5.
 
 ### 5. Integració de dades en un SIG
 
