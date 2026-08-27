@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600" role="img" aria-labelledby="title desc">
+  <title id="title">Posició del centre de projecció en tres projeccions azimutals perspectives</title>
+  <desc id="desc">Tres seccions comparen la projecció gnomònica, amb el centre de projecció al centre de l'esfera; l'estereogràfica, amb el centre al punt antipodal al contacte; i l'ortogràfica, amb el centre a l'infinit i raigs paral·lels. En tots tres casos es manté un pla tangent.</desc>
+  <defs>
+    <style>
+      .panel { fill: #fbfcfd; stroke: #ccd7dc; stroke-width: 1.5; }
+      .earth { fill: #e9f3f5; stroke: #365b6d; stroke-width: 3; }
+      .axis { stroke: #aab9c0; stroke-width: 1.5; stroke-dasharray: 5 6; }
+      .plane { stroke: #17697a; stroke-width: 5; }
+      .ray { stroke: #d18a24; stroke-width: 2.8; marker-end: url(#rayArrow); }
+      .source { fill: #d18a24; stroke: #fff; stroke-width: 3; }
+      .surface-point { fill: #365b6d; stroke: #fff; stroke-width: 2; }
+      .projected-point { fill: #a63d5a; stroke: #fff; stroke-width: 2; }
+      .title { font: 700 25px system-ui, sans-serif; fill: #17202a; }
+      .subtitle { font: 17px system-ui, sans-serif; fill: #52616b; }
+      .label { font: 700 17px system-ui, sans-serif; fill: #17202a; }
+      .small { font: 15px system-ui, sans-serif; fill: #52616b; }
+      .footer-title { font: 700 19px system-ui, sans-serif; fill: #17202a; }
+      .footer { font: 16px system-ui, sans-serif; fill: #40515a; }
+    </style>
+    <marker id="rayArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#d18a24"/>
+    </marker>
+  </defs>
+
+  <g transform="translate(20 18)">
+    <rect x="0" y="0" width="370" height="440" rx="7" class="panel"/>
+    <text x="185" y="40" text-anchor="middle" class="title">Gnomònica</text>
+    <text x="185" y="68" text-anchor="middle" class="subtitle">centre al centre de l'esfera</text>
+
+    <circle cx="135" cy="250" r="80" class="earth"/>
+    <line x1="55" y1="250" x2="215" y2="250" class="axis"/>
+    <line x1="135" y1="170" x2="135" y2="330" class="axis"/>
+    <line x1="215" y1="135" x2="215" y2="365" class="plane"/>
+    <text x="215" y="120" text-anchor="middle" class="label">pla tangent</text>
+
+    <line x1="135" y1="250" x2="215" y2="170" class="ray"/>
+    <line x1="135" y1="250" x2="215" y2="250" class="ray"/>
+    <line x1="135" y1="250" x2="215" y2="330" class="ray"/>
+    <circle cx="135" cy="250" r="9" class="source"/>
+    <circle cx="191.6" cy="193.4" r="6" class="surface-point"/>
+    <circle cx="215" cy="250" r="6" class="surface-point"/>
+    <circle cx="191.6" cy="306.6" r="6" class="surface-point"/>
+    <rect x="209" y="164" width="12" height="12" rx="2" class="projected-point"/>
+    <rect x="209" y="244" width="12" height="12" rx="2" class="projected-point"/>
+    <rect x="209" y="324" width="12" height="12" rx="2" class="projected-point"/>
+
+    <text x="124" y="270" text-anchor="end" class="small">centre de</text>
+    <text x="124" y="290" text-anchor="end" class="small">projecció</text>
+    <text x="185" y="397" text-anchor="middle" class="label">Els grans cercles es projecten</text>
+    <text x="185" y="420" text-anchor="middle" class="small">com a línies rectes.</text>
+  </g>
+
+  <g transform="translate(415 18)">
+    <rect x="0" y="0" width="370" height="440" rx="7" class="panel"/>
+    <text x="185" y="40" text-anchor="middle" class="title">Estereogràfica</text>
+    <text x="185" y="68" text-anchor="middle" class="subtitle">centre al punt antipodal</text>
+
+    <circle cx="135" cy="250" r="80" class="earth"/>
+    <line x1="55" y1="250" x2="215" y2="250" class="axis"/>
+    <line x1="135" y1="170" x2="135" y2="330" class="axis"/>
+    <line x1="215" y1="135" x2="215" y2="365" class="plane"/>
+    <text x="215" y="120" text-anchor="middle" class="label">pla tangent</text>
+
+    <line x1="55" y1="250" x2="215" y2="183.7" class="ray"/>
+    <line x1="55" y1="250" x2="215" y2="250" class="ray"/>
+    <line x1="55" y1="250" x2="215" y2="316.3" class="ray"/>
+    <circle cx="55" cy="250" r="9" class="source"/>
+    <circle cx="191.6" cy="193.4" r="6" class="surface-point"/>
+    <circle cx="215" cy="250" r="6" class="surface-point"/>
+    <circle cx="191.6" cy="306.6" r="6" class="surface-point"/>
+    <rect x="209" y="177.7" width="12" height="12" rx="2" class="projected-point"/>
+    <rect x="209" y="244" width="12" height="12" rx="2" class="projected-point"/>
+    <rect x="209" y="310.3" width="12" height="12" rx="2" class="projected-point"/>
+
+    <text x="55" y="348" text-anchor="middle" class="small">centre de projecció</text>
+    <text x="55" y="368" text-anchor="middle" class="small">oposat al contacte</text>
+    <text x="185" y="397" text-anchor="middle" class="label">Conserva els angles locals</text>
+    <text x="185" y="420" text-anchor="middle" class="small">i, per tant, és conforme.</text>
+  </g>
+
+  <g transform="translate(810 18)">
+    <rect x="0" y="0" width="370" height="440" rx="7" class="panel"/>
+    <text x="185" y="40" text-anchor="middle" class="title">Ortogràfica</text>
+    <text x="185" y="68" text-anchor="middle" class="subtitle">centre a l'infinit · raigs paral·lels</text>
+
+    <circle cx="135" cy="250" r="80" class="earth"/>
+    <line x1="55" y1="250" x2="215" y2="250" class="axis"/>
+    <line x1="135" y1="170" x2="135" y2="330" class="axis"/>
+    <line x1="215" y1="135" x2="215" y2="365" class="plane"/>
+    <text x="215" y="120" text-anchor="middle" class="label">pla tangent</text>
+
+    <line x1="32" y1="193.4" x2="215" y2="193.4" class="ray"/>
+    <line x1="32" y1="250" x2="215" y2="250" class="ray"/>
+    <line x1="32" y1="306.6" x2="215" y2="306.6" class="ray"/>
+    <text x="32" y="178" text-anchor="middle" class="title">∞</text>
+    <circle cx="191.6" cy="193.4" r="6" class="surface-point"/>
+    <circle cx="215" cy="250" r="6" class="surface-point"/>
+    <circle cx="191.6" cy="306.6" r="6" class="surface-point"/>
+    <rect x="209" y="187.4" width="12" height="12" rx="2" class="projected-point"/>
+    <rect x="209" y="244" width="12" height="12" rx="2" class="projected-point"/>
+    <rect x="209" y="300.6" width="12" height="12" rx="2" class="projected-point"/>
+
+    <text x="185" y="397" text-anchor="middle" class="label">Simula una vista molt distant</text>
+    <text x="185" y="420" text-anchor="middle" class="small">i mostra com a màxim un hemisferi.</text>
+  </g>
+
+  <rect x="20" y="480" width="1160" height="98" rx="7" fill="#eef5f7" stroke="#b8cbd2" stroke-width="1.5"/>
+  <text x="45" y="515" class="footer-title">Una mateixa superfície tangent, tres centres de projecció</text>
+  <text x="45" y="544" class="footer">La metàfora del «punt de llum» correspon al centre d'on surten els raigs. La seva posició canvia on cauen els punts sobre el pla.</text>
+  <text x="45" y="567" class="footer">És una construcció específica de les projeccions perspectives: moltes altres projeccions cartogràfiques es defineixen directament amb fórmules.</text>
+</svg>

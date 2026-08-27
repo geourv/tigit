@@ -18,12 +18,9 @@ Les decisions cromàtiques combinen tres plans. El primer és físic i tècnic: 
 
 >>>>> En acabar el capítol, cal poder preparar, documentar i validar una paleta coherent amb les dades abans d'aplicar-la als gràfics, als mapes i a la infografia.
 >>>>>
->>>>> - Situar la radiació visible dins de l'espectre electromagnètic i diferenciar-la de l'infraroig i l'ultraviolat.
->>>>> - Explicar com l'ull i el processament neural contribueixen al color, inclosos els colors no espectrals.
->>>>> - Reconèixer la variació de la visió cromàtica entre persones i espècies, i distingir-la de les dimensions apreses i culturals.
->>>>> - Distingir to, saturació, lluminositat i valor, i relacionar-los amb RGB, CMYK, RYB, HSL i HSV.
->>>>> - Seleccionar paletes qualitatives, seqüencials, divergents, binàries o d'accent segons les dades i la pregunta.
->>>>> - Registrar codis HEX o RGB i funcions cromàtiques per reproduir una paleta entre programes.
+>>>>> - Explicar quina funció compleix el color i quina estructura de les dades ha de comunicar.
+>>>>> - Seleccionar una paleta qualitativa, seqüencial, divergent, binària o d'accent segons la pregunta.
+>>>>> - Registrar codis i funcions cromàtiques perquè la paleta es pugui reproduir entre programes.
 >>>>> - Validar contrast, ordre, redundància, accessibilitat i coherència sobre una peça real i en la mida final.
 
 ## Radiació, percepció i diversitat de la visió cromàtica
@@ -56,7 +53,7 @@ Una pantalla emet llum cap als ulls, mentre que una tinta o una superfície abso
 
 La **retina** recobreix una part de la paret interna posterior de l'ull i transforma la llum en senyals neuronals. En els bastons i els cons, el segment extern que conté els fotopigments s'orienta cap a l'epiteli pigmentari, mentre que la terminació sinàptica connecta amb la resta de la xarxa retinal. En la retina dels vertebrats, la llum travessa primer les capes internes abans d'arribar als segments externs dels fotoreceptors; per això l'esquema de les cèl·lules s'ha d'interpretar conjuntament amb la seva posició al fons de l'ull.
 
-Els **bastons** i els **cons** són les cèl·lules fotoreceptores: converteixen la llum en activitat neural. Els bastons són especialment sensibles amb poca llum i no sostenen la discriminació cromàtica diürna ordinària. Aquesta depèn sobretot de comparar les respostes de tres classes de cons, S, M i L, amb sensibilitats espectrals àmplies i superposades. Les lletres indiquen sensibilitat preferent a longituds d'ona més curtes, mitjanes o llargues; no són detectors simples de «blau», «verd» i «vermell». El sistema compara les seves respostes en canals oponents, aproximadament L-M i S respecte de L+M, i integra aquesta informació de manera distribuïda amb la forma, la lluminositat, el context i l'experiència en diverses etapes retinals i corticals. No hi ha una correspondència d'un receptor amb un color ni un únic centre cerebral del color {% cite gegenfurtnerColorVision2003 %}.
+Els **bastons** i els **cons** són les cèl·lules fotoreceptores: converteixen la llum en activitat neural. Els bastons són especialment sensibles amb poca llum i no sostenen la discriminació cromàtica diürna ordinària. Aquesta depèn sobretot de comparar les respostes de tres classes de cons, S, M i L, amb sensibilitats espectrals àmplies i superposades. Les lletres indiquen sensibilitat preferent a longituds d'ona més curtes, mitjanes o llargues; no són detectors simples de «blau», «verd» i «vermell». El sistema compara les seves respostes en **canals oponents**, aproximadament L-M i S respecte de L+M, i integra aquesta informació de manera distribuïda amb la forma, la lluminositat, el context i l'experiència en diverses etapes retinals i corticals. No hi ha una correspondència d'un receptor amb un color ni un únic centre cerebral del color {% cite gegenfurtnerColorVision2003 %}.
 
 La retina no és només una capa de detectors. Les cèl·lules horitzontals, bipolars i amacrines connecten i modulen els senyals dels fotoreceptors; les cèl·lules ganglionars els integren i envien els seus axons cap al nervi òptic; i la glia de Müller contribueix al suport estructural i funcional de la xarxa. A l'esquema c, les capes plexiformes concentren moltes connexions sinàptiques, mentre que les capes nuclears contenen principalment cossos cel·lulars. Aquesta organització ja inicia el processament visual abans que el senyal surti de l'ull {% cite kalloniatisPerceptionColor2007 %}.
 
@@ -125,11 +122,11 @@ La mateixa paraula pot canviar de funció entre models. El magenta és secundari
 
 ### RGB, CMYK, RYB i HSL/HSV
 
-RGB descriu la combinació additiva de llum utilitzada habitualment en monitors, projectors, telèfons, tauletes i altres dispositius que emeten llum. Cada canal, en la codificació més comuna de 8 bits, pren valors de `0` a `255`; el negre és `RGB(0,0,0)` perquè no s'emet llum, i el blanc és `RGB(255,255,255)` perquè els canals vermell, verd i blau se sumen al màxim. Els codis HEX expressen el mateix model de manera compacta: `#226699` equival a `R=34`, `G=102`, `B=153`. Aquesta notació és pràctica per transportar colors entre QGIS, fulls de càlcul, SVG i webs.
+**RGB** descriu la **combinació additiva de llum** utilitzada habitualment en monitors, projectors, telèfons, tauletes i altres dispositius que emeten llum. Cada canal, en la codificació més comuna de 8 bits, pren valors de `0` a `255`; el negre és `RGB(0,0,0)` perquè no s'emet llum, i el blanc és `RGB(255,255,255)` perquè els canals vermell, verd i blau se sumen al màxim. Els codis HEX expressen el mateix model de manera compacta: `#226699` equival a `R=34`, `G=102`, `B=153`. Aquesta notació és pràctica per transportar colors entre QGIS, fulls de càlcul, SVG i webs.
 
 >>> **Identificar un gris en RGB.** Quan una pipeta retorna tres canals empatats, el color no té cap component cromàtic dominant i es llegeix com un gris neutre. `RGB(0,0,0)` és negre, `RGB(255,255,255)` és blanc, `RGB(128,128,128)` és un gris mitjà i `#cccccc`, equivalent a `RGB(204,204,204)`, és un gris clar. En HSL o HSV aquest mateix principi apareix com a saturació `0%`: el to deixa de ser informatiu i la lluminositat o el valor indiquen si el gris és més clar o més fosc. Si els canals no estan empatats, com a `RGB(120,120,138)`, ja no és un gris neutre, sinó un gris amb dominant blavosa.
 
-CMYK correspon a un procés subtractiu d'impressió amb tintes cian, magenta, groga i el canal `K`. A diferència d'una pantalla, el paper no emet llum: reflecteix la llum que rep, i cada tinta n'absorbeix una part. Per això el blanc no s'obté afegint tinta, sinó deixant el suport sense cobrir. Els canals s'expressen habitualment de `0%` a `100%`, però la conversió RGB-CMYK depèn del perfil de color, del paper, de les tintes i del sistema d'impressió, de manera que no garanteix una equivalència perceptiva exacta.
+**CMYK** correspon a un **procés subtractiu d'impressió** amb tintes cian, magenta, groga i el canal `K`. A diferència d'una pantalla, el paper no emet llum: reflecteix la llum que rep, i cada tinta n'absorbeix una part. Per això el blanc no s'obté afegint tinta, sinó deixant el suport sense cobrir. Els canals s'expressen habitualment de `0%` a `100%`, però la conversió RGB-CMYK depèn del perfil de color, del paper, de les tintes i del sistema d'impressió, de manera que no garanteix una equivalència perceptiva exacta.
 
 El canal `K` no s'anomena així perquè sigui simplement la lletra final de *black*. En arts gràfiques identifica la **planxa clau** o *key plate*, que habitualment porta tinta negra i aporta registre, detall i contrast. El text petit acostuma a imprimir-se només amb `K` per evitar problemes de registre entre planxes; les superfícies fosques grans poden utilitzar un **negre ric**, que combina `K` amb proporcions controlades de cian, magenta o groc. No s'ha de substituir cap d'aquestes solucions per una superposició improvisada dels canals {% cite brownColourBasicsGIS2002 %}.
 
@@ -178,7 +175,7 @@ La primera decisió no és quin color agrada més, sinó quina pregunta ha de re
 
 ### Paletes qualitatives
 
-Les paletes qualitatives permeten diferenciar categories sense suggerir un ordre que les dades no tenen. Els tons han de ser distingibles, tenir una importància visual semblant quan cap categoria és prioritària i limitar-se a un nombre que continuï sent llegible al mapa i a la llegenda. Si hi ha massa categories, el problema pot no ser la paleta, sinó la necessitat d'agrupar categories o canviar la pregunta.
+Les **paletes qualitatives** permeten diferenciar categories sense suggerir un ordre que les dades no tenen. Els tons han de ser distingibles, tenir una importància visual semblant quan cap categoria és prioritària i limitar-se a un nombre que continuï sent llegible al mapa i a la llegenda. Si hi ha massa categories, el problema pot no ser la paleta, sinó la necessitat d'agrupar categories o canviar la pregunta.
 
 Una paleta qualitativa pot combinar to, forma i textura quan les marques són petites o quan el document pot circular en grisos. Aquesta redundància evita que la lectura depengui d'una diferència cromàtica mínima.
 
@@ -186,15 +183,15 @@ En un projecte turístic, una paleta qualitativa pot separar tipus de recurs, co
 
 ### Paletes seqüencials
 
-Les paletes seqüencials representen intensitat mitjançant una progressió perceptible i són habituals en percentatges, ràtios i densitats. El sentit clar-fosc o fosc-clar ha de coincidir amb l'ordre de la llegenda, i les classes adjacents han de continuar sent diferenciables a la mida final.
+Les **paletes seqüencials** representen intensitat mitjançant una progressió perceptible i són habituals en percentatges, ràtios i densitats. El sentit clar-fosc o fosc-clar ha de coincidir amb l'ordre de la llegenda, i les classes adjacents han de continuar sent diferenciables a la mida final.
 
-Una rampa multicolor no esdevé seqüencial pel sol fet de recórrer molts tons. Si la lluminositat puja, baixa i torna a pujar, dos valors distants poden semblar pròxims i un canvi cromàtic brusc pot destacar un llindar que les dades no contenen. La [referència de mapes de color de Matplotlib](https://matplotlib.org/3.9.2/gallery/color/colormap_reference.html) mostra que entre les opcions disponibles hi ha les rampes de tipus arc de Sant Martí `rainbow` i `jet`. Aquestes rampes són un cas habitual de manca de monotonia i no s'utilitzaran per representar una magnitud ordenada {% cite wilkeFundamentalsDataVisualization2019 nunezOptimizingColormaps2018 %}.
+Una rampa multicolor no esdevé seqüencial pel sol fet de recórrer molts tons. Si la lluminositat puja, baixa i torna a pujar, dos valors distants poden semblar pròxims i un canvi cromàtic brusc pot destacar un llindar que les dades no contenen. La [referència de mapes de color de Matplotlib](https://matplotlib.org/3.9.2/gallery/color/colormap_reference.html), una biblioteca de visualització per a Python, mostra entre les opcions disponibles les rampes de tipus arc de Sant Martí `rainbow` i `jet`. La galeria serveix aquí per comparar-ne l'aspecte; no cal programar amb Matplotlib. Aquestes rampes són un cas habitual de manca de monotonia i no s'utilitzaran per representar una magnitud ordenada {% cite wilkeFundamentalsDataVisualization2019 nunezOptimizingColormaps2018 %}.
 
-Els usos típics del curs són coropletes de percentatge d'habitatges d'ús turístic, places d'allotjament per 1.000 habitants, densitat de pernoctacions o proporció d'ocupació. Si la dada és un recompte absolut, cal pensar abans si convé normalitzar-la, utilitzar símbols proporcionals o explicar per què la comparació territorial continua sent justa.
+Els usos típics del curs són coropletes de percentatge d'habitatge no principal, places d'allotjament per 1.000 habitants, densitat de pernoctacions o proporció d'ocupació. Si la dada és un recompte absolut, cal pensar abans si convé normalitzar-la, utilitzar símbols proporcionals o explicar per què la comparació territorial continua sent justa.
 
 ### Paletes divergents
 
-Les paletes divergents mostren desviacions respecte d'un punt de referència explícit, com una mitjana, un objectiu o un valor zero amb significat analític. No s'han d'utilitzar només per obtenir més varietat cromàtica. El centre ha de tenir una interpretació territorial, i els dos costats de la paleta han de permetre comparar la magnitud de les desviacions.
+Les **paletes divergents** mostren desviacions respecte d'un punt de referència explícit, com una mitjana, un objectiu o un valor zero amb significat analític. No s'han d'utilitzar només per obtenir més varietat cromàtica. El centre ha de tenir una interpretació territorial, i els dos costats de la paleta han de permetre comparar la magnitud de les desviacions.
 
 Quan una dada només té valors positius i no hi ha cap referència central significativa, una paleta divergent pot induir una lectura falsa: el lector pot entendre que hi ha dos fenòmens oposats quan en realitat només hi ha valors baixos i alts d'un mateix indicador.
 
@@ -202,9 +199,9 @@ Una paleta divergent és útil per mostrar municipis per sota o per sobre de la 
 
 ### Paletes binàries i d'accent
 
-Una paleta binària diferencia dues situacions, com presència/absència, compleix/no compleix o dins/fora. També pot destacar una categoria sobre un fons neutral. Aquest recurs és potent, però ha de respondre a una decisió clara: si el mapa destaca municipis per sobre d'un llindar, el llindar ha de tenir sentit analític i constar a la llegenda.
+Una **paleta binària** diferencia dues situacions, com presència/absència, compleix/no compleix o dins/fora. També pot destacar una categoria sobre un fons neutral. Aquest recurs és potent, però ha de respondre a una decisió clara: si el mapa destaca municipis per sobre d'un llindar, el llindar ha de tenir sentit analític i constar a la llegenda.
 
-Els accents cromàtics serveixen per conduir la mirada cap a una dada, una anotació o una conclusió. No han de crear una segona classificació implícita ni competir amb el codi principal. Una regla pràctica és que el color d'accent hauria de poder-se explicar en una frase: destaca el territori d'estudi, assenyala un valor de referència o connecta peces que parlen del mateix fenomen.
+Els **accents cromàtics** serveixen per conduir la mirada cap a una dada, una anotació o una conclusió. No han de crear una segona classificació implícita ni competir amb el codi principal. Una regla pràctica és que el color d'accent hauria de poder-se explicar en una frase: destaca el territori d'estudi, assenyala un valor de referència o connecta peces que parlen del mateix fenomen.
 
 En una infografia del projecte, un accent pot marcar la comarca analitzada dins de Catalunya, els municipis costaners dins d'una sèrie comarcal o els municipis que superen un llindar acordat. La resta d'elements han de quedar visibles però subordinats. Si l'accent serveix només per "fer bonic", el lector pot atribuir-li un significat que la dada no té.
 
@@ -316,9 +313,31 @@ El full calcularà els canals RGB a partir del codi HEX. Si `E2` conté `#D55E00
 =HEX2DEC(MID(E2,6,2))
 ```
 
-També convertirà els canals sRGB a valors lineals per calcular luminància relativa i contrast aproximat amb blanc i negre. Aquest càlcul ajuda a detectar textos o símbols problemàtics, però no substitueix la prova sobre la mida, el fons i la geometria reals. Les files conservaran camps per a la prova en grisos, la simulació de deficiències cromàtiques i les notes de revisió.
+També convertirà els canals sRGB a valors lineals per calcular la luminància relativa i el contrast amb blanc i negre segons la definició de les [WCAG 2.2](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html). Per a cada canal de 8 bits, primer es calcula $c_{sRGB}=c_{8bit}/255$ i després:
 
-La paleta qualitativa d'edats s'aplicarà a les barres apilades; el gràfic ordenat mantindrà totes les barres amb un gris blavós neutral i destacarà Vila-seca amb un taronja que també queda identificat pel text; i la piràmide utilitzarà dos colors divergents. Les mostres BuGn i RdBu es conservaran com a candidates per als mapes, però no fixaran encara els punts de tall.
+$$
+c_{lin} =
+\begin{cases}
+c_{sRGB}/12.92, & \text{si } c_{sRGB}\leq 0.04045 \\
+\left(\dfrac{c_{sRGB}+0.055}{1.055}\right)^{2.4}, & \text{si } c_{sRGB}>0.04045
+\end{cases}
+$$
+
+Amb els tres canals lineals, la luminància relativa és:
+
+$$
+L=0.2126R_{lin}+0.7152G_{lin}+0.0722B_{lin}
+$$
+
+Si $L_1$ és la luminància del color més clar i $L_2$ la del més fosc, la ràtio de contrast és:
+
+$$
+\frac{L_1+0.05}{L_2+0.05}
+$$
+
+Com a referència operativa, les WCAG estableixen `4,5:1` per al text ordinari, `3:1` per al text gran i `3:1` per a parts gràfiques necessàries per entendre el contingut. Aquests llindars ajuden a detectar textos, línies o símbols problemàtics, però no demostren per si sols que dues classes cromàtiques siguin distingibles ni substitueixen la prova sobre la mida, el fons, les etiquetes i la geometria reals. Les files conservaran camps per a la prova en grisos, la simulació de deficiències cromàtiques i les notes de revisió.
+
+Una seqüència discreta i ordenada, amb límits foscos que separin els segments clars, s'aplicarà als grups d'edat de les barres apilades; el gràfic ordenat mantindrà totes les barres amb un gris blavós neutral i destacarà Vila-seca amb un taronja que també queda identificat pel text; i la piràmide utilitzarà dos colors distingibles i de pes visual semblant per separar les dues categories nominals de sexe, sense presentar-les com a extrems d'una escala divergent. La mostra BuGn es conservarà com a candidata seqüencial per a la coropleta. RdBu quedarà documentada només com a exemple divergent per a una variable amb un centre analític explícit, no com a candidata automàtica per al percentatge d'habitatge no principal. Cap de les mostres fixarà encara els punts de tall.
 
 ### Evidències del registre cromàtic
 

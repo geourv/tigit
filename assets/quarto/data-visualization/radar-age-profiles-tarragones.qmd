@@ -1,0 +1,209 @@
+---
+title: "Radar: perfils d'edat de tres municipis del Tarragonès"
+lang: ca
+ref: radar_age_profiles_tarragones
+format:
+  gfm:
+    output-file: radar-age-profiles-tarragones.generated.md
+execute:
+  echo: false
+  warning: false
+  message: false
+execute-dir: project
+unaltraweb_compute:
+  engine: r
+  mode: figure
+  inputs:
+    - _practices/tigit-projecte-territorial/data/raw/poblacio-edat-tarragones-2021.csv
+  outputs:
+    - assets/img/data-visualization/radar-age-profiles-tarragones-2021.svg
+---
+
+```{r}
+find_project_root <- function(start) {
+  path <- normalizePath(start, winslash = "/", mustWork = FALSE)
+  repeat {
+    if (file.exists(file.path(path, ".unaltraweb", "computations.yml"))) {
+      return(path)
+    }
+    parent <- dirname(path)
+    if (identical(parent, path)) {
+      stop("Project root not found: missing .unaltraweb/computations.yml")
+    }
+    path <- parent
+  }
+}
+
+root <- find_project_root(getwd())
+library(ggplot2)
+
+county <- read.csv(
+  file.path(root, "_practices/tigit-projecte-territorial/data/raw/poblacio-edat-tarragones-2021.csv"),
+  fileEncoding = "UTF-8"
+)
+
+municipalities <- c("Pobla de Mafumet, la", "Vila-seca", "Creixell")
+county <- county[
+  county$YEAR == 2021 &
+    county$CONCEPT == "POP" &
+    county$SEX == "TOTAL" &
+    county$AGE != "TOTAL" &
+    county$municipality_name %in% municipalities &
+    !is.na(county$value),
+]
+
+county$age_years <- ifelse(
+  county$AGE == "Y_GE100",
+  100L,
+  as.integer(substring(county$AGE, 2))
+)
+county$age_group <- cut(
+  county$age_years,
+  breaks = c(-Inf, 14, 29, 44, 64, Inf),
+  right = TRUE,
+  labels = c("0-14", "15-29", "30-44", "45-64", "65+")
+)
+
+profiles <- aggregate(
+  value ~ municipality_name + age_group,
+  data = county,
+  FUN = sum
+)
+totals <- aggregate(value ~ municipality_name, data = county, FUN = sum)
+profiles <- merge(profiles, totals, by = "municipality_name", suffixes = c("", "_total"))
+profiles$pct <- 100 * profiles$value / profiles$value_total
+
+profile_totals <- aggregate(pct ~ municipality_name, data = profiles, FUN = sum)
+stopifnot(
+  nrow(profiles) == length(municipalities) * 5,
+  all(abs(profile_totals$pct - 100) < 1e-6),
+  max(profiles$pct) < 40
+)
+
+display_names <- c(
+  "Pobla de Mafumet, la" = "La Pobla de Mafumet",
+  "Vila-seca" = "Vila-seca",
+  "Creixell" = "Creixell"
+)
+profiles$municipality <- factor(
+  unname(display_names[profiles$municipality_name]),
+  levels = unname(display_names[municipalities])
+)
+profiles$age_group <- factor(
+  profiles$age_group,
+  levels = c("0-14", "15-29", "30-44", "45-64", "65+")
+)
+profiles$axis <- as.integer(profiles$age_group)
+angles <- pi / 2 - (0:4) * 2 * pi / 5
+profiles$x <- profiles$pct * cos(angles[profiles$axis])
+profiles$y <- profiles$pct * sin(angles[profiles$axis])
+
+profile_xy <- profiles[order(profiles$municipality, profiles$axis), ]
+profile_xy <- do.call(
+  rbind,
+  lapply(split(profile_xy, profile_xy$municipality), function(x) rbind(x, x[1, ]))
+)
+
+grid_xy <- expand.grid(ring = c(10, 20, 30, 40), axis = 1:5)
+grid_xy$x <- grid_xy$ring * cos(angles[grid_xy$axis])
+grid_xy$y <- grid_xy$ring * sin(angles[grid_xy$axis])
+grid_xy <- do.call(
+  rbind,
+  lapply(split(grid_xy, grid_xy$ring), function(x) rbind(x, x[1, ]))
+)
+
+axes <- data.frame(
+  x = 0,
+  y = 0,
+  xend = 40 * cos(angles),
+  yend = 40 * sin(angles)
+)
+axis_labels <- data.frame(
+  x = 45 * cos(angles),
+  y = 45 * sin(angles),
+  label = levels(profiles$age_group),
+  hjust = ifelse(cos(angles) > 0.1, 0, ifelse(cos(angles) < -0.1, 1, 0.5))
+)
+ring_labels <- data.frame(
+  municipality = factor("La Pobla de Mafumet", levels = levels(profiles$municipality)),
+  x = c(10, 20, 30, 40) * cos(pi / 2 + 0.08),
+  y = c(10, 20, 30, 40) * sin(pi / 2 + 0.08),
+  label = paste0(c(10, 20, 30, 40), "%")
+)
+
+palette <- c(
+  "La Pobla de Mafumet" = "#0072B2",
+  "Vila-seca" = "#D55E00",
+  "Creixell" = "#009E73"
+)
+
+fig <- ggplot() +
+  geom_polygon(
+    data = grid_xy,
+    aes(x = x, y = y, group = ring),
+    fill = NA,
+    color = "#dce3e9",
+    linewidth = 0.45
+  ) +
+  geom_segment(
+    data = axes,
+    aes(x = x, y = y, xend = xend, yend = yend),
+    color = "#cbd5df",
+    linewidth = 0.4
+  ) +
+  geom_polygon(
+    data = profile_xy,
+    aes(x = x, y = y, group = municipality, fill = municipality),
+    color = NA,
+    alpha = 0.16
+  ) +
+  geom_path(
+    data = profile_xy,
+    aes(x = x, y = y, group = municipality, color = municipality),
+    linewidth = 0.9
+  ) +
+  geom_point(
+    data = profiles,
+    aes(x = x, y = y, color = municipality),
+    size = 2.2
+  ) +
+  geom_text(
+    data = axis_labels,
+    aes(x = x, y = y, label = label, hjust = hjust),
+    color = "#17202a",
+    fontface = "bold",
+    size = 3.2
+  ) +
+  geom_text(
+    data = ring_labels,
+    aes(x = x, y = y, label = label),
+    color = "#667784",
+    hjust = 1.1,
+    size = 2.6
+  ) +
+  facet_wrap(~municipality, nrow = 1) +
+  scale_color_manual(values = palette, guide = "none") +
+  scale_fill_manual(values = palette, guide = "none") +
+  coord_equal(xlim = c(-49, 49), ylim = c(-49, 49), clip = "off") +
+  labs(
+    title = "Perfils d'edat de tres municipis del Tarragonès (2021)",
+    subtitle = "Percentatge de la població municipal en cada grup; escala radial comuna del 0 al 40%",
+    x = NULL,
+    y = NULL,
+    caption = "Font: Idescat, cens de 2021. Cada perfil suma el 100%; l'àrea del polígon no representa cap estadística."
+  ) +
+  theme_void(base_size = 11) +
+  theme(
+    plot.background = element_rect(fill = "white", color = NA),
+    panel.background = element_rect(fill = "white", color = NA),
+    strip.text = element_text(color = "#17202a", face = "bold", size = 11),
+    plot.title = element_text(color = "#17202a", face = "bold", size = 14),
+    plot.subtitle = element_text(color = "#52616b", size = 10),
+    plot.caption = element_text(color = "#52616b", size = 8, hjust = 0, margin = margin(t = 9)),
+    plot.margin = margin(10, 14, 8, 10)
+  )
+
+output <- file.path(root, "assets/img/data-visualization/radar-age-profiles-tarragones-2021.svg")
+dir.create(dirname(output), showWarnings = FALSE, recursive = TRUE)
+ggsave(output, fig, width = 10, height = 4.6, device = svglite::svglite)
+```

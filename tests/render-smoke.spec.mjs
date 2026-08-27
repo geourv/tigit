@@ -718,9 +718,9 @@ test("TIGIT manual home starts at chapter zero and credits its authors and tools
   await expect(page.locator(".manual-download")).toHaveAttribute("download", "");
 
   await page.setViewportSize({ width: 1600, height: 900 });
-  const manualFlowBox = await page.locator(".md-figure:has(img[src$='manual-flow.mmd.svg']) .md-figure-inner").boundingBox();
-  if (!manualFlowBox) throw new Error("The manual workflow diagram is not measurable");
-  expect(manualFlowBox.width).toBeLessThanOrEqual(610);
+  const questionFlowBox = await page.locator(".md-figure:has(img[src$='course-question-flow.mmd.svg']) .md-figure-inner").boundingBox();
+  if (!questionFlowBox) throw new Error("The course question flow diagram is not measurable");
+  expect(questionFlowBox.width).toBeLessThanOrEqual(610);
 
   const footer = page.locator("footer");
   await expect(footer).toContainText("Els autors");

@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="650" viewBox="0 0 1120 650" role="img" aria-labelledby="title desc">
+  <title id="title">Abast i maduresa dels sistemes de posicionament per ràdio segons una classificació de 2010</title>
+  <desc id="desc">Matriu històrica amb cinc columnes de maduresa, des de sistemes obsolets fins a experimentals, i quatre files d'abast aproximat, des de deu metres fins a deu mil quilòmetres. GNSS apareix com a consolidat i d'abast global. La resta de tecnologies ocupen posicions diferents segons l'estimació publicada el 2010; una fletxa connecta Loran-C amb eLoran.</desc>
+  <defs>
+    <style>
+      .axis-title { font-family: Arial, sans-serif; font-size: 24px; font-weight: 700; fill: #334155; }
+      .column { font-family: Arial, sans-serif; font-size: 24px; font-weight: 700; fill: #17202a; }
+      .range { font-family: Arial, sans-serif; font-size: 24px; font-weight: 700; fill: #17202a; }
+      .range-note { font-family: Arial, sans-serif; font-size: 24px; fill: #52616b; }
+      .item { font-family: Arial, sans-serif; font-size: 24px; font-weight: 700; fill: #334155; }
+      .item-light { font-family: Arial, sans-serif; font-size: 24px; font-weight: 700; fill: #ffffff; }
+      .transition { font-family: Arial, sans-serif; font-size: 24px; font-weight: 700; fill: #a85f25; }
+    </style>
+    <marker id="transition-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#d47b36"/>
+    </marker>
+  </defs>
+
+  <text class="axis-title" x="180" y="25">Maduresa atribuïda l'any 2010</text>
+  <text class="axis-title" x="24" y="350" text-anchor="middle" transform="rotate(-90 24 350)">Abast aproximat del sistema</text>
+
+  <rect x="180" y="70" width="920" height="540" rx="12" fill="#ffffff" stroke="#9eb9be" stroke-width="2"/>
+  <rect x="180" y="70" width="920" height="135" fill="#f8fafc"/>
+  <rect x="180" y="340" width="920" height="135" fill="#f8fafc"/>
+
+  <path d="M180 205 H1100 M180 340 H1100 M180 475 H1100" stroke="#cbd5df" stroke-width="2"/>
+  <path d="M364 70 V610 M548 70 V610 M732 70 V610 M916 70 V610" stroke="#dbe3e8" stroke-width="2"/>
+
+  <text class="column" x="272" y="52" text-anchor="middle">Obsolets</text>
+  <text class="column" x="456" y="52" text-anchor="middle">En retrocés</text>
+  <text class="column" x="640" y="52" text-anchor="middle">Consolidats</text>
+  <text class="column" x="824" y="43" text-anchor="middle">En</text>
+  <text class="column" x="824" y="65" text-anchor="middle" textLength="150" lengthAdjust="spacingAndGlyphs">desenvolupament</text>
+  <text class="column" x="1008" y="52" text-anchor="middle">Experimentals</text>
+
+  <text class="range" x="164" y="113" text-anchor="end">~10 000 km</text>
+  <text class="range-note" x="164" y="142" text-anchor="end">continental</text>
+  <text class="range-note" x="164" y="169" text-anchor="end">o global</text>
+  <text class="range" x="164" y="260" text-anchor="end">~100 km</text>
+  <text class="range-note" x="164" y="286" text-anchor="end">regional</text>
+  <text class="range" x="164" y="395" text-anchor="end">~1 km</text>
+  <text class="range-note" x="164" y="421" text-anchor="end">local o urbà</text>
+  <text class="range" x="164" y="518" text-anchor="end">~10 m</text>
+  <text class="range-note" x="164" y="547" text-anchor="end">proximitat</text>
+  <text class="range-note" x="164" y="574" text-anchor="end">o interior</text>
+
+  <g aria-label="Sistemes d'abast continental o global">
+    <rect x="214" y="100" width="116" height="38" rx="19" fill="#ffffff" stroke="#9fb7d3" stroke-width="2"/>
+    <text class="item" x="272" y="126" text-anchor="middle">Omega</text>
+    <rect x="214" y="151" width="116" height="38" rx="19" fill="#ffffff" stroke="#9fb7d3" stroke-width="2"/>
+    <text class="item" x="272" y="177" text-anchor="middle">Transit</text>
+
+    <rect x="582" y="118" width="116" height="52" rx="26" fill="#21757b"/>
+    <text class="item-light" x="640" y="151" text-anchor="middle">GNSS</text>
+
+    <rect x="924" y="111" width="168" height="66" rx="18" fill="#ffffff" stroke="#9fb7d3" stroke-width="2"/>
+    <text class="item" x="1008" y="138" text-anchor="middle">Iridium</text>
+    <text class="range-note" x="1008" y="162" text-anchor="middle">posicionament</text>
+  </g>
+
+  <g aria-label="Sistemes d'abast regional">
+    <rect x="214" y="252" width="116" height="42" rx="21" fill="#ffffff" stroke="#9fb7d3" stroke-width="2"/>
+    <text class="item" x="272" y="280" text-anchor="middle">Decca</text>
+
+    <path d="M510 251 C600 225 710 225 780 251" fill="none" stroke="#d47b36" stroke-width="4" stroke-dasharray="10 8" marker-end="url(#transition-arrow)"/>
+    <text class="transition" x="646" y="225" text-anchor="middle">evolució proposada</text>
+    <rect x="397" y="239" width="118" height="42" rx="21" fill="#ffffff" stroke="#d8a25f" stroke-width="2"/>
+    <text class="item" x="456" y="267" text-anchor="middle">Loran-C</text>
+    <rect x="378" y="286" width="156" height="50" rx="21" fill="#ffffff" stroke="#9fb7d3" stroke-width="2"/>
+    <text class="item" x="456" y="307" text-anchor="middle">Datatrak</text>
+    <text class="item" x="456" y="330" text-anchor="middle">balises</text>
+
+    <rect x="568" y="266" width="144" height="42" rx="21" fill="#ffffff" stroke="#9fb7d3" stroke-width="2"/>
+    <text class="item" x="640" y="294" text-anchor="middle">VOR / DME</text>
+
+    <rect x="765" y="239" width="118" height="42" rx="21" fill="#ffffff" stroke="#d8a25f" stroke-width="2"/>
+    <text class="item" x="824" y="267" text-anchor="middle">eLoran</text>
+    <rect x="750" y="293" width="148" height="42" rx="21" fill="#ffffff" stroke="#9fb7d3" stroke-width="2"/>
+    <text class="item" x="824" y="321" text-anchor="middle">TV · AM/FM</text>
+
+    <rect x="950" y="266" width="116" height="42" rx="21" fill="#ffffff" stroke="#9fb7d3" stroke-width="2"/>
+    <text class="item" x="1008" y="294" text-anchor="middle">DAB</text>
+  </g>
+
+  <g aria-label="Sistemes d'abast local o urbà">
+    <rect x="552" y="370" width="176" height="42" rx="21" fill="#ffffff" stroke="#9fb7d3" stroke-width="2"/>
+    <text class="item" x="640" y="398" text-anchor="middle">Telefonia mòbil</text>
+    <rect x="582" y="423" width="116" height="42" rx="21" fill="#ffffff" stroke="#9fb7d3" stroke-width="2"/>
+    <text class="item" x="640" y="451" text-anchor="middle">ILS</text>
+
+    <rect x="765" y="396" width="118" height="42" rx="21" fill="#ffffff" stroke="#9fb7d3" stroke-width="2"/>
+    <text class="item" x="824" y="424" text-anchor="middle">Locata</text>
+  </g>
+
+  <g aria-label="Sistemes de proximitat o interior">
+    <rect x="738" y="510" width="172" height="66" rx="24" fill="#eef8f5" stroke="#83b8a7" stroke-width="2"/>
+    <text class="item" x="824" y="537" text-anchor="middle">RFID · Wi-Fi</text>
+    <text class="item" x="824" y="563" text-anchor="middle">UWB</text>
+
+    <rect x="938" y="520" width="140" height="48" rx="24" fill="#eef8f5" stroke="#83b8a7" stroke-width="2"/>
+    <text class="item" x="1008" y="551" text-anchor="middle">Bluetooth</text>
+  </g>
+</svg>

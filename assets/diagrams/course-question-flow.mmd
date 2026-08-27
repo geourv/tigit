@@ -1,0 +1,9 @@
+flowchart TB
+  subgraph first[ ]
+    direction LR
+    session[1. Sessió<br/>comentar el dubte] -->|Si persisteix| forum[2. Fòrum de Moodle<br/>pregunta compartida]
+  end
+  forum -->|Si persisteix| email[3. Correu institucional<br/>identificació · dubte · intents]
+  email -->|Resposta escrita| reply[4a. Resposta per correu]
+  email -->|Cal una conversa| tutorial[4b. Tutoria]
+  style first fill:none,stroke:none

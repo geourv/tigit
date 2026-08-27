@@ -221,7 +221,7 @@ viewshed_plot <- ggplot(terrain, aes(x, y)) +
   scale_fill_gradientn(colors = c("#e7efe2", "#9fbf91", "#63865f", "#475d43"), guide = "none") +
   coord_equal(expand = FALSE) +
   labs(
-    title = "Conca visual: la muntanya oculta l'altre vessant",
+    title = "Conca visual sobre el relleu",
     subtitle = "L'observador se situa prop de l'extrem dret del model d'elevacions"
   ) +
   theme_void(base_family = "DejaVu Sans") +
@@ -233,44 +233,16 @@ viewshed_plot <- ggplot(terrain, aes(x, y)) +
   )
 
 output <- file.path(root, "assets/img/gis/gis-analysis-examples.svg")
-svglite::svglite(output, width = 12, height = 6.5, bg = "white")
+svglite::svglite(output, width = 12, height = 5.5, bg = "white")
 grid::grid.newpage()
 layout <- grid::grid.layout(
-  nrow = 2,
+  nrow = 1,
   ncol = 2,
-  heights = grid::unit(c(0.86, 0.14), "npc"),
   widths = grid::unit(c(1, 1), "null")
 )
 grid::pushViewport(grid::viewport(layout = layout))
 print(network_plot, vp = grid::viewport(layout.pos.row = 1, layout.pos.col = 1))
 print(viewshed_plot, vp = grid::viewport(layout.pos.row = 1, layout.pos.col = 2))
-
-footer <- grid::viewport(layout.pos.row = 2, layout.pos.col = 1:2)
-grid::grid.roundrect(
-  x = 0.5,
-  y = 0.5,
-  width = 0.96,
-  height = 0.72,
-  r = grid::unit(2.5, "mm"),
-  vp = footer,
-  gp = grid::gpar(fill = "#eef5f7", col = "#b8cbd2", lwd = 0.8)
-)
-grid::grid.text(
-  "La pregunta determina la representació",
-  x = grid::unit(0.04, "npc"),
-  y = grid::unit(0.64, "npc"),
-  just = c("left", "center"),
-  vp = footer,
-  gp = grid::gpar(fontfamily = "DejaVu Sans", fontsize = 15, fontface = "bold", col = "#17202a")
-)
-grid::grid.text(
-  "Xarxa + costos → ruta mínima  |  MDE + observador → cel·les visibles",
-  x = grid::unit(0.04, "npc"),
-  y = grid::unit(0.31, "npc"),
-  just = c("left", "center"),
-  vp = footer,
-  gp = grid::gpar(fontfamily = "DejaVu Sans", fontsize = 13, col = "#52616b")
-)
 grDevices::dev.off()
 
 add_svg_metadata(

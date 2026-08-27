@@ -12,7 +12,7 @@
         },
         {
           "path": "requirements-compute.txt",
-          "sha256": "d93c6c5c1ed8278b7a58a7f6c1633feac56ff1cbd371a09d142fa3e89fbeddc4"
+          "sha256": "759a37ff81610b5420e74a1271b1693d24c0e135783d3ecdaf0f075b5109ab12"
         },
         {
           "path": ".unaltraweb/computations.yml",
@@ -20,7 +20,7 @@
         }
       ],
       "engine": "python",
-      "fingerprint": "604615d7645f997a7e2eb8bf8a22e7b489a0253a739b55d820c24f5866ac9292",
+      "fingerprint": "9b07364dbcf2488ddca48f6eba76dc1c147cee4fe68106a75efd4c6f9ec1cd41",
       "image": {
         "engine": "python",
         "environment": "local",
@@ -30,7 +30,7 @@
       "image_identity": {
         "available": "true",
         "digest": "",
-        "id": "sha256:719b6ad00f89fabd01fd1fe543bb80c76e8bcb3b537bd8bb66342e3c900c015c"
+        "id": "sha256:391d06717845fa884de9baa9b993f613ac952ed3f51c17f229f3ed97f10a0b09"
       },
       "mode": "figure",
       "outputs": [
@@ -40,7 +40,7 @@
           "size": 8251
         }
       ],
-      "rendered_at": "2026-08-23T19:13:04+00:00"
+      "rendered_at": "2026-08-26T22:54:29+00:00"
     },
     "assets/quarto/cartographic-language/minimum-mapping-unit-tarragones.qmd": {
       "dependencies": [
@@ -147,7 +147,7 @@
         },
         {
           "path": "requirements-compute.txt",
-          "sha256": "d93c6c5c1ed8278b7a58a7f6c1633feac56ff1cbd371a09d142fa3e89fbeddc4"
+          "sha256": "759a37ff81610b5420e74a1271b1693d24c0e135783d3ecdaf0f075b5109ab12"
         },
         {
           "path": ".unaltraweb/computations.yml",
@@ -155,7 +155,7 @@
         }
       ],
       "engine": "python",
-      "fingerprint": "f15f3bb0ec08edfadb3f52aba0637bb90e34c07637676596ab4ee62c1837914c",
+      "fingerprint": "1df23bdea3bc60f4bcaf44923358845764cac7fa49015918e33f73273afafbbe",
       "image": {
         "engine": "python",
         "environment": "local",
@@ -165,7 +165,7 @@
       "image_identity": {
         "available": "true",
         "digest": "",
-        "id": "sha256:719b6ad00f89fabd01fd1fe543bb80c76e8bcb3b537bd8bb66342e3c900c015c"
+        "id": "sha256:391d06717845fa884de9baa9b993f613ac952ed3f51c17f229f3ed97f10a0b09"
       },
       "mode": "figure",
       "outputs": [
@@ -175,13 +175,132 @@
           "size": 7036
         }
       ],
-      "rendered_at": "2026-08-24T21:47:20+00:00"
+      "rendered_at": "2026-08-26T22:54:35+00:00"
+    },
+    "assets/quarto/coordinate-systems/geolocation-exercise-world-map.qmd": {
+      "dependencies": [
+        {
+          "path": "assets/quarto/coordinate-systems/geolocation-exercise-world-map.qmd",
+          "sha256": "ddf022586ecdd0f59545fc93cd207ded09b63185fe72a592e669287add5556bf"
+        },
+        {
+          "path": "Dockerfile.compute-r",
+          "sha256": "db3cb03be6f48b81f1abfcf7b2a3177c0206e7c76fb46765a81c625faa34fc49"
+        },
+        {
+          "path": "requirements-compute.R",
+          "sha256": "9512adde0ddffcd24dcd3321cb882eabb1097e31d6f7da7bbfa8f3b45136d190"
+        },
+        {
+          "path": ".unaltraweb/computations.yml",
+          "sha256": "301b44c41e8a0e500dd5ffda7410b4221a63711479a41a06eb98b5aae8abd0b3"
+        }
+      ],
+      "engine": "r",
+      "fingerprint": "359183c4e8dfcf8eddef0993746aed382ea69e4cfd9d5d96e83d64eb29ced519",
+      "image": {
+        "engine": "r",
+        "environment": "local",
+        "image": "tigit-compute-r:local",
+        "source": "environment:COMPUTE_R_IMAGE"
+      },
+      "image_identity": {
+        "available": "true",
+        "digest": "",
+        "id": "sha256:32093bf261521f44f0e8f3baa3a2115d82fa7accb8b2c4185b511b86347ec7a1"
+      },
+      "mode": "figure",
+      "outputs": [
+        {
+          "path": "assets/img/coordinate-systems/geolocation-exercise-world-map.svg",
+          "sha256": "512f5b0d3a0cf423df34a2132b9002a22c38553cd9f8357af44ea1870639331e",
+          "size": 2152829
+        },
+        {
+          "path": "assets/img/coordinate-systems/geolocation-exercise-world-map-solved.svg",
+          "sha256": "52c18ff163000d7098866a73ffb05110eb7bd1c31a85dd20a1c6bef0c6fbae74",
+          "size": 2154555
+        }
+      ],
+      "rendered_at": "2026-08-25T21:27:10+00:00"
+    },
+    "assets/quarto/coordinate-systems/projection-gallery.qmd": {
+      "dependencies": [
+        {
+          "path": "assets/quarto/coordinate-systems/projection-gallery.qmd",
+          "sha256": "ccdab5779db281215471530d1d67e9d01c7cae2da4e3413b79a8077da2c5f678"
+        },
+        {
+          "path": "Dockerfile.compute-r",
+          "sha256": "db3cb03be6f48b81f1abfcf7b2a3177c0206e7c76fb46765a81c625faa34fc49"
+        },
+        {
+          "path": "requirements-compute.R",
+          "sha256": "9512adde0ddffcd24dcd3321cb882eabb1097e31d6f7da7bbfa8f3b45136d190"
+        },
+        {
+          "path": ".unaltraweb/computations.yml",
+          "sha256": "301b44c41e8a0e500dd5ffda7410b4221a63711479a41a06eb98b5aae8abd0b3"
+        }
+      ],
+      "engine": "r",
+      "fingerprint": "69cf5ab873ec07d72f3a8949b93c271d6fc4afabb330256640f62265ab2156a1",
+      "image": {
+        "engine": "r",
+        "environment": "local",
+        "image": "tigit-compute-r:local",
+        "source": "environment:COMPUTE_R_IMAGE"
+      },
+      "image_identity": {
+        "available": "true",
+        "digest": "",
+        "id": "sha256:32093bf261521f44f0e8f3baa3a2115d82fa7accb8b2c4185b511b86347ec7a1"
+      },
+      "mode": "figure",
+      "outputs": [
+        {
+          "path": "assets/img/coordinate-systems/projection-gallery-mercator.svg",
+          "sha256": "0214045f0d336403e96c318318caa7c6a4caf56da0f738e8a68dea6ab2f55836",
+          "size": 1802295
+        },
+        {
+          "path": "assets/img/coordinate-systems/projection-gallery-lambert-cylindrical-equal-area.svg",
+          "sha256": "a08edda6c415ef8c8940e6e2d909246f7adff5e05b2c11b6369351338ea7c7f1",
+          "size": 1849074
+        },
+        {
+          "path": "assets/img/coordinate-systems/projection-gallery-mollweide.svg",
+          "sha256": "581287aa79b76d9a894d4c467a7753f277c3b2a697b661cfab8eb45b09a1656c",
+          "size": 1828889
+        },
+        {
+          "path": "assets/img/coordinate-systems/projection-gallery-robinson.svg",
+          "sha256": "df68acfb8c98173ad2b276ec3de147c8b4653bada63aaa45d61084a125c6e440",
+          "size": 1827634
+        },
+        {
+          "path": "assets/img/coordinate-systems/projection-gallery-orthographic-africa.svg",
+          "sha256": "2c0a1ed1144cd4764e918bd43931b9c9f0424750849f1c79df9a506e0e4e7f65",
+          "size": 849926
+        },
+        {
+          "path": "assets/img/coordinate-systems/projection-gallery-transverse-mercator.svg",
+          "sha256": "ec3fba2458873465bc54b01d76d3b2834f8effd05c10523aeb9262102756ab93",
+          "size": 177901
+        },
+        {
+          "path": "assets/img/coordinate-systems/projection-gallery-sinusoidal.svg",
+          "sha256": "11201d74966d8d43fefd4b4dde2bbdc2c9c6b11147d244cd289cd95fa658c796",
+          "size": 1840094
+        }
+      ],
+      "rendered_at": "2026-08-26T07:54:54+00:00"
     },
     "assets/quarto/data-visualization/age-structure-tarragones.qmd": {
       "dependencies": [
         {
           "path": "assets/quarto/data-visualization/age-structure-tarragones.qmd",
-          "sha256": "bac5a7450562ae2489ff069753b2582fd3ca9bb2c3ff0974b7d43cc2fa5e5da5"
+          "sha256": "0d6efeca0665b7abfe16079d22975b1e161f62440ce8b9ec480154555f1e722a"
         },
         {
           "path": "_practices/tigit-projecte-territorial/data/raw/poblacio-edat-tarragones-2021.csv",
@@ -201,7 +320,7 @@
         }
       ],
       "engine": "r",
-      "fingerprint": "2b16eacc987a23ed61f271245c7554e099fa29ecc64bb67d88e2932fdf08d4a7",
+      "fingerprint": "8eadacc05bdd91a09398bc76e56434fd6b4455991393d8b11c19ef21e2212173",
       "image": {
         "engine": "r",
         "environment": "local",
@@ -217,11 +336,11 @@
       "outputs": [
         {
           "path": "assets/img/data-visualization/age-structure-tarragones-2021.svg",
-          "sha256": "a1076a638108c9ea43350226c85eb7567478bb51039c3e240cb38cb9314d8332",
-          "size": 25829
+          "sha256": "e357ab1041cedf66fc0b833cd458a84254892c1c80ea15941bee5fe6a7b67832",
+          "size": 25413
         }
       ],
-      "rendered_at": "2026-08-23T22:47:21+00:00"
+      "rendered_at": "2026-08-26T09:11:38+00:00"
     },
     "assets/quarto/data-visualization/ageing-housing-scatter-tarragones.qmd": {
       "dependencies": [
@@ -717,6 +836,52 @@
       ],
       "rendered_at": "2026-08-23T22:47:55+00:00"
     },
+    "assets/quarto/data-visualization/radar-age-profiles-tarragones.qmd": {
+      "dependencies": [
+        {
+          "path": "assets/quarto/data-visualization/radar-age-profiles-tarragones.qmd",
+          "sha256": "d075763d3aeb35c18c25d27c752bff9306efcd46f55b17ebc04db2a79afa0f00"
+        },
+        {
+          "path": "_practices/tigit-projecte-territorial/data/raw/poblacio-edat-tarragones-2021.csv",
+          "sha256": "1ae0613086549db3400557218cc83435721f66ba5732f4c0b5eae493474cd24f"
+        },
+        {
+          "path": "Dockerfile.compute-r",
+          "sha256": "db3cb03be6f48b81f1abfcf7b2a3177c0206e7c76fb46765a81c625faa34fc49"
+        },
+        {
+          "path": "requirements-compute.R",
+          "sha256": "9512adde0ddffcd24dcd3321cb882eabb1097e31d6f7da7bbfa8f3b45136d190"
+        },
+        {
+          "path": ".unaltraweb/computations.yml",
+          "sha256": "301b44c41e8a0e500dd5ffda7410b4221a63711479a41a06eb98b5aae8abd0b3"
+        }
+      ],
+      "engine": "r",
+      "fingerprint": "291cee11af14ebeba01148d1e7d118c8f11a93b7eef111a298a776e28e886274",
+      "image": {
+        "engine": "r",
+        "environment": "local",
+        "image": "tigit-compute-r:local",
+        "source": "environment:COMPUTE_R_IMAGE"
+      },
+      "image_identity": {
+        "available": "true",
+        "digest": "",
+        "id": "sha256:32093bf261521f44f0e8f3baa3a2115d82fa7accb8b2c4185b511b86347ec7a1"
+      },
+      "mode": "figure",
+      "outputs": [
+        {
+          "path": "assets/img/data-visualization/radar-age-profiles-tarragones-2021.svg",
+          "sha256": "5bba8a48ddc867a9c2843ee00a33a160658a31fe014d77e4c4590a6a0e18d61d",
+          "size": 14103
+        }
+      ],
+      "rendered_at": "2026-08-26T09:15:31+00:00"
+    },
     "assets/quarto/data-visualization/sankey-allotjament-vilaseca.qmd": {
       "dependencies": [
         {
@@ -733,7 +898,7 @@
         },
         {
           "path": "requirements-compute.txt",
-          "sha256": "d93c6c5c1ed8278b7a58a7f6c1633feac56ff1cbd371a09d142fa3e89fbeddc4"
+          "sha256": "759a37ff81610b5420e74a1271b1693d24c0e135783d3ecdaf0f075b5109ab12"
         },
         {
           "path": ".unaltraweb/computations.yml",
@@ -741,7 +906,7 @@
         }
       ],
       "engine": "python",
-      "fingerprint": "44cf7d0be663bf0b9b1716d7843eeadd3fd182039e4cfce7446677b5988f17e4",
+      "fingerprint": "b730eae0d38252f25647aead41441576ed5d18a5b162ebf130e1890903cad1d7",
       "image": {
         "engine": "python",
         "environment": "local",
@@ -751,7 +916,7 @@
       "image_identity": {
         "available": "true",
         "digest": "",
-        "id": "sha256:719b6ad00f89fabd01fd1fe543bb80c76e8bcb3b537bd8bb66342e3c900c015c"
+        "id": "sha256:391d06717845fa884de9baa9b993f613ac952ed3f51c17f229f3ed97f10a0b09"
       },
       "mode": "figure",
       "outputs": [
@@ -761,7 +926,7 @@
           "size": 12851
         }
       ],
-      "rendered_at": "2026-08-23T10:23:32+00:00"
+      "rendered_at": "2026-08-26T22:54:43+00:00"
     },
     "assets/quarto/data-visualization/treemap-allotjament-vilaseca.qmd": {
       "dependencies": [
@@ -813,7 +978,7 @@
       "dependencies": [
         {
           "path": "assets/quarto/gis/gis-analysis-examples.qmd",
-          "sha256": "8b06e4836fdfbe4f944d765ab7ecd829f3ce1d71a0327cc41475b06d79af0600"
+          "sha256": "f95dd4cab3d8014a417e0915cb99595312211fb66f62046fad98893b89ec80cc"
         },
         {
           "path": "Dockerfile.compute-r",
@@ -829,7 +994,7 @@
         }
       ],
       "engine": "r",
-      "fingerprint": "758d9389e948f864580bbbfa14f9c7d9a6f61adee3a04a1f1c462e05b98783e9",
+      "fingerprint": "2e3798a5dd6b597c5b639cbc484c6361c2ba30dadcbeb2bee875f362d422c221",
       "image": {
         "engine": "r",
         "environment": "local",
@@ -845,11 +1010,11 @@
       "outputs": [
         {
           "path": "assets/img/gis/gis-analysis-examples.svg",
-          "sha256": "f68a6632246630f47e66fcd10d1a5b8ff90e6052b377a1f01304dfa082ab2519",
-          "size": 70041
+          "sha256": "3111b41122933d3205fb0fd062957764571a2f3a74ed218bbe9a6b2b2d7e4171",
+          "size": 68785
         }
       ],
-      "rendered_at": "2026-08-26T10:04:06+00:00"
+      "rendered_at": "2026-08-27T15:42:57+00:00"
     },
     "assets/quarto/thematic-cartography/choropleth-housing-absolute-bad.qmd": {
       "dependencies": [
@@ -951,11 +1116,58 @@
       ],
       "rendered_at": "2026-08-23T22:48:04+00:00"
     },
+    "assets/quarto/thematic-cartography/dorling-hexagon-cartograms.qmd": {
+      "dependencies": [
+        {
+          "path": "assets/quarto/thematic-cartography/dorling-hexagon-cartograms.qmd",
+          "sha256": "b06701ed854a8695b490c8030ccbf02f285fb4cb303e963080d03de5a3a6fca0"
+        },
+        {
+          "path": "Dockerfile.compute-python",
+          "sha256": "fde14d6d24d14f2ad0adc23caac835506e35a4fe3acce3a505f9228391351b74"
+        },
+        {
+          "path": "requirements-compute.txt",
+          "sha256": "759a37ff81610b5420e74a1271b1693d24c0e135783d3ecdaf0f075b5109ab12"
+        },
+        {
+          "path": ".unaltraweb/computations.yml",
+          "sha256": "301b44c41e8a0e500dd5ffda7410b4221a63711479a41a06eb98b5aae8abd0b3"
+        }
+      ],
+      "engine": "python",
+      "fingerprint": "81afc6fa51508bbd78599f1029eaa3d33044e3b25c574c99e3b3366f08de17fc",
+      "image": {
+        "engine": "python",
+        "environment": "local",
+        "image": "tigit-compute-python:local",
+        "source": "environment:COMPUTE_PYTHON_IMAGE"
+      },
+      "image_identity": {
+        "available": "true",
+        "digest": "",
+        "id": "sha256:391d06717845fa884de9baa9b993f613ac952ed3f51c17f229f3ed97f10a0b09"
+      },
+      "mode": "figure",
+      "outputs": [
+        {
+          "path": "assets/img/thematic-cartography/world-population-dorling-cartogram.svg",
+          "sha256": "abd0781ab9fb8fc7233558db4eeb0feff3356a6c75787e9101e3df20dde385b9",
+          "size": 303706
+        },
+        {
+          "path": "assets/img/thematic-cartography/us-states-hex-tile-cartogram.svg",
+          "sha256": "c12c71c95452b18255d14721c8fc017d88665091010168dca566d69953d235f8",
+          "size": 65508
+        }
+      ],
+      "rendered_at": "2026-08-27T21:33:40+00:00"
+    },
     "assets/quarto/thematic-cartography/population-cartogram-catalonia.qmd": {
       "dependencies": [
         {
           "path": "assets/quarto/thematic-cartography/population-cartogram-catalonia.qmd",
-          "sha256": "5733c463dac185f705fc67cecb1c5dc92a5ebbc4ec706fa29cb6a43ec78309c4"
+          "sha256": "c455c233e4d10a816b6a729a623e7e2937091dfb707600a89ff8b9c28908e44e"
         },
         {
           "path": "_practices/tigit-projecte-territorial/data/processed/catalonia-counties-icgc-20260120.gpkg",
@@ -983,7 +1195,7 @@
         }
       ],
       "engine": "r",
-      "fingerprint": "f0e7c1592d10eb38650add28b1846d57deae045aa40ab58575c3f5f9620293dd",
+      "fingerprint": "0a364e6cc6b55c6398149ab1332e916d77124a5887adb216788bac2946697547",
       "image": {
         "engine": "r",
         "environment": "local",
@@ -999,8 +1211,8 @@
       "outputs": [
         {
           "path": "assets/img/thematic-cartography/population-proportional-symbols-catalonia-2025.svg",
-          "sha256": "3cc3bda58ff5dcffdcdaa3aee0ba095adc72c853b6af2ac03dcdc1f1d0b4b27f",
-          "size": 115384
+          "sha256": "d3b047567d5a22458f151809253bf0bdb269036b35766594883366143e6c3593",
+          "size": 115084
         },
         {
           "path": "assets/img/thematic-cartography/population-cartogram-catalonia-2025.svg",
@@ -1008,13 +1220,13 @@
           "size": 217284
         }
       ],
-      "rendered_at": "2026-08-24T11:20:44+00:00"
+      "rendered_at": "2026-08-26T22:13:14+00:00"
     },
     "assets/quarto/thematic-cartography/proportional-symbols-housing-total.qmd": {
       "dependencies": [
         {
           "path": "assets/quarto/thematic-cartography/proportional-symbols-housing-total.qmd",
-          "sha256": "e9bf91efbeb66d5d2bd2cd822657f05c48d02c986de188c58aa3d195e6f384c7"
+          "sha256": "9899fcf6773552344be9af9d779c859503293c4066a77d2f2ce4682338948651"
         },
         {
           "path": "_practices/tigit-projecte-territorial/data/processed/tarragones-boundaries-icgc-20260120.gpkg",
@@ -1038,7 +1250,7 @@
         }
       ],
       "engine": "r",
-      "fingerprint": "a366c3f96a233b256dead3e216857447b1d4d1b0570f5993addf4baf49d1fafa",
+      "fingerprint": "030881f83609f1ec7a5cf7a4716563423f13dfe22387cf07d0933f9eddc45621",
       "image": {
         "engine": "r",
         "environment": "local",
@@ -1054,11 +1266,62 @@
       "outputs": [
         {
           "path": "assets/img/thematic-cartography/proportional-symbols-housing-total-tarragones-2021.svg",
-          "sha256": "0d722a09dbea9bf5c6977d5e70086ec90c7d8352bda5f5cad0474fdaa98e6bfc",
-          "size": 103615
+          "sha256": "ee7abb5d0b2e91fe70c0a591ed7ebca941aa4e1031757540f2514a29eff47602",
+          "size": 102410
         }
       ],
-      "rendered_at": "2026-08-23T22:48:07+00:00"
+      "rendered_at": "2026-08-26T21:24:33+00:00"
+    },
+    "assets/quarto/thematic-cartography/spanish-speakers-data-types.qmd": {
+      "dependencies": [
+        {
+          "path": "assets/quarto/thematic-cartography/spanish-speakers-data-types.qmd",
+          "sha256": "37dad562003b1239f7e94dd1fa860840a7c422bfffb45b166ec77307d1720bf7"
+        },
+        {
+          "path": "assets/img/legacy/spanish-speakers-choropleth-map.png",
+          "sha256": "403d2a2de10c347e8dd398ea54c7137f8f58076a07a19c6d0ed3083a3d8e9874"
+        },
+        {
+          "path": "Dockerfile.compute-r",
+          "sha256": "db3cb03be6f48b81f1abfcf7b2a3177c0206e7c76fb46765a81c625faa34fc49"
+        },
+        {
+          "path": "requirements-compute.R",
+          "sha256": "9512adde0ddffcd24dcd3321cb882eabb1097e31d6f7da7bbfa8f3b45136d190"
+        },
+        {
+          "path": ".unaltraweb/computations.yml",
+          "sha256": "301b44c41e8a0e500dd5ffda7410b4221a63711479a41a06eb98b5aae8abd0b3"
+        }
+      ],
+      "engine": "r",
+      "fingerprint": "629d65b0cf9c481a550363b5680966824cbcfbf784452a89c4fe643aaabd1dae",
+      "image": {
+        "engine": "r",
+        "environment": "local",
+        "image": "tigit-compute-r:local",
+        "source": "environment:COMPUTE_R_IMAGE"
+      },
+      "image_identity": {
+        "available": "true",
+        "digest": "",
+        "id": "sha256:32093bf261521f44f0e8f3baa3a2115d82fa7accb8b2c4185b511b86347ec7a1"
+      },
+      "mode": "figure",
+      "outputs": [
+        {
+          "path": "assets/img/thematic-cartography/spanish-speakers-qualitative-map.png",
+          "sha256": "b6830cda4f704f51753608243a18fc2afc73e1a5c87180653e1649451f3bb45b",
+          "size": 211856
+        },
+        {
+          "path": "assets/img/thematic-cartography/spanish-speakers-quantitative-map.png",
+          "sha256": "3a2d398ec169de02b75219cb029894831a678e5bc94c8dc60a0a95523f8e4da2",
+          "size": 169197
+        }
+      ],
+      "rendered_at": "2026-08-26T22:42:42+00:00"
     },
     "assets/quarto/thematic-cartography/thematic-methods-tarragones.qmd": {
       "dependencies": [

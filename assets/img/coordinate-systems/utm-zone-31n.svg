@@ -1,44 +1,67 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="684" height="467" viewBox="109 117 684 467" role="img" aria-labelledby="title desc">
-  <title id="title">Fus UTM 31 dins del CRS 31N i posició de Vila-seca</title>
-  <desc id="desc">Esquema del fus UTM 31 dins del CRS 31N, entre els meridians zero i sis graus est, amb el meridià central de tres graus est, el fals est de cinc-cents mil metres i Vila-seca situada a l'oest del meridià central.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="620" viewBox="0 0 900 620" role="img" aria-labelledby="title desc">
+  <title id="title">Fus UTM 31 a l'hemisferi nord</title>
+  <desc id="desc">Esquema geogràfic del fus 31 entre zero i sis graus est, des de l'equador fins al límit UTM de vuitanta-quatre graus nord. El meridià central és tres graus est i Vila-seca se situa a 41,10 graus nord.</desc>
   <defs>
     <style>
-      .label { font: 600 22px system-ui, sans-serif; fill: #17202a; }
-      .small { font: 18px system-ui, sans-serif; fill: #34495e; }
-      .mono { font: 600 19px ui-monospace, monospace; fill: #17202a; }
-      .zone { fill: #e9f2f7; stroke: #365b6d; stroke-width: 3; }
-      .central { stroke: #d0523c; stroke-width: 5; stroke-dasharray: 12 9; }
-      .boundary { stroke: #365b6d; stroke-width: 3; }
-      .guide { stroke: #78909c; stroke-width: 2; stroke-dasharray: 7 8; }
+      .title { font: 700 28px system-ui, sans-serif; fill: #17202a; }
+      .subtitle { font: 18px system-ui, sans-serif; fill: #52616b; }
+      .label { font: 700 20px system-ui, sans-serif; fill: #17202a; }
+      .small { font: 17px system-ui, sans-serif; fill: #44545d; }
+      .mono { font: 700 17px ui-monospace, monospace; fill: #17202a; }
+      .zone { fill: #eaf3f6; stroke: #365b6d; stroke-width: 3; }
+      .parallel { stroke: #aebdc4; stroke-width: 1.5; }
+      .equator { stroke: #b64a32; stroke-width: 5; }
+      .central { stroke: #17697a; stroke-width: 4; stroke-dasharray: 11 8; }
+      .panel { fill: #fff; stroke: #cbd6dc; stroke-width: 1.5; }
     </style>
-    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
-      <path d="M 0 0 L 10 5 L 0 10 z" fill="#365b6d"/>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#365b6d"/>
     </marker>
   </defs>
-  <path d="M 130 120 C 175 165, 175 455, 130 505 L 790 505 C 745 455, 745 165, 790 120 Z" class="zone"/>
-  <line x1="130" y1="120" x2="130" y2="505" class="boundary"/>
-  <line x1="790" y1="120" x2="790" y2="505" class="boundary"/>
-  <line x1="460" y1="120" x2="460" y2="505" class="central"/>
-  <line x1="240" y1="120" x2="240" y2="505" class="guide"/>
-  <line x1="350" y1="120" x2="350" y2="505" class="guide"/>
-  <line x1="570" y1="120" x2="570" y2="505" class="guide"/>
-  <line x1="680" y1="120" x2="680" y2="505" class="guide"/>
 
-  <text x="138" y="548" text-anchor="start" class="label">0° E</text>
-  <text x="460" y="548" text-anchor="middle" class="label">3° E</text>
-  <text x="782" y="548" text-anchor="end" class="label">6° E</text>
-  <text x="460" y="576" text-anchor="middle" class="small">meridià central: E = 500.000 m</text>
+  <text x="45" y="48" class="title">Del reticle global al fus 31N</text>
+  <text x="45" y="78" class="subtitle">La longitud defineix el fus; la N del CRS selecciona la meitat situada al nord de l'equador.</text>
 
-  <circle cx="256" cy="339" r="13" fill="#16697a" stroke="#fff" stroke-width="5"/>
-  <line x1="268" y1="329" x2="370" y2="255" stroke="#365b6d" stroke-width="2.5" marker-end="url(#arrow)"/>
-  <rect x="366" y="185" width="318" height="104" fill="#fff" stroke="#365b6d" stroke-width="2"/>
-  <text x="388" y="220" class="label">Vila-seca</text>
-  <text x="388" y="252" class="mono">E 344.469 m</text>
-  <text x="388" y="279" class="small">a l'oest del meridià central</text>
+  <path d="M150 510 L260 124 L430 124 L540 510 Z" class="zone"/>
+  <line x1="150" y1="510" x2="540" y2="510" class="equator"/>
+  <line x1="176" y1="418" x2="514" y2="418" class="parallel"/>
+  <line x1="202" y1="326" x2="488" y2="326" class="parallel"/>
+  <line x1="229" y1="234" x2="461" y2="234" class="parallel"/>
+  <line x1="255" y1="142" x2="435" y2="142" class="parallel"/>
+  <line x1="345" y1="124" x2="345" y2="510" class="central"/>
 
-  <text x="154" y="154" class="label">Fus 31</text>
-  <text x="154" y="183" class="small">31N = hemisferi nord</text>
-  <text x="154" y="210" class="small">no banda latitudinal</text>
-  <rect x="620" y="438" width="142" height="43" fill="#17202a"/>
-  <text x="691" y="467" text-anchor="middle" font-family="ui-monospace, monospace" font-size="20" font-weight="700" fill="#fff">EPSG:25831</text>
+  <text x="132" y="516" text-anchor="end" class="label">0° · Equador</text>
+  <text x="164" y="424" text-anchor="end" class="small">20° N</text>
+  <text x="190" y="332" text-anchor="end" class="small">40° N</text>
+  <text x="217" y="240" text-anchor="end" class="small">60° N</text>
+  <text x="243" y="148" text-anchor="end" class="small">80° N</text>
+  <text x="345" y="113" text-anchor="middle" class="label">84° N · límit UTM</text>
+
+  <text x="150" y="546" text-anchor="middle" class="label">0° E</text>
+  <text x="345" y="546" text-anchor="middle" class="label">3° E</text>
+  <text x="540" y="546" text-anchor="middle" class="label">6° E</text>
+  <text x="345" y="574" text-anchor="middle" class="small">meridià central del fus 31</text>
+
+  <circle cx="260" cy="321" r="13" fill="#a63d5a" stroke="#fff" stroke-width="4"/>
+  <line x1="272" y1="312" x2="386" y2="267" stroke="#365b6d" stroke-width="2.3" marker-end="url(#arrow)"/>
+  <rect x="382" y="217" width="205" height="78" rx="5" class="panel"/>
+  <text x="399" y="246" class="label">Vila-seca</text>
+  <text x="399" y="274" class="mono">1,15° E · 41,10° N</text>
+
+  <rect x="625" y="125" width="235" height="105" rx="6" class="panel"/>
+  <text x="646" y="158" class="label">31 = fus</text>
+  <text x="646" y="187" class="small">Franja de 6°:</text>
+  <text x="646" y="213" class="mono">0° E → 6° E</text>
+
+  <rect x="625" y="252" width="235" height="136" rx="6" class="panel"/>
+  <text x="646" y="285" class="label">N = hemisferi nord</text>
+  <text x="646" y="314" class="small">En aquest CRS:</text>
+  <text x="646" y="341" class="mono">equador → 84° N</text>
+  <text x="646" y="370" class="small">No és una banda MGRS.</text>
+
+  <rect x="625" y="410" width="235" height="132" rx="6" class="panel"/>
+  <text x="646" y="443" class="label">EPSG:25831</text>
+  <text x="646" y="472" class="small">ETRS89 / UTM 31N</text>
+  <text x="646" y="500" class="small">L'origen de N és</text>
+  <text x="646" y="526" class="mono">0 m a l'equador</text>
 </svg>

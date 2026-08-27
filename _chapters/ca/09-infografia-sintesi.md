@@ -18,12 +18,10 @@ En aquest manual, una **infografia** és una composició que integra text i repr
 
 >>>>> En acabar el capítol, cal poder transformar els resultats verificats del projecte en una miniinfografia territorial clara, traçable i llegible.
 >>>>>
->>>>> - Formular un missatge que relacioni una pregunta territorial i una evidència principal, i explicitar com una limitació específica n'acota o modifica la conclusió.
->>>>> - Seleccionar dues o tres peces visuals en total, inclosos els mapes, segons la funció que compleixen en l'argument.
->>>>> - Organitzar mètriques, mapes, gràfics, textos i fonts mitjançant una jerarquia i un recorregut de lectura recognoscibles.
->>>>> - Decidir si cal incorporar el mapa de context i aplicar el registre cromàtic sense crear codis contradictoris ni peces redundants.
->>>>> - Construir un màster SVG editable i generar un PDF de revisió i un PDF final verificat fora d'Inkscape.
->>>>> - Validar pregunta, resultat, limitació i llegibilitat mitjançant una prova amb una persona lectora.
+>>>>> - Formular un missatge que relacioni una pregunta territorial, una evidència principal i una limitació rellevant.
+>>>>> - Seleccionar i ordenar dues o tres peces visuals segons la funció que compleixen dins de l'argument.
+>>>>> - Construir una jerarquia i un recorregut de lectura coherents amb el mapa de context i el registre cromàtic.
+>>>>> - Conservar un màster editable i validar el resultat i la llegibilitat amb una persona lectora abans de l'exportació final.
 
 ## Definir el missatge
 
@@ -56,6 +54,8 @@ La miniinfografia comarcal integrarà, com a orientació estable del manual:
 - el mapa temàtic municipal dins d'aquesta selecció quan sostingui el patró espacial;
 - el mapa de context dins d'aquesta selecció si és necessari per situar la comarca;
 - una interpretació breu i una limitació rellevant.
+
+En aquest recompte, una **peça visual** és un panell exportat i importat de manera independent, com un gràfic, una coropleta o un mapa de context separat. Un requadre de situació integrat dins de la mateixa composició exportada que el mapa temàtic no afegeix una peça, mentre que un mapa de context importat com a panell autònom sí. Les mètriques de capçalera tampoc no entren en el recompte de dues o tres peces, perquè funcionen com a valors textuals de síntesi i no com a figures independents.
 
 Cada peça seleccionada ha de complir una funció. Si retirar una figura no debilita l'argument, probablement era redundant. Si una afirmació no es pot relacionar amb una dada, un mapa, un gràfic o una font preservada, no està prou sostinguda per aparèixer com a conclusió.
 
@@ -133,7 +133,7 @@ Les abreviatures, unitats i categories s'han d'explicar on es llegeixen. Un perc
 
 ## Activitat: construir la miniinfografia
 
-La demostració guiada reprèn tots els materials produïts fins aquí, en comprova la disponibilitat i en selecciona només els que sostenen una mateixa explicació territorial. Inventariar no significa incorporar-ho tot: la composició final combina dues o tres peces d'evidència visual en total, comptant conjuntament gràfics, coropletes, mapes de símbols i mapa de context.
+La demostració guiada reprèn tots els materials produïts fins aquí, en comprova la disponibilitat i en selecciona només els que sostenen una mateixa explicació territorial. Inventariar no significa incorporar-ho tot: la composició final combina dues o tres peces d'evidència visual independents en total, comptant conjuntament gràfics, coropletes, mapes de símbols i, quan sigui un panell separat, el mapa de context. Les mètriques de capçalera i els requadres integrats dins d'un mapa no s'afegeixen a aquest recompte.
 
 >>>>> L'activitat construeix, revisa i exporta una miniinfografia a partir de peces verificades i editables.
 >>>>>
@@ -145,26 +145,34 @@ La demostració guiada reprèn tots els materials produïts fins aquí, en compr
 
 ### Entrades i fitxers finals de la miniinfografia
 
-La composició comença amb les entrades acumulades disponibles: les fonts originals i el registre de procedència; el llibre canònic amb indicadors i mètriques; totes les figures candidates exportades; l'informe de la unió i el projecte QGIS compartit; el mapa de context; el registre cromàtic i la prova de paleta; la coropleta final i, si s'ha produït, el mapa de símbols proporcionals. L'alternativa controlada es consulta dins de QGIS com a evidència de comparació, no com una peça visible candidata. L'inventari permet validar i comparar les peces abans de seleccionar-ne dues o tres en total per a la composició, inclosos els mapes.
+La composició comença amb les fonts originals i el registre de procedència. De `data/processed` recupera el llibre `tigit-05-integracio-sig.xlsx`, que conserva els indicadors, les mètriques, els gràfics, el registre cromàtic i `map_export`. També utilitza totes les figures candidates exportades, l'informe de la unió, el projecte `tigit-08-cartografia-tematica.qgz` de la carpeta `qgis`, el mapa de context, la coropleta final i el mapa de símbols proporcionals. L'alternativa controlada es consulta dins de QGIS com a evidència de comparació, no com una peça visible candidata. L'inventari permet validar i comparar les peces abans de seleccionar-ne dues o tres en total per a la composició, segons el criteri de recompte definit en aquest capítol.
 
-El flux guiat deixa un màster SVG editable, un PDF de revisió, un PDF final a `dist` i un registre al `README.md` que relaciona cada peça amb l'origen i recull la prova amb una persona lectora. S'utilitzen noms descriptius i reconstruïbles: `outputs/infografia_tarragones_2021.svg`, `outputs/infografia_tarragones_2021_review.pdf` i `dist/infografia_tarragones_2021.pdf`. L'any identifica el període de les dades, no l'any d'elaboració; els noms s'adapten al territori i al període real de cada projecte.
+El flux guiat deixa un màster SVG editable, un PDF de revisió, un PDF final a `dist` i un registre al `README.md` que relaciona cada peça amb l'origen i recull la prova amb una persona lectora. Els fitxers utilitzen noms descriptius i reconstruïbles:
+
+- a `outputs/infographics`, `infografia_tarragones_2021.svg`;
+- a `outputs/infographics`, `infografia_tarragones_2021_review.pdf`;
+- a `dist`, `infografia_tarragones_2021.pdf`.
+
+L'any identifica el període de les dades, no l'any d'elaboració; els noms s'adapten al territori i al període real de cada projecte.
 
 La composició partirà dels resultats verificats, no de captures de pantalla ni de valors transcrits a mà. Si es detecta un error, la correcció s'ha de fer al llibre, al gràfic o al projecte QGIS d'origen i després s'ha de repetir l'exportació corresponent.
 
 ### Inventariar i validar les peces
 
-Abans d'obrir Inkscape es prepararà un inventari d'entrades:
+[Inkscape](https://inkscape.org/) és l'editor lliure de gràfics vectorials que s'utilitzarà per reunir textos, gràfics i mapes en un document SVG editable. Abans d'obrir-lo es prepararà un inventari d'entrades:
+
+El llibre acumulatiu és `tigit-05-integracio-sig.xlsx` i inclou els fulls `indicators_demography`, `indicators_housing`, `indicators_summary`, `palette` i `map_export`. El projecte cartogràfic és `tigit-08-cartografia-tematica.qgz`.
 
 ::: table "Entrades acumulades de la miniinfografia"
 | Origen | Peça | Comprovació abans d'importar |
 | --- | --- | --- |
-| Capítol 1 | Fonts originals i registre de procedència | Productor, recurs d'origen, llicència i traça fins a la dada preparada |
-| Capítol 2 | Llibre canònic i mètriques del full `indicators` | Fitxer únic, fórmula, unitat, període i agregació comarcal |
-| Capítol 3 | Figures vectorials candidates | Pregunta pròpia, valors contrastats i mida llegible |
-| Capítol 5 | Informe de la unió i projecte QGIS compartit | Claus, cardinalitat, absències, casos contrastats i capa municipal unida |
-| Capítol 6 | Mapa de context | Extensió, retolació, fonts i escala |
-| Capítol 7 | Registre cromàtic i prova de paleta | Funcions, codis HEX i RGB, grisos i simulació cromàtica |
-| Capítol 8 | Coropleta final i mapa de símbols proporcionals si s'ha produït; alternativa controlada editable com a comparació | Camps, classes o escala de mides, paleta, llegendes i absències; l'alternativa no és una peça visible candidata |
+| Fonts i preparació | Fonts originals i registre de procedència | Productor, recurs d'origen, llicència i traça fins a la dada preparada |
+| Indicadors, color i integració SIG | Llibre acumulatiu | Fitxer únic, fórmula, unitat i període; `indicators_summary` per a les mètriques comarcals i `map_export` per als camps cartogràfics |
+| Semiologia i visualització | Figures vectorials candidates | Pregunta pròpia, valors contrastats i mida llegible |
+| Integració SIG | Informe de la unió municipal | Claus, cardinalitat, absències i casos contrastats abans de simbolitzar |
+| Llenguatge cartogràfic | Mapa de context | Extensió, retolació, fonts i escala |
+| Teoria del color | Registre cromàtic i prova de paleta | Funcions, codis HEX i RGB, grisos i simulació cromàtica |
+| Cartografia temàtica | Projecte QGIS, coropleta final, mapa de símbols proporcionals i alternativa controlada editable | Capa i composició; `housing_non_main_pct` per a la coropleta i `housing_total` per als símbols de la demostració; classes o escala d'àrees, paleta, llegendes i absències; l'alternativa no és una peça visible candidata |
 | Aquest capítol | Text d'interpretació | Observació, evidència, hipòtesi prudent i limitació |
 :::
 
@@ -176,11 +184,35 @@ Es redactarà una frase per a la pregunta, una per al resultat principal i una p
 
 L'ordre de lectura ha de conduir de la pregunta a l'evidència i de l'evidència a la interpretació. No cal que coincideixi amb l'ordre cronològic en què es van produir els fitxers. La infografia explica un resultat territorial, no el dietari del procés.
 
+### Interpretació territorial
+
+#### Descriure abans d'explicar
+
+El text identificarà patrons visibles abans de proposar-ne causes. Una **associació espacial o gràfica** no demostra per si mateixa una **relació causal**.
+
+Una interpretació breu es pot construir en cinc moviments:
+
+1. **observació:** identificar el contrast o la distribució visible;
+2. **evidència:** indicar l'indicador, els municipis o la magnitud que sostenen l'observació;
+3. **interpretació:** proposar-ne un significat territorial prudent;
+4. **límit:** precisar què no permet demostrar la font o l'indicador;
+5. **connexió:** relacionar el resultat amb la figura següent o amb la conclusió.
+
+No cal convertir aquests moviments en cinc frases rígides. Serveixen per evitar una explicació causal sense evidència o una descripció que només repeteixi la llegenda.
+
+#### Explicitar límits i incertesa
+
+Les limitacions de les fonts, els indicadors, la classificació i l'escala han de formar part de la interpretació quan afectin la conclusió.
+
+Una limitació útil és específica. Expressions genèriques com «les dades poden tenir errors» aporten poc. En canvi, indicar que l'habitatge no principal agrupa habitatges d'ús ocasional i buits explica per què el mapa no es pot interpretar directament com una distribució d'habitatges turístics.
+
 ### Construir un esquema de composició
 
 Abans d'aplicar tipografies i colors es dibuixarà un esquema simple amb blocs per al títol, les mètriques, els gràfics, els mapes, la interpretació i les fonts. Aquest esquema permet comprovar si la peça principal disposa de prou espai i si el recorregut de lectura és recognoscible.
 
 La **maqueta preliminar** es pot preparar amb rectangles i textos provisionals a Inkscape o, com a alternativa ràpida, en una diapositiva de PowerPoint configurada a mida A3 vertical. PowerPoint serveix per provar la jerarquia, no per crear un segon màster analític: el document final es reconstruirà i conservarà en SVG d'Inkscape.
+
+L'esquema de caixes s'ha de substituir aviat per un prototip amb les peces i els textos reals, abans de polir l'estil. Els topònims llargs, els valors extrems, les llegendes, les notes i les fonts poden invalidar una composició que funcionava amb marcadors provisionals. Prototipar permet detectar aquest problema quan encara es poden reordenar o descartar blocs sense refer tota la pàgina {% cite generalitatGuiaVisualitzacioDades2018 %}.
 
 L'espai no s'ha de repartir de manera uniforme. El mapa o la figura que sosté el resultat principal pot ocupar més superfície; les fonts i notes poden ser secundàries sense deixar de ser llegibles. Si totes les peces tenen el mateix pes, la jerarquia desapareix.
 
@@ -202,7 +234,7 @@ El document d'Inkscape es prepararà amb aquest procediment:
 2. crear guies per als marges i les columnes de l'esquema aprovat;
 3. separar fons, peces visuals, textos i elements auxiliars en capes o grups identificables;
 4. col·locar primer els blocs principals i comprovar el recorregut abans d'ajustar-ne els detalls;
-5. conservar una versió intermèdia quan l'arquitectura ja sigui recognoscible.
+5. conservar aquest estat dins del màster SVG per continuar-ne la revisió, sense crear un segon PDF intermedi; l'únic PDF prefinal serà el document de revisió complet definit més endavant.
 
 ### Importar gràfics i mapes
 
@@ -232,37 +264,15 @@ Si la infografia adopta una identitat visual institucional, territorial o turís
 
 La coherència cromàtica també és una decisió d'autoria. Si el mapa utilitza una rampa de blaus per al percentatge d'habitatge no principal, els gràfics que representen el mateix indicador han de mantenir una relació recognoscible o explicar clarament el canvi. En canvi, les mètriques de capçalera, les notes o els elements d'orientació poden utilitzar neutres i accents per construir jerarquia sense afegir nous codis analítics. Aquesta separació evita que la infografia barregi tres llenguatges diferents: el de les dades, el de la marca i el de la decoració.
 
-### Interpretació territorial
-
-#### Descriure abans d'explicar
-
-El text identificarà patrons visibles abans de proposar-ne causes. Una associació espacial o gràfica no demostra per si mateixa una relació causal.
-
-Una interpretació breu es pot construir en cinc moviments:
-
-1. **observació:** identificar el contrast o la distribució visible;
-2. **evidència:** indicar l'indicador, els municipis o la magnitud que sostenen l'observació;
-3. **interpretació:** proposar-ne un significat territorial prudent;
-4. **límit:** precisar què no permet demostrar la font o l'indicador;
-5. **connexió:** relacionar el resultat amb la figura següent o amb la conclusió.
-
-No cal convertir aquests moviments en cinc frases rígides. Serveixen per evitar una explicació causal sense evidència o una descripció que només repeteixi la llegenda.
-
-#### Explicitar límits i incertesa
-
-Les limitacions de les fonts, els indicadors, la classificació i l'escala han de formar part de la interpretació quan afectin la conclusió.
-
-Una limitació útil és específica. Expressions genèriques com «les dades poden tenir errors» aporten poc. En canvi, indicar que l'habitatge no principal agrupa habitatges d'ús ocasional i buits explica per què el mapa no es pot interpretar directament com una distribució d'habitatges turístics.
-
 ### Revisió del producte i del procés
 
 #### Revisió del contingut
 
-La primera revisió comprovarà que totes les peces comparteixen territori, període, definicions i unitats compatibles. Cada afirmació s'ha de poder relacionar amb una evidència visible o amb un fitxer preservat. També es revisaran ortografia, xifres, topònims, fonts i notes metodològiques.
+La primera revisió comprovarà que totes les peces comparteixen territori, període, definicions i unitats compatibles. Cada afirmació final s'ha de poder relacionar amb una evidència visible; el `README.md` n'ha de conservar el llinatge complet fins al fitxer de treball. També es revisaran ortografia, xifres, topònims, fonts i notes metodològiques.
 
 #### Revisió visual i d'accessibilitat
 
-La segona revisió es farà a mida real. Es comprovaran el recorregut de lectura, les alineacions, l'espai, el contrast, la tipografia i la capacitat de distingir símbols sense dependre només del color. Una persona que no hagi participat en la maquetació intentarà identificar la pregunta, el resultat principal i la limitació sense una explicació oral prèvia. Les tres respostes, els dubtes i els canvis que se'n derivin s'anotaran al registre de revisió.
+La segona revisió es farà sobre `infografia_tarragones_2021_review.pdf`, amb el contingut i la composició ja complets, a la mida i en el suport finals. Sense una explicació oral prèvia, una persona que no hagi participat en la maquetació respondrà quina és la pregunta, quin és el resultat principal, quina evidència visible el sosté, quina limitació en restringeix la lectura i quins elements li han costat de llegir o relacionar. Les respostes, els dubtes i els canvis observables que se'n derivin s'anotaran al registre de revisió.
 
 Com a criteri del projecte, quan el format ho permeti, el document incorporarà metadades bàsiques com títol, autoria, descripció i paraules clau. El `README.md` conservarà també una descripció textual breu de la pregunta, el resultat i la limitació. Aquest text es podrà reutilitzar com a alternativa quan la infografia es publiqui en un entorn que admeti una descripció accessible.
 
@@ -274,7 +284,7 @@ El fitxer exportat s'obrirà fora d'Inkscape. Ha de contenir la pàgina prevista
 
 #### Comparar la versió intermèdia amb la final
 
-Cada projecte conservarà una versió intermèdia i la contrastarà amb la versió final. La revisió haurà d'identificar canvis observables: eliminació d'una figura redundant, reordenació de blocs, ampliació d'un mapa massa petit, simplificació de la paleta, millora de les fonts o reescriptura d'una conclusió massa contundent.
+Cada projecte conservarà `infografia_tarragones_2021_review.pdf` com a única versió prefinal i la contrastarà amb `dist/infografia_tarragones_2021.pdf`. La revisió haurà d'identificar canvis observables: eliminació d'una figura redundant, reordenació de blocs, ampliació d'un mapa massa petit, simplificació de la paleta, millora de les fonts o reescriptura d'una conclusió massa contundent.
 
 ::: table "Auditoria de la infografia"
 | Criteri | Pregunta de revisió |
@@ -294,7 +304,7 @@ Cada projecte conservarà una versió intermèdia i la contrastarà amb la versi
 
 La infografia ha d'estar sostinguda per l'únic llibre de càlcul, el projecte QGIS, el document d'Inkscape i les fonts originals. Cal poder explicar les operacions i decisions principals, també quan el producte s'ha elaborat en grup.
 
-El `README.md` relacionarà cada component visible amb el fitxer d'origen: rang o full del llibre per a les mètriques, PDF o SVG per a les figures, composició QGIS per als mapes i document editable per al muntatge. Aquesta relació permet corregir una peça sense perdre la procedència ni introduir versions paral·leles.
+El `README.md` relacionarà cada component visible amb l'origen exacte. Per a mètriques i gràfics indicarà el fitxer, el full i el rang o la sèrie; per als mapes, el projecte QGIS, la composició, la capa i el camp; per a la síntesi, el màster SVG i el fitxer importat. Aquesta relació permet corregir una peça sense perdre la procedència ni introduir versions paral·leles.
 
 #### Explicar la síntesi
 
@@ -306,11 +316,11 @@ Una explicació oral de la peça no repetirà tot el document ni enumerarà eine
 | Ubicació | Evidència | Contingut mínim |
 | --- | --- | --- |
 | `data/processed` | Llibre canònic | Fonts, transformacions, fórmules, indicadors i mètriques finals |
-| `qgis` | Projecte QGIS | Unions, estils, classificació final, alternativa controlada editable, etiquetes i composicions |
+| `qgis` | Projecte QGIS temàtic | Unions, capes i camps utilitzats, estils, classificació final, alternativa controlada editable, etiquetes i composicions |
 | `outputs/figures` | Figures seleccionades | Exportacions vectorials utilitzades a la composició |
 | `outputs/maps` | Mapes seleccionats | Mapes vectorials finals utilitzats a la composició |
-| `outputs` | `infografia_tarragones_2021.svg` | Màster editable amb retícula, textos i peces importades |
-| `outputs` | `infografia_tarragones_2021_review.pdf` | Estat intermedi utilitzat per a l'auditoria abans/després |
+| `outputs/infographics` | `infografia_tarragones_2021.svg` | Màster editable amb retícula, textos i peces importades |
+| `outputs/infographics` | `infografia_tarragones_2021_review.pdf` | Única versió prefinal completa utilitzada per a la prova de lectura i l'auditoria abans/després |
 | `dist` | `infografia_tarragones_2021.pdf` | Pàgina final verificada fora d'Inkscape |
-| Arrel | `README.md` | Llinatge de cada peça, inventari, procedència, decisions, prova de lectura, descripció textual, metadades i limitacions conegudes |
+| Arrel | `README.md` | Llinatge de cada peça amb fitxer, full i rang o sèrie per a gràfics i mètriques, i projecte, composició, capa i camp per a mapes; inventari, procedència, decisions, prova de lectura, descripció textual, metadades i limitacions conegudes |
 :::

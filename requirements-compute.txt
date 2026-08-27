@@ -2,3 +2,4 @@
 # The base image already includes Quarto, Jupyter, NumPy, pandas, Matplotlib,
 # GeoPandas, and common geospatial libraries.
 # Add pinned packages here when a figure source needs them.
+carto-flow==1.1.2

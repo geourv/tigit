@@ -24,14 +24,14 @@
       .venue-ring { stroke: #ffffff; stroke-width: 2; }
       .icon-light { color: #ffffff; }
       .icon-dark { color: #18313a; }
-      .flow { fill: none; stroke: #d35f3f; stroke-linecap: round; stroke-linejoin: round; }
+      .flow { fill: none; stroke: #165d67; stroke-linecap: round; stroke-linejoin: round; }
     </style>
     <pattern id="no-data" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(35)">
       <rect width="10" height="10" fill="#eef0ed"/>
       <line x1="0" y1="0" x2="0" y2="10" stroke="#89969a" stroke-width="2"/>
     </pattern>
     <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-      <path d="M0,0 L10,5 L0,10 Z" fill="#d35f3f"/>
+      <path d="M0,0 L10,5 L0,10 Z" fill="#165d67"/>
     </marker>
     <symbol id="beer" viewBox="0 0 24 24">
       <path d="M5 6h10v13H5zM15 9h3.2a2.3 2.3 0 0 1 0 4.6H15M8 9v7M12 9v7M5 6h10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>

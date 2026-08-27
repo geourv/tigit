@@ -75,13 +75,18 @@ fig <- ggplot(d) +
   labs(
     title = "Habitatges totals als municipis del Tarragonès (2021)",
     subtitle = "Símbols proporcionals: l'àrea del cercle és proporcional al recompte",
-    caption = "Cada cercle es situa en un punt interior del municipi i l'àrea visual és proporcional al nombre d'habitatges. Font: Idescat, habitatges per tipus d'habitatge, 2021."
+    caption = paste(
+      "Cada cercle se situa en un punt interior del municipi i l'àrea visual és proporcional",
+      "al nombre d'habitatges. Font: Idescat, habitatges per tipus d'habitatge, 2021.",
+      sep = "\n"
+    )
   ) +
   theme_void() +
   theme(
     plot.title = element_text(face = "bold", size = 13, hjust = 0, color = "#17202a"),
     plot.subtitle = element_text(size = 10, color = "#52616b", hjust = 0, margin = margin(b = 6)),
     plot.caption = element_text(size = 8, color = "#52616b", hjust = 0, margin = margin(t = 6)),
+    plot.margin = margin(t = 5.5, r = 12, b = 5.5, l = 5.5),
     legend.title = element_text(face = "bold", size = 9, color = "#17202a"),
     legend.text = element_text(color = "#52616b", size = 8),
     legend.position = "right"
@@ -89,7 +94,7 @@ fig <- ggplot(d) +
 
 output <- file.path(root, "assets/img/thematic-cartography/proportional-symbols-housing-total-tarragones-2021.svg")
 dir.create(dirname(output), showWarnings = FALSE, recursive = TRUE)
-ggsave(output, fig, width = 7, height = 7.5, device = svglite::svglite)
+ggsave(output, fig, width = 7, height = 5, device = svglite::svglite)
 ```
 
 ![Símbols proporcionals dels habitatges totals als municipis del Tarragonès]({{ site.baseurl }}/assets/img/thematic-cartography/proportional-symbols-housing-total-tarragones-2021.svg "La mida del cercle codifica el volum absolut d'habitatges municipals; l'àrea, no el radi, és proporcional al valor. La llegenda mostra valors de referència de mida. Exemple didàctic construït amb dades reals del Tarragonès (2021).")

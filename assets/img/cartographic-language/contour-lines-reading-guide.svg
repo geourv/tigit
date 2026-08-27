@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="640" viewBox="0 0 1200 640" role="img" aria-labelledby="title desc">
+  <title id="title">Formació i lectura de les corbes de nivell</title>
+  <desc id="desc">A l'esquerra, un model de relleu seccionat cada vint metres mostra cinc contorns a altitud constant. A la dreta, els mateixos contorns es projecten sobre el mapa: queden separats al vessant suau i molt junts al vessant fort.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#16697A"/>
+    </marker>
+    <style>
+      .panel { fill: #F7F9F9; stroke: #C7D2D7; stroke-width: 1.5; }
+      .heading { fill: #17202A; font: 700 24px Arial, Helvetica, sans-serif; }
+      .subheading { fill: #52616B; font: 16px Arial, Helvetica, sans-serif; }
+      .label { fill: #17202A; font: 16px Arial, Helvetica, sans-serif; }
+      .small { fill: #52616B; font: 14px Arial, Helvetica, sans-serif; }
+      .level-label { fill: #5C4329; font: 700 15px Arial, Helvetica, sans-serif; paint-order: stroke; stroke: #FFFFFF; stroke-width: 5px; stroke-linejoin: round; }
+      .contour { fill: none; stroke: #8A6945; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+      .index-contour { fill: none; stroke: #5C4329; stroke-width: 4.5; stroke-linecap: round; stroke-linejoin: round; }
+      .guide { fill: none; stroke: #16697A; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; marker-end: url(#arrow); }
+      .dimension { fill: none; stroke: #16697A; stroke-width: 1.8; marker-start: url(#arrow); marker-end: url(#arrow); }
+    </style>
+  </defs>
+
+  <rect x="20" y="18" width="550" height="604" rx="12" class="panel"/>
+  <rect x="630" y="18" width="550" height="604" rx="12" class="panel"/>
+
+  <text x="48" y="58" class="heading">1. Talls horitzontals del relleu</text>
+  <text x="48" y="84" class="subheading">Cada línia recorre punts situats a la mateixa altitud.</text>
+
+  <path d="M 72 536 L 307 600 L 546 524 L 312 463 Z" fill="#EEF2EE" stroke="#C7D2D7" stroke-width="1.5"/>
+
+  <path d="M 91 494 C 126 450 190 445 240 421 C 294 395 348 393 397 415 C 453 439 514 447 541 486 C 514 521 457 537 399 535 C 332 533 275 559 213 551 C 151 543 108 521 91 494 Z" fill="#E7E0D3" stroke="#5C4329" stroke-width="4.5"/>
+  <path d="M 139 427 C 172 390 220 387 258 359 C 299 329 344 331 384 352 C 426 374 472 381 493 419 C 472 451 427 466 382 462 C 330 458 285 481 235 475 C 188 468 153 450 139 427 Z" fill="#DED6C7" class="contour"/>
+  <path d="M 189 359 C 214 329 251 325 281 301 C 313 276 349 279 379 295 C 413 313 446 320 463 350 C 446 376 413 387 376 384 C 337 381 303 397 266 392 C 229 388 201 374 189 359 Z" fill="#D4C9B8" class="contour"/>
+  <path d="M 239 292 C 259 268 286 264 307 245 C 333 222 359 225 383 239 C 407 253 431 259 443 282 C 431 302 405 312 379 309 C 349 306 326 319 299 315 C 272 312 248 302 239 292 Z" fill="#C9BDA9" class="contour"/>
+  <path d="M 290 225 C 304 208 322 204 338 190 C 356 174 375 176 391 185 C 410 195 426 201 435 217 C 426 232 408 238 389 236 C 369 234 352 243 333 240 C 314 238 297 231 290 225 Z" fill="#BFAF98" class="contour"/>
+
+  <line x1="92" y1="494" x2="540" y2="486" stroke="#5C4329" stroke-width="1.2" stroke-dasharray="6 5" opacity="0.65"/>
+  <line x1="140" y1="427" x2="492" y2="419" stroke="#8A6945" stroke-width="1.2" stroke-dasharray="6 5" opacity="0.65"/>
+  <line x1="190" y1="359" x2="462" y2="350" stroke="#8A6945" stroke-width="1.2" stroke-dasharray="6 5" opacity="0.65"/>
+  <line x1="240" y1="292" x2="442" y2="282" stroke="#8A6945" stroke-width="1.2" stroke-dasharray="6 5" opacity="0.65"/>
+  <line x1="291" y1="225" x2="434" y2="217" stroke="#8A6945" stroke-width="1.2" stroke-dasharray="6 5" opacity="0.65"/>
+
+  <text x="105" y="486" class="level-label">100 m</text>
+  <text x="153" y="419" class="level-label">120 m</text>
+  <text x="202" y="351" class="level-label">140 m</text>
+  <text x="251" y="284" class="level-label">160 m</text>
+  <text x="302" y="217" class="level-label">180 m</text>
+
+  <line x1="72" y1="427" x2="72" y2="494" class="dimension"/>
+  <text x="60" y="466" class="label" text-anchor="end">20 m</text>
+  <text x="49" y="576" class="small">Equidistància constant: 20 m</text>
+  <line x1="292" y1="570" x2="340" y2="570" stroke="#5C4329" stroke-width="4.5"/>
+  <text x="350" y="576" class="small">corba mestra</text>
+  <line x1="292" y1="596" x2="340" y2="596" stroke="#8A6945" stroke-width="2.4"/>
+  <text x="350" y="602" class="small">corba intermèdia</text>
+
+  <line x1="583" y1="318" x2="617" y2="318" class="guide"/>
+  <text transform="translate(600 286) rotate(-90)" class="small" text-anchor="middle">vista zenital</text>
+
+  <text x="658" y="58" class="heading">2. Projecció sobre el mapa</text>
+  <text x="658" y="84" class="subheading">La distància entre línies revela el pendent del vessant.</text>
+
+  <path d="M 672 329 C 681 202 797 145 892 187 C 1002 149 1124 230 1135 329 C 1128 449 1017 504 918 472 C 808 517 682 451 672 329 Z" class="index-contour"/>
+  <path d="M 753 329 C 760 234 839 196 912 222 C 995 197 1105 246 1115 329 C 1111 420 1017 466 937 438 C 852 467 762 421 753 329 Z" class="contour"/>
+  <path d="M 823 329 C 830 263 879 237 930 255 C 995 233 1088 271 1097 329 C 1093 396 1017 432 957 408 C 895 432 831 394 823 329 Z" class="contour"/>
+  <path d="M 881 329 C 887 291 917 275 949 284 C 997 267 1074 292 1082 329 C 1079 375 1020 404 977 383 C 934 402 888 374 881 329 Z" class="contour"/>
+  <path d="M 929 329 C 934 309 953 301 974 307 C 1003 296 1058 311 1065 329 C 1062 353 1023 371 993 359 C 965 371 935 353 929 329 Z" class="contour"/>
+
+  <text x="685" y="334" class="level-label">100</text>
+  <text x="765" y="334" class="level-label">120</text>
+  <text x="835" y="334" class="level-label">140</text>
+  <text x="893" y="334" class="level-label">160</text>
+  <text x="941" y="334" class="level-label">180</text>
+
+  <circle cx="1004" cy="329" r="4.5" fill="#16697A"/>
+  <path d="M 1004 320 C 1005 250 983 196 948 164" class="guide"/>
+  <text x="826" y="140" class="label">Cim: més de 180 m i menys de 200 m</text>
+
+  <path d="M 714 540 C 739 512 766 484 797 455" class="guide"/>
+  <text x="663" y="570" class="label">Corbes separades</text>
+  <text x="663" y="593" class="small">pendent suau</text>
+
+  <path d="M 1064 540 C 1083 503 1098 461 1106 419" class="guide"/>
+  <text x="955" y="570" class="label">Corbes juntes</text>
+  <text x="955" y="593" class="small">pendent fort</text>
+</svg>

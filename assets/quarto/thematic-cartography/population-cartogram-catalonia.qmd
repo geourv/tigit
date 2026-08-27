@@ -121,7 +121,7 @@ population_map <- ggplot() +
     labels = c("100.000", "500.000", "1.500.000"),
     name = "Població estimada (habitants)"
   ) +
-  coord_sf(datum = NA) +
+  coord_sf(datum = NA, expand = FALSE) +
   labs(
     title = "Població estimada de Catalunya, 2025",
     subtitle = "L'àrea de cada cercle és proporcional a la població estimada"
@@ -129,10 +129,11 @@ population_map <- ggplot() +
   theme_void(base_family = "DejaVu Sans") +
   theme(
     plot.title = element_text(face = "bold", size = 22, color = "#17202a", hjust = 0),
-    plot.subtitle = element_text(size = 18, color = "#52616b", hjust = 0, margin = margin(b = 8)),
+    plot.subtitle = element_text(size = 17, color = "#52616b", hjust = 0, margin = margin(b = 8)),
     plot.background = element_rect(fill = "white", color = NA),
     panel.background = element_rect(fill = "#f8fafc", color = "#d8e0e6", linewidth = 0.55),
-    plot.margin = margin(16, 18, 12, 18),
+    plot.margin = margin(12, 12, 10, 12),
+    plot.title.position = "plot",
     legend.position = "bottom",
     legend.direction = "horizontal",
     legend.title = element_text(size = 17, color = "#315d70"),
@@ -148,7 +149,7 @@ population_output <- file.path(
   "assets/img/thematic-cartography/population-proportional-symbols-catalonia-2025.svg"
 )
 dir.create(dirname(population_output), showWarnings = FALSE, recursive = TRUE)
-svglite::svglite(population_output, width = 9.4, height = 7.4, bg = "white")
+svglite::svglite(population_output, width = 7.2, height = 7.4, bg = "white")
 print(population_map)
 grDevices::dev.off()
 

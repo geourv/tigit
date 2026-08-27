@@ -1,0 +1,235 @@
+---
+title: "Exercici de localització de coordenades geogràfiques"
+lang: ca
+ref: geolocation_exercise_world_map
+format:
+  gfm:
+    output-file: geolocation-exercise-world-map.generated.md
+execute:
+  echo: false
+  warning: false
+  message: false
+execute-dir: project
+unaltraweb_compute:
+  engine: r
+  mode: figure
+  outputs:
+    - assets/img/coordinate-systems/geolocation-exercise-world-map.svg
+    - assets/img/coordinate-systems/geolocation-exercise-world-map-solved.svg
+---
+
+```{r}
+find_project_root <- function(start) {
+  path <- normalizePath(start, winslash = "/", mustWork = FALSE)
+  repeat {
+    if (file.exists(file.path(path, ".unaltraweb", "computations.yml"))) {
+      return(path)
+    }
+    parent <- dirname(path)
+    if (identical(parent, path)) {
+      stop("Project root not found: missing .unaltraweb/computations.yml")
+    }
+    path <- parent
+  }
+}
+
+xml_escape <- function(value) {
+  value <- gsub("&", "&amp;", value, fixed = TRUE)
+  value <- gsub("<", "&lt;", value, fixed = TRUE)
+  value <- gsub(">", "&gt;", value, fixed = TRUE)
+  value
+}
+
+add_svg_metadata <- function(path, title, description) {
+  lines <- readLines(path, warn = FALSE, encoding = "UTF-8")
+  svg_line <- grep("^<svg", lines)[1]
+  stopifnot(!is.na(svg_line))
+  lines[svg_line] <- sub(
+    "<svg ",
+    '<svg role="img" aria-labelledby="title desc" ',
+    lines[svg_line],
+    fixed = TRUE
+  )
+  metadata <- c(
+    sprintf('  <title id="title">%s</title>', xml_escape(title)),
+    sprintf('  <desc id="desc">%s</desc>', xml_escape(description))
+  )
+  lines <- append(lines, metadata, after = svg_line)
+  writeLines(lines, path, useBytes = TRUE)
+}
+
+make_lonlat_line <- function(lon, lat, crs) {
+  sf::st_sf(
+    geometry = sf::st_sfc(sf::st_linestring(cbind(lon, lat)), crs = 4326)
+  ) |>
+    sf::st_transform(crs)
+}
+
+root <- find_project_root(getwd())
+suppressPackageStartupMessages(library(ggplot2))
+suppressPackageStartupMessages(library(sf))
+sf::sf_use_s2(FALSE)
+
+robinson <- sf::st_crs("+proj=robin +lon_0=0 +datum=WGS84 +units=m +no_defs")
+
+world <- sf::st_as_sf(maps::map("world", plot = FALSE, fill = TRUE))
+world <- suppressWarnings(sf::st_set_crs(world, 4326))
+world <- suppressWarnings(sf::st_make_valid(world))
+world <- suppressWarnings(sf::st_crop(
+  world,
+  sf::st_bbox(c(xmin = -179.9, ymin = -89, xmax = 179.9, ymax = 89), crs = sf::st_crs(4326))
+))
+world <- suppressWarnings(sf::st_transform(world, robinson))
+
+edge_lat <- seq(-89.9, 89.9, length.out = 240)
+edge_lon <- seq(-180, 180, length.out = 480)
+outline_coordinates <- rbind(
+  cbind(edge_lon, rep(-89.9, length(edge_lon))),
+  cbind(rep(180, length(edge_lat)), edge_lat),
+  cbind(rev(edge_lon), rep(89.9, length(edge_lon))),
+  cbind(rep(-180, length(edge_lat)), rev(edge_lat)),
+  c(-180, -89.9)
+)
+outline <- sf::st_sf(
+  geometry = sf::st_sfc(sf::st_polygon(list(outline_coordinates)), crs = 4326)
+) |>
+  sf::st_transform(robinson)
+
+graticule <- sf::st_graticule(
+  x = sf::st_bbox(c(xmin = -180, ymin = -89.9, xmax = 180, ymax = 89.9), crs = sf::st_crs(4326)),
+  lon = seq(-170, 170, by = 10),
+  lat = seq(-80, 80, by = 10),
+  ndiscr = 500
+)
+graticule <- graticule[graticule$degree != 0, ]
+graticule$interval <- ifelse(abs(graticule$degree) %% 20 == 0, "20°", "10°")
+graticule <- sf::st_transform(graticule, robinson)
+
+equator <- make_lonlat_line(seq(-180, 180, length.out = 720), rep(0, 720), robinson)
+greenwich <- make_lonlat_line(rep(0, 360), seq(-89.9, 89.9, length.out = 360), robinson)
+antimeridian <- rbind(
+  make_lonlat_line(rep(-179.999, 360), seq(-89.9, 89.9, length.out = 360), robinson),
+  make_lonlat_line(rep(179.999, 360), seq(-89.9, 89.9, length.out = 360), robinson)
+)
+
+reference_labels <- data.frame(
+  label = c("Equador · 0°", "Greenwich · 0°", "Antimeridià · 180°", "Antimeridià · 180°"),
+  lon = c(-42, 4, -173, 173),
+  lat = c(3, -43, -28, -28),
+  angle = c(0, 90, 90, 90)
+)
+reference_labels <- sf::st_as_sf(reference_labels, coords = c("lon", "lat"), crs = 4326) |>
+  sf::st_transform(robinson)
+reference_xy <- cbind(sf::st_drop_geometry(reference_labels), sf::st_coordinates(reference_labels))
+
+points <- data.frame(
+  point = LETTERS[1:6],
+  lat = c(50, 60, 60, 40, 20, 20),
+  lon = c(-120, -140, 170, 140, -160, 160)
+)
+point_sf <- sf::st_as_sf(points, coords = c("lon", "lat"), crs = 4326) |>
+  sf::st_transform(robinson)
+point_xy <- cbind(sf::st_drop_geometry(point_sf), sf::st_coordinates(point_sf))
+
+stopifnot(
+  nrow(point_xy) == 6,
+  identical(as.character(point_xy$point), LETTERS[1:6]),
+  all(points$lat >= -90 & points$lat <= 90),
+  all(points$lon >= -180 & points$lon <= 180)
+)
+
+map_theme <- theme_void(base_family = "DejaVu Sans") +
+  theme(
+    plot.title = element_text(face = "bold", size = 17, color = "#17202a", hjust = 0),
+    plot.subtitle = element_text(size = 11, color = "#52616b", hjust = 0, margin = margin(b = 7)),
+    plot.background = element_rect(fill = "white", color = NA),
+    panel.background = element_rect(fill = "white", color = NA),
+    plot.margin = margin(10, 10, 10, 10)
+  )
+
+make_map <- function(solved = FALSE) {
+  map <- ggplot() +
+    geom_sf(data = outline, fill = "#eaf3f6", color = "#40515a", linewidth = 0.65) +
+    geom_sf(data = world, fill = "#f5f0df", color = "#67747b", linewidth = 0.25) +
+    geom_sf(
+      data = graticule[graticule$interval == "10°", ],
+      color = "#aebbc1",
+      linewidth = 0.22,
+      linetype = "22"
+    ) +
+    geom_sf(
+      data = graticule[graticule$interval == "20°", ],
+      color = "#87979f",
+      linewidth = 0.32
+    ) +
+    geom_sf(data = equator, color = "#b64a32", linewidth = 0.9) +
+    geom_sf(data = greenwich, color = "#17697a", linewidth = 0.9) +
+    geom_sf(data = antimeridian, color = "#17697a", linewidth = 0.9) +
+    geom_label(
+      data = reference_xy,
+      aes(x = X, y = Y, label = label, angle = angle),
+      inherit.aes = FALSE,
+      family = "DejaVu Sans",
+      fontface = "bold",
+      size = 3.25,
+      color = "#22313a",
+      fill = "#ffffffdf",
+      linewidth = 0.2,
+      label.padding = grid::unit(1.4, "mm")
+    )
+
+  if (solved) {
+    map <- map +
+      geom_point(
+        data = point_xy,
+        aes(x = X, y = Y),
+        shape = 21,
+        size = 6,
+        stroke = 1,
+        color = "#5e2035",
+        fill = "#a63d5a"
+      ) +
+      geom_text(
+        data = point_xy,
+        aes(x = X, y = Y, label = point),
+        family = "DejaVu Sans",
+        fontface = "bold",
+        size = 4,
+        color = "white"
+      )
+  }
+
+  map +
+    coord_sf(crs = robinson, default_crs = robinson, datum = NA, expand = FALSE) +
+    labs(
+      title = if (solved) "Solució: posicions A–F" else "Mapa mut: localitza els punts A–F",
+      subtitle = "Reticle de 10° sense numeració; els eixos de referència permeten deduir cada posició"
+    ) +
+    map_theme
+}
+
+exercise_output <- file.path(root, "assets/img/coordinate-systems/geolocation-exercise-world-map.svg")
+solution_output <- file.path(root, "assets/img/coordinate-systems/geolocation-exercise-world-map-solved.svg")
+
+svglite::svglite(exercise_output, width = 11.5, height = 6.3, bg = "white")
+print(make_map(FALSE))
+grDevices::dev.off()
+add_svg_metadata(
+  exercise_output,
+  "Mapa mut per localitzar sis coordenades geogràfiques",
+  "Mapamundi en projecció Robinson amb un reticle de deu graus sense valors numèrics. L'equador, el meridià de Greenwich i l'antimeridià estan reforçats i etiquetats per permetre deduir les coordenades dels punts A a F."
+)
+
+svglite::svglite(solution_output, width = 11.5, height = 6.3, bg = "white")
+print(make_map(TRUE))
+grDevices::dev.off()
+add_svg_metadata(
+  solution_output,
+  "Solució de l'exercici de coordenades geogràfiques",
+  "El mateix mapamundi situa els punts A a F: quatre a l'oest o a l'est del Pacífic nord i dos propers a l'antimeridià, tots a l'hemisferi nord."
+)
+```
+
+![Mapamundi mut amb reticle de deu graus i els eixos geogràfics principals](../../img/coordinate-systems/geolocation-exercise-world-map.svg)
+
+![Mapamundi resolt amb els sis punts de l'exercici](../../img/coordinate-systems/geolocation-exercise-world-map-solved.svg)

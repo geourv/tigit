@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000" viewBox="0 0 1000 1000" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="865" viewBox="0 30 1000 865" role="img" aria-labelledby="title desc">
   <title id="title">Etapes en l'evolució dels sistemes d'informació geogràfica</title>
   <desc id="desc">Cronologia en set etapes àmplies: fonaments durant els anys cinquanta, primers SIG durant els seixanta, dades i algorismes entre els setanta i els vuitanta, SIG d'escriptori durant els noranta, web, GNSS i codi obert durant els dos mil, SIG connectats durant els anys deu i canvi cap a la intel·ligència artificial geoespacial des dels anys vint.</desc>
   <defs>
@@ -6,7 +6,6 @@
       .period { font-family: Arial, sans-serif; font-size: 22px; font-weight: 700; fill: #ffffff; }
       .stage { font-family: Arial, sans-serif; font-size: 25px; font-weight: 700; fill: #17202a; }
       .body { font-family: Arial, sans-serif; font-size: 23px; fill: #334155; }
-      .continuity { font-family: Arial, sans-serif; font-size: 24px; font-weight: 700; fill: #365b6d; }
     </style>
     <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
       <path d="M 0 0 L 10 5 L 0 10 z" fill="#78939b"/>
@@ -88,7 +87,4 @@
     <text class="body" x="500" y="865" text-anchor="middle">criteri i validació</text>
   </g>
 
-  <rect x="20" y="915" width="960" height="75" rx="8" fill="#eaf2f3" stroke="#9eb9be" stroke-width="2"/>
-  <text class="continuity" x="500" y="944" text-anchor="middle">Les etapes se solapen i acumulen capacitats</text>
-  <text class="body" x="500" y="976" text-anchor="middle">La IA amplia l'ecosistema; no substitueix documentació, criteri ni validació.</text>
 </svg>

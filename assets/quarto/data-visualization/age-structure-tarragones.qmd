@@ -59,7 +59,12 @@ county <- read.csv(
   file.path(root, "_practices/tigit-projecte-territorial/data/raw/poblacio-edat-tarragones-2021.csv"),
   fileEncoding = "UTF-8"
 )
-county <- county[county$CONCEPT == "POP" & county$SEX == "TOTAL" & !is.na(county$value), ]
+county <- county[
+  county$CONCEPT == "POP" &
+    county$SEX == "TOTAL" &
+    county$AGE != "TOTAL" &
+    !is.na(county$value),
+]
 
 county$age_years <- as.integer(ifelse(county$AGE == "Y_GE100", 100, substring(county$AGE, 2)))
 county$group <- cut(
@@ -74,6 +79,9 @@ totals <- aggregate(value ~ municipality_name, data = county, FUN = sum)
 agg <- aggregate(value ~ municipality_name + group, data = county, FUN = sum)
 agg <- merge(agg, totals, by = "municipality_name")
 agg$pct <- 100 * agg$value.x / agg$value.y
+
+profile_totals <- aggregate(pct ~ municipality_name, data = agg, FUN = sum)
+stopifnot(all(abs(profile_totals$pct - 100) < 1e-6))
 
 ord <- agg[agg$group == "65+ anys", ]
 ord <- ord[order(ord$pct), "municipality_name"]

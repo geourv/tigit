@@ -1,70 +1,72 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="953" height="567" viewBox="154 127 953 567" role="img" aria-labelledby="title desc">
-  <title id="title">Funcionament de les coordenades dins un fus UTM</title>
-  <desc id="desc">Esquema del fus UTM 31 dins del CRS 31N amb limits longitudinals, meridia central, fals est, coordenada est i coordenada nord dins l'hemisferi nord.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="620" viewBox="0 0 1000 620" role="img" aria-labelledby="title desc">
+  <title id="title">Construcció conceptual de les coordenades E i N en UTM 31N</title>
+  <desc id="desc">L'equador és l'origen de la coordenada nord, amb N igual a zero metres. El meridià central rep un fals est de cinc-cents mil metres. Vila-seca queda a l'oest del meridià central i té E 344.469 metres i N 4.551.807 metres.</desc>
   <defs>
     <style>
-      .zone { fill: #eef5f7; stroke: #365b6d; stroke-width: 3; }
-      .central { stroke: #d0523c; stroke-width: 5; stroke-dasharray: 12 9; }
-      .grid { stroke: #b7c6ce; stroke-width: 1.5; }
-      .axis { stroke: #16697a; stroke-width: 4; marker-end: url(#arrowBlue); }
-      .axisRed { stroke: #d0523c; stroke-width: 4; marker-end: url(#arrowRed); }
+      .title { font: 700 28px system-ui, sans-serif; fill: #17202a; }
+      .subtitle { font: 18px system-ui, sans-serif; fill: #52616b; }
+      .label { font: 700 19px system-ui, sans-serif; fill: #17202a; }
+      .small { font: 16px system-ui, sans-serif; fill: #52616b; }
+      .mono { font: 700 17px ui-monospace, monospace; fill: #17202a; }
+      .zone { fill: #edf5f7; stroke: #365b6d; stroke-width: 3; }
+      .grid { stroke: #b7c6ce; stroke-width: 1.4; }
+      .central { stroke: #17697a; stroke-width: 4; stroke-dasharray: 11 8; }
+      .equator { stroke: #b64a32; stroke-width: 5; }
+      .measure { stroke: #7b2d43; stroke-width: 3; marker-end: url(#arrowWine); }
       .guide { stroke: #52616b; stroke-width: 2; stroke-dasharray: 6 7; }
-      .label { font: 700 21px Arial, 'Liberation Sans', sans-serif; fill: #17202a; }
-      .small { font: 16px Arial, 'Liberation Sans', sans-serif; fill: #52616b; }
-      .mono { font: 700 18px 'Liberation Mono', Consolas, monospace; fill: #17202a; }
-      .panel { fill: #ffffff; stroke: #d5dde2; stroke-width: 1.5; }
+      .panel { fill: #fff; stroke: #cbd6dc; stroke-width: 1.5; }
     </style>
-    <marker id="arrowBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
-      <path d="M0,0 L10,5 L0,10 z" fill="#16697a"/>
-    </marker>
-    <marker id="arrowRed" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
-      <path d="M0,0 L10,5 L0,10 z" fill="#d0523c"/>
+    <marker id="arrowWine" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#7b2d43"/>
     </marker>
   </defs>
-  <path d="M170 130 C235 205,235 558,170 625 L720 625 C655 558,655 205,720 130 Z" class="zone"/>
-  <line x1="170" y1="130" x2="170" y2="625" stroke="#365b6d" stroke-width="3"/>
-  <line x1="720" y1="130" x2="720" y2="625" stroke="#365b6d" stroke-width="3"/>
-  <line x1="445" y1="130" x2="445" y2="625" class="central"/>
-  <line x1="275" y1="130" x2="275" y2="625" class="grid"/>
-  <line x1="360" y1="130" x2="360" y2="625" class="grid"/>
-  <line x1="530" y1="130" x2="530" y2="625" class="grid"/>
-  <line x1="615" y1="130" x2="615" y2="625" class="grid"/>
-  <line x1="170" y1="250" x2="720" y2="250" class="grid"/>
-  <line x1="170" y1="370" x2="720" y2="370" class="grid"/>
-  <line x1="170" y1="490" x2="720" y2="490" class="grid"/>
 
-  <text x="170" y="660" text-anchor="middle" class="label">0 E</text>
-  <text x="445" y="660" text-anchor="middle" class="label">3 E</text>
-  <text x="720" y="660" text-anchor="middle" class="label">6 E</text>
-  <text x="445" y="692" text-anchor="middle" class="small">meridia central</text>
+  <text x="42" y="47" class="title">Com es formen les coordenades E i N</text>
+  <text x="42" y="77" class="subtitle">Esquema conceptual del fus 31N; les distàncies i la deformació no es representen a escala.</text>
 
-  <line x1="445" y1="596" x2="650" y2="596" class="axis"/>
-  <text x="552" y="583" text-anchor="middle" class="small">E augmenta cap a l'est</text>
-  <line x1="206" y1="625" x2="206" y2="392" class="axisRed"/>
-  <text x="235" y="512" class="small" transform="rotate(-90 235 512)">N augmenta cap al nord</text>
+  <path d="M115 115 C165 175,165 475,115 525 L650 525 C600 475,600 175,650 115 Z" class="zone"/>
+  <line x1="115" y1="525" x2="650" y2="525" class="equator"/>
+  <line x1="382" y1="115" x2="382" y2="525" class="central"/>
+  <line x1="220" y1="115" x2="220" y2="525" class="grid"/>
+  <line x1="300" y1="115" x2="300" y2="525" class="grid"/>
+  <line x1="464" y1="115" x2="464" y2="525" class="grid"/>
+  <line x1="545" y1="115" x2="545" y2="525" class="grid"/>
+  <line x1="140" y1="405" x2="625" y2="405" class="grid"/>
+  <line x1="152" y1="285" x2="613" y2="285" class="grid"/>
+  <line x1="164" y1="165" x2="601" y2="165" class="grid"/>
 
-  <circle cx="300" cy="430" r="13" fill="#16697a" stroke="#ffffff" stroke-width="5"/>
-  <line x1="300" y1="430" x2="300" y2="596" class="guide"/>
-  <line x1="300" y1="430" x2="445" y2="430" class="guide"/>
-  <text x="316" y="420" class="label">punt</text>
-  <text x="316" y="446" class="mono">E 344.469</text>
-  <text x="316" y="470" class="mono">N 4.551.807</text>
+  <text x="382" y="137" text-anchor="middle" class="label">Meridià central · 3° E</text>
+  <text x="382" y="160" text-anchor="middle" class="mono">E = 500.000 m</text>
+  <text x="120" y="558" class="label">Equador · N = 0 m</text>
 
-  <rect x="785" y="145" width="320" height="126" class="panel"/>
-  <text x="812" y="181" class="label">1. El fus defineix l'espai</text>
-  <text x="812" y="212" class="small">Fus 31: 0 a 6 graus E.</text>
-  <text x="812" y="238" class="small">La N indica hemisferi nord.</text>
-  <text x="812" y="260" class="small">No és la banda MGRS.</text>
+  <circle cx="268" cy="315" r="13" fill="#a63d5a" stroke="#fff" stroke-width="4"/>
+  <text x="286" y="306" class="label">Vila-seca</text>
+  <text x="286" y="331" class="mono">E 344.469 · N 4.551.807</text>
+  <line x1="268" y1="329" x2="268" y2="520" class="guide"/>
+  <line x1="281" y1="315" x2="377" y2="315" class="guide"/>
 
-  <rect x="785" y="314" width="320" height="150" class="panel"/>
-  <text x="812" y="350" class="label">2. El fals est evita negatius</text>
-  <text x="812" y="381" class="small">El meridia central rep</text>
-  <text x="812" y="409" class="mono">E = 500.000 m</text>
-  <text x="812" y="438" class="small">Valors menors indiquen punts a l'oest.</text>
+  <line x1="382" y1="352" x2="272" y2="352" class="measure"/>
+  <text x="327" y="376" text-anchor="middle" class="small">155.531 m cap a l'oest</text>
+  <line x1="190" y1="518" x2="190" y2="320" class="measure"/>
+  <path d="M180 443 l20 -10 l-20 -10 l20 -10" fill="none" stroke="#7b2d43" stroke-width="3"/>
+  <text x="173" y="420" text-anchor="end" class="mono">N 4.551.807 m</text>
+  <text x="173" y="442" text-anchor="end" class="small">des de l'equador</text>
 
-  <rect x="785" y="507" width="320" height="126" class="panel"/>
-  <text x="812" y="543" class="label">3. Es llegeix E,N</text>
-  <text x="812" y="574" class="small">Primer distancia cap a l'est.</text>
-  <text x="812" y="600" class="small">Despres distancia cap al nord.</text>
+  <rect x="690" y="112" width="270" height="145" rx="6" class="panel"/>
+  <text x="713" y="146" class="label">1. Coordenada est (E)</text>
+  <text x="713" y="176" class="small">El meridià central rep</text>
+  <text x="713" y="202" class="mono">500.000 m</text>
+  <text x="713" y="229" class="mono">E = 500.000 − 155.531</text>
+  <text x="713" y="251" class="mono">= 344.469 m</text>
 
+  <rect x="690" y="269" width="270" height="135" rx="6" class="panel"/>
+  <text x="713" y="303" class="label">2. Coordenada nord (N)</text>
+  <text x="713" y="333" class="small">A l'hemisferi nord:</text>
+  <text x="713" y="359" class="mono">equador = 0 m</text>
+  <text x="713" y="386" class="mono">punt = 4.551.807 m</text>
+
+  <rect x="690" y="426" width="270" height="123" rx="6" class="panel"/>
+  <text x="713" y="460" class="label">3. Ordre de lectura</text>
+  <text x="713" y="493" class="mono">E, N</text>
+  <text x="713" y="521" class="small">primer est; després nord</text>
 </svg>

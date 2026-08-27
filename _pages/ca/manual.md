@@ -2,7 +2,7 @@
 layout: manual-home
 title: Tècniques d'informació geogràfica i turística
 description: >
-  L'assignatura combina la preparació de dades, la visualització, el color, la cartografia i l'ús bàsic dels sistemes d'informació geogràfica. Es treballarà amb dades oficials i obertes relacionades amb població, allotjament turístic, límits administratius i altres variables territorials d'interès. A partir d'aquestes fonts, l'estudiant aprendrà a construir indicadors simples que permetin descriure la distribució espacial de l'activitat turística, la seva intensitat relativa i la seva relació amb la població resident i amb el territori.
+  En aquesta assignatura s'aprèn a passar d'un conjunt de dades territorials i turístiques a una explicació breu construïda amb indicadors, gràfics i mapes. Es treballa amb dades oficials i obertes, un full de càlcul, QGIS i Inkscape.
 lang: ca
 ref: home
 profiles: [unaltremanual]
@@ -15,66 +15,117 @@ cover_alt: Manual de Tècniques d'informació geogràfica i turística
 figure_captions: true
 ---
 
-## Orientació del curs
+## Què és aquesta assignatura
 
-Aquest és el punt de partida de l'assignatura. Presenta els aprenentatges previstos, la relació entre les sessions de teoria i de pràctiques, el paper d'Excel, QGIS i Inkscape, i les evidències que permetran comprovar el progrés.
+Tècniques d'informació geogràfica i turística és una assignatura de primer curs per aprendre a treballar amb dades que descriuen territoris i activitats turístiques. L'assignatura combina tres tipus de feina: calcular mesures amb un full de càlcul, representar informació amb gràfics i mapes, i explicar amb paraules què mostren els resultats i quins límits tenen.
 
-La idea central és senzilla. L'assignatura no tracta només d'aprendre a fer gràfics o mapes, sinó d'utilitzar dades territorials i turístiques per construir una interpretació visual raonada. Els indicadors resultants poden servir per divulgar una realitat, comparar territoris, seguir objectius, orientar decisions o formular noves preguntes. Això demana eines, però també criteri: entendre què mesura un indicador, quan una comparació és legítima, quin sistema de referència s'està utilitzant, quin tipus de mapa ajuda a llegir una distribució i com es comunica el resultat sense exagerar-lo.
+Suposem que volem comparar la població i els habitatges dels municipis d'una comarca. Podem preguntar, per exemple, on hi ha més habitatge no principal, si aquest pes és igual en municipis grans i petits o quin patró territorial formen els valors. Una taula descarregada d'un organisme oficial encara no respon aquestes preguntes: primer cal entendre les columnes, comprovar les dades, calcular una mesura comparable i triar una representació que no indueixi a error.
 
-## Recorregut de l'assignatura
+Durant el curs es farà aquest recorregut amb dades oficials i obertes. S'utilitzaran Calc o Excel per preparar dades i calcular indicadors, QGIS per relacionar-les amb el territori i construir mapes, i Inkscape per reunir els resultats en una composició final. **No es tracta de memoritzar botons**, sinó d'entendre quin problema resol cada operació i com es pot comprovar que el resultat és correcte.
 
-El curs parteix de dades territorials i turístiques i acaba amb una interpretació visual argumentada. Entre aquests dos extrems caldrà localitzar fonts fiables, preparar taules, construir indicadors, elaborar gràfics, entendre el color, llegir les bases cartogràfiques, treballar amb QGIS, dissenyar mapes temàtics i integrar els resultats en una infografia.
+## Responsabilitats del professorat i de l'estudiantat
 
-L'ordre del manual no separa teoria i laboratori en blocs independents. Primer es construeix la base de dades i indicadors; després s'estudia com es codifiquen visualment les dades i per què el color és una decisió transversal que afecta gràfics, mapes, accessibilitat i composició. A continuació s'introdueixen la Terra, les coordenades i el llenguatge cartogràfic. QGIS pot aparèixer abans com a demostració curta per veure una capa, una escala o una composició, però el bloc sistemàtic de SIG arriba quan l'estudiant ja sap què vol representar i quins errors ha d'evitar. La cartografia temàtica aplicada queda després de la integració SIG perquè necessita unir dades i geometries abans de classificar i simbolitzar.
+A les sessions de teoria, el professorat presentarà els conceptes necessaris per entendre les dades i prendre decisions: què compara un percentatge, per què un mapa necessita un sistema de coordenades o com canvia la lectura quan es trien uns colors o uns altres. També analitzarà exemples i errors habituals perquè sigui possible reconèixer una solució ben plantejada abans d'obrir el programa.
 
->>>> **Figures i drets d'ús.** El manual és una versió de treball. Algunes figures provenen de recursos oberts o de captures documentades i incorporen autoria, font i condicions d'ús al peu; altres són esquemes propis construïts per substituir materials antics de les diapositives. Quan una imatge de suport encara no ofereix garanties suficients de font, llicència o adequació, no s'ha d'entendre com a material reutilitzable fora del context docent fins que el peu n'indiqui explícitament l'origen i les condicions. Aquesta cautela no canvia el criteri de lectura: cada figura s'ha d'interpretar pel concepte que ajuda a entendre, no com una decoració ni com una autorització genèrica de reproducció.
+A les sessions pràctiques, el professorat mostrarà com s'apliquen aquests criteris amb els fitxers i les eines del curs. Ajudarà a diagnosticar errors, revisarà resultats intermedis i indicarà quines comprovacions falten. La pràctica no consistirà només a reproduir una demostració: caldrà prendre decisions, conservar els fitxers de treball i justificar el resultat obtingut.
 
-### Un cicle de descobriment de coneixement territorial
+El curs introduirà les eines des de les operacions bàsiques. S'espera de l'estudiantat un treball regular: portar els fitxers necessaris, mantenir-los ordenats, completar les activitats, preguntar quan un resultat no s'entengui i aplicar les correccions rebudes. Tant en el treball individual com en grup, **cal poder explicar d'on provenen les dades, què s'ha calculat i per què s'ha triat una representació determinada**.
 
-Aquest recorregut s'inspira en el procés de **descobriment de coneixement en bases de dades**, conegut per les sigles KDD. [Fayyad, Piatetsky-Shapiro i Smyth](https://dblp.org/rec/journals/aim/FayyadPS96) van distingir cinc grans fases: selecció, preprocessament, transformació, mineria de dades i interpretació o avaluació. Aquestes fases formen part d'un procés interactiu que també depèn del coneixement del domini, dels objectius i de l'ús posterior dels resultats. La mineria de dades n'és una fase possible, no un sinònim de tot el procés.
+## El projecte del curs
 
-El manual adapta aquest marc a un curs introductori d'informació territorial. La selecció crítica de fonts, la depuració del llibre, la construcció d'indicadors, les unions espacials, els gràfics, els mapes i la infografia formen un cicle que produeix representacions i resultats interpretables. No totes les activitats constitueixen mineria de dades ni produeixen un descobriment científic nou. El valor del marc és recordar que un resultat útil depèn de tot el procés i que una incoherència detectada al final pot obligar a revisar la pregunta, la font o la preparació inicial.
+El manual utilitza com a demostració comuna els municipis del Tarragonès i dades de població i habitatge de l'Idescat de 2021. Es començarà amb les fonts originals i la feina es conservarà en un mateix projecte. Primer es crearà un fitxer de full de càlcul amb diversos fulls; Calc i Excel anomenen **llibre de càlcul** aquest tipus de fitxer. A continuació, QGIS servirà per gestionar la informació geogràfica, relacionar les dades estadístiques amb els límits municipals i elaborar mapes. Finalment, Inkscape permetrà combinar mapes, gràfics, textos i altres elements en una composició gràfica més elaborada.
 
-### Una pregunta territorial com a fil conductor
+**El projecte del curs culminarà en una infografia territorial** amb tres o quatre dades destacades, dues o tres peces visuals i una interpretació breu. El resultat final conservarà també el llibre de càlcul revisable, els gràfics i els mapes editables perquè sigui possible comprovar com s'ha construït la infografia.
 
-Les eines no s'aprendran com una col·lecció de funcions independents. Cada operació haurà de respondre una pregunta: quina comparació es vol fer, quina dada la permet, quin indicador és adequat i quina representació ajuda a comunicar el resultat sense exagerar-lo.
+El producte no es construeix d'una sola vegada. Cada fase afegeix una peça que serà necessària més endavant:
 
-El manual desenvoluparà una diagnosi de **població i habitatge d'una comarca tarragonina**. La demostració comuna utilitzarà els municipis del Tarragonès i dades de l'Idescat de 2021. El projecte començarà amb una pregunta, continuarà amb un únic llibre de càlcul i acabarà amb una miniinfografia formada per tres o quatre mètriques, dues o tres figures, un mapa de context, un mapa temàtic i una interpretació breu.
-
-::: table "Fil acumulatiu del projecte comarcal"
-| Fase | Resultat que es reutilitza |
+::: table "Què es construeix en cada fase del projecte comarcal"
+| Fase | Què es prepararà i es conservarà |
 | --- | --- |
-| Fonts i preparació | Un llibre amb dades originals importades, diccionari, comprovacions i una fila per municipi |
-| Indicadors | Percentatges, ràtios i densitats calculats al mateix llibre |
-| Gràfics | Sèrie de figures editables i selecció de dues o tres exportacions vectorials |
-| Color | Registre cromàtic amb funcions, paletes, codis i proves d'accessibilitat |
-| Dades espacials i llenguatge cartogràfic | Límits municipals documentats, escala, retolació i mapa de localització llegible |
-| SIG | Projecte QGIS amb capes, taula importada, unió controlada i comprovacions |
-| Cartografia temàtica | Mapa d'un indicador normalitzat, amb classificació i paleta justificades |
-| Síntesi | Miniinfografia, fitxers de treball i explicació oral quan correspongui |
+| Fonts i preparació | Un llibre de càlcul amb les dades originals, un diccionari, les comprovacions i una fila per municipi |
+| Indicadors | Percentatges, ràtios i densitats calculats al mateix fitxer |
+| Gràfics | Figures editables per comparar valors, distribucions i evolucions |
+| Color | Paletes amb una funció definida, codis registrats i proves bàsiques d'accessibilitat |
+| Dades espacials | Límits municipals documentats i sistemes de coordenades comprovats |
+| SIG | Un projecte QGIS que uneix la taula municipal amb el mapa i permet revisar la correspondència |
+| Llenguatge cartogràfic | Un mapa de context amb escala, retolació i jerarquia llegibles |
+| Cartografia temàtica | Un mapa d'un indicador comparable, amb classes, colors i llegenda justificats |
+| Síntesi | Una infografia composta amb Inkscape que reuneix les peces seleccionades i n'explica el resultat |
 :::
 
-### Cicle de treball del manual
+### Per què no començarem pel mapa
 
-![Cicle de treball del manual]({{ site.baseurl }}/assets/diagrams/manual-flow.mmd "Cicle adaptat de descobriment de coneixement territorial: de la pregunta i les dades a la interpretació i la comunicació"){: data-figure-width-web="38rem" data-figure-width-pdf="31rem"}
+**Un mapa pot semblar acabat encara que parteixi d'una columna equivocada, d'un percentatge mal calculat o d'una unió incompleta.** Per això primer comprovarem les fonts i els codis, després calcularem els indicadors i només representarem les dades quan sapiguem què significa cada valor. Si al final apareix una incoherència, tornarem al pas on s'ha originat en lloc de corregir només l'aspecte del gràfic o del mapa.
 
-## Metodologia de treball
+## Com treballarem a classe
 
-### Teoria i pràctica en un mateix recorregut
+**La teoria i la pràctica tractaran el mateix problema des de dos moments diferents.** Quan estudiem un percentatge, per exemple, a teoria veurem què compara i quin denominador necessita. A la pràctica localitzarem les columnes adequades, escriurem la fórmula al full de càlcul i comprovarem què passa si falta una dada o el denominador és zero. El resultat de la pràctica servirà després per construir un gràfic o un mapa sense haver de repetir el càlcul des del principi.
 
-Les sessions teòriques introduiran conceptes i criteris de decisió. Les pràctiques permetran aplicar-los amb dades i eines concretes. No formen dos cursos paral·lels: una fórmula d'Excel, una unió a QGIS o una decisió d'Inkscape només tenen sentit si es poden relacionar amb el problema explicat a teoria.
+### Com plantejar un dubte
 
-### Manual, Moodle i treball autònom
+**Els dubtes s'han de plantejar tan aviat com apareguin.** Al començament de cada sessió convé comentar les preguntes sorgides durant la lectura, la pràctica anterior o la preparació dels fitxers. Aquest primer intercanvi permet detectar dificultats compartides, aclarir errors abans de continuar i beneficiar tot el grup amb la resposta.
 
-El manual és el text de treball estable del curs. Moodle continuarà sent l'espai viu de gestió docent: allí hi haurà els avisos, les dates concretes, els lliuraments, les qualificacions i qualsevol ajust que depengui del calendari. El manual explica què s'ha de fer, per què es fa, quin criteri tècnic hi ha darrere de cada decisió i com es reconeix un resultat ben resolt.
+Quan el dubte no quedi resolt a l'aula, **el canal recomanat és el fòrum de dubtes de Moodle**. Una pregunta publicada al fòrum i la resposta corresponent poden ser útils per a altres persones que es trobin amb el mateix problema. Si el fòrum no és suficient o la consulta inclou una situació individual que no convé fer pública, el pas següent és escriure un correu i, si cal, acordar una tutoria.
 
-Cada capítol es pot llegir com una peça d'un procés. Abans de la sessió, el text ajuda a situar el problema. Durant el laboratori, serveix per tornar al procediment i als criteris. Després de treballar amb les dades, permet revisar si el resultat és coherent amb la decisió que s'havia de prendre.
+El missatge s'ha d'enviar des del **correu institucional** i ha d'identificar l'estudiant amb nom, cognoms, titulació i grup. L'assumpte ha d'indicar l'assignatura i el tema concret. El cos del missatge ha d'incloure una pregunta elaborada, els passos o recursos que ja s'han provat, el resultat que s'esperava i el resultat obtingut; quan sigui necessari, s'hi pot afegir un fitxer, una captura o un enllaç que permeti reproduir el problema. Un missatge com «no em funciona» no aporta prou informació per diagnosticar-ne la causa. **El professorat decidirà si el dubte es pot respondre per correu o si és preferible treballar-lo en una tutoria.**
 
-Per al professorat, el manual té una funció de coordinació. Cada capítol ha de fer visible quin concepte correspon treballar en teoria, quina acció toca supervisar al laboratori i quina evidència es pot revisar després. La teoria i la pràctica no s'han de duplicar: s'han d'alinear.
+![Circuit recomanat per plantejar dubtes]({{ site.baseurl }}/assets/diagrams/course-question-flow.mmd.svg "Els dubtes es comenten primer a l'inici de la sessió i després es traslladen al fòrum de Moodle. Si encara no queden resolts, s'envia un correu institucional documentat i el professorat respon per correu o proposa una tutoria."){: data-figure-width-web="35rem" data-figure-width-pdf="35rem"}
 
-## Marc de la guia docent
+### Com utilitzar aquest manual
 
-La guia docent oficial és la referència normativa de l'assignatura. Aquest manual la desplega en forma de materials, explicacions i criteris de treball, però no la substitueix. Si hi ha discrepàncies sobre dates, percentatges, condicions d'avaluació o instruccions administratives, preval la guia docent i les indicacions publicades a Moodle.
+Abans d'una pràctica, cal llegir la introducció de la fase per identificar la pregunta, els fitxers que s'utilitzaran i el resultat que cal obtenir. Durant la sessió, es pot consultar el procediment quan calgui i convé anotar al projecte les decisions que no quedin visibles al resultat. En acabar, **no n'hi ha prou amb comprovar que el fitxer existeix**: cal tornar-lo a obrir, revisar els criteris indicats al capítol i comprovar que se'n podria explicar la procedència.
+
+No totes les indicacions del curs són en aquest manual. Cal consultar cada espai segons la informació necessària:
+
+::: table "On trobar cada tipus d'informació"
+| Espai | Què s'hi troba |
+| --- | --- |
+| Manual | Explicacions, exemples, procediments i criteris per revisar la feina |
+| Moodle | Què toca fer cada setmana, avisos, dates, enunciats, fitxers de lliurament i qualificacions |
+| Guia docent | Organització oficial de l'assignatura, activitats d'avaluació i condicions generals |
+:::
+
+## Avaluació
+
+L'avaluació combina el treball continuat a l'aula, proves individuals i un producte final de síntesi. Les dates, els enunciats i els fitxers que s'han de lliurar es publicaran a Moodle. La guia docent fixa els blocs i els pesos següents:
+
+### Primera convocatòria
+
+::: table "Blocs d'avaluació de la primera convocatòria"
+| Activitat | Pes | Com es farà |
+| --- | --- | --- |
+| Pràctiques a través de TIC en aules informàtiques | 5% | Seguiment, exercicis i evidències intermèdies indicades a Moodle |
+| Presentació, exposició o infografia territorial | 30% | Projecte de síntesi en trios que combinin estudiants de Geografia i de Turisme |
+| Atenció personalitzada | 5% | Participació, resolució de dubtes i incorporació de correccions |
+| Prova mixta de continguts | 30% | Prova individual de comprensió teòrica i aplicació de criteris |
+| Prova pràctica de full de càlcul | 15% | Prova individual sobre preparació de dades, codis i indicadors |
+| Prova pràctica de QGIS | 15% | Prova individual sobre unions, simbolització i resolució cartogràfica |
+:::
+
+Per seguir l'itinerari ordinari d'avaluació continuada **cal assistir almenys al 80% de les sessions teòriques i pràctiques** o justificar adequadament les absències, i lliurar les activitats intermèdies indicades a Moodle. **Una activitat principal amb una nota inferior a 4 sobre 10 no es pot compensar automàticament amb les altres notes.**
+
+La prova de continguts comprovarà la capacitat d'interpretar indicadors, llegir gràfics, detectar problemes visuals, entendre sistemes de referència i valorar decisions cartogràfiques. Les dues proves pràctiques comprovaran la capacitat de preparar una taula i calcular indicadors, d'una banda, i d'incorporar dades a QGIS, unir-les amb una capa i simbolitzar-les, de l'altra.
+
+**La infografia territorial serà el producte de síntesi.** Els trios hauran de combinar estudiants de Geografia i de Turisme: no poden estar formats per tres persones de la mateixa titulació. La infografia integrarà dades traçables, indicadors justificats, dues o tres peces visuals entre gràfics i mapes, i una interpretació breu dins d'una composició elaborada amb Inkscape. Qualsevol membre del grup haurà de poder explicar les fonts, els càlculs, les unions, els mapes i les decisions visuals principals.
+
+### Segona convocatòria
+
+La segona convocatòria permet recuperar allò que no s'hagi superat, però no té la mateixa forma en tots els casos. La feina que caldrà fer dependrà del seguiment de la primera convocatòria:
+
+::: table "Què cal recuperar en segona convocatòria"
+| Situació després de la primera convocatòria | Recuperació prevista |
+| --- | --- |
+| S'ha seguit l'avaluació continuada, però una activitat principal té una nota inferior a 4 | Caldrà recuperar aquesta activitat o el bloc suspès; les parts superades es conservaran |
+| S'ha seguit l'avaluació continuada, però la mitjana no arriba a 5 | Caldrà recuperar les parts necessàries per assolir el nivell mínim |
+| El projecte de síntesi està pendent de recuperació | Caldrà elaborar una infografia o un document equivalent de manera individual i amb un abast més reduït |
+| No hi ha hagut seguiment continuat suficient o el projecte no s'ha desenvolupat de manera verificable | El professorat establirà una recuperació individual més completa que permeti comprovar els aprenentatges pendents |
+:::
+
+Moodle indicarà en cada cas el territori, les dades, el format, el termini i els criteris concrets de la recuperació. Abans de preparar la segona convocatòria, cal comprovar quines parts consten com a superades i quin enunciat correspon a la situació personal.
+
+### Referència oficial
+
+**La guia docent és la referència normativa de l'assignatura.** Si hi ha discrepàncies sobre percentatges, condicions d'avaluació o instruccions administratives, prevalen la guia docent i les indicacions publicades a Moodle.
 
 ::: table "Dades identificatives de les guies docents 2026_27"
 | Camp | Valor |
@@ -90,9 +141,9 @@ La guia docent oficial és la referència normativa de l'assignatura. Aquest man
 | Departament | Geografia |
 :::
 
-## Eines i organització del treball
+## Abans de començar: eines i fitxers
 
-Cal familiaritzar-se amb el sistema de fitxers de l'ordinador: crear carpetes, reconèixer una ruta, moure i copiar fitxers, identificar una extensió i saber en quin dispositiu o servei està desat un document. Aquestes operacions formen part del treball acadèmic, encara que les aplicacions mòbils i els serveis al núvol sovint les ocultin.
+**Cal familiaritzar-se amb el sistema de fitxers de l'ordinador**: crear carpetes, reconèixer una ruta, moure i copiar fitxers, identificar una extensió i saber en quin dispositiu o servei està desat un document. Aquestes operacions formen part del treball acadèmic, encara que les aplicacions mòbils i els serveis al núvol sovint les ocultin.
 
 ::: table "Eines principals i paper dins del curs"
 | Eina | Paper dins del curs |
@@ -152,55 +203,3 @@ Una aplicació pot mostrar un llibre sense fer evident on està desat. La llista
 Per treballar amb seguretat, el projecte tindrà una carpeta arrel identificable. Després de la primera sessió s'ha de poder tancar l'aplicació, navegar fins a la carpeta sense usar **Recents** i tornar a obrir el llibre. Si es treballa al núvol, cal comprovar el compte actiu, els permisos de les persones participants i l'estat de sincronització abans d'apagar l'ordinador.
 
 Compartir un enllaç no és el mateix que lliurar un fitxer. Quan Moodle demani un fitxer, s'ha de descarregar o exportar la versió correcta, verificar que s'obre fora de la sessió del navegador i trametre-la en el format indicat. Els enllaços compartits només substituiran el fitxer quan les instruccions ho demanin explícitament.
-
-## Evidències d'aprenentatge
-
-La guia docent 2026_27 defineix una avaluació continuada amb activitats de laboratori, presentació o exposició, atenció personalitzada, prova de continguts i prova pràctica. El manual explica com aquestes evidències es connecten amb el treball del curs, però les dates, els lliuraments concrets, el territori assignat i els enunciats operatius s'han de consultar a Moodle.
-
-::: table "Blocs d'avaluació i desplegament del curs"
-| Activitat | Pes | Organització principal |
-| --- | --- | --- |
-| Pràctiques a través de TIC en aules informàtiques | 5% | Seguiment, exercicis i evidències intermèdies segons Moodle |
-| Presentació, exposició o infografia territorial | 30% | Primera convocatòria en trios mixtos de titulació; segona convocatòria individual i de mida reduïda |
-| Atenció personalitzada | 5% | Participació, resolució de dubtes i incorporació de correccions |
-| Prova mixta de continguts | 30% | Prova individual de comprensió teòrica i criteris d'aplicació |
-| Prova pràctica de full de càlcul | 15% | Prova individual sobre preparació de dades, codis i indicadors |
-| Prova pràctica de QGIS | 15% | Prova individual sobre unions, simbolització i resolució cartogràfica |
-:::
-
-Aquest repartiment combina seguiment, comprensió conceptual, resolució pràctica individual i un producte de síntesi. No n'hi ha prou amb obtenir un mapa visualment agradable: cal poder justificar les dades utilitzades, els indicadors calculats, les unions realitzades, la classificació cartogràfica i la interpretació territorial proposada.
-
-L'avaluació continuada exigeix seguiment regular. Per mantenir l'itinerari ordinari de primera convocatòria cal assistir com a mínim al 80% de les sessions pràctiques, o justificar adequadament les absències, i lliurar les activitats o evidències intermèdies que indiqui Moodle. La manca de seguiment, d'assistència o de participació efectiva pot obligar a una recuperació individual específica en segona convocatòria.
-
-Si l'assistència i el seguiment són suficients, però una activitat principal queda per sota de 4 sobre 10 o la nota mitjana no arriba a l'aprovat, la segona convocatòria se centrarà en les activitats o blocs suspesos. Això permet conservar la feina superada i recuperar només allò que no ha assolit el nivell mínim. Si no hi ha seguiment continuat o el projecte de síntesi no s'ha desenvolupat de manera verificable, la recuperació pot requerir una modalitat individual més completa.
-
-### Prova de continguts
-
-La prova mixta serà individual i comprovarà la comprensió dels conceptes i la capacitat d'aplicar criteris: interpretar indicadors, llegir gràfics, detectar problemes visuals, entendre sistemes de referència i valorar decisions cartogràfiques.
-
-### Proves pràctiques
-
-Les proves pràctiques seran individuals i es distribuiran en dues parts. La prova de full de càlcul comprovarà la preparació d'una taula, la gestió de codis territorials, el tractament de valors absents, el càlcul d'indicadors i la validació dels resultats. La prova de QGIS comprovarà la incorporació de dades, la unió amb capes territorials, la simbolització cartogràfica i la resolució de problemes aplicats.
-
-### Infografia territorial
-
-La infografia serà el producte de síntesi de primera convocatòria. Es farà en **trios** i els equips hauran de combinar estudiants de Geografia i de Turisme: no poden estar formats per tres persones de la mateixa titulació. Aquesta composició busca que el treball integre mirades territorials, turístiques, tècniques i comunicatives, no que cada membre treballe una peça aïllada sense entendre la resta.
-
-La infografia haurà d'integrar dades traçables, indicadors justificats, dues o tres figures, un o dos mapes i una interpretació breu dins d'una composició coherent elaborada amb Inkscape. El treball en equip no elimina la responsabilitat individual: qualsevol membre ha de poder explicar les fonts, els càlculs, les unions, els mapes i les decisions visuals principals.
-
-En segona convocatòria, quan calgui recuperar el projecte de síntesi, la infografia o document equivalent serà **individual** i de mida més reduïda. Moodle indicarà el territori, les dades, el format, el termini i els criteris concrets d'aquesta recuperació.
-
-### Preguntes freqüents
-
-::: table "Dubtes habituals sobre l'avaluació i el treball"
-| Pregunta | Resposta curta |
-| --- | --- |
-| La infografia és individual o en grup? | En primera convocatòria és en trios; en segona convocatòria, si s'ha de recuperar, és individual i més petita. |
-| Es pot fer un trio només de Geografia o només de Turisme? | No. Els trios han de combinar estudiants de les dues titulacions i no poden estar formats per tres persones de la mateixa titulació. |
-| Les proves pràctiques són en grup? | No. Hi haurà una prova individual de full de càlcul del 15% i una prova individual de QGIS del 15%. |
-| Què passa si una part queda per sota de 4? | No es pot compensar automàticament. Si hi ha seguiment suficient, en segona convocatòria es recuperaran les activitats o blocs suspesos. |
-| Què passa si la mitjana no arriba a 5? | Si s'ha seguit l'avaluació continuada, es recuperaran les parts necessàries per arribar al nivell mínim. |
-| L'assistència a pràctiques és obligatòria? | És necessària per mantenir l'itinerari ordinari d'avaluació continuada: cal arribar al 80% o justificar les absències. |
-| Es pot lliurar només l'enllaç a un fitxer compartit? | Només si Moodle ho demana explícitament. Quan es demani un fitxer, cal lliurar la versió correcta i comprovar que s'obre fora de la sessió del navegador. |
-| Com es comprova l'autoria d'un llibre de càlcul o projecte QGIS? | Amb originals, fonts, fórmules, comprovacions, versions intermèdies, fitxers de treball i explicacions orals quan calgui; les metadades del fitxer poden ser un indici, però no una prova suficient. |
-:::

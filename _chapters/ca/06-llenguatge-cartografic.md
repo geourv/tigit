@@ -12,16 +12,14 @@ part: Continguts
 manual_references: true
 ---
 
-Un mapa no és una taula acolorida ni un gràfic col·locat sobre un territori. La posició de les entitats ve determinada per la geografia, i l'escala, la selecció i la generalització condicionen què pot mostrar-se. Aquest capítol aplica al mapa els criteris de semiologia i color treballats abans, continua el projecte QGIS iniciat amb la base espacial i prepara la cartografia temàtica. Les decisions cartogràfiques no són neutres: seleccionar, ometre, projectar, classificar i jerarquitzar condiciona el missatge que rep el lector {% cite jolyCartografia1982 monmonierHowLieMaps2018 %}.
+Un mapa no és una taula acolorida ni un gràfic col·locat sobre un territori. La posició de les entitats ve determinada per la geografia, i l'escala, la selecció i la generalització condicionen què pot mostrar-se. Aquest capítol aplica al mapa els criteris de semiologia i color treballats abans, continua el projecte QGIS que ja conté la base espacial i la unió municipal validades i prepara la cartografia temàtica. Les decisions cartogràfiques no són neutres: seleccionar, ometre, projectar, classificar i jerarquitzar condiciona el missatge que rep el lector {% cite jolyCartografia1982 monmonierHowLieMaps2018 %}.
 
 >>>>> En acabar el capítol, cal poder construir i revisar un mapa de context que comuniqui la localització del territori amb una escala, una generalització i una composició justificades.
 >>>>>
->>>>> - Distingir fotografies aèries, fotogrames georeferenciats, ortofotos, ortofotomapes i imatges de satèl·lit segons la geometria i l'ús possible.
->>>>> - Explicar com la posició geogràfica, l'escala i la generalització condicionen la informació que es pot representar.
->>>>> - Calcular equivalències d'escala amb unitats coherents i verificar-les en el suport final.
->>>>> - Seleccionar símbols, retolació, orientació, llegenda, fonts i crèdits segons la funció del mapa.
->>>>> - Construir a QGIS una composició de context amb una jerarquia territorial llegible.
->>>>> - Comparar els PDF automàtic i revisat i justificar al `README.md` els canvis cartogràfics observables.
+>>>>> - Distingir una imatge útil per observar el territori d'un producte adequat per mesurar o cartografiar.
+>>>>> - Justificar l'escala, el detall i la generalització segons la funció i la mida final del mapa.
+>>>>> - Organitzar símbols, retolació, llegenda, orientació, fonts de dades i crèdits amb una jerarquia llegible.
+>>>>> - Construir i revisar a QGIS un mapa de context, i documentar els canvis entre la versió inicial i la final.
 
 ## Productes cartogràfics i funció del mapa
 
@@ -59,7 +57,7 @@ Una imatge presa des de l'aire pot mostrar el territori amb molt detall sense te
 
 Una **fotografia aèria obliqua** es pren amb l'eix òptic de la càmera inclinat respecte de la vertical. Ofereix una perspectiva semblant a la visió humana i fa visibles façanes, vessants i volums, però l'escala varia fortament entre el primer terme i el fons. En la classificació internacional utilitzada aquí, l'**obliqua baixa** no inclou l'horitzó i l'**obliqua alta** sí que l'inclou. La primera pot facilitar la identificació de formes i la segona proporciona una visió territorial més extensa, però cap de les dues no admet mesures planimètriques directes com un mapa {% cite baumannAerialPhotography2019 %}. El [catàleg de fotogrames aeris individuals de l'USGS](https://www.usgs.gov/centers/eros/science/usgs-eros-archive-aerial-photography-aerial-photo-single-frames) permet consultar aquest tipus de recurs.
 
-Una **fotografia aèria vertical** es pren amb la càmera orientada tan a prop del nadir com permet la plataforma. Aquesta orientació facilita la fotogrametria i la cobertura sistemàtica, però la imatge continua sent una projecció central. Els elements elevats es desplacen radialment respecte del centre i poden mostrar part dels seus costats; la inclinació de la càmera i les diferències de relleu també alteren la posició i l'escala. Per tant, «vista des de dalt», «vertical», «georeferenciada» i «ortorectificada» no són sinònims.
+Una **fotografia aèria vertical** es pren amb la càmera orientada tan a prop del nadir com permet la plataforma. Aquesta orientació facilita la fotogrametria i la cobertura sistemàtica, però la imatge continua sent una **projecció central**. Els elements elevats es desplacen radialment respecte del centre i poden mostrar part dels seus costats; la inclinació de la càmera i les diferències de relleu també alteren la posició i l'escala. Per tant, «vista des de dalt», «vertical», «georeferenciada» i «ortorectificada» no són sinònims.
 
 El tema [*Aerial Photography: History and Georeferencing*](https://doi.org/10.22224/gistbok/2019.2.5) del GIS&T Body of Knowledge desenvolupa aquesta seqüència mitjançant definicions, història, ortorectificació, fotografia digital, resultats d'aprenentatge i temes relacionats. El DOI és l'enllaç estable; la plataforma actual també permet cercar altres temes, consultar-ne les connexions en un mapa de coneixement i obtenir una versió d'impressió.
 
@@ -114,7 +112,7 @@ La consulta es pot reproduir cercant `Vila-seca`, activant **Fotogrames**, selec
 
 ### Google Maps i la vista d'imatges
 
-[Google Maps](https://support.google.com/maps/answer/3092439?hl=ca&co=GENIE.Platform%3DDesktop) distingeix oficialment entre **Mapa**, que mostra vies, llocs i punts de referència, i **Satèl·lit**, que mostra imatges aèries. Aquesta etiqueta comercial no identifica el sensor ni garanteix per si sola que cada peça visible sigui una ortofoto amb resolució, data i precisió conegudes. Amb les etiquetes desactivades, la vista és una base d'imatges georeferenciada; si s'hi superposen vies, topònims, límits i punts d'interès, el resultat funciona visualment com un **ortofotomapa**. En canvi, una vista inclinada o un entorn 3D torna a introduir perspectiva i no s'ha de descriure com un ortofotomapa planimètric.
+[Google Maps](https://support.google.com/maps/answer/3092439?hl=ca&co=GENIE.Platform%3DDesktop) distingeix oficialment entre **Mapa**, que mostra vies, llocs i punts de referència, i **Satèl·lit**, que mostra imatges aèries. Aquesta etiqueta comercial no identifica el sensor ni garanteix per si sola que cada peça visible sigui una ortofoto amb resolució, data i precisió conegudes. Amb les etiquetes desactivades, es pot parlar de **vista d'imatges**; si s'hi superposen vies, topònims, límits i punts d'interès, és una **vista híbrida**. Només s'hauria d'anomenar ortofotomapa si la imatge de base és una ortofoto documentada i les capes cartogràfiques incorporades també es poden identificar. Una vista inclinada o un entorn 3D torna a introduir perspectiva i tampoc no és un ortofotomapa planimètric.
 
 Per tant, el nom depèn del producte que es veu i de les capes actives, però també de la informació tècnica disponible. En una exploració quotidiana es pot parlar de vista d'imatges o vista híbrida. En un treball acadèmic, una mesura o una font de dades, cal preferir una ortofoto oficial amb data, CRS, resolució, precisió i condicions de reutilització documentades. Google Maps no és una font de dades obertes: la reproducció i la reutilització del contingut estan subjectes als límits de les [directrius geogràfiques de Google](https://about.google/brand-resource-center/products-and-services/geo-guidelines/) i exigeixen mantenir l'atribució a Google i, si escau, als proveïdors de dades; les directrius admeten alguns usos i en restringeixen d'altres.
 
@@ -148,9 +146,9 @@ L'**escala cartogràfica** relaciona una distància representada al mapa amb la 
 
 La mida final d'exportació forma part de la decisió. Ampliar el zoom de QGIS no augmenta l'espai disponible a la pàgina, i reduir posteriorment un mapa pot fer il·legibles etiquetes, traços i símbols. L'escala s'ha de comprovar dins de la composició, a la mida de publicació.
 
-L'escala gràfica manté la relació visual quan el document es redimensiona proporcionalment; l'escala numèrica deixa de ser certa si la pàgina s'amplia o es redueix. En tots dos casos, el marc de mapa i el CRS del projecte han de permetre interpretar les distàncies correctament.
+L'**escala gràfica** manté la relació visual quan el document es redimensiona proporcionalment; l'**escala numèrica** deixa de ser certa si la pàgina s'amplia o es redueix. En tots dos casos, el marc de mapa i el CRS del projecte han de permetre interpretar les distàncies correctament.
 
-Una escala verbal, com “mapa de detall municipal” o “mapa de context provincial”, pot ajudar el lector general, però no substitueix l'escala numèrica o gràfica quan s'han de comprovar distàncies. En el treball del curs, l'escala s'ha de registrar juntament amb la mida final de la peça, perquè la mateixa composició exportada a una pàgina A4 o a una diapositiva no ofereix la mateixa lectura.
+Una **escala verbal** expressa la relació amb paraules, per exemple «un centímetre representa un quilòmetre». En canvi, «mapa de detall municipal» o «mapa de context provincial» descriuen l'abast o la funció de la peça, no una escala. La forma verbal no substitueix l'escala numèrica o gràfica quan s'han de comprovar distàncies. En el treball del curs, l'escala s'ha de registrar juntament amb la mida final de la peça, perquè la mateixa composició exportada a una pàgina A4 o a una diapositiva no ofereix la mateixa lectura.
 
 ### Escales mètriques i escales en graus
 
@@ -242,7 +240,7 @@ $$
 
 La mateixa operació permet detectar captures o reproduccions redimensionades: una escala numèrica impresa deixa de ser vàlida si la imatge s'ha ampliat o reduït sense recalcular-la.
 
-Les superfícies segueixen la mateixa lògica, però amb el quadrat de l'escala. Si $A_m$ és l'àrea al mapa i $A_r$ l'àrea real, llavors:
+Les superfícies segueixen la mateixa lògica, però amb el **quadrat de l'escala**. Si $A_m$ és l'àrea al mapa i $A_r$ l'àrea real, llavors:
 
 $$
 A_r = A_m \cdot n^2
@@ -414,7 +412,7 @@ Un cop fixada la funció del mapa i l'escala de treball, es pot decidir quina in
 
 En el mapa comarcal, els límits i alguns topònims ajuden a localitzar els municipis. Un relleu detallat o una xarxa viària completa podrien competir amb aquesta funció. Només s'incorporaran si aporten una referència necessària per interpretar la localització; altrament, s'ometran com a part de la generalització.
 
-El relleu és especialment delicat perquè pot donar molta estructura visual sense formar part de la variable principal. Les cotes aporten valors puntuals; les corbes de nivell mostren forma i pendent; l'ombrejat fa intuïtiu el volum, però pot semblar una font de llum real; i les tintes hipsomètriques ordenen rangs d'altura, però introdueixen una paleta que pot competir amb una coropleta. Per comparar aquests recursos sense atribuir les diferències a terrenys distints, la figura següent aplica cotes, tintes i ombrejat al mateix model d'altituds. En un mapa temàtic municipal, l'altimetria només s'ha d'afegir si ajuda a explicar un patró territorial, com una diferència entre litoral i interior, i no només perquè el mapa sembli més complet.
+El relleu és especialment delicat perquè pot donar molta estructura visual sense formar part de la variable principal. Les cotes aporten valors puntuals; les corbes de nivell mostren forma i pendent; l'ombrejat fa intuïtiu el volum, però pot semblar una font de llum real; i les tintes hipsomètriques ordenen rangs d'altura, però introdueixen una paleta que pot competir amb una coropleta. Per comparar aquests recursos sense atribuir les diferències a terrenys distints, la figura següent aplica cotes, tintes i ombrejat a `volcano`, un petit conjunt de dades d'exemple inclòs amb el llenguatge R que representa una malla d'altituds de Maunga Whau. S'utilitza perquè permet mantenir el terreny constant, no perquè l'estudiant hagi de treballar amb R ni perquè sigui una font adequada per mesurar el volcà. En un mapa temàtic municipal, l'altimetria només s'ha d'afegir si ajuda a explicar un patró territorial, com una diferència entre litoral i interior, i no només perquè el mapa sembli més complet.
 
 ![Tres representacions del mateix model d'altituds de Maunga Whau: cotes puntuals, tintes hipsomètriques i ombrejat del relleu]({{ site.baseurl }}/assets/img/cartographic-language/terrain-relief-volcano.svg "Les cotes donen valors en punts concrets; les tintes hipsomètriques codifiquen l'altitud amb una rampa ordenada; i l'ombrejat simula una il·luminació amb azimut 315° i altura 40°, però no proporciona una altura exacta. Dades: conjunt volcano de Maunga Whau, una malla de 10 m digitalitzada per Ross Ihaka i no apta per a mesures precises."){: data-figure-width="54rem"}
 
@@ -422,7 +420,11 @@ El relleu és especialment delicat perquè pot donar molta estructura visual sen
 
 Una **corba de nivell** uneix punts que tenen la mateixa altitud. En un mapa topogràfic, aquestes línies acostumen a dibuixar-se en color sèpia o marró perquè el relleu quedi diferenciat de la hidrografia, la vegetació, els camins i la retolació. Les **corbes mestres** apareixen més gruixudes i sovint etiquetades amb la cota; serveixen per no perdre el recompte vertical. Entre dues corbes mestres hi ha corbes normals o intermèdies, separades per una **equidistància** constant que cal llegir a la llegenda del mapa. Si l'equidistància és de 10 m, cada corba normal representa un canvi de 10 m d'altitud; si és de 20 m, el salt és de 20 m. La distància visual entre línies, en canvi, no és l'equidistància: quan les corbes estan molt juntes el pendent és més fort, i quan s'allunyen el pendent és més suau.
 
-La forma de les corbes també informa sobre el drenatge. En un barranc o una vall, les corbes tendeixen a entrar cap amunt en forma de `V` o de `U`: el terreny és còncau i el flux d'aigua es concentra cap a l'eix de la depressió. En una cresta o un esperó, la forma s'obre cap avall i el terreny és convex: l'aigua es dispersa cap als dos vessants. Aquesta lectura no substitueix una xarxa hidrogràfica ni un model digital d'elevacions, però permet reconèixer lògiques bàsiques del relleu abans d'afegir més capes.
+La figura següent separa aquestes dues distàncies. L'equidistància és el salt vertical constant entre corbes; l'espai dibuixat entre línies correspon a una distància horitzontal i varia amb el pendent. El model esglaonat de l'esquerra mostra els talls horitzontals d'un mateix relleu, i la vista zenital de la dreta en conserva la forma com a línies sobre el mapa.
+
+![Formació i lectura de les corbes de nivell a partir de talls horitzontals d'un relleu]({{ site.baseurl }}/assets/img/cartographic-language/contour-lines-reading-guide.svg "Els talls horitzontals, separats per una equidistància de 20 m, es projecten com a corbes de nivell sobre el mapa. La separació gràfica entre corbes és més gran al vessant suau i més petita al vessant fort. Elaboració pròpia."){: data-figure-width-web="54rem" data-figure-width-pdf="100%"}
+
+La forma de les corbes també informa sobre el drenatge. En un barranc o una vall, les corbes tendeixen a entrar cap amunt en forma de `V` o de `U`: el terreny és **còncau** i el flux d'aigua es concentra cap a l'eix de la depressió. En una cresta o un esperó, la forma s'obre cap avall i el terreny és **convex**: l'aigua es dispersa cap als dos vessants. Aquesta lectura no substitueix una xarxa hidrogràfica ni un model digital d'elevacions, però permet reconèixer lògiques bàsiques del relleu abans d'afegir més capes.
 
 Un **perfil topogràfic** trasllada a una vista lateral les altituds recorregudes per un transsecte dibuixat sobre el mapa. Cada vegada que la línia `A–A′` talla una corba de nivell, el perfil passa per aquella mateixa cota; entre interseccions, la forma depèn de les altituds disponibles i del mètode d'interpolació. En l'exemple calculat, els punts marrons marquen els creuaments amb intervals de 10 m. Els eixos horitzontal i vertical no comparteixen la mateixa escala gràfica, de manera que el perfil exagera visualment l'altura i no s'ha d'interpretar com una secció amb proporció `1:1`.
 
@@ -452,7 +454,7 @@ El títol ha d'identificar el propòsit, la variable o el territori i, quan sigu
 
 ### Símbols cartogràfics i convencions
 
-Els símbols cartogràfics apliquen les variables visuals sobre tres formes d'implantació: puntual, lineal i superficial. Un allotjament, un museu o una estació poden aparèixer com a símbols puntuals; una carretera, un itinerari o un riu, com a símbols lineals; i un municipi, una zona urbana o una coberta del sòl, com a símbols superficials. Aquesta implantació no és només una qüestió geomètrica: condiciona quina variable visual serà llegible. La mida funciona d'una manera en un cercle puntual, d'una altra en l'amplada d'una línia i d'una altra en una àrea de color.
+Els símbols cartogràfics apliquen les variables visuals sobre tres formes d'implantació: **puntual**, **lineal** i **superficial**. Un allotjament, un museu o una estació poden aparèixer com a símbols puntuals; una carretera, un itinerari o un riu, com a símbols lineals; i un municipi, una zona urbana o una coberta del sòl, com a símbols superficials. Aquesta implantació no és només una qüestió geomètrica: condiciona quina variable visual serà llegible. La mida funciona d'una manera en un cercle puntual, d'una altra en l'amplada d'una línia i d'una altra en una àrea de color.
 
 La relació entre el signe i el fenomen també pot variar. Un símbol **arbitrari** no s'assembla al que representa i necessita una llegenda clara. Un símbol **associatiu** aprofita algun tret recognoscible, com una forma, un color o una textura que evoca el fenomen. Un símbol **convencional** depèn d'un acord compartit, sovint repetit en sèries cartogràfiques, institucions o pràctiques professionals. En la pràctica, molts símbols combinen aquestes tres dimensions: el blau d'un riu és associatiu perquè recorda l'aigua, però també és convencional perquè el lector l'ha après en molts mapes.
 
@@ -503,7 +505,7 @@ El nord a dalt és una convenció cartogràfica estesa, no una propietat necess�
 ![Mapamundi de McArthur amb orientació sud-amunt i rosa dels vents visible]({{ site.baseurl }}/assets/img/cartographic-language/mcarthur-corrective-projection.png "Mapamundi de McArthur amb orientació sud-amunt")
 :::
 
->>>> **No confongueu absència de fletxa amb absència d'orientació.** En un mapa nord-amunt, sense rotació i amb retícula, costa, topònims o marc territorial fàcilment recognoscibles, ometre la fletxa pot ser una decisió correcta. En un mapa rotat, en una ruta, en una composició turística poc convencional o en un producte que serveixi per orientar-se físicament sobre el terreny, cal indicar l'orientació de manera explícita. Si el treball depèn d'una brúixola, d'una quadrícula o de navegació, també cal precisar quin nord s'està utilitzant.
+>>>> **Absència de fletxa no significa absència d'orientació.** En un mapa nord-amunt, sense rotació i amb retícula, costa, topònims o marc territorial fàcilment recognoscibles, ometre la fletxa pot ser una decisió correcta. En un mapa rotat, en una ruta, en una composició turística poc convencional o en un producte que serveixi per orientar-se físicament sobre el terreny, cal indicar l'orientació de manera explícita. Si el treball depèn d'una brúixola, d'una quadrícula o de navegació, també cal precisar quin nord s'està utilitzant.
 
 ### Retolació
 
@@ -517,7 +519,7 @@ Les famílies **amb serifa** incorporen petits acabaments als traços; les **de 
 
 Comparar sempre el mateix topònim permet atribuir les diferències a la tipografia i no al contingut. A la fila superior de la figura següent, `Vila-seca` conserva la mida nominal però canvia de família; a la fila inferior es manté DejaVu Sans i només canvia la variant. La negreta guanya presència, la cursiva modifica el ritme i la monoespaiada ocupa l'espai d'una manera diferent. Aquestes diferències poden construir jerarquia, però també poden dificultar l'encaix o la lectura si s'apliquen sense criteri.
 
-![El topònim Vila-seca comparat en famílies de pal sec, amb serifa i monoespaiada, i en variants regular, negreta, cursiva i negreta cursiva]({{ site.baseurl }}/assets/img/cartographic-language/typographic-specimens.svg "El mateix topònim canvia d'amplada, ritme, densitat i presència visual segons la família i la variant. Les mostres mantenen la mateixa mida nominal perquè es puguin comparar; abans de triar una font cal repetir la prova amb la mida final, els accents, les xifres i el fons reals del mapa. Figura d'elaboració pròpia."){: data-figure-width="54rem"}
+![El topònim Vila-seca comparat en famílies de pal sec, amb serifa i monoespaiada, i en variants regular, negreta, cursiva i negreta cursiva]({{ site.baseurl }}/assets/img/cartographic-language/typographic-specimens.svg "El mateix topònim canvia d'amplada, ritme, densitat i presència visual segons la família i la variant. Les mostres mantenen la mateixa mida nominal perquè es puguin comparar; abans de triar una font cal repetir la prova amb la mida final, els accents, les xifres i el fons reals del mapa. Figura d'elaboració pròpia."){: data-figure-width-web="29rem" data-figure-width-pdf="69%"}
 
 ::: table "Famílies i variants tipogràfiques"
 | Recurs | Funció possible | Risc que cal comprovar |
@@ -532,15 +534,15 @@ Comparar sempre el mateix topònim permet atribuir les diferències a la tipogra
 
 No s'utilitzaran negretes o cursives simulades si existeix la variant real. Un programa pot inclinar o engruixir artificialment una font que no disposa d'aquell estil, però el resultat pot deformar els caràcters i variar entre Calc, QGIS, Inkscape i el PDF. Per construir jerarquia és preferible treballar amb una família que ofereixi regular, negreta i cursiva reals, i limitar el nombre de variants.
 
-#### Fonts instal·lades, llicència i portabilitat
+#### Tipografies instal·lades, llicència i portabilitat
 
-Els programes no porten necessàriament totes les fonts dins del document. Calc, Excel, QGIS i Inkscape consulten les fonts instal·lades al sistema operatiu; per això un fitxer pot canviar d'aspecte quan s'obre en un altre ordinador. Windows, Linux i macOS inclouen repertoris diferents, i una font disponible a l'aula pot no existir a l'ordinador on es revisa o imprimeix el treball. Abans d'adoptar una família cal comprovar que conté accents catalans, ela geminada, signes matemàtics, percentatges i les xifres necessàries.
+Els programes no porten necessàriament totes les tipografies dins del document. Calc, Excel, QGIS i Inkscape consulten les tipografies instal·lades al sistema operatiu; per això un fitxer pot canviar d'aspecte quan s'obre en un altre ordinador. Windows, Linux i macOS inclouen repertoris diferents, i una família disponible a l'aula pot no existir a l'ordinador on es revisa o imprimeix el treball. Abans d'adoptar una família cal comprovar que conté accents catalans, ela geminada, signes matemàtics, percentatges i les xifres necessàries.
 
 Si el repertori instal·lat no és suficient, se'n poden afegir fonts noves. A Windows es poden instal·lar des del fitxer de font o mitjançant la configuració del sistema, seguint les instruccions de [Microsoft per afegir fonts](https://support.microsoft.com/office/add-a-font-b7c5f17c-4426-4b53-967f-455339c564c1). En Linux, el procediment depèn de la distribució i de l'entorn d'escriptori: es pot utilitzar el gestor de fonts o instal·lar-les per a l'usuari, habitualment dins de `~/.local/share/fonts`, i actualitzar la memòria cau amb `fc-cache`. Instal·lar una font requereix permisos adequats i reiniciar les aplicacions que ja estaven obertes.
 
 [Roboto](https://fonts.google.com/specimen/Roboto) és una candidata habitual, però no és obligatòria ni està instal·lada en tots els equips. Noto Sans, Liberation Sans i DejaVu Sans són alternatives lliures amb bona cobertura; Liberation Sans, a més, pot facilitar la compatibilitat mètrica amb documents que esperen Arial. La selecció final registrarà família, variant, procedència i llicència. Descarregar un fitxer de font d'una web desconeguda pot introduir problemes de llicència o seguretat; cal utilitzar repositoris oficials o reconeguts.
 
-En exportar, el PDF ha d'incrustar les fonts o aplicar una substitució deliberada. Convertir text a traçats evita algunes substitucions, però augmenta la mida, impedeix editar i cercar el text i empitjora l'accessibilitat; no serà l'opció predeterminada. El fitxer es revisarà en un segon visor o equip i amb `pdffonts` quan el professorat prepari el material de demostració.
+En exportar, el PDF ha d'incrustar les tipografies o aplicar una substitució deliberada. Convertir text a traçats evita algunes substitucions, però augmenta la mida, impedeix editar i cercar el text i empitjora l'accessibilitat; no serà l'opció predeterminada. L'estudiant comprovarà el fitxer en un segon visor o equip. Quan el professorat prepari el material de demostració, també podrà usar `pdffonts`, una utilitat de línia d'ordres que enumera les tipografies d'un PDF; aquesta comprovació tècnica no forma part de les competències exigides a l'estudiant.
 
 #### Tipografia i consum de tinta o tòner
 
@@ -548,7 +550,7 @@ Algunes fonts i variants utilitzen traços més fins o menys superfície impresa
 
 La prova adequada combina llegibilitat i recursos: mateix text, mateixa mida aparent, mateix suport i configuració d'impressió. També influeixen més en el consum total la impressió a doble cara, el mode esborrany, la quantitat de superfícies fosques, el nombre de còpies i la simplificació del document. En mapes i infografies, reduir grans fons saturats o trames innecessàries acostuma a ser més rellevant que substituir una sola família tipogràfica. No es sacrificarà la llegibilitat ni l'accessibilitat per obtenir una reducció de tinta no mesurada.
 
->> **Prova tipogràfica del projecte.** Abans de fixar la família, prepareu una mostra amb `Tarragonès`, `Vila-seca`, `l'Espluga de Francolí`, `10,5%`, `EPSG:25831`, una coordenada UTM i una línia de font o crèdit. Compareu regular, negreta i cursiva a la mida final, tant en pantalla com en PDF. Registreu la família escollida i una alternativa disponible per si falla la incrustació.
+>> **Prova tipogràfica del projecte.** Abans de fixar la família, cal preparar una mostra amb `Tarragonès`, `Vila-seca`, `l'Espluga de Francolí`, `10,5%`, `EPSG:25831`, una coordenada UTM i una línia de font o crèdit. Cal comparar regular, negreta i cursiva a la mida final, tant en pantalla com en PDF, i registrar la família escollida i una alternativa disponible per si falla la incrustació.
 
 La jerarquia tipogràfica es pot entendre abans de mirar cap mapa. Un rètol comercial de carrer, per exemple, no reparteix l'atenció de manera neutral: una paraula domina per mida, color, pes i contrast; altres línies expliquen la condició de l'oferta, la marca o el detall secundari; i alguns textos queden deliberadament en un nivell molt baix. El mecanisme és el mateix que després cal disciplinar en cartografia. El lector no llegeix totes les paraules alhora, sinó que entra per un nivell dominant i continua per nivells més petits si necessita més informació.
 
@@ -570,7 +572,7 @@ La jerarquia no s'ha de confondre amb una simple llista de cossos de lletra. En 
 
 ![Fragment de mapa de Xipre i el Mediterrani oriental amb diversos nivells de retolació: mar, illa, països, ciutats, caps, badies, relleu i xarxa viària]({{ site.baseurl }}/assets/img/cartographic-language/map-labels-eg-2.png "El fragment permet analitzar com mida, majúscules, minúscules, cursiva, color, pes, espaiament, orientació i posició creen nivells de lectura en la retolació cartogràfica. Llicència: pendent de revisar."){: data-figure-width="48rem"}
 
->>> **Analitzar la jerarquia de la retolació.** Sobre el mapa anterior, ordeneu els nivells de retolació de més a menys presència visual. Comenceu pels grans espais, com mars i oceans, i continueu amb països, illes, ciutats, elements costaners, relleu, vies o altres categories que hi reconegueu. Per a cada nivell, descriviu què fa que destaqui més o menys: mida, majúscules, pes, color, cursiva, espaiament, orientació, halo, proximitat a l'element o relació amb el fons. La resposta no ha de ser només una llista de noms; ha d'explicar quin sistema de prioritats construeix el mapa.
+>>> **Analitzar la jerarquia de la retolació.** Sobre el mapa anterior, cal ordenar els nivells de retolació de més a menys presència visual, començant pels grans espais, com mars i oceans, i continuant amb països, illes, ciutats, elements costaners, relleu, vies o altres categories recognoscibles. Per a cada nivell, cal descriure què fa que destaqui més o menys: mida, majúscules, pes, color, cursiva, espaiament, orientació, halo, proximitat a l'element o relació amb el fons. La resposta no ha de ser només una llista de noms; ha d'explicar quin sistema de prioritats construeix el mapa.
 
 ::: table "Criteris de retolació cartogràfica"
 | Element | Criteri principal | Risc habitual |
@@ -598,7 +600,7 @@ Una etiqueta no ha de tapar una altra, sortir de la seva entitat sense una relac
 
 Els principis clàssics de retolació defineixen posicions preferents segons si l'element és puntual, lineal o superficial i penalitzen l'ambigüitat, les col·lisions i les interrupcions de trets importants {% cite imhofPositioningNamesMaps1975 %}. En un sistema automàtic, cada entitat pot generar diversos candidats amb costos diferents; el problema consisteix a seleccionar una combinació que mantingui el màxim d'etiquetes útils sense solapaments. Amb molts punts, les combinacions possibles creixen de pressa i els algorismes pràctics necessiten heurístiques, prioritats i límits de temps. «Automàtic» significa que el programa resol un problema formal segons unes regles, no que conegui la intenció territorial del mapa {% cite christensenLabelPlacementAlgorithms1995 %}.
 
-La retolació es revisarà mitjançant una parella construïda sobre el territori d'estudi. La primera versió conservarà una configuració automàtica; la segona aplicarà prioritats, resolució de conflictes, formes oficials i jerarquia. La justificació identificarà canvis observables i no es limitarà a afirmar que el resultat és més atractiu. Una bona revisió pot explicar quins noms s'han mantingut, quins s'han eliminat, quins s'han desplaçat, quines línies de crida continuen conservant l'ancoratge i quines convencions tipogràfiques indiquen cada nivell.
+La retolació es pot revisar amb una parella en què escala, extensió, geometria, estil i composició es mantinguin constants: la primera versió conserva la configuració automàtica i la segona aplica prioritats, resolució de conflictes, formes oficials i jerarquia. Aquesta comparació controlada permet atribuir els canvis a l'etiquetatge. En l'activitat final del capítol també es revisaran escala, detall, orientació i composició; per això els dos PDF s'anomenaran **inicial** i **revisat**, no automàtic i revisat.
 
 ## Jerarquia i composició
 
@@ -618,24 +620,17 @@ L'equilibri no obliga a centrar-ho tot ni a omplir qualsevol espai buit. Els mar
 
 La pràctica construirà el **mapa de context** de la miniinfografia, encara sense aprofundir en la classificació temàtica. Mostrarà on se situa la comarca dins de la província de Tarragona i identificarà els seus municipis amb una jerarquia llegible. L'objectiu serà controlar escala, extensió, retolació, fonts i exportació; no convertir el mapa de localització en un segon mapa temàtic.
 
->>>>> L'activitat aplica els criteris del capítol a una composició de QGIS i conserva una comparació revisable del resultat.
->>>>>
->>>>> - Continuar `qgis/tigit-06-llenguatge-cartografic.qgz` amb la font municipal oficial i la capa filtrada ja validades.
->>>>> - Construir el mapa principal i decidir si un requadre provincial millora realment la localització.
->>>>> - Fixar una família tipogràfica, variants reals i una alternativa disponible, i comprovar els caràcters del projecte.
->>>>> - Exportar `context_tarragones_2021_automatic.pdf` i `context_tarragones_2021.pdf` a la mateixa mida final.
->>>>> - Comparar retolació, escala, detall, orientació i jerarquia entre els dos PDF.
->>>>> - Registrar al `README.md` les comprovacions i la justificació dels canvis aplicats.
+L'activitat aplicarà aquests criteris a una composició de QGIS i conservarà una versió inicial i una de revisada. Les seccions següents concreten el projecte de partida, els noms dels fitxers, les comprovacions i les evidències; són passos del procediment, no objectius addicionals que calgui memoritzar.
 
 ### Entrades i mapes de context resultants
 
-Per al Tarragonès es continuarà la fita com `qgis/tigit-06-llenguatge-cartografic.qgz`. El GeoPackage multiescala de l'ICGC proporcionarà municipis, comarca i província sense recrear ni tornar a descarregar les geometries. Natural Earth només s'afegirà si el producte necessita un localitzador europeu o mundial: no substituirà les divisions oficials del Tarragonès ni de Tarragona. Abans d'obrir la composició es fixaran la mida, l'orientació i l'espai que el mapa ocuparà a la infografia.
+Per al Tarragonès s'obrirà `qgis/tigit-05-integracio-sig.qgz` i es desarà la continuació com `qgis/tigit-06-llenguatge-cartografic.qgz`. El GeoPackage multiescala de l'ICGC proporcionarà municipis, comarca i província sense recrear ni tornar a descarregar les geometries, i la unió municipal validada es conservarà dins del projecte encara que el mapa de context no la simbolitzi temàticament. Natural Earth només s'afegirà si el producte necessita un localitzador europeu o mundial: no substituirà les divisions oficials del Tarragonès ni de Tarragona. Abans d'obrir la composició es fixaran i registraran l'amplada, l'altura, l'orientació, l'escala i l'espai que el mapa ocuparà a la infografia.
 
-Es generaran dos PDF vectorials a `outputs/maps`: `context_tarragones_2021_automatic.pdf`, amb la configuració inicial d'etiquetatge automàtic, i `context_tarragones_2021.pdf`, amb la retolació revisada. El `README.md` en compararà els canvis a la mateixa mida final i conservarà el registre cartogràfic. El mapa revisat serà una entrada explícita del mapa temàtic del capítol 8 i de la miniinfografia del capítol 9.
+Es generaran dos PDF vectorials a `outputs/maps`: `context_tarragones_initial.pdf`, amb la primera composició completa, i `context_tarragones.pdf`, amb la versió revisada. El `README.md` en compararà els canvis a la mateixa mida final i registrarà per separat el període 2021 dels indicadors del projecte i la versió ICGC de 2026 de la geometria. El mapa revisat serà una entrada explícita del mapa temàtic del capítol 8 i de la miniinfografia del capítol 9.
 
 ### Dades i projecte de partida
 
-Es continuarà el mateix projecte QGIS iniciat en treballar les dades espacials. La font municipal oficial completa, de la qual s'obté o es deriva el context provincial, la capa comarcal filtrada, el CRS, les rutes i els codis ja validats no s'han de substituir ni recrear a partir d'una descàrrega nova. Abans de maquetar es fixaran la mida del mapa exportat, l'orientació de la pàgina i l'espai que la peça ocuparà a la miniinfografia.
+Es continuarà el projecte QGIS validat a la fase d'integració SIG. La font municipal oficial completa, de la qual s'obté o es deriva el context provincial, la capa comarcal filtrada, la unió, el CRS, les rutes i els codis ja validats no s'han de substituir ni recrear a partir d'una descàrrega nova. Abans de maquetar es registraran la mida del mapa exportat, l'orientació de la pàgina, l'escala i l'espai que la peça ocuparà a la miniinfografia.
 
 El procediment general serà aquest:
 
@@ -645,7 +640,7 @@ El procediment general serà aquest:
 4. preparar la prova tipogràfica, registrar la família i configurar l'etiquetatge municipal amb variants reals;
 5. afegir un segon marc provincial només si millora la localització;
 6. completar títol, escala, orientació, fonts i crèdits després d'estabilitzar els marcs;
-7. exportar la versió amb etiquetatge automàtic, obrir-la fora de QGIS i corregir la composició editable abans de generar la versió revisada.
+7. exportar la versió inicial, obrir-la fora de QGIS i corregir la composició editable abans de generar la versió revisada.
 
 ### Construir el mapa principal
 
@@ -659,13 +654,13 @@ Un requadre més petit podrà mostrar la comarca destacada dins de la província
 
 ### Completar i exportar la composició
 
-El títol, la llegenda si és necessària, l'escala, l'orientació, les fonts i els crèdits s'afegiran després d'estabilitzar el mapa. El CRS del projecte es comprovarà abans de confiar en la barra d'escala. La fletxa del nord només s'incorporarà si resol una ambigüitat: si el mapa principal i el requadre comparteixen una orientació convencional i evident, l'omissió també s'haurà de poder justificar. La composició es revisarà a mida real. Primer s'exportarà `context_tarragones_2021_automatic.pdf` amb l'etiquetatge automàtic inicial; després de revisar la retolació, s'exportarà `context_tarragones_2021.pdf`, sense substituir el projecte ni la composició editable.
+El títol, la llegenda si és necessària, l'escala, l'orientació, les fonts i els crèdits s'afegiran després d'estabilitzar el mapa. El CRS del projecte es comprovarà abans de confiar en la barra d'escala. La fletxa del nord només s'incorporarà si resol una ambigüitat: si el mapa principal i el requadre comparteixen una orientació convencional i evident, l'omissió també s'haurà de poder justificar. La composició es revisarà a mida real. Primer s'exportarà `context_tarragones_initial.pdf`; després de revisar retolació, escala, detall, orientació i composició, s'exportarà `context_tarragones.pdf`, sense substituir el projecte ni la composició editable.
 
 ### Validar el mapa de context
 
 Abans d'acceptar el mapa cal verificar que:
 
-1. hi apareixen tots els municipis previstos i cap territori exterior es confon amb la comarca;
+1. hi apareixen totes les geometries municipals previstes i cap territori exterior es confon amb la comarca; només s'etiqueten els topònims llegibles i necessaris;
 2. el CRS, l'extensió i la barra d'escala són coherents, i cap coordenada en graus es presenta com una mesura mètrica directa;
 3. els límits municipals es poden seguir sense dominar visualment la pàgina;
 4. l'orientació és evident o està indicada amb un símbol discret i coherent;
@@ -682,9 +677,11 @@ Abans d'acceptar el mapa cal verificar que:
 | Ubicació | Evidència | Contingut mínim |
 | --- | --- | --- |
 | `qgis` | Projecte QGIS continuat | Font municipal oficial completa i context provincial obtingut o derivat d'aquesta font, capa filtrada del Tarragonès, CRS, estils, etiquetes i composició editable |
-| `outputs/maps` | `context_tarragones_2021_automatic.pdf` | Composició inicial amb etiquetatge automàtic, a la mida final i en format vectorial |
-| `outputs/maps` | `context_tarragones_2021.pdf` | Versió revisada amb extensió final, topònims, escala funcional, fonts i crèdits en format vectorial |
+| `outputs/maps` | `context_tarragones_initial.pdf` | Composició inicial completa, a la mida final i en format vectorial |
+| `outputs/maps` | `context_tarragones.pdf` | Versió revisada amb extensió final, topònims, escala funcional, fonts i crèdits en format vectorial |
 | `README.md` | Comparació i registre cartogràfic | Comparació dels dos PDF a la mateixa mida, escala, detall omès, prioritats de retolació, orientació i decisió sobre el requadre |
 | `README.md` | Registre tipogràfic | Família, regular/negreta/cursiva, procedència, llicència, alternativa, caràcters comprovats i resultat de la incrustació al PDF |
 | `captures` | Prova tipogràfica | Mostra a mida final amb topònims, xifres, percentatge, coordenada i crèdit; no cal capturar el procés d'instal·lació de la font |
 :::
+
+La fita `tigit-06-llenguatge-cartografic.qgz` conserva així la unió del capítol anterior i hi afegeix una composició de context revisada. El capítol de cartografia temàtica reutilitzarà aquest mateix projecte: mantindrà el context estable i incorporarà l'indicador, la classificació i la paleta com a decisions noves i controlables.

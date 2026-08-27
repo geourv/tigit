@@ -4,7 +4,7 @@ Aquest fitxer recull criteris duradors per a agents que redacten o revisen el ma
 
 ## Veu
 
-El manual ha de sonar com una guia docent universitària escrita per a estudiants de primer curs: clara, precisa i exigent, però no distant. La redacció ha de ser narrativa i explicativa. Les llistes són útils per a instruccions, criteris o inventaris, però no han de substituir el desenvolupament d'una idea.
+El manual ha de sonar com una guia docent universitària escrita per a estudiants de primer curs: clara, precisa i exigent, però no distant. La redacció ha de ser narrativa i explicativa. No s'ha d'adreçar directament al lector en segona persona. Cal preferir construccions impersonals amb `cal`, `convé`, `s'ha de` o una descripció directa de l'acció. Només cal esmentar l'estudiantat quan sigui necessari distingir-ne la responsabilitat de la del professorat. Les llistes són útils per a instruccions, criteris o inventaris, però no han de substituir el desenvolupament d'una idea.
 
 ## Funció pedagògica
 
@@ -23,7 +23,7 @@ Quan es redacti una secció nova, cal preferir aquest ordre:
 1. Situar el problema o la fase del treball.
 2. Connectar-lo amb el curs i amb l'ús professional de la informació geogràfica i turística.
 3. Introduir els conceptes tècnics necessaris.
-4. Explicar què farà l'estudiant amb dades, eines o documents.
+4. Explicar quina activitat es farà amb les dades, les eines o els documents.
 5. Fer explícits els criteris de qualitat o d'avaluació.
 6. Tancar amb una transició cap a la fase següent.
 
@@ -33,11 +33,17 @@ En cada paràgraf convé identificar una funció principal i desenvolupar una id
 
 Abans d'introduir un exemple cal explicar quina decisió o dificultat ajuda a entendre. Les llistes de definicions poden utilitzar-se per a vocabulari compacte; les figures compostes, les taules, els diagrames i les caixes didàctiques només s'han d'incorporar quan fan visible una relació que la prosa sola no comunica amb la mateixa claredat.
 
+Les figures pròpies s'han d'acotar a la relació visual que necessiten explicar. Per defecte, no han d'incorporar un títol, un subtítol, un marc exterior ni un requadre explicatiu final que dupliquin el text i el peu de figura; aquests elements només es justifiquen quan la peça ha de funcionar de manera autònoma fora del manual. També cal evitar els títols interns formulats mecànicament com «De X a Y»: si hi ha una transformació real, l'han de mostrar les formes i les connexions; si no, el concepte s'ha d'anomenar directament.
+
+La negreta s'ha de reservar per a conceptes definits, distincions decisives i criteris que l'estudiantat hagi de poder reconèixer o explicar. Normalment n'hi ha prou amb destacar-ne la primera aparició pedagògicament rellevant; no s'han de remarcar totes les repeticions, les instruccions rutinàries ni inventaris sencers només per facilitar una lectura ràpida.
+
 Els nivells d'encapçalament han de correspondre a divisions conceptuals reals. `##` i `###` formen la TOC secundària del capítol. `####` crea una subsecció local numerada, com `1.1.1.1`, però no apareix en aquesta TOC; és adequada per a una font, un cas, un exemple o una operació que desenvolupa una idea cohesionada en un o més paràgrafs. No s'han de crear subtítols per donar format a cada element breu d'un repertori.
 
 No s'ha d'inventar una profunditat estructural només perquè Markdown ofereixi més nivells. Abans d'afegir un encapçalament cal comprovar que el text que segueix desenvolupa una idea pròpia. Tampoc no s'ha d'imitar un quart nivell amb una línia aïllada en negreta i acabada en punt. Si és una divisió real, cal usar `####`; si és una entrada breu, el nom destacat ha de quedar integrat al mateix paràgraf. Cal evitar la repetició mecànica de títols amb fórmules com «de X a Y» quan una denominació conceptual o funcional sigui més directa.
 
 Les caixes didàctiques s'han d'utilitzar quan el text canvia de funció i convé interrompre la lectura: `>>` per a una nota o consell, `>>>` per a un exemple resolt, `>>>>` per a una advertència, `>>>>>` per a objectius d'aprenentatge i `>>>>>>` per a una acció que pot malmetre dades o invalidar un resultat. No s'han d'usar només per donar color a un paràgraf ni encadenar-se sense prosa entre elles. Els riscos operatius concrets, com les conversions automàtiques d'un full de càlcul, són bons candidats; les explicacions conceptuals ordinàries han de continuar en prosa.
+
+Les caixes d'objectius han de destacar entre tres i cinc resultats d'aprenentatge essencials i observables. No han d'acumular tot el vocabulari del capítol, noms de programes, formats, fitxers, rutes o passos de lliurament. Els conceptes necessaris s'introdueixen en el moment que ajuden a entendre una decisió; els procediments i les evidències queden dins de l'activitat corresponent. Si una caixa supera cinc punts, cal agrupar-ne els resultats, traslladar-ne els detalls al desenvolupament o dividir el recorregut en fases conceptuals reals.
 
 No s'ha d'obrir sistemàticament cada capítol amb un glossari o una acumulació de vocabulari. Els termes s'han d'introduir dins de l'explicació quan ajuden a resoldre una pregunta o entendre una decisió. Les llistes de definicions es reservaran per a conjunts compactes que realment necessitin consulta conjunta.
 

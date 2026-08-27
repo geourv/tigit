@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="490" viewBox="55 145 1100 490" role="img" aria-labelledby="title desc">
+  <title id="title">Superposició de capes per obtenir una síntesi espacial</title>
+  <desc id="desc">Tres capes alineades del mateix territori separen el relleu, la inundabilitat i els accessos. Una operació de superposició aplica criteris explícits i produeix una àrea candidata.</desc>
+  <defs>
+    <style>
+      .layer-title { font: 700 19px Arial, sans-serif; fill: #17202a; }
+      .operator-title { font: 700 20px Arial, sans-serif; fill: #ffffff; }
+      .operator-body { font: 17px Arial, sans-serif; fill: #334155; }
+      .result-title { font: 700 22px Arial, sans-serif; fill: #ffffff; }
+      .legend { font: 16px Arial, sans-serif; fill: #334155; }
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#637983"/>
+    </marker>
+    <clipPath id="result-clip">
+      <path d="M815 270 L905 240 L1002 262 L1092 238 L1120 300 L1093 397 L1015 384 L952 438 L868 411 L807 334 Z"/>
+    </clipPath>
+  </defs>
+
+  <g aria-label="Capa de relleu">
+    <rect x="166" y="154" width="356" height="142" rx="8" fill="#ffffff" fill-opacity="0.91" stroke="#d49a55" stroke-width="2"/>
+    <rect x="166" y="154" width="356" height="38" rx="8" fill="#f4dfc3"/>
+    <path d="M166 184 H522" stroke="#f4dfc3" stroke-width="16"/>
+    <text class="layer-title" x="184" y="180">Relleu</text>
+    <path d="M196 233 C236 203 274 259 316 225 S397 209 482 244" fill="none" stroke="#d47b36" stroke-width="3"/>
+    <path d="M197 251 C244 220 276 277 324 244 S406 228 489 260" fill="none" stroke="#d47b36" stroke-width="3"/>
+    <path d="M204 269 C249 242 286 291 332 262 S414 246 480 275" fill="none" stroke="#d47b36" stroke-width="3"/>
+    <path d="M192 216 L273 199 L351 215 L430 200 L497 226 L483 277 L398 268 L338 282 L252 273 L195 247 Z" fill="none" stroke="#6d7f87" stroke-width="2"/>
+  </g>
+
+  <g aria-label="Capa d'inundabilitat">
+    <rect x="121" y="319" width="356" height="142" rx="8" fill="#ffffff" fill-opacity="0.91" stroke="#76a9c5" stroke-width="2"/>
+    <rect x="121" y="319" width="356" height="38" rx="8" fill="#dcecf4"/>
+    <path d="M121 349 H477" stroke="#dcecf4" stroke-width="16"/>
+    <text class="layer-title" x="139" y="345">Aigua</text>
+    <path d="M153 380 C208 390 197 424 254 425 S322 390 374 404 S423 433 454 422" fill="none" stroke="#75b9d1" stroke-width="27" stroke-linecap="round" opacity="0.33"/>
+    <path d="M153 380 C208 390 197 424 254 425 S322 390 374 404 S423 433 454 422" fill="none" stroke="#2385ad" stroke-width="5" stroke-linecap="round"/>
+    <path d="M147 381 L228 364 L306 380 L385 365 L452 391 L438 442 L353 433 L293 447 L207 438 L150 412 Z" fill="none" stroke="#6d7f87" stroke-width="2"/>
+  </g>
+
+  <g aria-label="Capa d'accessos">
+    <rect x="76" y="484" width="356" height="142" rx="8" fill="#ffffff" fill-opacity="0.91" stroke="#78a393" stroke-width="2"/>
+    <rect x="76" y="484" width="356" height="38" rx="8" fill="#dcebe4"/>
+    <path d="M76 514 H432" stroke="#dcebe4" stroke-width="16"/>
+    <text class="layer-title" x="94" y="510">Accessos</text>
+    <path d="M105 596 C166 568 202 582 253 551 S347 539 410 558" fill="none" stroke="#334e68" stroke-width="7" stroke-linecap="round"/>
+    <path d="M197 541 C220 563 238 584 258 612" fill="none" stroke="#728894" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="176" cy="575" r="8" fill="#b8403b" stroke="#ffffff" stroke-width="3"/>
+    <circle cx="310" cy="546" r="8" fill="#b8403b" stroke="#ffffff" stroke-width="3"/>
+    <path d="M102 546 L183 529 L261 545 L340 530 L407 556 L393 607 L308 598 L248 612 L162 603 L105 577 Z" fill="none" stroke="#6d7f87" stroke-width="2"/>
+  </g>
+
+  <path d="M166 154 L121 319 L76 484" fill="none" stroke="#9eb0b7" stroke-width="2" stroke-dasharray="7 7"/>
+  <path d="M522 154 L477 319 L432 484" fill="none" stroke="#9eb0b7" stroke-width="2" stroke-dasharray="7 7"/>
+
+  <g aria-label="Operació de superposició">
+    <path d="M522 226 C550 226 551 307 568 331" fill="none" stroke="#637983" stroke-width="3" marker-end="url(#arrow)"/>
+    <path d="M477 390 H565" fill="none" stroke="#637983" stroke-width="3" marker-end="url(#arrow)"/>
+    <path d="M432 555 C520 555 543 490 568 458" fill="none" stroke="#637983" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="566" y="270" width="185" height="250" rx="14" fill="#edf3f4" stroke="#9eb9be" stroke-width="2"/>
+    <path d="M566 284 Q566 270 580 270 H737 Q751 270 751 284 V325 H566 Z" fill="#315d70"/>
+    <text class="operator-title" x="658" y="306" text-anchor="middle">Superposició</text>
+    <circle cx="594" cy="360" r="13" fill="#f4dfc3" stroke="#d47b36" stroke-width="2"/>
+    <text class="operator-body" x="618" y="366">limitar pendent</text>
+    <circle cx="594" cy="413" r="13" fill="#dcecf4" stroke="#2385ad" stroke-width="2"/>
+    <text class="operator-body" x="618" y="407">excloure zones</text>
+    <text class="operator-body" x="618" y="430">inundables</text>
+    <circle cx="594" cy="466" r="13" fill="#dcebe4" stroke="#37856f" stroke-width="2"/>
+    <text class="operator-body" x="618" y="472">mantenir accés</text>
+  </g>
+
+  <path d="M752 395 H789" fill="none" stroke="#637983" stroke-width="4" marker-end="url(#arrow)"/>
+
+  <g aria-label="Síntesi espacial">
+    <rect x="790" y="154" width="360" height="407" rx="12" fill="#ffffff" stroke="#6e9b88" stroke-width="2"/>
+    <path d="M790 168 Q790 154 804 154 H1136 Q1150 154 1150 168 V208 H790 Z" fill="#37856f"/>
+    <text class="result-title" x="970" y="189" text-anchor="middle">Síntesi espacial</text>
+
+    <g clip-path="url(#result-clip)">
+      <rect x="800" y="230" width="330" height="220" fill="#f8faf9"/>
+      <path d="M1000 230 L1135 230 L1135 335 L1070 315 L1024 350 L980 306 Z" fill="#edc995" opacity="0.82"/>
+      <path d="M806 287 C867 302 856 355 924 353 S997 304 1050 325 S1094 377 1123 366" fill="none" stroke="#75b9d1" stroke-width="43" stroke-linecap="round" opacity="0.35"/>
+      <path d="M806 287 C867 302 856 355 924 353 S997 304 1050 325 S1094 377 1123 366" fill="none" stroke="#2385ad" stroke-width="5" stroke-linecap="round"/>
+      <path d="M812 400 C877 371 930 397 976 349 S1072 301 1125 323" fill="none" stroke="#334e68" stroke-width="8" stroke-linecap="round"/>
+      <path d="M883 384 L929 361 L962 369 L976 394 L945 421 L900 410 Z" fill="#69a97d" stroke="#246946" stroke-width="3"/>
+      <circle cx="902" cy="382" r="8" fill="#b8403b" stroke="#ffffff" stroke-width="3"/>
+      <circle cx="1018" cy="331" r="8" fill="#b8403b" stroke="#ffffff" stroke-width="3"/>
+    </g>
+    <path d="M815 270 L905 240 L1002 262 L1092 238 L1120 300 L1093 397 L1015 384 L952 438 L868 411 L807 334 Z" fill="none" stroke="#526d75" stroke-width="3"/>
+
+    <rect x="820" y="480" width="14" height="14" fill="#69a97d" stroke="#246946"/>
+    <text class="legend" x="842" y="492">àrea candidata</text>
+    <line x1="960" y1="487" x2="988" y2="487" stroke="#334e68" stroke-width="6" stroke-linecap="round"/>
+    <text class="legend" x="998" y="492">accés</text>
+    <line x1="820" y1="526" x2="848" y2="526" stroke="#2385ad" stroke-width="5" stroke-linecap="round"/>
+    <text class="legend" x="858" y="531">aigua</text>
+    <rect x="960" y="519" width="14" height="14" fill="#edc995"/>
+    <text class="legend" x="982" y="531">pendent limitant</text>
+  </g>
+</svg>
