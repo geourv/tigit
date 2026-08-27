@@ -51,7 +51,7 @@ La descripció detallada de l'avaluació estableix un flux pràctic amb preparac
 
 La visualització, infografia o document de síntesi es farà en primera convocatòria en trios mixtos de titulació: els equips han de combinar estudiants de Geografia i de Turisme i no poden estar formats per tres persones de la mateixa titulació. En segona convocatòria, si cal recuperar el projecte de síntesi, el producte serà individual i de mida reduïda. El territori, el format, els terminis i els criteris concrets corresponen a Moodle.
 
-L'assistència a pràctiques és condició important per mantenir l'itinerari ordinari d'avaluació continuada de primera convocatòria. Si es compleix l'assistència i el seguiment, però alguna activitat principal queda per sota de 4 sobre 10 o la mitjana no arriba a 5, l'estudiant haurà de recuperar només les activitats o blocs suspesos en segona convocatòria. Si no hi ha seguiment suficient, la recuperació pot requerir una modalitat individual específica més completa.
+L'assistència a totes les sessions, tant teòriques com pràctiques, és una condició important per mantenir l'itinerari ordinari d'avaluació continuada de primera convocatòria. Cal assistir com a mínim al 80% del conjunt de sessions o justificar adequadament les absències. Si es compleixen l'assistència i el seguiment, però alguna activitat principal queda per sota de 4 sobre 10 o la mitjana no arriba a 5, l'estudiant haurà de recuperar només les activitats o blocs suspesos en segona convocatòria. Si no hi ha seguiment suficient, la recuperació pot requerir una modalitat individual específica més completa.
 
 ## Ús en el manual
 

@@ -24,10 +24,11 @@ dist/           Lliurables finals i paquets reproduïbles
 | `data/processed/tigit-03-semiologia-visualitzacio.xlsx` | Taules auxiliars i gràfics editables afegits al llibre anterior |
 | `qgis/tigit-04-dades-espacials.qgz` | Base espacial inspeccionada i validada |
 | `qgis/tigit-05-integracio-sig.qgz` | Indicadors units i consultes comprovades |
+| `data/processed/tigit-05-integracio-sig.xlsx` | Llibre acumulatiu amb `map_export` preparat per a QGIS |
 | `qgis/tigit-06-llenguatge-cartografic.qgz` | Mapa de context i retolació revisada |
 | `data/processed/tigit-07-teoria-color.xlsx` | Registre cromàtic i prova sobre un gràfic |
 | `qgis/tigit-08-cartografia-tematica.qgz` | Mapa temàtic i alternativa controlada |
-| `dist/tigit-09-infografia.svg` | Màster editable de la infografia |
+| `outputs/infographics/infografia_tarragones_2021.svg` | Màster editable de la infografia |
 
 Els sufixos no són números de versió arbitraris. Identifiquen una fita docent i permeten comparar què s'ha incorporat en cada capítol. Git conserva, a més, l'historial de canvis de cada fita.
 
@@ -58,12 +59,19 @@ Els resultats incorporen fenomen, territori i període, per exemple:
 ```text
 outputs/figures/age-structure-tarragones-2021.pdf
 outputs/figures/non-principal-housing-tarragones-2021.pdf
-outputs/maps/context-map-tarragones-2021.pdf
-outputs/maps/choropleth-non-principal-housing-tarragones-2021.svg
-outputs/infographics/territorial-infography-tarragones-2021.pdf
+outputs/maps/context_tarragones.pdf
+outputs/maps/coropleta_no_principal_tarragones_2021.svg
+outputs/infographics/infografia_tarragones_2021_review.pdf
+dist/infografia_tarragones_2021.pdf
 ```
 
-Els fitxers anteriors són intermedis. `dist/` conservarà només el PDF final, el màster SVG aprovat i el ZIP reproduïble que l'estudiant lliurarà.
+Els fitxers d'`outputs/` són intermedis o editables. `dist/` conservarà el PDF final i el ZIP reproduïble que l'estudiant lliurarà; el màster SVG continuarà a `outputs/` com a font editable.
+
+## Registre cromàtic
+
+El full `palette` del llibre acumulatiu conserva els codis, l'origen i la funció de cada color. El fons i els textos utilitzen neutres; el gràfic ordenat reserva `#D55E00` com a accent redundant de Vila-seca; els grups d'edat utilitzen una seqüència discreta YlGnBu amb límits foscos; i la piràmide separa les categories nominals de sexe amb una parella equilibrada. BuGn és la candidata seqüencial per a la coropleta, mentre que RdBu només s'utilitzarà amb una referència central explícita.
+
+El mateix full registra el gris equivalent i les simulacions completes de protanopia, deuteranopia i tritanopia calculades amb les [matrius de Machado, Oliveira i Fernandes (2009)](https://www.inf.ufrgs.br/~oliveira/pubs_files/CVD_Simulation/CVD_Simulation.html). La revisió confirma l'ordre clar-fosc de YlGnBu i BuGn; també documenta que la parella nominal, l'accent i la rampa divergent necessiten l'etiqueta, la posició, el patró o la llegenda previstos i no poden dependre només del color. Els controls executables rebutgen qualsevol color definit que conservi una prova pendent. La inspecció humana de les tres proves PDF/SVG a mida final es farà abans de publicar el lot.
 
 ## Cobertura actual
 
@@ -75,7 +83,7 @@ Els fitxers anteriors són intermedis. `dist/` conservarà només el PDF final, 
 | 4. Dades espacials | GeoPackage compacte preparat; projecte QGIS pendent |
 | 5. Integració SIG | CSV, CSVT i punts preparats; unió QGIS pendent |
 | 6. Llenguatge cartogràfic | Activitat definida; layouts i exports pendents |
-| 7. Teoria del color | Complet: registre HEX/RGB, contrast, Adobe/Brewer i tres proves PDF/SVG |
+| 7. Teoria del color | Executable complet: registre, contrast i simulacions; inspecció humana a mida final pendent |
 | 8. Cartografia temàtica | Activitat definida; classificacions i mapes pendents |
 | 9. Infografia | Format i mockup definits; màster i lliurables pendents |
 

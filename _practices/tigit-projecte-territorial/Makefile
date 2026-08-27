@@ -8,6 +8,7 @@ STARTER := data/processed/tigit-01-preparacio-dades.xlsx
 TEACHING := data/processed/tigit-01-preparacio-dades-teaching.xlsx
 TEACHING_02 := data/processed/tigit-02-indicadors-territorials-teaching.xlsx
 TEACHING_03 := data/processed/tigit-03-semiologia-visualitzacio-teaching.xlsx
+TEACHING_05 := data/processed/tigit-05-integracio-sig-teaching.xlsx
 TEACHING_07 := data/processed/tigit-07-teoria-color-teaching.xlsx
 POPULATION_SERIES := data/raw/poblacio-vila-seca-2000-2022.csv
 POPULATION_PYRAMID := data/raw/poblacio-vila-seca-edat-sexe-2021.csv
@@ -69,19 +70,20 @@ point-data: scripts/prepare_point_data.py | $(VENV_STAMP)
 spatial-data: scripts/prepare_spatial_data.py | $(VENV_STAMP)
 	$(VENV_PYTHON) scripts/prepare_spatial_data.py
 
-qgis-transfer: $(TEACHING_02) scripts/prepare_qgis_transfer.py | $(VENV_STAMP)
+qgis-transfer: $(TEACHING_07) scripts/prepare_qgis_transfer.py | $(VENV_STAMP)
 	$(VENV_PYTHON) scripts/prepare_qgis_transfer.py
 
-snapshots: $(STARTER) $(TEACHING) $(TEACHING_02) $(TEACHING_03) $(TEACHING_07) scripts/publish_snapshots.py | $(VENV_STAMP)
+snapshots: qgis-transfer $(STARTER) $(TEACHING) $(TEACHING_02) $(TEACHING_03) $(TEACHING_07) scripts/publish_snapshots.py | $(VENV_STAMP)
 	$(VENV_PYTHON) scripts/publish_snapshots.py
 
 packages: snapshots scripts/build_packages.py
 	$(VENV_PYTHON) scripts/build_packages.py
 
-check: $(TEACHING_07) scripts/check_chapter_01.py scripts/check_chapter_02.py scripts/check_chapter_03.py scripts/check_chapter_07.py
+check: qgis-transfer $(TEACHING_07) scripts/check_chapter_01.py scripts/check_chapter_02.py scripts/check_chapter_03.py scripts/check_chapter_05.py scripts/check_chapter_07.py
 	$(VENV_PYTHON) scripts/check_chapter_01.py
 	$(VENV_PYTHON) scripts/check_chapter_02.py
 	$(VENV_PYTHON) scripts/check_chapter_03.py
+	$(VENV_PYTHON) scripts/check_chapter_05.py
 	$(VENV_PYTHON) scripts/check_chapter_07.py
 
 libreoffice-check: $(TEACHING) $(TEACHING_02) $(TEACHING_03)

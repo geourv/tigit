@@ -1,3 +1,3 @@
 # Resultats intermedis
 
-Els subdirectoris separen figures, mapes i proves d'infografia regenerables. Els fitxers aprovats per al lliurament es copiaran o exportaran a `dist/`; no s'ha de confondre una prova intermèdia amb el producte final.
+Els subdirectoris separen figures, mapes i fitxers d'infografia regenerables. El màster SVG editable es conserva a `outputs/infographics`; el PDF final i el ZIP reproduïble s'exporten a `dist/`. No s'ha de confondre el PDF de revisió amb el producte final.

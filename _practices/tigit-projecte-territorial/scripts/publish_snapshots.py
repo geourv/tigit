@@ -35,6 +35,10 @@ SNAPSHOTS = (
         "teaching", "chapter-07", PROCESSED / "tigit-07-teoria-color-teaching.xlsx",
         "tigit-07-teoria-color.xlsx",
     ),
+    (
+        "teaching", "chapter-05", PROCESSED / "tigit-05-integracio-sig-teaching.xlsx",
+        "tigit-05-integracio-sig.xlsx",
+    ),
 )
 
 
@@ -58,7 +62,7 @@ def main() -> None:
         })
 
     with (DIST / "snapshot-manifest.csv").open("w", encoding="utf-8", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=manifest[0].keys())
+        writer = csv.DictWriter(handle, fieldnames=manifest[0].keys(), lineterminator="\n")
         writer.writeheader()
         writer.writerows(manifest)
     print(DIST / "snapshot-manifest.csv")

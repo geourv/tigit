@@ -30,9 +30,11 @@ PALETTE_ROWS = [
     ("context", "project", "neutral_data", "Dada neutral", "#7A8C99", "Disseny del projecte", "Municipis comparables"),
     ("context", "project", "vila_seca_accent", "Accent Vila-seca", "#D55E00", "Disseny del projecte", "Accent redundant amb etiqueta"),
     ("context", "project", "no_data", "Sense dades", "#BDBDBD", "Disseny del projecte", "Nuls, amb etiqueta o patró"),
-    ("age", "ColorBrewer Set2", "young", "0–14", "#66C2A5", "ColorBrewer", "Estructura d'edats"),
-    ("age", "ColorBrewer Set2", "working_age", "15–64", "#FC8D62", "ColorBrewer", "Estructura d'edats"),
-    ("age", "ColorBrewer Set2", "older", "65+", "#8DA0CB", "ColorBrewer", "Estructura d'edats"),
+    ("age", "ColorBrewer YlGnBu 3", "young", "0–14", "#EDF8B1", "ColorBrewer", "Seqüència discreta per edats ordenades"),
+    ("age", "ColorBrewer YlGnBu 3", "working_age", "15–64", "#7FCDBB", "ColorBrewer", "Seqüència discreta per edats ordenades"),
+    ("age", "ColorBrewer YlGnBu 3", "older", "65+", "#2C7FB8", "ColorBrewer", "Seqüència discreta per edats ordenades"),
+    ("sex", "Parella binària equilibrada", "female", "Dones", "#CA0020", "Extrems adaptats de ColorBrewer RdBu", "Categoria nominal binària; no és una escala divergent"),
+    ("sex", "Parella binària equilibrada", "male", "Homes", "#0571B0", "Extrems adaptats de ColorBrewer RdBu", "Categoria nominal binària; no és una escala divergent"),
     ("map_bugn", "ColorBrewer BuGn 5", "class_1", "Molt baix", "#EDF8FB", "ColorBrewer", "Candidata seqüencial"),
     ("map_bugn", "ColorBrewer BuGn 5", "class_2", "Baix", "#B2E2E2", "ColorBrewer", "Candidata seqüencial"),
     ("map_bugn", "ColorBrewer BuGn 5", "class_3", "Intermedi", "#66C2A4", "ColorBrewer", "Candidata seqüencial"),
@@ -44,6 +46,40 @@ PALETTE_ROWS = [
     ("map_rdbu", "ColorBrewer RdBu 5", "positive_1", "Per sobre", "#92C5DE", "ColorBrewer", "Candidata divergent"),
     ("map_rdbu", "ColorBrewer RdBu 5", "positive_2", "Molt per sobre", "#0571B0", "ColorBrewer", "Candidata divergent"),
 ]
+
+CVD_MATRICES = {
+    "protanopia": (
+        (0.152286, 1.052583, -0.204868),
+        (0.114503, 0.786281, 0.099216),
+        (-0.003882, -0.048116, 1.051998),
+    ),
+    "deuteranopia": (
+        (0.367322, 0.860646, -0.227968),
+        (0.280085, 0.672501, 0.047413),
+        (-0.011820, 0.042940, 0.968881),
+    ),
+    "tritanopia": (
+        (1.255528, -0.076749, -0.178779),
+        (-0.078411, 0.930809, 0.147602),
+        (0.004733, 0.691367, 0.303900),
+    ),
+}
+
+GRAYSCALE_CHECKS = {
+    "context": "REVISAT: contrast o redundància segons la funció",
+    "age": "PASSA: ordre clar-fosc conservat",
+    "sex": "PASSA AMB REDUNDÀNCIA: etiquetes i posició oposada",
+    "map_bugn": "PASSA: ordre clar-fosc conservat",
+    "map_rdbu": "LIMITACIÓ: el signe requereix to i llegenda",
+}
+
+CVD_CHECKS = {
+    "context": "PASSA AMB REDUNDÀNCIA: contrast, etiqueta o patró",
+    "age": "PASSA: ordre conservat en tres simulacions",
+    "sex": "PASSA AMB REDUNDÀNCIA: etiquetes i posició oposada",
+    "map_bugn": "PASSA: ordre conservat en tres simulacions",
+    "map_rdbu": "PASSA AMB LLEGENDA: centre i branques explícits",
+}
 
 
 def recalculated_values():
@@ -62,12 +98,59 @@ def formula(row: int, channel_column: str) -> str:
     )
 
 
-def set_series_fill(series, color: str) -> None:
+def srgb_to_linear(channel: float) -> float:
+    return channel / 12.92 if channel <= 0.04045 else ((channel + 0.055) / 1.055) ** 2.4
+
+
+def linear_to_srgb(channel: float) -> float:
+    channel = min(1.0, max(0.0, channel))
+    return 12.92 * channel if channel <= 0.0031308 else 1.055 * channel ** (1 / 2.4) - 0.055
+
+
+def rgb_to_hex(channels: tuple[float, float, float]) -> str:
+    return "#" + "".join(f"{round(255 * linear_to_srgb(channel)):02X}" for channel in channels)
+
+
+def color_variants(hex_code: str) -> dict[str, str]:
+    rgb = tuple(int(hex_code[index:index + 2], 16) / 255 for index in (1, 3, 5))
+    linear = tuple(srgb_to_linear(channel) for channel in rgb)
+    luminance = 0.2126 * linear[0] + 0.7152 * linear[1] + 0.0722 * linear[2]
+    results = {"gris": rgb_to_hex((luminance, luminance, luminance))}
+    for name, matrix in CVD_MATRICES.items():
+        transformed = tuple(sum(row[index] * linear[index] for index in range(3)) for row in matrix)
+        results[name] = rgb_to_hex(transformed)
+    return results
+
+
+def simulated_colors(hex_code: str) -> str:
+    results = color_variants(hex_code)
+    return "; ".join(f"{name} {color}" for name, color in results.items())
+
+
+def luminance(hex_code: str) -> float:
+    rgb = tuple(int(hex_code[index:index + 2], 16) / 255 for index in (1, 3, 5))
+    linear = tuple(srgb_to_linear(channel) for channel in rgb)
+    return 0.2126 * linear[0] + 0.7152 * linear[1] + 0.0722 * linear[2]
+
+
+def check_sequential_order() -> None:
+    for palette_id in ("age", "map_bugn"):
+        colors = [row[4] for row in PALETTE_ROWS if row[0] == palette_id]
+        variants = [color_variants(color) for color in colors]
+        for simulation in variants[0]:
+            values = [luminance(result[simulation]) for result in variants]
+            assert all(lighter > darker for lighter, darker in zip(values, values[1:])), (
+                f"{palette_id} loses its light-dark order under {simulation}"
+            )
+
+
+def set_series_fill(series, color: str, line_color: str | None = None) -> None:
     series.graphicalProperties.solidFill = color
-    series.graphicalProperties.line.solidFill = color
+    series.graphicalProperties.line.solidFill = line_color or color
 
 
 def build() -> None:
+    check_sequential_order()
     calculated = recalculated_values()
     shutil.copyfile(SOURCE, OUTPUT)
     workbook = load_workbook(OUTPUT)
@@ -94,7 +177,7 @@ def build() -> None:
             f'=IF(I{row_index}="","",0.2126*I{row_index}+0.7152*J{row_index}+0.0722*K{row_index})',
             f'=IF(L{row_index}="","",1.05/(L{row_index}+0.05))',
             f'=IF(L{row_index}="","",(L{row_index}+0.05)/0.05)',
-            origin, intended_use, "PENDING", "PENDING", "",
+            origin, intended_use, GRAYSCALE_CHECKS[palette_id], CVD_CHECKS[palette_id], simulated_colors(hex_code),
         ])
         palette.cell(row_index, 5).fill = PatternFill("solid", fgColor=hex_code.lstrip("#"))
 
@@ -109,7 +192,8 @@ def build() -> None:
             f'=IF(I{row_index}="","",0.2126*I{row_index}+0.7152*J{row_index}+0.0722*K{row_index})',
             f'=IF(L{row_index}="","",1.05/(L{row_index}+0.05))',
             f'=IF(L{row_index}="","",(L{row_index}+0.05)/0.05)',
-            "https://color.adobe.com/", "Context o accent; no assignar directament a classes", "PENDING", "PENDING", "Enganxar un codi HEX explorat",
+            "https://color.adobe.com/", "Context o accent; no assignar directament a classes",
+            "NO APLICA: falta codi HEX", "NO APLICA: falta codi HEX", "Enganxar un codi HEX explorat",
         ])
 
     for cell in palette[1]:
@@ -125,8 +209,8 @@ def build() -> None:
             cell.number_format = "0.00"
 
     age_chart = workbook["chart_01_age_structure"]._charts[0]
-    for series, color in zip(age_chart.series, ("66C2A5", "FC8D62", "8DA0CB")):
-        set_series_fill(series, color)
+    for series, color in zip(age_chart.series, ("EDF8B1", "7FCDBB", "2C7FB8")):
+        set_series_fill(series, color, "1F2933")
 
     housing_chart = workbook["chart_02_nonprincipal"]._charts[0]
     set_series_fill(housing_chart.series[0], "7A8C99")

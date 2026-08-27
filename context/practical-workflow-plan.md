@@ -76,7 +76,7 @@ Natural Earth s'utilitzarà només si cal un localitzador d'Europa o del món. N
 
 ## Mapes
 
-- Capítol 6: mapa de context del Tarragonès i requadre provincial, amb versions d'etiquetatge automàtic i revisat.
+- Capítol 6: mapa de context del Tarragonès i requadre provincial, amb una composició inicial completa i una versió revisada.
 - Capítol 8: coropleta del percentatge d'habitatge no principal.
 - Capítol 8: mapa separat de símbols proporcionals amb habitatges totals.
 - Les classificacions final i alternativa conservaran extensió, mida, paleta i context; només canviarà una decisió controlada.
@@ -105,7 +105,7 @@ Si cal una versió A4, es redissenyarà; no es reduirà automàticament l'A3. Po
 - QGIS: selecció de subcapes del GeoPackage i CRS.
 - QGIS: importació XY amb X, Y i CRS d'origen.
 - QGIS: configuració i comprovació de la unió municipal.
-- QGIS: etiquetatge automàtic i revisat.
+- QGIS: composició inicial i revisada de l'etiquetatge.
 - QGIS/Inkscape: prova tipogràfica amb família, variants i caràcters del projecte a mida final.
 - QGIS: classificació graduada i assistent de mida proporcional.
 - Inkscape: objecte vectorial seleccionat i codi de color visible.
