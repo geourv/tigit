@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   deploy:
-    uses: dosquartsdedocs/unaltraweb/.github/workflows/site-deploy.yml@78fc27b79bdbd14c1ba82c975a41cdb68955e53a
+    uses: dosquartsdedocs/unaltraweb/.github/workflows/site-deploy.yml@94e964c4d893689a9d1c905157e63f2265403552
     with:
       install-python-requirements: false
       check-manual-pdf: true
