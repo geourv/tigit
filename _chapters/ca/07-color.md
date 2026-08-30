@@ -307,7 +307,7 @@ El registre cromàtic indicarà:
 
 El full calcularà els canals RGB a partir del codi HEX. Si `E2` conté `#D55E00`, les fórmules compatibles amb Calc i Excel 365 són:
 
-```text
+```spreadsheet
 =HEX2DEC(MID(E2,2,2))
 =HEX2DEC(MID(E2,4,2))
 =HEX2DEC(MID(E2,6,2))

@@ -420,7 +420,7 @@ La demostració guiada reprèn la unió municipal, el registre cromàtic i el ma
 
 Els fitxers d'entrada i continuació són:
 
-```text
+```filetree
 qgis/
   tigit-06-llenguatge-cartografic.qgz
   tigit-08-cartografia-tematica.qgz
@@ -432,7 +432,7 @@ Per començar s'obrirà el primer projecte QGIS, que conserva la unió municipal
 
 En el cas del Tarragonès, els mapes s'exportaran amb aquests noms semàntics:
 
-```text
+```filetree
 outputs/maps/
   coropleta_no_principal_tarragones_2021.svg
   simbols_habitatges_totals_tarragones_2021.svg

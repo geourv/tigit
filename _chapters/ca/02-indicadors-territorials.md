@@ -359,7 +359,7 @@ L'activitat aplica al mateix llibre acumulatiu els criteris de construcció, agr
 
 L'activitat continua en el mateix llibre acumulatiu del capítol 1 i es resol amb Excel o Calc. Abans de començar es conservarà `tigit-01-preparacio-dades.xlsx` i es crearà una nova fita:
 
-```text
+```filetree
 tigit-02-indicadors-territorials.xlsx
 ```
 
@@ -405,7 +405,7 @@ Aquest capítol introdueix les fórmules quantitatives que el capítol 1 havia d
 
 La divisió validada de la taula es pot escriure així:
 
-```text
+```spreadsheet
 =IF(AND(ISNUMBER(D2),ISNUMBER(C2),C2>0),D2/C2*100,NA())
 ```
 
@@ -419,7 +419,7 @@ Tampoc no es farà una mitjana simple de percentatges municipals per obtenir el 
 
 Al full `indicators_demography`, la població total ocupa `C`, la població de 0 a 14 anys `D`, la de 65 anys o més `E` i la superfície `F`. Al full `indicators_housing`, la població total ocupa `C`, els habitatges totals `D`, els principals `E` i els no principals `F`. Cada referència de cel·la precedeix la fórmula que li correspon:
 
-```text
+```spreadsheet
 indicators_demography!G2
 =IF(AND(ISNUMBER(D2),ISNUMBER(C2),C2>0),D2/C2*100,NA())
 
@@ -447,7 +447,7 @@ Les fórmules s'han de conservar perquè es pugui revisar l'origen del resultat.
 
 La miniinfografia podrà destacar tres o quatre valors agregats: població total, habitatges totals, percentatge comarcal d'habitatge no principal i percentatge de població de 65 anys o més. Els percentatges comarcals s'han de recalcular a partir de les sumes. Les fórmules es mostren partides per facilitar-ne la lectura; al llibre, cada bloc s'introduirà com una fórmula única:
 
-```text
+```spreadsheet
 =SUM(indicators_housing!F2:F23)
  / SUM(indicators_housing!D2:D23) * 100
 

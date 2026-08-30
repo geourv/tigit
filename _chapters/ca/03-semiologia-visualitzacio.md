@@ -607,7 +607,7 @@ Els punts de la dispersió no s'uniran amb línies: cada municipi és una observ
 
 Cada figura candidata exportada tindrà un nom semàntic i una versió vectorial PDF. Una possible estructura és:
 
-```text
+```filetree
 outputs/figures/
   age-structure-tarragones-2021.pdf
   non-principal-housing-tarragones-2021.pdf

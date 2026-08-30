@@ -760,13 +760,13 @@ Resposta
 
 La petició següent demana la població total (`SP.POP.TOTL`) d'Espanya (`ESP`) per a 2023 i sol·licita una resposta JSON:
 
-```text
+```url
 https://api.worldbank.org/v2/country/ESP/indicator/SP.POP.TOTL?date=2023&format=json
 ```
 
 Es pot enganxar directament al navegador. La URL es pot llegir per parts:
 
-```text
+```url
 https://api.worldbank.org/v2/      # servei i versió
 country/ESP/                       # territori
 indicator/SP.POP.TOTL              # indicador
@@ -779,7 +779,7 @@ La resposta inclou metadades de la consulta i les observacions. No n'hi ha prou 
 
 La consulta següent recupera la població total d'Espanya el 2024 del conjunt `demo_pjan`, filtrada per edat total i tots els sexes:
 
-```text
+```url
 https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_pjan?lang=en&geo=ES&time=2024&age=TOTAL&sex=T
 ```
 
@@ -789,7 +789,7 @@ Eurostat retorna JSON-stat 2.0, un format multidimensional. Els valors no s'han 
 
 La plataforma de Dades Obertes permet obtenir una mostra del Registre de Turisme en JSON:
 
-```text
+```url
 https://analisi.transparenciacatalunya.cat/resource/t2h3-cgys.json?$limit=5
 ```
 
@@ -841,7 +841,7 @@ Un WMS no descarrega una tessel·la predefinida. L'operació `GetMap` demana al 
 
 >> **No cal dominar encara una petició WMS completa.** En aquest punt n'hi ha prou amb entendre que una URL pot contenir paràmetres que concreten què es demana a un servidor. `SERVICE`, `REQUEST`, `LAYERS`, `CRS`, `BBOX`, `WIDTH` i `FORMAT` funcionen com a peces d'una instrucció. Els codis `EPSG`, les coordenades i els sistemes de referència s'entendran millor al capítol 4; aquí serveixen per veure que Internet no envia «el mapa», sinó una resposta a una petició concreta. Aquesta lectura també ajuda quan es demana suport a un assistent basat en LLM: com més explícits siguin servei, lloc, capa i format, més comprovable serà l'ajuda rebuda.
 
-```text
+```url
 https://www.ign.es/wms-inspire/pnoa-ma
   ?SERVICE=WMS
   &VERSION=1.3.0
@@ -1047,7 +1047,7 @@ Moltes pràctiques territorials consisteixen a relacionar taules mitjançant una
 
 Un cas habitual és una **taula de correspondència**: la primera columna conté el codi que es busca i una altra columna conté el valor que es vol recuperar. Si el full `prepared_codes` té `municipality_code` a la columna `A` i `county_code` a la columna `B`, una fórmula orientativa per portar el codi de comarca al full de treball és:
 
-```text
+```spreadsheet
 =XLOOKUP(A2,prepared_codes!$A$2:$A$1000,prepared_codes!$B$2:$B$1000,"sense correspondència")
 ```
 
@@ -1105,7 +1105,7 @@ La `T` separa la data de l'hora. Els dos darrers exemples representen el mateix 
 
 Si `A2` conté una data de naixement reconeguda correctament, aquestes fórmules il·lustren operacions diferents:
 
-```text
+```spreadsheet
 =TODAY()-A2
 =DATEDIF(A2,TODAY(),"Y")
 =A2+30
@@ -1131,7 +1131,7 @@ També es poden classificar dates per obtenir variables auxiliars. Si `A2` cont�
 
 La compatibilitat no és absoluta. Poden canviar els noms de funció, els separadors d'arguments, els separadors decimals, el reconeixement de dates, les funcions disponibles i alguns comportaments dels gràfics. La configuració regional de l'aplicació, del document i, en alguns casos, del sistema operatiu pot fer que una mateixa operació s'escrigui de maneres diferents:
 
-```text
+```spreadsheet
 =SUM(A2:A10)
 =SUMA(A2:A10)
 =IF(B2>0,"sí","no")
