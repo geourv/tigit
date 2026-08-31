@@ -42,7 +42,7 @@ make build
 Before committing visible content edits, run a browser preview:
 
 ```bash
-make serve SITE_PROFILE=unaltremanual
+make serve
 ```
 
 Useful MCP checks from the `unaltraweb` factory:

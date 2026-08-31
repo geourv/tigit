@@ -38,27 +38,6 @@ baseurl: "/tigit"
 
 theme: unaltraweb
 
-plugins:
-  - unaltraweb
-  - jekyll-3rd-party-libraries
-  - jekyll-archives-v2
-  - jekyll-cache-bust
-  - jekyll-email-protect
-  - jekyll-feed
-  - jekyll-get-json
-  - jekyll-imagemagick
-  - jekyll-link-attributes
-  - jekyll-minifier
-  - jekyll-paginate-v2
-  - jekyll-regex-replace
-  - jekyll/scholar
-  - jekyll-sitemap
-  - jekyll-socials
-  - jekyll-tabs
-  - jekyll-toc
-  - jekyll-twitter-plugin
-  - jemoji
-
 external_sources: []
 
 pagination:
@@ -78,11 +57,10 @@ unaltraweb:
   site_profile: "unaltremanual"
   content_status_field: content_status
   approved_status: approved
+  mathjax:
+    tags: ams
   footer:
     show_logo: true
-    logo_light: /assets/img/brand/dosquartsdedocs-logo-white.svg
-    logo_dark: /assets/img/brand/dosquartsdedocs-logo.svg
-    logo_cafe: /assets/img/brand/dosquartsdedocs-logo-footer-cafe.svg
   features:
     news: false
     blog: false
@@ -150,20 +128,6 @@ unaltraweb:
         primary_color: "990000"
         secondary_color: "003366"
         muted_color: "666666"
-  documentation:
-    collection: documentation
-    logo: /assets/img/brand/dosquartsdedocs-logo.svg
-    logo_inverse: /assets/img/brand/dosquartsdedocs-logo-white.svg
-    logo_sepia: /assets/img/brand/dosquartsdedocs-logo-cafe.svg
-    profiles:
-      - id: github-publishers
-        label: GitHub publishers
-      - id: local-editors
-        label: Local editors
-      - id: site-designers
-        label: Site designers
-      - id: template-maintainers
-        label: Template maintainers
   readings:
     badges:
       finished:
@@ -202,9 +166,5 @@ unaltraweb:
         label_ca: Un clàssic
         color: "#ffd166"
         text_color: "#3a2a07"
-  figure_captions:
-    enabled: true
-    collections: [chapters, documentation]
-
 giscus:
   repo: geourv/tigit
