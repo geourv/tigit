@@ -1,0 +1,162 @@
+---
+title: "Variants de barres del parc d'habitatges dels municipis litorals del Tarragonès"
+lang: ca
+ref: housing_bar_variants_tarragones
+format:
+  gfm:
+    output-file: housing-bar-variants-tarragones.generated.md
+execute:
+  echo: false
+  warning: false
+  message: false
+execute-dir: project
+unaltraweb_compute:
+  engine: r
+  mode: figure
+  inputs:
+    - _practices/tigit-projecte-territorial/data/processed/municipal-indicators-tarragones-2021.csv
+  outputs:
+    - assets/img/data-visualization/housing-bars-grouped-tarragones-2021.svg
+    - assets/img/data-visualization/housing-bars-stacked-tarragones-2021.svg
+    - assets/img/data-visualization/housing-bars-percent-tarragones-2021.svg
+---
+
+```{r}
+find_project_root <- function(start) {
+  path <- normalizePath(start, winslash = "/", mustWork = FALSE)
+  repeat {
+    if (file.exists(file.path(path, ".unaltraweb", "computations.yml"))) {
+      return(path)
+    }
+    parent <- dirname(path)
+    if (identical(parent, path)) {
+      stop("Project root not found: missing .unaltraweb/computations.yml")
+    }
+    path <- parent
+  }
+}
+
+root <- find_project_root(getwd())
+library(ggplot2)
+
+theme_tigit <- function(base_size = 13) {
+  theme_minimal(base_size = base_size) +
+    theme(
+      panel.grid.minor = element_blank(),
+      panel.grid.major.y = element_blank(),
+      panel.grid.major.x = element_line(color = "#e0e6eb", linewidth = 0.35),
+      axis.line.x = element_line(color = "#17202a", linewidth = 0.4),
+      axis.ticks.x = element_line(color = "#17202a", linewidth = 0.3),
+      axis.title = element_text(color = "#17202a", face = "bold"),
+      axis.text = element_text(color = "#52616b"),
+      plot.title = element_text(face = "bold", size = 14, hjust = 0, color = "#17202a"),
+      legend.position = "top",
+      legend.title = element_blank(),
+      legend.text = element_text(color = "#17202a"),
+      plot.margin = margin(8, 12, 8, 8)
+    )
+}
+
+format_integer <- function(x) {
+  format(round(x), big.mark = ".", decimal.mark = ",", scientific = FALSE, trim = TRUE)
+}
+
+indicators <- read.csv(
+  file.path(root, "_practices/tigit-projecte-territorial/data/processed/municipal-indicators-tarragones-2021.csv"),
+  fileEncoding = "UTF-8",
+  stringsAsFactors = FALSE
+)
+
+coastal_municipalities <- c("Altafulla", "Roda de Berà", "Salou", "Torredembarra", "Vila-seca")
+housing <- indicators[indicators$municipality %in% coastal_municipalities, ]
+housing$housing_main <- housing$housing_total - housing$housing_non_main
+housing <- housing[order(housing$housing_total), ]
+
+stopifnot(
+  nrow(housing) == length(coastal_municipalities),
+  setequal(housing$municipality, coastal_municipalities),
+  all(housing$housing_main >= 0),
+  all(housing$housing_main + housing$housing_non_main == housing$housing_total)
+)
+
+housing$municipality <- factor(housing$municipality, levels = housing$municipality)
+long <- rbind(
+  data.frame(
+    municipality = housing$municipality,
+    housing_type = "Principal",
+    value = housing$housing_main,
+    total = housing$housing_total
+  ),
+  data.frame(
+    municipality = housing$municipality,
+    housing_type = "No principal",
+    value = housing$housing_non_main,
+    total = housing$housing_total
+  )
+)
+long$housing_type <- factor(long$housing_type, levels = c("Principal", "No principal"))
+long$percentage <- 100 * long$value / long$total
+
+palette <- c("Principal" = "#4C78A8", "No principal" = "#F28E2B")
+
+grouped <- ggplot(long, aes(x = municipality, y = value, fill = housing_type)) +
+  geom_col(position = position_dodge(width = 0.76), width = 0.68) +
+  coord_flip() +
+  scale_fill_manual(values = palette) +
+  scale_y_continuous(
+    limits = c(0, NA),
+    labels = format_integer,
+    expand = expansion(mult = c(0, 0.05))
+  ) +
+  labs(title = "Barres agrupades", x = NULL, y = "Habitatges") +
+  theme_tigit()
+
+stacked <- ggplot(long, aes(x = municipality, y = value, fill = housing_type)) +
+  geom_col(width = 0.68, position = position_stack(reverse = TRUE)) +
+  coord_flip() +
+  scale_fill_manual(values = palette) +
+  scale_y_continuous(
+    limits = c(0, NA),
+    labels = format_integer,
+    expand = expansion(mult = c(0, 0.05))
+  ) +
+  labs(title = "Barres apilades", x = NULL, y = "Habitatges") +
+  theme_tigit()
+
+percent <- ggplot(long, aes(x = municipality, y = percentage, fill = housing_type)) +
+  geom_col(width = 0.68, position = position_stack(reverse = TRUE)) +
+  coord_flip() +
+  scale_fill_manual(values = palette) +
+  scale_y_continuous(
+    limits = c(0, 100),
+    breaks = seq(0, 100, 20),
+    labels = function(x) paste0(x, "%"),
+    expand = expansion(mult = c(0, 0))
+  ) +
+  labs(title = "Barres apilades al 100%", x = NULL, y = "Composició") +
+  theme_tigit()
+
+output_dir <- file.path(root, "assets/img/data-visualization")
+dir.create(output_dir, showWarnings = FALSE, recursive = TRUE)
+ggsave(
+  file.path(output_dir, "housing-bars-grouped-tarragones-2021.svg"),
+  grouped,
+  width = 7.2,
+  height = 4.8,
+  device = svglite::svglite
+)
+ggsave(
+  file.path(output_dir, "housing-bars-stacked-tarragones-2021.svg"),
+  stacked,
+  width = 7.2,
+  height = 4.8,
+  device = svglite::svglite
+)
+ggsave(
+  file.path(output_dir, "housing-bars-percent-tarragones-2021.svg"),
+  percent,
+  width = 7.2,
+  height = 4.8,
+  device = svglite::svglite
+)
+```

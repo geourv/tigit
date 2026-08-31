@@ -1,0 +1,188 @@
+---
+title: "Núvol de paraules dels noms d'allotjaments registrats a Vila-seca"
+lang: ca
+ref: word_cloud_accommodation_names
+format:
+  gfm:
+    output-file: word-cloud-accommodation-names.generated.md
+execute:
+  echo: false
+  warning: false
+  message: false
+execute-dir: project
+unaltraweb_compute:
+  engine: r
+  mode: figure
+  inputs:
+    - _practices/tigit-projecte-territorial/data/processed/tourism-accommodation-vila-seca-geocoding.csv
+  outputs:
+    - assets/img/data-visualization/word-cloud-accommodation-names-vila-seca.svg
+    - assets/img/data-visualization/word-frequency-bars-accommodation-names-vila-seca.svg
+---
+
+```{r}
+find_project_root <- function(start) {
+  path <- normalizePath(start, winslash = "/", mustWork = FALSE)
+  repeat {
+    if (file.exists(file.path(path, ".unaltraweb", "computations.yml"))) {
+      return(path)
+    }
+    parent <- dirname(path)
+    if (identical(parent, path)) {
+      stop("Project root not found: missing .unaltraweb/computations.yml")
+    }
+    path <- parent
+  }
+}
+
+root <- find_project_root(getwd())
+library(ggplot2)
+
+accommodation <- read.csv(
+  file.path(root, "_practices/tigit-projecte-territorial/data/processed/tourism-accommodation-vila-seca-geocoding.csv"),
+  fileEncoding = "UTF-8",
+  stringsAsFactors = FALSE
+)
+
+clean_text <- tolower(paste(accommodation$public_name, collapse = " "))
+clean_text <- iconv(clean_text, from = "UTF-8", to = "ASCII//TRANSLIT")
+clean_text <- gsub("[^a-z0-9]+", " ", clean_text)
+tokens <- unlist(strsplit(clean_text, "[[:space:]]+"))
+stop_words <- c("by", "de", "del", "dels", "el", "els", "la", "les", "the", "sl")
+tokens <- tokens[nchar(tokens) >= 3 & !(tokens %in% stop_words)]
+
+frequency <- as.data.frame(table(tokens), stringsAsFactors = FALSE)
+names(frequency) <- c("term", "frequency")
+frequency <- frequency[order(-frequency$frequency, frequency$term), ]
+
+stopifnot(
+  nrow(accommodation) == 17,
+  nrow(frequency) >= 20,
+  all(frequency$frequency > 0),
+  frequency$frequency[frequency$term == "hotel"] == 5,
+  frequency$frequency[frequency$term == "portaventura"] == 5
+)
+
+output_dir <- file.path(root, "assets/img/data-visualization")
+dir.create(output_dir, showWarnings = FALSE, recursive = TRUE)
+
+cloud_words <- frequency
+frequency_range <- range(cloud_words$frequency)
+if (diff(frequency_range) == 0) {
+  cloud_words$size_mm <- 4
+} else {
+  cloud_words$size_mm <- 3.2 + 2.4 *
+    (cloud_words$frequency - frequency_range[1]) / diff(frequency_range)
+}
+
+# Place larger words first on a deterministic spiral. Approximate text bounds
+# prevent overlaps without adding a package-specific layout dependency.
+placed <- data.frame(
+  left = numeric(), right = numeric(), bottom = numeric(), top = numeric()
+)
+cloud_words$x <- NA_real_
+cloud_words$y <- NA_real_
+
+for (i in seq_len(nrow(cloud_words))) {
+  size <- cloud_words$size_mm[i]
+  half_width <- nchar(cloud_words$term[i]) * size * 0.16
+  half_height <- size * 0.34
+  found <- FALSE
+  for (candidate in 0:4000) {
+    angle <- candidate * 0.55
+    radius <- 0.46 * sqrt(candidate)
+    x <- 50 + radius * cos(angle)
+    y <- 35 + 0.72 * radius * sin(angle)
+    bounds <- c(
+      left = x - half_width,
+      right = x + half_width,
+      bottom = y - half_height,
+      top = y + half_height
+    )
+    within_canvas <- bounds["left"] >= 2 && bounds["right"] <= 98 &&
+      bounds["bottom"] >= 2 && bounds["top"] <= 68
+    overlaps <- if (nrow(placed) == 0) {
+      FALSE
+    } else {
+      any(
+        bounds["left"] < placed$right + 0.8 &
+          bounds["right"] > placed$left - 0.8 &
+          bounds["bottom"] < placed$top + 0.8 &
+          bounds["top"] > placed$bottom - 0.8
+      )
+    }
+    if (within_canvas && !overlaps) {
+      cloud_words$x[i] <- x
+      cloud_words$y[i] <- y
+      placed <- rbind(placed, as.data.frame(as.list(bounds)))
+      found <- TRUE
+      break
+    }
+  }
+  if (!found) {
+    stop("Could not place word without overlap: ", cloud_words$term[i])
+  }
+}
+
+cloud_words$occurrence_group <- ifelse(
+  cloud_words$frequency > 1,
+  "Terme repetit",
+  "Una aparició"
+)
+x_limits <- c(min(placed$left) - 2, max(placed$right) + 2)
+y_limits <- c(min(placed$bottom) - 2, max(placed$top) + 2)
+
+cloud <- ggplot(
+  cloud_words,
+  aes(x = x, y = y, label = term, size = size_mm, color = occurrence_group)
+) +
+  geom_text(aes(fontface = ifelse(frequency > 1, "bold", "plain")), show.legend = FALSE) +
+  scale_size_identity() +
+  scale_color_manual(values = c("Terme repetit" = "#0B3A6E", "Una aparició" = "#647483")) +
+  coord_cartesian(xlim = x_limits, ylim = y_limits, expand = FALSE, clip = "off") +
+  theme_void() +
+  theme(plot.margin = margin(4, 4, 4, 4))
+
+ggsave(
+  file.path(output_dir, "word-cloud-accommodation-names-vila-seca.svg"),
+  cloud,
+  width = 7.2,
+  height = 4.0,
+  device = svglite::svglite
+)
+
+repeated_terms <- frequency[frequency$frequency > 1, ]
+repeated_terms$term <- factor(repeated_terms$term, levels = rev(repeated_terms$term))
+
+stopifnot(nrow(repeated_terms) == 6)
+
+bars <- ggplot(repeated_terms, aes(x = term, y = frequency)) +
+  geom_col(width = 0.68, fill = "#4C78A8") +
+  geom_text(aes(label = frequency), hjust = -0.35, size = 4, color = "#17202a") +
+  coord_flip() +
+  scale_y_continuous(
+    breaks = seq(0, max(repeated_terms$frequency), 1),
+    limits = c(0, max(repeated_terms$frequency) + 0.8),
+    expand = expansion(mult = c(0, 0))
+  ) +
+  labs(x = NULL, y = "Aparicions") +
+  theme_minimal(base_size = 13) +
+  theme(
+    panel.grid.minor = element_blank(),
+    panel.grid.major.y = element_blank(),
+    panel.grid.major.x = element_line(color = "#e0e6eb", linewidth = 0.35),
+    axis.line.x = element_line(color = "#17202a", linewidth = 0.4),
+    axis.ticks.x = element_line(color = "#17202a", linewidth = 0.3),
+    axis.title = element_text(color = "#17202a", face = "bold"),
+    axis.text = element_text(color = "#52616b"),
+    plot.margin = margin(8, 18, 8, 8)
+  )
+
+ggsave(
+  file.path(output_dir, "word-frequency-bars-accommodation-names-vila-seca.svg"),
+  bars,
+  width = 7.2,
+  height = 3.8,
+  device = svglite::svglite
+)
+```

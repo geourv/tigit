@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="871" height="412" viewBox="50 54 871 412" role="img" aria-labelledby="title desc">
   <title id="title">Cercador de funcions en un full de càlcul</title>
-  <desc id="desc">Esquema docent d'un assistent de funcions amb caixa de cerca, categories, resultats i comprovació abans d'acceptar una fórmula.</desc>
+  <desc id="desc">Esquema docent d'un assistent de funcions amb caixa de cerca, categories, resultats i validació de la fórmula proposada.</desc>
   <defs>
     <style>
       .panel{fill:#fff;stroke:#c8d0dc;stroke-width:2}.bar{fill:#e9eef5}.field{fill:#fff;stroke:#9fb0c3;stroke-width:2}.tab{fill:#f1f5f9;stroke:#c8d0dc}.tab-active{fill:#d9ecff;stroke:#1f78b4;stroke-width:2}.item{fill:#fff;stroke:#d5dde8}.item-active{fill:#eef8ee;stroke:#4c956c;stroke-width:3}.warn{fill:#fff8e6;stroke:#d49a00;stroke-width:2}.text{font-family:Arial, sans-serif;fill:#1f2933;font-size:18px}.small{font-size:15px}.tiny{font-size:13px}.label{font-weight:700}.muted{fill:#52616f}.line{stroke:#d49a00;stroke-width:2;fill:none}.ok{fill:#eaf7ee;stroke:#4c956c;stroke-width:2}

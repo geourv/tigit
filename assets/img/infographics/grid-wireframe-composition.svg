@@ -198,14 +198,14 @@
 
     <g transform="translate(44 580)">
       <rect width="328" height="82" rx="5" fill="#eef3f2" stroke="#c4d2d0"/>
-      <text x="15" y="23" font-size="12" font-weight="700" fill="#355963">ALINEAR ABANS DE COMPONDRE</text>
+      <text x="15" y="23" font-size="12" font-weight="700" fill="#355963">LA RETÍCULA ESTRUCTURA LA COMPOSICIÓ</text>
       <text x="15" y="44" font-size="12" fill="#34474e">La ret&#237;cula fixa relacions: marges, columnes</text>
       <text x="15" y="61" font-size="12" fill="#34474e">i els espais mantenen una l&#242;gica comuna.</text>
     </g>
 
     <g transform="translate(436 580)">
       <rect width="328" height="82" rx="5" fill="#eef3f2" stroke="#c4d2d0"/>
-      <text x="15" y="23" font-size="12" font-weight="700" fill="#355963">JERARQUITZAR ABANS DE DECORAR</text>
+      <text x="15" y="23" font-size="12" font-weight="700" fill="#355963">LA JERARQUIA GUIA EL DISSENY</text>
       <text x="15" y="44" font-size="12" fill="#34474e">L'amplada i la posici&#243; de cada bloc anticipen</text>
       <text x="15" y="61" font-size="12" fill="#34474e">la import&#224;ncia i l'ordre de lectura.</text>
     </g>

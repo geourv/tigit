@@ -4,7 +4,7 @@
     "non-principal-housing-ordered-bars": {
       "engine": "vega-lite",
       "family": "benizar",
-      "fingerprint": "0631643ccd6c71c68a4dfba7b4314250a3f0b9fdade4798d1d6ac72d69dba362",
+      "fingerprint": "2899808fdfe499b4d30e2b3574c2b26a0727f04d51d824c0d5ebbc5163257459",
       "format": "svg",
       "inputs": [
         "_practices/tigit-projecte-territorial/data/processed/municipal-indicators-tarragones-2021.csv"

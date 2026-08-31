@@ -31,17 +31,18 @@ Fonts oficials consultades:
 
 El manual conserva tots els continguts oficials, però els distribueix en unitats didàctiques més concretes per integrar teoria i pràctica:
 
-0. Inici i presentació del curs.
-1. Fonts i preparació de dades territorials.
-2. Indicadors territorials i turístics.
-3. Semiologia gràfica i visualització de dades.
-4. Representació de la Terra i dades espacials.
-5. Integració de dades en un SIG.
-6. Llenguatge cartogràfic.
-7. Color i cartografia temàtica.
-8. Infografia i síntesi territorial.
+- Inici i presentació del curs.
+- Fonts i preparació de dades territorials.
+- Indicadors territorials i turístics.
+- Semiologia gràfica i visualització de dades.
+- Teoria del color.
+- Representació de la Terra i dades espacials.
+- Integració de dades en un SIG.
+- Llenguatge cartogràfic.
+- Cartografia temàtica.
+- Infografia i síntesi territorial.
 
-Aquest desplegament no defineix el calendari. Cada capítol connecta els conceptes amb pràctiques d'Excel, QGIS o Inkscape i amb les evidències previstes a l'avaluació.
+Aquest desplegament no defineix el calendari. Cada fase connecta els conceptes amb pràctiques d'Excel, QGIS o Inkscape i amb les evidències previstes a l'avaluació. Els prefixos numèrics dels fitxers existents es conserven com a identificadors tècnics estables i no s'han d'interpretar com l'ordre visible del manual.
 
 ## Avaluació
 
@@ -49,9 +50,13 @@ La guia 2026_27 distribueix l'avaluació en pràctiques TIC en aules informàtiq
 
 La descripció detallada de l'avaluació estableix un flux pràctic amb preparació de dades, càlcul d'indicadors en full de càlcul, organització de fitxers, codis territorials, unions a QGIS, gràfics, mapes i síntesi visual. El professorat pot demanar fitxers de treball i evidències intermèdies per comprovar autoria i traçabilitat.
 
-La visualització, infografia o document de síntesi es farà en primera convocatòria en trios mixtos de titulació: els equips han de combinar estudiants de Geografia i de Turisme i no poden estar formats per tres persones de la mateixa titulació. En segona convocatòria, si cal recuperar el projecte de síntesi, el producte serà individual i de mida reduïda. El territori, el format, els terminis i els criteris concrets corresponen a Moodle.
+La visualització, infografia o document de síntesi es farà en primera convocatòria en trios mixtos de titulació: els equips han de combinar estudiants de Geografia i de Turisme i no poden estar formats per tres persones de la mateixa titulació. El professorat assignarà a cada trio un parell comarca–municipi; diversos equips poden compartir comarca si tenen municipis de referència diferents. El parell Tarragonès–Vila-seca queda reservat a la demostració del professorat. En segona convocatòria, l'alumnat que no hagi seguit l'avaluació continuada amb l'assistència i la participació requerides presentarà les infografies individualment. El territori, el format, els terminis i els criteris concrets corresponen a Moodle.
 
-L'assistència a totes les sessions, tant teòriques com pràctiques, és una condició important per mantenir l'itinerari ordinari d'avaluació continuada de primera convocatòria. Cal assistir com a mínim al 80% del conjunt de sessions o justificar adequadament les absències. Si es compleixen l'assistència i el seguiment, però alguna activitat principal queda per sota de 4 sobre 10 o la mitjana no arriba a 5, l'estudiant haurà de recuperar només les activitats o blocs suspesos en segona convocatòria. Si no hi ha seguiment suficient, la recuperació pot requerir una modalitat individual específica més completa.
+Per acollir-se a l'avaluació continuada cal fer un seguiment regular de les sessions, especialment de les pràctiques, i assistir com a mínim al 80% de les sessions pràctiques o justificar adequadament les absències. Si es compleixen l'assistència i el seguiment, però alguna activitat principal queda per sota de 4 sobre 10 o la mitjana no arriba a 5, l'estudiant haurà de recuperar només les activitats o blocs suspesos en segona convocatòria. Criteri confirmat pel professorat: si no s'ha seguit l'avaluació continuada amb l'assistència i la participació requerides, no es conserven activitats ni blocs parcials de la primera convocatòria i en segona convocatòria cal recuperar el conjunt de l'assignatura mitjançant una modalitat individual que cobreixi tots els blocs d'avaluació; les infografies exigides també s'han de presentar individualment.
+
+## Desajust executable que bloqueja l'aprovació
+
+La guia 2026_27 presenta l'allotjament turístic com una entrada central i especifica indicadors d'allotjaments i places per població resident, densitat territorial de l'oferta i pes de tipologies. El llibre executable actual calcula sis indicadors de població i habitatge, mentre que el fitxer d'allotjaments de Vila-seca només alimenta una pràctica puntual de geocodificació. Abans de considerar el projecte complet cal incorporar una taula municipal comparable d'oferta turística, calcular-ne els indicadors al llibre, transferir-los a QGIS i utilitzar-ne almenys un en un gràfic, un mapa o la síntesi final. Aquesta incorporació necessita dades verificades per a tots els territoris assignats i no s'ha de simular amb habitatge no principal.
 
 ## Ús en el manual
 

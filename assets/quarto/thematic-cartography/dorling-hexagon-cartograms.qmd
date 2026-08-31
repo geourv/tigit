@@ -26,12 +26,11 @@ import matplotlib as mpl
 import matplotlib.patheffects as path_effects
 import matplotlib.pyplot as plt
 import numpy as np
-from matplotlib.lines import Line2D
-from matplotlib.patches import Patch
+from matplotlib.patches import Circle, Patch
 
 from carto_flow.data import load_us_states, load_world
 from carto_flow.symbol_cartogram import create_symbol_cartogram
-from carto_flow.symbol_cartogram.presets import preset_dorling, preset_tile_map
+from carto_flow.symbol_cartogram.presets import preset_tile_map, preset_topology_preserving
 
 
 def find_project_root(start: Path) -> Path:
@@ -106,12 +105,17 @@ dorling = create_symbol_cartogram(
     "pop_est",
     size_normalization="total",
     show_progress=False,
-    **preset_dorling(),
+    **preset_topology_preserving(),
 )
 assert len(dorling.symbols) == len(world)
 assert dorling.symbols.geometry.is_valid.all()
 area_per_person = dorling.symbols.geometry.area / world["pop_est"]
 assert np.allclose(area_per_person, area_per_person.iloc[0])
+radius_per_sqrt_person = (
+    dorling.symbols["_symbol_size"].to_numpy()
+    / np.sqrt(world["pop_est"].to_numpy())
+)
+assert np.allclose(radius_per_sqrt_person, radius_per_sqrt_person[0])
 
 label_names = {
     "China": "Xina",
@@ -129,11 +133,13 @@ label_names = {
 fig, ax = plt.subplots(figsize=(9.6, 7.2))
 fig.patch.set_facecolor("white")
 ax.set_facecolor("#f7f4ed")
-dorling.symbols.plot(
+dorling.plot(
     ax=ax,
-    color=world["facecolor"],
+    facecolor=world["facecolor"].to_numpy(),
     edgecolor="white",
     linewidth=0.65,
+    alpha=1,
+    legend=False,
 )
 
 for index, label in label_names.items():
@@ -185,41 +191,77 @@ continent_handles = [
         ("Oceania", continent_colors["Oceania"]),
     ]
 ]
-continent_legend = ax.legend(
+ax.legend(
     handles=continent_handles,
     loc="upper center",
-    bbox_to_anchor=(0.5, -0.015),
+    bbox_to_anchor=(0.36, 0.12),
     ncol=3,
     frameon=False,
     fontsize=9.5,
     title="Continent",
     title_fontsize=10,
 )
-ax.add_artist(continent_legend)
 
-population_handles = [
-    Line2D(
-        [],
-        [],
-        marker="o",
-        linestyle="none",
-        markerfacecolor="none",
-        markeredgecolor="#52616b",
-        markeredgewidth=0.9,
-        markersize=6 * np.sqrt(value / 50),
-        label=f"{value:,} M".replace(",", "."),
+legend_values = np.array([50_000_000, 250_000_000, 1_000_000_000])
+legend_radii = np.sqrt(legend_values) * np.median(radius_per_sqrt_person)
+assert np.allclose(
+    (legend_radii / legend_radii[0]) ** 2,
+    legend_values / legend_values[0],
+)
+
+minx, miny, maxx, maxy = dorling.symbols.total_bounds
+map_width = maxx - minx
+map_height = maxy - miny
+largest_radius = legend_radii[-1]
+baseline = miny + 0.015 * map_height
+legend_x = maxx + 1.15 * largest_radius
+label_x = legend_x + largest_radius + 0.035 * map_width
+
+ax.set_xlim(minx - 0.025 * map_width, label_x + 0.13 * map_width)
+ax.set_ylim(miny - 0.025 * map_height, maxy + 0.05 * map_height)
+ax.text(
+    legend_x - largest_radius,
+    baseline + 2 * largest_radius + 0.055 * map_height,
+    "Població",
+    ha="left",
+    va="bottom",
+    fontsize=10,
+    fontweight="bold",
+)
+for value, radius in zip(legend_values, legend_radii, strict=True):
+    circle = Circle(
+        (legend_x, baseline + radius),
+        radius,
+        facecolor="none",
+        edgecolor="#52616b",
+        linewidth=0.9,
+        clip_on=False,
     )
-    for value in (50, 250, 1000)
-]
-ax.legend(
-    handles=population_handles,
-    loc="lower right",
-    bbox_to_anchor=(0.99, 0.015),
-    frameon=False,
-    fontsize=9,
-    title="Població",
-    title_fontsize=9.5,
-    labelspacing=1.2,
+    ax.add_patch(circle)
+    label_y = baseline + 2 * radius
+    ax.plot(
+        [legend_x, label_x - 0.012 * map_width],
+        [label_y, label_y],
+        color="#52616b",
+        linewidth=0.7,
+        clip_on=False,
+    )
+    ax.text(
+        label_x,
+        label_y,
+        f"{value / 1_000_000:,.0f} M".replace(",", "."),
+        ha="left",
+        va="center",
+        fontsize=9,
+    )
+ax.text(
+    legend_x - largest_radius,
+    baseline - 0.04 * map_height,
+    "La llegenda conserva l'escala dels cercles.",
+    ha="left",
+    va="top",
+    fontsize=8.2,
+    color="#52616b",
 )
 fig.subplots_adjust(left=0.025, right=0.985, top=0.88, bottom=0.14)
 
@@ -228,7 +270,7 @@ save_figure(
     fig,
     dorling_output,
     "Cartograma de Dorling de la població mundial",
-    "Els països es representen amb cercles d'àrea proporcional a la població estimada de 2019. El color identifica el continent i les deu poblacions més grans estan etiquetades.",
+    "Els països es representen amb cercles d'àrea proporcional a la població estimada de 2019. La disposició amb preservació topològica i els radis dels cercles s'han calculat amb carto-flow 1.1.2; la llegenda reutilitza la mateixa escala.",
 )
 
 # The package also bundles Natural Earth state boundaries and tile-map presets.

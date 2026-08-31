@@ -7,6 +7,10 @@
 - Període estadístic principal: població i habitatge de 2021.
 - Les fonts posteriors, com centres educatius 2025/2026 o geometria ICGC 2026, s'han de presentar com a context temporal posterior, no com si fossin observacions simultànies.
 
+## Seqüència pedagògica
+
+El recorregut visible és fonts, indicadors, gràfics, color, dades espacials, SIG, llenguatge cartogràfic, cartografia temàtica i síntesi. Els prefixos dels llibres i projectes QGIS són identificadors tècnics estables de les fites originals. En particular, `tigit-07-teoria-color.xlsx` es construeix després dels gràfics i abans de `tigit-05-integracio-sig.xlsx`, que en deriva el full `map_export`.
+
 ## Dades tabulars
 
 El llibre distingeix quatre nivells:
@@ -20,7 +24,7 @@ Els fulls `source_*` no reben noms de camp propis del projecte. Les transformaci
 
 ## Calc i gràfics
 
-La fita del capítol 3 crearà:
+La fita de semiologia i visualització crearà:
 
 - `charts_data`: rangs vinculats i controls de suma;
 - `chart_00_audit`: versió inicial i revisada d'un mateix gràfic;
@@ -31,9 +35,13 @@ La fita del capítol 3 crearà:
 - `chart_05_population_time`: línia de població anual de Vila-seca, 2000–2022;
 - `chart_06_population_pyramid`: piràmide per edat i sexe de Vila-seca, 2021;
 - `chart_07_housing_histogram`: distribució municipal de l'habitatge no principal;
-- `palette`: registre cromàtic que s'afegirà al capítol 7.
+- `palette`: registre cromàtic que s'afegirà a la fase de color.
 
 Les figures candidates s'exportaran en PDF vectorial. El PDF s'obrirà a Inkscape per comprovar objectes, textos, fonts i proporcions. Les captures mínimes seran el diàleg de rangs o sèries de Calc i una comprovació vectorial a Inkscape.
+
+## Color
+
+La fase de color aplicarà un color neutre a totes les barres i un accent redundant a Vila-seca; la rampa seqüencial per a la coropleta es provarà com a mostres, sense fixar encara els intervals. La prova s'exportarà en SVG i PDF abans de preparar la transferència cap a QGIS.
 
 ## Dades puntuals
 
@@ -48,7 +56,7 @@ Font: Directori anual de centres docents de la Generalitat, conjunt `kvmv-ahh4`.
 - Subconjunt inicial: 17 centres de Vila-seca del curs 2025/2026.
 - Ampliació: 183 centres del Tarragonès.
 
-Al final del capítol 4, després d'explicar coordenades i CRS, la taula s'inspeccionarà encara en Calc o Excel: ordre X/Y, graus, metres, absències i duplicats. Al capítol 5 s'importarà primer X/Y UTM i després longitud/latitud per comparar `EPSG:25831` i `EPSG:4326`. El punt representa l'entrada del centre, no tota la parcel·la ni la seva capacitat.
+Al final de la fase de dades espacials, després d'explicar coordenades i CRS, la taula s'inspeccionarà encara en Calc o Excel: ordre X/Y, graus, metres, absències i duplicats. A la fase d'integració SIG s'importarà primer X/Y UTM i després longitud/latitud per comparar `EPSG:25831` i `EPSG:4326`. El punt representa l'entrada del centre, no tota la parcel·la ni la seva capacitat.
 
 ### Geocodificació
 
@@ -76,17 +84,15 @@ Natural Earth s'utilitzarà només si cal un localitzador d'Europa o del món. N
 
 ## Mapes
 
-- Capítol 6: mapa de context del Tarragonès i requadre provincial, amb una composició inicial completa i una versió revisada.
-- Capítol 8: coropleta del percentatge d'habitatge no principal.
-- Capítol 8: mapa separat de símbols proporcionals amb habitatges totals.
+- Llenguatge cartogràfic: mapa de context del Tarragonès i requadre provincial, amb una composició inicial completa i una versió revisada.
+- Cartografia temàtica: coropleta del percentatge d'habitatge no principal.
+- Cartografia temàtica: mapa separat de símbols proporcionals amb habitatges totals.
 - Les classificacions final i alternativa conservaran extensió, mida, paleta i context; només canviarà una decisió controlada.
 - Els punts de tall, recomptes per classe i colors es conservaran en un registre llegible per màquina.
 
-## Color i infografia
+## Infografia
 
-El capítol 7 aplicarà un color neutre a totes les barres i un accent redundant a Vila-seca; la rampa seqüencial per a la coropleta es provarà com a mostres, sense fixar encara els intervals. La prova s'exportarà en SVG i PDF.
-
-El producte final serà A3 vertical, `297 × 420 mm`, amb marges de `15 mm`, sis columnes i separacions de `6 mm`. Orientacions inicials:
+La demostració del taller serà A3 vertical, `297 × 420 mm`, amb marges de `15 mm`, sis columnes i separacions de `6 mm`. El format avaluable concret serà el que indiqui Moodle. Orientacions inicials per a la demostració:
 
 - títol: 30–34 pt;
 - entrada: 15–17 pt;
@@ -96,6 +102,14 @@ El producte final serà A3 vertical, `297 × 420 mm`, amb marges de `15 mm`, sis
 - fonts i notes: 9–10 pt com a mínim.
 
 Si cal una versió A4, es redissenyarà; no es reduirà automàticament l'A3. PowerPoint es pot utilitzar per a un wireframe A3 ràpid, però el màster final serà SVG d'Inkscape.
+
+El tancament conservarà també el PDF de revisió, el PDF final autoritzat després d'una prova de lectura i un ZIP reproduïble amb el llibre, el projecte QGIS, les dades redistribuïbles, el màster SVG, els recursos i el `README.md`. El ZIP s'haurà d'extreure en una carpeta nova i reobrir abans del lliurament.
+
+## Bloquejos d'aprovació
+
+- La guia docent 2026_27 exigeix allotjament turístic municipal i indicadors d'intensitat, densitat i composició de l'oferta; el llibre executable actual només integra població i habitatge a escala municipal.
+- El subconjunt d'allotjaments de Vila-seca serveix per practicar geocodificació, però no substitueix una taula municipal comparable per als 22 municipis ni per als territoris assignats als trios.
+- Els quatre projectes QGIS, les composicions, les exportacions cartogràfiques, el màster SVG, el PDF final i el ZIP reproduïble encara no existeixen com a artefactes aprovats.
 
 ## Captures pendents
 

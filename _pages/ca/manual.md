@@ -25,7 +25,7 @@ Durant el curs es farà aquest recorregut amb dades oficials i obertes. S'utilit
 
 ## Responsabilitats del professorat i de l'estudiantat
 
-A les sessions de teoria, el professorat presentarà els conceptes necessaris per entendre les dades i prendre decisions: què compara un percentatge, per què un mapa necessita un sistema de coordenades o com canvia la lectura quan es trien uns colors o uns altres. També analitzarà exemples i errors habituals perquè sigui possible reconèixer una solució ben plantejada abans d'obrir el programa.
+A les sessions de teoria, el professorat presentarà els conceptes necessaris per entendre les dades i prendre decisions: què compara un percentatge, per què un mapa necessita un sistema de coordenades o com canvia la lectura quan es trien uns colors o uns altres. També analitzarà exemples i errors habituals perquè els criteris d'una solució ben plantejada quedin clars sense dependre del programa.
 
 A les sessions pràctiques, el professorat mostrarà com s'apliquen aquests criteris amb els fitxers i les eines del curs. Ajudarà a diagnosticar errors, revisarà resultats intermedis i indicarà quines comprovacions falten. La pràctica no consistirà només a reproduir una demostració: caldrà prendre decisions, conservar els fitxers de treball i justificar el resultat obtingut.
 
@@ -33,7 +33,9 @@ El curs introduirà les eines des de les operacions bàsiques. S'espera de l'est
 
 ## El projecte del curs
 
-El manual utilitza com a demostració comuna els municipis del Tarragonès i dades de població i habitatge de l'Idescat de 2021. Es començarà amb les fonts originals i la feina es conservarà en un mateix projecte. Primer es crearà un fitxer de full de càlcul amb diversos fulls; Calc i Excel anomenen **llibre de càlcul** aquest tipus de fitxer. A continuació, QGIS servirà per gestionar la informació geogràfica, relacionar les dades estadístiques amb els límits municipals i elaborar mapes. Finalment, Inkscape permetrà combinar mapes, gràfics, textos i altres elements en una composició gràfica més elaborada.
+El manual utilitza com a demostració comuna els municipis del Tarragonès i dades de població i habitatge de l'Idescat de 2021. Vila-seca serà el municipi de referència dins d'aquesta comarca. Es començarà amb les fonts originals i la feina es conservarà en un mateix projecte. Primer es crearà un fitxer de full de càlcul amb diversos fulls; Calc i Excel anomenen **llibre de càlcul** aquest tipus de fitxer. A continuació, QGIS servirà per gestionar la informació geogràfica, relacionar les dades estadístiques amb els límits municipals i elaborar mapes. Finalment, Inkscape permetrà combinar mapes, gràfics, textos i altres elements en una composició gràfica més elaborada.
+
+>>>> **La demostració docent i el territori assignat no són el mateix.** El parell **Tarragonès–Vila-seca** queda reservat al professorat per mostrar el procediment complet. Cada trio rebrà un altre parell **comarca–municipi**: diversos equips poden treballar el Tarragonès, però cadascun tindrà un municipi de referència diferent, mentre que altres equips treballaran una altra comarca i un municipi d'aquella comarca. Cada equip haurà d'adaptar les dades, els noms dels fitxers, els gràfics, els mapes i la infografia al parell assignat; no haurà de reproduir com a projecte propi el cas del professorat.
 
 **El projecte del curs culminarà en una infografia territorial** amb tres o quatre dades destacades, dues o tres peces visuals i una interpretació breu. El resultat final conservarà també el llibre de càlcul revisable, els gràfics i els mapes editables perquè sigui possible comprovar com s'ha construït la infografia.
 
@@ -53,9 +55,9 @@ El producte no es construeix d'una sola vegada. Cada fase afegeix una peça que 
 | Síntesi | Una infografia composta amb Inkscape que reuneix les peces seleccionades i n'explica el resultat |
 :::
 
-### Per què no començarem pel mapa
+### Per què el mapa no és el punt de partida
 
-**Un mapa pot semblar acabat encara que parteixi d'una columna equivocada, d'un percentatge mal calculat o d'una unió incompleta.** Per això primer comprovarem les fonts i els codis, després calcularem els indicadors i només representarem les dades quan sapiguem què significa cada valor. Si al final apareix una incoherència, tornarem al pas on s'ha originat en lloc de corregir només l'aspecte del gràfic o del mapa.
+Un mapa pot semblar acabat encara que parteixi d'una columna equivocada, d'un percentatge mal calculat o d'una unió incompleta. Per això comprovarem les fonts i els codis, calcularem els indicadors i només representarem les dades quan sapiguem què significa cada valor. Si al final apareix una incoherència, tornarem al pas on s'ha originat en lloc de corregir només l'aspecte del gràfic o del mapa.
 
 ## Com treballarem a classe
 
@@ -63,17 +65,17 @@ El producte no es construeix d'una sola vegada. Cada fase afegeix una peça que 
 
 ### Com plantejar un dubte
 
-**Els dubtes s'han de plantejar tan aviat com apareguin.** Al començament de cada sessió convé comentar les preguntes sorgides durant la lectura, la pràctica anterior o la preparació dels fitxers. Aquest primer intercanvi permet detectar dificultats compartides, aclarir errors abans de continuar i beneficiar tot el grup amb la resposta.
+**Els dubtes s'han de plantejar tan aviat com apareguin.** Al començament de cada sessió convé comentar les preguntes sorgides durant la lectura, la pràctica anterior o la preparació dels fitxers. Aquest intercanvi permet detectar dificultats compartides, aclarir dubtes, corregir errors i beneficiar tot el grup amb la resposta.
 
 Quan el dubte no quedi resolt a l'aula, **el canal recomanat és el fòrum de dubtes de Moodle**. Una pregunta publicada al fòrum i la resposta corresponent poden ser útils per a altres persones que es trobin amb el mateix problema. Si el fòrum no és suficient o la consulta inclou una situació individual que no convé fer pública, el pas següent és escriure un correu i, si cal, acordar una tutoria.
 
 El missatge s'ha d'enviar des del **correu institucional** i ha d'identificar l'estudiant amb nom, cognoms, titulació i grup. L'assumpte ha d'indicar l'assignatura i el tema concret. El cos del missatge ha d'incloure una pregunta elaborada, els passos o recursos que ja s'han provat, el resultat que s'esperava i el resultat obtingut; quan sigui necessari, s'hi pot afegir un fitxer, una captura o un enllaç que permeti reproduir el problema. Un missatge com «no em funciona» no aporta prou informació per diagnosticar-ne la causa. **El professorat decidirà si el dubte es pot respondre per correu o si és preferible treballar-lo en una tutoria.**
 
-![Circuit recomanat per plantejar dubtes]({{ site.baseurl }}/assets/diagrams/course-question-flow.mmd.svg "Els dubtes es comenten primer a l'inici de la sessió i després es traslladen al fòrum de Moodle. Si encara no queden resolts, s'envia un correu institucional documentat i el professorat respon per correu o proposa una tutoria."){: data-figure-width-web="35rem" data-figure-width-pdf="35rem"}
+![Circuit de dubtes: sessió, fòrum de Moodle, correu i tutoria]({{ site.baseurl }}/assets/diagrams/course-question-flow.mmd.svg "Els dubtes es comenten a l'inici de la sessió. Si no es resolen, es traslladen al fòrum de Moodle; si encara persisteixen, s'envia un correu institucional documentat i el professorat respon o proposa una tutoria."){: data-figure-width-web="31rem" data-figure-width-pdf="80%"}
 
 ### Com utilitzar aquest manual
 
-Abans d'una pràctica, cal llegir la introducció de la fase per identificar la pregunta, els fitxers que s'utilitzaran i el resultat que cal obtenir. Durant la sessió, es pot consultar el procediment quan calgui i convé anotar al projecte les decisions que no quedin visibles al resultat. En acabar, **no n'hi ha prou amb comprovar que el fitxer existeix**: cal tornar-lo a obrir, revisar els criteris indicats al capítol i comprovar que se'n podria explicar la procedència.
+Per preparar una pràctica cal llegir la introducció de la fase i identificar la pregunta, els fitxers que s'utilitzaran i el resultat que cal obtenir. Durant la sessió, es pot consultar el procediment quan calgui i convé anotar al projecte les decisions que no quedin visibles al resultat. En acabar, **no n'hi ha prou amb comprovar que el fitxer existeix**: cal tornar-lo a obrir, revisar els criteris indicats al capítol i comprovar que se'n podria explicar la procedència.
 
 No totes les indicacions del curs són en aquest manual. Cal consultar cada espai segons la informació necessària:
 
@@ -87,7 +89,7 @@ No totes les indicacions del curs són en aquest manual. Cal consultar cada espa
 
 ## Avaluació
 
-L'avaluació combina el treball continuat a l'aula, proves individuals i un producte final de síntesi. Les dates, els enunciats i els fitxers que s'han de lliurar es publicaran a Moodle. La guia docent fixa els blocs i els pesos següents:
+L'avaluació combina evidències complementàries del procés i del resultat. El treball continuat a l'aula permet observar el seguiment de les activitats, la resolució de dubtes i la incorporació de correccions; les proves individuals comproven la comprensió dels continguts i l'aplicació dels criteris amb el full de càlcul i QGIS; i el producte final mostra si aquestes decisions es poden integrar en una síntesi territorial traçable. Les dates, els enunciats i els fitxers que s'han de lliurar es publicaran a Moodle. La guia docent fixa els blocs i els pesos següents:
 
 ### Primera convocatòria
 
@@ -95,14 +97,14 @@ L'avaluació combina el treball continuat a l'aula, proves individuals i un prod
 | Activitat | Pes | Com es farà |
 | --- | --- | --- |
 | Pràctiques a través de TIC en aules informàtiques | 5% | Seguiment, exercicis i evidències intermèdies indicades a Moodle |
-| Presentació, exposició o infografia territorial | 30% | Projecte de síntesi en trios que combinin estudiants de Geografia i de Turisme |
+| Presentació, exposició o infografia territorial | 30% | Projecte de síntesi en trios mixtos |
 | Atenció personalitzada | 5% | Participació, resolució de dubtes i incorporació de correccions |
 | Prova mixta de continguts | 30% | Prova individual de comprensió teòrica i aplicació de criteris |
 | Prova pràctica de full de càlcul | 15% | Prova individual sobre preparació de dades, codis i indicadors |
 | Prova pràctica de QGIS | 15% | Prova individual sobre unions, simbolització i resolució cartogràfica |
 :::
 
-Per seguir l'itinerari ordinari d'avaluació continuada **cal assistir almenys al 80% de les sessions teòriques i pràctiques** o justificar adequadament les absències, i lliurar les activitats intermèdies indicades a Moodle. **Una activitat principal amb una nota inferior a 4 sobre 10 no es pot compensar automàticament amb les altres notes.**
+Per seguir l'itinerari ordinari d'avaluació continuada **cal assistir almenys al 80% de les sessions pràctiques** o justificar adequadament les absències, fer un seguiment regular de la resta de sessions i lliurar les activitats intermèdies indicades a Moodle. **Una activitat principal amb una nota inferior a 4 sobre 10 no es pot compensar automàticament amb les altres notes.**
 
 La prova de continguts comprovarà la capacitat d'interpretar indicadors, llegir gràfics, detectar problemes visuals, entendre sistemes de referència i valorar decisions cartogràfiques. Les dues proves pràctiques comprovaran la capacitat de preparar una taula i calcular indicadors, d'una banda, i d'incorporar dades a QGIS, unir-les amb una capa i simbolitzar-les, de l'altra.
 
@@ -110,7 +112,7 @@ La prova de continguts comprovarà la capacitat d'interpretar indicadors, llegir
 
 ### Segona convocatòria
 
-La segona convocatòria permet recuperar allò que no s'hagi superat, però no té la mateixa forma en tots els casos. La feina que caldrà fer dependrà del seguiment de la primera convocatòria:
+La recuperació depèn del seguiment de l'avaluació continuada i de les parts pendents després de la primera convocatòria:
 
 ::: table "Què cal recuperar en segona convocatòria"
 | Situació després de la primera convocatòria | Recuperació prevista |
@@ -118,10 +120,10 @@ La segona convocatòria permet recuperar allò que no s'hagi superat, però no t
 | S'ha seguit l'avaluació continuada, però una activitat principal té una nota inferior a 4 | Caldrà recuperar aquesta activitat o el bloc suspès; les parts superades es conservaran |
 | S'ha seguit l'avaluació continuada, però la mitjana no arriba a 5 | Caldrà recuperar les parts necessàries per assolir el nivell mínim |
 | El projecte de síntesi està pendent de recuperació | Caldrà elaborar una infografia o un document equivalent de manera individual i amb un abast més reduït |
-| No hi ha hagut seguiment continuat suficient o el projecte no s'ha desenvolupat de manera verificable | El professorat establirà una recuperació individual més completa que permeti comprovar els aprenentatges pendents |
+| No s'ha seguit l'avaluació continuada amb l'assistència i la participació requerides | Caldrà recuperar el conjunt de l'assignatura; no es conservaran activitats ni blocs parcials de la primera convocatòria i les infografies exigides seran individuals |
 :::
 
-Moodle indicarà en cada cas el territori, les dades, el format, el termini i els criteris concrets de la recuperació. Abans de preparar la segona convocatòria, cal comprovar quines parts consten com a superades i quin enunciat correspon a la situació personal.
+Moodle indicarà en cada cas el territori, les dades, el format, el termini i els criteris concrets de la recuperació. La preparació exigeix comprovar quina situació de la taula correspon.
 
 ### Referència oficial
 
@@ -141,7 +143,7 @@ Moodle indicarà en cada cas el territori, les dades, el format, el termini i el
 | Departament | Geografia |
 :::
 
-## Abans de començar: eines i fitxers
+## Preparació de les eines i els fitxers
 
 **Cal familiaritzar-se amb el sistema de fitxers de l'ordinador**: crear carpetes, reconèixer una ruta, moure i copiar fitxers, identificar una extensió i saber en quin dispositiu o servei està desat un document. Aquestes operacions formen part del treball acadèmic, encara que les aplicacions mòbils i els serveis al núvol sovint les ocultin.
 
@@ -156,9 +158,9 @@ Moodle indicarà en cada cas el territori, les dades, el format, el termini i el
 | Moodle | Gestionar avisos, terminis, lliuraments, qualificacions i instruccions operatives |
 :::
 
-### Instal·lació del programari {#installacio-programari}
+### Entorn de treball local i VirtLabs {#installacio-programari}
 
-**Es recomana instal·lar LibreOffice, QGIS i Inkscape a l'ordinador personal o portàtil abans d'iniciar les pràctiques que utilitzen cada eina.** Treballar amb un entorn propi permet practicar entre sessions, gestionar carpetes i rutes, conservar els projectes i resoldre incidències habituals. LibreOffice instal·la la suite completa, dins de la qual **Calc** és l'aplicació de full de càlcul que s'utilitzarà al manual.
+**Es recomana arribar a les pràctiques que utilitzen cada eina amb LibreOffice, QGIS i Inkscape instal·lats a l'ordinador personal o portàtil.** Treballar amb un entorn propi permet practicar entre sessions, gestionar carpetes i rutes, conservar els projectes i resoldre incidències habituals. LibreOffice instal·la la suite completa, dins de la qual **Calc** és l'aplicació de full de càlcul que s'utilitzarà al manual.
 
 Les versions següents són les referències verificades l'agost de 2026. S'han escollit versions estables i, en el cas de QGIS, la versió de suport prolongat perquè prioritza l'estabilitat i la compatibilitat durant el curs.
 
@@ -170,11 +172,9 @@ Les versions següents són les referències verificades l'agost de 2026. S'han 
 | Inkscape | Inkscape 1.4.4, versió estable | [Descarregar Inkscape](https://inkscape.org/release/) |
 :::
 
-Abans de descarregar cal comprovar a la pàgina oficial que la versió continua marcada com a **estable** o **LTR** i triar l'instal·lador corresponent al sistema operatiu i a l'arquitectura de l'ordinador. Si el projecte publica una actualització de manteniment dins de la mateixa branca, convé instal·lar-la. Les versions de prova, desenvolupament o compilació nocturna només són adequades per experimentar i no constitueixen l'entorn de referència del curs.
+Per descarregar el programari cal comprovar a la pàgina oficial que la versió continua marcada com a **estable** o **LTR** i triar l'instal·lador corresponent al sistema operatiu i a l'arquitectura de l'ordinador. Si el projecte publica una actualització de manteniment dins de la mateixa branca, convé instal·lar-la. Les versions de prova, desenvolupament o compilació nocturna només són adequades per experimentar i no constitueixen l'entorn de referència del curs.
 
-### Entorn personal i VirtLabs
-
-La URV proporciona llicències i serveis institucionals, i també permet accedir a aplicacions acadèmiques mitjançant [VirtLabs](https://virtlabs.urv.cat/login). Aquest entorn virtual és una alternativa quan no es pot instal·lar el programari necessari o quan cal accedir-hi des d'un altre equip. No substitueix, però, la conveniència de disposar d'un entorn local sempre que sigui possible: abans de començar una activitat cal comprovar on es desen els fitxers, com es recuperaran en una altra sessió i quines limitacions té l'entorn utilitzat.
+La URV proporciona llicències i serveis institucionals, i també permet accedir a aplicacions acadèmiques mitjançant [VirtLabs](https://virtlabs.urv.cat/login). Aquest entorn virtual és una alternativa quan no es pot instal·lar el programari necessari o quan cal accedir-hi des d'un altre equip. No substitueix, però, la conveniència de disposar d'un entorn local sempre que sigui possible: en cada activitat cal comprovar on es desen els fitxers, com es recuperaran en una altra sessió i quines limitacions té l'entorn utilitzat.
 
 ### Fulls de càlcul recomanats
 
@@ -194,12 +194,14 @@ Una aplicació pot mostrar un llibre sense fer evident on està desat. La llista
 | Carpeta local | Té una ruta dins del disc de l'ordinador i es pot obrir amb el gestor de fitxers | Es pot perdre si falla o es canvia el dispositiu i no hi ha còpia |
 | OneDrive personal | La sessió correspon a un compte particular | El grup pot dependre d'un compte aliè a la URV i d'un propietari únic |
 | OneDrive URV | La sessió correspon al compte institucional i el fitxer apareix al OneDrive de la URV | L'accés depèn del compte institucional i dels permisos compartits |
-| Carpeta sincronitzada | Té una ruta local però també un estat de sincronització al núvol | Pot ser només disponible en línia, estar pendent de pujada o generar conflictes |
+| Carpeta sincronitzada | Té una ruta local però també un estat de sincronització al núvol | Pot estar disponible només en línia, pendent de pujada o generar conflictes |
 | Escriptori o Baixades | La ubicació depèn de la configuració del sistema i del navegador | Acumula còpies, noms duplicats i fitxers difícils de tornar a localitzar |
 :::
 
->>>> **“El veig a Recents” no demostra que se sàpiga on és.** Abans de començar cal identificar la ruta local o el compte de OneDrive, obrir la carpeta des del gestor de fitxers i comprovar el nom complet del llibre. Un OneDrive personal i el OneDrive proporcionat per la URV són espais diferents, encara que l'aplicació els mostri junts.
+>>>> **“El veig a Recents” no demostra que se sàpiga on és.** Cal identificar la ruta local o el compte de OneDrive, obrir la carpeta des del gestor de fitxers i comprovar el nom complet del llibre. Un OneDrive personal i el OneDrive proporcionat per la URV són espais diferents, encara que l'aplicació els mostri junts.
 
-Per treballar amb seguretat, el projecte tindrà una carpeta arrel identificable. Després de la primera sessió s'ha de poder tancar l'aplicació, navegar fins a la carpeta sense usar **Recents** i tornar a obrir el llibre. Si es treballa al núvol, cal comprovar el compte actiu, els permisos de les persones participants i l'estat de sincronització abans d'apagar l'ordinador.
+Per treballar amb seguretat, el projecte tindrà una carpeta arrel identificable. Després de la primera sessió s'ha de poder tancar l'aplicació, navegar fins a la carpeta sense usar **Recents** i tornar a obrir el llibre. Si es treballa al núvol, no s'ha d'apagar l'ordinador fins que s'hagin comprovat el compte actiu, els permisos de les persones participants i l'estat de sincronització.
 
 Compartir un enllaç no és el mateix que lliurar un fitxer. Quan Moodle demani un fitxer, s'ha de descarregar o exportar la versió correcta, verificar que s'obre fora de la sessió del navegador i trametre-la en el format indicat. Els enllaços compartits només substituiran el fitxer quan les instruccions ho demanin explícitament.
+
+Amb l'entorn i la carpeta de treball preparats, la fase següent començarà formulant la pregunta territorial i localitzant les fonts oficials que permetran construir la primera taula municipal. Aquesta base serà el punt d'origen de tots els indicadors, gràfics i mapes posteriors.

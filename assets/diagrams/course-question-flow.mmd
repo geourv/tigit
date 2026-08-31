@@ -1,9 +1,11 @@
 flowchart TB
-  subgraph first[ ]
-    direction LR
-    session[1. Sessió<br/>comentar el dubte] -->|Si persisteix| forum[2. Fòrum de Moodle<br/>pregunta compartida]
-  end
-  forum -->|Si persisteix| email[3. Correu institucional<br/>identificació · dubte · intents]
-  email -->|Resposta escrita| reply[4a. Resposta per correu]
-  email -->|Cal una conversa| tutorial[4b. Tutoria]
-  style first fill:none,stroke:none
+  session["1. Inici de la sessió<br/>comentar el dubte"]
+  forum["2. Fòrum de dubtes de Moodle<br/>compartir una pregunta útil<br/>per a tot el grup"]
+  email["3. Correu institucional<br/>identificació · pregunta · intents previs"]
+  reply["4a. Resposta per correu"]
+  tutorial["4b. Tutoria acordada"]
+
+  session -->|Si no queda resolt| forum
+  forum -->|Si no queda resolt| email
+  email -->|Es pot resoldre per escrit| reply
+  email -->|Cal treballar-ho conjuntament| tutorial

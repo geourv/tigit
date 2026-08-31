@@ -14,7 +14,7 @@ manual_references: true
 
 La posició geogràfica introdueix una condició que no apareix en una taula o en un gràfic convencional: les dades han d'estar relacionades amb un model de la Terra. Aquest capítol presenta els conceptes necessaris per entendre com una posició, una distància o una superfície depenen d'una forma de referència, d'unes coordenades i d'una projecció.
 
-El vocabulari cartogràfic clàssic ajuda a entendre la representació, però el treball amb capes digitals exigeix fixar també la terminologia dels sistemes de referència, les geometries i les dades espacials. El capítol combina una lectura cartogràfica general, una introducció específica als sistemes de coordenades i una referència terminològica en català {% cite jolyCartografia1982 vanSickleBasicGISCoordinates2017 nunesDiccionariSIG2012 %}.
+El vocabulari cartogràfic clàssic ajuda a entendre la representació, però el treball amb **capes digitals**, conjunts d'entitats o cel·les organitzats amb un mateix esquema espacial, exigeix fixar també la terminologia dels sistemes de referència, les geometries i les dades espacials. En aquest manual, **sistema de referència de coordenades** s'abreuja `CRS`, d'acord amb l'acrònim anglès utilitzat per QGIS. El capítol combina una lectura cartogràfica general, una introducció específica als sistemes de coordenades i una referència terminològica en català {% cite jolyCartografia1982 vanSickleBasicGISCoordinates2017 nunesDiccionariSIG2012 %}.
 
 >>>>> En acabar el capítol, cal poder interpretar com es modela i es representa la Terra, triar un sistema de referència adequat i preparar una base espacial municipal validada a QGIS.
 >>>>>
@@ -24,6 +24,8 @@ El vocabulari cartogràfic clàssic ajuda a entendre la representació, però el
 >>>>> - Preparar i validar una base espacial municipal a QGIS sense sobreescriure la font original.
 
 ## Forma terrestre, moviments i il·luminació solar
+
+Entendre la forma terrestre permet decidir quan una aproximació plana deixa de ser suficient i quines relacions entre posició, moviment i il·luminació s'han de conservar. La seqüència parteix d'evidències observables i de la mesura geomètrica de la curvatura, i després relaciona la latitud i l'obliqüitat amb la distribució temporal i espacial de la radiació solar.
 
 ### Forma, evidència i mesura
 
@@ -37,7 +39,7 @@ Altres evidències van reforçar aquesta imatge a mesura que milloraven els inst
 
 Per al curs, aquesta seqüència històrica serveix per entendre que mesurar la Terra sempre implica un model. Una esfera és suficient per explicar una primera estimació del radi; un el·lipsoide és millor per calcular coordenades; el geoide és necessari per parlar d'altures físiques; i un sistema de referència fa explícit com s'ancora tot això a observacions mesurables.
 
->>>> **Evidències convergents.** Les imatges de satèl·lit fan visible la forma general de la Terra, i les observacions clàssiques mostren com aquesta forma es podia deduir abans de poder fotografiar-la des de l'espai. Quan s'avalua una afirmació territorial cal preguntar-se quines observacions independents la sostenen, quin model geomètric utilitza i quines prediccions permet comprovar.
+>>>> **Evidències convergents.** Les imatges de satèl·lit fan visible la forma general de la Terra, i les observacions clàssiques mostren com aquesta forma ja es podia deduir sense fotografies preses des de l'espai. Quan s'avalua una afirmació territorial cal preguntar-se quines observacions independents la sostenen, quin model geomètric utilitza i quines prediccions permet comprovar.
 
 ### Moviments, eclíptica i latitud climàtica
 
@@ -45,9 +47,9 @@ La Terra rota sobre el seu eix i es desplaça al voltant del Sol. El pla d'aques
 
 La latitud expressa una relació geomètrica amb la radiació solar. A latituds baixes, els raigs solars poden arribar amb angles més propers a la vertical i concentrar energia sobre una superfície menor. A latituds altes, la mateixa energia es reparteix sobre una superfície més gran i travessa més atmosfera. Aquesta geometria és la base astronòmica de molts contrastos climàtics, i es completa amb altitud, relleu, distància al mar, corrents oceànics i circulació atmosfèrica.
 
-La figura resumeix dos efectes físics que convé separar. El primer és geomètric: si $E_0$ és la irradiància rebuda sobre una superfície perpendicular als raigs solars, una superfície horitzontal rep aproximadament $E = E_0 \cos z = E_0 \sin h$, on $z$ és l'angle zenital i $h$ és l'altura del Sol sobre l'horitzó. Aquesta relació, coneguda com a llei del cosinus de Lambert i formulada dins de la fotometria del segle XVIII, explica per què la mateixa radiació queda més concentrada quan el Sol és alt i més repartida quan arriba obliquament. El segon efecte és atmosfèric: la radiació directa es debilita quan travessa aire, vapor d'aigua, aerosols i gasos absorbents. Una forma simplificada de la [llei de Bouguer-Lambert-Beer](https://www.termcat.cat/ca/cercaterm/fitxa/Mzg5NjU2NA%3D%3D) és $I = I_0 e^{-\tau m}$, o bé $I = I_0 p^m$ en la formulació clàssica de la transparència, on $m$ és la massa òptica o camí atmosfèric relatiu, que creix quan el Sol és baix. Bouguer i Lambert van estudiar aquesta pèrdua d'intensitat com un problema de fotometria: com mesurar la gradació de la llum quan un feix travessa un medi. En una atmosfera real, l'atenuació també depèn que la pressió i la densitat de l'aire disminueixen amb l'altura; la llei baromètrica associada a Laplace ho expressa, de manera simplificada, com $p(z)=p_0 e^{-z/H}$ en una atmosfera isoterma. Per això, quan el Sol és baix, la radiació no només es reparteix sobre una superfície més gran: també recorre un camí atmosfèric més llarg abans d'arribar al sòl {% cite gilOlcinaOlcinaClimatologiaGeneral1997 bouguerEssaiOptique1729 lambertPhotometria1760 laplaceMecaniqueCeleste1805 %}.
+La figura resumeix dos efectes físics que convé separar. El primer és geomètric: si $E_0$ és la irradiància rebuda sobre una superfície perpendicular als raigs solars, una superfície horitzontal rep aproximadament $E = E_0 \cos z = E_0 \sin h$, on $z$ és l'angle zenital i $h$ és l'altura del Sol sobre l'horitzó. Aquesta relació, coneguda com a llei del cosinus de Lambert i formulada dins de la fotometria del segle XVIII, explica per què la mateixa radiació queda més concentrada quan el Sol és alt i més repartida quan arriba obliquament. El segon efecte és atmosfèric: la radiació directa es debilita quan travessa aire, vapor d'aigua, aerosols i gasos absorbents. Una forma simplificada de la [llei de Bouguer-Lambert-Beer](https://www.termcat.cat/ca/cercaterm/fitxa/Mzg5NjU2NA%3D%3D) és $I = I_0 e^{-\tau m}$, o bé $I = I_0 p^m$ en la formulació clàssica de la transparència, on $m$ és la massa òptica o camí atmosfèric relatiu, que creix quan el Sol és baix. Bouguer i Lambert van estudiar aquesta pèrdua d'intensitat com un problema de fotometria: com mesurar la gradació de la llum quan un feix travessa un medi. En una atmosfera real, l'atenuació també depèn de la disminució de la pressió i de la densitat de l'aire amb l'altura; la llei baromètrica associada a Laplace ho expressa, de manera simplificada, com $p(z)=p_0 e^{-z/H}$ en una atmosfera isoterma. Per això, quan el Sol és baix, la radiació no només es reparteix sobre una superfície més gran: també recorre un camí atmosfèric més llarg fins a arribar al sòl {% cite gilOlcinaOlcinaClimatologiaGeneral1997 bouguerEssaiOptique1729 lambertPhotometria1760 laplaceMecaniqueCeleste1805 %}.
 
-::: subfigures a+b/c+d "Translació, rotació, eclíptica i incidència solar, ordenades de l'escala orbital al detall terrestre. La subfigura a situa solsticis, equinoccis, periheli i afeli; la subfigura b mostra la il·luminació de la Terra durant la translació anual; la subfigura c aïlla la rotació, l'eix terrestre i la divisió entre hemisferi il·luminat i hemisferi nocturn; la subfigura d centra la lectura en l'obliqüitat i en el repartiment de la radiació segons la latitud. Llicència: pendent de revisar."
+::: subfigures a+b/c+d "Moviments de la Terra i incidència solar, de l'escala orbital al detall terrestre. Llicència: pendent de revisar."
 ![Esquema de l'òrbita terrestre amb solsticis, equinoccis, periheli i afeli]({{ site.baseurl }}/assets/img/coordinate-systems/earth-plane-seasons.png "L'òrbita terrestre és lleugerament el·líptica: el periheli se situa a principis de gener i l'afeli a principis de juliol, mentre que solsticis i equinoccis responen sobretot a l'obliqüitat de l'eix.")
 ![Esquema de la translació terrestre al voltant del Sol amb la il·luminació canviant durant l'any]({{ site.baseurl }}/assets/img/coordinate-systems/earth-translation-illumination.png "La translació al voltant del Sol fa visible la successió estacional; l'òrbita i les mides dels cossos es representen de manera esquemàtica i no a escala.")
 ![Esquema de la rotació terrestre amb l'eix inclinat, els raigs solars i el límit entre la part il·luminada i la part nocturna]({{ site.baseurl }}/assets/img/coordinate-systems/earth-rotation-illumination.png "La rotació terrestre explica l'alternança entre dia i nit, mentre que l'eix inclinat i els paral·lels principals permeten relacionar la il·luminació amb latitud, tròpics i cercles polars.")
@@ -60,7 +62,7 @@ Aquestes idees connecten la representació de la Terra amb problemes que apareix
 
 ## Modelar la forma de la Terra
 
-Per expressar una posició o una altura cal distingir la superfície física del planeta dels models regulars que permeten calcular-la.
+Per expressar una posició o una altura cal distingir la superfície física del planeta dels models regulars que permeten calcular-la. La decisió no consisteix a escollir un únic model «més real», sinó a associar cada magnitud amb la referència adequada: l'el·lipsoide permet calcular coordenades, el geoide dona una referència física a les altures i el marc materialitza el sistema mitjançant observacions i punts controlats. Aquesta distinció permet detectar quan dues dades coincideixen en planta però no comparteixen la mateixa referència vertical.
 
 >>>>> Aquesta fase diferencia els models físics i matemàtics que permeten expressar posicions i altures sobre la Terra.
 >>>>>
@@ -81,7 +83,7 @@ En una secció meridiana, l'el·lipsoide es pot descriure mitjançant el semieix
 
 Els el·lipsoides es poden ajustar per a territoris, èpoques i finalitats diferents. Alguns models històrics o regionals buscaven encaixar molt bé amb una part concreta del món; altres, com els que s'utilitzen en marcs globals contemporanis, busquen una coherència planetària. Això explica que un canvi de dàtum pugui desplaçar una capa encara que la projecció sembli la mateixa: no només canvia la manera de dibuixar sobre el pla, sinó també la manera d'ancorar el model a la Terra.
 
-::: subfigures a+b/c "Geoide i el·lipsoide com a models de referència complementaris. El geoide descriu una superfície física vinculada a la gravetat; l'el·lipsoide és una superfície matemàtica regular que pot ajustar-se globalment o prioritzar una regió."
+::: subfigures a+b/c "Geoide i el·lipsoide com a models de referència complementaris."
 ![Visualització global del geoide GOCO06s amb colors blaus i vermells que indiquen l'altura del geoide respecte d'un el·lipsoide de referència]({{ site.baseurl }}/assets/img/coordinate-systems/nasa-geoid-goco06s-2026.png "Geoide GOCO06s, amb l'altura exagerada 10.000 vegades. Visualització de Mark SubbaRao, NASA/GSFC, basada en el model gravitatori GOCO06s")
 ![Secció el·líptica amb el semieix major equatorial a i el semieix menor polar b]({{ site.baseurl }}/assets/img/coordinate-systems/ellipse-semi-axes.svg "Semieixos a i b d'un el·lipsoide de revolució; adaptació de M. W. Toews, Wikimedia Commons, CC0 1.0")
 ![Esquema amb un el·lipsoide global i dos el·lipsoides locals que s'ajusten millor a Amèrica del Nord o a Europa]({{ site.baseurl }}/assets/img/coordinate-systems/ellipsoid-local-fit.svg "Esquema propi, no a escala: les formes, els desplaçaments i les separacions estan exagerats per mostrar com un el·lipsoide local pot encaixar millor amb una regió, mentre que l'el·lipsoide global reparteix l'encaix a escala planetària")
@@ -105,13 +107,11 @@ En alguns països i sistemes verticals s'utilitzen altures normals i quasi-geoid
 
 Les coordenades només tenen sentit quan es coneix respecte de quin model i marc s'han definit. El **dàtum geodèsic** defineix com l'el·lipsoide i el sistema de coordenades es relacionen amb la Terra: origen, orientació, escala, el·lipsoide adoptat i, segons el cas, convencions de mesura i època. El **marc de referència** materialitza aquest dàtum amb una xarxa de punts, coordenades, observacions i procediments que permeten obtenir posicions consistents. En sistemes moderns, el marc també ha de tenir en compte que les plaques tectòniques es mouen i que les coordenades poden estar associades a una època.
 
-#### Vèrtexs geodèsics i control sobre el terreny
-
 Un marc de referència no queda materialitzat només perquè existeixi una definició matemàtica. Calen estacions i senyals estables amb coordenades determinades mitjançant observacions, ajustos i controls comuns. Un **vèrtex geodèsic** és un d'aquests punts de control: pot adoptar la forma d'un pilar visible sobre un cim, una marca metàl·lica fixada a la roca o una estació GNSS permanent. En aquest context, *vèrtex* no significa un node qualsevol d'un polígon digital, sinó un punt físic documentat que forma part d'una xarxa geodèsica.
 
 Històricament, els vèrtexs situats en llocs intervisibles permetien construir xarxes de triangulació: a partir d'una base i de mesures angulars es propagaven posicions sobre el territori. La topografia de detall s'hi podia enllaçar ocupant un punt conegut, orientant l'instrument cap a un altre i mesurant angles, distàncies i desnivells fins als elements locals. Avui les observacions GNSS, les estacions permanents i els serveis de correcció en temps real han reduït la dependència de la intervisibilitat, però no han eliminat el principi: un aixecament ha de quedar vinculat a un marc conegut i s'ha de poder comprovar amb punts de control {% cite vanSickleBasicGISCoordinates2017 %}.
 
-::: subfigures a+b/c "Materialització de referències geodèsiques i verticals. La subfigura a situa un vèrtex geodèsic en un cim, on l'horitzó obert facilitava la intervisibilitat; la subfigura b mostra el detall d'una placa altimètrica referida al nivell mitjà del Mediterrani a Alacant; la subfigura c relaciona una xarxa de punts coneguts amb un aixecament topogràfic local. Les dues fotografies són exemples de llocs i senyals diferents: la placa altimètrica no és un detall del vèrtex de la primera imatge. El senyal físic no és el dàtum, sinó una materialització que permet usar i verificar una referència sobre el terreny."
+::: subfigures a+b/c "Materialització de referències geodèsiques i verticals mitjançant senyals físics i punts de control."
 ![Vèrtex geodèsic de Cabeza Mediana situat en un cim de la serra de Guadarrama]({{ site.baseurl }}/assets/img/coordinate-systems/geodetic-vertex-cabeza-mediana.jpg "Vèrtex geodèsic de Cabeza Mediana, serra de Guadarrama. Fotografia de Miguel303xm, 14 de febrer de 2009; Wikimedia Commons, CC BY 3.0.")
 ![Placa altimètrica històrica d'Àvila amb una cota referida al nivell mitjà del Mediterrani a Alacant]({{ site.baseurl }}/assets/img/coordinate-systems/vertical-benchmark-avila.jpg "Placa de la Direcció General de l'Institut Geogràfic i Estadístic a Àvila. Fotografia de L. Vadillo - MaLéPhotoSpain, 15 de juny de 2022; Wikimedia Commons, CC BY-SA 4.0. Còpia redimensionada a 1280 píxels sense modificar-ne el contingut.")
 ![Esquema d'una xarxa geodèsica enllaçada amb un aixecament topogràfic local]({{ site.baseurl }}/assets/img/coordinate-systems/geodetic-reference-network.svg "Els punts de control comparteixen un marc, unes coordenades, una data i una qualitat conegudes. L'aixecament local transfereix aquesta referència a geometries de més detall. Esquema docent d'elaboració pròpia, 25 d'agost de 2026.")
@@ -119,7 +119,7 @@ Històricament, els vèrtexs situats en llocs intervisibles permetien construir 
 
 La [fotografia del vèrtex de Cabeza Mediana](https://commons.wikimedia.org/wiki/File:Cabeza_Mediana_cima.JPG) permet reconèixer el pilar dins del paisatge, mentre que la [placa altimètrica d'Àvila](https://commons.wikimedia.org/wiki/File:20220615_AVILA_06-1.jpg) fa explícites una cota i la superfície vertical de referència. La primera forma part d'una xarxa geodèsica; la segona conserva una referència d'altura en un edifici. Llegir-les conjuntament ajuda a distingir la posició d'un punt, la seva materialització física i el significat de l'altura indicada.
 
-El [cercador de vèrtexs geodèsics REGENTE i ROI de l'IGN](https://www.ign.es/web/gds-vertices) permet consultar punts per nom, número, full MTN50, municipi o rang de coordenades. Per a cada vèrtex publica les coordenades geogràfiques i UTM, la data de compensació, les característiques físiques del pilar i una descripció de la situació. Aquesta fitxa és tan important com el monument: abans d'utilitzar un senyal cal comprovar la xarxa, el sistema de referència, la data, l'estat i la precisió, no limitar-se a trobar una estructura sobre el terreny.
+El [cercador de vèrtexs geodèsics REGENTE i ROI de l'IGN](https://www.ign.es/web/gds-vertices) permet consultar punts per nom, número, full MTN50, municipi o rang de coordenades. Per a cada vèrtex publica les coordenades geogràfiques i UTM, la data de compensació, les característiques físiques del pilar i una descripció de la situació. Aquesta fitxa és tan important com el monument: l'ús d'un senyal exigeix comprovar la xarxa, el sistema de referència, la data, l'estat i la precisió, no limitar-se a trobar una estructura sobre el terreny.
 
 També hi ha dàtums verticals. Un dàtum horitzontal permet expressar posicions en latitud, longitud o coordenades projectades; un dàtum vertical defineix de què depèn l'altura. En termes docents, l'el·lipsoide resol sobretot el problema geomètric de situar punts sobre una superfície regular, mentre que el geoide i els models gravimètrics resolen el problema físic de comparar altures. Aquesta separació no és absoluta, però ajuda a entendre per què el treball amb capes pot necessitar informació diferent per a planta i per a elevació.
 
@@ -129,7 +129,7 @@ Aquesta cadena explica per què dos parells de nombres no es poden comparar nom�
 
 ## Coordenades, projeccions i mesura territorial
 
-Una posició només es pot interpretar i mesurar correctament quan se'n coneixen el tipus de coordenades, les unitats i la projecció.
+Escollir coordenades no és només triar com s'escriu una posició. Les coordenades geogràfiques faciliten la localització angular sobre el model terrestre, mentre que unes coordenades projectades permeten treballar en un pla quan la projecció és adequada al territori i a l'operació. La comparació de posicions i el càlcul de distàncies o superfícies exigeixen identificar el tipus de coordenades, l'ordre dels eixos, les unitats, el sistema de referència i l'àrea d'ús.
 
 >>>>> Aquesta fase aplica coordenades i projeccions a la localització, la comparació i la mesura de posicions territorials.
 >>>>>
@@ -147,7 +147,7 @@ La latitud i la longitud expressen posicions mitjançant unitats angulars. Valor
 
 #### Localitzar coordenades sobre un mapamundi
 
-Un mapamundi amb reticle permet practicar la lectura de coordenades abans d'entrar en un SIG. La tasca no consisteix a endevinar topònims, sinó a relacionar meridians, paral·lels, hemisferis i ordre d'eixos. En la xarxa geogràfica de la figura, els paral·lels i els meridians apareixen traçats a intervals angulars regulars: cada línia representa el mateix salt en graus que la línia veïna, encara que aquesta regularitat no equivalgui a distàncies terrestres idèntiques. Aquesta equidistància angular permet interpolar una posició entre dues línies i entendre el reticle com una xarxa de latituds i longituds.
+La lectura de coordenades sobre un mapamundi amb reticle és una fase preparatòria del treball amb un SIG. La tasca no consisteix a endevinar topònims, sinó a relacionar meridians, paral·lels, hemisferis i ordre d'eixos. En la xarxa geogràfica de la figura, els paral·lels i els meridians apareixen traçats a intervals angulars regulars: cada línia representa el mateix salt en graus que la línia veïna, encara que aquesta regularitat no equivalgui a distàncies terrestres idèntiques. Aquesta equidistància angular permet interpolar una posició entre dues línies i entendre el reticle com una xarxa de latituds i longituds.
 
 Per orientar aquesta lectura cal reconèixer algunes línies principals. L'equador és el paral·lel de `0°` i separa l'hemisferi nord de l'hemisferi sud. El meridià de Greenwich és el meridià de `0°` i serveix d'origen per comptar les longituds cap a l'est i cap a l'oest. A l'altra banda del globus, l'antimeridià correspon a `180°` i marca el límit on les longituds est i oest es troben. Si el mapa no etiqueta totes les línies, primer cal localitzar aquests eixos de referència i després deduir l'interval del reticle. En els exemples següents les xifres s'interpreten com a graus decimals; si una font utilitza graus i minuts, els minuts han d'estar entre `0'` i `59'`.
 
@@ -162,7 +162,7 @@ Per orientar aquesta lectura cal reconèixer algunes línies principals. L'equad
 | F | `20° N` | `160° E` |
 :::
 
-::: subfigures a/b "Lectura de coordenades geogràfiques sobre un mapamundi. La subfigura a funciona com a mapa mut: el reticle de 10° no està numerat i les posicions s'han de deduir des de l'equador, Greenwich i l'antimeridià. La subfigura b permet comprovar els sis punts. Projecció Robinson; elaboració pròpia a partir de la base mundial del conjunt `maps`."
+::: subfigures a/b "Lectura i comprovació de coordenades geogràfiques sobre un mapamundi. Projecció Robinson; elaboració pròpia a partir de la base mundial del conjunt `maps`."
 ![Mapamundi mut amb reticle de 10° sense numeració i amb l'equador, Greenwich i l'antimeridià reforçats]({{ site.baseurl }}/assets/img/coordinate-systems/geolocation-exercise-world-map.svg "Mapa mut per localitzar les coordenades A–F a partir dels eixos geogràfics principals.")
 ![Mapamundi resolt amb els sis punts A–F situats sobre el mateix reticle sense numeració]({{ site.baseurl }}/assets/img/coordinate-systems/geolocation-exercise-world-map-solved.svg "Solució de l'exercici de localització de coordenades geogràfiques.")
 :::
@@ -190,9 +190,15 @@ Per comprovar el procediment sobre un mapa, es pot utilitzar aquest [mapa intera
 
 #### Longitud, hora solar i hora civil
 
-Els fusos horaris s'entenen millor després de la longitud geogràfica i abans de passar a les coordenades projectades. La Terra completa aproximadament una rotació de `360°` en 24 hores solars mitjanes: `15°` de longitud corresponen a una hora i `1°`, a uns quatre minuts. Per això el migdia solar mitjà no arriba simultàniament a dos llocs situats sobre meridians diferents. Aquesta relació geomètrica explica l'origen dels fusos, però no determina per si sola l'hora que marca el rellotge civil.
+La seqüència didàctica situa els fusos horaris entre la longitud geogràfica i les coordenades projectades. La Terra completa aproximadament una rotació de `360°` en 24 hores solars mitjanes: `15°` de longitud corresponen a una hora i `1°`, a uns quatre minuts. Per això el migdia solar mitjà no arriba simultàniament a dos llocs situats sobre meridians diferents. Aquesta relació geomètrica explica l'origen dels fusos, però no determina per si sola l'hora que marca el rellotge civil.
 
 La coordinació de ferrocarrils, comunicacions i administracions va exigir substituir moltes hores locals per referències comunes. La Conferència Internacional del Meridià de 1884 va adoptar Greenwich com a origen de les longituds i va definir un dia universal de referència. El model teòric divideix el globus en 24 fusos d'uns `15°`, però els límits civils segueixen sovint fronteres i decisions polítiques, i els desplaçaments respecte d'UTC també poden ser de mitja hora o d'un quart d'hora. Compartir meridià no obliga a compartir hora oficial, i conèixer una longitud no basta per deduir-la {% cite planesasHoraOficialEspana2013 %}.
+
+El [mapa mundial dels fusos horaris de Wikimedia Commons](https://commons.wikimedia.org/wiki/File:World_Time_Zones_Map.svg) permet comparar aquesta geometria ideal amb les convencions civils observades. Els desplaçaments pròxims a meridians consecutius recorden la regla dels `15°`, però les àrees acolorides es desvien d'aquest patró per seguir fronteres, territoris i acords administratius. També hi apareixen desplaçaments fraccionaris, com `UTC+05:30`, `UTC+05:45` o `UTC+12:45`, que no encaixen en vint-i-quatre franges d'una hora exacta. Quan una àrea mostra dos valors, el mapa diferencia l'hora estàndard del desplaçament estacional indicat a la llegenda; per convertir una hora real continua fent falta conèixer la data.
+
+![Mapa mundial dels fusos horaris civils i dels desplaçaments respecte d'UTC]({{ site.baseurl }}/assets/img/coordinate-systems/world-time-zones-map-es-2026-08-23.png "Mapa mundial dels fusos horaris civils observats de facto. Els límits irregulars, els desplaçaments fraccionaris i els canvis estacionals mostren que l'hora oficial no es dedueix només de la longitud. Heitordp, World Time Zones Map, revisió del 23 d'agost de 2026; contorns basats en la CIA i informació horària basada en IANA; Wikimedia Commons, domini públic. Renderització oficial en castellà incorporada sense modificar."){: data-figure-width-web="100%" data-figure-width-pdf="100%"}
+
+Per llegir-lo, es pot partir d'`UTC±00:00` i sumar hores cap a l'est o restar-ne cap a l'oest, però aquesta operació només dona un desplaçament, no totes les regles d'una zona temporal. La línia internacional de canvi de data introdueix, a més, un canvi de dia civil. El mapa és útil per entendre el patró global i les excepcions; no substitueix una base de dades horària actualitzada quan cal resoldre un instant concret.
 
 ::: table "Quatre conceptes temporals que no s'han de confondre"
 | Concepte | Què representa | Què cal conservar en unes dades |
@@ -217,7 +223,7 @@ La coordenada UTM necessita més informació que els dos nombres. `ETRS89 / UTM 
 
 Quan la mateixa lògica s'aplica a una quadrícula, el parell E/N ja no descriu necessàriament un punt d'interès, sinó el punt d'origen que dona nom a un quadrat. Les especificacions de les quadrícules UTM de l'ICGC creen polígons d'1 km o 10 km a partir d'un origen UTM ETRS89 i els assignen una [nomenclatura MGRS](https://www.icgc.cat/es/Ayuda/Preguntas-frecuentes/Coordenadas-de-tipo-31TCG213911), per exemple `31T CG 61 13`. Això vol dir que el codi representa tota la cel·la de la quadrícula; la coordenada associada serveix per indexar-la i localitzar-ne la cantonada de referència, no per substituir el polígon per un punt central {% cite icgcQuadriculesUtmEspecificacions2026 %}.
 
-::: subfigures a+b/c+d "Del reticle UTM global al reticle local de Vila-seca. La subfigura a mostra els fusos i bandes UTM del planeta; la subfigura b segueix el fus 31N des de l'equador fins al límit de 84° N i hi situa Vila-seca; la subfigura c mostra com l'equador i el fals est del meridià central originen les coordenades N i E; la subfigura d amplia un reticle quilomètric local i manté explícit l'equador com a origen de N, tot i que queda fora del mapa. Les subfigures b, c i d són esquemes propis basats en definicions EPSG i transformacions de coordenades."
+::: subfigures a+b/c+d "Del reticle UTM global al reticle local de Vila-seca. Esquemes propis basats en definicions EPSG i transformacions de coordenades."
 ![Reticle mundial de fusos UTM i bandes latitudinals; Catalunya se situa al fus 31 i a la banda T, mentre que EPSG:25831 usa 31N per indicar el fus 31 de l'hemisferi nord]({{ site.baseurl }}/assets/img/coordinate-systems/utm-zones-world.jpg "Fusos longitudinals i bandes latitudinals del reticle UTM. Font: Jan Krymmel, Wikimedia Commons, a partir de NASA Visible Earth; domini públic, CC BY-SA 3.0 i GFDL.")
 ![Fus UTM 31N entre l'equador i 84° N, delimitat pels meridians 0° E i 6° E, amb Vila-seca situada a 41,10° N]({{ site.baseurl }}/assets/img/coordinate-systems/utm-zone-31n.svg "El fus 31 és una franja de 6° de longitud. En EPSG:25831, la N selecciona la part situada entre l'equador i 84° N; no identifica una banda MGRS. Figura d'elaboració pròpia, revisada el 25 d'agost de 2026.")
 ![Esquema de les coordenades UTM E i N amb el fals est de 500.000 m al meridià central i l'origen N igual a zero metres a l'equador]({{ site.baseurl }}/assets/img/coordinate-systems/utm-zone-internal-coordinates.svg "La coordenada E de Vila-seca és inferior a 500.000 m perquè queda a l'oest del meridià central. A l'hemisferi nord, la coordenada N es compta des de l'equador. Esquema conceptual d'elaboració pròpia, no a escala, revisat el 25 d'agost de 2026.")
@@ -232,7 +238,7 @@ Quan la mateixa lògica s'aplica a una quadrícula, el parell E/N ja no descriu 
 | Torre d'en Dolça | `1.1599211, 41.0989127` | `zona 31N · E 345474 m · N 4551369 m` |
 :::
 
-Les posicions geogràfiques de la taula provenen d'OpenStreetMap i s'han transformat amb [PROJ 9.4.0](https://proj.org/), una biblioteca oberta que utilitzen diversos programes geoespacials per transformar coordenades entre sistemes de referència. El nom documenta com s'ha fet el càlcul; no és una eina que l'estudiant hagi d'executar en aquesta activitat. La pàgina de [drets d'autor i atribució d'OpenStreetMap](https://www.openstreetmap.org/copyright) n'estableix les condicions d'ús i l'atribució, però no verifica directament aquestes coordenades. Els resultats s'han arrodonit al metre i no representen un aixecament topogràfic. La lectura relativa és immediata: la Facultat i el Castell tenen gairebé la mateixa E, però el Castell és aproximadament 1,3 km més al nord; la Torre d'en Dolça queda aproximadament 1 km més a l'est de tots dos. En un reticle d'1 km, la [lectura de coordenades UTM](https://www.usgs.gov/faqs/how-are-utm-coordinates-measured-usgs-topographic-maps) comença identificant la línia d'est situada a l'esquerra del punt i després la línia de nord situada per sota; els dígits addicionals precisen la posició dins del quadrat.
+Les posicions geogràfiques de la taula provenen d'OpenStreetMap i s'han transformat amb [PROJ 9.4.0](https://proj.org/), una biblioteca oberta que utilitzen diversos programes geoespacials per transformar coordenades entre sistemes de referència. La menció de PROJ identifica la biblioteca utilitzada; la documentació del càlcul també ha de conservar els CRS d'origen i destinació i l'operació de transformació. No és una eina que l'estudiant hagi d'executar en aquesta activitat. La pàgina de [drets d'autor i atribució d'OpenStreetMap](https://www.openstreetmap.org/copyright) n'estableix les condicions d'ús i l'atribució, però no verifica directament aquestes coordenades. Els resultats s'han arrodonit al metre i no representen un aixecament topogràfic. La lectura relativa és immediata: la Facultat i el Castell tenen gairebé la mateixa E, però el Castell és aproximadament 1,3 km més al nord; la Torre d'en Dolça queda aproximadament 1 km més a l'est de tots dos. En un reticle d'1 km, la [lectura de coordenades UTM](https://www.usgs.gov/faqs/how-are-utm-coordinates-measured-usgs-topographic-maps) comença identificant la línia d'est situada a l'esquerra del punt i després la línia de nord situada per sota; els dígits addicionals precisen la posició dins del quadrat.
 
 >>>> **Un parell de coordenades no identifica per si sol un lloc.** Interpretar metres com si fossin graus, invertir els eixos o assignar un EPSG només perquè la capa aparegui prop del territori esperat pot ocultar l'error. Primer s'han de revisar la font, les unitats, l'ordre dels eixos i l'extensió; després es decideix l'operació adequada.
 
@@ -242,7 +248,7 @@ Una **projecció cartogràfica** transforma matemàticament posicions d'una supe
 
 Una manera clàssica d'introduir les projeccions és imaginar una superfície auxiliar que rep la informació del globus i després es desplega: un **pla** en les projeccions azimutals o zenitals, un **con** en les projeccions còniques i un **cilindre** en les projeccions cilíndriques. Aquesta imatge ajuda a entendre per què una projecció pot ajustar-se millor a unes zones que a unes altres. Si la superfície toca el globus, parlem d'una posició **tangent**; si el talla, de posició **secant**. En la figura, el vermell assenyala els punts o paral·lels on l'escala és exacta, el taronja indica expansió de l'escala i el blau, compressió. També pot canviar l'orientació: normal, transversa o obliqua, segons quin eix o franja del territori es vulgui privilegiar.
 
-![Comparació de superfícies cilíndriques, còniques i azimutals en posició tangent i secant]({{ site.baseurl }}/assets/img/coordinate-systems/comparison-cartography-surface-development-ca.svg "La posició tangent produeix un punt o un paral·lel d'escala exacta; la secant en produeix dos, excepte en el cas azimutal, on el contacte és circular. El vermell indica escala exacta, el taronja expansió i el blau compressió. CMG Lee, US government, Clindberg i Palosirkka, «Comparison of cartography surface development», Wikimedia Commons, 12 de desembre de 2019; revisió portuguesa de Vickvvy, 30 de juliol de 2024; adaptació al català del manual TIGIT, 25 d'agost de 2026, CC BY-SA 4.0."){: data-figure-width-web="17.5rem" data-figure-width-pdf="41%"}
+![Comparació de superfícies cilíndriques, còniques i azimutals en posició tangent i secant]({{ site.baseurl }}/assets/img/coordinate-systems/comparison-cartography-surface-development-ca.svg "Superfícies cilíndriques, còniques i azimutals en posició tangent i secant. CMG Lee, US government, Clindberg i Palosirkka, Wikimedia Commons, 2019; revisió de Vickvvy, 2024; adaptació catalana TIGIT, 2026, CC BY-SA 4.0."){: data-figure-width-web="17.5rem" data-figure-width-pdf="41%"}
 
 En algunes projeccions azimutals perspectives també és determinant la posició del **centre de projecció**, que es pot imaginar com un punt de llum. Els raigs parteixen d'aquest centre, travessen punts de l'esfera i tallen el pla tangent. Si el centre se situa al centre de l'esfera, la projecció és **gnomònica**; si se situa sobre la superfície al punt oposat al contacte amb el pla, és **estereogràfica**; i si s'allunya idealment fins a l'infinit, els raigs esdevenen paral·lels i la projecció és **ortogràfica**. La posició modifica la separació dels punts projectats i les propietats resultants: la gnomònica converteix els grans cercles en rectes, l'estereogràfica és conforme i l'ortogràfica produeix l'aparença d'un globus observat des de molt lluny.
 
@@ -261,7 +267,7 @@ Projecció equidistant
 
 Les **indicatrius de Tissot** parteixen de cercles iguals i molt petits sobre la superfície terrestre i mostren com els transforma una projecció. En la projecció conforme de Mercator continuen sent circulars, però augmenten d'àrea cap als pols. En la projecció equivalent de Mollweide conserven l'àrea relativa i canvien de forma. La comparació permet observar que conservar una propietat implica deformar-ne d'altres.
 
-::: subfigures a+b "Indicatrius de Tissot en una projecció conforme i una d'equivalent. Figures originals sense modificar de Justin Kunimune, amb costa de Natural Earth; Wikimedia Commons, CC BY-SA 4.0."
+::: subfigures a+b "Indicatrius de Tissot en projeccions conforme i equivalent. Figures de Justin Kunimune amb costa de Natural Earth; Wikimedia Commons, CC BY-SA 4.0."
 ![En el mapamundi de Mercator, les indicatrius són circulars i augmenten de mida cap als pols]({{ site.baseurl }}/assets/img/coordinate-systems/mercator-tissot.svg "Mercator conserva localment els angles, però deforma les àrees")
 ![En el mapamundi de Mollweide, les indicatrius mantenen l'àrea i es deformen en forma d'el·lipse]({{ site.baseurl }}/assets/img/coordinate-systems/mollweide-tissot.svg "Mollweide conserva les àrees, però deforma les formes")
 :::
@@ -274,7 +280,7 @@ La geometria de la superfície auxiliar orienta aquest patró. Una azimutal conc
 
 Algunes parts del món poden quedar no només deformades, sinó excloses. Mercator no representa els pols perquè quedarien a una distància infinita; una ortogràfica mostra només l'hemisferi orientat cap a l'observador; una gnomònica no pot prolongar sense límit els punts propers als 90° del centre; i un CRS UTM està pensat per al seu fus i la seva àrea d'ús, no per a calcular indistintament sobre tot el planeta. Retallar el mapa no elimina aquesta limitació: cal que l'extensió representada i l'operació coincideixin amb la zona on la projecció controla la deformació {% cite snyderMapProjections1987 %}.
 
-::: subfigures a+b/c+d/e+f "Sis projeccions calculades amb la mateixa base mundial i una retícula comparable. Les quatre primeres mostren alternatives globals; l'ortogràfica fa explícit que una vista perspectiva només ensenya un hemisferi; la Mercator transversa mostra una projecció regional que concentra la precisió prop del fus. Figures d'elaboració pròpia a partir de la base mundial del conjunt `maps`."
+::: subfigures a+b/c+d/e+f "Sis projeccions calculades amb la mateixa base mundial i una retícula comparable. Elaboració pròpia a partir del conjunt `maps`."
 ![Mapamundi de Mercator, conforme, amb l'àrea ampliada cap a les latituds altes i els pols exclosos]({{ site.baseurl }}/assets/img/coordinate-systems/projection-gallery-mercator.svg "Mercator conserva angles locals, però l'escala i l'àrea creixen amb la latitud; la figura es limita a 80° N i 80° S.")
 ![Mapamundi en projecció cilíndrica equivalent de Lambert, amb àrees conservades i formes comprimides a latituds altes]({{ site.baseurl }}/assets/img/coordinate-systems/projection-gallery-lambert-cylindrical-equal-area.svg "La projecció cilíndrica equivalent de Lambert conserva les àrees relatives, però no els angles ni les formes.")
 ![Mapamundi de Mollweide, equivalent i de contorn el·líptic]({{ site.baseurl }}/assets/img/coordinate-systems/projection-gallery-mollweide.svg "Mollweide conserva l'àrea mundial i reparteix les deformacions de forma dins d'un contorn el·líptic.")
@@ -283,7 +289,7 @@ Algunes parts del món poden quedar no només deformades, sinó excloses. Mercat
 ![Mercator transversa ETRS89 UTM zona 31N aplicada a Europa occidental]({{ site.baseurl }}/assets/img/coordinate-systems/projection-gallery-transverse-mercator.svg "ETRS89 / UTM zona 31N és conforme i adequada prop del fus 31; l'error d'escala augmenta en allunyar-se del meridià central.")
 :::
 
-#### Projeccions especials
+### Projeccions especials
 
 Les famílies cilíndrica, cònica i azimutal són una primera classificació útil, però no esgoten les construccions possibles. Algunes projeccions es defineixen amb transformacions matemàtiques que produeixen contorns pseudocilíndrics, quadrats o aparentment tridimensionals. Aquestes formes no són només una curiositat visual: permeten comprovar que el contorn del mapamundi i la propietat geomètrica que conserva són decisions diferents.
 
@@ -293,7 +299,7 @@ La projecció **sinusoïdal**, també anomenada Sanson–Flamsteed, és pseudoci
 
 La projecció **quincuncial de Peirce** transforma el globus en un quadrat que es pot repetir com una tessel·lació. És conforme excepte en quatre punts singulars de l'equador: lluny d'aquests punts, les indicatrius conserven la forma circular encara que canviïn de mida; a les singularitats, la deformació creix bruscament. La projecció **Armadillo de Raisz** produeix, en canvi, una vista que recorda una perspectiva sobre una superfície corba i permet mostrar més d'un hemisferi. No és conforme ni equivalent; les indicatrius esdevenen el·lipses i canvien de mida segons la posició.
 
-::: subfigures a+b/c "Tres projeccions que amplien les famílies habituals. La subfigura a mostra una projecció sinusoïdal equivalent d'elaboració pròpia. La subfigura b mostra la projecció quincuncial de Peirce amb indicatrius de Tissot. La subfigura c mostra la projecció Armadillo de Raisz i combina la deformació angular i d'àrea en les indicatrius. Les dues darreres figures es conserven sense modificacions des de Wikimedia Commons."
+::: subfigures a+b/c "Tres projeccions especials que amplien les famílies habituals. Crèdits i llicències detallats als panells."
 ![Mapamundi sinusoïdal equivalent, amb paral·lels rectes i meridians corbats excepte el central]({{ site.baseurl }}/assets/img/coordinate-systems/projection-gallery-sinusoidal.svg "La projecció sinusoïdal conserva les àrees, però deforma progressivament les formes cap als marges. Base mundial: conjunt `maps`.")
 ![Projecció quincuncial de Peirce en un quadrat, amb indicatrius circulars excepte als quatre punts singulars de l'equador]({{ site.baseurl }}/assets/img/coordinate-systems/projection-special-peirce-quincuncial-tissot.svg "Projecció quincuncial de Peirce amb retícula de 10 graus i indicatrius de Tissot de 1.000 km. Justin Kunimune, Wikimedia Commons, CC0 1.0.")
 ![Projecció Armadillo de Raisz amb retícula i indicatrius que mostren deformació angular i variació d'àrea]({{ site.baseurl }}/assets/img/coordinate-systems/projection-special-armadillo-tissot.svg "Projecció Armadillo de Raisz amb indicatrius de Tissot; els tons clars indiquen menys deformació, el vermell més deformació angular i el verd més variació d'àrea. Strebe, Wikimedia Commons, CC BY-SA 4.0.")
@@ -305,13 +311,11 @@ Les figures originals es poden consultar a les fitxes de Wikimedia Commons de la
 
 No cal memoritzar les fórmules de tota la galeria. Cal poder reconèixer quina propietat es prioritza, on es concentra la deformació, quina part del món queda inclosa i si l'extensió és coherent amb la tasca. Localitzar municipis, mesurar distàncies, calcular superfícies o construir un mapamundi no imposen exactament les mateixes condicions.
 
-Una capa pot semblar ben situada i, tanmateix, no ser adequada per calcular àrees o distàncies. La comprovació ha d'incloure el sistema de referència, les unitats i l'àrea d'ús, no només la coincidència visual amb un mapa de fons.
-
 ### Explorar com es construeix una projecció
 
 El [GITTA Map Projector](https://gevian.github.io/GITTA-MP/) de Magnus Heitzler permet passar d'una definició abstracta a una construcció manipulable. El mode **Advanced** separa la superfície de projecció, la seva orientació, el centre de projecció i les capes de fronteres, retícula i indicatrius de Tissot. També permet aplanar un cilindre o un con i observar com una funció d'escalat modifica el resultat. El recurs va ser desenvolupat per a la plataforma GITTA a l'ETH Zürich i el [repositori original](https://github.com/gevian/GITTA-MP) es distribueix sota GPL v3.
 
-![Mode avançat del GITTA Map Projector amb una projecció de Mercator aplanada, la funció d'escalat i les indicatrius de Tissot]({{ site.baseurl }}/assets/img/coordinate-systems/gitta-map-projector-mercator-advanced-2026-08-12.png "Construcció de Mercator a partir d'una projecció cilíndrica central aplanada i escalada. S'hi mostren fronteres, retícula, indicatrius de Tissot, paràmetres geomètrics i funció d'escalat. Captura pròpia del mode Advanced, 12 d'agost de 2026. GITTA Map Projector, Magnus Heitzler, Institute of Cartography and Geoinformation, ETH Zürich, 2019, GPL v3."){: data-figure-width="54rem"}
+![Mode avançat del GITTA Map Projector amb una projecció de Mercator aplanada, la funció d'escalat i les indicatrius de Tissot]({{ site.baseurl }}/assets/img/coordinate-systems/gitta-map-projector-mercator-advanced-2026-08-12.png "Mode Advanced del GITTA Map Projector amb Mercator i indicatrius de Tissot. Captura pròpia, 12 d'agost de 2026; Magnus Heitzler, ETH Zürich, 2019, GPL v3."){: data-figure-width="54rem"}
 
 Una exploració breu pot començar a **Projection Surfaces** per construir un pla, un con i un cilindre; continuar a **Map Distortion Basics** activant les indicatrius; i acabar a **The Mercator Projection** amb la seqüència **Central Cylindrical Projection**, **flatten** i **Scale Central Cylindrical to Mercator**. El model ajuda a entendre propietats i transformacions, però no implica que totes les projeccions cartogràfiques siguin projeccions geomètriques de llum sobre una superfície: moltes es defineixen directament mitjançant fórmules.
 
@@ -333,7 +337,7 @@ La campanya de Peters va assenyalar un efecte comunicatiu real: un mapamundi Mer
 
 ## Sistemes de referència espacial
 
-Quan diverses capes s'han de comparar, el sistema de referència converteix la definició geodèsica en decisions explícites sobre coordenades, projectes i transformacions.
+Una capa pot semblar ben situada i, tanmateix, no ser adequada per calcular àrees o distàncies. Quan diverses capes s'han de comparar, la decisió no és trobar un codi que les faci coincidir visualment, sinó comprovar quin sistema descriu realment cada geometria, quines unitats i quina àrea d'ús declara, quin convé per a l'operació i si cal assignar una definició absent o calcular coordenades noves mitjançant una reprojecció.
 
 >>>>> Aquesta fase converteix la definició d'un sistema de referència espacial en decisions explícites sobre capes, projectes i transformacions.
 >>>>>
@@ -349,59 +353,67 @@ Un codi EPSG és un identificador curt per referir-se a una definició geodèsic
 
 A QGIS, seleccionar el CRS d'una capa o del projecte sovint vol dir triar una d'aquestes definicions. `EPSG:4326` identifica el sistema geogràfic WGS 84, expressat habitualment en longitud i latitud en graus. `EPSG:25831` identifica `ETRS89 / UTM zona 31N`, un sistema projectat en metres adequat per al treball regional a Catalunya. La diferència no és cosmètica: si una taula amb longituds i latituds en graus s'importa com si fossin metres UTM, o si una capa UTM es declara com a WGS 84, QGIS pot situar els punts en un lloc absurd o permetre mesures que semblen precises però no tenen sentit.
 
-El codi facilita l'intercanvi i evita moltes ambigüitats, però no substitueix la lectura crítica de la font. Abans d'acceptar un EPSG cal comprovar que el nom del CRS, les unitats, l'ordre dels eixos, l'àrea d'ús i l'operació prevista concorden amb les coordenades disponibles. Configurar bé QGIS no consisteix a trobar un número que faci encaixar visualment una capa, sinó a declarar el sistema real de les coordenades i, si cal, transformar-les després amb una reprojecció documentada.
+El codi facilita l'intercanvi i evita moltes ambigüitats, però no substitueix la lectura crítica de la font. L'acceptació d'un EPSG exigeix comprovar que el nom del CRS, les unitats, l'ordre dels eixos, l'àrea d'ús i l'operació prevista concorden amb les coordenades disponibles. Configurar bé QGIS no consisteix a trobar un número que faci encaixar visualment una capa, sinó a declarar el sistema real de les coordenades i, si cal, transformar-les després amb una reprojecció documentada.
 
 ### Assignar i reprojeccionar
 
 Assignar un sistema indica com s'han d'interpretar unes coordenades; reprojeccionar transforma la geometria. Confondre aquestes operacions pot produir capes aparentment encaixades però tècnicament incorrectes.
 
-#### Assignar un sistema de referència
-
 L'assignació modifica la descripció de les coordenades, no els nombres que formen la geometria. Només és adequada quan el sistema correcte es coneix per la font o per documentació fiable i la capa l'ha perdut o el declara erròniament. No s'ha d'utilitzar com un procediment de prova fins que la capa coincideixi visualment.
 
-#### Reprojectar una geometria
+La reprojecció, en canvi, calcula coordenades noves que representen les mateixes posicions en un altre sistema. És adequada quan el sistema d'origen està ben definit i cal obtenir una capa de treball amb un altre CRS. La capa original s'ha de preservar, i el fitxer derivat ha d'identificar el sistema de destinació.
 
-La reprojecció calcula coordenades noves que representen les mateixes posicions en un altre sistema. És adequada quan el sistema d'origen està ben definit i cal obtenir una capa de treball amb un altre CRS. La capa original s'ha de preservar, i el fitxer derivat ha d'identificar el sistema de destinació.
-
-#### Reprojecció al vol
-
-El programari cartogràfic pot mostrar conjuntament capes amb sistemes diferents mitjançant una transformació temporal de visualització. Aquesta capacitat facilita l'exploració, però no canvia els fitxers d'origen ni resol automàticament quin sistema convé per mesurar o exportar. El sistema de referència del projecte i el de cada capa s'han de revisar explícitament.
+La reprojecció al vol és una transformació temporal de visualització que permet mostrar conjuntament capes amb sistemes diferents. Facilita l'exploració, però no canvia els fitxers d'origen ni resol automàticament quin sistema convé per mesurar o exportar. El sistema de referència del projecte i el de cada capa s'han de revisar explícitament.
 
 ### Escala cartogràfica i nivell de detall
 
-Els mapes municipals, comarcals i regionals requereixen nivells de detall i fonts cartogràfiques diferents. La capa més detallada no és sempre la més adequada: pot alentir el projecte i introduir formes impossibles de percebre a la mida final.
+Els mapes municipals, comarcals i regionals requereixen nivells de detall i fonts cartogràfiques diferents. L'**escala de la font** indica el nivell de detall per al qual s'ha capturat o generalitzat una geometria; l'**escala de sortida** és la relació amb què el mapa es mostra o s'imprimeix. Ampliar una capa elaborada a 1:250.000 fins que ocupi la mida aparent d'un mapa a 1:50.000 no hi afegeix vèrtexs, precisió posicional ni informació nova.
+
+La **generalització cartogràfica** adapta el contingut a una escala de sortida mitjançant operacions com seleccionar, simplificar o agrupar elements. En una sortida a escala petita, conservar tots els detalls d'una font més precisa pot alentir el projecte, saturar el mapa i introduir formes impossibles de percebre; en una sortida a escala gran, una font massa generalitzada pot ometre carrers, inflexions o límits necessaris. La font adequada és la que conserva el fenomen i el detall que exigeix la pregunta, no necessàriament la que conté més coordenades.
+
+Les mesures hereten els límits de detall i de precisió de la font, els de la geometria i els del sistema de referència. Per això les distàncies, les àrees i les coordenades no s'han de comunicar amb una precisió superior a la que sostenen l'escala de la font i la projecció utilitzada, encara que el programa mostri molts decimals.
 
 ## Models de dades espacials
 
-### Vector i ràster
+Escollir un model de dades depèn de com es conceptualitza el fenomen, de l'escala a què s'observa i de l'operació prevista, no d'una única forma intrínseca d'existir. Una carretera es pot representar com una línia per analitzar connexions o com un conjunt de cel·les dins d'una imatge; cada opció conserva relacions diferents. Quan la pregunta necessita identificar entitats i vincular-hi atributs, sol convenir el model vectorial; quan necessita descriure una cobertura mostrejada o una imatge, sol convenir el ràster.
 
-El model vectorial representa entitats diferenciables mitjançant geometries i atributs. És adequat per a municipis, allotjaments, carreteres o itineraris. El model ràster divideix l'espai en cel·les i és habitual en ortofotos, models d'elevació, temperatura o cobertes derivades d'imatges. La resolució de la cel·la condiciona el detall observable i les operacions possibles.
+### Model vectorial: geometries i atributs
 
-El projecte comarcal utilitza polígons vectorials perquè cada municipi necessita una geometria vinculada a un codi i a una fila d'indicadors. Les ortofotos o altres ràsters poden aportar context, però no substitueixen els límits administratius necessaris per a la unió.
+El model vectorial representa entitats diferenciables mitjançant geometries i atributs. Un allotjament es pot representar com un punt; una ruta, com una línia; i un municipi, com un polígon. El tipus ha de correspondre al fenomen i a l'escala: convertir qualsevol objecte en un punt o una àrea pot ocultar propietats rellevants.
 
-### Punts, línies i polígons
+Cada entitat espacial combina una forma i un registre alfanumèric: en una capa vectorial ordinària, una fila de la taula d'atributs descriu l'entitat representada per la geometria corresponent. Un identificador estable permet distingir-la, comprovar que no està duplicada i relacionar-la amb altres taules sense dependre només del nom. Aquesta relació entre entitat, geometria, fila i identificador serà la base de les taules d'atributs i de les unions del capítol de SIG.
 
-Els models vectorials representen objectes geogràfics mitjançant geometries. Un allotjament es pot representar com un punt; una ruta, com una línia; i un municipi, com un polígon. El tipus ha de correspondre al fenomen i a l'escala: convertir qualsevol objecte en un punt o una àrea pot ocultar propietats rellevants.
+El projecte comarcal utilitza polígons vectorials perquè cada municipi necessita una geometria vinculada a un codi i a una fila d'indicadors. Una entitat municipal pot estar formada per una geometria multipart si inclou fragments territorials separats, però continua corresponent a un sol registre. També pot contenir errors geomètrics o un nivell de detall inadequat per a l'escala del mapa. La validesa de la forma, la presència d'un identificador i la data territorial són controls diferents: una geometria pot ser tècnicament vàlida i, alhora, correspondre a una delimitació antiga.
 
-### Geometria i atributs
+### Model ràster: cel·les i resolució
 
-Cada entitat espacial combina una forma i un registre alfanumèric. Aquesta relació serà la base de les taules d'atributs i de les unions del capítol de SIG.
+El model ràster divideix l'espai en una graella de cel·les i assigna un valor a cada posició. És habitual en ortofotos, models d'elevació, temperatura o cobertes derivades d'imatges perquè aquests fenòmens s'observen o es modelen com una cobertura espacial, no com una llista d'objectes administratius independents. La posició de cada valor depèn de l'origen de la graella, la mida de cel·la i el sistema de referència.
 
-Una entitat municipal pot estar formada per una geometria multipart si inclou fragments territorials separats. També pot contenir errors geomètrics o un nivell de detall inadequat per a l'escala del mapa. La validesa de la forma, la presència d'un identificador i la data territorial són controls diferents: una geometria pot ser tècnicament vàlida i, alhora, correspondre a una delimitació antiga.
+La mida de la cel·la expressa la **resolució espacial** i condiciona el detall observable i les operacions possibles: cada cel·la resumeix el valor d'una porció del territori i no permet recuperar variacions més petites que no s'hagin observat o modelat. Una mida de cel·la original més petita només representa informació més fina si la font i el mostreig la sostenen. Reemostrar un ràster amb cel·les més petites interpola o redistribueix els valors existents, però no crea informació efectiva ni millora la precisió de la font. La mida adequada depèn de l'escala del fenomen: una graella massa grossa pot barrejar situacions diferents dins d'una mateixa cel·la, mentre que una de molt fina pot suggerir un detall inexistent i augmentar innecessàriament el volum de dades.
+
+Les ortofotos o altres ràsters poden aportar context al projecte comarcal, però no substitueixen els límits administratius vectorials necessaris per vincular cada municipi amb un codi i una fila d'indicadors.
 
 ## Activitat prèvia: llegir coordenades en una taula
 
-Abans d'obrir QGIS, s'inspeccionarà a Calc o Excel el CSV del Directori de centres educatius. Es filtrarà el curs 2025/2026 i el municipi de Vila-seca, codi `431711`, i es compararan quatre camps: coordenada UTM X, coordenada UTM Y, longitud i latitud. La font declara les coordenades UTM en ETRS89 / UTM zona 31N, `EPSG:25831`, i les geogràfiques en longitud i latitud. Aquesta informació forma part de la dada: els nombres no permeten crear punts correctes si s'ignoren l'ordre, les unitats o el CRS.
+L'activitat s'inicia a Calc o Excel amb la inspecció del CSV del Directori de centres educatius. En la demostració docent es filtrarà el curs 2025/2026 i el municipi de Vila-seca, codi `431711`, i es compararan quatre camps: coordenada UTM X, coordenada UTM Y, longitud i latitud. Cada trio aplicarà el mateix control al municipi assignat quan la font hi tingui registres; si no n'hi té, observarà la demostració sense presentar Vila-seca com a evidència pròpia. La font declara les coordenades UTM en ETRS89 / UTM zona 31N, `EPSG:25831`, i les geogràfiques en longitud i latitud. Aquesta informació forma part de la dada: els nombres no permeten crear punts correctes si s'ignoren l'ordre, les unitats o el CRS.
 
 La inspecció comprovarà que X i Y UTM tenen ordres de magnitud compatibles amb metres a Catalunya, mentre que longitud i latitud s'expressen en graus decimals. Es revisarà una fila coneguda, es comptaran coordenades buides o duplicades i s'anotarà que el punt representa l'entrada del centre, no tota la parcel·la ni la població atesa. Encara no es crearà cap geometria.
 
->>>>> Aquesta activitat deixa preparada una taula de 17 centres de Vila-seca i una fitxa breu dels camps X/Y, les unitats, el CRS i les incidències detectades.
+>>>>> En la demostració docent, aquesta activitat deixa preparada una taula de 17 centres de Vila-seca i una fitxa breu dels camps X/Y, les unitats, el CRS i les incidències detectades. L'evidència d'un trio, quan sigui possible, utilitzarà el seu municipi i registrarà el recompte real obtingut.
 
-La captura necessària mostrarà al full de càlcul les columnes de codi, centre, UTM X/Y i longitud/latitud, amb el filtre de Vila-seca visible. El capítol següent reutilitzarà exactament aquests camps al diàleg de text delimitat de QGIS i comprovarà que les dues parelles de coordenades produeixen punts coincidents.
+La captura de la demostració mostrarà al full de càlcul les columnes de codi, centre, UTM X/Y i longitud/latitud, amb el filtre de Vila-seca visible; una captura de l'estudiantat haurà de mostrar el municipi assignat. La fase d'integració SIG reutilitzarà exactament aquests camps al diàleg de text delimitat de QGIS i comprovarà que les dues parelles de coordenades produeixen punts coincidents.
+
+### Primer contacte amb QGIS
+
+QGIS separa el **projecte** de les **capes** que consulta. El fitxer `.qgz` conserva rutes, grups, estils, unions i composicions, però no incorpora automàticament dins seu el GeoPackage, el CSV o les imatges d'origen. Per això desar el projecte no substitueix conservar les dades al lloc previst.
+
+L'espai de treball bàsic conté el llenç del mapa, el panell de capes, el navegador de fitxers i la barra d'estat. Les propietats d'una capa permeten revisar font, geometria, CRS i camps; la taula d'atributs mostra una fila per entitat vectorial. Abans de començar l'activitat es crearà el projecte dins de `qgis`, es desarà amb el nom indicat i es configuraran rutes relatives. Després s'afegirà el GeoPackage, s'identificarà la subcapa necessària i s'obriran les propietats i la taula d'atributs abans d'aplicar cap filtre, selecció o exportació. La fase següent ampliarà aquest primer contacte amb unions i consultes.
 
 ## Activitat: preparar la base espacial de la comarca
 
-L'activitat prepara una base espacial municipal fiable per continuar el projecte: abans de representar indicadors, cal comprovar la procedència, la geometria, els codis territorials i el sistema de referència de la capa, i distingir una assignació de CRS d'una reprojecció.
+L'activitat prepara una base espacial municipal fiable per continuar el projecte: la representació d'indicadors requereix comprovar la procedència, la geometria, els codis territorials i el sistema de referència de la capa, i distingir una assignació de CRS d'una reprojecció.
+
+Els noms Tarragonès i Vila-seca descriuen la demostració del professorat. Cada trio substituirà el territori, els codis, els recomptes i els noms dels fitxers pels del parell assignat i conservarà els mateixos controls.
 
 >>>>> L'activitat produeix una base municipal traçable i validada que es conservarà en el projecte QGIS dels capítols següents.
 >>>>>
@@ -435,7 +447,7 @@ La selecció de la comarca s'ha de basar en un codi o camp territorial documenta
 
 ### Diagnosticar desplaçaments i mesures incoherents
 
-Quan una capa apareix lluny del territori esperat o produeix mesures inversemblants, es revisaran coordenades, ordre X/Y, unitats i EPSG abans de modificar-la.
+Quan una capa apareix lluny del territori esperat o produeix mesures inversemblants, es revisaran coordenades, ordre X/Y, unitats i EPSG; qualsevol modificació dependrà d'aquesta diagnosi.
 
 Una pràctica de diagnosi combinarà deliberadament una capa antiga en ED50 / UTM 31N amb una capa actual en ETRS89 / UTM 31N. Caldrà identificar els sistemes, explicar el desplaçament i decidir si s'ha d'assignar informació que falta o reprojeccionar una geometria que ja està correctament definida.
 
@@ -447,7 +459,7 @@ La selecció del Tarragonès i les capes de context es desaran a `data/processed
 
 ### Validar la base espacial municipal
 
-Abans de continuar s'han de comprovar aquests punts:
+La continuació del projecte queda condicionada a la comprovació d'aquests punts:
 
 1. l'extensió cobreix el territori esperat i les unitats concorden amb el CRS;
 2. el nombre de municipis de la comarca és plausible i queda registrat;

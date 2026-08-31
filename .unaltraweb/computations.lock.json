@@ -42,6 +42,69 @@
       ],
       "rendered_at": "2026-08-26T22:54:29+00:00"
     },
+    "assets/quarto/cartographic-language/locator-map-vila-seca.qmd": {
+      "dependencies": [
+        {
+          "path": "assets/quarto/cartographic-language/locator-map-vila-seca.qmd",
+          "sha256": "f1d4633f05e8bbd8a3a13b65adb357eaaabc53249e4e2fa8f4540d73705dfe24"
+        },
+        {
+          "path": "_practices/tigit-projecte-territorial/data/processed/tarragones-boundaries-icgc-20260120.gpkg",
+          "sha256": "5f01e06748c3fa7655ab06f84a981d73646c0569addb9ebcfc81e1848eb68f16"
+        },
+        {
+          "path": "_practices/tigit-projecte-territorial/data/processed/catalonia-counties-icgc-20260120.gpkg",
+          "sha256": "20e4e2c53a867722efc1d3b4e2860f76cfad44b34f36d82106b8e9c7a4b7a88e"
+        },
+        {
+          "path": "_practices/tigit-projecte-territorial/data/processed/vila-seca-orthophoto-icgc-2025.jpg",
+          "sha256": "613f8611c0102f23f13879dd1c918e4609eb56941901aaa98050df56b8bf49fc"
+        },
+        {
+          "path": "_practices/tigit-projecte-territorial/data/processed/natural-earth-admin-0-countries-50m.geojson",
+          "sha256": "3e458fc036ad0a66411f2c1e6cac49c5d7bfb81cb1123bc513b22511a2b7fdeb"
+        },
+        {
+          "path": "Dockerfile.compute-r",
+          "sha256": "db3cb03be6f48b81f1abfcf7b2a3177c0206e7c76fb46765a81c625faa34fc49"
+        },
+        {
+          "path": "requirements-compute.R",
+          "sha256": "9512adde0ddffcd24dcd3321cb882eabb1097e31d6f7da7bbfa8f3b45136d190"
+        },
+        {
+          "path": ".unaltraweb/computations.yml",
+          "sha256": "301b44c41e8a0e500dd5ffda7410b4221a63711479a41a06eb98b5aae8abd0b3"
+        }
+      ],
+      "engine": "r",
+      "fingerprint": "b0b1206521b39ff239a43eb54079153a40b447c48499b6348d71602e8ed274fb",
+      "image": {
+        "engine": "r",
+        "environment": "local",
+        "image": "tigit-compute-r:local",
+        "source": "environment:COMPUTE_R_IMAGE"
+      },
+      "image_identity": {
+        "available": "true",
+        "digest": "",
+        "id": "sha256:32093bf261521f44f0e8f3baa3a2115d82fa7accb8b2c4185b511b86347ec7a1"
+      },
+      "mode": "figure",
+      "outputs": [
+        {
+          "path": "assets/img/cartographic-language/locator-map-vila-seca.svg",
+          "sha256": "1b760b9e110780e26fd3f6206eeef5d6ef6f3e61589cf0846b6e5ccf4e2905f4",
+          "size": 3806056
+        },
+        {
+          "path": "assets/img/cartographic-language/locator-map-vila-seca-direct.svg",
+          "sha256": "69e096d4c32712f7fe6b45a645f06a47a4eb8c86c80da6b4ea6a73721708e6e6",
+          "size": 8901964
+        }
+      ],
+      "rendered_at": "2026-08-31T16:07:25+00:00"
+    },
     "assets/quarto/cartographic-language/minimum-mapping-unit-tarragones.qmd": {
       "dependencies": [
         {
@@ -346,7 +409,7 @@
       "dependencies": [
         {
           "path": "assets/quarto/data-visualization/ageing-housing-scatter-tarragones.qmd",
-          "sha256": "cf6dbb04430bb4d7849f60634198fca054f0280df4e497797e1573b61a70e0a5"
+          "sha256": "4fc2c2fcbd0d9d2a64f815208f29bbb0e79c1552afc7a435c6f2e852b4d388dd"
         },
         {
           "path": "_practices/tigit-projecte-territorial/data/processed/municipal-indicators-tarragones-2021.csv",
@@ -366,7 +429,7 @@
         }
       ],
       "engine": "r",
-      "fingerprint": "c6372c7c8eae509d18c33e0bb920b56e0be53eb59528945a6d807d4fc87ef0b6",
+      "fingerprint": "5a59c445d51a3b7545cb783e55ed661d177c3c07f0847e13f0a8430f58b2caf3",
       "image": {
         "engine": "r",
         "environment": "local",
@@ -382,11 +445,16 @@
       "outputs": [
         {
           "path": "assets/img/data-visualization/project-ageing-vs-housing-scatter-tarragones-2021.svg",
-          "sha256": "58a338df9ede839c6640fde3abf55911337c2c110428bde80d59140bef5ecd07",
-          "size": 15386
+          "sha256": "a7c62fba614a950f1c618cfc63b5cf85e750372ac811c65d2b703b9f3aa9c68b",
+          "size": 15383
+        },
+        {
+          "path": "assets/img/data-visualization/project-ageing-housing-population-bubbles-tarragones-2021.svg",
+          "sha256": "bbf5ff3d95d66f453d8bca1551c66d3c9f86c80ffe99249bb3427ca67812f66c",
+          "size": 11905
         }
       ],
-      "rendered_at": "2026-08-23T22:47:25+00:00"
+      "rendered_at": "2026-08-29T22:18:04+00:00"
     },
     "assets/quarto/data-visualization/alluvial-titanic-survival.qmd": {
       "dependencies": [
@@ -517,6 +585,108 @@
         }
       ],
       "rendered_at": "2026-08-24T21:47:48+00:00"
+    },
+    "assets/quarto/data-visualization/climograph-vila-seca.qmd": {
+      "dependencies": [
+        {
+          "path": "assets/quarto/data-visualization/climograph-vila-seca.qmd",
+          "sha256": "965861afe833c5e9e0488ad7cf7374ef3e0887a7e08aa838558dbf728f66c7b7"
+        },
+        {
+          "path": "_practices/tigit-projecte-territorial/data/raw/clima-vila-seca-mitjanes-1991-2020.csv",
+          "sha256": "c0cf00a51394723f85f2d4a21ea79fcd51692734a8185020bd690f53db9223a0"
+        },
+        {
+          "path": "Dockerfile.compute-r",
+          "sha256": "db3cb03be6f48b81f1abfcf7b2a3177c0206e7c76fb46765a81c625faa34fc49"
+        },
+        {
+          "path": "requirements-compute.R",
+          "sha256": "9512adde0ddffcd24dcd3321cb882eabb1097e31d6f7da7bbfa8f3b45136d190"
+        },
+        {
+          "path": ".unaltraweb/computations.yml",
+          "sha256": "301b44c41e8a0e500dd5ffda7410b4221a63711479a41a06eb98b5aae8abd0b3"
+        }
+      ],
+      "engine": "r",
+      "fingerprint": "42ab66d3ce19df644c295d627839159410215738dea42538b1a0d8f4cc65e8ec",
+      "image": {
+        "engine": "r",
+        "environment": "local",
+        "image": "tigit-compute-r:local",
+        "source": "environment:COMPUTE_R_IMAGE"
+      },
+      "image_identity": {
+        "available": "true",
+        "digest": "",
+        "id": "sha256:32093bf261521f44f0e8f3baa3a2115d82fa7accb8b2c4185b511b86347ec7a1"
+      },
+      "mode": "figure",
+      "outputs": [
+        {
+          "path": "assets/img/data-visualization/climograph-vila-seca-1991-2020.svg",
+          "sha256": "a74ee39889014d1100166bea3f847636e48bc6ff21fce3cbdb05f4a7730f6c00",
+          "size": 15396
+        }
+      ],
+      "rendered_at": "2026-08-29T22:30:12+00:00"
+    },
+    "assets/quarto/data-visualization/housing-bar-variants-tarragones.qmd": {
+      "dependencies": [
+        {
+          "path": "assets/quarto/data-visualization/housing-bar-variants-tarragones.qmd",
+          "sha256": "84821f08d1aa1d11da284f63aaacde071b2c487e4f33adfddfba74fc8280e95a"
+        },
+        {
+          "path": "_practices/tigit-projecte-territorial/data/processed/municipal-indicators-tarragones-2021.csv",
+          "sha256": "d762d55fbbfb085493fe3af39c9ae8e458c1422f41a4467a2f37202cc5f1baac"
+        },
+        {
+          "path": "Dockerfile.compute-r",
+          "sha256": "db3cb03be6f48b81f1abfcf7b2a3177c0206e7c76fb46765a81c625faa34fc49"
+        },
+        {
+          "path": "requirements-compute.R",
+          "sha256": "9512adde0ddffcd24dcd3321cb882eabb1097e31d6f7da7bbfa8f3b45136d190"
+        },
+        {
+          "path": ".unaltraweb/computations.yml",
+          "sha256": "301b44c41e8a0e500dd5ffda7410b4221a63711479a41a06eb98b5aae8abd0b3"
+        }
+      ],
+      "engine": "r",
+      "fingerprint": "1b34ef4f453cbbeb71c0b7c324cd2e1548a314eac687f7267f784b5746d7c1d5",
+      "image": {
+        "engine": "r",
+        "environment": "local",
+        "image": "tigit-compute-r:local",
+        "source": "environment:COMPUTE_R_IMAGE"
+      },
+      "image_identity": {
+        "available": "true",
+        "digest": "",
+        "id": "sha256:32093bf261521f44f0e8f3baa3a2115d82fa7accb8b2c4185b511b86347ec7a1"
+      },
+      "mode": "figure",
+      "outputs": [
+        {
+          "path": "assets/img/data-visualization/housing-bars-grouped-tarragones-2021.svg",
+          "sha256": "8f8c45f82b44eedc7ccdf008622db4167642a49c03516ff60cf6916089ebfac4",
+          "size": 7166
+        },
+        {
+          "path": "assets/img/data-visualization/housing-bars-stacked-tarragones-2021.svg",
+          "sha256": "abd623bea7cbd87bc8aa25b9f4d2883f96ba490bd5d239722a8cf91ea0a4769a",
+          "size": 6747
+        },
+        {
+          "path": "assets/img/data-visualization/housing-bars-percent-tarragones-2021.svg",
+          "sha256": "1f01d90c93444a0a616b8787189960813fe7a280f84766ad8df18acc72e627e0",
+          "size": 7592
+        }
+      ],
+      "rendered_at": "2026-08-28T15:26:35+00:00"
     },
     "assets/quarto/data-visualization/housing-donut-tarragones.qmd": {
       "dependencies": [
@@ -743,6 +913,67 @@
         }
       ],
       "rendered_at": "2026-08-23T22:47:49+00:00"
+    },
+    "assets/quarto/data-visualization/population-profiles-vila-seca-salou.qmd": {
+      "dependencies": [
+        {
+          "path": "assets/quarto/data-visualization/population-profiles-vila-seca-salou.qmd",
+          "sha256": "a4c9ba16d340cccaed096c28cd0fc10aeb4936aabc7aa2008bd8dfcf92564a22"
+        },
+        {
+          "path": "_practices/tigit-projecte-territorial/data/raw/poblacio-vila-seca-salou-edat-sexe-naixement-2021.csv",
+          "sha256": "c500a7827143c3d99e206d8a26f1e53bc98b3cfee8ba7163814ce6d745a7ff8a"
+        },
+        {
+          "path": "Dockerfile.compute-r",
+          "sha256": "db3cb03be6f48b81f1abfcf7b2a3177c0206e7c76fb46765a81c625faa34fc49"
+        },
+        {
+          "path": "requirements-compute.R",
+          "sha256": "9512adde0ddffcd24dcd3321cb882eabb1097e31d6f7da7bbfa8f3b45136d190"
+        },
+        {
+          "path": ".unaltraweb/computations.yml",
+          "sha256": "301b44c41e8a0e500dd5ffda7410b4221a63711479a41a06eb98b5aae8abd0b3"
+        }
+      ],
+      "engine": "r",
+      "fingerprint": "3d3e6f6a1bb576a56228e26a92a487561d072f74aedcc03937c7f776802081a7",
+      "image": {
+        "engine": "r",
+        "environment": "local",
+        "image": "tigit-compute-r:local",
+        "source": "environment:COMPUTE_R_IMAGE"
+      },
+      "image_identity": {
+        "available": "true",
+        "digest": "",
+        "id": "sha256:32093bf261521f44f0e8f3baa3a2115d82fa7accb8b2c4185b511b86347ec7a1"
+      },
+      "mode": "figure",
+      "outputs": [
+        {
+          "path": "assets/img/data-visualization/foreign-born-share-by-age-vila-seca-2021.svg",
+          "sha256": "fccc673c7e64c8b64ecc32e6198137af726750f04bd510c0533bc963551e567b",
+          "size": 19265
+        },
+        {
+          "path": "assets/img/data-visualization/foreign-born-share-by-age-salou-2021.svg",
+          "sha256": "0de1004e161cab0a234817f635825fb23d0c2b9ac8fd9c90ef90b2d6a3db94ba",
+          "size": 19280
+        },
+        {
+          "path": "assets/img/data-visualization/population-pyramid-vila-seca-percent-2021.svg",
+          "sha256": "f8437ac67c8f56f533c639a9d239f021d26441d893d9c138b5a0041613cd1253",
+          "size": 17966
+        },
+        {
+          "path": "assets/img/data-visualization/population-pyramid-salou-percent-2021.svg",
+          "sha256": "6622c56041a475885e5a53e77a4df1f0c83f75e6a524e3353ab979a45ec6af9b",
+          "size": 17965
+        }
+      ],
+      "rendered_at": "2026-08-28T11:22:28+00:00"
     },
     "assets/quarto/data-visualization/population-pyramid-vila-seca.qmd": {
       "dependencies": [
@@ -974,6 +1205,57 @@
       ],
       "rendered_at": "2026-08-24T21:47:52+00:00"
     },
+    "assets/quarto/data-visualization/word-cloud-accommodation-names.qmd": {
+      "dependencies": [
+        {
+          "path": "assets/quarto/data-visualization/word-cloud-accommodation-names.qmd",
+          "sha256": "bf1bb0c3ee6980b3194e8a548ab67691eb9bf97f8da684861cd9f3758c65eeeb"
+        },
+        {
+          "path": "_practices/tigit-projecte-territorial/data/processed/tourism-accommodation-vila-seca-geocoding.csv",
+          "sha256": "e8d5761a28ee4773c9667ba0223afc451e8b6128b619fa84a63dc4a1335c4214"
+        },
+        {
+          "path": "Dockerfile.compute-r",
+          "sha256": "db3cb03be6f48b81f1abfcf7b2a3177c0206e7c76fb46765a81c625faa34fc49"
+        },
+        {
+          "path": "requirements-compute.R",
+          "sha256": "9512adde0ddffcd24dcd3321cb882eabb1097e31d6f7da7bbfa8f3b45136d190"
+        },
+        {
+          "path": ".unaltraweb/computations.yml",
+          "sha256": "301b44c41e8a0e500dd5ffda7410b4221a63711479a41a06eb98b5aae8abd0b3"
+        }
+      ],
+      "engine": "r",
+      "fingerprint": "27c5844f6283f483c80c9f135ff8b428dd363cd381321a94bb4ff00f113a25e6",
+      "image": {
+        "engine": "r",
+        "environment": "local",
+        "image": "tigit-compute-r:local",
+        "source": "environment:COMPUTE_R_IMAGE"
+      },
+      "image_identity": {
+        "available": "true",
+        "digest": "",
+        "id": "sha256:32093bf261521f44f0e8f3baa3a2115d82fa7accb8b2c4185b511b86347ec7a1"
+      },
+      "mode": "figure",
+      "outputs": [
+        {
+          "path": "assets/img/data-visualization/word-cloud-accommodation-names-vila-seca.svg",
+          "sha256": "0fe00e36a84babc909a40a81895b68332cd96cac92811dab58d47352aec5ae53",
+          "size": 6516
+        },
+        {
+          "path": "assets/img/data-visualization/word-frequency-bars-accommodation-names-vila-seca.svg",
+          "sha256": "0d6808b048c4389fd6cc69aed5ee394c34a1bfdd80818e0d5291bf4faf9d44e8",
+          "size": 7167
+        }
+      ],
+      "rendered_at": "2026-08-29T09:53:29+00:00"
+    },
     "assets/quarto/gis/gis-analysis-examples.qmd": {
       "dependencies": [
         {
@@ -1120,7 +1402,7 @@
       "dependencies": [
         {
           "path": "assets/quarto/thematic-cartography/dorling-hexagon-cartograms.qmd",
-          "sha256": "b06701ed854a8695b490c8030ccbf02f285fb4cb303e963080d03de5a3a6fca0"
+          "sha256": "35bdff565d1d9f8f8190813417a3da1da32c8c686b965b56a9fdf81b1a34a563"
         },
         {
           "path": "Dockerfile.compute-python",
@@ -1136,7 +1418,7 @@
         }
       ],
       "engine": "python",
-      "fingerprint": "81afc6fa51508bbd78599f1029eaa3d33044e3b25c574c99e3b3366f08de17fc",
+      "fingerprint": "e52290b9a8bef22857d54672a97525fbe6de3a404ba62bef9dd3a990cfcde67d",
       "image": {
         "engine": "python",
         "environment": "local",
@@ -1152,8 +1434,8 @@
       "outputs": [
         {
           "path": "assets/img/thematic-cartography/world-population-dorling-cartogram.svg",
-          "sha256": "abd0781ab9fb8fc7233558db4eeb0feff3356a6c75787e9101e3df20dde385b9",
-          "size": 303706
+          "sha256": "32f5a6829a9c8317e5b34d68add72e5854d54e764ebd6873d424e312ec2c7da2",
+          "size": 307874
         },
         {
           "path": "assets/img/thematic-cartography/us-states-hex-tile-cartogram.svg",
@@ -1161,7 +1443,7 @@
           "size": 65508
         }
       ],
-      "rendered_at": "2026-08-27T21:33:40+00:00"
+      "rendered_at": "2026-08-28T12:23:38+00:00"
     },
     "assets/quarto/thematic-cartography/population-cartogram-catalonia.qmd": {
       "dependencies": [
@@ -1226,7 +1508,7 @@
       "dependencies": [
         {
           "path": "assets/quarto/thematic-cartography/proportional-symbols-housing-total.qmd",
-          "sha256": "9899fcf6773552344be9af9d779c859503293c4066a77d2f2ce4682338948651"
+          "sha256": "c5301756b806476396fbe818dce1f50940786b247ff0c653cb28244ced0f30af"
         },
         {
           "path": "_practices/tigit-projecte-territorial/data/processed/tarragones-boundaries-icgc-20260120.gpkg",
@@ -1250,7 +1532,7 @@
         }
       ],
       "engine": "r",
-      "fingerprint": "030881f83609f1ec7a5cf7a4716563423f13dfe22387cf07d0933f9eddc45621",
+      "fingerprint": "bebcefc99acec01228c87c3a18c1b2ff9df7d6b9353dc1e9fbc91fc88bb23bd8",
       "image": {
         "engine": "r",
         "environment": "local",
@@ -1266,11 +1548,11 @@
       "outputs": [
         {
           "path": "assets/img/thematic-cartography/proportional-symbols-housing-total-tarragones-2021.svg",
-          "sha256": "ee7abb5d0b2e91fe70c0a591ed7ebca941aa4e1031757540f2514a29eff47602",
-          "size": 102410
+          "sha256": "e35893f9ad211be9886198c0ed1dd169a9dcd889a3fcf46aa02669202b98825f",
+          "size": 102895
         }
       ],
-      "rendered_at": "2026-08-26T21:24:33+00:00"
+      "rendered_at": "2026-08-30T22:09:32+00:00"
     },
     "assets/quarto/thematic-cartography/spanish-speakers-data-types.qmd": {
       "dependencies": [

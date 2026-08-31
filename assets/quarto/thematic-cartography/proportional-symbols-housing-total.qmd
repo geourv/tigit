@@ -87,6 +87,8 @@ fig <- ggplot(d) +
     plot.subtitle = element_text(size = 10, color = "#52616b", hjust = 0, margin = margin(b = 6)),
     plot.caption = element_text(size = 8, color = "#52616b", hjust = 0, margin = margin(t = 6)),
     plot.margin = margin(t = 5.5, r = 12, b = 5.5, l = 5.5),
+    plot.background = element_rect(fill = "#ffffff", color = NA),
+    panel.background = element_rect(fill = "#ffffff", color = NA),
     legend.title = element_text(face = "bold", size = 9, color = "#17202a"),
     legend.text = element_text(color = "#52616b", size = 8),
     legend.position = "right"
@@ -94,7 +96,7 @@ fig <- ggplot(d) +
 
 output <- file.path(root, "assets/img/thematic-cartography/proportional-symbols-housing-total-tarragones-2021.svg")
 dir.create(dirname(output), showWarnings = FALSE, recursive = TRUE)
-ggsave(output, fig, width = 7, height = 5, device = svglite::svglite)
+ggsave(output, fig, width = 7, height = 5, bg = "white", device = svglite::svglite)
 ```
 
 ![Símbols proporcionals dels habitatges totals als municipis del Tarragonès]({{ site.baseurl }}/assets/img/thematic-cartography/proportional-symbols-housing-total-tarragones-2021.svg "La mida del cercle codifica el volum absolut d'habitatges municipals; l'àrea, no el radi, és proporcional al valor. La llegenda mostra valors de referència de mida. Exemple didàctic construït amb dades reals del Tarragonès (2021).")

@@ -1,0 +1,258 @@
+---
+title: "Perfils de població de Vila-seca i Salou, 2021"
+lang: ca
+ref: population_profiles_vila_seca_salou
+format:
+  gfm:
+    output-file: population-profiles-vila-seca-salou.generated.md
+execute:
+  echo: false
+  warning: false
+  message: false
+execute-dir: project
+unaltraweb_compute:
+  engine: r
+  mode: figure
+  inputs:
+    - _practices/tigit-projecte-territorial/data/raw/poblacio-vila-seca-salou-edat-sexe-naixement-2021.csv
+  outputs:
+    - assets/img/data-visualization/foreign-born-share-by-age-vila-seca-2021.svg
+    - assets/img/data-visualization/foreign-born-share-by-age-salou-2021.svg
+    - assets/img/data-visualization/population-pyramid-vila-seca-percent-2021.svg
+    - assets/img/data-visualization/population-pyramid-salou-percent-2021.svg
+---
+
+```{r}
+find_project_root <- function(start) {
+  path <- normalizePath(start, winslash = "/", mustWork = FALSE)
+  repeat {
+    if (file.exists(file.path(path, ".unaltraweb", "computations.yml"))) {
+      return(path)
+    }
+    parent <- dirname(path)
+    if (identical(parent, path)) {
+      stop("Project root not found: missing .unaltraweb/computations.yml")
+    }
+    path <- parent
+  }
+}
+
+root <- find_project_root(getwd())
+library(ggplot2)
+
+theme_tigit <- function(base_size = 15) {
+  theme_minimal(base_size = base_size) +
+    theme(
+      panel.grid.minor = element_blank(),
+      panel.grid.major.y = element_blank(),
+      panel.grid.major.x = element_line(color = "#e0e6eb", linewidth = 0.35),
+      axis.line = element_line(color = "#17202a", linewidth = 0.4),
+      axis.ticks = element_line(color = "#17202a", linewidth = 0.3),
+      axis.title = element_text(size = 15, color = "#17202a", face = "bold"),
+      axis.text = element_text(size = 15, color = "#52616b"),
+      legend.title = element_blank(),
+      legend.text = element_text(size = 15, color = "#52616b"),
+      legend.position = "top",
+      strip.text = element_text(face = "bold", color = "#17202a", size = 15),
+      strip.background = element_rect(fill = "#eef2f5", color = NA),
+      plot.margin = margin(8, 12, 8, 8)
+    )
+}
+
+format_percent <- function(x, digits = 1) {
+  gsub(".", ",", sprintf(paste0("%.", digits, "f%%"), x), fixed = TRUE)
+}
+
+population <- read.csv(
+  file.path(root, "_practices/tigit-projecte-territorial/data/raw/poblacio-vila-seca-salou-edat-sexe-naixement-2021.csv"),
+  fileEncoding = "UTF-8",
+  stringsAsFactors = FALSE
+)
+
+age_codes <- population$age_code[population$age_code != "TOTAL"]
+age_codes <- unique(age_codes[order(population$age_order[population$age_code != "TOTAL"])] )
+age_labels <- c(
+  "0-4", "5-9", "10-14", "15-19", "20-24", "25-29",
+  "30-34", "35-39", "40-44", "45-49", "50-54", "55-59",
+  "60-64", "65-69", "70-74", "75-79", "80-84", "85+"
+)
+municipality_levels <- c("Vila-seca", "Salou")
+
+stopifnot(
+  nrow(population) == 456,
+  length(age_codes) == 18,
+  all(c("Vila-seca", "Salou") %in% population$municipality),
+  population$population[
+    population$municipality == "Vila-seca" &
+      population$age_code == "TOTAL" &
+      population$birthplace_code == "TOTAL" &
+      population$sex_code == "TOTAL"
+  ] == 22781,
+  population$population[
+    population$municipality == "Salou" &
+      population$age_code == "TOTAL" &
+      population$birthplace_code == "TOTAL" &
+      population$sex_code == "TOTAL"
+  ] == 28314
+)
+
+age_totals <- population[
+  population$age_code != "TOTAL" &
+    population$birthplace_code == "TOTAL" &
+    population$sex_code == "TOTAL",
+  c("municipality", "age_code", "age_order", "population")
+]
+names(age_totals)[4] <- "age_total"
+foreign_born <- population[
+  population$age_code != "TOTAL" &
+    population$birthplace_code == "ESTR" &
+    population$sex_code == "TOTAL",
+  c("municipality", "age_code", "population")
+]
+names(foreign_born)[3] <- "foreign_born"
+shares <- merge(age_totals, foreign_born, by = c("municipality", "age_code"))
+shares$foreign_pct <- 100 * shares$foreign_born / shares$age_total
+shares$spain_pct <- 100 - shares$foreign_pct
+shares$age_position <- shares$age_order + 1
+shares$municipality <- factor(shares$municipality, levels = municipality_levels)
+shares$label <- format_percent(shares$foreign_pct)
+
+share_rectangles <- rbind(
+  transform(
+    shares,
+    origin = "Nascuda a Espanya",
+    xmin = 0,
+    xmax = spain_pct
+  ),
+  transform(
+    shares,
+    origin = "Nascuda a l'estranger",
+    xmin = spain_pct,
+    xmax = 100
+  )
+)
+share_rectangles$origin <- factor(
+  share_rectangles$origin,
+  levels = c("Nascuda a Espanya", "Nascuda a l'estranger")
+)
+
+municipal_foreign <- population[
+  population$age_code == "TOTAL" &
+    population$birthplace_code == "ESTR" &
+    population$sex_code == "TOTAL",
+  c("municipality", "population")
+]
+names(municipal_foreign)[2] <- "population_foreign"
+municipal_totals <- population[
+  population$age_code == "TOTAL" &
+    population$birthplace_code == "TOTAL" &
+    population$sex_code == "TOTAL",
+  c("municipality", "population")
+]
+names(municipal_totals)[2] <- "population_total"
+overall_shares <- merge(municipal_foreign, municipal_totals, by = "municipality")
+overall_shares$pct <- 100 * overall_shares$population_foreign / overall_shares$population_total
+stopifnot(
+  abs(overall_shares$pct[overall_shares$municipality == "Vila-seca"] - 18.69979) < 1e-4,
+  abs(overall_shares$pct[overall_shares$municipality == "Salou"] - 38.56043) < 1e-4
+)
+
+make_share <- function(municipality_name) {
+  rectangles <- share_rectangles[share_rectangles$municipality == municipality_name, ]
+  labels <- shares[shares$municipality == municipality_name, ]
+  ggplot(rectangles) +
+    geom_rect(
+      aes(
+        xmin = xmin,
+        xmax = xmax,
+        ymin = age_position - 0.42,
+        ymax = age_position + 0.42,
+        fill = origin
+      )
+    ) +
+    geom_text(
+      data = labels,
+      aes(x = spain_pct - 1.2, y = age_position, label = label),
+      inherit.aes = FALSE,
+      hjust = 1,
+      color = "#17202a",
+      size = 5.3
+    ) +
+    scale_x_continuous(
+      limits = c(0, 100),
+      breaks = seq(0, 100, by = 25),
+      labels = function(x) paste0(x, "%"),
+      expand = c(0, 0)
+    ) +
+    scale_y_continuous(
+      breaks = seq_along(age_labels),
+      labels = age_labels,
+      expand = expansion(add = c(0.55, 0.55))
+    ) +
+    scale_fill_manual(values = c("Nascuda a Espanya" = "#cbd5dc", "Nascuda a l'estranger" = "#d95f0e")) +
+    guides(fill = guide_legend(nrow = 2, byrow = TRUE)) +
+    labs(
+      x = "Proporció dins de cada grup d'edat",
+      y = "Grup d'edat"
+    ) +
+    theme_tigit()
+}
+
+vila_seca_share_output <- file.path(root, "assets/img/data-visualization/foreign-born-share-by-age-vila-seca-2021.svg")
+salou_share_output <- file.path(root, "assets/img/data-visualization/foreign-born-share-by-age-salou-2021.svg")
+dir.create(dirname(vila_seca_share_output), showWarnings = FALSE, recursive = TRUE)
+ggsave(vila_seca_share_output, make_share("Vila-seca"), width = 4.8, height = 7.2, device = svglite::svglite)
+ggsave(salou_share_output, make_share("Salou"), width = 4.8, height = 7.2, device = svglite::svglite)
+
+pyramid <- population[
+  population$age_code != "TOTAL" &
+    population$birthplace_code == "TOTAL" &
+    population$sex_code %in% c("M", "F"),
+  c("municipality", "age_code", "age_order", "sex_code", "population")
+]
+pyramid <- merge(
+  pyramid,
+  municipal_totals,
+  by = "municipality"
+)
+pyramid$pct <- 100 * pyramid$population / pyramid$population_total
+pyramid$value <- ifelse(pyramid$sex_code == "M", -pyramid$pct, pyramid$pct)
+pyramid$sex <- factor(ifelse(pyramid$sex_code == "M", "Homes", "Dones"), levels = c("Homes", "Dones"))
+pyramid$age <- factor(age_labels[match(pyramid$age_code, age_codes)], levels = age_labels)
+
+stopifnot(
+  nrow(pyramid) == 72,
+  max(abs(pyramid$value)) < 6,
+  all(abs(aggregate(pct ~ municipality, data = pyramid, sum)$pct - 100) < 1e-6)
+)
+
+make_pyramid <- function(municipality_name) {
+  data <- pyramid[pyramid$municipality == municipality_name, ]
+  ggplot(data, aes(x = age, y = value, fill = sex)) +
+    geom_col(width = 0.9) +
+    geom_hline(yintercept = 0, color = "#17202a", linewidth = 0.4) +
+    scale_y_continuous(
+      limits = c(-6, 6),
+      breaks = seq(-6, 6, by = 2),
+      labels = function(x) paste0(abs(x), "%"),
+      expand = c(0, 0)
+    ) +
+    scale_fill_manual(values = c("Homes" = "#0571b0", "Dones" = "#ca0020")) +
+    coord_flip() +
+    labs(
+      x = NULL,
+      y = "Percentatge de la població municipal",
+      fill = NULL
+    ) +
+    theme_tigit() +
+    theme(
+      panel.grid.major.y = element_line(color = "#e0e6eb", linewidth = 0.35),
+      panel.grid.major.x = element_blank()
+    )
+}
+
+vila_seca_output <- file.path(root, "assets/img/data-visualization/population-pyramid-vila-seca-percent-2021.svg")
+salou_output <- file.path(root, "assets/img/data-visualization/population-pyramid-salou-percent-2021.svg")
+ggsave(vila_seca_output, make_pyramid("Vila-seca"), width = 4.8, height = 7.2, device = svglite::svglite)
+ggsave(salou_output, make_pyramid("Salou"), width = 4.8, height = 7.2, device = svglite::svglite)
+```

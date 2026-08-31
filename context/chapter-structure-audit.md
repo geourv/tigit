@@ -1,65 +1,77 @@
 # Auditoria estructural dels capítols
 
-## Decisió pendent prioritària
+## Seqüència adoptada
 
-Els pesos actuals no publiquen els capítols 4–7 en l'ordre de la numeració. Abans de reescriure'n les transicions cal decidir i aplicar una seqüència única. La proposta que millor encaixa amb les pràctiques acumulatives és:
+Els pesos publiquen el recorregut següent: inici, fonts, indicadors, semiologia i gràfics, color, dades espacials, SIG, llenguatge cartogràfic, cartografia temàtica, síntesi i bibliografia. Aquesta seqüència fa que el registre cromàtic estigui disponible abans de simbolitzar dades a QGIS i manté el mapa de context com una entrada de la cartografia temàtica.
 
-1. representació de la Terra i coordenades;
-2. integració SIG i creació de punts;
-3. llenguatge cartogràfic i mapa de context;
-4. teoria del color i registre cromàtic;
-5. cartografia temàtica.
+Els noms `tigit-07-teoria-color.xlsx`, `tigit-04-dades-espacials.qgz`, `tigit-05-integracio-sig.xlsx`, `tigit-05-integracio-sig.qgz`, `tigit-06-llenguatge-cartografic.qgz` i `tigit-08-cartografia-tematica.qgz` es conserven com a identificadors tècnics estables. No es renumeraran mentre scripts, paquets i documentació en depenguin. La genealogia executable ha de mostrar explícitament que el llibre `07` alimenta el llibre de transferència `05`.
 
-Aquesta proposta correspon als capítols 4, 5, 6, 7 i 8. Caldrà alinear pesos, expressions com «capítol següent» i noms de snapshots abans de revisar el detall.
+## Correccions aplicades en aquesta revisió
 
-## Prioritats per capítol
+- S'han introduït els prerequisits operatius de full de càlcul, estadística descriptiva, QGIS i Inkscape abans que es necessitin a les activitats.
+- S'han separat la demostració Tarragonès–Vila-seca i el territori assignat a cada trio.
+- S'han definit capa digital, CRS, geocodificació, georeferenciació i unitat d'observació en el punt d'entrada corresponent.
+- El mapa de context i el requadre de situació s'han consolidat a llenguatge cartogràfic; cartografia temàtica els reutilitza sense reconstruir-los.
+- Els mapes turístics s'han traslladat al tram final de cartografia temàtica com a productes editorials acabats; el debat de suports hi queda destacat com una activitat sense guanyador universal.
+- La síntesi final exigeix un PDF revisat amb una persona lectora i un ZIP reproduïble extret i comprovat en una carpeta nova.
 
-### Capítol 1
+## Bloquejos d'aprovació
+
+- El projecte executable continua centrat en població i habitatge. La guia docent exigeix allotjament turístic municipal i indicadors d'intensitat, densitat i composició de l'oferta.
+- La carpeta `qgis` només conté documentació. Falten els quatre projectes `.qgz`, les composicions i les exportacions que connecten dades, mapes i infografia.
+- Tres figures publicables continuen sent placeholders de QGIS: dues al capítol d'integració SIG i una al de cartografia temàtica.
+- Hi ha catorze marcadors explícits de llicència pendent de revisar als capítols; alguns corresponen a composicions amb més d'una imatge.
+- Falten el màster SVG de la demostració, la prova de lectura registrada, el PDF final i el ZIP reproduïble comprovat.
+- La mida A3 és la demostració del taller. El format de cada lliurament avaluable continuarà depenent de la instrucció vigent a Moodle.
+
+## Prioritats pendents de revisió profunda
+
+### Fonts i preparació de dades
 
 - Separar millor criteris de font, repertori institucional, preparació tabular i activitat.
 - Donar més pes a unitat d'observació, taula rectangular, tipus i claus.
 - Convertir catàlegs de portals i vies avançades en casos o ampliacions.
 - Reduir la centralitat de dates avançades, LLM i logística del ZIP.
 
-### Capítol 2
+### Indicadors territorials i turístics
 
 - Unificar fórmules generals, denominadors i disseny de mesures en un sol bloc central.
 - Evitar repetir volum, intensitat i densitat en tres llocs.
 - Separar les figures crítiques d'oferta i demanda.
 
-### Capítol 4
+### Teoria del color
+
+- Reforçar contrast, nuls, ordre perceptiu, mida final i consistència entre peces.
+- Integrar altres espècies com a exemple breu.
+- Subordinar la pipeta a la selecció i validació de paletes.
+
+### Representació de la Terra i dades espacials
 
 - Aprofundir vector, ràster, geometria, atributs, multipart, validesa i escala de les dades.
 - Reduir la climatologia física que no alimenta la pràctica espacial.
 - Integrar la lectura de coordenades dels centres dins de la transició cap al SIG.
 - Dividir les figures que combinen massa nivells conceptuals.
 
-### Capítol 5
+### Integració SIG
 
 - Aprofundir taula d'atributs, selecció, filtre, consulta i diferència entre vista i dada.
 - Separar clarament «taula per unir» de «taula que conté coordenades».
 - Agrupar l'activitat en preparar, unir/consultar i validar/conservar.
 
-### Capítol 6
+### Llenguatge cartogràfic
 
 - Reequilibrar càlculs d'escala, fonts instal·lades i impressió amb llegenda, jerarquia, col·lisions i composició.
 - Tractar Fototeca, Google Maps i Street View com a casos, no conceptes principals.
 - Dividir nord tècnic i decisió comunicativa sobre orientació.
 
-### Capítol 7
-
-- Reforçar contrast, nuls, ordre perceptiu, mida final i consistència entre peces.
-- Integrar altres espècies com a exemple breu.
-- Subordinar la pipeta a la selecció i validació de paletes.
-
-### Capítol 8
+### Cartografia temàtica
 
 - Posar primer coropleta, normalització, classificació i validació del projecte.
 - Agrupar isolínies, dasimètrics i cartogrames com a repertori secundari.
 - Agrupar mètodes de classificació per lògica, no un `###` per nom.
 - Redissenyar la comparació de cinc classificacions com una làmina controlada.
 
-### Capítol 9
+### Infografia i síntesi territorial
 
 - Promoure interpretació territorial a concepte principal.
 - Agrupar l'activitat en argument/selecció, composició/importació i revisió/exportació.
@@ -68,12 +80,12 @@ Aquesta proposta correspon als capítols 4, 5, 6, 7 i 8. Caldrà alinear pesos, 
 
 ## Figures que convé revisar
 
-- Portals globals, estatals i catalans del capítol 1: separar segons el criteri que demostren.
-- Oferta i demanda del capítol 2: dues crítiques diferents.
-- Òrbita i incidència solar del capítol 4: escala orbital i escala local.
+- Portals globals, estatals i catalans de fonts i preparació: separar segons el criteri que demostren.
+- Oferta i demanda d'indicadors territorials: dues crítiques diferents.
+- Òrbita i incidència solar de dades espacials: escala orbital i escala local.
 - Reticle UTM: fus global i lectura E/N local.
-- Tipus de nord del capítol 6: distinció tècnica i convenció gràfica.
-- Cinc classificacions del capítol 8: mateixa geometria, extensió, mida i paleta, amb una sola decisió variable.
+- Tipus de nord de llenguatge cartogràfic: distinció tècnica i convenció gràfica.
+- Cinc classificacions de cartografia temàtica: mateixa geometria, extensió, mida i paleta, amb una sola decisió variable.
 
 ## Criteri comú
 

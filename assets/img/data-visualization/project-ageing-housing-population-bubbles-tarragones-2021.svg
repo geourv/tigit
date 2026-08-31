@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='576.00pt' height='417.60pt' viewBox='0 0 576.00 417.60'>
+<g class='svglite'>
+<defs>
+  <style type='text/css'><![CDATA[
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+    .svglite text {
+      white-space: pre;
+    }
+    .svglite g.glyphgroup path {
+      fill: inherit;
+      stroke: none;
+    }
+  ]]></style>
+</defs>
+<rect width='100%' height='100%' style='stroke: none; fill: #FFFFFF;'/>
+<defs>
+  <clipPath id='cpMC4wMHw1NzYuMDB8MC4wMHw0MTcuNjA='>
+    <rect x='0.00' y='0.00' width='576.00' height='417.60' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMC4wMHw1NzYuMDB8MC4wMHw0MTcuNjA=)'>
+<rect x='0.00' y='0.000000000000057' width='576.00' height='417.60' style='stroke-width: 1.16; stroke: none; fill: #FFFFFF;' />
+</g>
+<defs>
+  <clipPath id='cpNDIuMzh8NTY0LjA0fDI2LjI3fDI0OC4wOQ=='>
+    <rect x='42.38' y='26.27' width='521.66' height='221.82' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpNDIuMzh8NTY0LjA0fDI2LjI3fDI0OC4wOQ==)'>
+<polyline points='42.38,248.09 564.04,248.09 ' style='stroke-width: 0.75; stroke: #E6EBF0; stroke-linecap: butt;' />
+<polyline points='42.38,184.71 564.04,184.71 ' style='stroke-width: 0.75; stroke: #E6EBF0; stroke-linecap: butt;' />
+<polyline points='42.38,121.33 564.04,121.33 ' style='stroke-width: 0.75; stroke: #E6EBF0; stroke-linecap: butt;' />
+<polyline points='42.38,57.96 564.04,57.96 ' style='stroke-width: 0.75; stroke: #E6EBF0; stroke-linecap: butt;' />
+<polyline points='42.38,248.09 42.38,26.27 ' style='stroke-width: 0.75; stroke: #E6EBF0; stroke-linecap: butt;' />
+<polyline points='142.70,248.09 142.70,26.27 ' style='stroke-width: 0.75; stroke: #E6EBF0; stroke-linecap: butt;' />
+<polyline points='243.02,248.09 243.02,26.27 ' style='stroke-width: 0.75; stroke: #E6EBF0; stroke-linecap: butt;' />
+<polyline points='343.34,248.09 343.34,26.27 ' style='stroke-width: 0.75; stroke: #E6EBF0; stroke-linecap: butt;' />
+<polyline points='443.66,248.09 443.66,26.27 ' style='stroke-width: 0.75; stroke: #E6EBF0; stroke-linecap: butt;' />
+<polyline points='543.98,248.09 543.98,26.27 ' style='stroke-width: 0.75; stroke: #E6EBF0; stroke-linecap: butt;' />
+<circle cx='410.00' cy='72.43' r='5.46' style='stroke-width: 0.64; stroke: #0B3A6E; stroke-opacity: 0.58; fill: #4C78A8; fill-opacity: 0.58;' />
+<circle cx='339.39' cy='134.01' r='5.10' style='stroke-width: 0.64; stroke: #0B3A6E; stroke-opacity: 0.58; fill: #4C78A8; fill-opacity: 0.58;' />
+<circle cx='341.52' cy='170.04' r='6.03' style='stroke-width: 0.64; stroke: #0B3A6E; stroke-opacity: 0.58; fill: #4C78A8; fill-opacity: 0.58;' />
+<circle cx='508.88' cy='58.54' r='4.65' style='stroke-width: 0.64; stroke: #0B3A6E; stroke-opacity: 0.58; fill: #4C78A8; fill-opacity: 0.58;' />
+<circle cx='307.78' cy='182.99' r='4.56' style='stroke-width: 0.64; stroke: #0B3A6E; stroke-opacity: 0.58; fill: #4C78A8; fill-opacity: 0.58;' />
+<circle cx='377.32' cy='173.27' r='2.04' style='stroke-width: 0.64; stroke: #0B3A6E; stroke-opacity: 0.58; fill: #4C78A8; fill-opacity: 0.58;' />
+<circle cx='269.62' cy='197.41' r='5.16' style='stroke-width: 0.64; stroke: #0B3A6E; stroke-opacity: 0.58; fill: #4C78A8; fill-opacity: 0.58;' />
+<circle cx='282.46' cy='189.92' r='2.81' style='stroke-width: 0.64; stroke: #0B3A6E; stroke-opacity: 0.58; fill: #4C78A8; fill-opacity: 0.58;' />
+<circle cx='207.10' cy='209.83' r='4.73' style='stroke-width: 0.64; stroke: #0B3A6E; stroke-opacity: 0.58; fill: #4C78A8; fill-opacity: 0.58;' />
+<circle cx='444.73' cy='113.54' r='4.12' style='stroke-width: 0.64; stroke: #0B3A6E; stroke-opacity: 0.58; fill: #4C78A8; fill-opacity: 0.58;' />
+<circle cx='209.58' cy='159.84' r='1.19' style='stroke-width: 0.64; stroke: #0B3A6E; stroke-opacity: 0.58; fill: #4C78A8; fill-opacity: 0.58;' />
+<circle cx='353.98' cy='158.38' r='3.22' style='stroke-width: 0.64; stroke: #0B3A6E; stroke-opacity: 0.58; fill: #4C78A8; fill-opacity: 0.58;' />
+<circle cx='474.57' cy='42.92' r='6.19' style='stroke-width: 0.64; stroke: #0B3A6E; stroke-opacity: 0.58; fill: #4C78A8; fill-opacity: 0.58;' />
+<circle cx='438.48' cy='124.21' r='1.93' style='stroke-width: 0.64; stroke: #0B3A6E; stroke-opacity: 0.58; fill: #4C78A8; fill-opacity: 0.58;' />
+<circle cx='364.01' cy='141.49' r='3.20' style='stroke-width: 0.64; stroke: #0B3A6E; stroke-opacity: 0.58; fill: #4C78A8; fill-opacity: 0.58;' />
+<circle cx='416.71' cy='183.73' r='25.93' style='stroke-width: 0.64; stroke: #0B3A6E; stroke-opacity: 0.58; fill: #4C78A8; fill-opacity: 0.58;' />
+<circle cx='438.76' cy='82.62' r='9.37' style='stroke-width: 0.64; stroke: #0B3A6E; stroke-opacity: 0.58; fill: #4C78A8; fill-opacity: 0.58;' />
+<circle cx='501.36' cy='73.18' r='1.81' style='stroke-width: 0.64; stroke: #0B3A6E; stroke-opacity: 0.58; fill: #4C78A8; fill-opacity: 0.58;' />
+<circle cx='329.01' cy='170.27' r='3.71' style='stroke-width: 0.64; stroke: #0B3A6E; stroke-opacity: 0.58; fill: #4C78A8; fill-opacity: 0.58;' />
+<circle cx='333.02' cy='89.95' r='10.79' style='stroke-width: 0.64; stroke: #0B3A6E; stroke-opacity: 0.58; fill: #4C78A8; fill-opacity: 0.58;' />
+<circle cx='312.72' cy='48.20' r='12.00' style='stroke-width: 0.64; stroke: #0B3A6E; stroke-opacity: 0.58; fill: #4C78A8; fill-opacity: 0.58;' />
+<circle cx='363.96' cy='188.10' r='5.68' style='stroke-width: 0.64; stroke: #0B3A6E; stroke-opacity: 0.58; fill: #4C78A8; fill-opacity: 0.58;' />
+<text x='416.71' y='177.32' text-anchor='middle' style='font-size: 10.24px; font-weight: bold; font-family: "Nimbus Sans";' textLength='49.20px' lengthAdjust='spacingAndGlyphs'>Tarragona</text>
+<text x='333.02' y='83.53' text-anchor='middle' style='font-size: 10.24px; font-weight: bold; font-family: "Nimbus Sans";' textLength='44.48px' lengthAdjust='spacingAndGlyphs'>Vila-seca</text>
+<text x='312.72' y='41.79' text-anchor='middle' style='font-size: 10.24px; font-weight: bold; font-family: "Nimbus Sans";' textLength='27.91px' lengthAdjust='spacingAndGlyphs'>Salou</text>
+</g>
+<g clip-path='url(#cpMC4wMHw1NzYuMDB8MC4wMHw0MTcuNjA=)'>
+<polyline points='42.38,248.09 42.38,26.27 ' style='stroke-width: 0.85; stroke: #17202A; stroke-linecap: butt;' />
+<text x='34.02' y='251.92' text-anchor='end' style='font-size: 10.50px;fill: #52616B; font-family: "Nimbus Sans";' textLength='5.84px' lengthAdjust='spacingAndGlyphs'>0</text>
+<text x='34.02' y='188.54' text-anchor='end' style='font-size: 10.50px;fill: #52616B; font-family: "Nimbus Sans";' textLength='11.69px' lengthAdjust='spacingAndGlyphs'>20</text>
+<text x='34.02' y='125.16' text-anchor='end' style='font-size: 10.50px;fill: #52616B; font-family: "Nimbus Sans";' textLength='11.69px' lengthAdjust='spacingAndGlyphs'>40</text>
+<text x='34.02' y='61.78' text-anchor='end' style='font-size: 10.50px;fill: #52616B; font-family: "Nimbus Sans";' textLength='11.69px' lengthAdjust='spacingAndGlyphs'>60</text>
+<polyline points='39.40,248.09 42.38,248.09 ' style='stroke-width: 0.64; stroke: #17202A; stroke-linecap: butt;' />
+<polyline points='39.40,184.71 42.38,184.71 ' style='stroke-width: 0.64; stroke: #17202A; stroke-linecap: butt;' />
+<polyline points='39.40,121.33 42.38,121.33 ' style='stroke-width: 0.64; stroke: #17202A; stroke-linecap: butt;' />
+<polyline points='39.40,57.96 42.38,57.96 ' style='stroke-width: 0.64; stroke: #17202A; stroke-linecap: butt;' />
+<polyline points='42.38,248.09 564.04,248.09 ' style='stroke-width: 0.85; stroke: #17202A; stroke-linecap: butt;' />
+<polyline points='42.38,251.08 42.38,248.09 ' style='stroke-width: 0.64; stroke: #17202A; stroke-linecap: butt;' />
+<polyline points='142.70,251.08 142.70,248.09 ' style='stroke-width: 0.64; stroke: #17202A; stroke-linecap: butt;' />
+<polyline points='243.02,251.08 243.02,248.09 ' style='stroke-width: 0.64; stroke: #17202A; stroke-linecap: butt;' />
+<polyline points='343.34,251.08 343.34,248.09 ' style='stroke-width: 0.64; stroke: #17202A; stroke-linecap: butt;' />
+<polyline points='443.66,251.08 443.66,248.09 ' style='stroke-width: 0.64; stroke: #17202A; stroke-linecap: butt;' />
+<polyline points='543.98,251.08 543.98,248.09 ' style='stroke-width: 0.64; stroke: #17202A; stroke-linecap: butt;' />
+<text x='42.38' y='264.11' text-anchor='middle' style='font-size: 10.50px;fill: #52616B; font-family: "Nimbus Sans";' textLength='5.84px' lengthAdjust='spacingAndGlyphs'>0</text>
+<text x='142.70' y='264.11' text-anchor='middle' style='font-size: 10.50px;fill: #52616B; font-family: "Nimbus Sans";' textLength='5.84px' lengthAdjust='spacingAndGlyphs'>5</text>
+<text x='243.02' y='264.11' text-anchor='middle' style='font-size: 10.50px;fill: #52616B; font-family: "Nimbus Sans";' textLength='11.69px' lengthAdjust='spacingAndGlyphs'>10</text>
+<text x='343.34' y='264.11' text-anchor='middle' style='font-size: 10.50px;fill: #52616B; font-family: "Nimbus Sans";' textLength='11.69px' lengthAdjust='spacingAndGlyphs'>15</text>
+<text x='443.66' y='264.11' text-anchor='middle' style='font-size: 10.50px;fill: #52616B; font-family: "Nimbus Sans";' textLength='11.69px' lengthAdjust='spacingAndGlyphs'>20</text>
+<text x='543.98' y='264.11' text-anchor='middle' style='font-size: 10.50px;fill: #52616B; font-family: "Nimbus Sans";' textLength='11.69px' lengthAdjust='spacingAndGlyphs'>25</text>
+<text x='303.21' y='278.15' text-anchor='middle' style='font-size: 12.00px; font-weight: bold;fill: #17202A; font-family: "Nimbus Sans";' textLength='174.12px' lengthAdjust='spacingAndGlyphs'>Població de 65 anys o més (%)</text>
+<text transform='translate(16.72,137.18) rotate(-90)' text-anchor='middle' style='font-size: 12.00px; font-weight: bold;fill: #17202A; font-family: "Nimbus Sans";' textLength='148.02px' lengthAdjust='spacingAndGlyphs'>Habitatge no principal (%)</text>
+<text x='303.21' y='316.73' text-anchor='middle' style='font-size: 12.00px; font-weight: bold;fill: #17202A; font-family: "Nimbus Sans";' textLength='78.38px' lengthAdjust='spacingAndGlyphs'>Població total</text>
+<circle cx='172.95' cy='353.17' r='1.87' style='stroke-width: 0.64; stroke: #0B3A6E; stroke-opacity: 0.58; fill: #4C78A8; fill-opacity: 0.58;' />
+<circle cx='219.71' cy='353.17' r='5.23' style='stroke-width: 0.64; stroke: #0B3A6E; stroke-opacity: 0.58; fill: #4C78A8; fill-opacity: 0.58;' />
+<circle cx='281.18' cy='353.17' r='11.29' style='stroke-width: 0.64; stroke: #0B3A6E; stroke-opacity: 0.58; fill: #4C78A8; fill-opacity: 0.58;' />
+<circle cx='369.01' cy='353.17' r='22.27' style='stroke-width: 0.64; stroke: #0B3A6E; stroke-opacity: 0.58; fill: #4C78A8; fill-opacity: 0.58;' />
+<text x='187.57' y='357.00' style='font-size: 10.50px;fill: #52616B; font-family: "Nimbus Sans";' textLength='17.53px' lengthAdjust='spacingAndGlyphs'>500</text>
+<text x='234.33' y='357.00' style='font-size: 10.50px;fill: #52616B; font-family: "Nimbus Sans";' textLength='26.30px' lengthAdjust='spacingAndGlyphs'>5.000</text>
+<text x='301.74' y='357.00' style='font-size: 10.50px;fill: #52616B; font-family: "Nimbus Sans";' textLength='32.14px' lengthAdjust='spacingAndGlyphs'>25.000</text>
+<text x='404.14' y='357.00' style='font-size: 10.50px;fill: #52616B; font-family: "Nimbus Sans";' textLength='37.98px' lengthAdjust='spacingAndGlyphs'>100.000</text>
+<text x='42.38' y='17.45' style='font-size: 13.00px; font-weight: bold;fill: #17202A; font-family: "Nimbus Sans";' textLength='350.95px' lengthAdjust='spacingAndGlyphs'>Envelliment, habitatge no principal i població total (2021)</text>
+<text x='42.38' y='407.01' style='font-size: 12.00px;fill: #52616B; font-family: "Nimbus Sans";' textLength='422.97px' lengthAdjust='spacingAndGlyphs'>L'àrea de cada bombolla és proporcional a la població total. Font: Idescat, 2021.</text>
+</g>
+</g>
+</svg>

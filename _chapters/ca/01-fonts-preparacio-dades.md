@@ -16,26 +16,26 @@ Mai no havíem tingut tants recursos per observar el territori. Les administraci
 
 Com més dades i eines hi ha, més important esdevé el **criteri**. Cal criteri per plantejar preguntes que es puguin respondre, per distingir una font fiable d'una xifra sense context, per saber què diu realment una taula, per detectar què no diu i per transformar informació dispersa en decisions més ben fonamentades. En geografia i turisme, treballar amb dades no és acumular fitxers: és construir una cadena d'evidència defensable.
 
->>>>> En acabar el capítol, cal poder localitzar una font adequada, llegir-ne les metadades bàsiques i preparar una primera taula territorial sense perdre la traçabilitat.
+>>>>> En acabar el capítol, cal poder localitzar una font adequada, llegir-ne les metadades bàsiques —productor, definició, cobertura, període, unitat i llicència— i preparar una primera taula territorial sense perdre la traçabilitat.
 >>>>>
->>>>> - Formular una pregunta territorial abans de cercar o descarregar dades.
+>>>>> - Formular una pregunta territorial que orienti la cerca i la descàrrega de dades.
 >>>>> - Triar una font que respongui la pregunta i interpretar-ne productor, definició, cobertura, data, unitats i llicència.
 >>>>> - Transformar una taula de publicació en una taula analítica rectangular sense perdre codis, absències ni significat.
 >>>>> - Conservar els originals i documentar les fonts, les transformacions i les comprovacions.
 
-Aquest capítol introdueix aquesta cadena. Primer parteix de reptes territorials, turístics i ambientals que exigeixen preguntes concretes. Després ordena els tipus de fonts i mostra on buscar dades a escala global, europea, estatal, catalana i local. A continuació explica com verificar una font, llegir-ne les metadades, respectar-ne les condicions d'ús i triar vies d'accés adequades. Finalment, prepara una primera taula territorial en un full de càlcul, normalment comarcal en la demostració del curs, amb originals conservats, transformacions documentades i dades a punt per calcular, representar i cartografiar en els capítols següents.
+Aquest capítol introdueix aquesta cadena. Primer parteix de reptes territorials, turístics i ambientals que exigeixen preguntes concretes. Després ordena els tipus de fonts i mostra on buscar dades a escala global, europea, estatal, catalana i local. A continuació explica com verificar una font, llegir-ne les metadades, respectar-ne les condicions d'ús i triar vies d'accés adequades. Finalment, prepara una primera taula territorial en un full de càlcul, normalment comarcal en la demostració del curs, amb originals conservats, transformacions documentades i dades a punt per calcular, representar i cartografiar en els capítols següents. El resultat no és un fitxer acumulat sense criteri, sinó una base que explica d'on surt cada camp i permet reconstruir el recorregut des de la pregunta inicial.
 
-La ruta mínima de treball és sempre la mateixa, encara que la font canviï. Primer es formula una pregunta amb fenomen, territori, període, unitat d'observació i mesura. Després es tria una font que realment pugui respondre-la, es comproven productor, definició, cobertura, data i llicència, i només aleshores es descarrega o consulta la dada. El resultat del capítol no és un fitxer acumulat sense criteri, sinó una primera base territorial que conserva els originals, explica d'on surt cada camp i deixa preparades les comprovacions per als capítols següents.
+Per donar una decisió concreta a aquest recorregut, la demostració del professorat prepararà una diagnosi de població i habitatge del Tarragonès amb dades censals de 2021 i utilitzarà Vila-seca com a municipi de referència. Cada fila final representarà un municipi i reunirà identificadors territorials, població total i per grans grups d'edat, habitatges principals i no principals i superfície. Aquest cas permetrà aplicar des del principi els criteris de selecció, verificació i preparació; l'activitat detallada del final del capítol explicarà com construir la taula `municipal` sense perdre la traça de les fonts.
 
-Per donar una decisió concreta a aquest recorregut, la demostració comuna prepararà una diagnosi de població i habitatge del Tarragonès amb dades censals de 2021. Cada fila final representarà un municipi i reunirà identificadors territorials, població total i per grans grups d'edat, habitatges principals i no principals i superfície. Aquest cas permetrà aplicar des del principi els criteris de selecció, verificació i preparació; l'activitat detallada del final del capítol explicarà com construir la taula `municipal` sense perdre la traça de les fonts.
+>> **Itinerari bàsic del capítol.** En una primera lectura cal concentrar-se en la formulació de la pregunta, la pauta de verificació de fonts, els fonaments del full de càlcul i l'activitat final. Els repertoris de portals, els estàndards, les API, els geoserveis i l'automatització amplien aquest nucli i es poden consultar com a referència quan la font o el problema els facin necessaris.
 
 ## Formulació de preguntes i cadena d'evidència
 
-El primer pas no és descarregar una taula, sinó delimitar què es vol saber. Una pregunta clara permet decidir quina unitat d'observació, quin període, quina mesura i quin nivell territorial cal buscar.
+El primer pas no és descarregar una taula, sinó delimitar què es vol saber. Una pregunta clara permet decidir quina **unitat d'observació**, és a dir, quina entitat descriurà cada fila, quin període, quina mesura i quin nivell territorial cal buscar. També dona continuïtat a la cadena d'evidència: la font, les transformacions i la representació final han de respondre la mateixa pregunta i han de permetre reconstruir el camí fins a les dades originals. Sense aquest vincle, una operació pot ser tècnicament correcta i, tanmateix, no aportar evidència pertinent sobre el problema territorial.
 
 >>>>> El treball comença convertint una curiositat inicial en una pregunta de dades comprovable.
 >>>>>
->>>>> - Formular una pregunta abans d'obrir un portal.
+>>>>> - Formular la pregunta que guiarà la consulta d'un portal.
 >>>>> - Distingir opinió, prejudici, hipòtesi, evidència, coneixement i valor.
 >>>>> - Separar fenomen, unitat d'observació, territori, període i mesura.
 >>>>> - Entendre que una dada és una representació construïda, no el fet mateix.
@@ -56,11 +56,11 @@ Entre molts problemes possibles, podem destacar els següents. No formen un cat�
 
 Aquest recorregut va de problemes amplis a qüestions cada vegada més operatives. Els grans reptes orienten la mirada, però l'anàlisi comença quan es formula una pregunta capaç d'identificar fenomen, unitat d'observació, territori, període i mesura. Sense aquesta concreció, les dades només acumulen xifres; amb aquesta concreció, poden corregir impressions, fer visibles desigualtats i sostenir decisions més responsables.
 
-El pas de repte a pregunta es fa avui en un entorn informatiu saturat. Internet, les xarxes socials, els sistemes de recomanació, la publicitat segmentada i els reenviaments instantanis poden amplificar rumors, simplificacions i afirmacions falses abans que una institució, un equip científic o un mitjà les hagi pogut verificar. No tot error és desinformació: també hi ha confusions honestes, dades mal interpretades, titulars exagerats i desacords legítims. Però la recerca sobre informació falsa en línia mostra que les notícies falses poden difondre's ràpidament en xarxes socials, i els estudis sobre *fake news* les situen com un problema sociotècnic que combina incentius econòmics, plataformes, actors polítics, bots, audiències i manca de verificació {% cite vosoughiSpreadTrueFalseNews2018 lazerScienceFakeNews2018 wardleInformationDisorder2017 %}.
+El pas de repte a pregunta es fa avui en un entorn informatiu saturat. Internet, les xarxes socials, els sistemes de recomanació, la publicitat segmentada i els reenviaments instantanis poden amplificar rumors, simplificacions i afirmacions falses a un ritme que supera la capacitat de verificació d'una institució, un equip científic o un mitjà. No tot error és desinformació: també hi ha confusions honestes, dades mal interpretades, titulars exagerats i desacords legítims. Però la recerca sobre informació falsa en línia mostra que les notícies falses poden difondre's ràpidament en xarxes socials, i els estudis sobre *fake news* les situen com un problema sociotècnic que combina incentius econòmics, plataformes, actors polítics, bots, audiències i manca de verificació {% cite vosoughiSpreadTrueFalseNews2018 lazerScienceFakeNews2018 wardleInformationDisorder2017 %}.
 
 La fabricació de dubte no comença amb internet. *Merchants of Doubt* mostra com alguns actors van explotar la incertesa científica per sembrar confusió pública en debats sobre tabac, pluja àcida, ozó i canvi climàtic {% cite oreskesMerchantsDoubt2010 %}. Aquest patró és important per a la informació geogràfica i turística perquè molts conflictes territorials barregen dades, interessos, valors i identitats: sostenibilitat, habitatge, mobilitat, aigua o canvi climàtic poden aparèixer com a disputes d'opinió quan en realitat inclouen afirmacions que sí que es poden contrastar. El problema no és que hi hagi debat; el problema és presentar una afirmació sense font, una incertesa parcial o una estratègia de comunicació interessada com si tinguessin el mateix pes que una evidència documentada.
 
->>> **Abans de reproduir un titular.** Una notícia afirma, a partir d'un estudi, que caldrà allargar l'edat de jubilació fins als 70 o 72 anys o que les pensions d'un país no estan assegurades. Abans de difondre aquesta conclusió, cal comprovar qui ha encarregat i finançat l'estudi, si l'entitat comercialitza plans de pensions o altres productes financers a llarg termini, quines dades i hipòtesis s'hi han utilitzat i si l'informe complet, la metodologia i els càlculs es poden consultar. Un interès comercial no invalida per si sol l'anàlisi, però s'ha de declarar com a possible conflicte d'interès i obliga a contrastar-ne les decisions amb fonts independents. Si només circula el resultat i no es pot reconstruir el camí que hi porta, no hi ha prou traçabilitat per presentar la conclusió com una evidència confirmada.
+>>> **Verificació d'un titular.** Una notícia afirma, a partir d'un estudi, que caldrà allargar l'edat de jubilació fins als 70 o 72 anys o que les pensions d'un país no estan assegurades. La difusió d'aquesta conclusió exigeix comprovar qui ha encarregat i finançat l'estudi, si l'entitat comercialitza plans de pensions o altres productes financers a llarg termini, quines dades i hipòtesis s'hi han utilitzat i si l'informe complet, la metodologia i els càlculs es poden consultar. Un interès comercial no invalida per si sol l'anàlisi, però s'ha de declarar com a possible conflicte d'interès i obliga a contrastar-ne les decisions amb fonts independents. Si només circula el resultat i no es pot reconstruir el camí que hi porta, no hi ha prou traçabilitat per presentar la conclusió com una evidència confirmada.
 
 A partir d'aquest problema s'entén millor per què interessen Mill, Popper i Kuhn. En *On Liberty*, publicat el 1859, John Stuart Mill defensa la llibertat de pensament i discussió davant la pressió social i política per silenciar opinions dissidents. El seu argument no és que totes les opinions siguin igualment bones, sinó que una societat necessita exposar-les a discussió perquè l'error es pugui detectar, les veritats parcials es puguin corregir i les idees acceptades no es converteixin en dogmes morts {% cite millOnLiberty1859 %}.
 
@@ -77,7 +77,7 @@ La taula següent és un **marc lèxic de treball**, no una taxonomia filosòfic
 ::: table "Marc lèxic de la percepció a una pregunta contrastable"
 | Punt de partida | Exemple | Com es treballa amb dades |
 | --- | --- | --- |
-| Opinió | «El centre està saturat» | Definir saturació, període, lloc, indicador i font abans de valorar-la |
+| Opinió | «El centre està saturat» | Valorar-la amb una definició explícita de saturació, període, lloc, indicador i font |
 | Prejudici | «Els visitants sempre degraden el barri» | Formular una hipòtesi que es pugui contrastar amb residència, ús, temporada i altres factors |
 | Hipòtesi o idea guia | «La pressió varia segons temporada, carrer i tipus d'allotjament» | Definir observacions esperades, fonts, unitats i criteri de contrast |
 | Evidència | Recompte, registre, mesura o observació documentada | Verificar productor, definició, cobertura, qualitat i comparabilitat |
@@ -87,7 +87,7 @@ La taula següent és un **marc lèxic de treball**, no una taxonomia filosòfic
 
 ### La pregunta precedeix la cerca
 
-Una cerca sense pregunta acostuma a produir una acumulació de fitxers, no una base d'anàlisi. Abans d'obrir un portal convé formular què es vol saber i precisar almenys cinc components:
+Una cerca sense pregunta acostuma a produir una acumulació de fitxers, no una base d'anàlisi. La consulta d'un portal ha de partir d'una formulació de què es vol saber i precisar almenys cinc components:
 
 1. **El fenomen:** població resident, oferta d'allotjament, arribades, pernoctacions, despesa, ocupació, mobilitat o coberta del sòl, entre d'altres.
 2. **La unitat d'observació:** una persona, un establiment, un municipi, una comarca, una regió, un país o una cel·la ràster.
@@ -103,23 +103,23 @@ El curs utilitza el descobriment de coneixement en bases de dades, o **KDD** (*k
 
 Aquest cicle es pot relacionar amb la **jerarquia dades-informació-coneixement-saviesa**, sovint coneguda com a DIKW. Rowley en revisa les representacions i mostra que és una jerarquia molt utilitzada, però també discutida, perquè no sempre hi ha acord sobre què transforma les dades en informació, la informació en coneixement i el coneixement en saviesa {% cite rowleyWisdomHierarchy2007 %}. Per això aquí s'utilitza com una guia crítica, no com una escala automàtica. Una observació es converteix en dada quan queda codificada amb unitat, temps, lloc i mètode. Les dades es converteixen en informació quan s'hi afegeixen context, metadades i comparació. L'anàlisi busca patrons, diferències i relacions. El coneixement apareix quan aquests resultats es contrasten amb definicions, teoria, experiència territorial i altres fonts. La saviesa pràctica no és només saber més: és usar aquest coneixement amb criteri, experiència i valors explícits per orientar una decisió.
 
-![Cicle d'elaboració de coneixement territorial]({{ site.baseurl }}/assets/img/data-sources/kdd-dikw-cycle.svg "El diagrama ajuda a llegir una dada com a part d'un procés: el repte genera observacions, les dades se seleccionen i es preparen, l'anàlisi detecta patrons i l'avaluació els converteix en coneixement útil per decidir. La decisió retorna al repte i pot obrir noves observacions. Figura d'elaboració pròpia basada en el procés KDD."){: data-figure-width-web="37rem"}
+![Cicle d'elaboració de coneixement territorial]({{ site.baseurl }}/assets/img/data-sources/kdd-dikw-cycle.svg "Cicle KDD d'elaboració de coneixement territorial. Elaboració pròpia."){: data-figure-width-web="45rem" data-figure-width-pdf="100%"}
 
 El diagrama també mostra un retorn: una decisió o una política pot reformular el repte inicial i generar noves observacions. Si una destinació limita l'accés a un espai natural, canvia la mobilitat o regula l'allotjament, el coneixement acumulat no tanca el problema; obliga a observar què ha passat després. Aquesta és la diferència entre una dada aïllada i una pràctica informada: l'aprenentatge es reaprofita, però continua sotmès a revisió.
 
 ### Les dades no són els fets mateixos
 
-Una dada és una **representació codificada** d'algun aspecte de la realitat. Entre el fenomen i la cel·la d'una taula hi ha decisions: què es considera turista, com es recull la resposta, com es tracta una absència, quin territori s'assigna a l'observació i quan es revisa la sèrie. Per això no existeixen dades completament «crues» en el sentit d'estar lliures de decisions prèvies. Sí que es pot parlar de **dades originals del projecte** per designar la còpia rebuda o descarregada abans de modificar-la.
+Una dada és una **representació codificada** d'algun aspecte de la realitat. Entre el fenomen i la cel·la d'una taula hi ha decisions: què es considera turista, com es recull la resposta, com es tracta una absència, quin territori s'assigna a l'observació i quan es revisa la sèrie. Per això no existeixen dades completament «crues» en el sentit d'estar lliures de decisions prèvies. Sí que es pot parlar de **dades originals del projecte** per designar la còpia rebuda o descarregada que encara no s'ha modificat.
 
 La qualitat no consisteix només a evitar errors numèrics. També exigeix que les dades siguin adequades per a l'ús previst, que les definicions siguin clares i que el procés pugui reconstruir-se. Els principis fonamentals de l'estadística oficial de les Nacions Unides vinculen la confiança pública amb la imparcialitat, els mètodes científics i la transparència sobre fonts i procediments {% cite unitedNationsFundamentalPrinciples2014 %}. El Codi de bones pràctiques de les estadístiques europees concreta aquests compromisos en dimensions com la rellevància, l'exactitud, l'oportunitat, la coherència, la comparabilitat, l'accessibilitat i la claredat {% cite europeanStatisticalSystemCodePractice2018 %}.
 
->>>> **Un nombre sense context encara no és una evidència.** Jones recorda que un valor necessita etiqueta, unitat i relació amb allò que mesura per convertir-se en informació útil {% cite jonesHowLieCharts2018 %}. En el projecte, una cel·la amb `42` no diu si parla d'habitants, establiments, places, percentatge, any, municipi o casos absents. Abans de calcular o representar, cal poder respondre: què compta, on, quan, amb quina unitat, segons quina font i amb quines exclusions.
+>>>> **Un nombre sense context encara no és una evidència.** Jones recorda que un valor necessita etiqueta, unitat i relació amb allò que mesura per convertir-se en informació útil {% cite jonesHowLieCharts2018 %}. En el projecte, una cel·la amb `42` no diu si parla d'habitants, establiments, places, percentatge, any, municipi o casos absents. El càlcul o la representació exigeixen poder respondre: què compta, on, quan, amb quina unitat, segons quina font i amb quines exclusions.
 
 ## Tipus de fonts
 
-Un cop formulada la pregunta, el pas següent no és encara descarregar. Cal entendre quin tipus de font pot sostenir la resposta i quins riscos porta associats. Les fonts es poden ordenar de diverses maneres: segons la seva relació amb la pregunta, segons el procés que les produeix, segons el nivell d'elaboració, segons l'estructura de les dades o segons les condicions d'accés. Aquesta classificació no serveix per memoritzar etiquetes, sinó per anticipar quines comprovacions seran necessàries abans d'utilitzar les dades.
+Un cop formulada la pregunta, el pas següent no és encara descarregar. Cal entendre quin tipus de font pot sostenir la resposta i quins riscos porta associats. Les fonts es poden ordenar de diverses maneres: segons la seva relació amb la pregunta, segons el procés que les produeix, segons el nivell d'elaboració, segons l'estructura de les dades o segons les condicions d'accés. Aquesta classificació no serveix per memoritzar etiquetes, sinó per anticipar les comprovacions necessàries per poder utilitzar les dades.
 
->>>>> En aquesta secció es classifiquen les fonts per anticipar-ne els riscos principals abans d'utilitzar-les.
+>>>>> En aquesta secció es classifiquen les fonts per anticipar-ne els riscos principals d'ús.
 >>>>>
 >>>>> - Distingir fonts primàries, secundàries i terciàries segons la pregunta.
 >>>>> - Reconèixer si una dada prové d'una estadística, un registre, un sensor, una enquesta o una plataforma comercial.
@@ -161,7 +161,7 @@ Una altra classificació útil diferencia les fonts per la manera com es genera 
 
 ### Nivell, estructura, cobertura i accés de les fonts
 
-Les classificacions anteriors no esgoten les decisions que cal prendre. Una mateixa font pot ser estadística oficial, secundària respecte de la pregunta, agregada per municipis, publicada com a sèrie anual i accessible amb una llicència oberta. Per això convé afegir altres preguntes abans de triar-la:
+Les classificacions anteriors no esgoten les decisions que cal prendre. Una mateixa font pot ser estadística oficial, secundària respecte de la pregunta, agregada per municipis, publicada com a sèrie anual i accessible amb una llicència oberta. Per triar-la amb criteri, convé afegir altres preguntes:
 
 ::: table "Altres maneres de distingir les fonts"
 | Dimensió | Distinció habitual | Per què importa |
@@ -174,7 +174,7 @@ Les classificacions anteriors no esgoten les decisions que cal prendre. Una mate
 | Paper en el projecte | Font de càlcul, font de context, font de comprovació o font de descoberta | Evita donar el mateix pes a una dada analítica que a una pista inicial |
 :::
 
-La categoria no determina automàticament la qualitat. Un registre administratiu oficial pot contenir duplicats; una font col·laborativa pot estar molt actualitzada; una enquesta rigorosa pot no ser representativa a escala municipal. La classificació tampoc substitueix la lectura metodològica: serveix per saber quines preguntes caldrà fer després. Abans d'avaluar una font concreta, però, cal saber en quins àmbits institucionals i territorials és més probable trobar-la.
+La categoria no determina automàticament la qualitat. Un registre administratiu oficial pot contenir duplicats; una font col·laborativa pot estar molt actualitzada; una enquesta rigorosa pot no ser representativa a escala municipal. La classificació tampoc substitueix la lectura metodològica: serveix per saber quines preguntes caldrà fer després. L'avaluació d'una font concreta també requereix saber en quins àmbits institucionals i territorials és més probable trobar-la.
 
 ## Fonts de dades segons l'escala territorial
 
@@ -207,7 +207,7 @@ La taula següent no és un inventari exhaustiu. Funciona com un mapa de consult
 :::
 
 ::: table "Triar el primer punt de cerca"
-| Si la pregunta demana... | Punt de partida més eficient | Control abans de descarregar |
+| Si la pregunta demana... | Punt de partida més eficient | Control de la descàrrega |
 | --- | --- | --- |
 | Comparar països o grans regions | Organismes internacionals o Eurostat | Definició comuna, unitat i cobertura temporal |
 | Treballar municipis, comarques o províncies | Idescat, INE, Generalitat, Dataestur o CNIG segons la variable | Codi territorial, any de classificació i nivell disponible |
@@ -239,7 +239,7 @@ El portal facilita comparacions mundials, descàrregues i un servei de consulta 
 
 La Divisió d'Estadística de les Nacions Unides coordina estàndards i compila informació perquè fenòmens globals es puguin comparar. [UNData](https://data.un.org/) agrega bases de població, comptes nacionals, comerç, energia, medi ambient i altres àmbits. És un bon punt de descoberta, però la traça s'ha de seguir fins a l'agència productora. Per als Objectius de Desenvolupament Sostenible també es disposa d'un [servei oficial de consulta dels indicadors ODS](https://unstats.un.org/SDGAPI/swagger/).
 
-Dins del mateix sistema, [UN Tourism](https://www.unwto.org/tourism-statistics/tourism-statistics-database) té el mandat especialitzat d'impulsar un turisme responsable, sostenible i accessible. Per observar-ne l'evolució promou recomanacions estadístiques comunes i reuneix arribades, pernoctacions, despesa, allotjament i indicadors macroeconòmics. L'accés i la reutilització no són iguals per a tots els productes; abans de redistribuir una descàrrega cal revisar-ne les condicions específiques.
+Dins del mateix sistema, [UN Tourism](https://www.unwto.org/tourism-statistics/tourism-statistics-database) té el mandat especialitzat d'impulsar un turisme responsable, sostenible i accessible. Per observar-ne l'evolució promou recomanacions estadístiques comunes i reuneix arribades, pernoctacions, despesa, allotjament i indicadors macroeconòmics. L'accés i la reutilització no són iguals per a tots els productes; la redistribució d'una descàrrega queda condicionada a la revisió de les condicions específiques.
 
 #### Wikipedia, Wikidata i recursos de descoberta
 
@@ -270,9 +270,19 @@ Més detall no significa necessàriament més exactitud. Els atributs d'OSM pode
 
 >> **Les fonts també desapareixen o canvien de funció.** Quan una base deixa de mantenir-se, una URL no garanteix que continuï sent una font vigent. En un treball reproduïble cal registrar la data d'accés i conservar, quan la llicència ho permeti, la versió exacta utilitzada.
 
+### Comparar portals globals i europeus
+
+Les captures següents no s'han de memoritzar com a interfícies estables. Serveixen per comparar com un portal global, una oficina estadística europea i un servei de geodades presenten el cercador, el codi del conjunt, les dimensions, les metadades, les descàrregues i les famílies de dades espacials.
+
+::: subfigures a+b/c "Portals per localitzar indicadors comparables i geodades harmonitzades. Captures pròpies dels portals indicats."
+![Portal World Bank Open Data amb cercador, àrees temàtiques i indicadors globals]({{ site.baseurl }}/assets/img/data-sources/world-bank-data-2026-08-13.png "El cercador, les àrees temàtiques i les fitxes d'indicador permeten localitzar indicadors globals; després cal comprovar-ne la definició, la unitat i la font original. Captura pròpia del portal World Bank Open Data, 13 d'agost de 2026.")
+![Data Browser d'Eurostat amb codi del conjunt, metadades, dimensions, filtres i descàrrega]({{ site.baseurl }}/assets/img/data-sources/eurostat-data-browser.png "La còpia de valors d'Eurostat exigeix llegir el codi del conjunt, les dimensions, els filtres, les metadades i les opcions de descàrrega. Captura pròpia del Data Browser d'Eurostat, 11 d'agost de 2026.")
+![Pàgina GISCO Geodata d'Eurostat amb famílies de geodades i avís de metadades]({{ site.baseurl }}/assets/img/data-sources/gisco-geodata-2026-08-13.png "Les geometries s'han de triar segons l'escala, la família de dades i les condicions d'ús, no només pel nom de la capa. Captura pròpia de GISCO Geodata d'Eurostat, 13 d'agost de 2026.")
+:::
+
 ### Fonts d'àmbit europeu
 
-En l'àmbit europeu, Eurostat és la font estadística comparativa principal. Després de localitzar la taula o l'indicador, cal revisar el component geogràfic d'Eurostat, GISCO, i Copernicus, perquè aporten les geometries harmonitzades i l'observació de la Terra que sovint permeten representar o contextualitzar aquestes estadístiques.
+L'àmbit europeu és adequat quan la comparabilitat entre estats o regions pesa més que el detall municipal. Eurostat harmonitza definicions i territoris, però no ofereix totes les variables a tots els nivells i obliga a conservar la versió NUTS; GISCO aporta geometries compatibles amb aquesta classificació, mentre que Copernicus permet observar el territori amb productes que cal triar segons data, resolució, processament i cobertura de núvols. La font s'ha de seleccionar, per tant, segons si la pregunta demana comparar estadístiques, representar regions equivalents o observar canvis físics.
 
 #### Eurostat
 
@@ -294,17 +304,9 @@ Això no vol dir que qualsevol variable existeixi a qualsevol nivell: un indicad
 
 [Copernicus Data Space Ecosystem](https://dataspace.copernicus.eu/) dona accés a imatges Sentinel i altres productes d'observació de la Terra. El navegador permet cercar per lloc, dates, missió, cobertura de núvols i tipus de producte. També hi ha catàlegs, serveis de consulta, processament en línia i descàrrega. La data de captació, el nivell de processament, la resolució, els núvols i la llicència de cada col·lecció formen part de la selecció; «publicat al Data Space» no implica que tot el contingut tingui exactament les mateixes condicions.
 
-Les captures globals i europees no s'han de memoritzar com a interfícies estables. Serveixen per aprendre on apareixen el cercador, el codi del conjunt, les dimensions, les metadades, les descàrregues i les famílies de geodades.
-
-::: subfigures a+b/c "Aquests portals serveixen per localitzar indicadors comparables i geodades harmonitzades; abans de la descàrrega, cal identificar el codi del recurs, les metadades, la unitat, la data i la llicència. Captures pròpies dels portals indicats."
-![Portal World Bank Open Data amb cercador, àrees temàtiques i indicadors globals]({{ site.baseurl }}/assets/img/data-sources/world-bank-data-2026-08-13.png "El cercador, les àrees temàtiques i les fitxes d'indicador permeten localitzar indicadors globals; després cal comprovar-ne la definició, la unitat i la font original. Captura pròpia del portal World Bank Open Data, 13 d'agost de 2026.")
-![Data Browser d'Eurostat amb codi del conjunt, metadades, dimensions, filtres i descàrrega]({{ site.baseurl }}/assets/img/data-sources/eurostat-data-browser.png "Cal llegir el codi del conjunt, les dimensions, els filtres, les metadades i les opcions de descàrrega abans de copiar cap valor d'Eurostat. Captura pròpia del Data Browser d'Eurostat, 11 d'agost de 2026.")
-![Pàgina GISCO Geodata d'Eurostat amb famílies de geodades i avís de metadades]({{ site.baseurl }}/assets/img/data-sources/gisco-geodata-2026-08-13.png "Les geometries s'han de triar segons l'escala, la família de dades i les condicions d'ús, no només pel nom de la capa. Captura pròpia de GISCO Geodata d'Eurostat, 13 d'agost de 2026.")
-:::
-
 ### Fonts d'àmbit estatal: Espanya
 
-En l'àmbit estatal, l'INE concentra bona part de l'estadística oficial; Dataestur i `datos.gob.es` ajuden a descobrir dades procedents de productors diversos; i l'IGN, el CNIG i el Cadastre aporten informació geogràfica de referència. L'ordre de lectura manté aquesta separació: primer estadística, indicadors i catàlegs; després cartografia, geoserveis i parcel·lari.
+L'àmbit estatal permet treballar amb metodologies comunes per al conjunt d'Espanya, però el detall disponible depèn de cada operació. L'INE és el punt de partida estadístic, sempre que la taula arribi a l'escala i a la representativitat necessàries; Dataestur i `datos.gob.es` faciliten la descoberta, però cal seguir la traça fins al productor original. Per a la base geogràfica, l'IGN i el CNIG ofereixen productes de referència i el Cadastre aporta detall parcel·lari, que no s'ha de confondre amb estadística, registre de la propietat o planejament. L'ordre de lectura manté aquesta separació: primer estadística, indicadors i catàlegs; després cartografia, geoserveis i parcel·lari.
 
 #### INE i INEbase
 
@@ -330,16 +332,18 @@ Els productes tenen escales, resolucions, dates, formats i sistemes de referènc
 
 Els [serveis cadastrals publicats dins la infraestructura europea d'informació espacial](https://www.catastro.hacienda.gob.es/webinspire/index.html) permeten accedir a parcel·les, edificis i adreces. La cartografia cadastral és molt útil per localitzar immobles i estudiar estructura parcel·lària, però una parcel·la cadastral no equival necessàriament a una finca registral ni al planejament urbanístic.
 
-En l'àmbit estatal, les interfícies també separen estadística i cartografia. INEbase ajuda a entrar per operació estadística; el Centro de Descargas del CNIG ajuda a entrar per producte geogràfic, escala, format i cobertura.
+#### Comparar interfícies estadístiques i cartogràfiques
 
-::: subfigures a+b "A escala estatal, cal separar la cerca estadística de la cerca cartogràfica: una operació estadística i un producte geogràfic tenen filtres, metadades i criteris de descàrrega diferents. Captures pròpies dels portals indicats."
-![INEbase amb categories d'operacions estadístiques i llistat d'operacions]({{ site.baseurl }}/assets/img/data-sources/inebase-2026-08-13.png "Cal entrar a INEbase per operació estadística i revisar la categoria, la taula, el període i el nivell territorial abans de descarregar. Captura pròpia del portal de l'INE, 13 d'agost de 2026.")
+En l'àmbit estatal, les interfícies separen estadística i cartografia. INEbase ajuda a entrar per operació estadística; el Centro de Descargas del CNIG ajuda a entrar per producte geogràfic, escala, format i cobertura. La comparació permet reconèixer que una taula i una capa no comparteixen necessàriament els mateixos filtres, metadades ni criteris de descàrrega.
+
+::: subfigures a+b "Cerca estadística i cartogràfica a escala estatal. Captures pròpies dels portals indicats."
+![INEbase amb categories d'operacions estadístiques i llistat d'operacions]({{ site.baseurl }}/assets/img/data-sources/inebase-2026-08-13.png "La descàrrega a INEbase exigeix entrar per operació estadística i revisar la categoria, la taula, el període i el nivell territorial. Captura pròpia del portal de l'INE, 13 d'agost de 2026.")
 ![Centro de Descargas del CNIG amb catàleg de productes geogràfics]({{ site.baseurl }}/assets/img/data-sources/cnig-downloads-2026-08-13.png "Cal entrar al Centro de Descargas del CNIG per producte geogràfic, escala, format i cobertura, no per una captura del mapa final. Captura pròpia, 13 d'agost de 2026.")
 :::
 
 ### Fonts d'àmbit català
 
-En l'àmbit català, Idescat concentra l'estadística oficial; els departaments publiquen registres i dades sectorials mitjançant Dades Obertes; i l'ICGC produeix la informació cartogràfica i geològica de referència. Primer convé identificar la dada estadística, administrativa o sectorial, i després comprovar quina geometria o cartografia permet representar-la amb l'escala adequada.
+L'àmbit català sol oferir el detall municipal i comarcal que necessita el projecte, però obliga a distingir processos de producció diferents. Idescat és el punt de partida per a estadística oficial i codis territorials; els departaments publiquen a Dades Obertes registres i dades sectorials que poden descriure activitat administrativa, no tot el fenomen; i l'ICGC proporciona la cartografia de referència, amb edició, resolució i sistema de coordenades propis. La selecció ha de combinar la variable i la geometria adequades sense confondre'n productors, definicions ni dates.
 
 #### Idescat
 
@@ -353,7 +357,7 @@ El [catàleg de Dades Obertes de la Generalitat](https://analisi.transparenciaca
 
 Un conjunt especialment útil és el [Registre de Turisme de Catalunya](https://analisi.transparenciacatalunya.cat/Turisme/Establiments-d-allotjament-tur-stic-inscrits-al-Re/t2h3-cgys/about_data), que conté establiments inscrits, tipus, estat, municipi, comarca, places i altres camps. És una font administrativa: una alta no demostra que l'establiment estigui obert, que les places estiguin disponibles ni que hi hagi hagut ocupació. Aquesta diferència permet treballar la distància entre **oferta registrada** i **activitat observada**.
 
-El portal de [coneixement turístic de la Generalitat](https://empresa.gencat.cat/ca/treb_ambits_actuacio/turisme/coneixement_planificacio/) agrupa estadístiques, estudis i eines sectorials. Les marques turístiques que hi apareixen no són necessàriament divisions administratives i la seva composició s'ha de documentar abans de fer unions territorials.
+El portal de [coneixement turístic de la Generalitat](https://empresa.gencat.cat/ca/treb_ambits_actuacio/turisme/coneixement_planificacio/) agrupa estadístiques, estudis i eines sectorials. Les marques turístiques que hi apareixen no són necessàriament divisions administratives i cal documentar-ne la composició per fer unions territorials correctes.
 
 #### Fonts geoespacials catalanes: ICGC i geoserveis
 
@@ -379,12 +383,14 @@ En un treball de primer curs, aquestes fonts no s'han d'usar només per «trobar
 
 Les captures catalanes i locals mostren el canvi d'escala i de funció institucional: estadística oficial, registre administratiu, descàrrega cartogràfica i síntesi supramunicipal. En tots els casos cal seguir fins al productor, la data, la definició i la llicència.
 
-::: subfigures a+b/c+d "Per baixar d'escala, es combinen estadística oficial, registres administratius, cartografia de referència i sistemes supramunicipals de síntesi; en tots els casos, cal seguir la traça fins al productor, la data, la definició i la llicència. Captures pròpies dels portals indicats."
-![Portal de l'Idescat amb accés a dades, mètodes, territori i actualitzacions de l'estadística oficial de Catalunya]({{ site.baseurl }}/assets/img/data-sources/idescat.png "L'Idescat serveix per trobar dades, mètodes, territoris i actualitzacions de l'estadística oficial catalana abans de construir una taula. Captura pròpia, 11 d'agost de 2026.")
+::: subfigures a+b/c+d "Fonts estadístiques, administratives i cartogràfiques per baixar d'escala territorial. Captures pròpies dels portals indicats."
+![Portal de l'Idescat amb accés a dades, mètodes, territori i actualitzacions de l'estadística oficial de Catalunya]({{ site.baseurl }}/assets/img/data-sources/idescat.png "L'Idescat serveix per trobar les dades, els mètodes, els territoris i les actualitzacions de l'estadística oficial catalana necessaris per construir una taula. Captura pròpia, 11 d'agost de 2026.")
 ![Fitxa del Registre de Turisme de Catalunya al portal de Dades Obertes]({{ site.baseurl }}/assets/img/data-sources/generalitat-open-data-tourism-register-2026-08-13.png "La fitxa del Registre de Turisme s'ha de llegir com a registre administratiu: productor, actualització, camps i exportacions expliquen què es pot usar i què no. Captura pròpia del portal de Dades Obertes de la Generalitat, 13 d'agost de 2026.")
-![Visor de descàrregues de l'ICGC amb selecció de l'àrea, família de producte i format de sortida]({{ site.baseurl }}/assets/img/data-sources/icgc-downloads.png "Cal triar el producte, l'àrea i el format al visor de l'ICGC abans d'incorporar una base cartogràfica al projecte. Captura pròpia, 11 d'agost de 2026.")
+![Visor de descàrregues de l'ICGC amb selecció de l'àrea, família de producte i format de sortida]({{ site.baseurl }}/assets/img/data-sources/icgc-downloads.png "La incorporació d'una base cartogràfica al projecte exigeix triar el producte, l'àrea i el format al visor de l'ICGC. Captura pròpia, 11 d'agost de 2026.")
 ![Sistema Mercuri de la Diputació de Tarragona amb menú d'indicadors, dades municipals, mapes i informes]({{ site.baseurl }}/assets/img/data-sources/mercuri-dipta-2026-08-13.png "Mercuri serveix per explorar indicadors municipals i detectar preguntes, però cal conservar la font primària quan el sistema indiqui un productor anterior. Captura pròpia del sistema Mercuri de la Diputació de Tarragona, 13 d'agost de 2026.")
 :::
+
+El recorregut pels casos següents no ha de produir una llista de portals memoritzats, sinó una manera d'entrar-hi: localitzar el productor, entendre la definició de la variable, comprovar l'escala, llegir les metadades, identificar els recursos disponibles i revisar sota quines condicions es poden usar. Les seccions posteriors ordenen aquests passos perquè una font local deixi de ser només una troballa i es pugui convertir en evidència territorial.
 
 #### Mercuri i informació supramunicipal de la demarcació
 
@@ -400,7 +406,7 @@ El [portal de dades obertes de Reus](https://opendata.reus.cat/) publica conjunt
 
 L'[Observatori de Reus](https://observatori.reus.cat/) funciona com a porta d'entrada a informació socioeconòmica i enllaça altres recursos d'interès, com Reus Open Data, Mercuri, Idescat o INE. En un treball del curs pot servir per descobrir dades i indicadors de ciutat, però la cita metodològica ha d'arribar al conjunt o productor concret utilitzat.
 
-Reus és un bon exemple de canvi d'escala. Si el projecte compara municipis, una taula per barris no es pot afegir directament a la taula comarcal sense agregació o sense canviar la unitat d'observació. Si, en canvi, la pregunta és urbana, el barri pot ser la unitat adequada i el municipi passa a ser el context. Aquesta decisió s'ha d'escriure abans d'unir dades: una fila per municipi, una fila per barri i una fila per equipament no poden conviure en la mateixa taula analítica com si fossin observacions equivalents.
+Reus és un bon exemple de canvi d'escala. Si el projecte compara municipis, una taula per barris no es pot afegir directament a la taula comarcal sense agregació o sense canviar la unitat d'observació. Si, en canvi, la pregunta és urbana, el barri pot ser la unitat adequada i el municipi passa a ser el context. La unió de dades ha de partir d'aquesta decisió escrita: una fila per municipi, una fila per barri i una fila per equipament no poden conviure en la mateixa taula analítica com si fossin observacions equivalents.
 
 #### Tarragona: TGN Dades i dades obertes
 
@@ -418,15 +424,13 @@ Tarragona disposa d'un [Geoportal](https://www.tarragona.cat/governobert/tgn-dad
 
 Les geodades locals poden tenir molt més detall que les fonts catalanes o estatals, però aquest detall té àmbit i data. Una capa de barris de Reus no es pot aplicar a Tarragona; una cartografia municipal pot tenir una escala excel·lent per al nucli urbà però no servir per comparar territoris diferents; i una capa publicada en un geoportal pot ser una visualització, una descàrrega o un servei, amb drets i capacitats diferents.
 
-En aquests recursos locals convé començar amb preguntes molt concretes: quina capa representa barris, carrers, equipaments o planejament; si es pot descarregar o només visualitzar; quin sistema de referència declara; i si la fitxa indica condicions de reutilització. Aquestes preguntes no es resolen només mirant el mapa: cal obrir metadades, recursos, enllaços metodològics i avisos del portal. Les coordenades i els sistemes de referència s'estudiaran amb més detall al capítol 4, però des del primer capítol ja s'ha d'aprendre a no ignorar-los quan apareixen en una fitxa.
+En aquests recursos locals convé començar amb preguntes molt concretes: quina capa representa barris, carrers, equipaments o planejament; si es pot descarregar o només visualitzar; quin sistema de referència declara; i si la fitxa indica condicions de reutilització. Aquestes preguntes no es resolen només mirant el mapa: cal obrir metadades, recursos, enllaços metodològics i avisos del portal. Les coordenades i els sistemes de referència s'estudiaran amb més detall a la [fase de representació de la Terra i dades espacials]({{ site.baseurl }}/ca/chapters/terra-dades-espacials/), però des del primer capítol ja s'ha d'aprendre a no ignorar-los quan apareixen en una fitxa.
 
-El resultat d'aquesta secció no hauria de ser una llista de portals memoritzats, sinó una manera d'entrar-hi. Cada font demana una exploració pròpia: localitzar el productor, entendre la definició de la variable, comprovar l'escala, llegir les metadades, identificar els recursos disponibles i veure sota quines condicions es poden usar. Les seccions següents ordenen aquests passos amb més detall perquè la font deixi de ser només una troballa i pugui convertir-se en evidència dins d'un treball territorial.
+## Verificació de les fonts
 
-## Verificar les fonts abans d'utilitzar-les
+Després de classificar una font, cal decidir si pot entrar en la cadena d'evidència. Una dada trobada en un portal, una captura, una consulta automatitzada o un informe encara no és una dada defensable. La verificació transforma una dada trobada en una dada utilitzable: el càlcul exigeix comprovar qui la produeix, què mesura, com s'ha obtingut, quines limitacions declara i si existeixen altres fonts que en confirmen o matisen la lectura.
 
-Després de classificar una font, cal decidir si pot entrar en la cadena d'evidència. Una dada trobada en un portal, una captura, una consulta automatitzada o un informe encara no és una dada defensable. La verificació transforma una dada trobada en una dada utilitzable: abans de calcular, cal comprovar qui la produeix, què mesura, com s'ha obtingut, quines limitacions declara i si existeixen altres fonts que en confirmen o matisen la lectura.
-
->>>>> La verificació ha de permetre revisar una font abans d'incorporar-la a una anàlisi.
+>>>>> La verificació ha de permetre decidir si una font es pot incorporar a una anàlisi.
 >>>>>
 >>>>> - Distingir autoritat institucional i adequació metodològica.
 >>>>> - Localitzar productor, definició, cobertura, qualitat, actualitat i llicència.
@@ -440,7 +444,7 @@ Una xifra trobada en una xarxa social, en un pseudomitjà, en una infografia sen
 
 Hi ha una excepció metodològica important: si la pregunta estudia què es diu a les xarxes o què respon un LLM, aquests continguts poden convertir-se en dades primàries de la recerca. En aquest cas encara cal definir la mostra, el període, el model o servei, les limitacions, l'ètica i el procediment de recollida. Estudiar un rumor no converteix el rumor en un fet.
 
-![Circuit de verificació d'una font]({{ site.baseurl }}/assets/diagrams/data-source-verification.mmd "Aquest circuit s'ha de seguir abans d'incorporar una dada al projecte: cal relacionar la pregunta amb el productor, revisar la metodologia, la cobertura i la llicència, contrastar el resultat i conservar una còpia original documentada."){: data-figure-width-web="34rem" data-figure-width-pdf="35rem"}
+![Circuit de verificació d'una font]({{ site.baseurl }}/assets/diagrams/data-source-verification.mmd "Aquest circuit estableix els requisits per incorporar una dada al projecte: cal relacionar la pregunta amb el productor, revisar la metodologia, la cobertura i la llicència, contrastar el resultat i conservar una còpia original documentada."){: data-figure-width-web="34rem" data-figure-width-pdf="35rem"}
 
 Aquest circuit es llegeix seguint les fletxes des de la pregunta inicial. Els rectangles representen accions o resultats, mentre que els rombes formulen decisions i obren branques etiquetades amb «Sí» i «No». La proximitat entre dues caixes no implica cap pas si no hi ha una fletxa que les connecti; quan una branca porta a descartar la font o a buscar una alternativa, no s'ha de continuar pel camí principal com si la decisió hagués estat afirmativa.
 
@@ -467,7 +471,7 @@ A la pràctica, aquests marcs expliquen per què els portals poden agrupar edats
 
 Les dades de mobilitat produïdes de manera passiva són un exemple especialment important per a geografia i turisme. El Ministeri de Transports [utilitza tecnologies de dades massives (*big data*) i intel·ligència artificial aplicades a registres generats per terminals de telefonia mòbil](https://www.transportes.gob.es/ministerio/proyectos-singulares/estudio-de-movilidad-con-big-data) per estudiar la mobilitat a escala estatal i difon resultats oberts agregats, juntament amb metodologia per interpretar-los. En altres projectes, les dades de telefonia poden adquirir-se a empreses operadores o intermediàries ja agregades per zones, franges horàries i tipus de visitant; això permet estudiar mobilitats estacionals en destinacions litorals, però limita la verificació externa perquè l'equip investigador no controla tot el procés de generació, filtratge i anonimització dels registres originals {% cite zaragoziPassiveMobileData2021 %}. A escala regional, les dades de targetes intel·ligents de transport també poden informar sobre patrons de mobilitat turística, com mostra l'estudi sobre l'ús de transport públic a la Costa Daurada amb dades del sistema de validació del Camp de Tarragona {% cite gutierrezSmartTravelCardTourism2020 %}. Aquest tipus de dades exigeix convencions de noms, control de duplicats i traçabilitat perquè diferents persones no refacin el mateix procés ni perdin la relació entre fitxers, consultes i resultats {% cite zaragoziFileNamingConvention2020 %}. En aquests casos, el valor analític prové del volum i la granularitat temporal, però l'accés als registres originals acostuma a requerir convenis, controls estrictes i formats que preservin el secret estadístic i la privacitat. Per això cal distingir entre resultats oberts agregats, dades comprades ja agregades i microdades restringides: no ofereixen la mateixa capacitat d'auditoria ni de reproducció.
 
-Les dades recollides pel mateix estudiantat també exigeixen responsabilitat. Una enquesta amb Microsoft Forms, Google Forms o una eina similar ha d'explicar qui recull la informació, amb quina finalitat, quines preguntes són obligatòries, durant quant temps es conservaran les respostes i si es compartiran resultats. El **consentiment informat** no és només una casella: és la garantia que la persona participant entén què està aportant i quin ús se'n farà. Si es recullen ubicacions, fotografies, opinions sensibles, identificadors o dades de menors, cal extremar la prudència i consultar el professorat abans de continuar.
+Les dades recollides pel mateix estudiantat també exigeixen responsabilitat. Una enquesta amb Microsoft Forms, Google Forms o una eina similar ha d'explicar qui recull la informació, amb quina finalitat, quines preguntes són obligatòries, durant quant temps es conservaran les respostes i si es compartiran resultats. El **consentiment informat** no és només una casella: és la garantia que la persona participant entén què està aportant i quin ús se'n farà. Si es recullen ubicacions, fotografies, opinions sensibles, identificadors o dades de menors, cal aturar la recollida i consultar el professorat; només es reprendrà quan s'hagin acordat les garanties necessàries.
 
 En recerca universitària, alguns projectes amb persones, dades sensibles o seguiment de comportaments poden requerir revisió per un comitè d'ètica o un procediment institucional equivalent. Aquí és útil distingir la protecció de les persones de la qualitat de la documentació. Els principis FAIR proposen que les dades siguin **localitzables** (*findable*), **accessibles** (*accessible*), **interoperables** (*interoperable*) i **reutilitzables** (*reusable*) {% cite wilkinsonFAIRGuidingPrinciples2016 %}. No són una ordre de publicar-ho tot a internet, sinó una pauta perquè un conjunt de dades, o almenys la seva documentació, pugui ser trobat, entès i usat correctament per altres persones autoritzades.
 
@@ -475,11 +479,11 @@ Que unes dades siguin **localitzables** vol dir que tenen un títol, un identifi
 
 Per tant, FAIR no elimina les obligacions de privacitat ni el secret estadístic. Una solució responsable pot ser publicar metadades, codi, mètode, dades agregades o taules anonimitzades, i mantenir les microdades sota accés restringit quan la llei, el consentiment o l'ètica ho exigeixen. En un treball del curs, una enquesta pot ser FAIR si el projecte documenta la pregunta, el formulari, el període, la mostra, el tractament d'anonimització i les taules agregades, encara que les respostes individuals no es comparteixin.
 
->>>>>> **No s'han de publicar microdades identificables.** Una taula amb noms, correus, telèfons, adreces, coordenades de trajectes, identificadors de targeta o combinacions rares d'atributs pot revelar persones encara que no inclogui el nom complet. Abans de compartir dades pròpies, cal reduir el detall, eliminar identificadors, agregar resultats i comprovar que el consentiment permet l'ús previst.
+>>>>>> **No s'han de publicar microdades identificables.** Una taula amb noms, correus, telèfons, adreces, coordenades de trajectes, identificadors de targeta o combinacions rares d'atributs pot revelar persones encara que no inclogui el nom complet. La publicació de dades pròpies exigeix reduir el detall, eliminar identificadors, agregar resultats i comprovar que el consentiment permet l'ús previst.
 
 ### Pauta per verificar una font
 
-Abans de descarregar convé completar una fitxa breu de la font:
+La fitxa breu de la font és un requisit de la descàrrega:
 
 ::: table "Preguntes per verificar una font"
 | Dimensió | Pregunta de control | Senyal d'alerta |
@@ -520,7 +524,7 @@ Les metadades poden aparèixer en una pàgina metodològica, una fitxa de catàl
 ::: table "Nivells que pot caldre documentar segons el tipus de recurs"
 | Nivell | Quan apareix | Què cal documentar |
 | --- | --- | --- |
-| Catàleg o fitxa | Quan un portal descriu conjunts de dades abans de descarregar-los | Productor, títol, territori, data, llicència i distribucions disponibles |
+| Catàleg o fitxa | Quan un portal descriu els conjunts i les descàrregues disponibles | Productor, títol, territori, data, llicència i distribucions disponibles |
 | Distribució tabular | Quan el conjunt s'obté com a taula, fitxer o resposta tabular d'un servei | Format, dimensions, filtres, unitats, període i URL o consulta completa |
 | Servei | Quan un servidor respon peticions i retorna dades, metadades, mapes renderitzats o objectes | Adreça de consulta, operacions, formats, límits, condicions d'ús i sistema d'identificació de recursos |
 | Capa geoespacial | Quan es treballa amb dades espacials en un sistema d'informació geogràfica (SIG), un servei cartogràfic o un fitxer amb geometria o cobertura | Nom de capa, geometria o ràster, sistema de referència, extensió, escala o resolució i atributs disponibles |
@@ -528,9 +532,11 @@ Les metadades poden aparèixer en una pàgina metodològica, una fitxa de catàl
 
 Una capa no és qualsevol tema d'una taula. Una taula de població municipal continua sent una dada plana encara que després es vulgui cartografiar; només esdevé una capa de treball quan s'uneix a una geometria municipal, conté coordenades o s'obre en un SIG com a recurs espacial. Per això cal distingir la distribució tabular, que conserva valors i dimensions, de la capa geoespacial, que afegeix geometria, sistema de referència i extensió.
 
-![Camins que cal documentar segons si la font és una taula, una resposta tabular, una dada geoespacial o un servei cartogràfic]({{ site.baseurl }}/assets/diagrams/data-source-levels.mmd "Cal documentar el camí que porta fins a la dada final: el catàleg ajuda a descobrir el recurs, el conjunt defineix què mesura, les dades planes segueixen una ruta tabular, les dades espacials segueixen una ruta geoespacial, i una taula només esdevé capa quan s'uneix amb geometria o coordenades."){: data-figure-width-web="34rem"}
+![Camins que cal documentar segons si la font és una taula, una resposta tabular, una dada geoespacial o un servei cartogràfic]({{ site.baseurl }}/assets/diagrams/data-source-levels.mmd "Cal documentar el camí que porta fins a la dada final: el catàleg ajuda a descobrir el recurs, el conjunt defineix què mesura, les dades planes segueixen una ruta tabular, les dades espacials segueixen una ruta geoespacial, i una taula només esdevé capa quan s'uneix amb geometria o coordenades."){: data-figure-width-web="50rem" data-figure-width-pdf="100%"}
 
 El diagrama no descriu una jerarquia obligatòria en tots els portals. Una taula estadística descarregada directament pot no tenir cap capa; un servei de consulta pot retornar una taula sense cap geometria; un fitxer geoespacial pot contenir diverses capes sense que hi hagi cap servei web actiu; i un servei cartogràfic pot permetre veure una ortofoto sense descarregar-ne els píxels originals. La utilitat és recordar que la dada final no s'explica només pel fitxer que queda al disc. També s'ha de conservar el camí que ha portat fins a aquell fitxer, resposta o capa derivada.
+
+En els tres exemples següents cal localitzar cinc elements: productor, definició, cobertura, data i llicència. Si algun d'aquests elements no es pot trobar, la continuació del procés exigeix registrar la limitació.
 
 #### Eurostat: una taula estadística multidimensional
 
@@ -562,8 +568,6 @@ El Pla Nacional d'Ortofotografia Aèria (PNOA) es pot consultar mitjançant serv
 | Capa | Nom tècnic, sistema de referència, extensió, estil i consulta disponible | Identificar la capa i construir una petició de mapa |
 :::
 
-La pràctica de lectura consistirà a localitzar en cada exemple cinc elements: productor, definició, cobertura, data i llicència. Si algun d'aquests elements no es pot trobar, la limitació s'ha de registrar abans de continuar.
-
 ## Obertura, estàndards i reproduïbilitat
 
 Quan una font ja sembla adequada, encara queda una pregunta pràctica: es pot usar de manera responsable i reconstruïble? Treballar amb dades no consisteix només a obtenir un fitxer. Cal saber si es pot reutilitzar legalment, si el format permet processar-lo, si altres eines el poden llegir i si el resultat es podrà reconstruir més endavant. Aquesta secció situa l'obertura, els estàndards i la reproduïbilitat com a condicions del treball, no com a complements administratius.
@@ -571,7 +575,7 @@ Quan una font ja sembla adequada, encara queda una pregunta pràctica: es pot us
 >>>>> Un projecte de dades ha de preparar-se amb criteris mínims d'obertura, documentació i reproduïbilitat.
 >>>>>
 >>>>> - Distingir dades obertes, formats oberts, estàndards oberts i programari lliure.
->>>>> - Llegir llicències i condicions de servei abans de reutilitzar un recurs.
+>>>>> - Llegir llicències i condicions de servei per determinar si un recurs es pot reutilitzar.
 >>>>> - Reconèixer que les plataformes privades poden canviar permisos, límits i vies d'accés.
 >>>>> - Organitzar fitxers, carpetes i documentació perquè el resultat es pugui revisar.
 
@@ -585,7 +589,7 @@ En un projecte es poden combinar diversos tipus d'obertura que no s'han de confo
 - **Programari lliure i de codi obert:** programari que permet usar, estudiar, modificar i redistribuir el codi segons una llicència determinada.
 - **Recerca oberta:** pràctiques que faciliten l'accés a publicacions, dades, codi, mètodes i resultats.
 
-Una base de dades pot publicar-se en un format obert i mantenir una llicència restrictiva. A la inversa, unes dades amb llicència oberta poden distribuir-se en un format difícil de processar. També es pot fer una anàlisi reproduïble amb programari privatiu si se'n documenten prou bé els passos i versions, encara que una altra persona necessitarà accés al mateix programari. L'obertura facilita la reproducció, però no la garanteix per si sola.
+Una base de dades pot publicar-se en un format obert i mantenir una llicència restrictiva. A la inversa, unes dades amb llicència oberta poden distribuir-se en un format difícil de processar. El programari de codi obert facilita la inspecció de les operacions i redueix barreres per repetir el treball: [LibreOffice](https://www.libreoffice.org/) ofereix un full de càlcul de codi obert, mentre que [OpenRefine](https://openrefine.org/) està especialitzat en l'exploració i transformació de dades tabulars. Això no converteix automàticament el projecte en reproduïble, perquè encara cal registrar versions, conservar les dades i explicar les operacions. També es pot fer una anàlisi reproduïble amb programari privatiu si se'n documenten prou bé els passos i versions, encara que una altra persona necessitarà accés al mateix programari. L'obertura facilita la reproducció, però no la garanteix per si sola.
 
 Les llicències més habituals en els portals del capítol inclouen Creative Commons, llicències pròpies de les administracions i, en el cas de bases de dades, l'Open Database License. Sempre cal llegir la condició concreta. `CC BY 4.0` exigeix atribució; domini públic i `CC0` redueixen les restriccions; `ODbL` incorpora obligacions específiques per a bases derivades. «Sense cost» no informa de cap d'aquestes condicions.
 
@@ -650,10 +654,6 @@ Un format tampoc no és necessàriament un estàndard de servei. GeoPackage és 
 
 >>> **Llegir una URL amb diverses capes de significat.** A `https://www.ign.es/wms-inspire/pnoa-ma`, `wms` indica una interfície OGC que retorna mapes com a imatge; `inspire` suggereix que el servei s'inscriu en el marc europeu d'informació espacial; i `pnoa-ma` identifica el producte o servei concret. Cap d'aquestes parts, per separat, no diu encara quina capa s'ha demanat, quin rectangle d'extensió espacial (`BBOX`) s'ha utilitzat ni quina llicència s'ha d'atribuir.
 
-### Programari i codi obert
-
-El programari de codi obert permet inspeccionar les operacions i redueix barreres perquè altres persones repeteixin el treball. [LibreOffice](https://www.libreoffice.org/) ofereix un full de càlcul de codi obert, mentre que [OpenRefine](https://openrefine.org/) està especialitzat en l'exploració i transformació de dades tabulars. Que una eina sigui oberta no converteix automàticament el projecte en reproduïble: encara cal registrar-ne la versió, conservar les dades i explicar les operacions.
-
 ### Reproduïbilitat i ordre del projecte
 
 Un resultat és **reproduïble** quan una altra persona pot partir de les mateixes dades originals, seguir les decisions documentades i obtenir el mateix resultat o explicar qualsevol diferència. No n'hi ha prou amb lliurar el mapa final. Cal conservar els ingredients, l'entorn i la seqüència que l'han produït. En ciència computacional, aquesta exigència s'ha formulat com la necessitat de publicar prou dades, codi i instruccions perquè els resultats puguin regenerar-se i no només llegir-se {% cite pengReproducibleResearchComputational2011 %}. Les dificultats són reals: una enquesta de *Nature* a més de 1.500 investigadors va fer visible la percepció d'una crisi de reproduïbilitat i la freqüència amb què resultats propis o aliens no es podien reproduir fàcilment {% cite baker1500ScientistsLift2016 %}.
@@ -666,7 +666,7 @@ Aquestes tècniques requereixen més coneixements i infraestructura. Les bones p
 
 No existeix un únic arbre correcte per a tots els projectes. Es recomana utilitzar noms breus en anglès, minúscules i caràcters ASCII perquè funcionin de manera consistent entre sistemes operatius, scripts i serveis. Quan existeix una convenció àmpliament reconeguda, convé aprofitar-la: `src` per al codi font, `data` per a les dades, `outputs` per als resultats generats, `dist` per als lliurables i `README.md` per a la documentació inicial. Quan no existeix un nom establert, s'ha de triar un terme amb significat semàntic clar i mantenir-lo durant tot el projecte.
 
-![Estructura orientativa d'un projecte reproduïble]({{ site.baseurl }}/assets/diagrams/reproducible-project-structure.puml "El projecte s'ha d'organitzar perquè una altra persona pugui reconstruir-lo: originals a data/raw, dades preparades a data/processed, instruccions a src, projecte SIG a qgis, resultats a outputs, lliurables a dist, proves a sandbox i explicació inicial a README.md."){: data-figure-width-web="9.5rem" data-figure-width-pdf="23%"}
+![Estructura orientativa d'un projecte reproduïble]({{ site.baseurl }}/assets/diagrams/reproducible-project-structure.puml "Estructura orientativa de carpetes per a un projecte reproduïble."){: data-figure-width-web="9.5rem" data-figure-width-pdf="23%"}
 
 En aquesta estructura:
 
@@ -698,7 +698,7 @@ Una primera pràctica pot consistir a crear l'estructura, incorporar un fitxer o
 
 ## Com s'accedeix a les dades
 
-Localitzar una font no és el mateix que obtenir-ne dades analitzables. Abans de triar una eina cal distingir d'on surt la dada i per quina via s'hi accedeix. Una part del curs treballarà amb dades publicades formalment per organismes, una altra pot recollir dades pròpies amb enquestes o observació, i excepcionalment es pot extreure informació visible en una pàgina web o continguda en un document digital, com un PDF, una imatge, un escaneig o una taula incrustada. No tenen les mateixes garanties ni les mateixes obligacions: una recollida pròpia exigeix consentiment i minimització, una font publicada exigeix llegir metadades i llicència, i qualsevol extracció automatitzada exigeix permís, prudència tècnica i verificació manual.
+Localitzar una font no és el mateix que obtenir-ne dades analitzables. La tria de l'eina depèn de distingir d'on surt la dada i per quina via s'hi accedeix. Una part del curs treballarà amb dades publicades formalment per organismes, una altra pot recollir dades pròpies amb enquestes o observació, i excepcionalment es pot extreure informació visible en una pàgina web o continguda en un document digital, com un PDF, una imatge, un escaneig o una taula incrustada. No tenen les mateixes garanties ni les mateixes obligacions: una recollida pròpia exigeix consentiment i minimització, una font publicada exigeix llegir metadades i llicència, i qualsevol extracció automatitzada exigeix permís, prudència tècnica i verificació manual.
 
 Quan les dades ja estan publicades, una mateixa institució pot oferir el mateix conjunt mitjançant una taula interactiva, un fitxer o un accés automatitzat. Una **API** descriu com es comuniquen dos programes; un **geoservei** descriu la funció geogràfica que s'ofereix, com visualitzar un mapa o consultar objectes. Per tant, un geoservei es pot publicar mitjançant una API o un estàndard web: no són categories excloents ni fonts diferents.
 
@@ -760,18 +760,22 @@ Resposta
 
 La petició següent demana la població total (`SP.POP.TOTL`) d'Espanya (`ESP`) per a 2023 i sol·licita una resposta JSON:
 
+::: listing "Consulta de població d'Espanya al Banc Mundial"
 ```url
 https://api.worldbank.org/v2/country/ESP/indicator/SP.POP.TOTL?date=2023&format=json
 ```
+:::
 
 Es pot enganxar directament al navegador. La URL es pot llegir per parts:
 
+::: listing "Parts de la consulta de població al Banc Mundial"
 ```url
 https://api.worldbank.org/v2/      # servei i versió
 country/ESP/                       # territori
 indicator/SP.POP.TOTL              # indicador
 ?date=2023&format=json             # paràmetres
 ```
+:::
 
 La resposta inclou metadades de la consulta i les observacions. No n'hi ha prou amb copiar el valor: també s'ha de conservar el codi de l'indicador, l'any, el país, la font i la data d'accés.
 
@@ -779,9 +783,11 @@ La resposta inclou metadades de la consulta i les observacions. No n'hi ha prou 
 
 La consulta següent recupera la població total d'Espanya el 2024 del conjunt `demo_pjan`, filtrada per edat total i tots els sexes:
 
+::: listing "Consulta de població d'Espanya a Eurostat"
 ```url
 https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_pjan?lang=en&geo=ES&time=2024&age=TOTAL&sex=T
 ```
+:::
 
 Eurostat retorna JSON-stat 2.0, un format multidimensional. Els valors no s'han d'interpretar sense llegir l'ordre i les categories de les dimensions. La [documentació de les API d'Eurostat](https://ec.europa.eu/eurostat/web/user-guides/data-browser/api-data-access/api-introduction) explica els punts d'accés, els formats i les limitacions.
 
@@ -789,9 +795,11 @@ Eurostat retorna JSON-stat 2.0, un format multidimensional. Els valors no s'han 
 
 La plataforma de Dades Obertes permet obtenir una mostra del Registre de Turisme en JSON:
 
+::: listing "Mostra del Registre de Turisme de Catalunya"
 ```url
 https://analisi.transparenciacatalunya.cat/resource/t2h3-cgys.json?$limit=5
 ```
+:::
 
 L'identificador `t2h3-cgys` correspon al conjunt i `$limit=5` limita el resultat. Altres expressions SoQL permeten seleccionar camps, filtrar files o agrupar valors. En una activitat reproduïble s'ha de conservar la consulta sencera, no només el fitxer resultant.
 
@@ -803,7 +811,7 @@ De vegades una web o un document mostra informació útil però no ofereix cap f
 
 Aquestes tècniques són potents, però més fràgils i avançades que les vies anteriors. En una pàgina web cal entendre mínimament com està construïda i com s'organitzen els elements que es volen seleccionar. En un PDF o una imatge cal comprovar si el text és realment text o només píxels, si les columnes es poden reconstruir sense errors i si el reconeixement automàtic introdueix confusions. La font pot canviar d'estructura, carregar contingut de manera dinàmica, limitar peticions, mostrar dades amb drets restringits o incloure informació personal que no s'hauria de copiar.
 
-En aquest curs, l'extracció automatitzada de pàgines i documents no és una via principal per obtenir dades. Pot entendre's com una ampliació opcional per a estudiants que ja dominen la lectura de fonts, fitxers i API. Una eina visual del navegador, com l'extensió [Web Scraper per a Firefox](https://addons.mozilla.org/firefox/addon/web-scraper/) o una eina equivalent, pot servir per provar l'extracció de pocs camps d'una pàgina senzilla. En documents, qualsevol resultat obtingut d'un PDF, una imatge o un OCR s'ha de contrastar amb el document original perquè els errors de segmentació, columnes, accents o nombres són freqüents. Tot i així, abans de capturar res cal revisar les condicions d'ús, evitar dades personals, no sobrecarregar servidors, conservar l'URL o la referència exacta del document i documentar quins elements s'han seleccionat.
+En aquest curs, l'extracció automatitzada de pàgines i documents no és una via principal per obtenir dades. Pot entendre's com una ampliació opcional per a estudiants que ja dominen la lectura de fonts, fitxers i API. Una eina visual del navegador, com l'extensió [Web Scraper per a Firefox](https://addons.mozilla.org/firefox/addon/web-scraper/) o una eina equivalent, pot servir per provar l'extracció de pocs camps d'una pàgina senzilla. En documents, qualsevol resultat obtingut d'un PDF, una imatge o un OCR s'ha de contrastar amb el document original perquè els errors de segmentació, columnes, accents o nombres són freqüents. Tot i així, la captura de contingut exigeix revisar les condicions d'ús, evitar dades personals, no sobrecarregar servidors, conservar l'URL o la referència exacta del document i documentar quins elements s'han seleccionat.
 
 Els assistents basats en IA generativa poden ajudar a preparar una extracció, proposar quins elements seleccionar, interpretar una estructura HTML o explicar per què una taula d'un PDF no surt com s'esperava. També poden equivocar-se: poden inventar camps, ignorar paginació, seleccionar anuncis en lloc de dades, confondre columnes, llegir malament caràcters d'una imatge, saltar-se avisos legals o repetir peticions massa sovint. Per això un agent d'IA només hauria d'actuar amb instruccions molt concretes, volum baix, supervisió humana i comprovacions contra la font original. Si existeix una descàrrega oficial o una API, normalment és preferible a l'extracció automatitzada.
 
@@ -822,7 +830,7 @@ Els principals tipus que es trobaran al curs són:
 - **WFS:** retorna objectes vectorials amb geometria i atributs que es poden consultar i processar.
 - **OGC API Features:** ofereix objectes vectorials mitjançant una API web moderna, habitualment en GeoJSON.
 
-També existeixen WCS per a cobertures ràster i catàlegs d'actius espaciotemporals (STAC, de l'anglès *SpatioTemporal Asset Catalog*) per descobrir imatges d'observació de la Terra. Abans de connectar un servei cal consultar-ne les capacitats, les capes, el sistema de referència, l'escala i les condicions d'ús. Que una capa es pugui veure no significa que es pugui descarregar o redistribuir.
+També existeixen WCS per a cobertures ràster i catàlegs d'actius espaciotemporals (STAC, de l'anglès *SpatioTemporal Asset Catalog*) per descobrir imatges d'observació de la Terra. La connexió a un servei exigeix consultar-ne les capacitats, les capes, el sistema de referència, l'escala i les condicions d'ús. Que una capa es pugui veure no significa que es pugui descarregar o redistribuir.
 
 ::: table "Escollir un geoservei segons la tasca"
 | Necessitat | Servei més probable | Resultat esperable | Precaució |
@@ -833,14 +841,13 @@ També existeixen WCS per a cobertures ràster i catàlegs d'actius espaciotempo
 | Treballar amb una cobertura ràster | WCS o descàrrega de fitxer | Valors ràster o fitxer GeoTIFF | Cal comprovar resolució, bandes i valor sense dades |
 :::
 
->> **`GetCapabilities` abans de `GetMap`.** En un servei OGC, la petició de capacitats explica quines operacions, capes, formats i sistemes de referència ofereix el servidor. La petició de mapa o dades ja és una selecció concreta. Si es guarda només la imatge final, es perd la informació que permet reconstruir per què aquella imatge era possible i quines alternatives existien.
+>> **Capacitats del servei i petició de mapa.** En un servei OGC, la petició de capacitats explica quines operacions, capes, formats i sistemes de referència ofereix el servidor. La petició de mapa o dades s'ha de construir amb aquests valors i concreta una selecció. Si es guarda només la imatge final, es perd la informació que permet reconstruir per què aquella imatge era possible i quines alternatives existien.
 
-#### Una petició WMS que es pot obrir al navegador
+Una petició WMS també es pot obrir directament al navegador. No descarrega una tessel·la predefinida: l'operació `GetMap` demana al servidor que compongui una imatge amb una capa, una extensió geogràfica, un sistema de referència, una amplada, una alçada i un format. La petició següent utilitza la capa `OI.OrthoimageCoverage` del PNOA i una extensió centrada en la Facultat de Turisme i Geografia:
 
-Un WMS no descarrega una tessel·la predefinida. L'operació `GetMap` demana al servidor que compongui una imatge amb una capa, una extensió geogràfica, un sistema de referència, una amplada, una alçada i un format. La petició següent utilitza la capa `OI.OrthoimageCoverage` del PNOA i una extensió centrada en la Facultat de Turisme i Geografia:
+>> **No cal dominar encara una petició WMS completa.** En aquest punt n'hi ha prou amb entendre que una URL pot contenir paràmetres que concreten què es demana a un servidor. `SERVICE`, `REQUEST`, `LAYERS`, `CRS`, `BBOX`, `WIDTH` i `FORMAT` funcionen com a peces d'una instrucció. Els codis `EPSG`, les coordenades i els sistemes de referència s'entendran millor a la [fase de representació de la Terra i dades espacials]({{ site.baseurl }}/ca/chapters/terra-dades-espacials/); aquí serveixen per veure que Internet no envia «el mapa», sinó una resposta a una petició concreta. Aquesta lectura també ajuda quan es demana suport a un assistent basat en LLM: com més explícits siguin servei, lloc, capa i format, més comprovable serà l'ajuda rebuda.
 
->> **No cal dominar encara una petició WMS completa.** En aquest punt n'hi ha prou amb entendre que una URL pot contenir paràmetres que concreten què es demana a un servidor. `SERVICE`, `REQUEST`, `LAYERS`, `CRS`, `BBOX`, `WIDTH` i `FORMAT` funcionen com a peces d'una instrucció. Els codis `EPSG`, les coordenades i els sistemes de referència s'entendran millor al capítol 4; aquí serveixen per veure que Internet no envia «el mapa», sinó una resposta a una petició concreta. Aquesta lectura també ajuda quan es demana suport a un assistent basat en LLM: com més explícits siguin servei, lloc, capa i format, més comprovable serà l'ajuda rebuda.
-
+::: listing "Petició WMS d'una ortofoto de l'entorn de la facultat"
 ```url
 https://www.ign.es/wms-inspire/pnoa-ma
   ?SERVICE=WMS
@@ -854,6 +861,7 @@ https://www.ign.es/wms-inspire/pnoa-ma
   &HEIGHT=750
   &FORMAT=image/jpeg
 ```
+:::
 
 [Obrir o descarregar la imatge generada pel WMS del PNOA](https://www.ign.es/wms-inspire/pnoa-ma?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetMap&LAYERS=OI.OrthoimageCoverage&STYLES=&CRS=EPSG:3857&BBOX=127377,5027197,128177,5027797&WIDTH=1000&HEIGHT=750&FORMAT=image/jpeg). Si es canvia `BBOX`, es demana un altre lloc; si es canvien `WIDTH` i `HEIGHT`, canvia la mida del resultat. Un WMTS, en canvi, serveix tessel·les d'una quadrícula i uns nivells d'escala predefinits.
 
@@ -873,7 +881,7 @@ La secció és una introducció operativa, no un curs complet de fulls de càlcu
 >>>>>
 >>>>> - Orientar-se entre llibres, fulls, cel·les, rangs i fórmules.
 >>>>> - Copiar dades i fórmules utilitzant referències relatives, absolutes i entre fulls sense perdre la traçabilitat.
->>>>> - Separar valor, tipus i format abans de calcular.
+>>>>> - Separar valor, tipus i format per garantir càlculs correctes.
 >>>>> - Preparar codis, correspondències, absències i fórmules de comprovació, i reconèixer camps temporals.
 >>>>> - Conservar operacions reproduïbles mitjançant fórmules i comprovacions explícites.
 
@@ -907,16 +915,16 @@ Les eines del full de càlcul s'introdueixen de manera progressiva al llarg del 
 ::: table "Progressió del full de càlcul al manual"
 | Capítol | Operacions principals | Resultat acumulatiu |
 | --- | --- | --- |
-| 1. Preparació de dades | Importar, tipar, filtrar, copiar, referenciar, netejar text, buscar claus i comprovar absències o duplicats | `source_*`, `prepared_*`, `municipal`, `checks` i `dictionary` |
-| 2. Indicadors | Percentatges, ràtios, densitats, divisió segura, arrodoniment de presentació i agregats ponderats | `indicators_demography`, `indicators_housing` i `indicators_summary` |
-| 3. Visualització | `SUMIFS`, `COUNTIFS`, canvis entre files, taules dinàmiques, rangs auxiliars i gràfics | `charts_data`, pivots i fulls `chart_*` |
-| 5. Integració SIG | Selecció de camps, estat dels nuls, taula plana i exportació CSV | `map_export` i CSV de transferència |
-| 7. Teoria del color | HEX, RGB, potències, luminància, contrast i registre de paletes | `palette` i proves vectorials |
+| Preparació de dades | Importar, tipar, filtrar, copiar, referenciar, netejar text, buscar claus i comprovar absències o duplicats | `source_*`, `prepared_*`, `municipal`, `checks` i `dictionary` |
+| Indicadors | Percentatges, ràtios, densitats, divisió segura, arrodoniment de presentació i agregats ponderats | `indicators_demography`, `indicators_housing` i `indicators_summary` |
+| Visualització | `SUMIFS`, `COUNTIFS`, canvis entre files, taules dinàmiques, rangs auxiliars i gràfics | `charts_data`, pivots i fulls `chart_*` |
+| Teoria del color | HEX, RGB, potències, luminància, contrast i registre de paletes | `palette` i proves vectorials |
+| Integració SIG | Selecció de camps, estat dels nuls, taula plana i exportació CSV | `map_export` i CSV de transferència |
 :::
 
 Els programes de full de càlcul incorporen llistats explorables de funcions, assistents, categories i exemples. També es pot demanar ajuda a la documentació, al professorat o a un model de llenguatge quan cal construir una fórmula més complexa. Aquesta ajuda només és segura si la persona que treballa sap explicar l'operació i comprovar-ne el resultat: cap assistent substitueix la revisió dels rangs, dels tipus de dada, de les referències absolutes i del valor obtingut en una fila de prova.
 
-![Esquema d'un assistent de funcions amb caixa de cerca, categories, resultats i comprovació]({{ site.baseurl }}/assets/img/data-sources/spreadsheet-function-browser.svg "El cercador de funcions es pot utilitzar per passar d'una operació formulada amb paraules a una fórmula concreta; després cal revisar els rangs, els separadors, les referències i el resultat amb una fila de prova. El menú real, els noms i els separadors poden canviar segons l'aplicació i la configuració regional. Esquema d'elaboració pròpia d'un assistent de funcions.")
+![Esquema d'un assistent de funcions amb caixa de cerca, categories, resultats i comprovació]({{ site.baseurl }}/assets/img/data-sources/spreadsheet-function-browser.svg "Assistent de cerca i comprovació de funcions d'un full de càlcul. Esquema d'elaboració pròpia.")
 
 No totes les habilitats tenen el mateix nivell de dificultat ni el mateix rendiment immediat. La progressió següent ordena allò que convé practicar de més bàsic a més avançat. Les primeres files són imprescindibles per al curs; les darreres obren possibilitats que poden requerir més pràctica.
 
@@ -924,29 +932,29 @@ No totes les habilitats tenen el mateix nivell de dificultat ni el mateix rendim
 | Nivell | Habilitat | Operacions característiques | Utilitat en el curs |
 | --- | --- | --- | --- |
 | 1 | Orientació i selecció | Reconèixer fulls, cel·les, files, columnes i rangs rectangulars | No perdre's en una taula ni seleccionar fragments incorrectes |
-| 2 | Importació i tipus | Importar CSV, fixar codis com a text, revisar decimals, dates i absències | Evitar errors abans de calcular |
+| 2 | Importació i tipus | Importar CSV, fixar codis com a text, revisar decimals, dates i absències | Evitar errors de càlcul |
 | 3 | Còpia i emplenament | Copiar cel·les o rangs, arrossegar el controlador d'emplenament i enganxar valors, fórmules o formats | Repetir una operació sense reescriure-la fila a fila |
 | 4 | Referències | Usar referències relatives, absolutes i entre fulls | Separar originals, transformacions i resultats |
 | 5 | Fórmules bàsiques | Sumar, restar, dividir, calcular percentatges, ràtios i comprovacions | Construir indicadors simples i revisables |
 | 6 | Codis i correspondències | Separar codis, comprovar longituds, buscar correspondències i detectar no coincidents | Unir taules sense dependre de l'ordre de les files |
 | 7 | Funcions lògiques, textuals i temporals | Usar condicions, netejar text, classificar dates i calcular durades | Preparar camps i justificar decisions |
-| 8 | Filtre, ordenació i validació | Filtrar, ordenar, buscar duplicats, comptar blancs i revisar rangs plausibles | Detectar problemes abans de fer gràfics o mapes |
+| 8 | Filtre, ordenació i validació | Filtrar, ordenar, buscar duplicats, comptar blancs i revisar rangs plausibles | Detectar problemes que invalidarien els gràfics o mapes |
 | 9 | Resums i taules dinàmiques | Agrupar per comarca, tipologia o categoria; resumir totals, mitjanes i recomptes | Explorar patrons sense alterar la taula original |
 | 10 | Importació avançada i automatització | Power Query, OpenRefine, scripts o connexions a API | Repetir processos quan el treball manual deixa de ser segur |
 :::
 
-En aquest capítol es practiquen sobretot els nivells 1–4, la preparació de codis del nivell 6 i els controls del nivell 8. Els càlculs d'indicadors del nivell 5 corresponen al capítol 2; les taules dinàmiques i els resums que alimenten figures es desenvolupen al capítol 3. La taula descriu el recorregut del curs, no una llista d'operacions que s'hagin de dominar totes abans de preparar la primera font.
+En aquest capítol es practiquen sobretot els nivells 1–4, la preparació de codis del nivell 6 i els controls del nivell 8. Els càlculs d'indicadors es desenvolupen a la fase d'indicadors; les taules dinàmiques i els resums que alimenten figures, a la fase de visualització. La taula descriu el recorregut del curs, no una llista d'operacions imprescindibles per preparar la primera font.
 
 >> **Practicar amb un projecte mascota.** La millor manera de guanyar fluïdesa és mantenir un petit projecte propi al marge de les activitats del curs: una base de dades de pel·lícules, cançons, restaurants, llocs visitats, comerços amb valoracions pròpies o lectures pendents. Un projecte així permet practicar codis, categories, dates, filtres, fórmules, taules dinàmiques i gràfics amb dades que resulten familiars. Si més endavant s'hi volen incorporar valoracions o informació recollida del web, cal aplicar les mateixes cauteles que en qualsevol font externa.
 
-::: subfigures a+b "Cal identificar els elements comuns d'un full de càlcul i llegir una fórmula com una instrucció reproduïble, independentment del programa concret. Esquemes d'elaboració pròpia."
-![Esquema d'un full de càlcul amb barra de fórmules, capçaleres, files, cel·la activa i rang]({{ site.baseurl }}/assets/img/data-sources/spreadsheet-parts.svg "Cal localitzar la barra de fórmules, les capçaleres, els números de fila, la cel·la activa, les referències i el rang abans de revisar una taula. Les etiquetes i la disposició poden canviar segons l'aplicació, però els conceptes són comuns. Esquema d'elaboració pròpia.")
+::: subfigures a+b "Elements comuns d'un full de càlcul i lectura d'una fórmula reproduïble. Esquemes d'elaboració pròpia."
+![Esquema d'un full de càlcul amb barra de fórmules, capçaleres, files, cel·la activa i rang]({{ site.baseurl }}/assets/img/data-sources/spreadsheet-parts.svg "Cal localitzar la barra de fórmules, les capçaleres, els números de fila, la cel·la activa, les referències i el rang necessaris per revisar una taula. Les etiquetes i la disposició poden canviar segons l'aplicació, però els conceptes són comuns. Esquema d'elaboració pròpia.")
 ![Esquema d'una fórmula que suma les cel·les B2 i C2 i mostra el resultat a D2]({{ site.baseurl }}/assets/img/data-sources/spreadsheet-sum-formula.svg "La fórmula s'ha de llegir com una operació verificable: D2 conté =B2+C2, pren els valors de B2 i C2 i mostra el resultat calculat. Esquema d'elaboració pròpia.")
 :::
 
 ### Seleccionar, copiar i emplenar
 
-Seleccionar una cel·la no és el mateix que seleccionar una fila, una columna o un rang. Una fórmula escrita en una sola cel·la només afecta aquella cel·la; una operació aplicada a un rang pot afectar moltes files i columnes alhora. Per això, abans de copiar, eliminar, ordenar o formatar, cal mirar quin rectangle està seleccionat. Ordenar només una columna d'una taula, per exemple, pot desconnectar noms, codis i valors de la mateixa fila.
+Seleccionar una cel·la no és el mateix que seleccionar una fila, una columna o un rang. Una fórmula escrita en una sola cel·la només afecta aquella cel·la; una operació aplicada a un rang pot afectar moltes files i columnes alhora. Per això, qualsevol operació de còpia, eliminació, ordenació o format exigeix comprovar quin rectangle està seleccionat. Ordenar només una columna d'una taula, per exemple, pot desconnectar noms, codis i valors de la mateixa fila.
 
 Una cel·la o un conjunt de cel·les es pot copiar dins del mateix full, a un altre full del mateix llibre o a un altre llibre de càlcul. Allò que s'enganxa pot ser el contingut complet, només el valor visible, només la fórmula, només el format o un enllaç a la cel·la d'origen, segons l'opció d'enganxat. Aquesta diferència és decisiva: enganxar **valors** conserva el resultat però elimina la fórmula; enganxar **fórmules** conserva el mètode però pot canviar les referències; enganxar **formats** només canvia l'aparença.
 
@@ -988,7 +996,7 @@ Les fórmules també poden apuntar a altres fulls. Una referència com `source_p
 
 Per analitzar dades territorials, el full de càlcul s'ha d'acostar al comportament d'una taula de base de dades relacional. Això vol dir una **estructura rectangular**: una sola fila de capçalera, una variable per columna, una observació per fila i el mateix significat per a totes les cel·les d'una mateixa columna. Aquesta forma permet filtrar, ordenar, calcular, unir amb geometries i exportar sense haver d'interpretar manualment cada bloc.
 
-![Esquema d'una taula rectangular separada de metadades, diccionari i resultats]({{ site.baseurl }}/assets/img/data-sources/rectangular-table.svg "La taula d'anàlisi s'ha de preparar amb una sola capçalera, una fila per municipi i variables en columnes; les metadades, el diccionari i els resultats s'han de deixar en fulls o sortides separades, sense barrejar-hi títols, notes, cel·les agrupades, totals de presentació ni gràfics. Esquema d'elaboració pròpia.")
+![Esquema d'una taula rectangular separada de metadades, diccionari i resultats]({{ site.baseurl }}/assets/img/data-sources/rectangular-table.svg "Estructura rectangular d'una taula d'anàlisi i separació de metadades, diccionari i resultats. Elaboració pròpia.")
 
 Les taules publicades per a lectura humana sovint no tenen aquesta forma. Poden incloure títols dins del rang, notes al peu, cel·les agrupades, subtotals intercalats, anys en columnes o codis i noms dins de la mateixa cel·la. Aquestes decisions poden facilitar la lectura en pantalla, però compliquen l'anàlisi. La preparació consisteix a transformar-les amb criteri, no a «decorar» el full: les metadades han d'anar al full `sources`, les definicions al `dictionary`, les comprovacions a `checks` i els resultats o indicadors en fulls separats. Si el filtre automàtic no funciona sobre tot el bloc sense seleccionar manualment fragments, la taula encara no és prou rectangular.
 
@@ -1047,17 +1055,19 @@ Moltes pràctiques territorials consisteixen a relacionar taules mitjançant una
 
 Un cas habitual és una **taula de correspondència**: la primera columna conté el codi que es busca i una altra columna conté el valor que es vol recuperar. Si el full `prepared_codes` té `municipality_code` a la columna `A` i `county_code` a la columna `B`, una fórmula orientativa per portar el codi de comarca al full de treball és:
 
+::: listing "Correspondència entre codis municipals i comarcals"
 ```spreadsheet
 =XLOOKUP(A2,prepared_codes!$A$2:$A$1000,prepared_codes!$B$2:$B$1000,"sense correspondència")
 ```
+:::
 
 La fórmula busca el valor d'`A2` dins de la columna de codis del full `prepared_codes` i retorna el valor corresponent de la columna de comarques. Els signes `$` fixen els rangs de cerca i retorn perquè no es moguin quan la fórmula es copiï cap avall.
 
 La lletra de la funció explica part de la seva història. En `VLOOKUP` o `BUSCARV`, la `V` vol dir **vertical**: la funció tradicional busca cap avall a la primera columna d'una taula i retorna una columna indicada per posició. També existeixen variants horitzontals, com `HLOOKUP` o `BUSCARH`, pensades per a taules disposades per files. `XLOOKUP`, que en algunes interfícies traduïdes pot aparèixer com `BUSCARX`, és una funció més recent i general: separa el rang on es busca del rang que es vol retornar, de manera que no obliga a comptar columnes ni a mantenir el valor retornat a la dreta de la clau. Si la versió del programa no disposa d'aquesta funció, es pot usar una alternativa, com `VLOOKUP`, `BUSCARV` o una combinació d'índex i coincidència. L'objectiu no és memoritzar una funció, sinó entendre que es busca una clau en una taula auxiliar i es retorna un camp relacionat.
 
-![Exemple d'una fórmula XLOOKUP que busca un codi municipal i retorna el codi de comarca]({{ site.baseurl }}/assets/img/data-sources/xlookup-example.svg "La correspondència s'ha de llegir d'esquerra a dreta: el codi municipal de la taula de treball es busca a la taula auxiliar i la fórmula retorna el codi de comarca; en copiar-la cap avall, els rangs fixats amb $ continuen apuntant a la taula de correspondència. Els codis s'han de tractar com a text, no com a quantitats. Exemple d'elaboració pròpia amb dades simplificades.")
+![Exemple d'una fórmula XLOOKUP que busca un codi municipal i retorna el codi de comarca]({{ site.baseurl }}/assets/img/data-sources/xlookup-example.svg "Correspondència de codis municipals i comarcals amb XLOOKUP. Exemple simplificat d'elaboració pròpia.")
 
-::: table "Controls abans d'una correspondència"
+::: table "Controls d'una correspondència"
 | Control | Pregunta | Risc si no es revisa |
 | --- | --- | --- |
 | Tipus | Els codis són text en totes dues taules? | Perdre zeros inicials o crear coincidències falses |
@@ -1071,7 +1081,7 @@ Quan una correspondència falla, no s'ha de corregir el codi per intuïció. Pri
 
 ### Operacions lògiques i de text
 
-Les fórmules no només calculen nombres. També poden classificar files, netejar text, construir etiquetes i comprovar condicions. Aquestes operacions són útils quan una taula publicada arriba amb codis i noms junts, categories escrites de maneres diferents o camps que necessiten una etiqueta auxiliar abans de filtrar o resumir.
+Les fórmules no només calculen nombres. També poden classificar files, netejar text, construir etiquetes i comprovar condicions. Aquestes operacions són útils quan una taula publicada arriba amb codis i noms junts, categories escrites de maneres diferents o camps que necessiten una etiqueta auxiliar per poder-se filtrar o resumir.
 
 ::: table "Operacions de text i condició"
 | Necessitat | Fórmula orientativa | Lectura |
@@ -1105,11 +1115,13 @@ La `T` separa la data de l'hora. Els dos darrers exemples representen el mateix 
 
 Si `A2` conté una data de naixement reconeguda correctament, aquestes fórmules il·lustren operacions diferents:
 
+::: listing "Operacions bàsiques amb dates"
 ```spreadsheet
 =TODAY()-A2
 =DATEDIF(A2,TODAY(),"Y")
 =A2+30
 ```
+:::
 
 La primera calcula els dies transcorreguts; el resultat s'ha de formatar com a número, no com una altra data. La segona calcula els anys complets, útils per expressar l'edat en l'aniversari corresponent. La tercera suma una durada de trenta dies a una data. En canvi, sumar `A2+B2` quan totes dues cel·les contenen dates no acostuma a tenir cap interpretació temporal: el programa pot donar un resultat numèric, però l'operació no respon una pregunta coherent.
 
@@ -1131,12 +1143,14 @@ També es poden classificar dates per obtenir variables auxiliars. Si `A2` cont�
 
 La compatibilitat no és absoluta. Poden canviar els noms de funció, els separadors d'arguments, els separadors decimals, el reconeixement de dates, les funcions disponibles i alguns comportaments dels gràfics. La configuració regional de l'aplicació, del document i, en alguns casos, del sistema operatiu pot fer que una mateixa operació s'escrigui de maneres diferents:
 
+::: listing "Variants regionals de fórmules equivalents"
 ```spreadsheet
 =SUM(A2:A10)
 =SUMA(A2:A10)
 =IF(B2>0,"sí","no")
 =SI(B2>0;"sí";"no")
 ```
+:::
 
 Aquestes variants expressen respectivament una suma i una condició equivalents. Segons l'entorn, les funcions poden aparèixer en anglès o traduïdes, i els arguments poden separar-se amb comes o amb punt i coma. Per això una fórmula trobada en un tutorial pot necessitar una adaptació sintàctica encara que el raonament sigui correcte.
 
@@ -1144,7 +1158,7 @@ Quan es treballa en grup convé acordar l'aplicació principal, la configuració
 
 ### Fórmules bàsiques per inspeccionar
 
-Les fórmules següents són útils abans de transformar una taula. Suposen que les dades comencen a la fila 2. No cal aplicar-les totes sempre, però cada taula hauria de tenir controls equivalents per comprovar tipus, files, codis, absències i correspondències.
+Les fórmules següents són útils per al diagnòstic inicial d'una taula. Suposen que les dades comencen a la fila 2. No cal aplicar-les totes sempre, però cada taula hauria de tenir controls equivalents per comprovar tipus, files, codis, absències i correspondències.
 
 ::: table "Comprovacions inicials amb fórmules"
 | Pregunta | Fórmula orientativa | Interpretació |
@@ -1167,7 +1181,7 @@ Alguns fulls de càlcul incorporen assistents basats en LLM i també hi ha exten
 
 Un model de llenguatge pot actuar com una caixa negra. Pot generar una fórmula plausible que use un rang equivocat, confondre una absència amb un zero, inventar una categoria o donar respostes diferents davant de peticions semblants. Aquesta tendència a produir respostes inventades o aparentment correctes però falses sovint s'anomena **al·lucinació**. En fulls de càlcul pot aparèixer com una funció que no existeix en l'aplicació utilitzada, una barreja de noms d'Excel i Calc, separadors d'arguments incorrectes, una referència absoluta oblidada o una fórmula que funciona en una fila però falla quan es copia. Si l'extensió envia dades a un servei extern, també cal revisar quina informació es transfereix, amb quines condicions i si el conjunt conté dades personals o restringides.
 
-La validació ha de ser concreta. Abans d'acceptar una fórmula suggerida per un LLM, cal llegir-la, comprovar quins rangs consulta, provar-la en una fila amb resultat conegut, copiar-la a altres files, revisar casos límit i comparar el resultat amb un càlcul manual o una font de control quan sigui possible. Una fórmula que no es pot explicar no s'hauria d'incorporar a la taula analítica.
+La validació ha de ser concreta. L'acceptació d'una fórmula suggerida per un LLM exigeix llegir-la, comprovar quins rangs consulta, provar-la en una fila amb resultat conegut, copiar-la a altres files, revisar casos límit i comparar el resultat amb un càlcul manual o una font de control quan sigui possible. Una fórmula que no es pot explicar no s'hauria d'incorporar a la taula analítica.
 
 La reproduïbilitat exigeix saber quina operació s'ha aplicat. Una fórmula visible com `=F2/D2*1000`, una consulta de Power Query o un script versionat es poden inspeccionar i tornar a executar. Una resposta generada en una conversa amb un LLM o un agent no és reproduïble en sentit estricte: guardar dades d'entrada, instrucció, resultat, data, model i comprovacions ajuda a auditar què es va acceptar, però no garanteix que la mateixa eina torni a donar la mateixa resposta.
 
@@ -1188,23 +1202,23 @@ Fer que un LLM processi repetidament cada fila pot consumir temps, diners, conte
 
 ## Activitat: preparar les dades del territori de treball
 
-Tot el recorregut anterior convergeix ara en una primera tasca concreta: preparar la base de dades que alimentarà els indicadors, els gràfics, els mapes i la miniinfografia final. El manual descriu el flux tècnic compartit; el territori i la pregunta de cada projecte s'acordaran abans de preparar les dades.
+Tot el recorregut anterior convergeix ara en una primera tasca concreta: preparar la base de dades que alimentarà els indicadors, els gràfics, els mapes i la infografia territorial final. El manual descriu el flux tècnic compartit; la preparació començarà quan el professorat hagi assignat a cada trio un parell comarca–municipi que s'haurà de mantenir durant tot el projecte.
 
-El fil conductor estable del manual serà una diagnosi breu de **població i habitatge d'una comarca tarragonina**. En aquest cas, cada fila representarà un municipi de la comarca i tots els capítols reutilitzaran les mateixes dades. El Tarragonès pot funcionar com a demostració comuna perquè combina una capital, municipis litorals turístics, espais residencials i municipis petits d'interior. En una classe pràctica també es pot començar amb un cas puntual, com Vila-seca, per aprendre a reconèixer codis, files, columnes i valors; aquest exemple de control no substitueix necessàriament el territori assignat per al projecte.
+El fil conductor estable del manual serà una diagnosi breu de **població i habitatge d'una comarca tarragonina**, amb un municipi de referència dins d'aquesta comarca. Cada fila representarà un municipi de la comarca i tots els capítols reutilitzaran les mateixes dades. El parell **Tarragonès–Vila-seca** és exclusivament el cas complet de demostració del professorat. Cada trio treballarà un parell diferent: pot compartir el Tarragonès amb altres equips si té un altre municipi de referència, o pot rebre una altra comarca i un municipi d'aquella comarca.
 
 >>>>> L'activitat produeix un primer paquet de dades territorial preparat per als capítols següents.
 >>>>>
->>>>> - Distingir l'exemple de demostració del territori assignat o validat per al projecte.
+>>>>> - Distingir l'exemple de demostració del parell comarca–municipi assignat al projecte.
 >>>>> - Descarregar fonts d'Idescat sense modificar els originals.
 >>>>> - Separar codi i nom de municipi quan apareixen en una sola cel·la.
 >>>>> - Filtrar una comarca amb codis, no només amb noms.
 >>>>> - Construir una taula municipal preparada per calcular, representar, cartografiar i sintetitzar.
 
-Si el professorat assigna una altra comarca o valida una altra unitat de treball, el criteri és mantenir la coherència durant tot el procés. Una comarca es treballa habitualment amb una fila per municipi; un municipi, si s'utilitza com a territori principal, requeriria una altra unitat d'observació, com barris, seccions censals, equipaments o registres. No s'han de barrejar municipis, barris i equipaments dins d'una mateixa taula analítica com si fossin observacions equivalents.
+La comarca assignada es treballarà habitualment amb una fila per municipi, mentre que el municipi de referència permetrà seguir casos concrets, preparar ampliacions o comprovar valors durant el procés. Si una pregunta exigeix analitzar l'interior del municipi, caldrà definir una altra unitat d'observació, com barris, seccions censals, equipaments o registres. No s'han de barrejar municipis, barris i equipaments dins d'una mateixa taula analítica com si fossin observacions equivalents.
 
 En la demostració comarcal, la pregunta general serà: **com es distribueixen la població i el parc d'habitatges entre els municipis de la comarca, i quins contrastos territorials s'hi observen?** En aquest capítol encara no es calcularan indicadors ni es produiran figures. Es prepararà una fila coherent per municipi que pugui alimentar els càlculs, gràfics i mapes posteriors.
 
-El resultat operatiu és una taula de treball amb tipus de dades correctes, forma rectangular, una sola fila de capçalera, codis municipals conservats com a text, metadades fora del bloc analític i filtres que funcionin sense seleccionar fragments a mà. Aquest objectiu és més important que descarregar moltes taules. La miniinfografia final no comença a Inkscape, sinó aquí: si la base inicial no conserva fonts, codis, unitats i transformacions, els indicadors, gràfics i mapes posteriors no es podran defensar.
+El resultat operatiu és una taula de treball amb tipus de dades correctes, forma rectangular, una sola fila de capçalera, codis municipals conservats com a text, metadades fora del bloc analític i filtres que funcionin sense seleccionar fragments a mà. Aquest objectiu és més important que descarregar moltes taules. La infografia territorial final no comença a Inkscape, sinó aquí: si la base inicial no conserva fonts, codis, unitats i transformacions, els indicadors, gràfics i mapes posteriors no es podran defensar.
 
 En la demostració del Tarragonès, el conjunt de dades següent manté els tres grans grups d'edat perquè els exemples guiats dels capítols 2 i 3 els reutilitzen. Aquesta selecció descriu el conjunt de demostració i el punt de partida del projecte comarcal, no una obligació universal per a qualsevol pregunta territorial.
 
@@ -1225,11 +1239,11 @@ Les variables turístiques, com places, establiments, pernoctacions o ocupació,
 
 ### Descarregar manualment les taules d'Idescat
 
-La demostració començarà a la pàgina de cada taula, no en una API. Això obliga a llegir-ne el títol, l'any, les categories, la metodologia i les notes abans de descarregar-la.
+La demostració començarà a la pàgina de cada taula, no en una API. Això converteix la lectura del títol, l'any, les categories, la metodologia i les notes en un requisit de la descàrrega.
 
-Abans de descarregar massivament, és útil seguir un municipi de control. Vila-seca pot servir a l'aula perquè és conegut pel grup i apareix dins del Tarragonès: permet comprovar si el codi municipal, el nom, la comarca, la població i els habitatges arriben correctament a cada pas. Després, la mateixa lògica s'ha d'aplicar a tots els municipis del territori assignat; no s'ha de preparar només el municipi de demostració si el projecte demana una comarca.
+Per preparar la descàrrega massiva, és útil seguir un municipi de control. En la demostració del professorat, Vila-seca permet comprovar si el codi municipal, el nom, la comarca, la població i els habitatges arriben correctament a cada pas. Cada trio farà aquest control amb el municipi de referència que tingui assignat i aplicarà després la mateixa lògica a tots els municipis de la seva comarca. Cap trio prepararà Vila-seca, i només prepararà el Tarragonès si aquesta és la comarca del seu parell assignat.
 
-1. Primer cal descarregar la taula de [codis de municipis i comarques](https://www.idescat.cat/codis/?id=50&n=9&lang=ca). Aquesta correspondència permet identificar els municipis del Tarragonès amb el codi de comarca `36` i obtenir els 22 codis municipals sense filtrar només pel nom.
+1. Cal descarregar la taula de [codis de municipis i comarques](https://www.idescat.cat/codis/?id=50&n=9&lang=ca). Aquesta correspondència permet identificar els municipis del Tarragonès amb el codi de comarca `36` i obtenir els 22 codis municipals sense filtrar només pel nom.
 2. Cal obrir [Població. Per sexe i edat any a any](https://www.idescat.cat/pub/?id=censph&n=10&lang=ca) i revisar que l'any seleccionat sigui **2021**, que el concepte sigui població, que el sexe sigui **total** i que el nivell territorial sigui **municipi**. Cal seleccionar els municipis identificats al pas anterior i conservar les edats simples i el total. Els grups `0–14`, `15–64` i `65+` es construiran després al llibre; no s'han de substituir per la taula de grans grups actual, que utilitza els intervals `0–15` i `16–64`.
 3. Cal obrir [Habitatges. Per tipus d'habitatge](https://www.idescat.cat/pub/?id=censph&n=30&lang=ca), mantenir l'any 2021, seleccionar **tots els municipis** i descarregar la taula.
 4. Cal obrir [Superfície, densitat i entitats singulars](https://www.idescat.cat/pub/?id=inddt&n=396&lang=ca), seleccionar el nivell municipal i revisar quin període declara la descàrrega. Si la superfície publicada correspon a una edició posterior, cal comprovar que no hi ha hagut cap canvi territorial rellevant per als municipis analitzats i registrar aquesta diferència; no s'ha de presentar automàticament com una dada de 2021.
@@ -1237,7 +1251,17 @@ Abans de descarregar massivament, és útil seguir un municipi de control. Vila-
 
 La selecció de població també es pot conservar mitjançant l'[API de Taules de l'Idescat](https://www.idescat.cat/dev/api/taules/). En la demostració docent, la resposta JSON-stat fixa `YEAR=2021`, `SEX=TOTAL`, les 22 claus municipals del Tarragonès i totes les edats simples. Aquesta via no substitueix la lectura de la pàgina ni de les metadades: serveix per deixar una consulta exacta i repetible quan la interfície gràfica manté part de la selecció dins de l'estat de la sessió.
 
-Les edats simples s'han de reagrupar a `prepared_population` abans de construir `municipal`. La fila amb `AGE=TOTAL` es conservarà com a valor de control, però s'exclourà de l'agrupació. Els codis d'edat simple es convertiran en una edat numèrica; el grup obert `Y_GE100` s'assignarà explícitament a `65+`, no es descartarà ni es convertirà en un valor absent. A continuació es crearà `age_group` amb tres intervals exhaustius i no superposats: `0–14`, `15–64` i `65+`. Després es poden sumar els valors per `municipality_code` i `age_group` amb una taula dinàmica, una suma condicionada o una consulta reproduïble. Per a cada municipi, la suma dels tres grups s'ha de comparar amb el total publicat; qualsevol diferència causada per arrodoniment o secret estadístic es conserva i es registra a `checks`, no es reparteix manualment.
+El reagrupament de les edats simples a `prepared_population` és un requisit per construir `municipal`. La fila amb `AGE=TOTAL` es conservarà com a valor de control, però s'exclourà de l'agrupació. Els codis d'edat simple es convertiran al camp numèric `age_years`; el grup obert `Y_GE100` rebrà el valor operatiu `100` perquè quedi inclòs explícitament a `65+`, no es descartarà ni es convertirà en una absència. Els tres intervals exhaustius i no superposats seran `0–14`, `15–64` i `65+`.
+
+La ruta guiada utilitza una suma condicionada i no exigeix dominar abans una taula dinàmica. Si `G` conté el valor, `B` el codi municipal, `F` l'edat numèrica i `A2` el codi que es vol resumir, el primer grup es pot calcular així:
+
+::: listing "Suma condicionada de la població de 0 a 14 anys"
+```spreadsheet
+=SUMIFS(prepared_population!$G:$G,prepared_population!$B:$B,$A2,prepared_population!$F:$F,">=0",prepared_population!$F:$F,"<=14")
+```
+:::
+
+`SUMIFS` rep primer el rang que s'ha de sumar i després parelles formades per un rang de criteri i la condició que ha de complir. Canviar els dos límits permet construir `15–64`; utilitzar només `">=65"` construeix el grup obert. Una taula dinàmica o una consulta reproduïble són alternatives vàlides quan ja se'n domina el funcionament. Per a cada municipi, la suma dels tres grups s'ha de comparar amb el total publicat; qualsevol diferència causada per arrodoniment o secret estadístic es conserva i es registra a `checks`, no es reparteix manualment.
 
 >> **La fitxa de fonts també és una dada del projecte.** Una fila del full `sources` ha de permetre entendre quin recurs s'ha usat sense tornar a preguntar-ho oralment: productor, títol exacte, URL de la taula, any o període, data d'accés, llicència, format descarregat i selecció aplicada. Si una descàrrega es pot repetir amb una URL o una API, aquesta adreça completa s'ha de conservar.
 
@@ -1245,9 +1269,9 @@ Les descàrregues d'Idescat poden arribar com a text separat per punt i coma. S'
 
 En algunes taules, el municipi apareix en una mateixa cel·la amb una forma semblant a `[431711] Vila-seca`. Aquesta presentació és còmoda per llegir, però no és ideal per analitzar. Cal separar el codi i el nom en dues columnes. Es pot fer amb **Text to Columns**, **Text en columnes**, Power Query o fórmules equivalents. El criteri és que `431711` quedi en una columna textual `municipality_code` i `Vila-seca` en una columna `municipality_name`, sense claudàtors ni espais sobrants.
 
->>> **Separar el codi abans de filtrar.** Si una cel·la conté `[431711] Vila-seca`, primer cal obtenir `431711` com a text. Després es pot crear una columna de comprovació amb el prefix provincial, per exemple els dos primers caràcters. En moltes configuracions la fórmula serà `=LEFT(A2,2)` o `=ESQUERRA(A2;2)`, segons idioma i separador d'arguments. El resultat `43` identifica municipis de la província de Tarragona, però no identifica encara una comarca concreta.
+>>> **Separació del codi per al filtratge.** Si una cel·la conté `[431711] Vila-seca`, cal obtenir `431711` com a text. A continuació es pot crear una columna de comprovació amb el prefix provincial, per exemple els dos primers caràcters. En moltes configuracions la fórmula serà `=LEFT(A2,2)` o `=ESQUERRA(A2;2)`, segons idioma i separador d'arguments. El resultat `43` identifica municipis de la província de Tarragona, però no identifica encara una comarca concreta.
 
-La taula de codis conté el codi de comarca. Primer s'incorporarà aquesta correspondència a les altres taules mitjançant el codi municipal de sis dígits; després es filtraran les files de la comarca seleccionada. El prefix provincial `43` no és suficient, perquè inclou tots els municipis de la província de Tarragona.
+La taula de codis conté el codi de comarca. La correspondència s'incorporarà a les altres taules mitjançant el codi municipal de sis dígits; un cop incorporada, es filtraran les files de la comarca seleccionada. El prefix provincial `43` no és suficient, perquè inclou tots els municipis de la província de Tarragona.
 
 Si les notes d'una taula censal indiquen arrodoniment, protecció del secret estadístic o una altra regla de difusió, alguna suma de components pot diferir lleugerament del total publicat. Aquesta diferència no s'ha de «corregir» repartint-la manualment: s'ha de conservar i documentar.
 
@@ -1283,7 +1307,7 @@ Una taula ordenada facilita les operacions posteriors. El principi de *tidy data
 | Un any per columna | Passar els anys a una columna `any` i els valors a `valor` | El nombre de valors es conserva |
 | Municipi i codi en una mateixa cel·la | Separar `municipality_code` i `municipality_name` | Tots els codis tenen la longitud prevista |
 | Guions, `..` o `:` en cel·les numèriques | Conservar un camp d'estat i assignar valor absent | No es converteix confidencial o no disponible en zero |
-| Totals barrejats amb municipis | Identificar el nivell territorial abans de filtrar | La suma només es compara amb totals compatibles |
+| Totals barrejats amb municipis | Identificar el nivell territorial per filtrar correctament | La suma només es compara amb totals compatibles |
 | Notes sota les dades | Traslladar-les a documentació, no esborrar-les | Les definicions continuen disponibles |
 | Separador decimal inconsistent | Convertir amb una regla explícita | Mínims, màxims i recompte concorden amb l'original |
 :::
@@ -1298,7 +1322,7 @@ Es conservaran tres nivells de dades:
 
 No s'ha de corregir manualment el fitxer original. Una correcció feta directament sobre una cel·la pot ser impossible de detectar després. En canvi, una columna nova, una consulta de Power Query o un full de correspondències deixa visible la regla aplicada.
 
-L'estructura proposada separa `data/raw` de `data/processed`. Tot el treball tabular es farà en **un únic llibre acumulatiu**, però se'n conservaran fites docents deliberades. La demostració comença amb `tigit-01-preparacio-dades.xlsx`; abans de calcular indicadors se'n derivarà `tigit-02-indicadors-territorials.xlsx`, i abans de construir figures se'n derivarà `tigit-03-semiologia-visualitzacio.xlsx`. El número i el nom identifiquen el capítol que ha produït aquell estat, no una còpia arbitrària com `final2.xlsx`.
+L'estructura proposada separa `data/raw` de `data/processed`. Tot el treball tabular es farà en **un únic llibre acumulatiu**, però se'n conservaran fites docents deliberades. La demostració comença amb `tigit-01-preparacio-dades.xlsx`; la fase de càlcul d'indicadors produeix la fita derivada `tigit-02-indicadors-territorials.xlsx`, i la fase de construcció de figures produeix a partir d'aquesta `tigit-03-semiologia-visualitzacio.xlsx`. El número i el nom identifiquen el capítol que ha produït aquell estat, no una còpia arbitrària com `final2.xlsx`.
 
 El territori i el període no formen part del nom estable del llibre editable perquè es documenten a `project`, `sources` i `dictionary` i poden actualitzar-se sense canviar la identitat del projecte. En canvi, les figures, els mapes i la infografia exportats sí que inclouran fenomen, territori i període al nom, perquè s'han de poder interpretar quan circulin fora del llibre. Dins del llibre, els noms dels fulls també han de descriure la seva funció; afegir un cognom com `indicators_demography` o `charts_housing` és preferible a acumular operacions independents en un únic full difícil de revisar.
 
@@ -1329,16 +1353,21 @@ Els filtres s'utilitzaran des d'aquest capítol per inspeccionar nivells territo
 
 ### Fer la inspecció inicial amb el full de càlcul
 
-Abans de transformar, es farà una diagnosi:
+La transformació exigeix diagnosticar l'estructura, el contingut i les metadades de cada taula. La inspecció fixa la unitat d'observació i la clau esperada, estableix els recomptes de referència i separa els errors de format, els possibles errors de contingut i les diferències conceptuals que no es poden corregir mecànicament.
 
-- nombre de files i columnes;
-- unitat que representa cada fila;
-- tipus i rang de cada camp;
-- valors únics de les variables categòriques;
-- camps buits i símbols especials;
-- duplicats de la clau esperada;
-- totals i valors de control publicats per la font;
-- coherència entre període, territori i unitat.
+::: table "Preguntes per a l'auditoria inicial d'una taula territorial"
+| Aspecte | Comprovació inicial | Risc si no es revisa |
+| --- | --- | --- |
+| Estructura | Quantes files i columnes hi ha, i quines files contenen títols, notes o fonts? | Incorporar text com si fos una observació o perdre registres en remodelar |
+| Unitat d'observació | Cada fila representa el mateix tipus de territori? | Comparar municipis, comarques o agregacions diferents |
+| Identificador | Quina és la clau esperada i el codi conserva longitud, prefixos i zeros inicials? | Perdre correspondències en la unió |
+| Cobertura | Quins territoris i quants registres s'esperen? | Interpretar una absència de cobertura com un valor zero |
+| Tipus i rang | Cada camp és text, enter o decimal, i quin rang de valors és plausible? | Impedir càlculs o acceptar conversions errònies |
+| Categories i absències | Quins valors únics, camps buits i símbols especials apareixen? | Barrejar categories o convertir valors desconeguts en zero |
+| Unicitat | Hi ha duplicats de la clau on s'espera una fila per territori? | Duplicar observacions o obtenir correspondències ambigües |
+| Controls de referència | Els totals i valors de control concorden amb la font, el període, el territori i la unitat declarats? | Validar una taula incompleta o conceptualment incompatible |
+| Metadades | Es coneixen definició, període, unitat i autoria? | Produir un indicador que no es pot defensar |
+:::
 
 Les eines de filtre, ordenació, format condicional, taules dinàmiques i Power Query poden ajudar a inspeccionar. Les fórmules també permeten construir comprovacions, però no s'han d'usar per ocultar errors amb substitucions indiscriminades.
 
@@ -1348,11 +1377,10 @@ Els noms geogràfics no són claus fiables. Poden variar per llengua, accents, a
 
 >>>> **Els codis no són quantitats.** Excel i altres fulls de càlcul poden interpretar `01` com el nombre `1`, transformar codis llargs o convertir valors en dates. Els identificadors s'han d'importar com a **text**. Afegir zeros després només és legítim si es coneix l'esquema exacte del codi; no s'ha de reparar un identificador per intuïció.
 
-Abans d'una unió cal comprovar:
+Una unió exigeix aquestes comprovacions:
 
 - que totes dues fonts utilitzen el mateix sistema de codis i el mateix any de classificació;
 - que la clau és única al costat on s'espera una fila per territori;
-- quants registres coincideixen i quants queden sense correspondència;
 - si hi ha agregats, territoris desapareguts o delimitacions diferents;
 - si totes les taules representen realment la mateixa unitat territorial.
 
@@ -1360,38 +1388,25 @@ Abans d'una unió cal comprovar:
 
 Un zero indica una quantitat observada igual a zero. Una cel·la buida pot indicar que no es disposa de la dada, que no és aplicable, que s'ha suprimit per confidencialitat o que la combinació no s'ha mesurat. Són situacions diferents.
 
->>>>>> **No s'ha de convertir una absència en zero.** Aquesta substitució altera sumes, mitjanes, taxes i gràfics, i pot transformar «no es coneix» en «no existeix». Abans de convertir una columna a número cal identificar els símbols de la font i conservar-ne el significat.
+>>>>>> **No s'ha de convertir una absència en zero.** Aquesta substitució altera sumes, mitjanes, taxes i gràfics, i pot transformar «no es coneix» en «no existeix». La conversió d'una columna a número exigeix identificar els símbols de la font i conservar-ne el significat.
 
-Les fonts utilitzen símbols i indicadors d'estat propis, com `:`, `..`, `c`, `p` o `e`. Abans de convertir una columna a número cal llegir la llegenda i conservar l'estat en una columna separada. Substituir tots els símbols per zero altera la informació i pot falsejar sumes, mitjanes i mapes.
-
-### Validar les dades després de transformar-les
-
-Cada transformació ha de tenir una comprovació. Si es remodela una taula, s'ha de verificar que no s'han perdut valors. Si s'eliminen duplicats, cal explicar per què eren duplicats i no observacions legítimes. Si s'uneixen fonts, s'han de comptar coincidències i absències. Si es calcula un total, s'ha de contrastar amb una publicació de referència quan sigui possible.
-
-Una taula preparada no és necessàriament correcta perquè Excel no mostri errors. La validació combina controls tècnics, comparació amb la font i judici substantiu sobre valors plausibles.
+Les fonts utilitzen símbols i indicadors d'estat propis, com `:`, `..`, `c`, `p` o `e`. La conversió d'una columna a número exigeix llegir la llegenda i conservar l'estat en una columna separada. Substituir tots els símbols per zero altera la informació i pot falsejar sumes, mitjanes i mapes.
 
 ### Integrar les fonts en una taula municipal
 
 Les quatre descàrregues no formen encara una taula analítica. Poden ordenar els municipis de manera diferent, anomenar els camps amb capçaleres de publicació i barrejar totals amb components. La preparació haurà d'obtenir una única fila per municipi sense copiar valors a mà ni unir les fonts per posició de fila.
 
-**1. Documentar les fonts.** Es registrarà per a cada taula el productor, el títol exacte, la metodologia, el període, la unitat, la cobertura, la data d'accés i la llicència. La fitxa inclourà l'URL de la taula, no només la portada d'Idescat.
+La integració partirà dels fulls `prepared_*`, sense substituir les dades originals. Els municipis es filtraran mitjançant el codi de comarca i les fonts es relacionaran amb el codi municipal conservat com a text, mai per l'ordre de les files. Els camps seleccionats s'incorporaran a `municipal` amb les unitats i els estats dels valors no numèrics documentats fins a obtenir una sola fila coherent per municipi.
 
-**2. Diagnosticar sense corregir.** Es descriurà la unitat d'observació, s'identificarà la clau territorial i es construiran controls de files, valors absents, duplicats i rangs. Els problemes es classificaran com a errors de format, possibles errors de contingut o diferències conceptuals.
+El llibre mantindrà separats les dades rebudes, les transformacions, el diccionari, les comprovacions i la taula `municipal`. D'aquesta manera, la integració assembla les quatre famílies de dades sense ocultar-ne la procedència i deixa la taula preparada per als controls finals.
 
-::: table "Preguntes per auditar una taula territorial"
-| Aspecte | Pregunta de control | Risc si no es revisa |
-| --- | --- | --- |
-| Unitat d'observació | Cada fila representa el mateix tipus de territori? | Comparar municipis, comarques o agregacions diferents |
-| Identificador | El codi conserva longitud, prefixos i zeros inicials? | Perdre correspondències en la unió |
-| Cobertura | Les fonts contenen els mateixos territoris? | Interpretar una absència com un valor zero |
-| Tipus de dada | El camp és text, enter o decimal? | Impedir càlculs o unions correctes |
-| Files no analítiques | Hi ha títols, notes o fonts dins de la taula? | Incorporar text com si fos una observació |
-| Metadades | Es coneixen definició, període, unitat i autoria? | Produir un indicador que no es pot defensar |
-:::
+### Validar les dades després de transformar-les
 
-**3. Transformar amb rastre.** La versió preparada no substituirà l'original. El llibre distingirà les dades rebudes, el diccionari, les comprovacions i el full `municipal`. Es conservaran els codis com a text, es filtraran els municipis mitjançant el codi de comarca i es documentaran els valors no numèrics.
+Una taula preparada no és necessàriament correcta perquè Excel no mostri errors. Després de cada transformació cal comparar els recomptes d'entrada i de sortida i comprovar que no s'han perdut valors en remodelar la taula. Si s'han eliminat duplicats, cal justificar per què ho eren i per què no representaven observacions legítimes; si s'ha calculat un total, s'ha de contrastar amb la font o amb una publicació de referència compatible quan sigui possible.
 
-**4. Validar.** La taula final haurà de superar quatre controls: nombre justificat de files, clau territorial sense duplicats inesperats, valors dins de rangs plausibles i correspondència amb un total o resultat publicat.
+La validació de la integració ha de comptar quants codis coincideixen i quants queden sense correspondència a cada unió. També ha de comprovar que cada fila de `municipal` reuneix camps del mateix municipi, que cap unió ha duplicat files, que les absències no s'han convertit en zero i que la cobertura, el període, les definicions i les unitats continuen sent compatibles entre fonts.
+
+La validació final de la taula exigeix justificar el nombre final de files, confirmar que la clau territorial no té duplicats inesperats, revisar els rangs i els valors extrems i contrastar els totals o resultats publicats disponibles. `municipal` ha de conservar una fila per municipi, els codis com a text, les unitats explícites i els valors absents documentats. Tots aquests controls, juntament amb qualsevol discrepància o decisió que afecti la cobertura, s'han de conservar a `checks`; les definicions dels camps i el tractament de les absències han de quedar a `dictionary`.
 
 ### Evidències de la preparació de dades
 
@@ -1403,7 +1418,7 @@ La preparació ha de deixar un rastre revisable perquè l'equip pugui reconstrui
 | Arrel | `README.md` | Territori assignat, pregunta, fonts, llicències, dates i estructura del projecte |
 | `data/raw` | Fitxers originals | Descàrregues sense modificar i, si escau, URL o consulta de l'API |
 | `data/processed` | Un únic llibre de treball | Fulls descrits al model acumulatiu, sense llibres paral·lels |
-| `data/processed` | `municipal` | Una fila per municipi, codis com a text, unitats explícites i valors absents documentats |
+| `data/processed` | `municipal` | Taula municipal validada segons els criteris anteriors |
 | `data/processed` | `checks` i `dictionary` | Regles i incidències a `checks`; definicions dels camps a `dictionary` |
 :::
 
@@ -1420,9 +1435,9 @@ Per utilitzar-lo sense perdre la traça:
 3. cal mantenir juntes les carpetes del projecte i no canviar encara el nom inicial del llibre;
 4. cal completar `project` amb autoria, aplicació i configuració regional;
 5. cada descàrrega original s'ha de desar a `data/raw` sense canviar-ne el nom ni el contingut;
-6. cal completar una fila de `sources` per cada recurs abans de transformar-lo;
+6. cal completar una fila de `sources` per cada recurs com a requisit per transformar-lo;
 7. cal importar cada taula al full `source_*` corresponent, conservar els codis com a text i no substituir-hi les capçaleres de la font;
-8. cal registrar a `checks` els recomptes, duplicats, absències i incidències abans de construir `municipal`.
+8. cal registrar a `checks` els recomptes, duplicats, absències i incidències com a requisit per construir `municipal`.
 
 >>>> **El paquet inicial no és una plantilla per omplir a cegues.** Les capçaleres anticipen el resultat que es vol obtenir, però poden no coincidir amb l'estructura exacta de la descàrrega. Primer cal diagnosticar el fitxer rebut; després s'ha de decidir com separar, remodelar o referenciar els camps sense alterar-ne el significat.
 

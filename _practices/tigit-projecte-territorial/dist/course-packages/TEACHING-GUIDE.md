@@ -6,6 +6,10 @@ Aquest paquet acompanya el projecte pràctic acumulatiu de TIGIT. Està pensat p
 
 El capítol 1 diferencia el punt de partida `tigit-01-preparacio-dades.xlsx` de la versió desenvolupada `tigit-01-preparacio-dades-teaching.xlsx`. La segona conserva els originals, la consulta JSON-stat de població de 2021, les fórmules de la taula municipal i els controls reproduïbles. Encara requereix revisió humana de la compatibilitat temporal de la superfície i de les captures abans de considerar-se una solució aprovada.
 
+La seqüència visible del projecte és fonts, indicadors, gràfics, color, dades espacials, SIG, llenguatge cartogràfic, cartografia temàtica i síntesi. Els prefixos `01`–`09` dels artefactes són identificadors tècnics estables, no una numeració que s'hagi de reordenar: la fita de color `tigit-07-teoria-color.xlsx` alimenta el llibre `tigit-05-integracio-sig.xlsx`, que hi afegeix el full `map_export` per a QGIS.
+
+La cobertura executable només arriba al llibre de transferència cap a QGIS. Abans d'aprovar o distribuir la pràctica completa falten la integració de l'oferta turística municipal i dels indicadors que exigeix la guia docent, els quatre projectes QGIS, les composicions i exportacions cartogràfiques, el màster SVG, la prova de lectura, el PDF final i el ZIP reproduïble comprovat després d'extreure'l en una carpeta nova.
+
 ## Finalitat de la fita 01
 
 L'estudiant ha de poder:

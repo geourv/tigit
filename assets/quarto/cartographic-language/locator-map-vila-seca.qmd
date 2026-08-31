@@ -1,0 +1,417 @@
+---
+title: "Mapa de situació de Vila-seca"
+lang: ca
+ref: locator_map_vila_seca
+format:
+  gfm:
+    output-file: locator-map-vila-seca.generated.md
+execute:
+  echo: false
+  warning: false
+  message: false
+execute-dir: project
+unaltraweb_compute:
+  engine: r
+  mode: figure
+  inputs:
+    - _practices/tigit-projecte-territorial/data/processed/tarragones-boundaries-icgc-20260120.gpkg
+    - _practices/tigit-projecte-territorial/data/processed/catalonia-counties-icgc-20260120.gpkg
+    - _practices/tigit-projecte-territorial/data/processed/vila-seca-orthophoto-icgc-2025.jpg
+    - _practices/tigit-projecte-territorial/data/processed/natural-earth-admin-0-countries-50m.geojson
+  outputs:
+    - assets/img/cartographic-language/locator-map-vila-seca.svg
+    - assets/img/cartographic-language/locator-map-vila-seca-direct.svg
+---
+
+```{r}
+find_project_root <- function(start) {
+  path <- normalizePath(start, winslash = "/", mustWork = FALSE)
+  repeat {
+    if (file.exists(file.path(path, ".unaltraweb", "computations.yml"))) {
+      return(path)
+    }
+    parent <- dirname(path)
+    if (identical(parent, path)) {
+      stop("Project root not found: missing .unaltraweb/computations.yml")
+    }
+    path <- parent
+  }
+}
+
+root <- find_project_root(getwd())
+suppressPackageStartupMessages(library(sf))
+suppressPackageStartupMessages(library(ggplot2))
+suppressPackageStartupMessages(library(grid))
+
+tarragones_gpkg <- file.path(
+  root,
+  "_practices/tigit-projecte-territorial/data/processed/tarragones-boundaries-icgc-20260120.gpkg"
+)
+catalonia_gpkg <- file.path(
+  root,
+  "_practices/tigit-projecte-territorial/data/processed/catalonia-counties-icgc-20260120.gpkg"
+)
+orthophoto_file <- file.path(
+  root,
+  "_practices/tigit-projecte-territorial/data/processed/vila-seca-orthophoto-icgc-2025.jpg"
+)
+natural_earth_file <- file.path(
+  root,
+  "_practices/tigit-projecte-territorial/data/processed/natural-earth-admin-0-countries-50m.geojson"
+)
+
+municipalities <- st_read(tarragones_gpkg, layer = "municipalities_250k", quiet = TRUE)
+counties <- st_read(catalonia_gpkg, layer = "counties_250k", quiet = TRUE)
+countries <- st_read(natural_earth_file, quiet = TRUE)
+orthophoto <- jpeg::readJPEG(orthophoto_file)
+
+vila_seca <- municipalities[municipalities$NOMMUNI == "Vila-seca", ]
+tarragones <- counties[counties$NOMCOMAR == "Tarragonès", ]
+
+stopifnot(
+  nrow(municipalities) == 22,
+  nrow(counties) == 43,
+  nrow(vila_seca) == 1,
+  nrow(tarragones) == 1
+)
+
+orthophoto_extent <- c(
+  xmin = 338500,
+  ymin = 4547350,
+  xmax = 350500,
+  ymax = 4556000
+)
+
+extent_polygon <- st_as_sfc(st_bbox(orthophoto_extent, crs = st_crs(municipalities)))
+visible_municipalities <- st_filter(municipalities, extent_polygon, .predicate = st_intersects)
+
+draw_boundaries <- function(data, extent, style) {
+  coordinates <- st_coordinates(st_boundary(data))
+  group_columns <- grep("^L[0-9]+$", colnames(coordinates), value = TRUE)
+  groups <- do.call(
+    interaction,
+    c(as.data.frame(coordinates[, group_columns, drop = FALSE]), list(drop = TRUE))
+  )
+
+  for (points in split(as.data.frame(coordinates), groups)) {
+    grid.lines(
+      x = (points$X - extent["xmin"]) / (extent["xmax"] - extent["xmin"]),
+      y = (points$Y - extent["ymin"]) / (extent["ymax"] - extent["ymin"]),
+      default.units = "npc",
+      gp = style
+    )
+  }
+}
+
+counties_wgs84 <- st_transform(counties, 4326)
+tarragones_wgs84 <- st_transform(tarragones, 4326)
+catalonia_label <- st_sf(
+  label = "Catalunya",
+  geometry = st_point_on_surface(st_union(counties_wgs84))
+)
+vila_seca_marker <- st_transform(
+  st_sf(name = "Vila-seca", geometry = st_point_on_surface(st_union(vila_seca))),
+  4326
+)
+territorial_land <- countries[countries$ADMIN %in% c("Spain", "France", "Andorra"), ]
+catalonia_box <- st_bbox(counties_wgs84)
+catalonia_x_padding <- as.numeric(catalonia_box["xmax"] - catalonia_box["xmin"]) * 0.20
+catalonia_y_padding <- as.numeric(catalonia_box["ymax"] - catalonia_box["ymin"]) * 0.12
+
+territorial_context_tarragones <- ggplot() +
+  geom_sf(data = territorial_land, fill = "#dedbd1", color = "#ffffff", linewidth = 0.18) +
+  geom_sf(data = counties_wgs84, fill = "#f1eee5", color = "#ffffff", linewidth = 0.16) +
+  geom_sf(data = tarragones_wgs84, fill = "#d9573f", color = "#813022", linewidth = 0.5) +
+  geom_sf_text(
+    data = catalonia_label,
+    aes(label = label),
+    angle = 32,
+    color = "#45565d",
+    size = 6,
+    fontface = "bold",
+    family = "DejaVu Sans"
+  ) +
+  coord_sf(
+    xlim = c(catalonia_box["xmin"] - catalonia_x_padding, catalonia_box["xmax"] + catalonia_x_padding),
+    ylim = c(catalonia_box["ymin"] - catalonia_y_padding, catalonia_box["ymax"] + catalonia_y_padding),
+    expand = FALSE,
+    datum = NA
+  ) +
+  theme_void(base_family = "DejaVu Sans") +
+  theme(
+    panel.background = element_rect(fill = "#b9dbea", color = NA),
+    plot.background = element_rect(fill = "#ffffff", color = "#ffffff", linewidth = 1.2),
+    plot.margin = margin(7, 7, 7, 7)
+  )
+
+territorial_context_vila_seca <- ggplot() +
+  geom_sf(data = territorial_land, fill = "#dedbd1", color = "#ffffff", linewidth = 0.18) +
+  geom_sf(data = counties_wgs84, fill = "#f1eee5", color = "#ffffff", linewidth = 0.16) +
+  geom_sf(
+    data = vila_seca_marker,
+    shape = 21,
+    size = 4.8,
+    stroke = 1.2,
+    fill = "#d9472f",
+    color = "#ffffff"
+  ) +
+  geom_sf_text(
+    data = catalonia_label,
+    aes(label = label),
+    angle = 32,
+    color = "#45565d",
+    size = 6,
+    fontface = "bold",
+    family = "DejaVu Sans"
+  ) +
+  coord_sf(
+    xlim = c(catalonia_box["xmin"] - catalonia_x_padding, catalonia_box["xmax"] + catalonia_x_padding),
+    ylim = c(catalonia_box["ymin"] - catalonia_y_padding, catalonia_box["ymax"] + catalonia_y_padding),
+    expand = FALSE,
+    datum = NA
+  ) +
+  theme_void(base_family = "DejaVu Sans") +
+  theme(
+    panel.background = element_rect(fill = "#b9dbea", color = NA),
+    plot.background = element_rect(fill = "#ffffff", color = "#ffffff", linewidth = 1.2),
+    plot.margin = margin(7, 7, 7, 7)
+  )
+
+tarragones_box <- st_bbox(tarragones)
+tarragones_width <- as.numeric(tarragones_box["xmax"] - tarragones_box["xmin"])
+tarragones_height <- as.numeric(tarragones_box["ymax"] - tarragones_box["ymin"])
+tarragones_extent <- c(
+  xmin = as.numeric(tarragones_box["xmin"]) - tarragones_width * 0.18,
+  xmax = as.numeric(tarragones_box["xmax"]) + tarragones_width * 0.22,
+  ymin = as.numeric(tarragones_box["ymin"]) - tarragones_height * 0.30,
+  ymax = as.numeric(tarragones_box["ymax"]) + tarragones_height * 0.27
+)
+tarragones_map_width <- tarragones_extent["xmax"] - tarragones_extent["xmin"]
+tarragones_map_height <- tarragones_extent["ymax"] - tarragones_extent["ymin"]
+tarragones_scale_end <- tarragones_extent["xmax"] - tarragones_map_width * 0.05
+tarragones_scale_start <- tarragones_scale_end - 5000
+tarragones_scale_y <- tarragones_extent["ymin"] + tarragones_map_height * 0.09
+tarragones_north_x <- tarragones_scale_start - tarragones_map_width * 0.14
+
+tarragones_detail <- ggplot() +
+  geom_sf(data = counties, fill = "#dfe4e3", color = "#ffffff", linewidth = 0.35) +
+  geom_sf(data = tarragones, fill = "#f1eee5", color = "#73858d", linewidth = 0.8) +
+  geom_sf(data = municipalities, fill = "#f1eee5", color = "#ffffff", linewidth = 0.45) +
+  geom_sf(data = vila_seca, fill = "#d9472f", color = "#813022", linewidth = 0.7) +
+  annotate(
+    "segment",
+    x = tarragones_scale_start,
+    xend = tarragones_scale_end,
+    y = tarragones_scale_y,
+    yend = tarragones_scale_y,
+    color = "#17384a",
+    linewidth = 1
+  ) +
+  annotate(
+    "segment",
+    x = c(tarragones_scale_start, tarragones_scale_end),
+    xend = c(tarragones_scale_start, tarragones_scale_end),
+    y = tarragones_scale_y - tarragones_map_height * 0.009,
+    yend = tarragones_scale_y + tarragones_map_height * 0.009,
+    color = "#17384a",
+    linewidth = 0.8
+  ) +
+  annotate(
+    "text",
+    x = (tarragones_scale_start + tarragones_scale_end) / 2,
+    y = tarragones_scale_y + tarragones_map_height * 0.045,
+    label = "5 km",
+    color = "#17384a",
+    size = 6,
+    fontface = "bold",
+    family = "DejaVu Sans"
+  ) +
+  annotate(
+    "segment",
+    x = tarragones_north_x,
+    xend = tarragones_north_x,
+    y = tarragones_scale_y - tarragones_map_height * 0.002,
+    yend = tarragones_scale_y + tarragones_map_height * 0.065,
+    color = "#17384a",
+    linewidth = 0.9,
+    arrow = arrow(length = unit(0.16, "cm"), type = "closed")
+  ) +
+  annotate(
+    "text",
+    x = tarragones_north_x,
+    y = tarragones_scale_y + tarragones_map_height * 0.09,
+    label = "N",
+    color = "#17384a",
+    size = 6,
+    fontface = "bold",
+    family = "DejaVu Sans"
+  ) +
+  coord_sf(
+    xlim = tarragones_extent[c("xmin", "xmax")],
+    ylim = tarragones_extent[c("ymin", "ymax")],
+    expand = FALSE,
+    datum = NA
+  ) +
+  theme_void(base_family = "DejaVu Sans") +
+  theme(
+    panel.background = element_rect(fill = "#8fc8df", color = NA),
+    plot.background = element_rect(fill = "#ffffff", color = NA),
+    plot.margin = margin(0, 0, 0, 0)
+  )
+
+draw_map_title <- function(label, width) {
+  grid.roundrect(
+    x = 0.025,
+    y = 0.965,
+    width = width,
+    height = 0.075,
+    just = c("left", "top"),
+    r = unit(0.008, "npc"),
+    gp = gpar(fill = adjustcolor("#ffffff", alpha.f = 0.90), col = NA)
+  )
+  grid.text(
+    label,
+    x = 0.045,
+    y = 0.928,
+    just = c("left", "center"),
+    gp = gpar(col = "#17384a", fontsize = 17, fontface = "bold", fontfamily = "DejaVu Sans")
+  )
+}
+
+draw_vila_seca_callout <- function() {
+  grid.lines(
+    x = c(0.37, 0.28),
+    y = c(0.215, 0.34),
+    default.units = "npc",
+    arrow = arrow(length = unit(0.13, "cm"), type = "closed"),
+    gp = gpar(col = "#813022", lwd = 1.5)
+  )
+  grid.text(
+    "Vila-seca",
+    x = 0.385,
+    y = 0.195,
+    just = c("left", "center"),
+    gp = gpar(col = "#813022", fontsize = 17, fontface = "bold", fontfamily = "DejaVu Sans")
+  )
+}
+
+draw_context_map <- function(territorial_context) {
+  print(
+    territorial_context,
+    vp = viewport(x = 0.84, y = 0.79, width = 0.28, height = 0.34)
+  )
+  grid.rect(
+    x = 0.84,
+    y = 0.79,
+    width = 0.28,
+    height = 0.34,
+    gp = gpar(fill = NA, col = "#ffffff", lwd = 1.4)
+  )
+}
+
+render_tarragones_locator <- function(output, territorial_context) {
+  dir.create(dirname(output), showWarnings = FALSE, recursive = TRUE)
+  svglite::svglite(output, width = 8.5, height = 6.125, bg = "white")
+  grid.newpage()
+
+  print(
+    tarragones_detail,
+    vp = viewport(x = 0.5, y = 0.5, width = 0.98, height = 0.96, clip = "on")
+  )
+  grid.rect(
+    x = 0.5,
+    y = 0.5,
+    width = 0.98,
+    height = 0.96,
+    gp = gpar(fill = NA, col = "#ffffff", lwd = 1.4)
+  )
+  draw_vila_seca_callout()
+  draw_context_map(territorial_context)
+  draw_map_title("El Tarragonès", width = 0.25)
+
+  dev.off()
+}
+
+render_orthophoto_locator <- function(output, territorial_context) {
+  dir.create(dirname(output), showWarnings = FALSE, recursive = TRUE)
+  svglite::svglite(output, width = 8.5, height = 6.125, bg = "white")
+  grid.newpage()
+
+  pushViewport(viewport(x = 0.5, y = 0.5, width = 0.98, height = 0.96, clip = "on"))
+  grid.raster(orthophoto, width = unit(1, "npc"), height = unit(1, "npc"), interpolate = TRUE)
+  draw_boundaries(
+    visible_municipalities,
+    orthophoto_extent,
+    gpar(col = adjustcolor("#ffffff", alpha.f = 0.62), lwd = 0.75, linejoin = "round")
+  )
+  draw_boundaries(vila_seca, orthophoto_extent, gpar(col = "#ffffff", lwd = 5.2, linejoin = "round"))
+  draw_boundaries(vila_seca, orthophoto_extent, gpar(col = "#d9472f", lwd = 2.4, linejoin = "round"))
+
+  scale_width <- 2000 / (orthophoto_extent["xmax"] - orthophoto_extent["xmin"])
+  scale_x <- 0.72
+  scale_y <- 0.065
+  grid.lines(
+    x = c(scale_x, scale_x + scale_width),
+    y = c(scale_y, scale_y),
+    default.units = "npc",
+    gp = gpar(col = "#ffffff", lwd = 2.5)
+  )
+  grid.lines(
+    x = c(scale_x, scale_x),
+    y = c(scale_y - 0.008, scale_y + 0.008),
+    default.units = "npc",
+    gp = gpar(col = "#ffffff", lwd = 2)
+  )
+  grid.lines(
+    x = c(scale_x + scale_width, scale_x + scale_width),
+    y = c(scale_y - 0.008, scale_y + 0.008),
+    default.units = "npc",
+    gp = gpar(col = "#ffffff", lwd = 2)
+  )
+  grid.text(
+    "2 km",
+    x = scale_x + scale_width / 2,
+    y = scale_y + 0.04,
+    gp = gpar(col = "#ffffff", fontsize = 17, fontface = "bold", fontfamily = "DejaVu Sans")
+  )
+
+  grid.polygon(
+    x = c(0.93, 0.918, 0.942),
+    y = c(0.17, 0.13, 0.13),
+    default.units = "npc",
+    gp = gpar(fill = "#ffffff", col = "#ffffff")
+  )
+  grid.lines(
+    x = c(0.93, 0.93),
+    y = c(0.13, 0.095),
+    default.units = "npc",
+    gp = gpar(col = "#ffffff", lwd = 2)
+  )
+  grid.text(
+    "N",
+    x = 0.93,
+    y = 0.19,
+    gp = gpar(col = "#ffffff", fontsize = 17, fontface = "bold", fontfamily = "DejaVu Sans")
+  )
+  grid.rect(gp = gpar(fill = NA, col = "#ffffff", lwd = 1.4))
+  popViewport()
+
+  draw_context_map(territorial_context)
+  draw_map_title("Vila-seca", width = 0.18)
+
+  dev.off()
+}
+
+render_tarragones_locator(
+  file.path(root, "assets/img/cartographic-language/locator-map-vila-seca.svg"),
+  territorial_context_tarragones
+)
+render_orthophoto_locator(
+  file.path(root, "assets/img/cartographic-language/locator-map-vila-seca-direct.svg"),
+  territorial_context_vila_seca
+)
+```
+
+![Mapa del Tarragonès i les comarques veïnes amb Vila-seca destacada i un requadre superior dret que situa la comarca dins de Catalunya]({{ site.baseurl }}/assets/img/cartographic-language/locator-map-vila-seca.svg "El mapa de detall mostra la continuïtat territorial de les comarques veïnes, conserva el Tarragonès com a nivell intermedi i hi destaca Vila-seca.")
+
+![Ortofoto de Vila-seca amb un requadre superior dret que marca directament el municipi amb un punt]({{ site.baseurl }}/assets/img/cartographic-language/locator-map-vila-seca-direct.svg "El requadre salta directament de Catalunya a Vila-seca i generalitza el municipi com un punt vermell.")

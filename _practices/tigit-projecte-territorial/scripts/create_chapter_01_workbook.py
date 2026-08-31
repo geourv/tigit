@@ -62,7 +62,7 @@ def build_workbook(output: Path, force: bool) -> None:
             ["working_language", "ca", "El català és la llengua de treball"],
             ["spreadsheet_application", "", "Anotar Calc o Excel i la versió utilitzada"],
             ["regional_configuration", "", "Anotar els separadors decimals i de fórmules"],
-            ["author", "", "Completar abans de produir captures docents"],
+            ["author", "", "Cal indicar l'autoria per poder produir captures docents"],
             ["question", "Com es distribueixen la població i el parc d'habitatges entre els municipis?", "Pregunta descriptiva inicial"],
         ],
     )

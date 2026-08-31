@@ -1,8 +1,4 @@
-flowchart TB
-  subgraph top[" "]
-    direction LR
-    question[Pregunta del projecte] --> source[Catàleg o fitxa<br/>Conjunt: definició, productor i cobertura] --> access{Quina forma d'accés<br/>necessita l'anàlisi?}
-  end
+flowchart LR
+  question[Pregunta del projecte] --> source[Catàleg o fitxa<br/>Conjunt: definició, productor i cobertura] --> access{Quina forma d'accés<br/>necessita l'anàlisi?}
   access --> flat[Dades planes o estadístiques<br/>Distribució: taula, fitxer o consulta<br/>Selecció: dimensions, filtres, període i format<br/>Còpia: dades, metadades i consulta<br/>Per cartografiar: unió per codi o coordenades]
   access --> spatial[SIG i dades geoespacials<br/>Distribució: fitxer, descàrrega o connexió<br/>Capa: geometria, referència espacial i extensió<br/>Còpia: dades, geometria i metadades]
-  style top fill:none,stroke:none

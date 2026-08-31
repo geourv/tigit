@@ -332,7 +332,7 @@ def build_workbook(metadata: dict, population: dict) -> None:
 
     project = workbook["project"]
     project_values = {project.cell(row, 1).value: row for row in range(2, project.max_row + 1)}
-    project.cell(project_values["spreadsheet_application"], 2, "LibreOffice Calc 24.2.7.2; validar també amb Excel abans de publicar")
+    project.cell(project_values["spreadsheet_application"], 2, "LibreOffice Calc 24.2.7.2; també cal validar el llibre amb Excel per publicar-lo")
     project.cell(project_values["regional_configuration"], 2, "Interfície catalana; decimal amb coma; fórmules OOXML en anglès al fitxer")
     project.cell(project_values["author"], 2, "Equip docent TIGIT")
 

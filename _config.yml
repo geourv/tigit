@@ -30,7 +30,8 @@ author:
 
 lang: "ca"
 default_lang: "ca"
-languages: ["ca", "es", "en"]
+# Enable additional languages only when their approved translations exist.
+languages: ["ca"]
 icon: "brand/dosquartsdedocs-logo-white.svg"
 
 url: "https://geourv.github.io"

@@ -1,0 +1,10 @@
+{
+  "files": {
+    ".gitignore": "32befd51adaeabcc11442114a7277bc23a7d4d1f80bef03d3f86d817e78ebafd",
+    "Gemfile": "4d88954bd5ec734d4d582090310c150e8511b7bac28375b290c91d6125edf916",
+    "Gemfile.lock": "46b76476e1f2c8c8292b736cfd72ad621887ba952d37063f29d6f7a1ef471098",
+    "Makefile": "a98705ba85e7eabeb0c938050f67f343de180d4259fca1a365b77e5e86608d01"
+  },
+  "schema_version": 1,
+  "source": "unaltraweb_mcp package"
+}

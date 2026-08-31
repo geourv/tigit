@@ -6,7 +6,7 @@
     "subtitle": "Font: Idescat, habitatges per tipus d'habitatge, 2021."
   },
   "data": {
-    "url": "../../../_practices/tigit-projecte-territorial/data/processed/municipal-indicators-tarragones-2021.csv",
+    "url": "_practices/tigit-projecte-territorial/data/processed/municipal-indicators-tarragones-2021.csv",
     "format": {
       "type": "csv",
       "parse": {

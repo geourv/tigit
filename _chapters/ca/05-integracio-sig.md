@@ -108,7 +108,7 @@ L'inici del segle XXI va reduir algunes d'aquestes barreres. L'any 2000, els Est
 
 Les interfícies d'ArcView 1 i de la versió 0.0.5-alpha de QGIS permeten observar què va canviar i què es va conservar durant el pas cap als SIG d'escriptori. La resolució, els controls i l'organització visual pertanyen a dues èpoques diferents, però totes dues interfícies ja articulen la feina al voltant d'un visor cartogràfic, una llista de capes, eines d'interacció i controls sobre la representació.
 
-::: subfigures a+b "Dues interfícies històriques de SIG d'escriptori. La subfigura a mostra ArcView 1 (1991), amb el visor, la llegenda de capes i una paleta d'eines; la subfigura b mostra QGIS 0.0.5-alpha (2002), amb el panell de capes, el visor, la barra d'eines i el diàleg de propietats d'una capa. Les captures no mostren totes les funcions disponibles i s'utilitzen com a fragments per a comentari històric i docent. Captures conservades al material docent TIGIT anterior. ArcView és programari d'Esri; QGIS és programari lliure distribuït sota la GNU GPL."
+::: subfigures a+b "Fragments d'interfícies històriques de SIG d'escriptori per a comentari docent, conservats al material TIGIT anterior."
 ![Interfície d'ArcView 1 amb una llegenda de capes, un visor cartogràfic i una paleta vertical d'eines]({{ site.baseurl }}/assets/img/gis/arcview-1-1991.png "ArcView 1, 1991. Captura de la interfície del programari d'Esri conservada al material docent TIGIT anterior.")
 ![Interfície de QGIS 0.0.5-alpha amb el panell de capes, el visor, una barra d'eines i el diàleg de simbologia]({{ site.baseurl }}/assets/img/gis/qgis-0.0.5-2002.png "QGIS 0.0.5-alpha, compilació del 20 d'agost de 2002. Captura de la interfície del programari QGIS conservada al material docent TIGIT anterior.")
 :::
@@ -117,7 +117,7 @@ La comparació es completa al laboratori amb la versió actual de QGIS. Cal loca
 
 Avui no hi ha una única cadena de treball ni una sola família de proveïdors. Conviuen SIG d'escriptori, bases de dades espacials, biblioteques de programació, servidors de mapes, aplicacions mòbils, plataformes comercials, serveis públics interoperables i entorns d'anàlisi al núvol. Aquesta abundància permet abordar volums i escales abans inassolibles, però no elimina els límits de llicència, cobertura, qualitat, representativitat o capacitat tècnica. Des de la dècada de 2020, l'aprenentatge automàtic, la IA geoespacial i els assistents generatius assenyalen un canvi cap a fluxos més automatitzats de classificació, predicció i consulta. Aquest canvi amplia l'ecosistema, però no substitueix la pregunta, la documentació, la validació ni la interpretació territorial.
 
-![Cronologia per etapes dels SIG: fonaments als anys cinquanta, primers SIG als seixanta, dades i algorismes entre els setanta i els vuitanta, escriptori als noranta, web, GNSS i codi obert als dos mil, SIG connectats als anys deu i canvi cap a la IA geoespacial des dels anys vint]({{ site.baseurl }}/assets/img/gis/gis-history-timeline.svg?v=2 "Set etapes àmplies de l'evolució dels SIG, des de la geografia quantitativa i els primers ordinadors fins als entorns connectats dels anys deu i la incorporació progressiva de la IA geoespacial des dels anys vint. Les etapes se solapen i acumulen capacitats; no representen una substitució completa de les tecnologies anteriors. Esquema docent d'elaboració pròpia a partir de les fonts citades al text."){: data-figure-width-web="39.5rem" data-figure-width-pdf="93%"}
+![Cronologia per etapes dels SIG: fonaments als anys cinquanta, primers SIG als seixanta, dades i algorismes entre els setanta i els vuitanta, escriptori als noranta, web, GNSS i codi obert als dos mil, SIG connectats als anys deu i canvi cap a la IA geoespacial des dels anys vint]({{ site.baseurl }}/assets/img/gis/gis-history-timeline.svg?v=2 "Etapes de l'evolució dels SIG. Esquema docent d'elaboració pròpia basat en les fonts citades."){: data-figure-width-web="39.5rem" data-figure-width-pdf="93%"}
 
 La cronologia agrupa processos en etapes temporals perquè el canvi principal és l'eixamplament progressiu de l'ecosistema. Els sistemes institucionals van continuar després de l'arribada dels ordinadors personals; els serveis web no van fer innecessari l'escriptori; i el programari lliure no va fer desaparèixer les plataformes propietàries. Cada etapa va ampliar les dades, els usuaris i les formes de captura, anàlisi i publicació, però també va afegir decisions sobre interoperabilitat, manteniment, privacitat i dependència d'un proveïdor.
 
@@ -133,31 +133,31 @@ El GPS és una tecnologia de posicionament, però no és el nom de totes les man
 
 Una classificació publicada l'any 2010 ajuda a veure aquesta diversitat perquè combina dues preguntes: quin **abast aproximat** tenia cada sistema i en quina fase de **maduresa tecnològica** se situava aleshores. La posició vertical representa l'ordre de magnitud de la cobertura o l'abast del sistema, no l'exactitud amb què calculava una coordenada. La posició horitzontal tampoc no és una propietat permanent: «consolidat», «en desenvolupament» o «experimental» descriuen una valoració històrica que depenia del país i de l'aplicació {% cite baskerJammingClearPresent2010 %}.
 
-![Matriu històrica dels sistemes de posicionament per ràdio segons l'abast aproximat i la maduresa que se'ls atribuïa l'any 2010]({{ site.baseurl }}/assets/img/gis/radio-positioning-reach-maturity-2010.svg "El GNSS apareixia consolidat i amb abast global, però coexistia amb sistemes terrestres regionals, telefonia, infraestructura aeronàutica i tecnologies de proximitat. La fletxa entre Loran-C i eLoran representa una evolució proposada. Redibuix interpretatiu propi de la figura «Range and lifecycles of current radio systems», atribuïda a Paul Groves i publicada per Sally Basker a GPS World l'abril de 2010."){: data-figure-width-web="47.5rem" data-figure-width-pdf="100%"}
+![Matriu històrica dels sistemes de posicionament per ràdio segons l'abast aproximat i la maduresa que se'ls atribuïa l'any 2010]({{ site.baseurl }}/assets/img/gis/radio-positioning-reach-maturity-2010.svg "Abast i maduresa dels sistemes de posicionament per ràdio el 2010. Redibuix interpretatiu de «Range and lifecycles of current radio systems», de Paul Groves, publicat per Sally Basker a GPS World."){: data-figure-width-web="47.5rem" data-figure-width-pdf="100%"}
 
 La comparació no s'ha de llegir com un catàleg vigent. El Bluetooth, el Wi-Fi i l'UWB s'han consolidat en molts usos de localització; la telefonia ha evolucionat amb LTE, 5G i mètodes híbrids; Galileo i BeiDou han canviat el paisatge multiconstel·lació; i sistemes com eLoran, VOR/DME o ILS mantenen trajectòries diferents segons les polítiques i els sectors. El valor de la figura és mostrar que el GNSS ocupa una regió concreta dins d'un ecosistema de tecnologies amb escales i cicles de vida diferents.
 
 Altres mètodes no utilitzen ràdio. Els acceleròmetres i giroscopis estimen canvis de moviment i orientació; l'odometria mesura el desplaçament de rodes o passos; una càmera pot reconèixer fites; el LiDAR observa l'entorn amb llum làser; i els sistemes acústics poden emprar so o ultrasons. Aquestes observacions poden mantenir la continuïtat quan el GNSS queda ocult, però sovint produeixen una posició relativa o acumulen deriva. L'ajust a una xarxa viària o a un plànol conegut tampoc no és un senyal: és una restricció de model que ajuda a corregir o descartar solucions incompatibles {% cite grovesPrinciplesGNSSInertial2013 zafariSurveyIndoorLocalization2019 %}.
 
-![Famílies d'observacions per al posicionament: senyals de ràdio, sensors de moviment i observacions o models de l'entorn convergeixen en una solució fusionada]({{ site.baseurl }}/assets/img/gis/positioning-systems-overview.svg?v=2 "GPS i la resta de GNSS formen part dels mètodes basats en ràdio. Els sensors inercials, l'odometria, la visió, el LiDAR, l'acústica i l'ajust a mapes aporten informació diferent. Els sistemes pràctics poden fusionar diverses fonts i han d'expressar la incertesa i el sistema de referència. Esquema docent d'elaboració pròpia basat en Groves i Zafari et al."){: data-figure-width-web="58rem" data-figure-width-pdf="100%"}
+![Famílies d'observacions per al posicionament: senyals de ràdio, sensors de moviment i observacions o models de l'entorn convergeixen en una solució fusionada]({{ site.baseurl }}/assets/img/gis/positioning-systems-overview.svg?v=2 "Famílies d'observacions per al posicionament i fusió de fonts. Elaboració pròpia basada en Groves i Zafari et al."){: data-figure-width-web="58rem" data-figure-width-pdf="100%"}
 
 Un telèfon, un vehicle o un robot acostumen a **fusionar observacions** en lloc de confiar sempre en una única font. El GNSS pot aportar una referència global a l'exterior; els sensors inercials poden descriure el moviment entre dues solucions; el Wi-Fi o les balises poden ajudar en interiors; i un mapa pot restringir la posició a recorreguts plausibles. La combinació no elimina els errors: cal conservar una estimació d'incertesa, identificar el sistema de referència i entendre quines fonts estaven disponibles en cada moment.
 
 Un **sistema global de navegació per satèl·lit** (GNSS, de l'anglès *Global Navigation Satellite System*) utilitza una constel·lació per prestar serveis globals de posicionament, navegació i temps. **GPS** és el sistema dels Estats Units; **Galileo**, el de la Unió Europea; **GLONASS**, el de Rússia; i **BeiDou**, el de la Xina. Tots ofereixen serveis civils, encara que la governança i els serveis restringits siguin diferents. GNSS no és una cinquena constel·lació ni un sinònim tècnic de GPS, sinó el nom de la família. Molts receptors actuals combinen observacions de diversos sistemes, fet que augmenta el nombre de satèl·lits potencialment visibles i pot millorar la disponibilitat i la geometria de la solució {% cite euspaWhatGNSS2026 %}.
 
-![Visualització de la Terra envoltada per les òrbites dels satèl·lits de les constel·lacions mundials de navegació GNSS]({{ site.baseurl }}/assets/img/gis/gnss-satellite-fleet-nasa-2026.jpg "Visualització de la flota mundial de satèl·lits GNSS el 2026. Els colors diferencien els operadors de les constel·lacions i fan visible que el posicionament global depèn d'una infraestructura formada per nombrosos satèl·lits i plans orbitals; la imatge no representa la qualitat del senyal en un lloc concret. NASA Scientific Visualization Studio, Science and Technology Corporation i Kel Elkins; font original: NASA SVS 5627; Wikimedia Commons; domini públic als Estats Units."){: data-figure-width-web="48rem" data-figure-width-pdf="100%"}
+![Visualització de la Terra envoltada per les òrbites dels satèl·lits de les constel·lacions mundials de navegació GNSS]({{ site.baseurl }}/assets/img/gis/gnss-satellite-fleet-nasa-2026.jpg "Flota mundial de satèl·lits GNSS, 2026. NASA SVS 5627; NASA Scientific Visualization Studio, Science and Technology Corporation i Kel Elkins; Wikimedia Commons, domini públic als Estats Units."){: data-figure-width-web="48rem" data-figure-width-pdf="100%"}
 
 ### Origen militar i obertura del GPS civil
 
 Els antecedents tècnics del GPS inclouen sistemes de navegació per satèl·lit com Transit i programes d'experimentació temporal com Timation. L'any 1973, el Departament de Defensa dels Estats Units va integrar línies de desenvolupament prèvies en el programa Navstar GPS. El sistema es va concebre sota control militar, però la seva evolució va incorporar un ús civil global. Després que el vol civil KAL 007 fos abatut l'any 1983, l'administració de Ronald Reagan va anunciar que, quan el GPS fos operatiu, es posaria a disposició de l'aviació civil. La decisió no va crear immediatament un servei complet, però va establir un compromís polític explícit d'accés civil {% cite nationalResearchCouncilGlobalPositioning1995 speakesCivilGPSAccess1983 %}.
 
-La capacitat operativa inicial es va declarar el 1993 i la capacitat operativa completa, el 1995. Durant els anys noranta, però, la **disponibilitat selectiva** degradava intencionadament la precisió del servei civil estàndard. La seva desactivació el maig de 2000 va reduir de manera immediata aquesta font d'error i va afavorir usos civils i comercials més exigents. El GPS civil ja existia abans de l'any 2000; el canvi va consistir a deixar d'empitjorar-ne deliberadament el senyal obert, no a inaugurar el posicionament civil en aquella data {% cite gpsDirectorateInitialOperationalCapability2014 clintonStopDegradingGPS2000 gpsGovAccuracy2026 %}.
+La capacitat operativa inicial es va declarar el 1993 i la capacitat operativa completa, el 1995. Durant els anys noranta, però, la **disponibilitat selectiva** degradava intencionadament la precisió del servei civil estàndard. La seva desactivació el maig de 2000 va reduir de manera immediata aquesta font d'error i va afavorir usos civils i comercials més exigents. L'any 2000 no marca l'inici del GPS civil; el canvi va consistir a deixar d'empitjorar-ne deliberadament el senyal obert, no a inaugurar el posicionament civil en aquella data {% cite gpsDirectorateInitialOperationalCapability2014 clintonStopDegradingGPS2000 gpsGovAccuracy2026 %}.
 
 ### Els segments espacial, de control i d'usuari
 
 El funcionament del GPS s'organitza en tres segments relacionats. El **segment espacial** inclou els satèl·lits i els senyals que transmeten informació orbital i temporal. El **segment de control** observa les òrbites i els rellotges, avalua l'estat dels satèl·lits i hi carrega dades de navegació actualitzades. El **segment d'usuari** està format pels receptors: equips topogràfics, navegadors, sensors, telèfons o altres dispositius que reben els senyals i calculen posició, velocitat o temps. Les altres constel·lacions tenen arquitectures equivalents, encara que les organitzacions, les estacions i els serveis siguin propis de cada sistema {% cite gpsGovGPSOverview2026 %}.
 
-![Esquema dels tres segments GNSS: satèl·lits, antenes de la xarxa de control i un telèfon com a receptor d'usuari]({{ site.baseurl }}/assets/img/gis/gnss-three-segments.svg?v=3 "Els satèl·lits emeten senyals unidireccionals amb dades orbitals i temporals cap als receptors. La xarxa de control rep telemetria i dades de seguiment, i envia ordres i dades de navegació actualitzades als satèl·lits; les dues fletxes taronges representen aquesta comunicació d'anada i tornada. Els receptors calculen la seva solució sense enviar la posició als satèl·lits. Composició docent pròpia basada en la descripció institucional de GPS.gov; pictogrames adaptats de Lucide, llicències ISC i MIT."){: data-figure-width-web="37rem" data-figure-width-pdf="88%"}
+![Esquema dels tres segments GNSS: satèl·lits, antenes de la xarxa de control i un telèfon com a receptor d'usuari]({{ site.baseurl }}/assets/img/gis/gnss-three-segments.svg?v=3 "Segments espacial, de control i d'usuari d'un GNSS. Elaboració pròpia basada en GPS.gov; pictogrames adaptats de Lucide, llicències ISC i MIT."){: data-figure-width-web="37rem" data-figure-width-pdf="88%"}
 
 Un receptor convencional és **passiu respecte dels satèl·lits**: escolta els senyals, però no els respon ni els comunica automàticament on es troba. Un telèfon pot transmetre la posició calculada a una aplicació o un servidor mitjançant la xarxa mòbil o una connexió sense fil; aquesta comunicació posterior no forma part del càlcul orbital. La distinció és important per separar el posicionament GNSS de l'ús, l'emmagatzematge o la difusió de la localització per part d'un servei digital.
 
@@ -167,11 +167,11 @@ Cada satèl·lit transmet codis i un missatge de navegació associats a una esca
 
 Per obtenir una posició tridimensional, el receptor ha de resoldre quatre incògnites principals: les coordenades `x`, `y` i `z`, i el desajust del seu rellotge respecte del temps del sistema. Els satèl·lits disposen de rellotges atòmics; els receptors de consum utilitzen rellotges molt menys estables. Per això, en condicions ordinàries, calen observacions simultànies d'almenys **quatre satèl·lits**. La quarta observació no es limita a comprovar les altres tres: permet estimar l'error del rellotge del receptor juntament amb la posició. Observar-ne més aporta redundància i pot millorar la geometria, però no garanteix per si sol una posició exacta {% cite vanSickleBasicGISCoordinates2017 %}.
 
-![Quatre satèl·lits envien observacions a un telèfon que representa el receptor i que estima tres coordenades i el desajust del rellotge]({{ site.baseurl }}/assets/img/gis/gnss-four-observations.svg?v=4 "Cada temps de propagació produeix una pseudodistància. Quatre observacions permeten resoldre les tres coordenades de la posició i el desajust temporal del receptor; satèl·lits addicionals aporten redundància i una geometria potencialment més favorable. Composició docent pròpia basada en Van Sickle i Navipedia; pictogrames adaptats de Lucide, llicències ISC i MIT."){: data-figure-width-web="32.5rem" data-figure-width-pdf="77%"}
+![Quatre satèl·lits envien observacions a un telèfon que representa el receptor i que estima tres coordenades i el desajust del rellotge]({{ site.baseurl }}/assets/img/gis/gnss-four-observations.svg?v=4 "Quatre observacions GNSS per estimar la posició i el desajust del rellotge. Elaboració pròpia basada en Van Sickle i Navipedia; pictogrames adaptats de Lucide, llicències ISC i MIT."){: data-figure-width-web="32.5rem" data-figure-width-pdf="77%"}
 
 El missatge de navegació inclou **efemèrides**, que descriuen amb precisió l'òrbita i la correcció de rellotge d'un satèl·lit durant un període relativament curt. L'**almanac** resumeix de manera menys precisa l'estat i les òrbites de la constel·lació durant un període més llarg i ajuda el receptor a preveure quins satèl·lits pot cercar. En posicionament assistit, la xarxa pot facilitar temps aproximat, òrbites o altres dades perquè el receptor adquireixi els senyals més ràpidament; la posició continua depenent de les observacions i del mètode de càlcul, no només de descarregar un almanac {% cite vanSickleBasicGISCoordinates2017 djuknicGeolocationAssistedGPS2001 %}.
 
-La **planificació de la missió** continua sent rellevant quan la qualitat exigida és alta. Abans d'un aixecament convé anticipar obstacles, hores d'observació, geometria de les constel·lacions, durada, punts de control i mètode de correcció. Els receptors multiconstel·lació han reduït els intervals amb pocs satèl·lits, però no eliminen edificis, arbres, relleu, interferències ni una antena mal situada.
+La **planificació de la missió** continua sent rellevant quan la qualitat exigida és alta. La preparació d'un aixecament ha d'anticipar obstacles, hores d'observació, geometria de les constel·lacions, durada, punts de control i mètode de correcció. Els receptors multiconstel·lació han reduït els intervals amb pocs satèl·lits, però no eliminen edificis, arbres, relleu, interferències ni una antena mal situada.
 
 >> **Recurs recomanat: [Trimble GNSS Planning](https://www.gnssplanning.com).** Aquesta aplicació web permet fixar el lloc, la data, l'interval temporal, l'angle de tall i les constel·lacions, i després explorar la disponibilitat prevista mitjançant gràfics, un diagrama del cel i una vista mundial. Convé provar la localització d'una pràctica de camp i comparar què canvia en modificar l'hora, l'angle de tall o els sistemes activats. La predicció ajuda a planificar i a entendre la geometria dels satèl·lits, però no incorpora tots els obstacles i errors locals ni garanteix l'exactitud que s'obtindrà.
 
@@ -203,7 +203,7 @@ L'accés massiu ha multiplicat les dades georeferenciades disponibles: traces ap
 
 ### Integració de les observacions GNSS en un SIG
 
-Un receptor pot produir una posició puntual, una successió temporal de posicions o mesures més detallades del senyal. Per incorporar el resultat a un SIG no n'hi ha prou amb conservar dos nombres. Cal registrar com a mínim la data i l'hora, el sistema de referència, el tipus d'altura si s'utilitza, el dispositiu o mètode, una estimació de qualitat i el significat de l'objecte observat. El GPS treballa vinculat a WGS 84, però una aplicació pot transformar o presentar les coordenades en altres referències; l'altura el·lipsoidal tampoc no equival automàticament a una cota sobre el nivell del mar, tal com s'explica al [capítol 4]({{ site.baseurl }}/ca/chapters/terra-dades-espacials/).
+Un receptor pot produir una posició puntual, una successió temporal de posicions o mesures més detallades del senyal. Per incorporar el resultat a un SIG no n'hi ha prou amb conservar dos nombres. Cal registrar com a mínim la data i l'hora, el sistema de referència, el tipus d'altura si s'utilitza, el dispositiu o mètode, una estimació de qualitat i el significat de l'objecte observat. El GPS treballa vinculat a WGS 84, però una aplicació pot transformar o presentar les coordenades en altres referències; l'altura el·lipsoidal tampoc no equival automàticament a una cota sobre el nivell del mar, tal com s'explica a la [fase de dades espacials]({{ site.baseurl }}/ca/chapters/terra-dades-espacials/).
 
 ::: table "De l'observació del receptor a una capa"
 | Observació | Representació habitual al SIG | Metadades i controls mínims |
@@ -213,7 +213,7 @@ Un receptor pot produir una posició puntual, una successió temporal de posicio
 | Fotografia o formulari de camp | Punt o geometria vinculada a documents i atributs | Autoria, finalitat, correspondència entre registre i lloc, llicència i dades personals |
 :::
 
-Registrar la posició d'un recurs turístic és una operació de **captura**. Comprovar en quin municipi es troba, relacionar-lo amb una xarxa, calcular-ne l'accessibilitat, detectar concentracions o combinar-lo amb dades de demanda són operacions **SIG**. Més endavant, el capítol crearà punts des d'una taula de coordenades i comprovarà el CRS abans d'interpretar-los. Aquesta separació entre observació, dada documentada i anàlisi evita atribuir al receptor decisions que corresponen al sistema d'informació i al mètode de treball.
+Registrar la posició d'un recurs turístic és una operació de **captura**. Comprovar en quin municipi es troba, relacionar-lo amb una xarxa, calcular-ne l'accessibilitat, detectar concentracions o combinar-lo amb dades de demanda són operacions **SIG**. Més endavant, el capítol crearà punts des d'una taula de coordenades i en comprovarà el CRS per poder interpretar-los. Aquesta separació entre observació, dada documentada i anàlisi evita atribuir al receptor decisions que corresponen al sistema d'informació i al mètode de treball.
 
 ## Aplicacions i preguntes espacials
 
@@ -278,9 +278,9 @@ La interpolació estima valors en llocs sense observació a partir d'una hipòte
 
 Un model digital d'elevacions permet derivar pendent, orientació, ombrejat, perfils, drenatge o visibilitat. Una **conca visual** classifica quines cel·les mantenen línia de visió amb un observador. El càlcul necessita l'altitud de cada cel·la, la posició i l'altura de l'observador i, segons l'escala, l'altura de l'objectiu, la curvatura terrestre i la refracció. Si el ràster representa només el terreny, no hi apareixen necessàriament arbres, edificis o altres obstacles. Per tant, una conca visual és el resultat d'un model i no una fotografia de tot allò que es veu realment.
 
-![Ruta de cost mínim calculada sobre una xarxa amb pesos en minuts i conca visual amb l'observador prop d'un extrem del model d'elevacions]({{ site.baseurl }}/assets/img/gis/gis-analysis-examples.svg?v=2 "El panell esquerre modela una xarxa sintètica amb temps de recorregut i aplica Dijkstra per obtenir la ruta A–B–D–G–I, de cost total 11 minuts. El panell dret situa l'observador prop del marge dret i calcula una conca visual: el relleu deixa cel·les visibles al mateix vessant, mentre que la muntanya oculta bona part del vessant oposat. El conjunt docent `volcano` representa Maunga Whau i no s'ha de considerar un aixecament precís. Figura d'elaboració pròpia."){: data-figure-width="58rem"}
+![Ruta de cost mínim calculada sobre una xarxa amb pesos en minuts i conca visual amb l'observador prop d'un extrem del model d'elevacions]({{ site.baseurl }}/assets/img/gis/gis-analysis-examples.svg?v=2 "Ruta mínima en una xarxa sintètica i conca visual sobre el conjunt docent `volcano` de Maunga Whau, no apte per a mesures precises. Elaboració pròpia."){: data-figure-width="58rem"}
 
-La figura comparteix una idea metodològica: abans d'escollir l'algorisme cal representar el problema. La ruta necessita una xarxa i una definició de cost; la conca visual necessita un ràster d'elevacions i una definició de l'observador. En el panell dret, el punt se situa gairebé al límit del model. El groc s'estén sobretot pel mateix costat de la muntanya, mentre que el vessant que queda més enllà del relleu no manté línia de visió. La frontera irregular no és un radi de distància: resulta de comparar l'angle vertical de cada cel·la amb els obstacles intermedis.
+La figura comparteix una idea metodològica: la representació del problema orienta la tria de l'algorisme. La ruta necessita una xarxa i una definició de cost; la conca visual necessita un ràster d'elevacions i una definició de l'observador. En el panell dret, el punt se situa gairebé al límit del model. El groc s'estén sobretot pel mateix costat de la muntanya, mentre que el vessant que queda més enllà del relleu no manté línia de visió. La frontera irregular no és un radi de distància: resulta de comparar l'angle vertical de cada cel·la amb els obstacles intermedis.
 
 Canviar una entrada pot modificar la resposta encara que el codi sigui idèntic. Desplaçar l'observador, elevar-lo, afegir edificis o utilitzar un model de superfície en lloc d'un model del terreny altera la conca visual. Altres operacions segueixen la mateixa lògica: una isòcrona depèn de la xarxa i del cost, una densitat depèn del radi o nucli, una interpolació depèn de les observacions i del model de continuïtat, i una simulació depèn dels supòsits que converteixen processos territorials en regles calculables.
 
@@ -292,7 +292,7 @@ Les categories i els components anteriors permeten situar l'eina escollida per a
 
 QGIS és una peça d'un projecte geoespacial més ampli que també inclou opcions de servidor, aplicacions mòbils relacionades, complements i serveis professionals. El curs se centrarà en l'aplicació d'escriptori: la taula municipal preparada al llibre de càlcul es vincularà amb els límits de la comarca, es consultaran els atributs i es conservarà el projecte editable que documenta la integració. Les capes i els mapes exportats podran alimentar una publicació posterior, mentre que el desplegament d'un WebGIS complet i la programació de biblioteques geoespacials queden fora de l'abast pràctic d'aquest manual.
 
-La instal·lació recomanada i les versions de referència de QGIS, LibreOffice i Inkscape es recullen al [capítol 0]({{ site.baseurl }}/ca/#installacio-programari). Abans d'iniciar les activitats pràctiques de SIG cal comprovar que QGIS s'obre correctament, que permet crear un projecte i que es coneix la carpeta on es desaran les dades. La tria del programa concreta l'entorn de treball, però els criteris sobre fonts, mètodes, components i qualitat continuen sent aplicables a altres SIG.
+La instal·lació recomanada i les versions de referència de QGIS, LibreOffice i Inkscape es recullen al [capítol 0]({{ site.baseurl }}/ca/#installacio-programari). Els requisits d'inici de les activitats pràctiques de SIG són que QGIS s'obri correctament, que permeti crear un projecte i que es conegui la carpeta on es desaran les dades. La tria del programa concreta l'entorn de treball, però els criteris sobre fonts, mètodes, components i qualitat continuen sent aplicables a altres SIG.
 
 ## El mapa és una sortida, no tot el sistema
 
@@ -304,13 +304,13 @@ QGIS ofereix eines de simbolització i composició suficients per produir mapes 
 
 ## Flux de treball SIG revisable
 
-Aprendre a treballar amb un SIG en un context universitari exigeix construir una cadena de treball revisable. Localitzar menús és només una part de la tasca. Abans d'una unió, cal saber quina taula aporta els indicadors, quina capa aporta les geometries i quin camp permet relacionar-les. Després de la unió, cal comprovar si el nombre d'entitats, les claus i els valors continuen tenint sentit. Entre una captura vistosa i un resultat defensable hi ha una diferència metodològica: la segona opció permet reconstruir com s'ha arribat al mapa.
+Aprendre a treballar amb un SIG en un context universitari exigeix construir una cadena de treball revisable. Localitzar menús és només una part de la tasca. La preparació d'una unió identifica quina taula aporta els indicadors, quina capa aporta les geometries i quin camp permet relacionar-les; un cop executada, cal validar que el nombre d'entitats, les claus i els valors resultants continuen tenint sentit. Entre una captura vistosa i un resultat defensable hi ha una diferència metodològica: la segona opció permet reconstruir com s'ha arribat al mapa.
 
 El projecte comarcal es pot entendre com quatre capes de responsabilitat. La primera és **documental**: conservar fonts, llicències, dates i definicions. La segona és **estructural**: mantenir una fila per municipi, camps amb tipus adequats i codis territorials coherents. La tercera és **espacial**: revisar CRS, geometria, extensió, escala i correspondència territorial. La quarta és **comunicativa**: decidir quines consultes, mapes i exportacions expliquen el resultat sense ocultar errors o absències. Si una d'aquestes capes falla, el mapa pot aparèixer igualment a la pantalla, però la interpretació quedarà debilitada.
 
 >>>>> Aquesta fase transforma l'ús de QGIS en un flux de treball territorial que es pot reconstruir i revisar.
 >>>>>
->>>>> - Formular la pregunta, el territori, el període i la unitat d'observació abans d'escollir una operació.
+>>>>> - Formular la pregunta, el territori, el període i la unitat d'observació com a base per escollir una operació.
 >>>>> - Identificar per a cada entrada la font, la data, la llicència, el CRS, els camps clau i el nombre de registres.
 >>>>> - Ordenar les fases de preparació, unió, consulta i sortida amb un control explícit a cada pas.
 >>>>> - Preservar originals i documentar transformacions perquè el resultat es pugui reproduir.
@@ -331,11 +331,13 @@ Aquest esquema també ajuda a repartir responsabilitats entre teoria i laborator
 
 ## Fonts cartogràfiques i serveis geogràfics
 
+La càrrega d'un recurs exigeix decidir si es necessita com a dada d'anàlisi o com a context visual. Una capa descarregable permet conservar una versió local i processar-ne geometries i atributs; un servei d'objectes ofereix entitats consultables a través de la xarxa; i un servei de mapes o imatges proporciona sobretot una representació visual per orientar o contextualitzar. Tots tres poden aparèixer al llenç de QGIS, però no ofereixen el mateix accés a l'esquema, l'edició, l'anàlisi ni la reutilització.
+
 ### Capes oficials de límits administratius
 
 Les geometries han de provenir de fonts documentades, tenir una escala adequada i conservar informació sobre el sistema de referència i la data.
 
-En el laboratori es podrà utilitzar el connector [**Open ICGC**](https://www.icgc.cat/en/Tools-and-viewers/Tools/Connector-QGIS-Open-ICGC) de QGIS com a accés ràpid a la geoinformació de l'Institut Cartogràfic i Geològic de Catalunya. El connector, disponible també al [repositori de connectors de QGIS](https://plugins.qgis.org/plugins/OpenICGC/), incorpora una barra d'eines per carregar capes de referència, cercar topònims i adreces, consultar ortofotos, afegir fons cartogràfics i descarregar productes vectorials o ràster quan cal treballar sense connexió. Aquesta comoditat no substitueix la lectura de metadades: abans d'utilitzar una capa com a geometria d'anàlisi cal identificar productor, data, escala, CRS, llicència i si el recurs és una imatge de fons, un servei de visualització o una capa vectorial amb atributs.
+En el laboratori es podrà utilitzar el connector [**Open ICGC**](https://www.icgc.cat/en/Tools-and-viewers/Tools/Connector-QGIS-Open-ICGC) de QGIS com a accés ràpid a la geoinformació de l'Institut Cartogràfic i Geològic de Catalunya. El connector, disponible també al [repositori de connectors de QGIS](https://plugins.qgis.org/plugins/OpenICGC/), incorpora una barra d'eines per carregar capes de referència, cercar topònims i adreces, consultar ortofotos, afegir fons cartogràfics i descarregar productes vectorials o ràster quan cal treballar sense connexió. Aquesta comoditat no substitueix la lectura de metadades: l'ús d'una capa com a geometria d'anàlisi exigeix identificar productor, data, escala, CRS, llicència i si el recurs és una imatge de fons, un servei de visualització o una capa vectorial amb atributs.
 
 ![Espai de treball per documentar el connector Open ICGC dins de QGIS, amb accés a fons de mapa, ortofoto i límits administratius]({{ site.baseurl }}/assets/img/placeholders/qgis-open-icgc-placeholder.svg "QGIS i Open ICGC: selecció d'un fons de mapa i localització de límits administratius o divisions territorials."){: data-figure-width-web="41.5rem" data-figure-width-pdf="99%"}
 
@@ -343,23 +345,19 @@ Els fons de mapa de l'ICGC són molt útils per orientar el lector, comprovar si
 
 ### Fitxers i serveis de dades
 
-Les capes descarregables permeten conservar una versió local, inspeccionar-ne l'esquema i processar-la sense dependre permanentment del servidor. Els serveis d'objectes poden proporcionar geometries i atributs consultables, mentre que els serveis de mapes o imatges estan orientats principalment a la visualització. Que QGIS pugui mostrar un recurs no significa que aquest es pugui editar, analitzar o distribuir de la mateixa manera.
+Amb una capa descarregada cal preservar el fitxer original i treballar sobre una còpia o un resultat derivat; així se'n pot inspeccionar l'esquema i repetir el processament sense dependre permanentment del servidor. En un servei d'objectes cal comprovar quines entitats i quins camps exposa, quines consultes admet i si permet desar una còpia. Els serveis de mapes o imatges s'utilitzaran com a fons de referència i no com si fossin geometries amb atributs disponibles per a unions o edició. Que QGIS pugui mostrar un recurs no significa que es pugui editar, analitzar o distribuir de la mateixa manera.
 
-La procedència i les metadades s'han de conservar en tots els casos. Un servei pot canviar mantenint la mateixa adreça, i una capa local pot quedar descontextualitzada si se'n perd la data, la llicència o el sistema de referència. La base municipal validada al capítol 4 continuarà sent la geometria de treball del projecte.
+La procedència i les metadades s'han de conservar en tots els casos. Un servei pot canviar mantenint la mateixa adreça, i una capa local pot quedar descontextualitzada si se'n perd la data, la llicència o el sistema de referència. La base municipal validada a la fase de dades espacials continuarà sent la geometria de treball del projecte.
 
 ## Estructura i consulta de les taules d'atributs
 
-### Entitats, camps i tipus de dada
+La taula d'atributs connecta cada **geometria**, la representació espacial d'una entitat, amb els seus **atributs**, els valors alfanumèrics que la descriuen. En una capa vectorial ordinària, cada fila correspon a una entitat i a la seva geometria; les columnes formen l'esquema i defineixen el nom, el tipus i el significat de cada camp. Els camps de text, enters i decimals tenen comportaments diferents en filtres, càlculs i unions: un codi interpretat com a enter, per exemple, pot perdre zeros inicials i deixar de coincidir amb el mateix identificador conservat com a text.
 
-La taula d'atributs connecta cada **geometria**, la representació espacial d'una entitat, amb els seus **atributs**, els valors alfanumèrics que la descriuen. Els camps de text, enters i decimals tenen comportaments diferents en filtres, càlculs i unions.
-
-### Seleccionar, ordenar i filtrar
-
-Abans de representar una variable cal saber inspeccionar els registres i localitzar casos concrets o valors absents.
-
-La selecció respon una condició temporal dins del projecte; no modifica necessàriament les dades. Un filtre limita quines entitats es mostren o es processen, i una exportació crea un resultat nou. Cal distingir aquestes operacions per no confondre una vista parcial amb una capa que només conté la comarca.
+Representar una variable exigeix inspeccionar l'esquema i els registres, comprovar que cada fila descriu la geometria correcta i localitzar casos concrets, duplicats o valors absents. Ordenar només canvia l'ordre de consulta. Una selecció ressalta temporalment les entitats que compleixen una condició dins del projecte, mentre que un filtre limita quines entitats es mostren o es processen. L'edició modifica valors o geometries de la capa de treball, i l'exportació crea un resultat nou a partir de totes les entitats o d'un subconjunt. Distingir aquestes operacions evita confondre una vista parcial amb una capa que només conté la comarca o alterar la font quan només es volia consultar-la.
 
 ## Importació de taules i creació de punts a QGIS
+
+Importar una taula i crear geometria són decisions diferents. Un CSV carregat com a **taula sense geometria** conserva files i camps per consultar-los o unir-los a una capa existent; si es declaren camps X i Y, QGIS interpreta cada parell de coordenades amb un CRS determinat i crea una capa de punts. La primera operació exigeix validar l'esquema i les claus; la segona hi afegeix el control de l'ordre dels eixos, les unitats, el sistema de referència i el significat de cada posició.
 
 ### Preparar la taula externa
 
@@ -375,19 +373,19 @@ Un resultat no calculable s'exportarà com a nul amb un estat explicatiu, mai co
 
 La primera fila contindrà una única capçalera. No s'hi inclouran cel·les combinades, subtotals, notes de presentació, gràfics ni files comarcals barrejades amb els municipis. Els codis han de conservar la longitud i els zeros inicials; els valors absents es distingiran dels zeros; i els indicadors calculats s'exportaran amb el valor resultant. El CSV no substitueix les fórmules ni el diccionari conservats al llibre.
 
-Un CSV no conserva per si sol el tipus de cada camp. En importar-lo a QGIS, el codi s'ha de declarar o interpretar explícitament com a text i verificar-se abans de la unió. El delimitador de camps i el separador decimal s'escolliran de manera que la importació sigui inequívoca. Després de l'exportació s'ha de tornar a importar o inspeccionar una mostra per confirmar que el nombre de columnes, els accents, els decimals i els identificadors es mantenen correctament.
+Un CSV no conserva per si sol el tipus de cada camp. En importar-lo a QGIS, el codi s'ha de declarar o interpretar explícitament com a text; la unió només es configurarà després de verificar-lo. El delimitador de camps i el separador decimal s'escolliran de manera que la importació sigui inequívoca. Després de l'exportació s'ha de tornar a importar o inspeccionar una mostra per confirmar que el nombre de columnes, els accents, els decimals i els identificadors es mantenen correctament.
 
 ### Importar i comprovar
 
 La importació no acaba quan la taula apareix al projecte. Cal revisar caràcters, separadors, camps, files i interpretació dels valors. El nombre de registres ha de coincidir amb les files municipals de `map_export`, els codis s'han de conservar com a text quan l'esquema ho requereixi i els indicadors han de continuar sent numèrics.
 
-Abans d'unir, almenys dos municipis i dos indicadors es contrastaran amb `indicators_demography` i `indicators_housing`. Aquesta comprovació separa els errors d'exportació dels errors que es puguin produir després durant la unió.
+La preparació de la unió inclou el contrast d'almenys dos municipis i dos indicadors amb `indicators_demography` i `indicators_housing`. Aquesta comprovació separa els errors d'exportació dels errors que es puguin produir després durant la unió.
 
 ### Demostració obligatòria: coordenades a punts
 
 Algunes fonts no arriben com una capa de municipis, sinó com una taula amb coordenades. Pot passar amb equipaments turístics, punts d'informació, allotjaments, recursos patrimonials o adreces geocodificades. En aquest cas, QGIS pot carregar el CSV com a capa de text delimitat i crear geometries puntuals a partir dels camps X i Y. La decisió crítica és indicar el **CRS declarat per la font**, no deduir-lo només perquè els valors semblin graus o metres. En aquesta demostració, la font identifica les coordenades geogràfiques com a WGS84 i per això s'importen amb `EPSG:4326`; també declara les coordenades UTM com a ETRS89 / UTM 31N, corresponents a `EPSG:25831`.
 
-La demostració de coordenades utilitzarà el Directori anual de centres docents de la Generalitat del curs 2025/2026. Primer es filtraran els centres de Vila-seca per obtenir un conjunt petit i comprovable; després es podrà ampliar al Tarragonès per resumir recomptes municipals. La font conté coordenades ETRS89 / UTM 31N, longitud i latitud, adreça i codi municipal de sis dígits. El punt representa l'entrada del centre, no tota la parcel·la, la capacitat ni la població atesa. Aquesta capa és una demostració auxiliar de creació de punts i no s'ha de presentar com si compartís el període 2021 dels indicadors censals.
+La demostració de coordenades utilitzarà el Directori anual de centres docents de la Generalitat del curs 2025/2026. Primer es filtraran els centres de Vila-seca per obtenir un conjunt petit i comprovable; després es podrà ampliar al Tarragonès per resumir recomptes municipals. Cada trio repetirà el control amb el municipi assignat quan la font hi tingui registres; si no n'hi té, la capa de Vila-seca quedarà identificada només com a demostració del professorat. La font conté coordenades ETRS89 / UTM 31N, longitud i latitud, adreça i codi municipal de sis dígits. El punt representa l'entrada del centre, no tota la parcel·la, la capacitat ni la població atesa. Aquesta capa és una demostració auxiliar de creació de punts i no s'ha de presentar com si compartís el període 2021 dels indicadors censals.
 
 La mateixa taula es carregarà una vegada amb X/Y UTM i `EPSG:25831` i una altra amb longitud/latitud i `EPSG:4326`. Les dues capes han de coincidir després que QGIS les reprojecti dinàmicament al sistema de referència del projecte. La captura conservarà el diàleg de text delimitat amb els camps X i Y, el CRS d'origen i la previsualització de tipus; no cal capturar la capa ja carregada si el mapa exportat mostra millor el resultat.
 
@@ -397,9 +395,7 @@ Les coordenades UTM d'una taula poden identificar un punt o formar part de la re
 
 Crear punts i unir indicadors municipals són operacions diferents. Una **unió mitjançant codi territorial** transfereix atributs a una geometria administrativa existent; una **capa de punts** crea entitats noves a partir de posicions. Si després cal resumir punts per municipi, caldrà una operació espacial específica i una comprovació diferent, perquè el resultat dependrà de la precisió de les coordenades i dels límits utilitzats.
 
-### Ampliació opcional: geocodificació
-
-Com a ampliació s'utilitzarà un subconjunt reduït d'allotjaments convencionals de Vila-seca del Registre de Turisme de Catalunya. Es conservaran l'adreça original, el resultat retornat pel geocodificador de l'ICGC, els codis territorials, les coordenades i un estat d'èxit, ambigüitat o revisió manual. No s'inclouran noms de titulars ni altres camps personals que no siguin necessaris. El registre descriu oferta inscrita, no obertura, disponibilitat, ocupació o pernoctacions.
+>> **Geocodificar** significa convertir una adreça o un topònim en una o més posicions candidates, mentre que **georeferenciar** una imatge o un conjunt de dades significa relacionar-lo amb punts de control espacial. La geocodificació d'un subconjunt reduït d'allotjaments convencionals de Vila-seca del Registre de Turisme de Catalunya és una ampliació opcional i no forma part de la demostració obligatòria. Es conservaran l'adreça original, el resultat retornat pel geocodificador de l'ICGC, els codis territorials, les coordenades i un estat d'èxit, ambigüitat o revisió manual. La incorporació de cada correspondència com a punt quedarà condicionada a una validació, perquè una resposta automàtica pot identificar una adreça incompleta o un lloc diferent. No s'inclouran noms de titulars ni altres camps personals que no siguin necessaris. El registre descriu oferta inscrita, no obertura, disponibilitat, ocupació o pernoctacions.
 
 ## Unions mitjançant codis territorials
 
@@ -411,17 +407,15 @@ Els dos camps originals s'han de conservar encara que no comparteixin longitud, 
 >>>>>
 >>>>> - Comparar les claus de la capa i de la taula segons el tipus, la longitud, els prefixos, els zeros inicials i la unicitat.
 >>>>> - Crear camps normalitzats reproduïbles sense alterar els codis territorials originals.
->>>>> - Confirmar una cardinalitat d'un a un abans d'executar la unió municipal.
+>>>>> - Confirmar una cardinalitat d'un a un com a requisit per executar la unió municipal.
 >>>>> - Comptar coincidències, absències, duplicats i files no utilitzades sense convertir els nuls en zeros.
->>>>> - Contrastar municipis i valors amb el llibre i amb la seva distribució espacial abans de materialitzar o simbolitzar el resultat.
+>>>>> - Contrastar municipis i valors amb el llibre i amb la seva distribució espacial; només llavors es podrà materialitzar o simbolitzar el resultat.
 
 ### Clau de la capa i clau de la taula
 
-#### Cardinalitat esperada
+Per normalitzar o unir cal comprovar que tots dos camps identifiquen la mateixa unitat territorial i comparar-ne el tipus, la longitud, els prefixos, els zeros inicials, les absències i la unicitat. Una semblança visual entre codis no demostra que siguin la mateixa clau: la documentació territorial i la cardinalitat esperada han de justificar la correspondència.
 
 El projecte necessita una fila d'indicadors per cada municipi de la capa comarcal. Aquesta **correspondència d'un a un** exigeix **claus úniques als dos costats**. Si `map_export` conté més d'una fila amb el mateix codi, la unió és ambigua i no s'ha de resoldre escollint una coincidència arbitrària. Primer cal determinar si hi ha un total barrejat, un duplicat o dues unitats d'observació diferents.
-
-#### Normalitzar sense perdre l'original
 
 La normalització es farà de manera explícita i reproduïble. Es conservaran els codis rebuts, s'anotaran les regles aplicades i es compararan manualment diversos parells coneguts. Els noms municipals poden ajudar a diagnosticar, però no substituiran el codi oficial com a clau principal.
 
@@ -445,26 +439,26 @@ Només quan calgui compartir el resultat fora del projecte, es podrà exportar u
 
 ## Activitat: unir els indicadors de la comarca
 
-La pràctica relaciona la geometria municipal validada amb els indicadors del llibre mitjançant un codi territorial. La capa i la taula representen els mateixos municipis, però els codis poden tenir prefixos, longituds o tipus diferents; abans de normalitzar-los, cal comptar valors únics, detectar duplicats i confirmar una correspondència d'una fila d'indicadors per municipi.
+La pràctica relaciona la geometria municipal validada amb els indicadors del llibre mitjançant un codi territorial. La capa i la taula representen els mateixos municipis, però els codis poden tenir prefixos, longituds o tipus diferents; per normalitzar-los cal comptar valors únics, detectar duplicats i confirmar una correspondència d'una fila d'indicadors per municipi.
 
 El resultat serà un projecte QGIS amb una unió municipal comprovada, dues consultes reproduïbles i un informe de control al `README.md`. Els noms dels fitxers, les comprovacions i les evidències es concreten en les seccions següents perquè funcionen com a procediment de l'activitat, no com a objectius d'aprenentatge independents.
 
 ### Entrades i resultats de la unió municipal
 
-Per al Tarragonès s'obrirà, dins de `qgis`, el projecte `tigit-04-dades-espacials.qgz` i es desarà la nova fita com `tigit-05-integracio-sig.qgz`, sense crear un projecte desconnectat. A `data/processed` es mantindrà `tarragones-boundaries-icgc-20260120.gpkg` i es conservarà la fita anterior del llibre abans de crear `tigit-05-integracio-sig.xlsx`. En aquest nou estat del mateix llibre es crearà o regenerarà `map_export` amb l'esquema canònic definit en el capítol. La còpia de transferència serà `municipal-indicators-tarragones-2021.csv`. Els noms s'adaptaran al territori i al període del projecte.
+Per al Tarragonès s'obrirà, dins de `qgis`, el projecte `tigit-04-dades-espacials.qgz` i es desarà la nova fita com `tigit-05-integracio-sig.qgz`, sense crear un projecte desconnectat. A `data/processed` es mantindrà `tarragones-boundaries-icgc-20260120.gpkg`. La còpia del llibre que entra en aquesta fase és explícitament `tigit-07-teoria-color.xlsx`; es conservarà intacta i se'n crearà la continuació `tigit-05-integracio-sig.xlsx`, on es generarà `map_export`. Els prefixos `07` i `05` són identificadors tècnics estables de la fita que produeix cada artefacte, no números de versió ni l'ordre de lectura. La còpia de transferència serà `municipal-indicators-tarragones-2021.csv`. Els noms s'adaptaran al territori i al període del projecte.
 
 El projecte conservarà la unió entre la capa municipal i el CSV, mentre que el `README.md` recollirà l'informe de la unió. Com a evidència de pràctica es conservaran també tres comprovacions manuals de municipis i dues consultes de QGIS amb els recomptes i els codis resultants.
 
 ### Comprovar les entrades
 
-Les entrades són el projecte QGIS del capítol 4, la capa comarcal validada i tres fulls del llibre: `municipal`, `indicators_demography` i `indicators_housing`. Després de crear o regenerar `map_export` i el CSV de transferència, abans de la unió s'anotaran el nombre d'entitats, el nombre de files, les claus úniques i els possibles duplicats. La clau territorial es triarà a partir de la documentació, no només perquè dos camps mostrin valors semblants. També es comprovarà que els codis i les unitats municipals dels indicadors de 2021 continuen corresponent a la geometria ICGC de 2026; si hi ha hagut cap canvi territorial, la unió quedarà aturada fins a documentar-ne el tractament.
+Les entrades són el projecte QGIS de la fase de dades espacials, la capa comarcal validada i tres fulls del llibre: `municipal`, `indicators_demography` i `indicators_housing`. Després de crear o regenerar `map_export` i el CSV de transferència, la preparació de la unió inclourà l'anotació del nombre d'entitats, el nombre de files, les claus úniques i els possibles duplicats. La clau territorial es triarà a partir de la documentació, no només perquè dos camps mostrin valors semblants. També es comprovarà que els codis i les unitats municipals dels indicadors de 2021 continuen corresponent a la geometria ICGC de 2026; si hi ha hagut cap canvi territorial, la unió quedarà aturada fins a documentar-ne el tractament.
 
 ### Preparar les claus i executar la unió
 
 El procediment operatiu mínim serà aquest:
 
 1. carregar la capa municipal del GeoPackage i importar el CSV com una **taula sense geometria**;
-2. comprovar files, tipus de camp, codis, accents, decimals i valors nuls abans de configurar cap relació;
+2. comprovar files, tipus de camp, codis, accents, decimals i valors nuls; només llavors es configurarà la relació;
 3. crear, només si cal, camps normalitzats nous amb el calculador de camps, sense sobreescriure les claus originals;
 4. configurar a les propietats de la capa municipal una unió d'un a un entre la clau documentada de la geometria i `mun_code`;
 5. limitar els camps incorporats als indicadors necessaris i comprovar quines geometries no han rebut correspondència;
@@ -476,7 +470,7 @@ Els noms i les unitats dels camps units han de continuar coincidint amb el dicci
 
 Després de la unió es repetiran els recomptes. Tots els municipis previstos han de tenir una correspondència o una absència explicada. Per practicar la verificació, es contrastaran manualment tres municipis, inclosos un valor habitual i un cas extrem, i es comprovarà que el nombre de geometries no ha canviat.
 
-També es practicaran i conservaran dues consultes de QGIS: una per identificar un municipi conegut i una altra per seleccionar una condició sobre un indicador. Per a cadascuna, el `README.md` registrarà l'expressió, el recompte obtingut i els codis municipals seleccionats.
+La unió també es posarà a prova amb dues consultes de QGIS. La primera identificarà els indicadors d'un municipi conegut; la segona seleccionarà els municipis que compleixen una condició documentada, com superar un determinat percentatge d'habitatge no principal, i podrà incorporar una segona condició. Per a cadascuna, el `README.md` registrarà l'expressió, el recompte obtingut i els codis municipals seleccionats. El resultat s'interpretarà com una **selecció descriptiva**, no com una **explicació causal**.
 
 ::: table "Control de qualitat d'una unió territorial"
 | Moment | Comprovació | Evidència |
@@ -490,19 +484,11 @@ També es practicaran i conservaran dues consultes de QGIS: una per identificar 
 | Després | La distribució espacial confirma casos concrets | Inspecció territorial documentada |
 :::
 
-### Consultar la unió
-
-La unió es posarà a prova amb dues consultes senzilles. La primera identificarà els indicadors d'un municipi conegut. La segona localitzarà els municipis que compleixen una condició documentada, com superar un determinat percentatge d'habitatge no principal. Es podrà afegir una segona condició, però el resultat s'interpretarà com una **selecció descriptiva**, no com una **explicació causal**.
-
 ### Organització del projecte QGIS
 
-#### Capes originals, derivades i estils
+Els noms i grups de capes han de permetre distingir la font original, la capa comarcal, les transformacions de claus, la unió i els resultats preparats per simbolitzar. La simbologia temàtica encara no substituirà els noms semàntics ni la documentació de les capes. Aquesta organització ha de fer visible què és una entrada i què és un resultat derivat sense dependre només de l'aparença al llenç.
 
-Els noms i grups de capes han de permetre distingir la font original, la capa comarcal, les transformacions de claus, la unió i els resultats preparats per simbolitzar. La simbologia temàtica encara no substituirà els noms semàntics ni la documentació de les capes.
-
-#### Rutes, carpetes i traçabilitat
-
-El projecte s'ha de poder obrir i revisar sense perdre fitxers. S'obrirà el `.qgz` iniciat al capítol 4 i es desarà la fita `tigit-05-integracio-sig.qgz`, amb rutes relatives dins de la carpeta arrel. El CSV de transferència, la font espacial i qualsevol GeoPackage derivat conservaran ubicacions estables; no es crearà un segon projecte desconnectat per al mapa de context o el mapa temàtic.
+El projecte també s'ha de poder obrir i revisar sense perdre fitxers. S'obrirà el `.qgz` iniciat a la fase de dades espacials i es desarà la fita `tigit-05-integracio-sig.qgz`, amb rutes relatives dins de la carpeta arrel. El CSV de transferència, la font espacial i qualsevol GeoPackage derivat conservaran ubicacions estables; no es crearà un segon projecte desconnectat per al mapa de context o el mapa temàtic.
 
 ### Evidències de la integració SIG
 

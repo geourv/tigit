@@ -1,4 +1,0 @@
-bibtexparser
-pyyaml
-rdata
-requests

@@ -17,6 +17,7 @@ unaltraweb_compute:
     - _practices/tigit-projecte-territorial/data/processed/municipal-indicators-tarragones-2021.csv
   outputs:
     - assets/img/data-visualization/project-ageing-vs-housing-scatter-tarragones-2021.svg
+    - assets/img/data-visualization/project-ageing-housing-population-bubbles-tarragones-2021.svg
 ---
 
 ```{r}
@@ -45,11 +46,11 @@ theme_tigit <- function(base_size = 12) {
       axis.line = element_line(color = "#17202a", linewidth = 0.4),
       axis.ticks = element_line(color = "#17202a", linewidth = 0.3),
       axis.title = element_text(color = "#17202a", face = "bold"),
-      axis.text = element_text(color = "#52616b"),
+      axis.text = element_text(size = 10.5, color = "#52616b"),
       plot.title = element_text(face = "bold", size = 13, hjust = 0, color = "#17202a"),
-      plot.caption = element_text(size = 8, color = "#52616b", hjust = 0, margin = margin(t = 8)),
+      plot.caption = element_text(size = 12, color = "#52616b", hjust = 0, margin = margin(t = 8)),
       legend.title = element_text(face = "bold", color = "#17202a"),
-      legend.text = element_text(color = "#52616b"),
+      legend.text = element_text(size = 10.5, color = "#52616b"),
       legend.position = "top",
       plot.margin = margin(8, 12, 8, 8)
     )
@@ -76,4 +77,52 @@ fig <- ggplot(indicators, aes(x = population_65_plus_pct, y = housing_non_main_p
 output <- file.path(root, "assets/img/data-visualization/project-ageing-vs-housing-scatter-tarragones-2021.svg")
 dir.create(dirname(output), showWarnings = FALSE, recursive = TRUE)
 ggsave(output, fig, width = 8, height = 5.5, device = svglite::svglite)
+
+labels <- indicators[indicators$municipality %in% c("Salou", "Tarragona", "Vila-seca"), ]
+bubbles <- ggplot(
+  indicators,
+  aes(
+    x = population_65_plus_pct,
+    y = housing_non_main_pct,
+    size = population_total
+  )
+) +
+  geom_point(shape = 21, fill = "#4C78A8", color = "#0B3A6E", alpha = 0.58, stroke = 0.45) +
+  geom_text(
+    data = labels,
+    aes(
+      x = population_65_plus_pct,
+      y = housing_non_main_pct,
+      label = municipality
+    ),
+    inherit.aes = FALSE,
+    size = 3.6,
+    fontface = "bold",
+    nudge_y = 3.2,
+    show.legend = FALSE
+  ) +
+  scale_size_area(
+    max_size = 24,
+    breaks = c(500, 5000, 25000, 100000),
+    labels = function(x) format(x, big.mark = ".", decimal.mark = ",", scientific = FALSE, trim = TRUE),
+    name = "Població total"
+  ) +
+  scale_x_continuous(limits = c(0, 26), expand = expansion(mult = c(0, 0))) +
+  scale_y_continuous(limits = c(0, 70), expand = expansion(mult = c(0, 0))) +
+  labs(
+    title = "Envelliment, habitatge no principal i població total (2021)",
+    x = "Població de 65 anys o més (%)",
+    y = "Habitatge no principal (%)",
+    caption = "L'àrea de cada bombolla és proporcional a la població total. Font: Idescat, 2021."
+  ) +
+  theme_tigit() +
+  guides(size = guide_legend(title.position = "top", title.hjust = 0.5, nrow = 1)) +
+  theme(
+    legend.position = "bottom",
+    legend.direction = "horizontal",
+    legend.box.margin = margin(t = 8, b = 2)
+  )
+
+bubble_output <- file.path(root, "assets/img/data-visualization/project-ageing-housing-population-bubbles-tarragones-2021.svg")
+ggsave(bubble_output, bubbles, width = 8, height = 5.8, device = svglite::svglite)
 ```

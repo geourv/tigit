@@ -14,18 +14,18 @@ manual_references: true
 
 Un indicador condensa dades per fer visible una situació, una diferència o una evolució que interessa comprendre. Pot ajudar a explicar a la ciutadania com canvia una comarca, permetre que una administració segueixi un objectiu, orientar la gestió d'una destinació o formular una pregunta de recerca. Quan exigeix un càlcul, l'operació és un mitjà i no la finalitat: la utilitat apareix quan la mesura es relaciona amb una pregunta, un territori, un període, un públic i una decisió.
 
-Aquest capítol amplia, per tant, la dimensió pràctica del llibre comarcal. Abans de calcular percentatges, ràtios i densitats, situa els indicadors dins de sistemes oficials, quadres de comandament i estudis científics. Després examina com es dissenyen i interpreten, i finalment aplica aquests criteris a la població i l'habitatge dels municipis del Tarragonès.
+Aquest capítol amplia, per tant, la dimensió pràctica del llibre comarcal. Situa els indicadors dins de sistemes oficials, quadres de comandament i estudis científics com a base conceptual per calcular percentatges, ràtios i densitats. A continuació examina com es dissenyen i interpreten, i finalment aplica aquests criteris a la població i l'habitatge dels municipis del Tarragonès com a demostració docent. Cada trio seguirà el mateix recorregut amb el parell comarca–municipi que tingui assignat.
 
 >>>>> En acabar el capítol, cal poder dissenyar, calcular, interpretar i validar indicadors territorials coherents amb una pregunta i amb les dades disponibles.
 >>>>>
 >>>>> - Definir un indicador justificat per una pregunta, un territori, un període, un numerador, un denominador i una unitat.
 >>>>> - Calcular indicadors municipals i agregats comarcals de manera reproduïble.
 >>>>> - Interpretar patrons, contrastos i casos extrems sense presentar-los com a causes demostrades.
->>>>> - Validar fórmules, comparabilitat, cobertura, absències i resultats abans de documentar-los.
+>>>>> - Documentar les comprovacions de fórmules, comparabilitat, cobertura, absències i resultats, i completar-les com a condició per acceptar els resultats.
 
 ## Estadística i comunicació de dades
 
-Els indicadors no es poden entendre del tot al marge de l'estadística, però tampoc no es poden confondre amb ella. Abans de calcular el primer percentatge, cal situar què fa l'estadística, què fa aquesta assignatura i on passa la frontera entre l'una i l'altra. Aquesta frontera és doblement útil: ajuda a reconèixer què es pot afirmar amb un indicador i evita que un curs de visualització de dades es converteixi en una repetició de les assignatures d'estadística i de tècniques quantitatives que l'estudiant ja ha cursat o cursa.
+Els indicadors no es poden entendre del tot al marge de l'estadística, però tampoc no es poden confondre amb ella. Com a punt de partida, cal delimitar què fa l'estadística, què fa aquesta assignatura i on passa la frontera entre l'una i l'altra. Aquesta frontera ajuda a reconèixer què es pot afirmar amb un indicador i evita que el curs intenti substituir una assignatura completa d'estadística. Els conceptes descriptius necessaris es resumiran abans d'utilitzar-los; haver-los estudiat abans facilita el recorregut, però no es pressuposa el domini de la inferència.
 
 L'estadística es pot dividir, de manera esquemàtica i prou acurada per a aquest curs, en dos grans blocs. L'estadística **descriptiva** organitza, resumeix i representa les dades observades: calcula percentatges, ràtios, mitjanes, dispersions i associacions, i les mostra en taules, gràfics i mapes. L'estadística **inferencial**, en canvi, va més enllà del conjunt observat: a partir d'una mostra estima paràmetres de la població, construeix intervals de confiança i contrasta hipòtesis. Les dues responen preguntes diferents i exigeixen requisits diferents.
 
@@ -56,7 +56,7 @@ Aquesta taula no ordena les dues branques per importància: cada una respon una 
 
 ### Una assignatura complementària a les tècniques quantitatives
 
-Aquest manual no pretén ensenyar estadística de nou ni substituir les assignatures que l'estudiant ja té. Les assignatures d'estadística i de tècniques quantitatives ensenyen a calcular i validar mesures, a estimar, a contrastar hipòtesis i a quantificar la incertesa amb rigor. Aquesta assignatura se centra en una altra feina, complementària i posterior: decidir què es representa, com es codifica visualment, per a qui es fa i amb quins límits, a partir d'indicadors i de resultats que ja s'haurien de poder llegir críticament.
+Aquest manual no pretén substituir una assignatura d'estadística. Quan calgui treballar amb percentatges, mediana, quartils, associació o ajust lineal, en donarà una definició operativa suficient per llegir el resultat i n'explicarà els límits. Les assignatures d'estadística i de tècniques quantitatives amplien aquest nucli amb estimació, contrast d'hipòtesis i quantificació de la incertesa. Aquesta assignatura se centra en una feina complementària: decidir què es representa, com es codifica visualment, per a qui es fa i amb quins límits.
 
 La complementarietat es pot resumir amb dues preguntes. A una assignatura d'estadística es pregunta «Què es pot inferir d'aquestes dades i amb quina incertesa?». En aquesta assignatura es pregunta «Aquesta representació permet una lectura honesta, comparable i clara del que mostren les dades?». Les dues preguntes no competeixen: un resultat ben calculat es pot comunicar malament, i una representació clara no arregla una inferència mal feta. El curs treballa la segona i suposa que la primera s'estudia en paral·lel.
 
@@ -94,7 +94,7 @@ Aquesta funció exploratòria connecta amb el procés de descobriment de coneixe
 
 ## Tipus, construcció i validesa dels indicadors
 
-No qualsevol número és un indicador ni tots els indicadors es construeixen igual. Abans de calcular o reutilitzar un valor convé separar com s'ha mesurat, quina regla permet comparar-lo, si combina diverses dimensions i fins a quin punt observa directament el fenomen que es vol interpretar. Aquest vocabulari ajuda a justificar la construcció i a no atribuir a les dades més significat del que poden sostenir.
+No qualsevol número és un indicador ni tots els indicadors es construeixen igual. El càlcul o la reutilització d'un valor exigeixen distingir com s'ha mesurat, quina regla permet comparar-lo, si combina diverses dimensions i fins a quin punt observa directament el fenomen que es vol interpretar. Aquest vocabulari ajuda a justificar la construcció i a no atribuir a les dades més significat del que poden sostenir.
 
 >>>>> En acabar la secció, cal poder classificar la construcció d'un indicador i justificar si aporta una representació vàlida del fenomen d'interès.
 >>>>>
@@ -159,7 +159,7 @@ Els indicadors rarament apareixen sols. Formen sistemes perquè una realitat ter
 >>>>> - Comparar la finalitat, l'escala i el grau de documentació d'un sistema oficial, un estudi científic i un quadre de comandament.
 >>>>> - Distingir una interfície de consulta, una font de dades i un sistema d'indicadors.
 >>>>> - Interpretar com els denominadors, les dimensions i l'harmonització modifiquen la lectura d'un fenomen.
->>>>> - Validar definició, productor, període, unitat, cobertura i metodologia abans de reutilitzar un valor.
+>>>>> - Comprovar definició, productor, període, unitat, cobertura i metodologia com a requisit per reutilitzar un valor.
 
 ::: table "Exemples d'ús d'indicadors territorials i turístics"
 | Exemple | Escala i contingut | Utilitat principal | Precaució de lectura |
@@ -177,7 +177,7 @@ Els indicadors rarament apareixen sols. Formen sistemes perquè una realitat ter
 
 La base d'indicadors costaners GCSD constitueix un exemple especialment útil per a una assignatura que relaciona turisme, territori i informació geogràfica. Zuo i col·laboradors no parteixen d'un únic índex de sostenibilitat: defineixen tres dimensions —pressions costaneres, medi i recursos, i societat—, les despleguen en dotze subdimensions i seleccionen 65 indicadors derivats de 68 conjunts de dades obertes {% cite zuoGCSDCoastalIndicators2025 %}. Entre les mesures hi ha pressions climàtiques i humanes, ecosistemes, cobertes del sòl, infraestructura, població, activitat econòmica, energia, aigua i densitat turística costanera.
 
-El procés de construcció és tan important com el catàleg final. Els autors revisen la bibliografia, estableixen criteris de selecció, comparen resolució, exactitud, cobertura i actualitat de les fonts, i transformen les dades a una graella costanera comuna. Aquesta seqüència mostra que un sistema d'indicadors és també un problema d'integració geogràfica i de documentació: abans de comparar cal decidir què representa la costa, quina unitat espacial s'utilitza i com es tracten els punts, les línies i els ràsters.
+El procés de construcció és tan important com el catàleg final. Els autors revisen la bibliografia, estableixen criteris de selecció, comparen resolució, exactitud, cobertura i actualitat de les fonts, i transformen les dades a una graella costanera comuna. Aquesta seqüència mostra que un sistema d'indicadors és també un problema d'integració geogràfica i de documentació: la comparació exigeix decidir què representa la costa, quina unitat espacial s'utilitza i com es tracten els punts, les línies i els ràsters.
 
 La base comuna d'1 km facilita l'anàlisi conjunta, però no converteix totes les fonts en observacions d'1 km. Alguns valors originals provenen de productes més grossos i s'assignen a cel·les menors sota determinats supòsits; les cobertures temporals tampoc no són idèntiques. GCSD serveix, per tant, per discutir alhora la potència i els límits de l'harmonització: homogeneïtzar formats i geometries no elimina la incertesa ni crea detall nou.
 
@@ -201,22 +201,22 @@ Les pernoctacions serveixen per construir diverses lectures turístiques. El num
 
 Cap d'aquestes mesures descriu per si sola la sostenibilitat, la rendibilitat o el benestar de la població. Juntes poden mostrar volum, intensitat, concentració, dependència de mercats i estacionalitat, i orientar quines dimensions econòmiques, socials o ambientals cal investigar després.
 
-::: subfigures a+b "Dues figures útils per separar oferta i demanda turística, però també per detectar decisions de representació que caldria revisar. Llicència: pendent de revisar."
+::: subfigures a+b "Oferta i demanda turística representades amb decisions gràfiques que cal revisar. Llicència: pendent de revisar."
 ![Gràfic de barres apilades sobre establiments i places turístiques a Catalunya, amb percentatges calculats sobre totals diferents]({{ site.baseurl }}/assets/img/legacy/chart-tourist-establishments-beds-catalonia.png "Els percentatges d'establiments i de places tenen denominadors diferents i no formen parts apilables d'un mateix total")
 ![Gràfic d'anell sobre la distribució percentual de les pernoctacions de turistes estrangers a Catalunya segons el país d'origen]({{ site.baseurl }}/assets/img/legacy/chart-tourist-overnight-stays-catalonia.png "Les pernoctacions per origen formen una composició del 100%, però les categories es podrien identificar amb etiquetes directes")
 :::
 
->>>> **Les dades poden ser pertinents i la representació, millorable.** A la subfigura `a`, els percentatges d'establiments i els percentatges de places es calculen sobre totals diferents. Apilar-los fa veure que són parts d'un mateix total i produeix, per exemple, una barra hotelera de `54,2 + 53,2 = 107,4%`; aquesta alçada no té una interpretació vàlida. La comparació seria més clara amb barres agrupades, punts o dos panells que mantinguessin separades les dues mesures. A la subfigura `b`, en canvi, els sectors sí que formen una composició del 100%, però la llegenda obliga a relacionar repetidament colors i categories. Si l'espai ho permet, les etiquetes directes sobre l'anell o al costat de cada sector reduirien aquest recorregut; el buit central només és útil si rep una funció informativa. Els capítols de semiologia gràfica i color reprendran aquestes decisions abans de produir les figures pròpies del projecte.
+>>>> **Les dades poden ser pertinents i la representació, millorable.** A la subfigura `a`, els percentatges d'establiments i els percentatges de places es calculen sobre totals diferents. Apilar-los fa veure que són parts d'un mateix total i produeix, per exemple, una barra hotelera de `54,2 + 53,2 = 107,4%`; aquesta alçada no té una interpretació vàlida. La comparació seria més clara amb barres agrupades, punts o dos panells que mantinguessin separades les dues mesures. A la subfigura `b`, en canvi, els sectors sí que formen una composició del 100%, però la llegenda obliga a relacionar repetidament colors i categories. Si l'espai ho permet, les etiquetes directes sobre l'anell o al costat de cada sector reduirien aquest recorregut; el buit central només és útil si rep una funció informativa. Els capítols de semiologia gràfica i color establiran aquestes decisions com a requisits de les figures pròpies del projecte.
 
 La lectura conjunta d'oferta i demanda evita una confusió habitual. Les places d'allotjament indiquen capacitat disponible o autoritzada, mentre que les pernoctacions indiquen ús registrat durant un període. Dividir places per població resident construeix una mesura de pressió potencial de l'oferta; dividir pernoctacions per població resident construeix una intensitat de demanda; dividir pernoctacions per places obertes s'acosta a l'ocupació. Els tres càlculs poden ser correctes, però no són equivalents i no s'han de presentar amb el mateix nom.
 
-En una destinació litoral, aquesta diferència és especialment rellevant perquè el volum anual pot ocultar una concentració temporal molt forta. Un municipi pot tenir moltes places però una ocupació baixa fora de temporada, o poques places hoteleres i una presència residencial estacional que no apareix a les enquestes d'allotjament. Per això el projecte comarcal ha de conservar numeradors, denominadors i períodes abans d'escollir la fórmula final: el denominador no és un detall tècnic, sinó la manera d'indicar respecte de què es considera gran o petit el fenomen.
+En una destinació litoral, aquesta diferència és especialment rellevant perquè el volum anual pot ocultar una concentració temporal molt forta. Un municipi pot tenir moltes places però una ocupació baixa fora de temporada, o poques places hoteleres i una presència residencial estacional que no apareix a les enquestes d'allotjament. Per això el projecte comarcal ha de conservar numeradors, denominadors i períodes per fonamentar la fórmula final: el denominador no és un detall tècnic, sinó la manera d'indicar respecte de què es considera gran o petit el fenomen.
 
 ### Funció i límits dels quadres de comandament
 
 Un **quadre de comandament** reuneix indicadors, filtres i representacions per facilitar una consulta recurrent. [Dataestur](https://www.dataestur.es/) integra informació de FRONTUR, EGATUR, enquestes d'ocupació, transport, ocupació laboral, rendibilitat hotelera i fonts ambientals. El [quadre de dades d'UN Tourism](https://www.unwto.org/tourism-data/un-tourism-tourism-dashboard) presenta arribades, ingressos, contribució al PIB, estacionalitat i altres mesures internacionals.
 
-La immediatesa visual no elimina la metodologia. Dins d'un mateix quadre de comandament poden conviure recomptes mensuals, variacions interanuals, percentatges, dades experimentals i indicadors anuals procedents de productors diferents. Abans d'utilitzar una xifra cal obrir-ne la font, llegir la definició i comprovar el període, la unitat i l'escala. Un quadre de comandament és una interfície de consulta i decisió, no una font homogènia per definició.
+La immediatesa visual no elimina la metodologia. Dins d'un mateix quadre de comandament poden conviure recomptes mensuals, variacions interanuals, percentatges, dades experimentals i indicadors anuals procedents de productors diferents. L'ús d'una xifra exigeix obrir-ne la font, llegir la definició i comprovar el període, la unitat i l'escala. Un quadre de comandament és una interfície de consulta i decisió, no una font homogènia per definició.
 
 ## Dissenyar una mesura útil
 
@@ -226,7 +226,7 @@ Un **valor absolut** descriu volum. Un **percentatge** expressa una part d'un to
 
 >>>>> El disseny d'una mesura útil tradueix una pregunta territorial en una construcció matemàtica interpretable i revisable.
 >>>>>
->>>>> - Formular la pregunta, la unitat territorial, el període i l'ús previst abans d'escollir una fórmula.
+>>>>> - Definir la pregunta, la unitat territorial, el període i l'ús previst com a base per escollir una fórmula.
 >>>>> - Distingir volum, percentatge, ràtio, densitat i agregació segons la comparació que permeten.
 >>>>> - Justificar el numerador, el denominador, la unitat i el factor d'escala amb relació a la pregunta.
 >>>>> - Validar comparabilitat, bases petites i casos extrems, i separar els patrons observats de les causes possibles.
@@ -262,7 +262,7 @@ Un indicador descriu un patró, però no n'estableix automàticament la causa. U
 
 ## Famílies temàtiques d'indicadors
 
-Un repertori ajuda a formular preguntes i buscar dades, però no és una llista obligatòria. Cada projecte ha de seleccionar un conjunt compacte i coherent amb el territori, la disponibilitat de fonts i l'ús previst. Les propostes següents utilitzen tres etiquetes que poden coincidir: una mesura **oficial** té una definició publicada pel productor; una mesura **derivada** combina variables mitjançant una operació transparent; i una mesura **exploratòria** funciona com a hipòtesi de treball i necessita una validació específica abans d'utilitzar-se per prendre decisions. Aquestes etiquetes segons procedència, construcció i ús són independents de si l'indicador és simple o compost, directe o indirecte.
+Un repertori ajuda a formular preguntes i buscar dades, però no és una llista obligatòria. Cada projecte ha de seleccionar un conjunt compacte i coherent amb el territori, la disponibilitat de fonts i l'ús previst. Les propostes següents utilitzen tres etiquetes que poden coincidir: una mesura **oficial** té una definició publicada pel productor; una mesura **derivada** combina variables mitjançant una operació transparent; i una mesura **exploratòria** funciona com a hipòtesi de treball i necessita una validació específica per poder-se utilitzar en la presa de decisions. Aquestes etiquetes segons procedència, construcció i ús són independents de si l'indicador és simple o compost, directe o indirecte.
 
 ::: table "Famílies d'indicadors territorials i turístics"
 | Família | Pregunta possible | Indicadors proposats | Estat i fonts de referència |
@@ -281,7 +281,7 @@ La **població equivalent a temps complet anual (ETCA)** d'Idescat és especialm
 
 L'accessibilitat i la percepció resident exigeixen una precaució diferent. El percentatge de recursos que compleixen un estàndard d'accessibilitat només és interpretable si s'han auditat totes les unitats amb el mateix protocol i en una data coneguda. De la mateixa manera, les pernoctacions per habitant, les places per resident i altres mesures directes d'intensitat poden actuar com a indicadors indirectes de l'exposició o la pressió experimentades, però no mesuren satisfacció, conflicte ni capacitat de càrrega. Aquestes dimensions necessiten enquestes representatives, observació i coneixement local.
 
-### Fórmules generals de construcció
+## Fórmules generals de construcció
 
 La notació matemàtica separa la definició conceptual de la posició concreta de les cel·les al full de càlcul. Les fórmules següents construeixen indicadors simples i transparents, no índexs compostos. Si $x_i$ és un numerador del territori $i$, $d_i$ el denominador, $A_i$ la superfície, $P_i$ la població resident i $k$ un factor d'escala, les construccions bàsiques són:
 
@@ -321,7 +321,7 @@ $$
 
 Quan només es disposa d'una capacitat constant $b$ i de $D$ dies efectivament oberts, el denominador es pot escriure $bD$. Utilitzar 365 dies per a un establiment tancat part de l'any produiria una ocupació bruta diferent i no comparable amb la definició neta d'Eurostat.
 
-L'estacionalitat es pot aproximar de diverses maneres. La quota del període punta és fàcil de comunicar si els mesos punta es defineixen abans d'observar el resultat. Per a un conjunt $H$ de mesos de temporada alta i pernoctacions mensuals $N_m$:
+L'estacionalitat es pot aproximar de diverses maneres. La quota del període punta és fàcil de comunicar si la definició dels mesos punta no depèn del resultat observat. Per a un conjunt $H$ de mesos de temporada alta i pernoctacions mensuals $N_m$:
 
 $$
 \text{concentració estacional} = \frac{\sum_{m\in H}N_m}{\sum_{m=1}^{12}N_m}\times 100
@@ -345,7 +345,7 @@ WEI+ descriu el context d'estrès d'una conca o territori. No atribueix el resul
 
 ## Activitat: construir indicadors al llibre comarcal
 
-L'activitat aplica al mateix llibre acumulatiu els criteris de construcció, agregació, validació i interpretació desenvolupats al capítol.
+L'activitat reprèn la taula `municipal` preparada al capítol 1 i converteix les variables de base en mesures comparables sense trencar-ne la traçabilitat. Els numeradors, els denominadors, les unitats i les fórmules quedaran visibles al mateix llibre perquè cada resultat continuï sent auditable quan els capítols següents el reutilitzin en gràfics i mapes.
 
 >>>>> L'activitat transforma les dades municipals preparades en indicadors documentats que continuaran alimentant els gràfics del llibre comarcal.
 >>>>>
@@ -357,11 +357,13 @@ L'activitat aplica al mateix llibre acumulatiu els criteris de construcció, agr
 
 ### Punt de partida i abast de la demostració guiada
 
-L'activitat continua en el mateix llibre acumulatiu del capítol 1 i es resol amb Excel o Calc. Abans de començar es conservarà `tigit-01-preparacio-dades.xlsx` i es crearà una nova fita:
+L'activitat continua en el mateix llibre acumulatiu del capítol 1 i es resol amb Excel o Calc. Es conservarà `tigit-01-preparacio-dades.xlsx` com a fita d'origen i la continuació es desarà en una nova fita:
 
+::: listing "Fitxer de continuació del llibre d'indicadors"
 ```filetree
 tigit-02-indicadors-territorials.xlsx
 ```
+:::
 
 L'abast de la demostració guiada és calcular els quatre indicadors demogràfics a `indicators_demography`, els dos d'habitatge a `indicators_housing` i els agregats comarcals a `indicators_summary`, i actualitzar `dictionary`, `checks` i `README.md`.
 
@@ -369,21 +371,21 @@ Els sis indicadors de la taula següent concreten l'abast de la demostració gui
 
 La demostració utilitza població i habitatge perquè aquestes variables construeixen el context i diversos denominadors necessaris per interpretar un territori. No mesura encara l'activitat turística. Per calcular intensitat, densitat, estacionalitat o rendibilitat turística caldria incorporar pernoctacions, places, establiments, ocupació, despesa o altres dades amb cobertura territorial i temporal compatible. L'habitatge no principal no s'utilitzarà com a indicador indirecte de l'activitat turística. Els indicadors turístics de la taula anterior funcionen com a model per a una ampliació posterior quan es disposi d'una font adequada.
 
-La pregunta «on pesa més la població gran?» es tradueix, per exemple, en tres camps relacionats: població de 65 anys o més, població total i percentatge resultant. Conservar els dos primers permet revisar el tercer i entendre si un valor elevat descansa sobre una base gran o petita. La mateixa lògica s'aplica als altres indicadors abans de convertir els camps en referències de cel·la.
+La pregunta «on pesa més la població gran?» es tradueix, per exemple, en tres camps relacionats: població de 65 anys o més, població total i percentatge resultant. Conservar els dos primers permet revisar el tercer i entendre si un valor elevat descansa sobre una base gran o petita. La conversió dels altres indicadors en referències de cel·la segueix la mateixa lògica.
 
 ### Indicadors municipals
 
 La demostració calcularà un conjunt compacte que després es podrà representar amb gràfics i mapes:
 
 ::: table "Indicadors municipals de població i habitatge"
-| Indicador | Fórmula orientativa | Unitat | Lectura |
-| --- | --- | --- | --- |
-| Pes de la població jove | població de 0–14 / població total × 100 | percentatge | Pes de les edats joves |
-| Pes de la població gran | població de 65+ / població total × 100 | percentatge | Pes de les edats avançades |
-| Índex d'envelliment | població de 65+ / població de 0–14 × 100 | persones de 65+ per cada 100 de 0–14 | Relació entre els dos extrems d'edat |
-| Densitat de població | població total / superfície | habitants per km² | Concentració demogràfica |
-| Pes de l'habitatge no principal | habitatges no principals / habitatges totals × 100 | percentatge | Composició del parc residencial |
-| Residents per habitatge principal | població total / habitatges principals | residents per habitatge principal | Relació aproximada entre població i parc principal |
+| Indicador | Camp del llibre | Fórmula orientativa | Unitat | Lectura |
+| --- | --- | --- | --- | --- |
+| Pes de la població jove | `population_0_14_pct` | població de 0–14 / població total × 100 | percentatge | Pes de les edats joves |
+| Pes de la població gran | `population_65_plus_pct` | població de 65+ / població total × 100 | percentatge | Pes de les edats avançades |
+| Índex d'envelliment | `ageing_index_per_100_young` | població de 65+ / població de 0–14 × 100 | persones de 65+ per cada 100 de 0–14 | Relació entre els dos extrems d'edat |
+| Densitat de població | `population_density_hab_km2` | població total / superfície | habitants per km² | Concentració demogràfica |
+| Pes de l'habitatge no principal | `housing_non_main_pct` | habitatges no principals / habitatges totals × 100 | percentatge | Composició del parc residencial |
+| Residents per habitatge principal | `residents_per_housing_main` | població total / habitatges principals | residents per habitatge principal | Relació aproximada entre població i parc principal |
 :::
 
 Els quatre primers indicadors descriuen estructura i concentració demogràfica; els dos darrers connecten població i habitatge. El percentatge d'habitatge no principal no identifica habitatges turístics, i residents per habitatge principal no substitueix una estadística oficial de grandària de la llar.
@@ -405,11 +407,13 @@ Aquest capítol introdueix les fórmules quantitatives que el capítol 1 havia d
 
 La divisió validada de la taula es pot escriure així:
 
+::: listing "Divisió validada per calcular un percentatge"
 ```spreadsheet
 =IF(AND(ISNUMBER(D2),ISNUMBER(C2),C2>0),D2/C2*100,NA())
 ```
+:::
 
-El format i l'arrodoniment no són el mateix. Mostrar `12,3456` amb un decimal no modifica el valor intern; `ROUND(A2,1)` retorna una dada derivada igual a `12,3`. Els fulls `indicators_*` conservaran la precisió necessària per revisar i reutilitzar els càlculs. L'arrodoniment s'aplicarà als textos, etiquetes o exportacions quan la comunicació ho exigeixi, no abans de calcular agregats o classes.
+El format i l'arrodoniment no són el mateix. Mostrar `12,3456` amb un decimal no modifica el valor intern; `ROUND(A2,1)` retorna una dada derivada igual a `12,3`. Els fulls `indicators_*` conservaran la precisió necessària per revisar i reutilitzar els càlculs. L'arrodoniment s'aplicarà als textos, etiquetes o exportacions quan la comunicació ho exigeixi, no als valors emprats per calcular agregats o classes.
 
 Tampoc no es farà una mitjana simple de percentatges municipals per obtenir el valor comarcal. El percentatge comarcal d'habitatge no principal es calcula sumant els habitatges no principals compatibles i dividint-los per la suma dels habitatges totals. Aquesta operació pondera implícitament cada municipi segons el seu denominador i es desenvolupa a `indicators_summary`.
 
@@ -419,6 +423,7 @@ Tampoc no es farà una mitjana simple de percentatges municipals per obtenir el 
 
 Al full `indicators_demography`, la població total ocupa `C`, la població de 0 a 14 anys `D`, la de 65 anys o més `E` i la superfície `F`. Al full `indicators_housing`, la població total ocupa `C`, els habitatges totals `D`, els principals `E` i els no principals `F`. Cada referència de cel·la precedeix la fórmula que li correspon:
 
+::: listing "Fórmules dels indicadors municipals"
 ```spreadsheet
 indicators_demography!G2
 =IF(AND(ISNUMBER(D2),ISNUMBER(C2),C2>0),D2/C2*100,NA())
@@ -438,6 +443,7 @@ indicators_housing!G2
 indicators_housing!H2
 =IF(AND(ISNUMBER(C2),ISNUMBER(E2),E2>0),C2/E2,NA())
 ```
+:::
 
 Les condicions comproven que el numerador i el denominador siguin numèrics i que el denominador sigui superior a zero. `NA()` manté visible que l'indicador no es pot calcular, en lloc de fabricar un zero. Una cel·la buida, una dada no disponible i un zero observat no signifiquen el mateix. Els noms de les funcions i el separador d'arguments poden aparèixer localitzats segons l'aplicació, l'idioma i la configuració regional; cal adaptar-ne la sintaxi sense canviar la lògica de la prova.
 
@@ -445,8 +451,9 @@ Les fórmules s'han de conservar perquè es pugui revisar l'origen del resultat.
 
 ### Mesures comarcals agregades
 
-La miniinfografia podrà destacar tres o quatre valors agregats: població total, habitatges totals, percentatge comarcal d'habitatge no principal i percentatge de població de 65 anys o més. Els percentatges comarcals s'han de recalcular a partir de les sumes. Les fórmules es mostren partides per facilitar-ne la lectura; al llibre, cada bloc s'introduirà com una fórmula única:
+La infografia territorial podrà destacar tres o quatre valors agregats: població total, habitatges totals, percentatge comarcal d'habitatge no principal i percentatge de població de 65 anys o més. Els percentatges comarcals s'han de recalcular a partir de les sumes. Les fórmules es mostren partides per facilitar-ne la lectura; al llibre, cada bloc s'introduirà com una fórmula única:
 
+::: listing "Agregació comarcal de percentatges"
 ```spreadsheet
 =SUM(indicators_housing!F2:F23)
  / SUM(indicators_housing!D2:D23) * 100
@@ -454,6 +461,7 @@ La miniinfografia podrà destacar tres o quatre valors agregats: població total
 =SUM(indicators_demography!E2:E23)
  / SUM(indicators_demography!C2:C23) * 100
 ```
+:::
 
 No s'ha de fer la mitjana simple dels percentatges municipals, perquè donaria el mateix pes a un municipi petit i a un de molt poblat. El darrer número de fila variarà segons la comarca.
 
@@ -461,7 +469,7 @@ Aquestes fórmules agregades només són vàlides després de comprovar que nume
 
 ### Validar i interpretar els indicadors municipals
 
-Cada fórmula es calcularà per a tots els municipis. La taula permetrà observar valors habituals, extrems i contrastos que després es descriuran sense atribuir-los automàticament una causa. Abans d'acceptar els resultats caldrà:
+Cada fórmula es calcularà per a tots els municipis. La taula permetrà observar valors habituals, extrems i contrastos que després es descriuran sense atribuir-los automàticament una causa. L'acceptació dels resultats exigirà:
 
 1. comprovar que numerador i denominador corresponen a períodes i definicions compatibles;
 2. evitar divisions per zero o per valors absents;

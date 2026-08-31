@@ -1,0 +1,20 @@
+{
+  "artifacts": [
+    {
+      "path": "assets/img/data-visualization/non-principal-housing-ordered-bars-tarragones-2021.svg",
+      "sha256": "496de7e896a4e4d0ee2dc9eca43ae7af15633d3dd559a3278935b4c48536dbfe"
+    }
+  ],
+  "inputs": [
+    {
+      "path": "_practices/tigit-projecte-territorial/data/processed/municipal-indicators-tarragones-2021.csv",
+      "sha256": "d762d55fbbfb085493fe3af39c9ae8e458c1422f41a4467a2f37202cc5f1baac"
+    }
+  ],
+  "ok": true,
+  "provider": "vegavisuals",
+  "provider_version": "0.3.1",
+  "release": "v0.3.1",
+  "request_sha256": "47c02bbeae56098d42d64a47b7aa67072dcf3d8ef6b02ccedd0300895b02d267",
+  "schema_version": 1
+}

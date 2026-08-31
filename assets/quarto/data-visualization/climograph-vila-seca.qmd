@@ -1,0 +1,147 @@
+---
+title: "Climograma de Vila-seca, mitjanes 1991-2020"
+lang: ca
+ref: climograph_vila_seca
+format:
+  gfm:
+    output-file: climograph-vila-seca.generated.md
+execute:
+  echo: false
+  warning: false
+  message: false
+execute-dir: project
+unaltraweb_compute:
+  engine: r
+  mode: figure
+  inputs:
+    - _practices/tigit-projecte-territorial/data/raw/clima-vila-seca-mitjanes-1991-2020.csv
+  outputs:
+    - assets/img/data-visualization/climograph-vila-seca-1991-2020.svg
+---
+
+```{r}
+find_project_root <- function(start) {
+  path <- normalizePath(start, winslash = "/", mustWork = FALSE)
+  repeat {
+    if (file.exists(file.path(path, ".unaltraweb", "computations.yml"))) {
+      return(path)
+    }
+    parent <- dirname(path)
+    if (identical(parent, path)) {
+      stop("Project root not found: missing .unaltraweb/computations.yml")
+    }
+    path <- parent
+  }
+}
+
+root <- find_project_root(getwd())
+library(ggplot2)
+
+climate <- read.csv(
+  file.path(root, "_practices/tigit-projecte-territorial/data/raw/clima-vila-seca-mitjanes-1991-2020.csv"),
+  fileEncoding = "UTF-8",
+  stringsAsFactors = FALSE
+)
+climate <- climate[order(climate$month_number), ]
+month_labels <- c("Gen", "Feb", "Març", "Abr", "Maig", "Juny", "Jul", "Ag", "Set", "Oct", "Nov", "Des")
+climate$month_axis <- factor(month_labels, levels = month_labels)
+
+stopifnot(
+  nrow(climate) == 12,
+  identical(climate$month_number, 1:12),
+  abs(sum(climate$mean_precipitation_mm) - climate$annual_precipitation_mm[1]) <= 0.2,
+  abs(mean(climate$mean_temperature_c) - climate$annual_mean_temperature_c[1]) <= 0.1
+)
+
+climate$gaussen_temperature_mm <- 2 * climate$mean_temperature_c
+climate$is_dry <- climate$mean_precipitation_mm < climate$gaussen_temperature_mm
+dry_months <- climate[climate$is_dry, ]
+
+stopifnot(identical(dry_months$month_number, 6:8))
+
+fig <- ggplot(climate, aes(x = month_number)) +
+  geom_rect(
+    data = dry_months,
+    aes(
+      xmin = month_number - 0.5,
+      xmax = month_number + 0.5,
+      ymin = 0,
+      ymax = 100
+    ),
+    inherit.aes = FALSE,
+    fill = "#FBE6D6",
+    color = NA
+  ) +
+  geom_col(
+    aes(y = mean_precipitation_mm, fill = "Precipitació"),
+    width = 0.72
+  ) +
+  geom_line(
+    aes(y = gaussen_temperature_mm, color = "Temperatura", group = 1),
+    linewidth = 0.95
+  ) +
+  geom_point(
+    aes(y = gaussen_temperature_mm, color = "Temperatura"),
+    fill = "white",
+    shape = 21,
+    stroke = 0.8,
+    size = 2.5
+  ) +
+  annotate(
+    "text",
+    x = 7,
+    y = 92,
+    label = "Mesos secs: juny–agost\nP < 2T",
+    color = "#8C3B13",
+    fontface = "bold",
+    size = 4.2
+  ) +
+  scale_x_continuous(
+    breaks = 1:12,
+    labels = month_labels,
+    expand = expansion(add = 0.55)
+  ) +
+  scale_y_continuous(
+    name = "Precipitació mitjana mensual (mm)",
+    limits = c(0, 100),
+    breaks = seq(0, 100, 20),
+    expand = expansion(mult = c(0, 0)),
+    sec.axis = sec_axis(
+      transform = ~ . / 2,
+      name = "Temperatura mitjana (°C)",
+      breaks = seq(0, 50, 10)
+    )
+  ) +
+  scale_fill_manual(values = c("Precipitació" = "#2C7FB8")) +
+  scale_color_manual(values = c("Temperatura" = "#C0392B")) +
+  labs(
+    title = "Climograma de Vila-seca: mitjanes mensuals (1991–2020)",
+    x = NULL,
+    fill = NULL,
+    color = NULL
+  ) +
+  guides(
+    fill = guide_legend(order = 1),
+    color = guide_legend(order = 2)
+  ) +
+  theme_minimal(base_size = 13) +
+  theme(
+    panel.grid.minor = element_blank(),
+    panel.grid.major.x = element_blank(),
+    panel.grid.major.y = element_line(color = "#e0e6eb", linewidth = 0.35),
+    axis.line = element_line(color = "#17202a", linewidth = 0.4),
+    axis.ticks = element_line(color = "#17202a", linewidth = 0.3),
+    axis.title = element_text(face = "bold", color = "#17202a"),
+    axis.text = element_text(size = 13, color = "#52616b"),
+    axis.text.x = element_text(size = 10.5, face = "plain", margin = margin(t = 5)),
+    plot.title = element_text(size = 14, face = "bold", color = "#17202a", hjust = 0),
+    legend.position = "top",
+    legend.text = element_text(color = "#17202a"),
+    legend.key.width = grid::unit(1.5, "lines"),
+    plot.margin = margin(8, 12, 8, 12)
+  )
+
+output <- file.path(root, "assets/img/data-visualization/climograph-vila-seca-1991-2020.svg")
+dir.create(dirname(output), showWarnings = FALSE, recursive = TRUE)
+ggsave(output, fig, width = 7.2, height = 5.1, device = svglite::svglite)
+```
