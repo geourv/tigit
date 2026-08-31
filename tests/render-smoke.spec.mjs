@@ -763,6 +763,34 @@ test("TIGIT manual home starts at chapter zero and credits its authors and tools
   await expectNoHorizontalOverflow(page);
 });
 
+test("TIGIT inherits manual presentation from unaltraweb", async ({ page }) => {
+  test.skip(activeProfile !== "unaltremanual", "unaltremanual profile only");
+  test.setTimeout(120_000);
+
+  await page.goto(siteUrl("/ca/chapters/color/"));
+  const emphasizedLink = page.locator(".manual-content a strong").first();
+  await expect(emphasizedLink).toBeVisible();
+  const emphasisColors = await emphasizedLink.evaluate((node) => ({
+    emphasis: getComputedStyle(node).color,
+    link: getComputedStyle(node.closest("a")).color,
+  }));
+  expect(emphasisColors.emphasis).toBe(emphasisColors.link);
+  expect(await page.evaluate(() => window.unaltrawebMathJaxTags)).toBe("ams");
+  await expect(page.locator(".manual-navbar-logo-light")).toHaveAttribute("src", /dosquartsdedocs-logo\.svg/);
+
+  await page.setViewportSize({ width: 390, height: 740 });
+  await page.goto(siteUrl("/ca/chapters/fonts-preparacio-dades/"));
+  const tableCode = page.locator(".manual-content .md-table code").first();
+  await expect(tableCode).toBeVisible();
+  const codeWrapping = await tableCode.evaluate((node) => {
+    const style = getComputedStyle(node);
+    return { overflowWrap: style.overflowWrap, whiteSpace: style.whiteSpace };
+  });
+  expect(codeWrapping.overflowWrap).toBe("anywhere");
+  expect(codeWrapping.whiteSpace).toBe("normal");
+  await expectNoHorizontalOverflow(page);
+});
+
 test("TIGIT cartographic figures render on desktop and mobile", async ({ page }, testInfo) => {
   test.skip(activeProfile !== "unaltremanual", "unaltremanual profile only");
   test.setTimeout(120_000);
