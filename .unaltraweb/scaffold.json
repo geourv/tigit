@@ -1,9 +1,12 @@
 {
   "files": {
-    ".gitignore": "32befd51adaeabcc11442114a7277bc23a7d4d1f80bef03d3f86d817e78ebafd",
+    ".github/pull_request_template.md": "57060625da635dfdf7350ad0d28c97a960da17834b3f1e1a8c7e610c2ef89847",
+    ".github/workflows/deploy.yml": "123f503299a9b5b6dd4b22a8e042a74fa759f891f5368a4bc6f573990f2e8b9b",
+    ".gitignore": "b14ddbe2fe5a3bca5f52807ad2d1756bb8f43a7c1a61a8a9ee6460e72c8f8840",
+    ".unaltraweb/docker-mount.sh": "59b042cecc2226036e4d85bd96543182c53b32dbddb437b9c196d78df6d12104",
     "Gemfile": "4d88954bd5ec734d4d582090310c150e8511b7bac28375b290c91d6125edf916",
     "Gemfile.lock": "46b76476e1f2c8c8292b736cfd72ad621887ba952d37063f29d6f7a1ef471098",
-    "Makefile": "a98705ba85e7eabeb0c938050f67f343de180d4259fca1a365b77e5e86608d01"
+    "Makefile": "918c8c671b5fddd5d0fc6ab378d1661adcbab3ff82457a03eb77ca92c54666d8"
   },
   "schema_version": 1,
   "source": "unaltraweb_mcp package"
