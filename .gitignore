@@ -16,3 +16,8 @@ vendor/
 tmp/
 __pycache__/
 *.pyc
+
+# Generated unaltremanual publication outputs are never versioned.
+/assets/img/manual-cover-ca.png
+/assets/img/manual-cover-cat.png
+/assets/pdf/tigit-ca.pdf
