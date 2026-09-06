@@ -1,6 +1,7 @@
 LOCAL_CORE ?= /opt/unaltraweb
 LOCAL_GEMFILE := tmp/Gemfile.local
 MCP_IMAGE ?= ghcr.io/dosquartsdedocs/unaltraweb-mcp:0.3.0
+MANUAL_PDF_IMAGE ?= ghcr.io/dosquartsdedocs/unaltraweb-manual-pdf@sha256:48a7e17a85d205e4a890b7b7de18c9015eb657c9c12ba10f7cff123ac2b80660
 DOCKER_MOUNT_HELPER := .unaltraweb/docker-mount.sh
 UNALTRAWEB_CAPTURE_RUNTIME := 1
 LOCAL_UID ?= $(shell id -u)
@@ -8,10 +9,13 @@ LOCAL_GID ?= $(shell id -g)
 PORT ?= 4000
 CONTAINER ?= unaltraweb-site-$(shell pwd -P | cksum | cut -d' ' -f1)
 
-.PHONY: runtime-image local-gemfile site-check-native build-native serve-capture-native serve-native test-native build serve test down clean
+.PHONY: runtime-image manual-pdf-sync local-gemfile site-check-native build-native serve-capture-native serve-native test-native build serve test down clean
 
 runtime-image:
 	@docker image inspect "$(MCP_IMAGE)" >/dev/null 2>&1 || docker pull "$(MCP_IMAGE)" >/dev/null 2>&1 || { printf '%s\n' 'Unable to use $(MCP_IMAGE). If this is an unpublished candidate, build it with make mcp-build in the unaltraweb factory checkout.' >&2; exit 1; }
+
+manual-pdf-sync:
+	@mount=$$(/bin/sh "$(DOCKER_MOUNT_HELPER)" "$${PWD}" /workspace); docker run --rm --user "$(LOCAL_UID):$(LOCAL_GID)" -e HOME=/tmp --mount "$$mount" -w /workspace "$(MANUAL_PDF_IMAGE)" sync --project /workspace >/dev/null
 
 local-gemfile:
 	@mkdir -p tmp
@@ -41,7 +45,7 @@ build: runtime-image
 serve: runtime-image
 	@mount=$$(/bin/sh "$(DOCKER_MOUNT_HELPER)" "$${PWD}" /workspace); docker run --rm --name "$(CONTAINER)" --user "$(LOCAL_UID):$(LOCAL_GID)" -e HOME=/tmp -p "$(PORT):$(PORT)" --mount "$$mount" -w /workspace --entrypoint make "$(MCP_IMAGE)" --silent serve-native LOCAL_CORE=/opt/unaltraweb HOST=0.0.0.0 PORT="$(PORT)"
 
-test: runtime-image
+test: runtime-image manual-pdf-sync
 	@mount=$$(/bin/sh "$(DOCKER_MOUNT_HELPER)" "$${PWD}" /workspace); docker run --rm --user "$(LOCAL_UID):$(LOCAL_GID)" -e HOME=/tmp --mount "$$mount" -w /workspace --entrypoint make "$(MCP_IMAGE)" --silent test-native LOCAL_CORE=/opt/unaltraweb
 
 down:
