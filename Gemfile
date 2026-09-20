@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 group :jekyll_plugins do
-  gem "unaltraweb", "= 0.3.0",
+  gem "unaltraweb", "= 0.4.0",
       git: "https://github.com/dosquartsdedocs/unaltraweb.git",
-      ref: "c54400927e7223e14e34390ab039ed94b2e974ad"
+      ref: "f7ac29070167917dec6b314ba0a1ba9db089e7ec"
 end

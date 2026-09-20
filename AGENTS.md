@@ -11,6 +11,14 @@ Guidance for agents working in this repository.
 - Profile: `unaltremanual`.
 - Default language: Catalan (`ca`).
 
+## Collaboration Workflow
+
+- Read `.github/CONTRIBUTING.md` before creating a branch or editing files.
+- Before editing locally, run the MCP control plane's read-only checkout preflight in the primary mutable checkout. Keep one active editing session per repository and use its `exec` wrapper when a process-held cooperative lease is required.
+- For MCP-backed work, request `unaltraweb` as the one top-level MCP and let the control plane select its declared dependency closure. Pass the consumer root through `MCP_CONSUMER_WORKSPACE`.
+- Never create, switch to, move, prune, repair, or remove linked worktrees as part of an editing session.
+- Inspect `site_context`, `site_doctor`, the language policy, the active profile, and `manual_authoring_capabilities` before editing manual content.
+
 ## Editorial Workflow
 
 - Draft and revise the Catalan source first.
@@ -45,9 +53,4 @@ Before committing visible content edits, run a browser preview:
 make serve
 ```
 
-Useful MCP checks from the `unaltraweb` factory:
-
-```bash
-make -C ../unaltraweb mcp-profile-check PROJECT=$PWD
-make -C ../unaltraweb mcp-translation-plan PROJECT=$PWD
-```
+Run the MCP `site_check` before `build_site`. Use `profile_check` and `translation_plan` before publication; keep factory `build`, `check`, and `smoke` operations in the factory checkout.
