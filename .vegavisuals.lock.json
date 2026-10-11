@@ -4,7 +4,7 @@
     "non-principal-housing-ordered-bars": {
       "engine": "vega-lite",
       "family": "benizar",
-      "fingerprint": "2899808fdfe499b4d30e2b3574c2b26a0727f04d51d824c0d5ebbc5163257459",
+      "fingerprint": "359f0b886da2a2b3115932e9e3d6fedf275c586e16cea91804e62bdc0e8a748d",
       "format": "svg",
       "inputs": [
         "_practices/tigit-projecte-territorial/data/processed/municipal-indicators-tarragones-2021.csv"
@@ -14,7 +14,7 @@
       "profile": "vl-convert-1.9.0",
       "renderer": {
         "base_image": "python:3.13-slim-bookworm@sha256:00faa2debb87529f9f0764e9491d8ba400a3678976616c3bd7cb193745ac20d1",
-        "image": "vegavisuals/render:vl-convert-1.9.0",
+        "image": "sha256:695125943d0fbc3aa7c877babb9a11a6501bbc7ac265b0975bb5657c60439d98",
         "image_id": "sha256:695125943d0fbc3aa7c877babb9a11a6501bbc7ac265b0975bb5657c60439d98",
         "renderer_contract": "28bd331ce12ca101b2b1326328b5bd5c8e89a5ecae6f478160ecbbf3c70ed800"
       },
