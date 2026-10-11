@@ -1,0 +1,64 @@
+id: tigit-ui-probes
+title: Interfície QGIS del projecte territorial
+runtime:
+  image: sha256:1003721d96abe9607d8337b36851f9b29f84c2f8f92b377d1a73ff03c9d15cd2
+  locale: ca_ES
+  display_backend: offscreen
+plugins: [processing]
+project:
+  source: sandbox/practiques/tigit-projecte-territorial/0.1.0/ca/run03-cartography/payload/projects/tigit-04-dades-espacials.qgz
+  output: sandbox/practiques/tigit-projecte-territorial/0.1.0/ca/probes01/projects/ui-formats.qgz
+  title: TIGIT · comprovació d'interfície
+  native_profile: qgis-practice-v2
+  font_files:
+    DejaVu Sans: sandbox/practiques/tigit-projecte-territorial/0.1.0/ca/run03-cartography/payload/data/fonts/DejaVuSans.ttf
+  reuse: if_fresh
+connections:
+  - id: territorial-base
+    type: gpkg
+    name: Base territorial ICGC
+    path: sandbox/practiques/tigit-projecte-territorial/0.1.0/ca/run03-cartography/payload/data/processed/tarragones-boundaries-icgc-20260120.gpkg
+setup:
+  - action: zoom_to_layer
+    layer: Municipis · base
+    scale: 1.15
+  - action: clear_message_bar
+captures:
+  - id: sources
+    target:
+      class_name: QgsDataSourceManagerDialog
+    steps:
+      - action: close_transients
+      - action: open_data_source_manager
+        provider: GeoPackage
+      - action: select_data_source_connection
+        name: Base territorial ICGC
+        layer: municipalities_250k
+        wait_ms: 800
+    drawings: []
+  - id: formats
+    target:
+      class_name: QgsAttributeTableDialog
+    steps:
+      - action: close_transients
+      - action: open_attribute_table
+        layer: Municipis · Shapefile
+        wait_ms: 800
+    drawings: []
+  - id: join
+    target:
+      object_name: unaltracapturaProcessingDialog:native:joinattributestable
+    steps:
+      - action: close_transients
+      - action: open_processing_algorithm_dialog
+        algorithm: native:joinattributestable
+        parameters:
+          INPUT: Municipis · base
+          FIELD: CODIMUNI
+          INPUT_2: Indicadors · Idescat 2021
+          FIELD_2: mun_code
+          METHOD: 1
+          DISCARD_NONMATCHING: false
+          PREFIX: ""
+        wait_ms: 800
+    drawings: []

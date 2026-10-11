@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "kind": "tigit-practice-retention-index",
+  "issue": "https://github.com/geourv/tigit/issues/12",
+  "content_status": "draft",
+  "policy": {
+    "git": "Fonts Markdown, recipes, codi de reproducció, manifests textuals i font SVG editable. Es conserva el llegat ja versionat i la regeneració autoritzada dels actius públics del manual.",
+    "outside_git": "Noves dades i captures d'activitats, projectes generats, PDF, ZIP, caches i jobs. El lliurament previst a Moodle és un PDF i un ZIP per activitat i destinatari.",
+    "authority": "Els bundle.json i payload/practice.json natius continuen sent l'autoritat dels productes i les dependències GIS. Aquest fitxer només indexa retenció.",
+    "durable_backup_verified": false,
+    "storage_state": "Ubicacions locals conegudes al checkout; no s'ha acreditat una còpia durable independent ni una instal·lació persistent al hub."
+  },
+  "handoff": {
+    "path": "context/practice-tools-handoff.md",
+    "sha256": "24c51a3b9e11175d126b19f4111c289cf6528ef00380f1ebcc51220239ce5682",
+    "includes": "Identitats i ordres provades, hashes de fonts i dels 40 fitxers de captures, límits i contingut pendent. Les observacions de sessió són històriques."
+  },
+  "bundles": [
+    {
+      "path": "sandbox/practiques/tigit-projecte-territorial/0.1.0/ca/run02-core/bundle.json",
+      "sha256": "78d8a824ec96119a105ffdcc79b478fa626fb3304ec6eba6a4f60d882a6f6e19",
+      "producer_version": "0.6.0rc2",
+      "profile": "qgis-practice-v2",
+      "job": "practice-719e8a2656e14a45bf490fd6c450f7b1",
+      "descriptor_sha256": "04020bd62d57c24bc03a9e422e6bb4f5e2fb2e9aa7c3aeb339182b5c8a65e3cc",
+      "offline_reopen": {
+        "path": "sandbox/practiques/tigit-projecte-territorial/0.1.0/ca/run02-core/payload/controls/offline-reopen.json",
+        "sha256": "2e7c288465a254caba3820521c348c44df6f9a0472675aec901fabe1f608a1bd"
+      }
+    },
+    {
+      "path": "sandbox/practiques/tigit-projecte-territorial/0.1.0/ca/run03-cartography/bundle.json",
+      "sha256": "9ca86916de5918805e23107ca93a3f48537c289c3dfa7ebe72569da95d5429ed",
+      "producer_version": "0.6.0rc2",
+      "profile": "qgis-practice-v2",
+      "job": "practice-b845310438844475b4af4d1bcb0f5490",
+      "descriptor_sha256": "8118fae9bc06f6d9eb8d59c7e8027dbcad97e4f3fe28e22143f0f44a6ab7ab25",
+      "offline_reopen": {
+        "path": "sandbox/practiques/tigit-projecte-territorial/0.1.0/ca/run03-cartography/payload/controls/offline-reopen.json",
+        "sha256": "24feab2cd8eb0a3d7c9eba289c1d6446907205f7a36eef1398f26201f044574c"
+      }
+    }
+  ],
+  "interrupted_runtime_job": {
+    "directory": ".unaltracaptura-qgis/jobs/tigit-ui-probes-formats-2343a3e572.fe8ufb62",
+    "container_id": "819f312eacf232647068c8bb319df59d508440f359bb2c0b89a16a1185bfb3c6",
+    "state": "Probe interromput al diàleg modal; la retirada exacta del contenidor es va comprovar en la sessió original. Els fitxers es conserven.",
+    "files": [
+      {"path": "bridge.log", "sha256": "24a44bad4668674b64327bbcb2940cb8437a137cd72afbe6e4391d8e7c0f861e"},
+      {"path": "container.cid", "sha256": "527a6a6b666e56e6a50251d8f343e3510340bf839b85b6f7b4ec3421479f8a03"},
+      {"path": "job.json", "sha256": "84e686c42ac3a0280137e388636b64fcebe63ca29312394e9c43ac020aa06251"},
+      {"path": "staged-outputs/000-878a52fc5f/annotations_svg.annotations.svg", "sha256": "9cdf48629568ea13bc1eccb7c7cb78928479d69e78c34ea7021304750afc0442"},
+      {"path": "staged-outputs/000-878a52fc5f/manifest.manifest.yml", "sha256": "4e71add8723c0f355ef9dcbde0acc4e7edc4e9f68afe5f55759c2f6fbbb28c09"},
+      {"path": "staged-outputs/000-878a52fc5f/path.png", "sha256": "5026f941a3c8432abd7033a3b12a1b947e1f362c5ec9663dbd6359be9432903b"}
+    ]
+  },
+  "supporting_locations": [
+    {
+      "path": "sandbox/practiques/tigit-projecte-territorial/0.1.0/ca/probes01",
+      "purpose": "Captures, SVGs d'anotació, manifests i checkpoints de les proves d'interfície; no són un nou bundle segellat."
+    },
+    {
+      "path": "sandbox/qgis-practice-jobs",
+      "purpose": "Staging i evidències originals dels jobs natius identificats pels descriptors; sense autorització de neteja."
+    },
+    {
+      "path": "tmp/tigit-12-qgis-rc2",
+      "purpose": "Baseline i logs de càlcul, inspecció i errors; no substitueixen els segells dels bundles."
+    },
+    {
+      "path": "tmp/tigit-12-render-review-20261009-01",
+      "purpose": "Originals abans/després de les 24 figures, manifests, procedència nativa, rebuts i comparació visual.",
+      "inventory": "verification-final.json",
+      "inventory_sha256": "4a6943429b23333575febe8776eca62c8649d596cafe5dfd339bc9df3f64b196"
+    },
+    {
+      "path": "tmp/tigit-12-svg-preview",
+      "purpose": "Previsualització real de la plantilla SVG i còpies originals dels rebuts."
+    }
+  ],
+  "preserved_input_authority": {
+    "request": "_practices/tigit-projecte-territorial/activity-qgis.json",
+    "sources": "_practices/tigit-projecte-territorial/data",
+    "note": "Els inputs compactes i originals tabulars ja versionats es preserven. Cada bundle conserva també els inputs exactes de la seua execució; la petició de treball actual inclou canvis posteriors encara no executats."
+  },
+  "pending": [
+    "run04-teaching no executat; el model i les captures ampliades són draft.",
+    "Edició portable amb recursos/bindings pendent; encara no hi ha nous PDF de lectures ni ZIP de l'edició Web.",
+    "Revisió humana del resultat visible i aprovació editorial pendents.",
+    "CI comuna pendent de la publicació i integració autoritzada de Web 0.7.2.",
+    "Instal·lació persistent i selecció de versions pel hub pendents; els executables temporals no es copien a Git."
+  ],
+  "restore": [
+    "Conservar complet cada arbre segellat, inclosos bundle.json, payload/practice.json, inputs, recursos i controls; no reconstruir-lo a partir de seleccions parcials.",
+    "En restaurar una còpia en una destinació nova, comparar els hashes amb els manifests natius i executar practice-check amb un verificador compatible seleccionat pel hub.",
+    "Obrir els QGZ amb totes les dependències relatives del payload; una nova practice-reopen offline només s'executarà en el torn autoritzat corresponent.",
+    "Copiar a Moodle les futures edicions PDF/ZIP aprovades per activitat i destinatari; aquest índex no publica ni empaqueta dades."
+  ]
+}
