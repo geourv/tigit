@@ -69,6 +69,8 @@ exclude:
   - practiques/
   - dist/
   - unaltracaptura-qgis.yml
+  - opencode.json
+  - opencode.jsonc
 
 external_sources: []
 
