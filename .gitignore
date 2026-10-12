@@ -24,3 +24,9 @@ __pycache__/
 # QGIS MCP runtime and render coordination.
 /.unaltracaptura-qgis/runtime/
 /.unaltracaptura-qgis/render-locks/
+
+# Retained interrupted UI probe; preserve its files outside Git.
+/.unaltracaptura-qgis/jobs/tigit-ui-probes-formats-2343a3e572.fe8ufb62/
+
+# Retained practice editions are generated locally, not site source.
+/dist/practiques/

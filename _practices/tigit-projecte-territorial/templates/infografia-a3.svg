@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+     xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     width="297mm" height="420mm" viewBox="0 0 297 420"
+     preserveAspectRatio="xMidYMid meet" version="1.1" xml:lang="ca"
+     font-family="DejaVu Sans, sans-serif" fill="#183c45"
+     role="img" aria-labelledby="titol-document descripcio-document">
+  <title id="titol-document">Plantilla editable d'infografia territorial TIGIT</title>
+  <desc id="descripcio-document">Plantilla docent A3 vertical en estat draft, amb marges de 15 mm i sis columnes de 39,5 mm separades per 6 mm. Conté camps per emplenar: títol, pregunta, mapa principal amb localitzador, gràfic, interpretació i fonts. No conté dades, mapes ni resultats analítics. Els textos i les formes són editables per capes.</desc>
+  <metadata id="metadades">
+    <rdf:RDF>
+      <rdf:Description>
+        <dc:title>Plantilla A3 d'infografia territorial TIGIT</dc:title>
+        <dc:language>ca</dc:language>
+        <dc:description>Material docent de treball, draft. Dos panells visuals principals i un localitzador integrat. Cal substituir els camps entre claudàtors i els marcs de treball amb evidències reals abans de presentar una infografia.</dc:description>
+        <dc:subject>Tècniques d'informació geogràfica i turística; 21224102; plantilla editable</dc:subject>
+      </rdf:Description>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview id="vista-document" pagecolor="#fffdf8"
+      inkscape:document-units="mm" inkscape:current-layer="capcalera"
+      showguides="true" showgrid="false">
+    <sodipodi:guide id="guia-marge-esquerre" position="15,0" orientation="1,0" inkscape:label="Marge esquerre · 15 mm"/>
+    <sodipodi:guide id="guia-columna-1-final" position="54.5,0" orientation="1,0" inkscape:label="Final columna 1"/>
+    <sodipodi:guide id="guia-columna-2-inici" position="60.5,0" orientation="1,0" inkscape:label="Inici columna 2"/>
+    <sodipodi:guide id="guia-columna-2-final" position="100,0" orientation="1,0" inkscape:label="Final columna 2"/>
+    <sodipodi:guide id="guia-columna-3-inici" position="106,0" orientation="1,0" inkscape:label="Inici columna 3"/>
+    <sodipodi:guide id="guia-columna-3-final" position="145.5,0" orientation="1,0" inkscape:label="Final columna 3"/>
+    <sodipodi:guide id="guia-columna-4-inici" position="151.5,0" orientation="1,0" inkscape:label="Inici columna 4"/>
+    <sodipodi:guide id="guia-columna-4-final" position="191,0" orientation="1,0" inkscape:label="Final columna 4"/>
+    <sodipodi:guide id="guia-columna-5-inici" position="197,0" orientation="1,0" inkscape:label="Inici columna 5"/>
+    <sodipodi:guide id="guia-columna-5-final" position="236.5,0" orientation="1,0" inkscape:label="Final columna 5"/>
+    <sodipodi:guide id="guia-columna-6-inici" position="242.5,0" orientation="1,0" inkscape:label="Inici columna 6"/>
+    <sodipodi:guide id="guia-marge-dret" position="282,0" orientation="1,0" inkscape:label="Marge dret · 15 mm"/>
+    <sodipodi:guide id="guia-marge-superior" position="0,405" orientation="0,1" inkscape:label="Marge superior · 15 mm"/>
+    <sodipodi:guide id="guia-marge-inferior" position="0,15" orientation="0,1" inkscape:label="Marge inferior · 15 mm"/>
+  </sodipodi:namedview>
+
+  <g id="paper" inkscape:groupmode="layer" inkscape:label="01 · Paper: fons opac" sodipodi:insensitive="true">
+    <!-- El sagnat cobreix també l'arrodoniment del viewport en mostreigs ràster. -->
+    <rect id="fons-paper" x="-1" y="-1" width="299" height="422" fill="#fffdf8"/>
+  </g>
+
+  <g id="capcalera" inkscape:groupmode="layer" inkscape:label="02 · Títol i pregunta">
+    <text id="marca-plantilla" x="15" y="20" font-size="3.2" font-weight="700" letter-spacing="0.35" fill="#236b73">PLANTILLA PER EMPLENAR · TIGIT</text>
+    <text id="format-document" x="282" y="20" font-size="3.2" text-anchor="end" fill="#52686e">A3 · 297 × 420 mm</text>
+    <text id="titol-infografia" x="15" y="39" font-size="11" font-weight="700">[Títol de la infografia]</text>
+    <text id="pregunta-territorial" x="15" y="53" font-size="5.6">[Pregunta territorial en una frase]</text>
+    <text id="ambit-i-periode" x="15" y="65" font-size="3.8" fill="#52686e">Municipi: [nom] · Comarca: [nom] · Període: [any]</text>
+    <path id="separador-capcalera" d="M 15,73 H 282" fill="none" stroke="#183c45" stroke-width="0.5"/>
+  </g>
+
+  <g id="mapa-principal" inkscape:groupmode="layer" inkscape:label="03 · Mapa principal: peça vectorial">
+    <text id="encapcalament-mapa" x="15" y="82" font-size="3.5" font-weight="700" letter-spacing="0.25" fill="#236b73">01 · DISTRIBUCIÓ TERRITORIAL</text>
+    <g id="camp-mapa-principal" inkscape:label="Camp per substituir amb el mapa exportat">
+      <rect id="marc-mapa" x="15" y="88" width="267" height="157" rx="1" fill="#eef3f2" stroke="#91afb0" stroke-width="0.35" stroke-dasharray="2,1.5"/>
+      <text id="indicacio-mapa" x="148.5" y="142" font-size="6" text-anchor="middle" font-weight="700" fill="#52686e">[Mapa principal]</text>
+      <text id="indicacio-format-mapa" x="148.5" y="153" font-size="3.8" text-anchor="middle" fill="#52686e">SVG o PDF vectorial exportat de QGIS</text>
+      <text id="indicacio-proporcio-mapa" x="148.5" y="162" font-size="3.5" text-anchor="middle" fill="#52686e">Conservar proporcions, etiquetes i unitats</text>
+      <rect id="marc-llegenda" x="22" y="210" width="94" height="18" fill="#fffdf8" stroke="#c7d4d2" stroke-width="0.25"/>
+      <text id="camp-llegenda" x="27" y="221" font-size="3.6" fill="#52686e">[Llegenda: classes i unitats]</text>
+      <text id="camp-unitats-mapa" x="22" y="239" font-size="3.5" fill="#52686e">[Indicador · unitat · any]</text>
+    </g>
+    <text id="peu-mapa" x="15" y="254" font-size="3.4" fill="#52686e">[Font estadística] · [Font cartogràfica i data de la geometria]</text>
+  </g>
+
+  <g id="localitzador" inkscape:groupmode="layer" inkscape:label="04 · Localitzador: integrat al mapa">
+    <g id="camp-localitzador" inkscape:label="Camp per substituir amb el mapa de situació">
+      <rect id="marc-localitzador" x="197" y="175" width="79" height="53" rx="1" fill="#fffdf8" stroke="#91afb0" stroke-width="0.35"/>
+      <text id="indicacio-localitzador" x="236.5" y="192" font-size="4.2" text-anchor="middle" font-weight="700" fill="#52686e">[Localitzador]</text>
+      <text id="indicacio-situacio" x="236.5" y="202" font-size="3.5" text-anchor="middle" fill="#52686e">Mapa petit de situació</text>
+      <text id="camp-territori-destacat" x="236.5" y="218" font-size="3.4" text-anchor="middle" fill="#52686e">[Territori destacat]</text>
+    </g>
+  </g>
+
+  <g id="grafic" inkscape:groupmode="layer" inkscape:label="05 · Gràfic: comparació vectorial">
+    <text id="encapcalament-grafic" x="15" y="269" font-size="3.5" font-weight="700" letter-spacing="0.25" fill="#236b73">02 · COMPARACIÓ MUNICIPAL</text>
+    <g id="camp-grafic" inkscape:label="Camp per substituir amb el gràfic exportat">
+      <rect id="marc-grafic" x="15" y="276" width="176" height="74" rx="1" fill="#eef3f2" stroke="#91afb0" stroke-width="0.35" stroke-dasharray="2,1.5"/>
+      <text id="indicacio-grafic" x="103" y="307" font-size="5.6" text-anchor="middle" font-weight="700" fill="#52686e">[Gràfic vectorial]</text>
+      <text id="indicacio-format-grafic" x="103" y="318" font-size="3.5" text-anchor="middle" fill="#52686e">SVG o PDF · valors i etiquetes originals</text>
+    </g>
+    <text id="peu-grafic" x="15" y="359" font-size="3.4" fill="#52686e">[Variable · unitat · territori · període]</text>
+  </g>
+
+  <g id="lectura-resultats" inkscape:groupmode="layer" inkscape:label="06 · Lectura dels resultats i limitació">
+    <text id="encapcalament-lectura" x="197" y="269" font-size="3.5" font-weight="700" letter-spacing="0.15" fill="#236b73">LECTURA DELS RESULTATS</text>
+    <text id="resultat-principal" x="197" y="283" font-size="4.4" font-weight="700">[Resultat principal]</text>
+    <text id="interpretacio" x="197" y="295" font-size="3.8">
+      <tspan x="197" dy="0">[Observació sostinguda</tspan>
+      <tspan x="197" dy="6">pel mapa i pel gràfic.]</tspan>
+    </text>
+    <rect id="fons-limitacio" x="197" y="322" width="85" height="29" rx="1" fill="#f3ecdf"/>
+    <text id="encapcalament-limitacio" x="203" y="331" font-size="3.2" font-weight="700" fill="#66563d">LÍMIT DE LA LECTURA</text>
+    <text id="limitacio" x="203" y="340" font-size="3.6" fill="#66563d">
+      <tspan x="203" dy="0">[Què no permet afirmar</tspan>
+      <tspan x="203" dy="6">aquesta evidència?]</tspan>
+    </text>
+  </g>
+
+  <g id="fonts-i-credits" inkscape:groupmode="layer" inkscape:label="07 · Fonts, períodes i autoria">
+    <path id="separador-fonts" d="M 15,369 H 282" fill="none" stroke="#c7d4d2" stroke-width="0.35"/>
+    <text id="encapcalament-fonts" x="15" y="379" font-size="3.5" font-weight="700" letter-spacing="0.25" fill="#236b73">FONTS I PERÍODES</text>
+    <text id="font-estadistica" x="15" y="388" font-size="3.4">Dades: [productor, conjunt, any, URL o identificador]</text>
+    <text id="font-geometria" x="15" y="395" font-size="3.4">Geometria: [productor, versió/data, llicència]</text>
+    <text id="autoria-i-credits" x="15" y="402" font-size="3.4">Autoria: [equip] · Elaboració: [data] · Crèdits: [atribucions]</text>
+  </g>
+
+  <g id="guies-reticula" inkscape:groupmode="layer" inkscape:label="08 · Guies: sis columnes (ocultes)"
+      style="display:none" sodipodi:insensitive="true">
+    <g id="columnes" fill="#236b73" fill-opacity="0.12">
+      <rect id="columna-1" x="15" y="15" width="39.5" height="390"/>
+      <rect id="columna-2" x="60.5" y="15" width="39.5" height="390"/>
+      <rect id="columna-3" x="106" y="15" width="39.5" height="390"/>
+      <rect id="columna-4" x="151.5" y="15" width="39.5" height="390"/>
+      <rect id="columna-5" x="197" y="15" width="39.5" height="390"/>
+      <rect id="columna-6" x="242.5" y="15" width="39.5" height="390"/>
+    </g>
+    <rect id="area-util" x="15" y="15" width="267" height="390" fill="none" stroke="#236b73" stroke-width="0.3"/>
+  </g>
+</svg>

@@ -13,8 +13,8 @@
   ],
   "ok": true,
   "provider": "vegavisuals",
-  "provider_version": "0.3.1",
-  "release": "v0.3.1",
+  "provider_version": "0.5.1",
+  "release": "v0.5.1",
   "request_sha256": "47c02bbeae56098d42d64a47b7aa67072dcf3d8ef6b02ccedd0300895b02d267",
   "schema_version": 1
 }

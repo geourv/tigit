@@ -40,10 +40,10 @@ jobs:
       contents: read
       pages: write
       id-token: write
-    uses: dosquartsdedocs/unaltraweb/.github/workflows/site-deploy.yml@f7ac29070167917dec6b314ba0a1ba9db089e7ec
+    uses: dosquartsdedocs/unaltraweb/.github/workflows/site-deploy.yml@3332e0b93933f12317e05f1ce8d38ce80046feab
     with:
       reviewed_sha: ${{ inputs.reviewed_sha }}
-      manual-pdf-image: "ghcr.io/dosquartsdedocs/unaltraweb-manual-pdf@sha256:bb3e373f8a512495eeed684c23ad904d298c2e20a6dc3ade0d0a60c7ec9a9f11"
+      manual-pdf-image: "ghcr.io/dosquartsdedocs/unaltraweb-manual-pdf@sha256:1bb3f2dafd741e96c28639ec1cc8ccaeb81cbaa73e649f787c0b4ef59997bd4b"
       check-manual-pdf: false
       sync-manual-pdf: true
-      vegavisuals-sha: "44a2753ffbb7c0694a459db9744342f69c6e78b9"
+      vegavisuals-sha: "a448cc50a5f511743a6fcfc213baeb9be80f4a27"

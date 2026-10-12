@@ -1,0 +1,28 @@
+{
+  "allow_empty_public_sources": false,
+  "data_roots": [
+    ".unaltracaptura-qgis/jobs",
+    "_practices/tigit-projecte-territorial/data",
+    "_practices/tigit-projecte-territorial/dist",
+    "_practices/tigit-projecte-territorial/outputs",
+    "_practices/tigit-projecte-territorial/qgis",
+    "_practices/tigit-projecte-territorial/sandbox",
+    "assets/downloads",
+    "assets/pdf",
+    "dist",
+    "sandbox",
+    "tmp"
+  ],
+  "practice_roots": [
+    "_practices",
+    "practiques"
+  ],
+  "profile": "unaltremanual",
+  "public_roots": [
+    "_books",
+    "_chapters",
+    "_pages",
+    "index.md"
+  ],
+  "schema_version": 1
+}

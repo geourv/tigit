@@ -39,6 +39,16 @@ Guidance for agents working in this repository.
 - Prefer phase-based structure over week-based structure. Moodle owns the calendar.
 - Mark assessment material as draft until the user confirms it is ready for the official teaching guide.
 
+## Pending Follow-up: Figure Transparency
+
+- Author decision, 2026-09-24: defer individual figure fixes until the planned `unaltraweb` solution arrives through the scaffold and the MCP warns when adding figures with alpha transparency. Treat this as pending integration, not an already available capability.
+- The audit covered 230 versioned SVG/PNG assets, including 190 figures referenced by the manual: 133 were opaque, 44 SVGs had substantial transparent areas, and 13 figures had only peripheral transparency, shadows, or minor antialiasing. Alpha alone is not a readability defect.
+- The current zoom uses a translucent overlay and clones the image outside its figure container, so ancestor-dependent background styles can be lost. This was reproduced in the browser for the KDD and the PlantUML folder tree.
+- [ ] After integrating the provider update, verify the scaffold changes and MCP alpha warnings, then review zoom readability in light, dark, and cafe themes. Start with `assets/img/data-sources/kdd-dikw-cycle.svg` and `assets/diagrams/reproducible-project-structure.puml.svg`.
+- [ ] Also check `assets/img/data-visualization/housing-donut-tarragones-2021.svg`, `assets/img/data-visualization/word-cloud-accommodation-names-vila-seca.svg`, `assets/img/color-cartography/palette-reference-swatches.svg`, the UTM diagrams, and the eye/retina figures.
+- [ ] Only if the shared solution is insufficient, revisit the affected figures individually. Use their authoritative sources for generated outputs; preserve meaningful internal transparency such as the layers in `assets/img/gis/gis-layer-overlay.svg`.
+- If individual fixes become necessary: the KDD needs a background covering its nonzero `viewBox` (`40 106 1390 798`); the donut and word-cloud R sources can export with `ggsave(bg = "white")`. The palette-swatches Quarto source already declares a white background, but the current cropped SVG lacks it, so reconcile source and output before regenerating.
+
 ## Build Checks
 
 After structural content edits, run:

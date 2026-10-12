@@ -39,6 +39,39 @@ baseurl: "/tigit"
 
 theme: unaltraweb
 
+# Jekyll replaces arrays when merging configs. Preserve the selected core's
+# exclusions and add the practice sources and retained local deliveries.
+exclude:
+  - .bundle/
+  - AGENTS.md
+  - bin/
+  - CONTRIBUTING.md
+  - context/
+  - CUSTOMIZE.md
+  - Dockerfile
+  - docker-compose.yml
+  - docker-compose-slim.yml
+  - docs/
+  - FAQ.md
+  - Gemfile
+  - Gemfile.lock
+  - INSTALL.md
+  - LICENSE
+  - package.json
+  - package-lock.json
+  - purgecss.config.js
+  - README.md
+  - sandbox/
+  - tmp/
+  - vendor
+  - _site/
+  - _practices/
+  - practiques/
+  - dist/
+  - unaltracaptura-qgis.yml
+  - opencode.json
+  - opencode.jsonc
+
 external_sources: []
 
 pagination:
@@ -71,6 +104,16 @@ unaltraweb:
     readings: true
     metrics: false
     manual: true
+  practices:
+    readings:
+      - source: _practices/tigit-projecte-territorial/readings/ca/LLEGIU-ME-estudiant.md
+        slug: tigit-projecte-territorial
+        lang: ca
+        recipient: alumnat
+      - source: _practices/tigit-projecte-territorial/readings/ca/LLEGIU-ME-professorat.md
+        slug: tigit-projecte-territorial
+        lang: ca
+        recipient: docent
   manual:
     collection: chapters
     cover_image: /assets/img/manual-cover-ca.png
