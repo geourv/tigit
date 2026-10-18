@@ -72,6 +72,50 @@ exclude:
   - opencode.json
   - opencode.jsonc
 
+# Preserve the defaults from the pinned core before adding the local rule.
+# Jekyll's theme asset reader ignores exclude; StaticFile honours published.
+defaults:
+  - scope:
+      path: "assets"
+    values:
+      sitemap: false
+  - scope:
+      path: ""
+      type: posts
+    values:
+      lang: en
+  - scope:
+      path: ""
+      type: chapters
+    values:
+      lang: en
+      layout: manual-chapter
+  - scope:
+      path: ""
+      type: documentation
+    values:
+      lang: en
+      layout: documentation-page
+  - scope:
+      path: ""
+      type: news
+    values:
+      lang: en
+  - scope:
+      path: ""
+      type: projects
+    values:
+      lang: en
+  - scope:
+      path: ""
+      type: outputs
+    values:
+      lang: en
+  - scope:
+      path: "assets/plotly/demo.html"
+    values:
+      published: false
+
 external_sources: []
 
 pagination:
@@ -104,16 +148,6 @@ unaltraweb:
     readings: true
     metrics: false
     manual: true
-  practices:
-    readings:
-      - source: _practices/tigit-projecte-territorial/readings/ca/LLEGIU-ME-estudiant.md
-        slug: tigit-projecte-territorial
-        lang: ca
-        recipient: alumnat
-      - source: _practices/tigit-projecte-territorial/readings/ca/LLEGIU-ME-professorat.md
-        slug: tigit-projecte-territorial
-        lang: ca
-        recipient: docent
   manual:
     collection: chapters
     cover_image: /assets/img/manual-cover-ca.png

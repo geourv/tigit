@@ -3,10 +3,6 @@
   "data_roots": [
     ".unaltracaptura-qgis/jobs",
     "_practices/tigit-projecte-territorial/data",
-    "_practices/tigit-projecte-territorial/dist",
-    "_practices/tigit-projecte-territorial/outputs",
-    "_practices/tigit-projecte-territorial/qgis",
-    "_practices/tigit-projecte-territorial/sandbox",
     "assets/downloads",
     "assets/pdf",
     "dist",
@@ -14,7 +10,6 @@
     "tmp"
   ],
   "practice_roots": [
-    "_practices",
     "practiques"
   ],
   "profile": "unaltremanual",
