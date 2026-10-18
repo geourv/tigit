@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "kind": "tigit-teaching-resources",
+  "version": "2026-10-14",
+  "source_commit": "715944fcbf5463e6dd48ade7696a251c94e8c2fd",
+  "source_prefix": "_practices/tigit-projecte-territorial/",
+  "source_url": "https://raw.githubusercontent.com/geourv/tigit/715944fcbf5463e6dd48ade7696a251c94e8c2fd/_practices/tigit-projecte-territorial/",
+  "snapshot": "sandbox/practiques/tigit-projecte-territorial/recursos/2026-10-14",
+  "files": [
+    {"path": "data/processed/catalonia-counties-icgc-20260120.gpkg", "sha256": "20e4e2c53a867722efc1d3b4e2860f76cfad44b34f36d82106b8e9c7a4b7a88e", "bytes": 1851392},
+    {"path": "data/processed/education-centres-tarragones-2025.csv", "sha256": "44a7d0732f124e47534eb7ae25a9bca0df74eaafc1e8e346396b7f2ff3f4c32b", "bytes": 61765},
+    {"path": "data/processed/education-centres-tarragones-series.csv", "sha256": "6764d6ddad4b320a91678e2b41fbf41ab7fe3332d3fbb10d71551857b248d7f6", "bytes": 93524},
+    {"path": "data/processed/education-centres-vila-seca-2025.csv", "sha256": "343b353f550a5c1de3fd57f007936c1f47d46e1f365a50a334c47d28368f79dd", "bytes": 5928},
+    {"path": "data/processed/municipal-indicators-tarragones-2021.csv", "sha256": "d762d55fbbfb085493fe3af39c9ae8e458c1422f41a4467a2f37202cc5f1baac", "bytes": 2032},
+    {"path": "data/processed/municipal-indicators-tarragones-2021.csvt", "sha256": "b2ac06038a8d40fa24e7cb9b53bdded5a96b402f56d839551a77d56c2a1373b1", "bytes": 100},
+    {"path": "data/processed/natural-earth-admin-0-countries-50m.geojson", "sha256": "3e458fc036ad0a66411f2c1e6cac49c5d7bfb81cb1123bc513b22511a2b7fdeb", "bytes": 3083490},
+    {"path": "data/processed/tarragones-boundaries-icgc-20260120.gpkg", "sha256": "5f01e06748c3fa7655ab06f84a981d73646c0569addb9ebcfc81e1848eb68f16", "bytes": 598016},
+    {"path": "data/processed/tourism-accommodation-vila-seca-geocoding.csv", "sha256": "e8d5761a28ee4773c9667ba0223afc451e8b6128b619fa84a63dc4a1335c4214", "bytes": 7445},
+    {"path": "data/processed/vila-seca-orthophoto-icgc-2025.jpg", "sha256": "613f8611c0102f23f13879dd1c918e4609eb56941901aaa98050df56b8bf49fc", "bytes": 637230},
+    {"path": "data/raw/allotjaments-vila-seca-convencionals.csv", "sha256": "4c547163863b005b84fd17538850345a6b0d88f3213c387967c05be381715c5e", "bytes": 6002},
+    {"path": "data/raw/centres-educatius-tarragones.csv", "sha256": "ce77d3207c35df877ceb860096844e838d5765210db291076369c4176ccd2787", "bytes": 457909},
+    {"path": "data/raw/clima-vila-seca-mitjanes-1991-2020.csv", "sha256": "c0cf00a51394723f85f2d4a21ea79fcd51692734a8185020bd690f53db9223a0", "bytes": 4640},
+    {"path": "data/raw/mpiscatalunya.csv", "sha256": "9af28ea1bf7c915f6a53638130557a4be5d3bddbf3dcc5add71c90fd1e194cdd", "bytes": 33634},
+    {"path": "data/raw/poblacio-edat-tarragones-2021.csv", "sha256": "1ae0613086549db3400557218cc83435721f66ba5732f4c0b5eae493474cd24f", "bytes": 673403},
+    {"path": "data/raw/poblacio-vila-seca-2000-2022.csv", "sha256": "047d4249c2d7987891b0666a8ca95762b650dbad6ccb3c1de7d9deb655f16db3", "bytes": 4194},
+    {"path": "data/raw/poblacio-vila-seca-edat-sexe-2021.csv", "sha256": "385f8c39c6d542816a13e7f9b5f14b2e0b463dc762fd0f1ea278bfe4030ef5d3", "bytes": 28708},
+    {"path": "data/raw/poblacio-vila-seca-salou-edat-sexe-naixement-2021.csv", "sha256": "c500a7827143c3d99e206d8a26f1e53bc98b3cfee8ba7163814ce6d745a7ff8a", "bytes": 113843},
+    {"path": "data/raw/t30mun.csv", "sha256": "2672d9e24458aff88917655224708f7666fd6e7fa6f6135e6817c0039c2ee91d", "bytes": 39964},
+    {"path": "data/raw/t396mun.csv", "sha256": "c0fa64ebad44a057317b9dca5cd285ae2214e6beb9ea2ef41de5215e91c7dbd2", "bytes": 32383},
+    {"path": "outputs/figures/non-principal-housing-tarragones-2021.pdf", "sha256": "75d45fb79d11a7e03f6f48245ba788e790a5d500cd93335dcf9a0bed427c70bb", "bytes": 23589}
+  ]
+}
