@@ -149,6 +149,7 @@ unaltraweb:
     metrics: false
     manual: true
   manual:
+    id: tigit
     collection: chapters
     cover_image: /assets/img/manual-cover-ca.png
     logo: /assets/img/brand/dosquartsdedocs-logo.svg
