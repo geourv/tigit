@@ -24,6 +24,10 @@ Per al treball amb MCP, demaneu `unaltraweb` com a únic MCP de primer nivell i 
 
 ## Desenvolupament local
 
+Les fonts de les activitats són a [`practiques/`](practiques/README.md). El [cas docent Tarragonès–Vila-seca](practiques/tigit-projecte-territorial/README.md) inclou la preparació d'inputs fixats, els llibres i el model QGIS. Cada execució genera els seus resultats fora de Git, sota `sandbox/practiques/`; les edicions finals corresponen al compositor natiu i a `dist/practiques/`.
+
+La migració està descrita a `context/practice-migration.md`. Durant la transició, `_practices/` conserva només els inputs que encara requereixen les figures públiques. La preparació d'aquests inputs al workflow compartit s'ha de resoldre abans de retirar-los.
+
 ```bash
 make build
 make serve

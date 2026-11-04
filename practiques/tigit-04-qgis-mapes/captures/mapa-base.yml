@@ -1,0 +1,43 @@
+id: tigit-04-mapa-base
+title: Mapa de referència del cas docent
+runtime:
+  image: sha256:1003721d96abe9607d8337b36851f9b29f84c2f8f92b377d1a73ff03c9d15cd2
+  locale: ca_ES
+  display_backend: offscreen
+plugins: [processing]
+project:
+  source: sandbox/practiques/tigit-projecte-territorial/0.1.0/ca/run05-contract-20261014/payload/projects/tigit-06-llenguatge-cartografic.qgz
+  output: sandbox/practiques/tigit-04-qgis-mapes/run03/projects/mapa-base.qgz
+  title: TIGIT · mapa de referència
+  native_profile: qgis-practice-v2
+  font_files:
+    DejaVu Sans: sandbox/practiques/tigit-projecte-territorial/0.1.0/ca/run05-contract-20261014/payload/data/fonts/DejaVuSans.ttf
+  reuse: if_fresh
+presentation:
+  active_layer: Municipis · base
+  checks:
+    project_crs: EPSG:25831
+    required_layers: [Municipis · base, Comarca · contorn, Vila-seca · detall]
+setup:
+  - action: zoom_to_layer
+    layer: Municipis · base
+    scale: 1.15
+  - action: clear_message_bar
+captures:
+  - id: mapa-base
+    target:
+      class_name: QgisApp
+    steps:
+      - action: close_transients
+      - action: wait
+        ms: 600
+    drawings:
+      - type: callout
+        target:
+          class_name: QgsLayerTreeView
+        text: Capes del projecte
+        target_marker: box
+        label_topology: inside
+        placement: bottom_edge
+        leader: false
+        colour: blue

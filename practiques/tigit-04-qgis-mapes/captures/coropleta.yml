@@ -1,0 +1,43 @@
+id: tigit-04-coropleta
+title: Coropleta i configuració de la simbologia
+runtime:
+  image: sha256:1003721d96abe9607d8337b36851f9b29f84c2f8f92b377d1a73ff03c9d15cd2
+  locale: ca_ES
+  display_backend: offscreen
+plugins: [processing]
+project:
+  source: sandbox/practiques/tigit-projecte-territorial/0.1.0/ca/run05-contract-20261014/payload/projects/tigit-08-cartografia-tematica.qgz
+  output: sandbox/practiques/tigit-04-qgis-mapes/run03/projects/coropleta.qgz
+  title: TIGIT · coropleta d'habitatge
+  native_profile: qgis-practice-v2
+  font_files:
+    DejaVu Sans: sandbox/practiques/tigit-projecte-territorial/0.1.0/ca/run05-contract-20261014/payload/data/fonts/DejaVuSans.ttf
+  reuse: if_fresh
+presentation:
+  active_layer: Municipis · unió
+  checks:
+    project_crs: EPSG:25831
+    required_layers: [Municipis · unió, Coropleta · intervals iguals, Símbols proporcionals]
+setup:
+  - action: zoom_to_layer
+    layer: Municipis · unió
+    scale: 1.15
+  - action: clear_message_bar
+captures:
+  - id: coropleta
+    target:
+      class_name: QgisApp
+    steps:
+      - action: close_transients
+      - action: wait
+        ms: 600
+    drawings: []
+  - id: simbologia
+    mode: widget
+    target:
+      object_name: QgsRendererPropsDialogBase
+    steps:
+      - action: show_layer_styling_panel
+        layer: Municipis · unió
+        wait_ms: 800
+    drawings: []

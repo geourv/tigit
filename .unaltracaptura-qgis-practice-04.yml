@@ -1,0 +1,14 @@
+runtime:
+  default_image: sha256:1003721d96abe9607d8337b36851f9b29f84c2f8f92b377d1a73ff03c9d15cd2
+  display_backend: offscreen
+  pull_policy: never
+  docker_network: none
+  locale: ca_ES
+paths:
+  recipes:
+    - practiques/tigit-04-qgis-mapes/captures/mapa-base.yml
+    - practiques/tigit-04-qgis-mapes/captures/coropleta.yml
+  data_root: .
+  output_root: sandbox/practiques/tigit-04-qgis-mapes/run03/captures
+  cache_root: sandbox/practiques/tigit-04-qgis-mapes/run03/cache
+plugins: [processing]
