@@ -169,3 +169,65 @@ L'autor ha revisat i autoritzat la publicació del manual i el lliurament dels P
 La còpia íntegra del bundle és a `sandbox/practiques/moodle-2026-10-18/PROFESSORAT/qgis-cas-tarragones/`. Conserva `bundle.json`, el descriptor i els 123 fitxers declarats. `practice-check` 0.6.0 passa sobre l'original i sobre la còpia amb el segell `8719b839d1071be858deed94fcce0e32e61f01f575d29c2b4f5e2d0ce5704eac`, inclosa la selecció dels cinc productes ja identificats. És verificació de l'arbre i dels controls enregistrats, no una nova execució GIS ni una nova reobertura.
 
 El dry-run de composició amb configuració temporal s'ha refusat amb `Edition configuration must be a versioned, non-ignored consumer source`. No s'ha presentat cap ZIP com a edició nativa: la carpeta de lliurament conté les còpies verificades i el bundle íntegre. L'índex `OBRE-AQUI.html` distingeix el PDF d'alumnat, el material docent i les bases dels altres territoris que encara cal preparar. Els límits temporals i d'acabat cartogràfic continuen documentats.
+
+## Continuació #21: captures del recorregut complet
+
+La [reserva acceptada de TIGIT #21](https://github.com/geourv/tigit/issues/21#issuecomment-6278052291) amplia el recorregut amb dades/CRS, controls de la unió, comparació de classificacions, composició i portabilitat. La font docent és `practiques/tigit-04-qgis-mapes/captures/recorregut-complet.prompt.md`. Les guies, els PDF 0.3.0 i les figures públiques d'aquest lot encara estan pendents de producció i revisió.
+
+El lliurament local posterior al del dia 18 és `sandbox/practiques/moodle-2026-10-19/OBRE-AQUI.html`. Inclou les demos de Vila-seca i del Tarragonès també per a l'alumnat, diferenciades del projecte avaluat d'un altre municipi i/o comarca. L'inventari docent de cobertura és `PROFESSORAT/COBERTURA-CAPTURES-QGIS.md` dins d'aquesta carpeta. El nou lot parteix del mateix bundle run05, que continua conservat amb el seu segell original.
+
+### Captura inicial i bloqueig observat
+
+`inspect_ui` MCP ha produït la captura real `sandbox/practiques/tigit-04-qgis-mapes/0.3.0/probe01/captures/tigit04-dades-crs/visio-inicial.png`, amb SVG d'anotacions i manifest, sense avisos. S'ha inspeccionat la imatge. L'observació del worker, retinguda a `probe01/worker-observation.json`, acredita xarxa `none`, entrades readonly i absència de mounts X11 i de les variables personals de pantalla en la configuració del contenidor observat. Aquesta observació correspon a aquell render; no és un rebut de productor ni una aprovació de tot el recorregut. El primer manifest no conté el prompt, que es va afegir després a la recepta font.
+
+El probe següent de `tigit04-dades-crs.crs-projecte` ha excedit el termini MCP. El log completa `visio-inicial` i s'atura a `render_capture:start:crs-projecte`. El worker ha desaparegut després del límit natiu de 900 segons; la consulta posterior retorna `Connection closed`. No hi ha captura CRS publicada. Es conserva el job `.unaltracaptura-qgis/jobs/tigit04-dades-crs-crs-projecte-11761e7444.8bkzznnm/`, inclosos `job.json`, `bridge.log` i els outputs en staging.
+
+La seqüència fallida era `close_transients`, `trigger_action` amb `name: mActionProjectProperties` i `wait` de 600 ms, amb `mode: window` i target `class_name: QgsProjectProperties`. Que `validate` accepti aquesta declaració no acredita que l'acció modal es completi. La causa necessita diagnòstic del proveïdor. Aquest pas s'ha retirat de la recepta activa: demanar una captura posterior pot executar també les anteriors de la mateixa recepta.
+
+El diagnòstic gestionat de reconnexió ha identificat OpenCode 1.19.3 i `unsupported_recovery_version`, a més de la sessió activa (`workspace_not_idle`). No ha aplicat canvis. La represa requereix reiniciar el client i confirmar la identitat i l'estat idle del MCP QGIS abans d'obtenir més captures. No s'ha usat una via gràfica alternativa per eludir la desconnexió.
+
+### Fonts preparades abans de la represa del 30 d'octubre
+
+La configuració `.unaltracaptura-qgis-practice-04-complete.yml` reuneix ara tres receptes i apunta les captures i la memòria cau noves a `sandbox/practiques/tigit-04-qgis-mapes/0.3.0/probe03/`. El checkpoint de la taula es preveu a `sandbox/practiques/tigit-04-qgis-mapes/0.3.0/projects/unio-controls-01.qgz`. Manté l'engine fixat, `offscreen`, `ca_ES`, xarxa `none` i pull `never`.
+
+| Recepta | Captures declarades | Comprovació disponible |
+| --- | --- | --- |
+| `dades-i-crs.yml` | `visio-inicial` | Probe inicial real; propietats del projecte retirades de la seqüència activa. |
+| `unio-controls.yml` | `taula-control` | Esquema validat i dades d'entrada contrastades; falta preparar el projecte i capturar. |
+| `classificacio.yml` | `quantils`, `intervals-iguals`, `mapa-quantils`, `mapa-intervals-iguals` | Esquema validat; falta comprovar visualment widgets, extensió i dimensions. |
+
+La CLI pública 0.6.0 ha validat la configuració completa amb sis captures. `project-status` resol les dependències i el callback de `taula-control`, amb `state: missing` i `action: build`, i el projecte de classificació amb `state: source` i `action: open`. Aquestes operacions són readonly i no han arrencat cap captura.
+
+La vista de control proposada usa el resultat persistent de 22 municipis i aplica un filtre docent als codis `431711`, `431310` i `431093`. El CSV retingut confirma Vila-seca, Roda de Berà i la Pobla de Mafumet, amb percentatges 49,9052649710053, 64,7454918968272 i 12,0743034055728. El model comprova el recompte inicial i el filtrat, i amplia les columnes d'aquesta vista. La font Python passa la comprovació sintàctica; el callback modificat encara no s'ha executat amb QGIS. Aquesta escena mostrarà la comprovació d'un resultat ja calculat, no una nova execució manual de la unió.
+
+El verificador readonly `practice-check` 0.6.0 torna a acceptar run05 amb el segell original i la selecció `resolved-project`, amb sis fitxers a la clausura. Aquesta comprovació conserva l'evidència de l'execució anterior; no valida el model modificat ni acredita una nova reobertura.
+
+En reprendre, cal validar la configuració completa i consultar `project_status`; després, executar serialment `prepare_project` per a la taula i els probes MCP. S'ha de revisar la llegibilitat dels tres casos, el mètode real de classificació i les dimensions comparables abans d'integrar cap figura. El dissenyador i la portabilitat continuen pendents. El perfil documentat `qgis-practice-v2` cobreix marcs de mapa i text, però no acredita llegenda nativa, escala gràfica ni propietats actives definides per dades.
+
+### Represa real amb MCP 0.6.1 — 30 d'octubre de 2026
+
+La connexió QGIS respon com a 0.6.1, instància `5d40939b-0d3d-47b4-86dd-ec770501c702`, sessió `0f7eb9a3-1d7f-4005-b025-4bb244b29d82`, binding TIGIT i sense drift. El controller és `sha256:d06b742c3e7d2e9383cf8a1d22bce928dd806f316a0bcbb1f676f50e22e94b05`; l'engine continua sent el QGIS 3.44.11 fixat anteriorment. El preflight del checkout identifica el WIP conegut; no s'ha repetit l'stash, canviat de branca ni alterat la integració Web. Les operacions QGIS s'han executat serialment.
+
+Les captures noves declaren `private-xvfb-v1`, autenticació de pantalla i `ca_ES`. Es conserven PNG original, SVG amb PNG incrustat i manifest natiu a cada destinació. L'índex de revisió local és `tmp/tigit-21-resume-20261030-v2/OBRE-AQUI.html`; `checks.json` conserva hashes, dimensions, comparació numèrica i límits. És QA del consumidor, no un rebut atribuït al productor ni aprovació docent.
+
+| Prova | Destinació sota `sandbox/practiques/tigit-04-qgis-mapes/0.3.0/` | Resultat revisat |
+| --- | --- | --- |
+| Primer detall de quantils | `probe03/captures/tigit04-classificacio/quantils.*` | Camp, cinc classes, límits i mètode visibles al widget de 365 × 668 píxels lògics. |
+| Vista inicial i selector SRC | `probe04/captures/tigit04-dades-crs/{visio-inicial,selector-crs}.*` | Finestra real i selector natiu EPSG:25831; sense canvi de CRS ni desament del projecte. |
+| Comparació dels mapes | `probe07/captures/tigit04-classificacio/{mapa-quantils,mapa-intervals-iguals}.*` | Dos llenços de 836 × 773 píxels lògics, mateixa acció de zoom i capes visibles contrastades. Són sortides de mapa, no composicions finals. |
+| Panells complets de classificació | `probe07/captures/tigit04-classificacio/{quantils,intervals-iguals}.*` | El productor retorna èxit, però la revisió rebutja la publicació: el dock de 298 × 773 retalla camp, llegenda i recompte a la dreta. |
+| Tres casos de control | `probe07/captures/tigit04-unio-controls/taula-control.*` | Taula real amb els tres codis, noms i percentatges complets; filtre només en memòria. |
+
+La configuració activa apunta a `probe07` i declara set captures. Els runs precedents s'han conservat. Les dimensions anteriors són lògiques; els PNG poden tenir més píxels pel factor del dispositiu, enregistrat als manifests. La revisió no equipara el `ok` del render amb llegibilitat completa.
+
+**Taula i persistència.** `prepare_project` amb el QGZ de destinació declarat ha retornat `only an explicit OGR layername option is supported`; no s'ha publicat el checkpoint. La mateixa recepta sense `project.output` ha obert la font readonly, carregat la unió existent, executat el callback de composició i capturat la taula correctament. El manifest mostra l'URI amb `|subset="CODIMUNI" IN ('431711','431310','431093')`; la finestra informa tres objectes i la captura permet llegir 12,0743034055728, 64,7454918968272 i 49,9052649710053. Ara sí que s'ha executat el callback modificat de composició, però no s'ha repetit `compute`, la unió ni una reobertura d'un checkpoint nou. El filtratge no ha alterat el GeoPackage original.
+
+**Selectors i visibilitat.** La primera seqüència de classificació fallava perquè activar el grup no activava la capa d'intervals iguals, inicialment desmarcada. S'han activat ambdues capes a `setup` i els grups de cada captura governen quina queda visible. Una altra fallada era `capture target is not visible` en el prefix amb el widget `QgsRendererPropsDialogBase`; canviar només el selector del llenç no la resolia. Capturar el dock estable `LayerStyling` permet completar el prefix, però exposa el retall descrit. La selecció del widget actiu i una via pública per dimensionar el panell es traslladen al proveïdor; no s'ha incorporat un renderer alternatiu al consumidor.
+
+**SRC.** L'acció pública `open_project_crs_dialog` ha produït el selector `unaltracapturaProjectCrsDialog`, amb ETRS89 / UTM zone 31N, EPSG:25831 i unitats en metres. És un diàleg natiu configurat pel productor. No acredita haver obert Propietats del projecte amb l'acció modal antiga, prémer D'acord ni aplicar una transformació; aquell incident no es declara reparat.
+
+**Contrast de les classificacions.** S'han llegit els intervals des del QGZ retingut i recalculat independentment a partir dels 22 valors del CSV. Els sis límits dels cinc intervals concorden amb cada mètode. Canvien de classe el Morell (2→1), la Pobla de Montornès (4→3), Renau (3→2), la Riera de Gaià (3→2) i Salomó (4→3), de quantils a intervals iguals. Els dos mapes mostren les mateixes dades i formes territorialment alineades; el manifest no incorpora una extensió numèrica del llenç i no se n'ha inventat una.
+
+La comprovació de bytes/mides dels 123 fitxers de run05 concorda amb el seu bundle original. Els fitxers aliens a les cinc fonts de continuació s'han contrastat amb el snapshot previ, inclosos els controls d'integració, `opencode.json`, els SVG editats de #23 i els PDF seleccionats. No s'han modificat capítols, guies, PDF ni còpies Moodle en aquesta represa: la composició/portabilitat i els dos panells llegibles continuen oberts, abans d'integrar el lot 0.3.0.
+
+Els encàrrecs copiables per als proveïdors són a `tmp/tigit-mcp-handoffs-20261030/`: Unaltracaptura (selectors/panells i filtre portable; composició com a increment separat), Unaltramesa (contracte de correcció territorial amb pilot sintètic) i Unaltraweb (en cua, preparació d'inputs abans dels controls i edicions només tabulars). Preparar aquests prompts no significa haver-los enviat ni que les altres sessions els hagin acceptat.

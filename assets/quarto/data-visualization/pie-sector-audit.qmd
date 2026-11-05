@@ -1,0 +1,118 @@
+---
+title: "Auditoria de la proporcionalitat dels sectors circulars"
+lang: ca
+ref: pie_sector_audit
+format:
+  gfm:
+    output-file: pie-sector-audit.generated.md
+execute:
+  echo: false
+  warning: false
+  message: false
+execute-dir: project
+unaltraweb_compute:
+  engine: r
+  mode: figure
+  inputs: []
+  outputs:
+    - assets/img/data-visualization/pie-sector-audit-incorrect.svg
+    - assets/img/data-visualization/pie-sector-audit-correct.svg
+---
+
+```{r}
+find_project_root <- function(start) {
+  path <- normalizePath(start, winslash = "/", mustWork = FALSE)
+  repeat {
+    if (file.exists(file.path(path, ".unaltraweb", "computations.yml"))) return(path)
+    parent <- dirname(path)
+    if (identical(parent, path)) stop("Project root not found")
+    path <- parent
+  }
+}
+
+root <- find_project_root(getwd())
+
+# Synthetic, mutually exclusive responses: no claim about an actual destination.
+responses <- data.frame(
+  code = c("A", "B", "C"),
+  category = c("Vehicle privat", "Transport públic", "Altres mitjans"),
+  count = c(50, 30, 20),
+  colour = c("#9ecae1", "#fdd49e", "#c7e9c0"),
+  stringsAsFactors = FALSE
+)
+responses$percent <- 100 * responses$count / sum(responses$count)
+correct_angles <- 360 * responses$count / sum(responses$count)
+incorrect_angles <- c(90, 180, 90)
+
+stopifnot(
+  sum(responses$count) == 100,
+  identical(responses$percent, c(50, 30, 20)),
+  identical(correct_angles, c(180, 108, 72)),
+  sum(incorrect_angles) == 360,
+  all(incorrect_angles != correct_angles),
+  identical(100 * incorrect_angles / 360, c(25, 50, 25))
+)
+
+xml_text <- function(text) {
+  text <- gsub("&", "&amp;", text, fixed = TRUE)
+  text <- gsub("<", "&lt;", text, fixed = TRUE)
+  gsub(">", "&gt;", text, fixed = TRUE)
+}
+
+# Exact SVG circular arcs make the geometric audit independent of rasterisation.
+# Both versions keep radius, canvas, category order, colours and written shares.
+draw_pie <- function(angles, path, description) {
+  cx <- 230
+  cy <- 230
+  radius <- 180
+  endpoints <- c(0, cumsum(angles))
+  stopifnot(all(angles > 0), abs(tail(endpoints, 1) - 360) < 1e-10)
+  point <- function(degrees, r = radius) {
+    radians <- degrees * pi / 180
+    c(cx + r * sin(radians), cy - r * cos(radians))
+  }
+  svg <- c(
+    '<svg xmlns="http://www.w3.org/2000/svg" width="720" height="460" viewBox="0 0 720 460" role="img" aria-labelledby="title desc">',
+    '  <title id="title">Mitjà principal en cent respostes simulades</title>',
+    paste0('  <desc id="desc">', xml_text(description), '</desc>'),
+    '  <rect width="720" height="460" fill="#ffffff"/>',
+    '  <g font-family="DejaVu Sans, Arial, sans-serif" fill="#17202a">'
+  )
+  for (i in seq_len(nrow(responses))) {
+    start <- point(endpoints[i])
+    end <- point(endpoints[i + 1])
+    centre <- point(mean(endpoints[c(i, i + 1)]), radius * 0.62)
+    arc <- sprintf(
+      "M %.3f %.3f L %.3f %.3f A %.3f %.3f 0 %d 1 %.3f %.3f Z",
+      cx, cy, start[1], start[2], radius, radius,
+      as.integer(angles[i] > 180), end[1], end[2]
+    )
+    svg <- c(svg,
+      sprintf('    <path data-sector="%s" data-angle-deg="%.3f" data-labelled-percent="%.3f" d="%s" fill="%s" stroke="#ffffff" stroke-width="2"/>',
+              responses$code[i], angles[i], responses$percent[i], arc, responses$colour[i]),
+      sprintf('    <text x="%.3f" y="%.3f" text-anchor="middle" font-size="22">%s</text>', centre[1], centre[2] - 12, responses$code[i]),
+      sprintf('    <text x="%.3f" y="%.3f" text-anchor="middle" font-size="28" font-weight="700">%.0f%%</text>', centre[1], centre[2] + 22, responses$percent[i])
+    )
+    legend_y <- 152 + (i - 1) * 68
+    svg <- c(svg,
+      sprintf('    <rect x="440" y="%d" width="24" height="24" fill="%s"/>', legend_y, responses$colour[i]),
+      sprintf('    <text x="478" y="%d" font-size="20">%s · %s</text>', legend_y + 19, responses$code[i], xml_text(responses$category[i]))
+    )
+  }
+  svg <- c(svg, '  </g>', '</svg>')
+  writeLines(enc2utf8(svg), path, useBytes = TRUE)
+}
+
+output_dir <- file.path(root, "assets/img/data-visualization")
+dir.create(output_dir, showWarnings = FALSE, recursive = TRUE)
+draw_pie(
+  incorrect_angles,
+  file.path(output_dir, "pie-sector-audit-incorrect.svg"),
+  "Exercici deliberadament incorrecte. Les etiquetes indiquen 50, 30 i 20 per cent, però els sectors ocupen 90, 180 i 90 graus: un quart, mitja volta i un quart. Dades simulades."
+)
+draw_pie(
+  correct_angles,
+  file.path(output_dir, "pie-sector-audit-correct.svg"),
+  "Correcció de l'exercici: les mateixes etiquetes de 50, 30 i 20 per cent corresponen a sectors de 180, 108 i 72 graus. Dades simulades."
+)
+```

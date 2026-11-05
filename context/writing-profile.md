@@ -16,6 +16,10 @@ La utilitat social, professional i científica ha de precedir la recepta tècnic
 
 El manual adopta un cicle de descobriment de coneixement territorial inspirat en KDD. Cal presentar-lo com un marc iteratiu adaptat, no afirmar que qualsevol percentatge, gràfic o mapa sigui mineria de dades ni que tota activitat produeixi coneixement científic nou.
 
+En semiologia gràfica, cada família s'ha de connectar amb una lectura concreta dels exemples: què representa una marca, quins canals codifiquen dades, com es llegeixen els eixos i quina taula permetria construir-la. L'exercici invers ha de fer proposar unitat de fila, camps, unitats i transformacions, i distingir les dades recuperables de les que la figura resumeix o amaga. Cal reduir el protagonisme de ggplot i de la seva sintaxi perquè l'alumnat no l'utilitzarà; R pot continuar sent una font tècnica de reproducció de les figures.
+
+Cada família presentada necessita també un exercici de construcció o comprovació, amb un resultat o criteri contrastable. Les regles de tres s'han d'aplicar a la magnitud que realment codifica la dada: longitud, angle, gruix o àrea segons el cas; no indiscriminadament a radis, colors, posicions de categories o escales logarítmiques. Els exemples deliberadament incorrectes han d'identificar-se com a exercicis amb dades simulades i permetre contrastar taula, etiquetes i geometria abans d'oferir-ne la correcció.
+
 ## Estructura preferida
 
 Quan es redacti una secció nova, cal preferir aquest ordre:
@@ -34,6 +38,8 @@ En cada paràgraf convé identificar una funció principal i desenvolupar una id
 Cada exemple ha d'arribar precedit per la decisió o dificultat que ajuda a entendre. Les llistes de definicions poden utilitzar-se per a vocabulari compacte; les figures compostes, les taules, els diagrames i les caixes didàctiques només s'han d'incorporar quan fan visible una relació que la prosa sola no comunica amb la mateixa claredat.
 
 Les figures pròpies s'han d'acotar a la relació visual que necessiten explicar. Per defecte, no han d'incorporar un títol, un subtítol, un marc exterior ni un requadre explicatiu final que dupliquin el text i el peu de figura; aquests elements només es justifiquen quan la peça ha de funcionar de manera autònoma fora del manual. També cal evitar els títols interns formulats mecànicament com «De X a Y»: si hi ha una transformació real, l'han de mostrar les formes i les connexions; si no, el concepte s'ha d'anomenar directament.
+
+Les figures publicades han de conservar un fons opac adequat també en el zoom, sense dependre només del fons del contenidor HTML. Cal actuar sobre la font autoritativa i regenerar els outputs; les variants SVG editades han de conservar la traça de l'original. No s'ha d'eliminar la transparència interna que codifica superposicions o capes. Els avisos d'alfa perifèric o d'inspecció incompleta exigeixen revisió, no acrediten per si sols una fallada de lectura ni una figura opaca.
 
 La negreta s'ha de reservar per a conceptes definits, distincions decisives i criteris que l'estudiantat hagi de poder reconèixer o explicar. Normalment n'hi ha prou amb destacar-ne la primera aparició pedagògicament rellevant; no s'han de remarcar totes les repeticions, les instruccions rutinàries ni inventaris sencers només per facilitar una lectura ràpida.
 

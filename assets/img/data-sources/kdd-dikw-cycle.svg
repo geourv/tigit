@@ -33,6 +33,8 @@
     </style>
   </defs>
 
+  <rect x="40" y="106" width="1390" height="798" fill="#ffffff"/>
+
   <rect x="455" y="770" width="945" height="125" class="band-data"/>
   <rect x="455" y="560" width="945" height="180" class="band-info"/>
   <rect x="455" y="285" width="945" height="245" class="band-knowledge"/>

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="460" viewBox="0 0 720 460" role="img" aria-labelledby="title desc">
+  <title id="title">Mitjà principal en cent respostes simulades</title>
+  <desc id="desc">Exercici deliberadament incorrecte. Les etiquetes indiquen 50, 30 i 20 per cent, però els sectors ocupen 90, 180 i 90 graus: un quart, mitja volta i un quart. Dades simulades.</desc>
+  <rect width="720" height="460" fill="#ffffff"/>
+  <g font-family="DejaVu Sans, Arial, sans-serif" fill="#17202a">
+    <path data-sector="A" data-angle-deg="90.000" data-labelled-percent="50.000" d="M 230.000 230.000 L 230.000 50.000 A 180.000 180.000 0 0 1 410.000 230.000 Z" fill="#9ecae1" stroke="#ffffff" stroke-width="2"/>
+    <text x="308.913" y="139.087" text-anchor="middle" font-size="22">A</text>
+    <text x="308.913" y="173.087" text-anchor="middle" font-size="28" font-weight="700">50%</text>
+    <rect x="440" y="152" width="24" height="24" fill="#9ecae1"/>
+    <text x="478" y="171" font-size="20">A · Vehicle privat</text>
+    <path data-sector="B" data-angle-deg="180.000" data-labelled-percent="30.000" d="M 230.000 230.000 L 410.000 230.000 A 180.000 180.000 0 0 1 50.000 230.000 Z" fill="#fdd49e" stroke="#ffffff" stroke-width="2"/>
+    <text x="230.000" y="329.600" text-anchor="middle" font-size="22">B</text>
+    <text x="230.000" y="363.600" text-anchor="middle" font-size="28" font-weight="700">30%</text>
+    <rect x="440" y="220" width="24" height="24" fill="#fdd49e"/>
+    <text x="478" y="239" font-size="20">B · Transport públic</text>
+    <path data-sector="C" data-angle-deg="90.000" data-labelled-percent="20.000" d="M 230.000 230.000 L 50.000 230.000 A 180.000 180.000 0 0 1 230.000 50.000 Z" fill="#c7e9c0" stroke="#ffffff" stroke-width="2"/>
+    <text x="151.087" y="139.087" text-anchor="middle" font-size="22">C</text>
+    <text x="151.087" y="173.087" text-anchor="middle" font-size="28" font-weight="700">20%</text>
+    <rect x="440" y="288" width="24" height="24" fill="#c7e9c0"/>
+    <text x="478" y="307" font-size="20">C · Altres mitjans</text>
+  </g>
+</svg>
