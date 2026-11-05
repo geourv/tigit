@@ -148,6 +148,7 @@ ggsave(
   cloud,
   width = 7.2,
   height = 4.0,
+  bg = "white",
   device = svglite::svglite
 )
 
@@ -183,6 +184,7 @@ ggsave(
   bars,
   width = 7.2,
   height = 3.8,
+  bg = "white",
   device = svglite::svglite
 )
 ```
