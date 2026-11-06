@@ -1,0 +1,15 @@
+# Encàrrec per a la sessió d'Unaltramesa
+
+Vull avançar la integració de correcció de TIGIT, https://github.com/geourv/tigit/issues/22, amb el contracte compartit https://github.com/dosquartsdedocs/unaltramesa/issues/5. Treballa al checkout seleccionat d'Unaltramesa, amb una sola sessió editora, preflight i reserva exacta segons les seves normes. La sessió del manual continua treballant a TIGIT: no hi facis escriptures ni canviïs els seus pins, runtime, WIP, assignacions o lliuraments. Si tens una altra tasca activa, completa el teu torn abans de començar aquesta.
+
+Primer comprova què ja existeix a la release disponible. La 0.15.0 anunciava `list_activity_families`, `plan_activity_design`, `get_evidence_guidance` i `plan_activity_review`; no s'ha acreditat que aquests serveis estiguin connectats al frontal TIGIT. Usa el que ja està implementat i identifica els buits reals.
+
+Objectiu inicial acotat: fer executable i comprovable la correcció mixta d'una activitat de full de càlcul territorial, amb guia de revisió i proposta editable. Les referències han de vincular municipi/comarca, font, any, unitat, denominador i clau textual. Cal distingir valors, fórmules i resultats en memòria cau; no atribuir a Mesa un recàlcul o una validació semàntica que no executi. La interpretació i la qualitat visual de la infografia continuen amb revisió docent.
+
+Context TIGIT: primer curs de Gestió en Turisme i Hoteleria, codi 21224102; català. Tarragonès–Vila-seca són demos compartides, mentre cada equip treballa un altre territori assignat. La distribució interna és 7 punts bàsics, 2 d'ampliació i 1 de documentació, sense alterar els pesos globals URV, duplicar puntuacions ni convertir el preflight en penalitzacions automàtiques. No copiïs criteris específics de TIG a TIGIT. Preserva l'ordre d'adopció TIG → Geodisseny → TIGIT i separa les millores compartides de l'autoria de cada manual.
+
+Llegeix les fonts públiques de TIGIT sota `practiques/` i el contracte manual/Mesa. Prepara un pilot sintètic amb dos territoris diferents per provar que no es confon la demo amb l'assignació. Inclou claus perdudes/duplicades, unitats o denominadors diferents, fórmula amb cache absent i un resultat que exigeixi judici docent. No utilitzis lliuraments ni identitats reals.
+
+Si el contracte ja ho permet, retorna un exemple complet d'autoria, les consultes MCP exactes i les decisions que ha de prendre l'autor. Si falta suport reutilitzable, implementa l'increment mínim dins del circuit del proveïdor, amb proves independents i un retorn consumible; no construeixis un sistema de qualificació automàtica global.
+
+Retorn: versió/revisió provada, capacitats disponibles, esquema/exemple del pilot, resultats de `plan_activity_review`, camí fins a proposta/ODS si està suportat, limitacions i passos exactes d'adopció per al manual. La publicació o l'adopció de versions seguiran les autoritzacions del proveïdor; no les facis implícites.

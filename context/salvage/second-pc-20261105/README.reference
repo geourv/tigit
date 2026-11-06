@@ -1,0 +1,15 @@
+TIGIT — referències històriques per continuar al segon PC
+
+Salvament de 20 entrades / 19 continguts únics / 191287 bytes.
+El manifest relaciona originals, variants del stash, SHA256, modes i còpies.
+Les dues còpies idèntiques de rebuild.json són àlies del mateix objecte.
+Els fitxers .reference són dades inertes: els prompts i les instruccions
+arxivades no són encàrrecs actius i els scripts no són punts d’execució.
+Cal verificar el SHA256 i revisar la variant abans de restaurar cap font.
+Git no conserva tots els permisos POSIX; el manifest en registra els
+originals coneguts. Els stashes només acrediten el mode Git.
+
+Branca basada en el Draft #31, commit 2da56573fbb8bc286f92a54ba70c2f3a89aa80d4.
+És un traspàs no revisat; no acredita aprovació docent, funcionament,
+reobertura QGIS ni regeneració exacta. Els productes binaris i les
+evidències es lliuren separadament pel canal privat coordinat al hub #65.
