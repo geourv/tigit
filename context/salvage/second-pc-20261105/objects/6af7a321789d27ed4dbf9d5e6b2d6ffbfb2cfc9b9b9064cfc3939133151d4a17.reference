@@ -1,0 +1,51 @@
+# Cobertura de captures QGIS i continuació dels capturadors
+
+Inventari del 19 d'octubre de 2026. **La seqüència didàctica completa encara no està acabada.** Hi ha tres captures revisades integrades a les guies i deu grups tècnics conservats al bundle natiu. Els deu PNG tècnics s'han inspeccionat visualment en aquesta revisió; disponibilitat i integritat no impliquen que tots siguin adequats per publicar directament al PDF.
+
+## Captures integrades a les guies
+
+| Captura | Evidència |
+| --- | --- |
+| [Mapa base](captures-docents/tigit-04-mapa-base/mapa-base.png) | Finestra QGIS i capes del cas docent; utilitzada a la lectura d'alumnat. |
+| [Coropleta](captures-docents/tigit-04-coropleta/coropleta.png) | Resultat cartogràfic al llenç; utilitzat a la guia docent. |
+| [Simbologia](captures-docents/tigit-04-coropleta/simbologia.png) | Detall del camp, les cinc classes, la rampa i el mètode de quantils; utilitzat a la guia docent. |
+
+Aquestes tres captures provenen del run03 docent, amb QGIS 3.44.11 i el projecte segellat run05. Són estats reals, no dibuixos d'interfície.
+
+## Biblioteca tècnica disponible
+
+Els enllaços següents apunten a la còpia íntegra del bundle del professorat. Es conserven també PNG originals, SVG i manifests de productor.
+
+| Grup i captura | Observació de la revisió visual |
+| --- | --- |
+| [initial-project · overview](DEMO-VILA-SECA-TARRAGONES/qgis/payload/captures/initial-project/overview.png) | Vista general útil de capes i mapa; no mostra el procediment de crear/desar el projecte. |
+| [sources-project · sources](DEMO-VILA-SECA-TARRAGONES/qgis/payload/captures/sources-project/sources.png) | Gestor de fonts GeoPackage amb subcapes. La ruta llarga es retalla; no és el diàleg d'importació CSV. |
+| [formats-project · formats](DEMO-VILA-SECA-TARRAGONES/qgis/payload/captures/formats-project/formats.png) | Taula amb codis i noms. Només es veuen vuit files; no acredita per si sola els tipus ni el recompte complet. |
+| [join-dialog-project · join](DEMO-VILA-SECA-TARRAGONES/qgis/payload/captures/join-dialog-project/join.png) | Diàleg d'unió amb capes i camps seleccionats. Mostra sortida temporal i 0%: és configuració, no evidència d'execució acabada. |
+| [joined-project · attributes](DEMO-VILA-SECA-TARRAGONES/qgis/payload/captures/joined-project/attributes.png) | Taula resultant disponible, però alguns decimals estan truncats i no es mostren junts els tres municipis de control. |
+| [reference-project · labeling](DEMO-VILA-SECA-TARRAGONES/qgis/payload/captures/reference-project/labeling.png) | Mapa i panell d'etiquetes; cal una selecció/captura més llegible dels controls que es vulguin explicar. |
+| [themes-project · themes](DEMO-VILA-SECA-TARRAGONES/qgis/payload/captures/themes-project/themes.png) | Menú de temes visible, amb la part inferior retallada. Cal mostrar la selecció i el resultat del tema escollit. |
+| [resolved-project · symbology](DEMO-VILA-SECA-TARRAGONES/qgis/payload/captures/resolved-project/symbology.png) | Quantils correctes, però camp i alguns controls es retallen al panell estret. El detall docent de run03 és més adequat per a la guia. |
+| [graduated-project · graduated](DEMO-VILA-SECA-TARRAGONES/qgis/payload/captures/graduated-project/graduated.png) | Mapa de símbols graduats i panell; cal millorar la llegibilitat dels controls i incorporar una llegenda explicativa. |
+| [proportional-project · proportional](DEMO-VILA-SECA-TARRAGONES/qgis/payload/captures/proportional-project/proportional.png) | Variant amb mides fixades per als valors del cas. El selector mostra desviació estàndard i no és una demostració de l'assistent de mida proporcional. No s'ha de presentar com aquest procediment. |
+
+Els controls natius del bundle acrediten dades, seleccions i una reobertura offline enregistrada. No substitueixen les captures de cada interacció ni la revisió de llegibilitat. La validació de les còpies d'aquest lliurament no és una nova execució GIS.
+
+## Captures o seqüències que falten
+
+1. **Projecte i fonts:** creació/desament amb rutes relatives; importació del CSV amb codi textual i tipus de camps; distinció entre CRS de la capa, del projecte i reprojecció.
+2. **Unió completa:** configuració amb destinació persistent, execució acabada i taula de control llegible amb coincidències, absències, recompte i valors contrastats. Es pot reutilitzar el diàleg existent com a punt de partida.
+3. **Comparació cartogràfica:** quantils i intervals iguals amb la mateixa dada, extensió, dimensions i rampa, i un registre dels límits/recomptes.
+4. **Dissenyador i sortida:** mapa principal i localitzador, llegenda, escala gràfica, fonts, exportació SVG/PDF i inspecció del resultat a mida final. Les exportacions actuals són bases editables.
+5. **Portabilitat explicada:** reobertura d'una còpia traslladada i comprovació de les dependències des del punt de vista de l'estudiant.
+6. **Ampliacions de símbols:** captura real de l'assistent proporcional i dels criteris de mida, si aquest procediment s'inclou en els obligatoris. La variant fixada per als valors de la demo no el substitueix.
+
+El següent lot de QGIS hauria de completar primer importació–unió–controls i dissenyador–exportació. Les captures s'han d'obtenir des de les receptes i el capturador, amb originals i anotacions retinguts; els outputs actuals no s'han d'editar com si fossin fonts.
+
+## Calc i Inkscape: decisió posterior al lliurament
+
+La proposta és començar per **LibreOffice Calc amb UNO**, perquè les pràctiques 01–03 necessiten explicar importació, rangs, fórmules, taules dinàmiques i gràfics. UNO dona accés als objectes del document i a ordres de la interfície; el pilot ha de comprovar també què queda exposat dels diàlegs i com se sincronitza la captura visible.
+
+Per a **Inkscape**, la base de control de la GUI seria **AT-SPI2 a Ubuntu**, complementada per les accions/CLI i els identificadors del SVG. El primer pilot pot cobrir capes de la plantilla A3, importació vectorial, selecció/alineació i exportació. Cal verificar l'arbre accessible, els menús, els diàlegs i la sessió gràfica real abans de comprometre'n la cobertura.
+
+Ordre proposat: tancar el recorregut QGIS necessari, provar un recorregut curt de Calc i després el d'Inkscape. Encara no hi ha calendari acordat ni capturadors nous implementats. Les anotacions, la conservació de fonts i la gestió de jobs han de seguir els contractes compartits dels productors.

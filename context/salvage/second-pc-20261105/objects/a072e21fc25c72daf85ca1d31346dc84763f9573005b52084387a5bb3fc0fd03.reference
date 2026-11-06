@@ -1,0 +1,382 @@
+{
+  "activity": {
+    "id": "tigit-projecte-territorial",
+    "title": "TIGIT · municipi i comarca amb ICGC i Idescat",
+    "version": "0.1.0"
+  },
+  "exports": [],
+  "fonts": [
+    {
+      "family": "DejaVu Sans",
+      "file": "font-regular"
+    }
+  ],
+  "inputs": [
+    {
+      "id": "icgc-boundaries",
+      "path": "inputs/data/processed/tarragones-boundaries-icgc-20260120.gpkg",
+      "sha256": "5f01e06748c3fa7655ab06f84a981d73646c0569addb9ebcfc81e1848eb68f16"
+    },
+    {
+      "id": "icgc-counties",
+      "path": "inputs/data/processed/catalonia-counties-icgc-20260120.gpkg",
+      "sha256": "20e4e2c53a867722efc1d3b4e2860f76cfad44b34f36d82106b8e9c7a4b7a88e"
+    },
+    {
+      "id": "idescat-csv",
+      "path": "inputs/data/processed/municipal-indicators-tarragones-2021.csv",
+      "sha256": "d762d55fbbfb085493fe3af39c9ae8e458c1422f41a4467a2f37202cc5f1baac"
+    },
+    {
+      "id": "idescat-csvt",
+      "path": "inputs/data/processed/municipal-indicators-tarragones-2021.csvt",
+      "sha256": "b2ac06038a8d40fa24e7cb9b53bdded5a96b402f56d839551a77d56c2a1373b1"
+    }
+  ],
+  "kind": "qgis-practice-request-v2",
+  "locale": "ca_ES",
+  "parameters": {
+    "county_code": "36",
+    "focus_municipality": "431711",
+    "palette": [
+      "#edf8fb",
+      "#b2e2e2",
+      "#66c2a4",
+      "#2ca25f",
+      "#006d2c"
+    ],
+    "proportional_mode": "fixed-size-per-observed-count",
+    "statistical_year": 2021,
+    "views": {
+      "initial-project": "initial",
+      "joined-project": "join"
+    }
+  },
+  "products": [
+    {
+      "depends_on": [],
+      "format": "geopackage",
+      "from_input": "icgc-boundaries",
+      "id": "territorial-base",
+      "members": [
+        {
+          "kind": "vector",
+          "name": "municipalities_250k",
+          "role": "initial-data"
+        },
+        {
+          "kind": "vector",
+          "name": "comarca_250k",
+          "role": "initial-data"
+        },
+        {
+          "kind": "vector",
+          "name": "province_1000k",
+          "role": "initial-data"
+        },
+        {
+          "kind": "vector",
+          "name": "vila_seca_50k",
+          "role": "initial-data"
+        },
+        {
+          "kind": "vector",
+          "name": "municipality_seats",
+          "role": "initial-data"
+        }
+      ],
+      "path": "data/processed/tarragones-boundaries-icgc-20260120.gpkg",
+      "role": "initial-data"
+    },
+    {
+      "depends_on": [],
+      "format": "geopackage",
+      "from_input": "icgc-counties",
+      "id": "counties-context",
+      "members": [
+        {
+          "kind": "vector",
+          "name": "counties_250k",
+          "role": "initial-data"
+        }
+      ],
+      "path": "data/processed/catalonia-counties-icgc-20260120.gpkg",
+      "role": "initial-data"
+    },
+    {
+      "depends_on": [
+        "indicators-types"
+      ],
+      "format": "csv",
+      "from_input": "idescat-csv",
+      "id": "indicators-table",
+      "members": [],
+      "path": "data/processed/municipal-indicators-tarragones-2021.csv",
+      "role": "initial-data"
+    },
+    {
+      "depends_on": [],
+      "format": "csvt",
+      "from_input": "idescat-csvt",
+      "id": "indicators-types",
+      "members": [],
+      "path": "data/processed/municipal-indicators-tarragones-2021.csvt",
+      "role": "initial-data"
+    },
+    {
+      "depends_on": [],
+      "format": "geopackage",
+      "from_input": null,
+      "id": "joined-data",
+      "members": [
+        {
+          "kind": "vector",
+          "name": "municipal_joined",
+          "role": "resolved-data"
+        }
+      ],
+      "path": "data/processed/municipal_joined.gpkg",
+      "role": "resolved-data"
+    },
+    {
+      "depends_on": [],
+      "format": "geopackage",
+      "from_input": null,
+      "id": "symbol-points",
+      "members": [
+        {
+          "kind": "vector",
+          "name": "municipal_points",
+          "role": "resolved-data"
+        }
+      ],
+      "path": "data/processed/municipal_points.gpkg",
+      "role": "resolved-data"
+    },
+    {
+      "depends_on": [
+        "municipalities-shx",
+        "municipalities-dbf",
+        "municipalities-prj",
+        "municipalities-cpg"
+      ],
+      "format": "shapefile",
+      "from_input": null,
+      "id": "municipalities-shp",
+      "members": [],
+      "path": "data/formats/tarragones-municipis.shp",
+      "role": "initial-data"
+    },
+    {
+      "depends_on": [],
+      "format": "sidecar",
+      "from_input": null,
+      "id": "municipalities-shx",
+      "members": [],
+      "path": "data/formats/tarragones-municipis.shx",
+      "role": "initial-data"
+    },
+    {
+      "depends_on": [],
+      "format": "sidecar",
+      "from_input": null,
+      "id": "municipalities-dbf",
+      "members": [],
+      "path": "data/formats/tarragones-municipis.dbf",
+      "role": "initial-data"
+    },
+    {
+      "depends_on": [],
+      "format": "sidecar",
+      "from_input": null,
+      "id": "municipalities-prj",
+      "members": [],
+      "path": "data/formats/tarragones-municipis.prj",
+      "role": "initial-data"
+    },
+    {
+      "depends_on": [],
+      "format": "sidecar",
+      "from_input": null,
+      "id": "municipalities-cpg",
+      "members": [],
+      "path": "data/formats/tarragones-municipis.cpg",
+      "role": "initial-data"
+    },
+    {
+      "depends_on": [],
+      "format": "font",
+      "from_input": null,
+      "id": "font-regular",
+      "members": [],
+      "path": "data/fonts/DejaVuSans.ttf",
+      "role": "initial-data"
+    }
+  ],
+  "projects": [
+    {
+      "capture": true,
+      "compose": true,
+      "id": "initial-project",
+      "path": "projects/tigit-04-dades-espacials.qgz",
+      "role": "initial-project",
+      "scene": {
+        "captures": [
+          {
+            "drawings": [
+              {
+                "colour": "green",
+                "target": {
+                  "class_name": "QgsMapCanvas"
+                },
+                "target_marker": "box",
+                "text": "Base local: 22 municipis del Tarragonès",
+                "type": "callout"
+              }
+            ],
+            "id": "overview",
+            "target": {
+              "class_name": "QgisApp"
+            }
+          }
+        ],
+        "presentation": {
+          "active_layer": "Municipis · base",
+          "checks": {
+            "project_crs": "EPSG:25831",
+            "required_layers": [
+              "Municipis · base",
+              "Comarca · contorn",
+              "Indicadors · Idescat 2021"
+            ]
+          }
+        },
+        "setup": [
+          {
+            "action": "set_project_crs",
+            "auth_id": "EPSG:25831"
+          },
+          {
+            "action": "load_vector",
+            "name": "Municipis · base",
+            "path": "data/processed/tarragones-boundaries-icgc-20260120.gpkg|layername=municipalities_250k"
+          },
+          {
+            "action": "load_vector",
+            "name": "Comarca · contorn",
+            "path": "data/processed/tarragones-boundaries-icgc-20260120.gpkg|layername=comarca_250k"
+          },
+          {
+            "action": "load_vector",
+            "name": "Vila-seca · detall",
+            "path": "data/processed/tarragones-boundaries-icgc-20260120.gpkg|layername=vila_seca_50k"
+          },
+          {
+            "action": "load_vector",
+            "name": "Catalunya · comarques",
+            "path": "data/processed/catalonia-counties-icgc-20260120.gpkg|layername=counties_250k"
+          },
+          {
+            "action": "load_vector",
+            "name": "Tarragonès · localitzador",
+            "path": "data/processed/tarragones-boundaries-icgc-20260120.gpkg|layername=comarca_250k"
+          },
+          {
+            "action": "load_vector",
+            "name": "Municipis · Shapefile",
+            "path": "data/formats/tarragones-municipis.shp"
+          },
+          {
+            "action": "load_vector",
+            "name": "Indicadors · Idescat 2021",
+            "path": "data/processed/municipal-indicators-tarragones-2021.csv"
+          },
+          {
+            "action": "zoom_to_layer",
+            "layer": "Municipis · base",
+            "scale": 1.15
+          },
+          {
+            "action": "clear_message_bar"
+          }
+        ]
+      },
+      "source_product": null,
+      "source_project": null
+    },
+    {
+      "capture": false,
+      "compose": true,
+      "id": "joined-project",
+      "path": "projects/tigit-05-integracio-sig.qgz",
+      "role": "resolved-project",
+      "scene": {
+        "presentation": {
+          "active_layer": "Municipis · unió",
+          "checks": {
+            "project_crs": "EPSG:25831",
+            "required_layers": [
+              "Municipis · unió",
+              "Indicadors · Idescat 2021"
+            ]
+          }
+        },
+        "setup": [
+          {
+            "action": "set_project_crs",
+            "auth_id": "EPSG:25831"
+          },
+          {
+            "action": "load_vector",
+            "name": "Municipis · base",
+            "path": "data/processed/tarragones-boundaries-icgc-20260120.gpkg|layername=municipalities_250k"
+          },
+          {
+            "action": "load_vector",
+            "name": "Comarca · contorn",
+            "path": "data/processed/tarragones-boundaries-icgc-20260120.gpkg|layername=comarca_250k"
+          },
+          {
+            "action": "load_vector",
+            "name": "Vila-seca · detall",
+            "path": "data/processed/tarragones-boundaries-icgc-20260120.gpkg|layername=vila_seca_50k"
+          },
+          {
+            "action": "load_vector",
+            "name": "Catalunya · comarques",
+            "path": "data/processed/catalonia-counties-icgc-20260120.gpkg|layername=counties_250k"
+          },
+          {
+            "action": "load_vector",
+            "name": "Tarragonès · localitzador",
+            "path": "data/processed/tarragones-boundaries-icgc-20260120.gpkg|layername=comarca_250k"
+          },
+          {
+            "action": "load_vector",
+            "name": "Indicadors · Idescat 2021",
+            "path": "data/processed/municipal-indicators-tarragones-2021.csv"
+          },
+          {
+            "action": "load_vector",
+            "name": "Municipis · unió",
+            "path": "data/processed/municipal_joined.gpkg|layername=municipal_joined"
+          },
+          {
+            "action": "zoom_to_layer",
+            "layer": "Municipis · unió",
+            "scale": 1.15
+          },
+          {
+            "action": "clear_message_bar"
+          }
+        ]
+      },
+      "source_product": null,
+      "source_project": null
+    }
+  ],
+  "qgis_image": "sha256:1003721d96abe9607d8337b36851f9b29f84c2f8f92b377d1a73ff03c9d15cd2",
+  "schema_version": 2,
+  "script": "activity.py",
+  "timeout_seconds": 600
+}

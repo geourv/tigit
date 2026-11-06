@@ -1,0 +1,15 @@
+# Petició en cua per a Unaltraweb
+
+Quan acabis el torn actiu, reprèn els dos punts de TIGIT registrats a https://github.com/dosquartsdedocs/unaltraweb/issues/98#issuecomment-6178087168. No obris una segona sessió editora ni un altre checkout. Fes preflight i reserva exacta al proveïdor; si el treball actual toca els mateixos controls, integra aquesta petició al seu pla abans d'editar. No cal actuar al consumidor ara.
+
+TIGIT ja té scaffold MCP 0.7.4/core-gem 0.7.3, PR https://github.com/geourv/tigit/pull/25 integrada, construcció HTML i preview verificades. No repeteixis l'actualització. El WIP docent és actiu; no editis el manual, els seus pins o les seves dades.
+
+1. **Preparació d'inputs abans dels controls de publicació.** Tretze inputs de llegat alimenten 23 fonts Quarto i una Vega (33 outputs). Existeix un preparador específic de TIGIT amb commit/path/SHA/mida i destinacions create-only ignorades. Al workflow `site-deploy.yml@3332e0b93933f12317e05f1ce8d38ce80046feab`, `build-command` arriba després dels controls Quarto/Vega/PDF. Confirma una entrada pública anterior o implementa un pas compartit acotat, preservant verificació, confinament i absència de dades privades al lloc. Prova-ho des d'un checkout sense les dades de llegat; no desactivis freshness per fer-lo passar.
+
+2. **Edicions només tabulars.** Confirma o afegeix la composició de lectures + XLSX/ODS/CSV/PDF amb inventari, hashes i separació alumnat/docent sense exigir un `gis` fictici. Preserva les garanties i compatibilitat de les edicions GIS. Usa un pilot sintètic i comprova contingut, dependències i absència de solucions al paquet inicial quan així es declari.
+
+Pots retornar primer el diagnòstic i l'ordre d'implementació, i abordar els dos increments serialment. La prioritat és una interfície pública estable, amb exemples i proves que el consumidor pugui adoptar en una integració posterior.
+
+Incidències de runtime separades, per triatge: les operacions llargues de Web tornen a superar el timeout del client i poden acabar amb `Connection closed`; la CLI pública ha permès completar la revisió. A més, la preview CLI per defecte del controller 0.7.4 carregava gem 0.7.4 mentre el scaffold fixava core/gem 0.7.3. L'override públic `UNALTRAWEB_MCP_IMAGE` amb la imatge nativa immutable 0.7.3 va donar la combinació correcta, verificada amb Bundler. No barregis una reparació global del hub amb els dos punts de packaging.
+
+Retorn: decisions de contracte, estat disponible/pendent de cada punt, proves i revisió immutable, sintaxi d'adopció i límits. No publiquis el manual ni canviïs-ne el runtime des del proveïdor.
