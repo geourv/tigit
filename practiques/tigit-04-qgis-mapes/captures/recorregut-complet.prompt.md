@@ -1,0 +1,19 @@
+# Recorregut QGIS de TIGIT: dades, unió, mapa i composició
+
+Cal documentar amb captures reals de QGIS, en català (`ca_ES`), el recorregut de les pràctiques de primer curs de Gestió en Turisme i Hoteleria. Vila-seca i el Tarragonès són les demos compartides de classe; la infografia avaluada correspon a un altre municipi i/o comarca.
+
+El punt de partida és el cas local ICGC/Idescat ja verificat: 22 municipis del Tarragonès, estadístiques de 2021, superfície publicada el 2025 i geometria ICGC del 20 de gener de 2026. La taula d'indicadors conserva `mun_code` textual i els percentatges numèrics. La geometria utilitza `CODIMUNI`. Cal mantenir els límits temporals, C07/C14 i la distinció entre habitatge no principal i habitatge turístic.
+
+Les captures s'han de fer mitjançant unaltracaptura-qgis MCP dins del runtime Docker fixat, amb backend `offscreen`. La pantalla, el focus i les finestres personals de l'autor han de quedar fora de la sessió. Cal preferir finestres i widgets reals, selectors Qt/QGIS i poques anotacions significatives.
+
+## Escenes necessàries
+
+1. Projecte i dades: reconèixer capes i taula, carregar el GeoPackage i el CSV, comprovar tipus de camps i diferenciar CRS de capa/projecte.
+2. Unió: mostrar capes, claus, cardinalitat i destinació; distingir la configuració del diàleg, l'execució amb controls i el resultat desat. Mostrar Vila-seca, Roda de Berà i la Pobla de Mafumet en una taula llegible, sense decimals retallats.
+3. Classificació: camp `housing_non_main_pct`, cinc quantils i rampa BuGn; comparar intervals iguals amb les mateixes dades, extensió i dimensions. Separar els valors de la llegenda arrodonida.
+4. Composició: mapa principal, localitzador, títol i fonts; documentar llegenda, escala gràfica i exportació quan el productor ho admeti. No substituir un ítem natiu no suportat per una aparença fictícia.
+5. Persistència: reprendre el projecte des d'una altra carpeta amb totes les dependències locals i comprovar els estils i la taula.
+
+La còpia rebuda del bundle de partida és `sandbox/practiques/tigit-projecte-territorial/0.1.0/ca/run05-rebut-20261110/bundle.json`, SHA `8719b839d1071be858deed94fcce0e32e61f01f575d29c2b4f5e2d0ce5704eac`, amb els bytes i el segell originals. Plans, probes, captures i checkpoints nous han d'anar a destinacions noves sota `sandbox/practiques/`.
+
+Cada imatge ha d'explicar una decisió o un control. Les captures amb camps retallats, targets absents, accions ignorades o anotacions sobre contingut útil s'han de revisar. Una captura d'un diàleg configurat no acredita que s'hagi recorregut una seqüència manual clic per clic. Les limitacions reals del MCP han de quedar documentades per al professorat.

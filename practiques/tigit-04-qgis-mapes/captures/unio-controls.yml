@@ -1,0 +1,50 @@
+id: tigit04-unio-controls
+title: Tres municipis per comprovar la unió
+source_prompt: >-
+  Recorregut QGIS de TIGIT, practiques/tigit-04-qgis-mapes/captures/recorregut-complet.prompt.md.
+  Mostrar el resultat persistent de la unió i tres casos de control llegibles:
+  Vila-seca, Roda de Berà i la Pobla de Mafumet. La vista de tres municipis
+  és una selecció docent del resultat de 22, no una nova taula d'origen.
+runtime:
+  image: sha256:351071c12539ef0c21b268c62e3efe7c6b4cfc5f111b7c45963fa382361144fc
+  locale: ca_ES
+  display_backend: offscreen
+plugins: [processing]
+project:
+  source: sandbox/practiques/tigit-projecte-territorial/0.1.0/ca/run05-rebut-20261110/payload/projects/tigit-04-dades-espacials.qgz
+  # Prova de vista en memòria: el checkpoint portable refusa el subset OGR.
+  # L'original es manté readonly; no es declara un QGZ nou ni portabilitat nova.
+  title: TIGIT · tres casos de control de la unió
+  native_profile: qgis-practice-v2
+  reuse: if_fresh
+  font_files:
+    DejaVu Sans: sandbox/practiques/tigit-projecte-territorial/0.1.0/ca/run05-rebut-20261110/payload/data/fonts/DejaVuSans.ttf
+  composition:
+    script: practiques/tigit-projecte-territorial/activities/qgis-territorial.py
+    project_id: control-table
+    parameters:
+      views:
+        control-table: join
+      control_municipalities: ["431711", "431310", "431093"]
+    products: {}
+setup:
+  - action: load_vector
+    path: sandbox/practiques/tigit-projecte-territorial/0.1.0/ca/run05-rebut-20261110/payload/data/processed/municipal_joined.gpkg|layername=municipal_joined
+    name: Municipis · unió
+  - action: clear_message_bar
+presentation:
+  active_layer: Municipis · unió
+  checks:
+    project_crs: EPSG:25831
+    required_layers: [Municipis · base, Municipis · unió, Indicadors · Idescat 2021]
+    persistent_layers: [Municipis · unió]
+captures:
+  - id: taula-control
+    mode: window
+    target:
+      class_name: QgsAttributeTableDialog
+    steps:
+      - action: open_attribute_table
+        layer: Municipis · unió
+        wait_ms: 800
+    drawings: []

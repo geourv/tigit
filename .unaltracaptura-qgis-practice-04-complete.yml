@@ -1,0 +1,15 @@
+runtime:
+  default_image: sha256:351071c12539ef0c21b268c62e3efe7c6b4cfc5f111b7c45963fa382361144fc
+  display_backend: offscreen
+  pull_policy: never
+  docker_network: none
+  locale: ca_ES
+paths:
+  recipes:
+    - practiques/tigit-04-qgis-mapes/captures/dades-i-crs.yml
+    - practiques/tigit-04-qgis-mapes/captures/unio-controls.yml
+    - practiques/tigit-04-qgis-mapes/captures/classificacio.yml
+  data_root: .
+  output_root: sandbox/practiques/tigit-04-qgis-mapes/0.3.0/review-20261110/captures
+  cache_root: sandbox/practiques/tigit-04-qgis-mapes/0.3.0/review-20261110/cache
+plugins: [processing]

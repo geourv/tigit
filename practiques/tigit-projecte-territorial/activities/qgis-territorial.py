@@ -149,6 +149,16 @@ def compose(project, project_id, parameters, products):
     default_text.setSize(9)
     project.styleSettings().setDefaultTextFormat(default_text)
     layers = {layer.name(): layer for layer in project.mapLayers().values()}
+    control_codes = parameters.get("control_municipalities", [])
+    if control_codes:
+        if set(control_codes) != {"431711", "431310", "431093"}:
+            raise ValueError("The control view requires the three declared teaching municipalities")
+        control_layer = layers["Municipis · unió"]
+        if control_layer.featureCount() != 22:
+            raise ValueError("The control view must start from the complete 22-municipality join")
+        expression = '"CODIMUNI" IN (' + ",".join("'" + code + "'" for code in control_codes) + ")"
+        if not control_layer.setSubsetString(expression) or control_layer.featureCount() != 3:
+            raise ValueError("The persisted join could not be filtered to the three control cases")
     view_extent = QgsRectangle(layers["Municipis · base"].extent())
     view_extent.scale(1.12)
     project.viewSettings().setDefaultViewExtent(QgsReferencedRectangle(view_extent, project.crs()))
@@ -159,6 +169,8 @@ def compose(project, project_id, parameters, products):
         table_config.update(layers[name].fields())
         wanted = (["CODIMUNI", "NOMMUNI", "housing_total", "housing_non_main", "housing_non_main_pct"]
                   if name == "Municipis · unió" else ["mun_code", "municipality", "housing_total", "housing_non_main", "housing_non_main_pct"])
+        if control_codes and name == "Municipis · unió":
+            wanted = ["CODIMUNI", "NOMMUNI", "housing_non_main_pct"]
         aliases = {"CODIMUNI": "Codi", "mun_code": "Codi", "NOMMUNI": "Municipi", "municipality": "Municipi",
                    "housing_total": "Habitatges", "housing_non_main": "No principals", "housing_non_main_pct": "% no principal"}
         for field, alias in aliases.items():
@@ -169,7 +181,11 @@ def compose(project, project_id, parameters, products):
         for column in columns:
             column.hidden = column.type != QgsAttributeTableConfig.Field or column.name not in wanted
             if column.type == QgsAttributeTableConfig.Field:
-                column.width = 160 if column.name in {"NOMMUNI", "municipality"} else 105
+                if control_codes and name == "Municipis · unió":
+                    column.width = (230 if column.name == "NOMMUNI"
+                                    else 190 if column.name == "housing_non_main_pct" else 105)
+                else:
+                    column.width = 160 if column.name in {"NOMMUNI", "municipality"} else 105
         columns.sort(key=lambda column: wanted.index(column.name) if column.name in wanted else len(wanted))
         table_config.setColumns(columns)
         layers[name].setAttributeTableConfig(table_config)
