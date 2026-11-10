@@ -380,3 +380,132 @@ Quan es posi en pràctica el MCP de QGIS, la prioritat serà produir captures re
 Cada sèrie conservarà la versió sense anotacions i una còpia docent anotada. El registre indicarà aplicació i versió, sistema operatiu, idioma de la interfície, data de captura, fitxer o projecte d'origen, dimensions, retall aplicat i modificacions. Les anotacions s'afegiran després de capturar, amb numeració i contrast suficients; no es dibuixaran fletxes a mà sobre l'única còpia disponible.
 
 Les captures de Microsoft Excel o Microsoft 365 s'utilitzaran només quan expliquin una operació institucional o una diferència real respecte de Calc. Per als procediments estables es prioritzarà una captura de Calc i una explicació independent de menús concrets, de manera que una actualització de la interfície no obligui a reconstruir tot el capítol.
+
+## Lectura de gràfics i primer lot de fons opacs — 26 d'octubre de 2026
+
+La [reserva de TIGIT #23](https://github.com/geourv/tigit/issues/23) ha estat [acceptada per l'autor](https://github.com/geourv/tigit/issues/23#issuecomment-6417830850). El capítol 3 reforça la lectura de categories, magnituds, unitats, origen i sentit dels eixos, amb exemples concrets i l'exercici de reconstruir files, columnes i transformacions. S'ha substituït l'apartat de ggplot per una explicació breu de dades, codificació i presentació aplicable a Calc i Excel. El català continua `draft`.
+
+S'han contrastat amb el CSV retingut les tres files d'habitatge de Roda de Berà, Vila-seca i la Pobla de Mafumet; els percentatges arrodonits; la diferència de 14,8 punts; la coordenada d'envelliment de Vila-seca; i els totals 169.179, 66.105 i 103.074 de l'anell. `prose_check` passa. Conserva l'avís de repetició del títol original «True True» i indicis de longitud en paràgrafs previs. `manual_source_quality_check` passa, amb els 63 avisos preexistents de dimensions web/PDF, que no queden resolts per aquesta intervenció de fons.
+
+La revisió ha detectat una afirmació anterior incorrecta al peu del diagrama de caixa: «Els casos més alts se surten dels bigotis». La comprovació amb les mateixes 22 observacions i el worker R del projecte retorna quartils 21,31076 i 51,63834, mediana 30,97377, bigotis 12,0743 i 64,74549 i cap atípic segons la regla d'1,5 rangs interquartílics. S'han corregit el peu i el comentari, i s'ha explicat el desplaçament vertical dels punts. La font final té SHA `200a67cb5653240f0838f881ef5529fc2b5146d730f203c6568477d6bcaf6923`; la passada `line` preparada té digest `4776509645c1f54f755eb0ef7aa59aaec08fa29e8d3c0e6eeebdd217a128aa4d`. No s'ha enregistrat aprovació editorial.
+
+### Fons i fonts del lot
+
+El MCP Web 0.7.3 ja ofereix la comprovació d'opacitat. La passada del capítol ha detectat transparències i també ha esgotat el pressupost d'inspecció; per això les figures afectades s'han comprovat individualment. L'autor ha acceptat blanc opac per a aquest lot. La transparència interna de dades o capes no s'ha eliminat.
+
+| Figura | Font i intervenció | Resultat de la comprovació acotada |
+| --- | --- | --- |
+| KDD | Rectangle blanc al SVG d'autoria cobrint `40 106 1390 798` | `opaque`, alfa mínima 255 |
+| Anell d'habitatge | `housing-donut-tarragones.qmd`, exportació `bg = "white"` | `opaque`, alfa mínima 255 |
+| Núvol de paraules | `word-cloud-accommodation-names.qmd`, exportació `bg = "white"` | Alfa mínima 154 en 384 píxels perifèrics de la mostra de 692 × 384; interior opac |
+| Barres de freqüències | Mateix QMD, fons blanc explícit | Output byte-idèntic; alfa mínima 244 en 365 píxels perifèrics de la mostra de 692 × 365; interior opac |
+| Cronologia | Variant `mermaid-timeline.mmd.edited.svg` amb capa de fons blanc | `opaque`, alfa mínima 255 |
+| Gantt | Variant `mermaid-gantt.mmd.edited.svg` amb capa de fons blanc | `opaque`, alfa mínima 255 |
+| Arbre de carpetes | Variant `reproducible-project-structure.puml.edited.svg` amb capa de fons blanc | `opaque`, alfa mínima 255 |
+
+Les tres variants de diagrama incorporen íntegrament l'SVG natiu dins d'un viewport amb la mateixa proporció i afegeixen només títol accessible i fons. La comparació XML confirma la geometria nativa intacta; el comentari de cada variant identifica el SHA de l'original. La cronologia amplia el fons un píxel més enllà del viewport per cobrir l'antialiàsing de la dimensió fraccionària. No es canvien textos, posicions ni escales del contingut.
+
+| Fitxer modificat o variant | SHA-256 |
+| --- | --- |
+| `assets/img/data-sources/kdd-dikw-cycle.svg` | `08d49c67fc9b40b7774ca533376a9a67b4b33215d6a1c84abb32559ef8be96a5` |
+| `assets/img/data-visualization/housing-donut-tarragones-2021.svg` | `80a37c85679d7e4b8c98593ae4dcee455199a8e8ac03adcc98f8de76353404d3` |
+| `assets/img/data-visualization/word-cloud-accommodation-names-vila-seca.svg` | `a94bb1f717a1a0516b83b2d1996282200e6106205445a9f6a28de2a24f2f5931` |
+| `assets/diagrams/data-visualization/mermaid-timeline.mmd.edited.svg` | `bd2c7b0832363177e618641f57f585ef3843eb61effa9b947bbc55065eb4c433` |
+| `assets/diagrams/data-visualization/mermaid-gantt.mmd.edited.svg` | `aaae53de039d1fcaa9991e6463ae1affcc8a20b999e9435ced8886bc1cf030cc` |
+| `assets/diagrams/reproducible-project-structure.puml.edited.svg` | `786d31d90df1495342da56429714d69decaa46adb45a36c7984f2b0c4b53b8f5` |
+
+Els originals de cronologia, Gantt i arbre conserven els SHA `759f99a0f3a2a8013ddfe172a00894545b1380017ef4f2c49c6713a7dbc238ec`, `8c2461b039dbc7eedd4eb23b53777eeaf91894205ad5c6bc253af6a27e294603` i `3ca23c4452ddb659a50c6ed54026fe64f26989236104b1e9030ce6cb2ba68f58`. `diavisuals.project_check` accepta les 23 fonts, selecciona les tres variants com a `fresh` i publica el rebut corresponent. En aquest primer lot el lock de càlcul només ha canviat per les dues fonts R i els seus outputs; cap rebut s'ha editat manualment.
+
+### Reproducció i límit MCP observat
+
+`manual_computation_render` MCP 0.7.3 ha retornat `Cannot verify the selected computation workers`, fins i tot en una instància temporal amb els dos workers locals fixats i observats com a `matched`. Aquesta instància s'ha drenat i `session-status` acredita `stopped` i `resources_released: true`. La causa interna continua pendent de diagnòstic del proveïdor; no s'ha corregit el servei.
+
+La CLI pública equivalent ha completat serialment els dos renders, dins del contenidor Web immutable `sha256:0a5b91a4c1c8b3b0bd8d3c4160ed1e5b9ccc8ad3cd0abee67f621d8636d15bd6`, amb el worker R existent `sha256:6192f629aff627eb438d02bbe700aa95f2b2a5408f1c15a240ef101af3cf42f2` comprovat abans d'executar. S'ha utilitzat `unaltraweb-mcp --project /home/benizar/git/tigit mcp manual-computation-render --source <QMD> --stale-only`. Els dos `manual_computation_check` MCP posteriors passen. La selecció del runtime de revisió no modifica els pins del consumidor; l'actualització de scaffold 0.7.1 → 0.7.3 ha estat ajornada expressament.
+
+### Revisió web, zoom i PDF
+
+`site_check` passa i `MCP_IMAGE=sha256:0a5b91a4c1c8b3b0bd8d3c4160ed1e5b9ccc8ad3cd0abee67f621d8636d15bd6 make build` ha completat el web, amb la fase Jekyll acabada en 369,308 segons. L'auditoria retorna 56 HTML i zero findings estructurals; els avisos d'altres figures i els límits de la inspecció global es conserven. La correcció final de la caixa s'ha tornat a passar per `prose_check` i s'ha regenerat el PDF amb `make manual-pdf-preview-prepare`.
+
+El PDF d'aquesta primera passada s'ha generat a `tmp/manual-pdf/ca/tigit-ca.pdf`: A4, 400 pàgines, 56.937.071 bytes i SHA `54a4a0c570dfa629d420bbf32b425845dc773a5ff0aff085b0e78c0ddc5d1ff1`. El rebut de preview corresponent és `8b62a157fefce83d0456344a0233f69b77b690d89ce457b714149ae0ae6ecfa4`, amb `publishes: false`. Aquests paths de preview `latest` s'actualitzen en reconstruir el manual; el hash identifica la passada, no promet que continuï sent el fitxer actual. La còpia `assets/pdf/tigit-ca.pdf` és material local de revisió, no una publicació nova.
+
+Les captures de comprovació són a `tmp/tigit-23-review-20261026/`. `browser-review.json` acredita 21 obertures de zoom —set imatges en els tres temes—, paper blanc al mostreig interior de totes les imatges ampliades, cap error JavaScript i amplada de pàgina de 390 píxels sense desbordament en mòbil. S'han inspeccionat visualment mostres dels tres temes, la taula numèrica i l'exercici; també les pàgines PDF de l'exercici, l'anell, la cronologia, el Gantt i l'arbre. La comprovació del navegador utilitza els CDN públics que ja referencia el lloc per carregar jQuery, medium-zoom i els recursos de presentació.
+
+Una mostra independent amb CairoSVG/Pillow confirma que l'alfa residual del núvol i les barres queda limitada a la franja exterior d'un píxel: representa el 0,1445% de cada mostra, amb alfa 255 a tot l'interior. No s'han declarat aquests dos fitxers completament opacs a qualsevol escala. Al zoom el paper es manté blanc i llegible sobre els tres temes.
+
+La inspecció del PDF també conserva pendents d'acabat previs, com rètols petits en algunes figures i el final de l'etiqueta de les piràmides percentuals retallat dins del seu SVG. Aquest lot no els reetiqueta com a resolts. La resta de fons, inclosos paletes, UTM i ull/retina, requereix una nova reserva. Queda pendent la revisió i aprovació humana del capítol i del lot abans de commit o publicació.
+
+## Ampliació de semiologia: construcció i auditoria de sectors
+
+La [petició d'ampliació de tres paths](https://github.com/geourv/tigit/issues/23#issuecomment-6423709588) ha estat [acceptada per l'autor](https://github.com/geourv/tigit/issues/23#issuecomment-6424073070). S'ha completat la construcció i la comprovació de les famílies presents al capítol, amb èmfasi en la magnitud que codifica cada canal. Els gràfics de pendents, les matrius acolorides i les xarxes només figuraven al repertori; ara tenen explicació, estructura de dades i exercici propis.
+
+### Cobertura dels exercicis
+
+| Família o grup | Construcció i control incorporats |
+| --- | --- |
+| Barres simples i punts alineats | Esbós 20/40/60 sobre una escala 0–100 de 10 cm; extrems a 2/4/6 cm i origen compartit. |
+| Agrupades, apilades absolutes i al 100% | Dos casos simulats 60+40 i 90+60; totals 100/150 i composició coincident 60/40. |
+| Circular i anell | Coordenades polars, angle directe/invers, radi comú i buit central que no altera el repartiment; auditoria i correcció reproduïbles. |
+| Barres radials | Angles iguals, radis 2/4 cm i àrees en relació 1:4; distingir què es vol codificar. |
+| Línia temporal | Anys 2020/2021/2024 i valors 100/120/180; distàncies temporals 1:3 i increment mitjà de 20 unitats/any als dos trams. |
+| Cronologia i Gantt | Ordre sense durada davant intervals 0–2 i 1–4, amb un dia de superposició. |
+| Franges temporals normalitzades | El 10% de 90/180 minuts són 9/18 minuts, encara que els segments tinguin la mateixa amplada. |
+| Histograma | Sis valors i freqüències 2/2/1/1; fronteres d'interval i relació entre densitat, amplada i àrea quan els intervals difereixen. |
+| Caixa | Dades 10/20/30/40/90, quartils inclusius 20/40, mediana 30, llindars −10/70, bigotis 10/40 i punt exterior 90. |
+| Dispersió | Aparellament i distàncies de Vila-seca en un esbós amb escales explícites; el recompte de canals no equival al de variables. |
+| Bombolles | Valors de referència 1.000/4.000: diàmetres 10/20 mm i àrees 1:4. |
+| To i forma en dispersió | Identificació d'espècies d'iris amb codificació redundant, també sense color. |
+| Piràmide | Una franja de 60 homes i 40 dones en una població de 1.000: 6/4% municipals davant 60/40% dins de la franja. |
+| Pendents | Casos A 10→20, B 30→35 i C 25→15; canvi absolut, relatiu i valor final. |
+| Matriu acolorida | Dues files amb màxims diferents; tots els valors 20 comparteixen color només si es conserva l'escala comuna. |
+| Xarxa | Tres nodes, dues arestes i dues disposicions; conservar relacions i no inferir distàncies sense dades de cost. |
+| Núvol de paraules | `hotel` i `portaventura` tenen cinc aparicions i la mateixa mida de font, però amplades diferents; l'àrea del text no és una freqüència proporcional. |
+| Climograma | Juliol: 2 × 25,4 = 50,8, superior als 14,3 mm; escala 2:1 i límit estricte del criteri de sequedat. |
+| Radar | Cinc parts 10/20/30/25/15 sobre radi 0–40%; distàncies 1/2/3/2,5/1,5 cm i efecte de reordenar eixos. |
+| Al·luvial | Dos repartiments conjunts de 100 registres amb els mateixos marginals 50/50; canvien les correspondències. |
+| Sankey | Total 9.985 places com a 20 mm; hoteleria aproximadament 17,25 mm i resta 2,75 mm; conservació de cada repartiment. |
+| Rectangles | Zona de 100 cm²; l'agregat del 33,7% ocupa aproximadament 33,7 cm², amb amplada i altura necessàries per comprovar-lo. |
+| 3D, doble eix i relació d'aspecte | Angles plans 90°/270° per al 25/75%; coordenades llegides amb la seva unitat i pendent visual que canvia sense modificar les dades. |
+
+Els mapes continuen desenvolupant-se als capítols cartogràfics. Els exercicis de comprensió no creen una obligació d'incorporar totes les famílies a la infografia ni canvien els pesos de qualificació.
+
+### Figura circular reproduïble
+
+La font `assets/quarto/data-visualization/pie-sector-audit.qmd` declara `engine: r`, `mode: figure` i dades simulades internes, sense inputs externs nous. Conserva 100 respostes exclusives: 50 vehicle privat, 30 transport públic i 20 altres mitjans. La versió incorrecta dibuixa 90°/180°/90° amb etiquetes 50/30/20; la correcta utilitza 180°/108°/72°. Radi, llenç, ordre, colors i textos es mantenen. La posició del bloc d'etiquetes es deriva de l'angle mitjà de cada sector.
+
+La CLI pública d'unaltraweb en el contenidor immutable ja identificat ha produït els dos SVG i el registre natiu de càlcul. `manual_computation_check` passa. La comprovació independent de `tmp/tigit-23-sectors-review-20261026/geometry-check.json` llegeix els punts inicials/finals i els radis dels arcs SVG i calcula els angles amb `atan2`, sense confiar en els atributs d'angle declarats. Confirma la incoherència volguda de la primera figura i la proporcionalitat de la segona. Totes dues passen `image_background_check` amb alfa mínima 255.
+
+| Artefacte | SHA-256 |
+| --- | --- |
+| Font QMD | `28165f169a89fc523b03b4dc83c30255eae8c5daafc4284a50f5d616e168d031` |
+| `assets/img/data-visualization/pie-sector-audit-incorrect.svg` | `3759fd2568e9c24655ea3fe3002dfbd1653123439ed6297d15668cec7201f09f` |
+| `assets/img/data-visualization/pie-sector-audit-correct.svg` | `7c57867faf72f640d78cd3b32e382d6bad3be58fed944c782db50dd0ab0f289c` |
+
+La passada editorial `evidence` preparada correspon al SHA de capítol `70295ffd312494906bb32977a11926c25b9070d3226fb44782a3ce5b975badd6`, amb digest `647abfe50313dd795d854cb51480964196387926590e770323b7e1f4c4530d51`. No és una aprovació humana ni un informe enregistrat. Les dimensions declarades de les dues figures són 36rem al web i 75% al PDF, amb proporció intrínseca preservada.
+
+### Validació i revisió de l'ampliació
+
+Passen els controls de geometria SVG, opacitat i reproducció, així com la comprovació numèrica dels quartils/bigotis, intervals, ritmes temporals, gruixos del Sankey, àrees dels rectangles i radis del radar. `prose_check`, `site_check` i el control editorial del HTML passen. Les dues figures noves compleixen les dimensions de text web/PDF; es conserven els 63 avisos previs d'altres figures. L'auditoria HTML comprova 56 pàgines i no retorna findings estructurals.
+
+La primera invocació de `make build` ha superat el termini de 900 segons del terminal després de completar el PDF. S'ha identificat el contenidor exacte de TIGIT, que només conservava un procés `make` residual sense Jekyll, i s'ha aturat abans de reprendre. La segona invocació, amb un termini més ampli, ha reutilitzat el PDF vigent i ha acabat correctament la fase Jekyll en 454,867 segons. No s'han solapat dues construccions.
+
+El PDF d'aquesta ampliació té 406 pàgines, 56.979.441 bytes i SHA `57b2f1e85c398a7d74c352544f12a16246b0da563452646fa9f98e22f4ecd627`. Les còpies de `tmp/manual-pdf/ca/tigit-ca.pdf`, `assets/pdf/tigit-ca.pdf` i `_site/assets/pdf/tigit-ca.pdf` coincideixen. El rebut de preview observat és `a39f84a234f76361a7a77619f14ae9de473f61114089d6b48bb2a812c9a62959`, amb `publishes: false`.
+
+S'han inspeccionat les pàgines físiques 159–161 del PDF —numerades 129–131—, amb la regla de tres, l'exercici, la taula de comprovació i la correcció; també la pàgina física 178, amb les noves famílies. La revisió del navegador comprova els hashes servits dels dos SVG, sis obertures de zoom en clar/fosc/cafè, proporcions intactes, fons blancs i absència d'errors JavaScript o MathJax. Les captures mòbils definitives s'han fet carregant la pàgina en una vista inicial de 390 píxels, amb la navegació tancada i sense desbordament horitzontal.
+
+L'evidència és a `tmp/tigit-23-sectors-review-20261026/`: `geometry-check.json`, `browser-review.json`, `mobile-final.json`, els PNG de les figures, els zooms i les mostres PDF. Els fitxers `*-mobile-final.png` són la revisió de lectura en mòbil; les primeres captures sense `final` mostraven la navegació oberta després de redimensionar la vista d'escriptori. Tot continua `draft`, pendent de l'aprovació humana del resultat abans de commit o publicació.
+
+## Represa i aprovació del lot editorial — 10 de novembre de 2026
+
+L'autor ha revisat la previsualització local del capítol i del PDF i ha respost **«Aprovo i integra»**, autoritzant commits, PR i integració del lot editorial i de les fonts arxivades, amb la neteja de les branques corresponents. La reserva exacta de 17 paths i aquesta aprovació consten a [TIGIT #23](https://github.com/geourv/tigit/issues/23#issuecomment-6774059115). Aquesta decisió resol l'aprovació humana pendent dels apartats anteriors. El capítol conserva `content_status: draft`.
+
+La branca enfocada `content/23-semiologia-revisada` recupera el lot C del snapshot `2da56573fbb8bc286f92a54ba70c2f3a89aa80d4` sobre `main`. La prosa, les fonts QMD, els SVG i la unitat lock/rebut conserven exactament els bytes revisats. Només `AGENTS.md` i aquest context afegeixen el registre de l'aprovació i de les comprovacions actuals. Els set paths tècnics de QGIS continuen a la PR #29; les referències històriques de la #32 tenen una integració pròpia.
+
+### Comprovacions de la represa
+
+El preflight oficial ha comprovat el checkout únic i l'absència d'una altra sessió editora. La revisió s'ha executat amb el paquet fixat d'unaltraweb 0.7.4, imatge `sha256:10bcaf1411f27a518969283a77e23dcc99119014b216270b3089ba85ba0b6c7e`. `site_context`, `site_doctor`, la política catalana, el perfil `unaltremanual` i `manual_authoring_capabilities` s'han inspeccionat abans de reprendre el lot. `site_doctor` retorna zero errors i zero avisos; les 36 computacions consten current, amb els diagrames i Vega verificats. Continuen els avisos previs de dimensions d'altres figures i l'alfa perifèric ja documentat del núvol de paraules.
+
+Passen `site_check`, `make build`, l'auditoria HTML, el control editorial del HTML i la comprovació de prosa del capítol. El contrast independent amb el CSV de 22 municipis confirma els 169.179 habitatges, 66.105 no principals i 103.074 principals; també les tres files de control. Els quartils inclusius són aproximadament 21,3108%, 30,9738% i 51,6383%, sense observacions fora dels bigotis segons 1,5 rangs interquartílics. La lectura independent dels arcs SVG confirma 90°/180°/90° i 180°/108°/72°.
+
+La revisió de navegador actual inclou dotze obertures de zoom —els dos circulars, el núvol i l'arbre, en clar, fosc i cafè—, comprovació dels hashes servits i inspecció de les captures. Els fons de les figures es mantenen blancs i llegibles. La vista mòbil de 390 píxels no té desbordament horitzontal, imatges fallides ni errors MathJax; no s'han observat errors JavaScript. S'han inspeccionat les pàgines físiques 159–161 del nou PDF, numerades 129–131, amb l'exercici i la correcció.
+
+El PDF actual té 406 pàgines i 56.979.441 bytes, SHA256 `2163c4647ad9825e47b00b2af1ac2a09c9f328f773ce78214be971135a0b6c59`. Les còpies de preview i del web coincideixen i el manifest natiu el declara fresc. La previsualització revisada s'ha servit amb `make serve` a `http://localhost:4000/tigit/ca/chapters/semiologia-visualitzacio/`. Els informes d'aquesta sessió són a `/tmp/opencode/tigit-pending-review-20261110/` i les captures a `/tmp/opencode/tigit-browser-20261110/`; són evidència local de la represa.

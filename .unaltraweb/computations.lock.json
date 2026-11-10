@@ -692,7 +692,7 @@
       "dependencies": [
         {
           "path": "assets/quarto/data-visualization/housing-donut-tarragones.qmd",
-          "sha256": "1962f1a7abad938affb67c73ddf47b815ea27970ed2110f1a720a2c3aaac0913"
+          "sha256": "bbaaa2b1d882534c425e94216a047725fe91cf9284eb74176e8c98bc183bc6a1"
         },
         {
           "path": "_practices/tigit-projecte-territorial/data/processed/municipal-indicators-tarragones-2021.csv",
@@ -712,7 +712,7 @@
         }
       ],
       "engine": "r",
-      "fingerprint": "7b24b20dcbe9864ba84f6631a13b364cd307630059a35a7877007903208c2366",
+      "fingerprint": "8bd8acbf7476cfed102944ce39c0a2e65a66c39059a0c781133c420195f3a284",
       "image": {
         "engine": "r",
         "environment": "local",
@@ -728,11 +728,11 @@
       "outputs": [
         {
           "path": "assets/img/data-visualization/housing-donut-tarragones-2021.svg",
-          "sha256": "f0a1c3e38ff30cf8bf1c6c5708d9d22e9ad84b2ed7067a9954ddd37f5e0011a9",
-          "size": 7837
+          "sha256": "80a37c85679d7e4b8c98593ae4dcee455199a8e8ac03adcc98f8de76353404d3",
+          "size": 7840
         }
       ],
-      "rendered_at": "2026-09-04T17:51:03+00:00"
+      "rendered_at": "2026-10-26T14:48:19+00:00"
     },
     "assets/quarto/data-visualization/housing-histogram-tarragones.qmd": {
       "dependencies": [
@@ -913,6 +913,53 @@
         }
       ],
       "rendered_at": "2026-09-04T17:51:25+00:00"
+    },
+    "assets/quarto/data-visualization/pie-sector-audit.qmd": {
+      "dependencies": [
+        {
+          "path": "assets/quarto/data-visualization/pie-sector-audit.qmd",
+          "sha256": "28165f169a89fc523b03b4dc83c30255eae8c5daafc4284a50f5d616e168d031"
+        },
+        {
+          "path": "Dockerfile.compute-r",
+          "sha256": "db3cb03be6f48b81f1abfcf7b2a3177c0206e7c76fb46765a81c625faa34fc49"
+        },
+        {
+          "path": "requirements-compute.R",
+          "sha256": "9512adde0ddffcd24dcd3321cb882eabb1097e31d6f7da7bbfa8f3b45136d190"
+        },
+        {
+          "path": ".unaltraweb/computations.yml",
+          "sha256": "2810f7ab3b1cf4acea0c70a98506ddfb6d38181b75d48936cecba69746ec0b65"
+        }
+      ],
+      "engine": "r",
+      "fingerprint": "44062d5cd0c943564ee1355a39228c4a78a7a5d59fe321906282ec1f378f0650",
+      "image": {
+        "engine": "r",
+        "environment": "local",
+        "image": "tigit-compute-r:local",
+        "source": "environment:COMPUTE_R_IMAGE"
+      },
+      "image_identity": {
+        "available": "true",
+        "digest": "",
+        "id": "sha256:6192f629aff627eb438d02bbe700aa95f2b2a5408f1c15a240ef101af3cf42f2"
+      },
+      "mode": "figure",
+      "outputs": [
+        {
+          "path": "assets/img/data-visualization/pie-sector-audit-incorrect.svg",
+          "sha256": "3759fd2568e9c24655ea3fe3002dfbd1653123439ed6297d15668cec7201f09f",
+          "size": 2111
+        },
+        {
+          "path": "assets/img/data-visualization/pie-sector-audit-correct.svg",
+          "sha256": "7c57867faf72f640d78cd3b32e382d6bad3be58fed944c782db50dd0ab0f289c",
+          "size": 2071
+        }
+      ],
+      "rendered_at": "2026-10-26T18:35:53+00:00"
     },
     "assets/quarto/data-visualization/population-profiles-vila-seca-salou.qmd": {
       "dependencies": [
@@ -1209,7 +1256,7 @@
       "dependencies": [
         {
           "path": "assets/quarto/data-visualization/word-cloud-accommodation-names.qmd",
-          "sha256": "bf1bb0c3ee6980b3194e8a548ab67691eb9bf97f8da684861cd9f3758c65eeeb"
+          "sha256": "f6d7f2ce88c49851ce65f9a599e4442754e7cfe06dd646102f8a7d4bb2ec76fd"
         },
         {
           "path": "_practices/tigit-projecte-territorial/data/processed/tourism-accommodation-vila-seca-geocoding.csv",
@@ -1229,7 +1276,7 @@
         }
       ],
       "engine": "r",
-      "fingerprint": "7aadbb3439444131a66dc86eecdf535826f8a13012d45ba584129dd37e33f970",
+      "fingerprint": "61e781cdfb45c8a7c5e743a63e2d5bb96ed9eb4c8cdf273a1dd37f1ecbf2d4aa",
       "image": {
         "engine": "r",
         "environment": "local",
@@ -1245,8 +1292,8 @@
       "outputs": [
         {
           "path": "assets/img/data-visualization/word-cloud-accommodation-names-vila-seca.svg",
-          "sha256": "0fe00e36a84babc909a40a81895b68332cd96cac92811dab58d47352aec5ae53",
-          "size": 6516
+          "sha256": "a94bb1f717a1a0516b83b2d1996282200e6106205445a9f6a28de2a24f2f5931",
+          "size": 6519
         },
         {
           "path": "assets/img/data-visualization/word-frequency-bars-accommodation-names-vila-seca.svg",
@@ -1254,7 +1301,7 @@
           "size": 7167
         }
       ],
-      "rendered_at": "2026-09-04T17:51:57+00:00"
+      "rendered_at": "2026-10-26T14:49:09+00:00"
     },
     "assets/quarto/gis/gis-analysis-examples.qmd": {
       "dependencies": [
