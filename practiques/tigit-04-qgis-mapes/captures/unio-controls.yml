@@ -6,19 +6,19 @@ source_prompt: >-
   Vila-seca, Roda de Berà i la Pobla de Mafumet. La vista de tres municipis
   és una selecció docent del resultat de 22, no una nova taula d'origen.
 runtime:
-  image: sha256:1003721d96abe9607d8337b36851f9b29f84c2f8f92b377d1a73ff03c9d15cd2
+  image: sha256:351071c12539ef0c21b268c62e3efe7c6b4cfc5f111b7c45963fa382361144fc
   locale: ca_ES
   display_backend: offscreen
 plugins: [processing]
 project:
-  source: sandbox/practiques/tigit-projecte-territorial/0.1.0/ca/run05-contract-20261014/payload/projects/tigit-04-dades-espacials.qgz
+  source: sandbox/practiques/tigit-projecte-territorial/0.1.0/ca/run05-rebut-20261110/payload/projects/tigit-04-dades-espacials.qgz
   # Prova de vista en memòria: el checkpoint portable refusa el subset OGR.
   # L'original es manté readonly; no es declara un QGZ nou ni portabilitat nova.
   title: TIGIT · tres casos de control de la unió
   native_profile: qgis-practice-v2
   reuse: if_fresh
   font_files:
-    DejaVu Sans: sandbox/practiques/tigit-projecte-territorial/0.1.0/ca/run05-contract-20261014/payload/data/fonts/DejaVuSans.ttf
+    DejaVu Sans: sandbox/practiques/tigit-projecte-territorial/0.1.0/ca/run05-rebut-20261110/payload/data/fonts/DejaVuSans.ttf
   composition:
     script: practiques/tigit-projecte-territorial/activities/qgis-territorial.py
     project_id: control-table
@@ -29,7 +29,7 @@ project:
     products: {}
 setup:
   - action: load_vector
-    path: sandbox/practiques/tigit-projecte-territorial/0.1.0/ca/run05-contract-20261014/payload/data/processed/municipal_joined.gpkg|layername=municipal_joined
+    path: sandbox/practiques/tigit-projecte-territorial/0.1.0/ca/run05-rebut-20261110/payload/data/processed/municipal_joined.gpkg|layername=municipal_joined
     name: Municipis · unió
   - action: clear_message_bar
 presentation:

@@ -231,3 +231,30 @@ La configuració activa apunta a `probe07` i declara set captures. Els runs prec
 La comprovació de bytes/mides dels 123 fitxers de run05 concorda amb el seu bundle original. Els fitxers aliens a les cinc fonts de continuació s'han contrastat amb el snapshot previ, inclosos els controls d'integració, `opencode.json`, els SVG editats de #23 i els PDF seleccionats. No s'han modificat capítols, guies, PDF ni còpies Moodle en aquesta represa: la composició/portabilitat i els dos panells llegibles continuen oberts, abans d'integrar el lot 0.3.0.
 
 Els encàrrecs copiables per als proveïdors són a `tmp/tigit-mcp-handoffs-20261030/`: Unaltracaptura (selectors/panells i filtre portable; composició com a increment separat), Unaltramesa (contracte de correcció territorial amb pilot sintètic) i Unaltraweb (en cua, preparació d'inputs abans dels controls i edicions només tabulars). Preparar aquests prompts no significa haver-los enviat ni que les altres sessions els hagin acceptat.
+
+## Recepció del bundle i preparació de la continuació — 10 de novembre de 2026
+
+La nova petició de l'autor «Ves arreglant això» reprèn #21/#29. El lliurament privat del hub `data-backup-20261105-tigit` ja contenia la clausura original de run05. S'ha rebut en una carpeta nova del consumidor: `sandbox/practiques/tigit-projecte-territorial/0.1.0/ca/run05-rebut-20261110/`. Les receptes de continuació utilitzen aquesta còpia i preparen captures i memòria cau sota `sandbox/practiques/tigit-04-qgis-mapes/0.3.0/review-20261110/`.
+
+La recepció conserva `bundle.json` i tots els 123 membres declarats, 124 fitxers i 24.539.111 bytes en total. S'han verificat mida, SHA256 i modes contra el descriptor natiu, el manifest original de l'owner i el manifest de lliurament; les onze substitucions Git també concorden amb els seus blobs immutables. La publicació local de la carpeta ha estat create-only, després de verificar-ne tota la clausura, amb preflight i exec oficial sota lease exclusiva.
+
+La CLI pública 0.8.0 ha validat les tres receptes i les set captures declarades després d'actualitzar les referències i el digest executable del motor. És validació d'esquema, no execució de les captures.
+
+| Identitat recuperada | SHA256 |
+| --- | --- |
+| Manifest de lliurament `tigit-data-transfer.json` | `f8a55225dd74f2b70d6d28e694181380f08e6a3ff050fd6f73345220049fa944` |
+| Manifest original de dades/evidències | `43fef6429d4c525c882a2bb9eeef6e4ef4925fdb327cf0e815665900c82b12e1` |
+| Bundle run05 | `8719b839d1071be858deed94fcce0e32e61f01f575d29c2b4f5e2d0ce5704eac` |
+| Descriptor `payload/practice.json` | `3105ec5a8111558c7cfeb20811fe8f811536926b685c4b146fa4032755330d04` |
+
+El `practice-check` públic d'unaltracaptura-qgis 0.8.0 passa sobre la còpia rebuda amb perfil `qgis-practice-v2`, xarxa desactivada, fonts muntades readonly i absència final del contenidor verificada. El controller d'aquesta verificació és `sha256:7fc776569ab147fd80cc8e4234ae32b95ae2a7f4437ce9b6c6b741e4e5f065ef`. El bundle continua identificant el productor 0.6.0 i el motor original, sense reetiquetar-los.
+
+El contrast readonly del GeoPackage recuperat confirma 22 municipis i els tres codis de control amb els percentatges originals. La lectura del QGZ confirma els mètodes `Quantile` i `EqualInterval`, el camp `housing_non_main_pct`, cinc classes i els cinc municipis que canvien de classe ja identificats. Les dades i el bundle mantenen els hashes. Els plans, objectes rebuts i comprovacions actuals són a `/tmp/opencode/tigit-qgis-restore-20261110/`; el retorn durable és a [TIGIT #21](https://github.com/geourv/tigit/issues/21#issuecomment-6775890417).
+
+### Identitat explícita del motor en Docker 29
+
+La referència de configuració històrica `sha256:1003721d96abe9607d8337b36851f9b29f84c2f8f92b377d1a73ff03c9d15cd2` del bundle no resol com a imatge executable en aquest host. La còpia oficial de l'arxiu publicat 0.8.0, SHA256 `376efc7a5102fc59c2d0d8c5729304ddd28eb93b687eec996a5495fced95ea2e`, s'ha tornat a verificar: la configuració Docker original amb aquell hash i les catorze capes de filesystem coincideixen exactament amb la imatge local de manifest `sha256:351071c12539ef0c21b268c62e3efe7c6b4cfc5f111b7c45963fa382361144fc`. La configuració no presenta diferències. `engine-identity-mapping.json` conserva aquest contrast.
+
+Les receptes de captura fixen ara explícitament aquest digest executable del mateix motor publicat. El probe públic 0.8.0 retorna QGIS 3.44.11, Qt 5.15.17 i GDAL 3.10.3. El seu informe complet conserva també un error d'importació de Hotspot Analysis 2, fora del recorregut de captures declarat. Els segells del bundle rebut i la identitat històrica del productor es mantenen intactes.
+
+La preparació conserva els gates de #29: la comprovació del bundle i de l'estat QGZ guardat no és una nova reobertura ni un render QGIS. La PR del proveïdor `dosquartsdedocs/unaltracaptura-qgis#34`, head `84b783e9e904a2a72aa683f2fbfbc5af1c41eda0`, té CI correcta i qualificació nativa en curs; l'última release publicada observada és 0.8.0. El nou controller, la geometria dels panells i el checkpoint persistent es reprendran amb el punt immutable publicat i el seu intake. `probe07` continua com a evidència històrica.

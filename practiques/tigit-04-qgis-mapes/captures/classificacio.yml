@@ -6,15 +6,15 @@ source_prompt: >-
   la rampa BuGn, l'extensió i la mida. Mostrar el camp i els límits del
   classificador real i no deduir el mètode del nom de la capa.
 runtime:
-  image: sha256:1003721d96abe9607d8337b36851f9b29f84c2f8f92b377d1a73ff03c9d15cd2
+  image: sha256:351071c12539ef0c21b268c62e3efe7c6b4cfc5f111b7c45963fa382361144fc
   locale: ca_ES
   display_backend: offscreen
 plugins: [processing]
 project:
-  source: sandbox/practiques/tigit-projecte-territorial/0.1.0/ca/run05-contract-20261014/payload/projects/tigit-08-cartografia-tematica.qgz
+  source: sandbox/practiques/tigit-projecte-territorial/0.1.0/ca/run05-rebut-20261110/payload/projects/tigit-08-cartografia-tematica.qgz
   native_profile: qgis-practice-v2
   font_files:
-    DejaVu Sans: sandbox/practiques/tigit-projecte-territorial/0.1.0/ca/run05-contract-20261014/payload/data/fonts/DejaVuSans.ttf
+    DejaVu Sans: sandbox/practiques/tigit-projecte-territorial/0.1.0/ca/run05-rebut-20261110/payload/data/fonts/DejaVuSans.ttf
 setup:
   # El grup de cada captura governa la comparació, però els seus fills han
   # d'estar activats: fer visible el grup no activa una capa desmarcada.

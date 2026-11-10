@@ -14,6 +14,6 @@ Les captures s'han de fer mitjançant unaltracaptura-qgis MCP dins del runtime D
 4. Composició: mapa principal, localitzador, títol i fonts; documentar llegenda, escala gràfica i exportació quan el productor ho admeti. No substituir un ítem natiu no suportat per una aparença fictícia.
 5. Persistència: reprendre el projecte des d'una altra carpeta amb totes les dependències locals i comprovar els estils i la taula.
 
-El bundle de partida és `sandbox/practiques/tigit-projecte-territorial/0.1.0/ca/run05-contract-20261014/bundle.json`, SHA `8719b839d1071be858deed94fcce0e32e61f01f575d29c2b4f5e2d0ce5704eac`. Els seus originals es conserven. Plans, probes, captures i checkpoints nous han d'anar a destinacions noves sota `sandbox/practiques/`.
+La còpia rebuda del bundle de partida és `sandbox/practiques/tigit-projecte-territorial/0.1.0/ca/run05-rebut-20261110/bundle.json`, SHA `8719b839d1071be858deed94fcce0e32e61f01f575d29c2b4f5e2d0ce5704eac`, amb els bytes i el segell originals. Plans, probes, captures i checkpoints nous han d'anar a destinacions noves sota `sandbox/practiques/`.
 
 Cada imatge ha d'explicar una decisió o un control. Les captures amb camps retallats, targets absents, accions ignorades o anotacions sobre contingut útil s'han de revisar. Una captura d'un diàleg configurat no acredita que s'hagi recorregut una seqüència manual clic per clic. Les limitacions reals del MCP han de quedar documentades per al professorat.
