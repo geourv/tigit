@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ca">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TIGIT · Demos i guies per a Moodle</title>
+<style>
+body{font:18px/1.55 system-ui,sans-serif;max-width:1000px;margin:3rem auto;padding:0 1.5rem;color:#172b3a;background:#fff}h1,h2{color:#003366}a{color:#003366}table{border-collapse:collapse;width:100%}th,td{border:1px solid #ccd3d9;padding:.7rem;text-align:left}th{background:#f1f5f8}.nota{border-left:4px solid #990000;padding:.5rem 1rem;background:#fff7f5}code{font-size:.9em}
+</style>
+<h1>TIGIT · Demos i guies per a Moodle</h1>
+<p>Lliurament del <strong>19 d'octubre de 2026</strong>. Guies PDF 0.2.0, versió de treball autoritzada amb la indicació ESBORRANY.</p>
+<p class="nota"><strong>Vila-seca i el Tarragonès són les demos compartides de classe.</strong> La infografia avaluada es fa sobre <strong>un altre municipi i/o comarca</strong>, amb les fonts, els controls i la interpretació del territori assignat.</p>
+<h2>Carpetes de lliurament</h2>
+<ul>
+<li><a href="ALUMNAT/">ALUMNAT</a>: quatre guies, plantilles buides, vint dades del cas, cinc llibres resolts de demostració, exercici d'auditoria i tres projectes QGIS dins d'una selecció portable de disset fitxers.</li>
+<li><a href="PROFESSORAT/">PROFESSORAT</a>: quatre guies docents, les mateixes dades i plantilles, llibres resolts, bundle QGIS complet i tres captures docents revisades.</li>
+</ul>
+<p>Cal conservar les carpetes de dades i projectes quan es distribueixi la demo QGIS. Els resolts són consultables com a exemples; el treball avaluat parteix del territori propi.</p>
+<h2>PDF de les pràctiques</h2>
+<table>
+<thead><tr><th>Pràctica</th><th>Alumnat</th><th>Professorat</th></tr></thead>
+<tbody>
+<tr><td>01 · Preparació de dades</td><td><a href="ALUMNAT/GUIES/tigit-01-preparacio-dades-alumnat.pdf">6 pàgines</a></td><td><a href="PROFESSORAT/GUIES/tigit-01-preparacio-dades-docent.pdf">8 pàgines</a></td></tr>
+<tr><td>02 · Indicadors territorials</td><td><a href="ALUMNAT/GUIES/tigit-02-indicadors-territorials-alumnat.pdf">5 pàgines</a></td><td><a href="PROFESSORAT/GUIES/tigit-02-indicadors-territorials-docent.pdf">7 pàgines</a></td></tr>
+<tr><td>03 · Gràfics territorials</td><td><a href="ALUMNAT/GUIES/tigit-03-grafics-territorials-alumnat.pdf">5 pàgines</a></td><td><a href="PROFESSORAT/GUIES/tigit-03-grafics-territorials-docent.pdf">9 pàgines</a></td></tr>
+<tr><td>04 · Primers mapes QGIS</td><td><a href="ALUMNAT/GUIES/tigit-04-qgis-mapes-alumnat.pdf">7 pàgines</a></td><td><a href="PROFESSORAT/GUIES/tigit-04-qgis-mapes-docent.pdf">9 pàgines</a></td></tr>
+</tbody>
+</table>
+<h2>Accés als materials</h2>
+<ul>
+<li><a href="ALUMNAT/PROJECTE-PROPI/">Plantilla de dades i plantilla A3 de la infografia</a>.</li>
+<li><a href="ALUMNAT/DEMO-VILA-SECA-TARRAGONES/data/">Dades de demostració</a> i <a href="ALUMNAT/DEMO-VILA-SECA-TARRAGONES/llibres-resolts/">llibres resolts</a>.</li>
+<li><a href="ALUMNAT/DEMO-VILA-SECA-TARRAGONES/qgis/payload/projects/">Tres projectes QGIS de demostració per a l'alumnat</a>.</li>
+<li><a href="PROFESSORAT/captures-docents/">Captures incloses a les guies</a> i <a href="PROFESSORAT/COBERTURA-CAPTURES-QGIS.md">inventari de cobertura i captures pendents</a>.</li>
+</ul>
+<p>La figura <code>auditoria/EXERCICI-AUDITORIA-eixos.pdf</code> conserva expressament un error per a l'activitat. Els mapes SVG del cas són bases editables: llegenda, escala i acabat es revisen abans de la síntesi.</p>
+<h2>Manual publicat i verificació</h2>
+<p><a href="https://geourv.github.io/tigit/ca/">Obrir el manual a GitHub Pages</a> · <a href="https://geourv.github.io/tigit/assets/pdf/tigit-ca.pdf">Obrir el PDF complet</a>.</p>
+<p>El <a href="manifest-fitxers.json">manifest local</a> registra 208 còpies verificades: 49 d'alumnat i 159 de professorat, a més de les instruccions d'aquest lliurament. Els PDF són els mateixos que s'han revisat i els originals es conserven als jobs natius.</p>
+</html>
