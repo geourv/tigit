@@ -100,7 +100,7 @@ fig <- ggplot(parts, aes(ymin = ymin, ymax = ymax, xmin = xmin, xmax = xmax)) +
 
 output <- file.path(root, "assets/img/data-visualization/housing-donut-tarragones-2021.svg")
 dir.create(dirname(output), showWarnings = FALSE, recursive = TRUE)
-ggsave(output, fig, width = 8, height = 6, device = svglite::svglite)
+ggsave(output, fig, width = 8, height = 6, bg = "white", device = svglite::svglite)
 ```
 
 ![Anell dels habitatges principals i no principals de la comarca del Tarragonès el 2021]({{ site.baseurl }}/assets/img/data-visualization/housing-donut-tarragones-2021.svg "Un anell és una manera compacta de resumir poques parts d'un únic total. Aquí el total és el parc d'habitatges de la comarca: les dues parts reconstruixen el 100% i el percentatge indica el pes de cadascuna. Amb més parts o més municipis, les barres apilades es llegeixen millor.")
