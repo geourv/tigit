@@ -1,4 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="821" height="618" viewBox="47 78 821 618" role="img" aria-labelledby="title desc">
+  <style>:root { background-color: #ffffff; }</style>
+  <rect id="manual-opaque-background" x="45" y="76" width="825" height="622" fill="#ffffff" style="fill:#ffffff;fill-opacity:1;stroke:none;opacity:1"/>
   <title id="title">Quatre observacions GNSS per estimar una posició tridimensional</title>
   <desc id="desc">Quatre satèl·lits envien senyals a un receptor. Cada temps de propagació permet calcular una pseudodistància. El receptor resol quatre incògnites: les coordenades x, y i z i el desajust del seu rellotge. Més satèl·lits aporten redundància i poden millorar la geometria de la solució.</desc>
   <metadata>

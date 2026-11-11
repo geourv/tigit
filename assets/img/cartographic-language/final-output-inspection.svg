@@ -1,4 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1044" height="470" viewBox="0 0 1044 470" role="img" aria-labelledby="title desc">
+  <style>:root { background-color: #ffffff; }</style>
+  <rect id="manual-opaque-background" x="-2" y="-2" width="1048" height="474" fill="#ffffff" style="fill:#ffffff;fill-opacity:1;stroke:none;opacity:1"/>
   <title id="title">Comprovació d'una separació a la mida final i amb zoom de diagnosi</title>
   <desc id="desc">Dues línies semblen contínues en una exportació ràster observada al cent per cent, però una ampliació de la quadrícula de píxels mostra un píxel buit entre els extrems.</desc>
   <defs>

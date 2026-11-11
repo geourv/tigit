@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="640" viewBox="0 0 1200 640" role="img" aria-labelledby="title desc">
+  <style>:root { background-color: #ffffff; }</style>
+  <rect id="manual-opaque-background" x="-2" y="-2" width="1204" height="644" fill="#ffffff" style="fill:#ffffff;fill-opacity:1;stroke:none;opacity:1"/>
   <title id="title">Formació i lectura de les corbes de nivell</title>
   <desc id="desc">A l'esquerra, un model de relleu seccionat cada vint metres mostra cinc contorns a altitud constant. A la dreta, els mateixos contorns es projecten sobre el mapa: queden separats al vessant suau i molt junts al vessant fort.</desc>
   <defs>

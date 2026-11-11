@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="651.969px" height="340.158px" viewBox="0 0 651.969 340.158" xml:lang="mul">
+  <style>:root { background-color: #ffffff; }</style>
+  <rect id="manual-opaque-background" x="-2" y="-2" width="655.969" height="344.158" fill="#ffffff" style="fill:#ffffff;fill-opacity:1;stroke:none;opacity:1"/>
 <title>Latitude and Longitude of the Earth</title>
 
 <desc>Illustration of geographic latitude and longitude of the earth.</desc>

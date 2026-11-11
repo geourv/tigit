@@ -1,4 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="839" height="332" viewBox="76 84 839 332" role="img" aria-labelledby="title desc">
+  <style>:root { background-color: #ffffff; }</style>
+  <rect id="manual-opaque-background" x="74" y="82" width="843" height="336" fill="#ffffff" style="fill:#ffffff;fill-opacity:1;stroke:none;opacity:1"/>
   <title id="title">Fórmula que suma dues cel·les</title>
   <desc id="desc">Esquema docent d'una fórmula de full de càlcul que suma els valors de les cel·les B2 i C2 i desa el resultat a D2.</desc>
   <defs>

@@ -1,4 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1000" height="620" viewBox="0 0 1000 620" role="img" aria-labelledby="title desc">
+  <style>:root { background-color: #ffffff; }</style>
+  <rect id="manual-opaque-background" x="-2" y="-2" width="1004" height="624" fill="#ffffff" style="fill:#ffffff;fill-opacity:1;stroke:none;opacity:1"/>
   <title id="title">Construcció conceptual de les coordenades E i N en UTM 31N</title>
   <desc id="desc">L'equador és l'origen de la coordenada nord, amb N igual a zero metres. El meridià central rep un fals est de cinc-cents mil metres. Vila-seca queda a l'oest del meridià central i té E 344.469 metres i N 4.551.807 metres.</desc>
   <defs>

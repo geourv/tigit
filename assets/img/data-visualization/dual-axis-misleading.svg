@@ -1,4 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="608" height="323" viewBox="76 113 608 323" role="img" aria-labelledby="title desc">
+  <style>:root { background-color: #ffffff; }</style>
+  <rect id="manual-opaque-background" x="74" y="111" width="612" height="327" fill="#ffffff" style="fill:#ffffff;fill-opacity:1;stroke:none;opacity:1"/>
   <title id="title">Gràfica amb doble eix que fa coincidir dues sèries diferents</title>
   <desc id="desc">Un gràfic de línies mostra ocupació i preu mitjà amb dos eixos verticals ajustats per fer que els pendents semblin equivalents.</desc>
   <defs>

@@ -1,4 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="856" height="522" viewBox="102 115 856 522" role="img" aria-labelledby="title desc">
+  <style>:root { background-color: #ffffff; }</style>
+  <rect id="manual-opaque-background" x="100" y="113" width="860" height="526" fill="#ffffff" style="fill:#ffffff;fill-opacity:1;stroke:none;opacity:1"/>
   <title id="title">Components d'un sistema d'informació geogràfica</title>
   <desc id="desc">Una pregunta territorial ocupa el centre i es relaciona amb cinc components: persones, dades, mètodes, programari i infraestructura. El control de qualitat envolta tot el sistema.</desc>
   <defs>

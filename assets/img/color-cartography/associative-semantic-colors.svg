@@ -1,4 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1060" height="514" viewBox="60 118 1060 514" role="img" aria-labelledby="title desc">
+  <style>:root { background-color: #ffffff; }</style>
+  <rect id="manual-opaque-background" x="58" y="116" width="1064" height="518" fill="#ffffff" style="fill:#ffffff;fill-opacity:1;stroke:none;opacity:1"/>
   <title id="title">Colors associatius, semàntics i corporatius</title>
   <desc id="desc">Esquema que compara usos associatius del color, codis semàntics com semàfors i termòmetres, paletes institucionals i paletes temàtiques de dades.</desc>
   <defs>

@@ -1,4 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1014" height="489" viewBox="53 113 1014 489" role="img" aria-labelledby="title desc">
+  <style>:root { background-color: #ffffff; }</style>
+  <rect id="manual-opaque-background" x="51" y="111" width="1018" height="493" fill="#ffffff" style="fill:#ffffff;fill-opacity:1;stroke:none;opacity:1"/>
   <title id="title">Càlculs d'escala cartogràfica</title>
   <desc id="desc">Quatre panells mostren com passar de distància al mapa a distància real, de distància real a distància al mapa, com calcular superfícies amb el quadrat de l'escala i com estimar fulls equivalents entre dues escales. Cada exemple indica l'escala i una nota defineix els denominadors n.</desc>
   <defs>

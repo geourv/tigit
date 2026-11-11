@@ -202,7 +202,7 @@
       "dependencies": [
         {
           "path": "assets/quarto/color-cartography/palette-reference-swatches.qmd",
-          "sha256": "fd0566f85263d36a06552ea390e93462d6938e5450c6bb55520404aa37a83ab9"
+          "sha256": "af82d365de35b90ce60c0ef293b4a295ec583c9a39ed834260be5687b8ba0258"
         },
         {
           "path": "Dockerfile.compute-python",
@@ -218,7 +218,7 @@
         }
       ],
       "engine": "python",
-      "fingerprint": "03449ee784636a7e7230b3017b28b81dabbbaa10d9deaacf95e5aca7b9c8175a",
+      "fingerprint": "99f982c8f04555949755822c3273def4fc28e62380a0bfc3c650faaa3b240d61",
       "image": {
         "engine": "python",
         "environment": "local",
@@ -227,18 +227,18 @@
       },
       "image_identity": {
         "available": "true",
-        "digest": "",
-        "id": "sha256:22ed1731046c75bc968890159d944de07d59904efc44a7d3d7b1550944fcbd76"
+        "digest": "tigit-compute-python@sha256:4ea1d378e142da08ac76250f4a33b49ff1c7eadc1465f52284c7693332aae336",
+        "id": "sha256:4ea1d378e142da08ac76250f4a33b49ff1c7eadc1465f52284c7693332aae336"
       },
       "mode": "figure",
       "outputs": [
         {
           "path": "assets/img/color-cartography/palette-reference-swatches.svg",
-          "sha256": "ddb92dc6a95726fe1bac1fc3993d1498951b1833d00d37f077ca1ec6685361f4",
-          "size": 7036
+          "sha256": "214f4c08be3a09491a41433a44b2bbcef5f9cdcb3c36d0e06fa2c3e8a6f18110",
+          "size": 7191
         }
       ],
-      "rendered_at": "2026-09-04T17:46:06+00:00"
+      "rendered_at": "2026-11-11T03:13:54+00:00"
     },
     "assets/quarto/coordinate-systems/geolocation-exercise-world-map.qmd": {
       "dependencies": [
@@ -1302,6 +1302,79 @@
         }
       ],
       "rendered_at": "2026-10-26T14:49:09+00:00"
+    },
+    "assets/quarto/figure-backgrounds/opaque-raster-backgrounds.qmd": {
+      "dependencies": [
+        {
+          "path": "assets/quarto/figure-backgrounds/opaque-raster-backgrounds.qmd",
+          "sha256": "0aa2ba7e3fcd91243b23cfd1e89bfb596cc7cd32d812ab05e9008ff85fd99ccc"
+        },
+        {
+          "path": "assets/img/coordinate-systems/world-time-zones-map-es-2026-08-23.png",
+          "sha256": "14e0d6933033026fccc4e2d1420b30d35bfdb0640aae47a85549af260d9ce7cb"
+        },
+        {
+          "path": "assets/img/color-cartography/herschel-infrared-experiment-nasa.png",
+          "sha256": "117c3896e334a1d7e5b08ce42afb02a6992751869fdfab664ed917a3b3288787"
+        },
+        {
+          "path": "assets/img/color-cartography/ritter-ultraviolet-experiment-nasa.png",
+          "sha256": "a7cee2ddf19d07fabe3130f785554722ae17c2aaf560d7cb0d321c5961a33ded"
+        },
+        {
+          "path": "assets/img/legacy/iqual-intervals-choropleth-map.png",
+          "sha256": "45463dec703795f86a4628256460845d9eb36079f012ceb99049fa322f2c1ea4"
+        },
+        {
+          "path": "Dockerfile.compute-python",
+          "sha256": "fde14d6d24d14f2ad0adc23caac835506e35a4fe3acce3a505f9228391351b74"
+        },
+        {
+          "path": "requirements-compute.txt",
+          "sha256": "759a37ff81610b5420e74a1271b1693d24c0e135783d3ecdaf0f075b5109ab12"
+        },
+        {
+          "path": ".unaltraweb/computations.yml",
+          "sha256": "2810f7ab3b1cf4acea0c70a98506ddfb6d38181b75d48936cecba69746ec0b65"
+        }
+      ],
+      "engine": "python",
+      "fingerprint": "d575a39bf2baefaf35e3b353d9d03354f7ebade29d247f2b879802f3b88a2047",
+      "image": {
+        "engine": "python",
+        "environment": "local",
+        "image": "tigit-compute-python:local",
+        "source": "environment:COMPUTE_PYTHON_IMAGE"
+      },
+      "image_identity": {
+        "available": "true",
+        "digest": "tigit-compute-python@sha256:4ea1d378e142da08ac76250f4a33b49ff1c7eadc1465f52284c7693332aae336",
+        "id": "sha256:4ea1d378e142da08ac76250f4a33b49ff1c7eadc1465f52284c7693332aae336"
+      },
+      "mode": "figure",
+      "outputs": [
+        {
+          "path": "assets/img/coordinate-systems/world-time-zones-map-es-2026-08-23.opaque.svg",
+          "sha256": "bece53285b95d13cdfac1ef2ef80ce483ad36cf69a1c925cc0c6f806f85fe2c8",
+          "size": 1372611
+        },
+        {
+          "path": "assets/img/color-cartography/herschel-infrared-experiment-nasa.opaque.svg",
+          "sha256": "216e474c84183b084cf38f2d5d8242b0413f5da05060b922d3da7bb9f566750d",
+          "size": 70128
+        },
+        {
+          "path": "assets/img/color-cartography/ritter-ultraviolet-experiment-nasa.opaque.svg",
+          "sha256": "2152baf3f5105c71b3403ba836912b6911ee770920a3736cf90eb7b5340afd39",
+          "size": 92531
+        },
+        {
+          "path": "assets/img/legacy/iqual-intervals-choropleth-map.opaque.svg",
+          "sha256": "0763fb44e5101cbd5b714779e7873a7966ce5538c0ac93c54f67483ca6e3a20f",
+          "size": 126340
+        }
+      ],
+      "rendered_at": "2026-11-11T03:14:06+00:00"
     },
     "assets/quarto/gis/gis-analysis-examples.qmd": {
       "dependencies": [

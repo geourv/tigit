@@ -1,4 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1044" height="829" viewBox="68 113 1044 829" role="img" aria-labelledby="title desc">
+  <style>:root { background-color: #ffffff; }</style>
+  <rect id="manual-opaque-background" x="66" y="111" width="1048" height="833" fill="#ffffff" style="fill:#ffffff;fill-opacity:1;stroke:none;opacity:1"/>
   <title id="title">Cinc maneres de tallar una distribució en classes</title>
   <desc id="desc">Comparació entre intervals iguals, quantils, intervals arrodonits, desviacions estàndard i trencaments naturals sobre una mateixa distribució de valors municipals.</desc>
   <defs>

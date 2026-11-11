@@ -20,6 +20,8 @@
    xmlns:svg="http://www.w3.org/2000/svg"
    role="img"
    aria-labelledby="title desc">
+  <style>:root { background-color: #ffffff; }</style>
+  <rect id="manual-opaque-background" x="-0.5291875" y="-0.529166689" width="995.481595" height="478.895843" fill="#ffffff" style="fill:#ffffff;fill-opacity:1;stroke:none;opacity:1"/>
   <title id="title">Organització cel·lular de la retina</title>
   <desc id="desc">Tall de l'ull connectat amb una ampliació de la retina que identifica els fotoreceptors, altres cèl·lules retinals i les capes situades entre el vitri i el coroide. Sigles: MLI, membrana limitant interna; CFNR, capa de fibres nervioses de la retina; CCG, capa de cèl·lules ganglionars; CPI, capa plexiforme interna; CNI, capa nuclear interna; CPE, capa plexiforme externa; CNE, capa nuclear externa; MLE, membrana limitant externa; SI, segment intern; SE, segment extern; EPR, epiteli pigmentari de la retina; MB, membrana de Bruch.</desc>
   <sodipodi:namedview

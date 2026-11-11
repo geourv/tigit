@@ -1,4 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="884" height="334" viewBox="38 102 884 334" role="img" aria-labelledby="title desc">
+  <style>:root { background-color: #ffffff; }</style>
+  <rect id="manual-opaque-background" x="36" y="100" width="888" height="338" fill="#ffffff" style="fill:#ffffff;fill-opacity:1;stroke:none;opacity:1"/>
   <title id="title">Mateixa serie temporal amb tres relacions d'aspecte</title>
   <desc id="desc">Tres panells mostren la mateixa serie de valors turistics amb el mateix rang numeric, pero amb marcs de dibuix alt, equilibrat i pla que canvien la sensacio visual de pendent.</desc>
   <defs>

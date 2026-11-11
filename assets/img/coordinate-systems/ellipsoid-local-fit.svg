@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="874" height="469" viewBox="56 42 874 469" role="img" aria-labelledby="title desc">
+  <style>:root { background-color: #ffffff; }</style>
+  <rect id="manual-opaque-background" x="54" y="40" width="878" height="473" fill="#ffffff" style="fill:#ffffff;fill-opacity:1;stroke:none;opacity:1"/>
   <title id="title">Ajust local i global d'el·lipsoides</title>
   <desc id="desc">Esquema conceptual amb dues superfícies continentals separades, un el·lipsoide global i dos el·lipsoides locals que s'ajusten millor a l'entorn d'Amèrica del Nord i d'Europa.</desc>
   <metadata>

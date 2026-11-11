@@ -1,4 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1120" height="650" viewBox="0 0 1120 650" role="img" aria-labelledby="title desc">
+  <style>:root { background-color: #ffffff; }</style>
+  <rect id="manual-opaque-background" x="-2" y="-2" width="1124" height="654" fill="#ffffff" style="fill:#ffffff;fill-opacity:1;stroke:none;opacity:1"/>
   <title id="title">Abast i maduresa dels sistemes de posicionament per ràdio segons una classificació de 2010</title>
   <desc id="desc">Matriu històrica amb cinc columnes de maduresa, des de sistemes obsolets fins a experimentals, i quatre files d'abast aproximat, des de deu metres fins a deu mil quilòmetres. GNSS apareix com a consolidat i d'abast global. La resta de tecnologies ocupen posicions diferents segons l'estimació publicada el 2010; una fletxa connecta Loran-C amb eLoran.</desc>
   <defs>
