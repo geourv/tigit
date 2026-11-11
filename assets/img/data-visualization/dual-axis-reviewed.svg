@@ -1,4 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="600" height="316" viewBox="80 118 600 316" role="img" aria-labelledby="title desc">
+  <style>:root { background-color: #ffffff; }</style>
+  <rect id="manual-opaque-background" x="78" y="116" width="604" height="320" fill="#ffffff" style="fill:#ffffff;fill-opacity:1;stroke:none;opacity:1"/>
   <title id="title">Dues sèries separades en petits múltiples amb unitats explícites</title>
   <desc id="desc">La mateixa ocupació i el mateix preu mitjà es mostren en dos panells separats, amb unitats i rangs visibles, per evitar una relació visual fabricada.</desc>
   <defs>

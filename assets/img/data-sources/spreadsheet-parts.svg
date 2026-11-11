@@ -1,4 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="876" height="388" viewBox="58 68 876 388" role="img" aria-labelledby="title desc">
+  <style>:root { background-color: #ffffff; }</style>
+  <rect id="manual-opaque-background" x="56" y="66" width="880" height="392" fill="#ffffff" style="fill:#ffffff;fill-opacity:1;stroke:none;opacity:1"/>
   <title id="title">Parts principals d'un full de càlcul</title>
   <desc id="desc">Esquema docent d'un full de càlcul amb barra de fórmules, capçaleres de columnes, files, cel·la activa i rang de dades.</desc>
   <defs>

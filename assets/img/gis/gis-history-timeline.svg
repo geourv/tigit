@@ -1,4 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1000" height="865" viewBox="0 30 1000 865" role="img" aria-labelledby="title desc">
+  <style>:root { background-color: #ffffff; }</style>
+  <rect id="manual-opaque-background" x="-2" y="28" width="1004" height="869" fill="#ffffff" style="fill:#ffffff;fill-opacity:1;stroke:none;opacity:1"/>
   <title id="title">Etapes en l'evolució dels sistemes d'informació geogràfica</title>
   <desc id="desc">Cronologia en set etapes àmplies: fonaments durant els anys cinquanta, primers SIG durant els seixanta, dades i algorismes entre els setanta i els vuitanta, SIG d'escriptori durant els noranta, web, GNSS i codi obert durant els dos mil, SIG connectats durant els anys deu i canvi cap a la intel·ligència artificial geoespacial des dels anys vint.</desc>
   <defs>

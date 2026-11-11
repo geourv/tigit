@@ -1,4 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1000" height="560" viewBox="0 0 1000 560" role="img" aria-labelledby="title desc">
+  <style>:root { background-color: #ffffff; }</style>
+  <rect id="manual-opaque-background" x="-2" y="-2" width="1004" height="564" fill="#ffffff" style="fill:#ffffff;fill-opacity:1;stroke:none;opacity:1"/>
   <title id="title">De la xarxa geodèsica a un aixecament topogràfic local</title>
   <desc id="desc">A l'esquerra, cinc senyals geodèsics amb coordenades ajustades en un mateix marc formen una xarxa d'observacions. A la dreta, un equip topogràfic parteix d'un punt conegut i mesura elements locals. Una cadena inferior relaciona dàtum, marc, senyals i aixecament.</desc>
   <defs>

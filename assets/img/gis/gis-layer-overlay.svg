@@ -1,4 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1100" height="490" viewBox="55 145 1100 490" role="img" aria-labelledby="title desc">
+  <style>:root { background-color: #ffffff; }</style>
+  <rect id="manual-opaque-background" x="53" y="143" width="1104" height="494" fill="#ffffff" style="fill:#ffffff;fill-opacity:1;stroke:none;opacity:1"/>
   <title id="title">Superposició de capes per obtenir una síntesi espacial</title>
   <desc id="desc">Tres capes alineades del mateix territori separen el relleu, la inundabilitat i els accessos. Una operació de superposició aplica criteris explícits i produeix una àrea candidata.</desc>
   <defs>

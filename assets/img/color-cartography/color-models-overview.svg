@@ -1,4 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1304" height="724" viewBox="48 118 1304 724" role="img" aria-labelledby="title desc">
+  <style>:root { background-color: #ffffff; }</style>
+  <rect id="manual-opaque-background" x="46" y="116" width="1308" height="728" fill="#ffffff" style="fill:#ffffff;fill-opacity:1;stroke:none;opacity:1"/>
   <title id="title">Models de color per a monitors, impressió i selectors digitals</title>
   <desc id="desc">Comparació didàctica dels models RGB, CMYK, RYB i HSL/HSV, amb colors primaris, usos principals i significat dels canals.</desc>
   <defs>

@@ -1,4 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600" role="img" aria-labelledby="title desc">
+  <style>:root { background-color: #ffffff; }</style>
+  <rect id="manual-opaque-background" x="-2" y="-2" width="1204" height="604" fill="#ffffff" style="fill:#ffffff;fill-opacity:1;stroke:none;opacity:1"/>
   <title id="title">Posició del centre de projecció en tres projeccions azimutals perspectives</title>
   <desc id="desc">Tres seccions comparen la projecció gnomònica, amb el centre de projecció al centre de l'esfera; l'estereogràfica, amb el centre al punt antipodal al contacte; i l'ortogràfica, amb el centre a l'infinit i raigs paral·lels. En tots tres casos es manté un pla tangent.</desc>
   <defs>

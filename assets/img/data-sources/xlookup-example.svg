@@ -1,4 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="874" height="412" viewBox="42 50 874 412" role="img" aria-labelledby="title desc">
+  <style>:root { background-color: #ffffff; }</style>
+  <rect id="manual-opaque-background" x="40" y="48" width="878" height="416" fill="#ffffff" style="fill:#ffffff;fill-opacity:1;stroke:none;opacity:1"/>
   <title id="title">Exemple de correspondència amb XLOOKUP</title>
   <desc id="desc">Esquema docent amb una taula municipal, una taula auxiliar de codis i el resultat d'una fórmula XLOOKUP que retorna el codi de comarca.</desc>
   <defs>

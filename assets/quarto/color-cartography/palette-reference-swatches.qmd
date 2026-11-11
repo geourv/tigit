@@ -21,7 +21,17 @@ unaltraweb_compute:
 from html import escape
 from pathlib import Path
 
-output = Path("assets/img/color-cartography/palette-reference-swatches.svg")
+
+def find_project_root(start):
+    path = Path(start).resolve()
+    for candidate in (path, *path.parents):
+        if (candidate / ".unaltraweb" / "computations.yml").is_file():
+            return candidate
+    raise RuntimeError("Project root not found: missing .unaltraweb/computations.yml")
+
+
+root = find_project_root(Path.cwd())
+output = root / "assets/img/color-cartography/palette-reference-swatches.svg"
 output.parent.mkdir(parents=True, exist_ok=True)
 
 rows = [
@@ -50,7 +60,7 @@ rows = [
         "family": "ColorBrewer",
         "name": "RdBu",
         "kind": "divergent",
-        "use": "desviacions a banda i banda d'un centre",
+        "use": "desviacions respecte d'un centre",
         "colors": ["#b2182b", "#ef8a62", "#fddbc7", "#f7f7f7", "#d1e5f0", "#67a9cf", "#2166ac"],
     },
     {
@@ -83,64 +93,47 @@ rows = [
     },
 ]
 
-width = 1180
-height = 820
+layout_width = 1180
+viewport = (72, 118, 1036, 539)
 left = 74
 kind_x = 252
 swatch_x = 516
 swatch_width = 78
 swatch_height = 42
-row_gap = 62
-first_row_y = 144
-section_gap = 34
+row_positions = [144, 206, 268, 330, 392, 488, 550, 604]
 
 svg = [
-    f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-labelledby="title desc">',
+    f'<svg xmlns="http://www.w3.org/2000/svg" width="{viewport[2]}" height="{viewport[3]}" viewBox="{" ".join(map(str, viewport))}" role="img" aria-labelledby="title desc">',
     '  <title id="title">Mostres de paletes cartogràfiques i científiques</title>',
     '  <desc id="desc">Comparació de paletes ColorBrewer, amb exemples seqüencials, divergents i qualitatius, i de mapes de color perceptualment uniformes com viridis, magma i cividis.</desc>',
+    '  <style>:root { background-color: #ffffff; }</style>',
+    f'  <rect id="manual-opaque-background" x="{viewport[0] - 1}" y="{viewport[1] - 1}" width="{viewport[2] + 2}" height="{viewport[3] + 2}" fill="#ffffff"/>',
     "  <defs>",
     "    <style>",
-    "      .bg { fill: #ffffff; }",
     "      .rule { stroke: #d3dce0; stroke-width: 1.2; }",
-    "      .title { font: 700 30px Arial, 'Liberation Sans', sans-serif; fill: #17202a; }",
-    "      .subtitle { font: 16px Arial, 'Liberation Sans', sans-serif; fill: #52616b; }",
     "      .section { font: 700 17px Arial, 'Liberation Sans', sans-serif; fill: #17202a; }",
     "      .name { font: 700 19px Arial, 'Liberation Sans', sans-serif; fill: #17202a; }",
     "      .kind { font: 700 16px Arial, 'Liberation Sans', sans-serif; fill: #263640; }",
     "      .use { font: 15px Arial, 'Liberation Sans', sans-serif; fill: #52616b; }",
-    "      .footer { font: 14px Arial, 'Liberation Sans', sans-serif; fill: #52616b; }",
     "      .swatch { stroke: #ffffff; stroke-width: 2; }",
-    "      .frame { fill: none; stroke: #c7d2d7; stroke-width: 1.4; }",
     "    </style>",
     "  </defs>",
-    '  <rect class="bg" width="1180" height="820"/>',
-    '  <text x="590" y="50" text-anchor="middle" class="title">Paletes de referència per a mapes i dades</text>',
-    '  <text x="590" y="78" text-anchor="middle" class="subtitle">El tipus de dada determina la funció de la paleta: ordre, desviació o categories.</text>',
 ]
 
 last_family = None
-row_index = 0
-for row in rows:
+for row, y in zip(rows, row_positions, strict=True):
     if row["family"] != last_family:
-        section_y = first_row_y + row_index * row_gap
-        if last_family is not None:
-            section_y += section_gap
-            first_row_y += section_gap
-        svg.append(f'  <line x1="{left}" y1="{section_y - 24}" x2="{width - left}" y2="{section_y - 24}" class="rule"/>')
-        svg.append(f'  <text x="{left}" y="{section_y - 6}" class="section">{escape(row["family"])}</text>')
+        svg.append(f'  <line x1="{left}" y1="{y - 24}" x2="{layout_width - left}" y2="{y - 24}" class="rule"/>')
+        svg.append(f'  <text x="{left}" y="{y - 6}" class="section">{escape(row["family"])}</text>')
         last_family = row["family"]
 
-    y = first_row_y + row_index * row_gap
     svg.append(f'  <text x="{left}" y="{y + 26}" class="name">{escape(row["name"])}</text>')
     svg.append(f'  <text x="{kind_x}" y="{y + 19}" class="kind">{escape(row["kind"])}</text>')
     svg.append(f'  <text x="{kind_x}" y="{y + 42}" class="use">{escape(row["use"])}</text>')
     for i, color in enumerate(row["colors"]):
         x = swatch_x + i * swatch_width
         svg.append(f'  <rect x="{x}" y="{y}" width="{swatch_width}" height="{swatch_height}" class="swatch" fill="{color}"/>')
-    svg.append(f'  <rect x="{swatch_x}" y="{y}" width="{swatch_width * len(row["colors"])}" height="{swatch_height}" class="frame"/>')
-    row_index += 1
 
-svg.append('  <text x="590" y="782" text-anchor="middle" class="footer">Mostres de 7 colors. Les paletes contínues s’han discretitzat per comparar-les en una mateixa figura.</text>')
 svg.append("</svg>")
 
 output.write_text("\n".join(svg) + "\n", encoding="utf-8")

@@ -5,6 +5,8 @@
 	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 	xmlns:xlink="http://www.w3.org/1999/xlink"
 	width="720px" height="440px" viewBox="-180 -110 360 220">
+  <style>:root { background-color: #ffffff; }</style>
+  <rect id="manual-opaque-background" x="-181" y="-111" width="362" height="222" fill="#ffffff" style="fill:#ffffff;fill-opacity:1;stroke:none;opacity:1"/>
 <title>Semieixos d'una el·lipse</title>
 <desc>Secció el·líptica amb el semieix major a i el semieix menor b.</desc>
 <metadata>

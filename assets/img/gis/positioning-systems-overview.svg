@@ -1,4 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1124" height="675" viewBox="38 116 1124 675" role="img" aria-labelledby="title desc">
+  <style>:root { background-color: #ffffff; }</style>
+  <rect id="manual-opaque-background" x="36" y="114" width="1128" height="679" fill="#ffffff" style="fill:#ffffff;fill-opacity:1;stroke:none;opacity:1"/>
   <title id="title">El posicionament combina senyals, sensors i models</title>
   <desc id="desc">Tres famílies d'observacions convergeixen en una solució de posicionament. Els senyals de ràdio inclouen GNSS, telefonia, Wi-Fi, Bluetooth i UWB. Els sensors inclouen acceleròmetres, giroscopis, odometria, magnetòmetres i baròmetres. L'entorn i els models inclouen visió, LiDAR, acústica, ajust a mapes i punts de control. La fusió produeix una posició amb incertesa i sistema de referència.</desc>
   <defs>

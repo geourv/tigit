@@ -509,3 +509,56 @@ Passen `site_check`, `make build`, l'auditoria HTML, el control editorial del HT
 La revisió de navegador actual inclou dotze obertures de zoom —els dos circulars, el núvol i l'arbre, en clar, fosc i cafè—, comprovació dels hashes servits i inspecció de les captures. Els fons de les figures es mantenen blancs i llegibles. La vista mòbil de 390 píxels no té desbordament horitzontal, imatges fallides ni errors MathJax; no s'han observat errors JavaScript. S'han inspeccionat les pàgines físiques 159–161 del nou PDF, numerades 129–131, amb l'exercici i la correcció.
 
 El PDF actual té 406 pàgines i 56.979.441 bytes, SHA256 `2163c4647ad9825e47b00b2af1ac2a09c9f328f773ce78214be971135a0b6c59`. Les còpies de preview i del web coincideixen i el manifest natiu el declara fresc. La previsualització revisada s'ha servit amb `make serve` a `http://localhost:4000/tigit/ca/chapters/semiologia-visualitzacio/`. Els informes d'aquesta sessió són a `/tmp/opencode/tigit-pending-review-20261110/` i les captures a `/tmp/opencode/tigit-browser-20261110/`; són evidència local de la represa.
+
+## Fons opacs de les figures antigues — 11 de novembre de 2026
+
+La petició de l'autor se centra en les imatges que deixen veure el manual a través del zoom. La [reserva de TIGIT #35](https://github.com/geourv/tigit/issues/35) concreta 52 paths de canvi i onze dependències només de lectura, acceptats amb «Sí, endavant». La branca de treball és `figure/unaltraweb/35-fons-opacs`, sobre `f541e9e418139266a2f9b7a3eacd15be1b3ca015`.
+
+### Auditoria i criteri d'intervenció
+
+La comprovació nativa `image_background_check` d'unaltraweb 0.7.4 s'ha acotat per capítol. S'han completat els casos transparents o no verificables amb Chromium, carregant la imatge com a recurs independent i capturant RGBA amb el fons HTML transparent. Dels 198 recursos locals referenciats, 44 presentaven transparència interior, 37 només alfa perifèric i 117 eren opacs en les comprovacions corresponents. Les quatre figures Mermaid que l'inspector no podia verificar ja eren opaques al navegador. El pressupost d'inspecció i els avisos d'alfa no s'han convertit en una certificació automàtica de defecte o d'opacitat.
+
+El lot actua sobre les 44 figures amb transparència interior. El paper blanc pertany al fitxer de la figura. Els SVG incorporen un rectangle de fons i un estil de viewport propi, que també cobreix les bandes que poden aparèixer quan la proporció del viewport difereix del viewBox; aquest cas s'ha comprovat a l'esquema de l'ull. Es conserven les dimensions i el viewBox, les coordenades, els textos, les formes, les metadades i les opacitats internes. En particular, les superposicions de `gis-layer-overlay.svg` mantenen les seves propietats originals.
+
+Cada figura del manual apunta al mateix asset en clar, fosc i cafè: no hi ha còpies per tema. El fons és únic i propi de la figura, escollit pel contrast del seu contingut; en aquest lot és blanc fix. Les captures dels tres temes només són QA temporal. Els PNG originals i les seves variants opaques constitueixen la relació font–presentació, no variants cromàtiques.
+
+La comparació dels 39 SVG d'autoria/importació, retirant només el paper i l'estil de viewport afegits, recupera el contingut anterior. Alguns SVG importats normalitzen un final de línia. Els originals natius dels diagrames i els altres outputs de càlcul no s'han modificat.
+
+### Paletes: font i output reconciliats
+
+`assets/quarto/color-cartography/palette-reference-swatches.qmd` ja declarava blanc, però generava un llenç diferent del retall publicat. La font ara localitza l'arrel del projecte, exporta el viewport `72 118 1036 539` amb el seu paper i conserva les posicions publicades, inclosa la darrera fila. També recupera el text breu publicat de RdBu i el repertori real d'elements del retall. La comparació XML de l'output regenerat confirma que tots els elements anteriors, els textos, les 56 mostres de color i les seves posicions són idèntics; només s'hi afegeix el fons.
+
+### PNG originals i variants opaques
+
+La font `assets/quarto/figure-backgrounds/opaque-raster-backgrounds.qmd`, amb engine Python i mode figure, incorpora cadascun dels quatre PNG originals íntegres en un SVG autocontingut sobre blanc. El PNG incrustat, descodificat de la URI de dades, coincideix byte a byte amb l'input. Les dimensions són les de l'IHDR original; no hi ha retall ni recompressió. Les referències dels capítols 4, 7 i 8 passen a les variants següents:
+
+| Original conservat | Variant de presentació |
+| --- | --- |
+| `assets/img/coordinate-systems/world-time-zones-map-es-2026-08-23.png` | `assets/img/coordinate-systems/world-time-zones-map-es-2026-08-23.opaque.svg` |
+| `assets/img/color-cartography/herschel-infrared-experiment-nasa.png` | `assets/img/color-cartography/herschel-infrared-experiment-nasa.opaque.svg` |
+| `assets/img/color-cartography/ritter-ultraviolet-experiment-nasa.png` | `assets/img/color-cartography/ritter-ultraviolet-experiment-nasa.opaque.svg` |
+| `assets/img/legacy/iqual-intervals-choropleth-map.png` | `assets/img/legacy/iqual-intervals-choropleth-map.opaque.svg` |
+
+Els peus de l'ull, els fotoreceptors i la retina identifiquen el fons blanc afegit. Es conserven els crèdits, les llicències i els originals; la qualificació anterior «original sense modificar» dels fotoreceptors s'ha ajustat a la intervenció.
+
+### Execució i frescor
+
+Les dues fonts Python es renderitzen amb la CLI pública d'unaltraweb 0.7.4 i el runtime del projecte construït des de `Dockerfile.compute-python` i `requirements-compute.txt`, sobre la base immutable `ghcr.io/dosquartsdedocs/unaltraweb-compute-python@sha256:18cb269811bd4005800382da25a480ec2bca7eac8d0501ad1ef36bad1c0f8cd9`. El runtime qualificat és `sha256:4ea1d378e142da08ac76250f4a33b49ff1c7eadc1465f52284c7693332aae336`, retingut com a `tigit-compute-python:fons-20261110-4ea1d378e142`.
+
+L'àlies local compartit no existia a l'entrada: s'ha utilitzat només durant aquests renders i després s'ha retornat a l'estat absent, conservant la imatge qualificada. Això manté les identitats registrades dels altres renders sense canviar els pins ni els fitxers d'entorn. El lock natiu només canvia els registres de la paleta i de la nova font ràster; cap rebut o fingerprint s'ha editat manualment. `manual_computation_check`, també amb visibilitat real del Docker del host, retorna 37 fonts current. El cas Sentinel2 `present_unmanaged` conserva el seu estat anterior.
+
+### Verificació de navegador, lloc i PDF
+
+Les mostres Chromium després del canvi són completament opaques per a les 44 figures. La comparació sobre blanc conserva el contingut; les petites diferències d'antialiàsing de les mostres reescalades no substitueixen els invariants de geometria SVG i de bytes PNG. Les onze dependències només de lectura mantenen els hashes.
+
+La prova del zoom utilitza el manual real servit amb `make serve`. Per a cada figura i tema —clar, fosc i cafè—, canvia un fons de prova situat darrere de la imatge ampliada de magenta a verd i compara els píxels del contingut de la imatge: **132 de 132 comparacions són idèntiques**, de manera que el contingut del darrere no hi passa. La navegació mòbil de set capítols a 390 píxels no té desbordament horitzontal ni errors MathJax; no s'han observat errors JavaScript.
+
+Passen `site_doctor` (zero errors i avisos), `profile_check`, `manual_source_quality_check`, `site_check`, la comprovació de prosa dels tres capítols modificats, `make build`, l'auditoria HTML i el control editorial del HTML. Es conserven els avisos previs de dimensions, alfa perifèric i límits de l'inspector. Les primeres passades de QA han detectat el marge transparent de l'ull i un selector de prova que no tenia en compte `?v=2`; es conserven com a intents previs i la passada final valida els casos corregits.
+
+El PDF actual té 406 pàgines, 56.981.101 bytes i SHA256 `b6ad3aa95baf3ea8f54bcdf9e4d030d803b2194763cadd7b99e56355136e4845`. Les còpies del web i de preview coincideixen. S'han inspeccionat les pàgines físiques 209, 211, 221, 242 i 244, amb NASA, ull/retina, paletes, fusos horaris i UTM. La mida de text i alguns retalls anteriors continuen als avisos de composició previs; aquest lot només resol els fons.
+
+Els informes, mostres i proves són a `/tmp/opencode/tigit-figure-backgrounds-20261110/`, inclosos `source-verification.json`, `pixel-verification.json`, `zoom-verification.json`, els logs natius i les captures. La previsualització és `http://localhost:4000/tigit/ca/`. El català continua `draft`; l'aprovació humana del resultat renderitzat és pendent abans de commit i integració.
+
+### Aprovació de l'autor
+
+L'11 de novembre de 2026, després de confirmar que cada figura utilitza un únic asset i fons fix compartit pels tres temes, l'autor ha aprovat el resultat del navegador/PDF amb **«Aprovo i integra»** i ha autoritzat commit, PR, integració i neteja de la branca de #35. Aquesta aprovació resol el pendent del paràgraf anterior. El contingut català conserva `draft`.

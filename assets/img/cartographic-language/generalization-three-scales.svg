@@ -1,4 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1094" height="460" viewBox="43 123 1094 460" role="img" aria-labelledby="title desc">
+  <style>:root { background-color: #ffffff; }</style>
+  <rect id="manual-opaque-background" x="41" y="121" width="1098" height="464" fill="#ffffff" style="fill:#ffffff;fill-opacity:1;stroke:none;opacity:1"/>
   <title id="title">Generalització cartogràfica a tres escales</title>
   <desc id="desc">Tres marcs de la mateixa mida final mostren com una escala local, una escala comarcal i una escala regional cobreixen extensions reals creixents i exigeixen nivells diferents de generalització.</desc>
   <defs>

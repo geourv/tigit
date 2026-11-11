@@ -1,0 +1,88 @@
+---
+title: "Fons opacs dels mapes i les il·lustracions ràster del manual"
+lang: ca
+ref: opaque_raster_backgrounds
+format:
+  gfm:
+    output-file: opaque-raster-backgrounds.generated.md
+execute:
+  echo: false
+  warning: false
+  message: false
+execute-dir: project
+unaltraweb_compute:
+  engine: python
+  mode: figure
+  inputs:
+    - assets/img/coordinate-systems/world-time-zones-map-es-2026-08-23.png
+    - assets/img/color-cartography/herschel-infrared-experiment-nasa.png
+    - assets/img/color-cartography/ritter-ultraviolet-experiment-nasa.png
+    - assets/img/legacy/iqual-intervals-choropleth-map.png
+  outputs:
+    - assets/img/coordinate-systems/world-time-zones-map-es-2026-08-23.opaque.svg
+    - assets/img/color-cartography/herschel-infrared-experiment-nasa.opaque.svg
+    - assets/img/color-cartography/ritter-ultraviolet-experiment-nasa.opaque.svg
+    - assets/img/legacy/iqual-intervals-choropleth-map.opaque.svg
+---
+
+```{python}
+import base64
+import hashlib
+from html import escape
+from pathlib import Path
+import struct
+
+
+def find_project_root(start):
+    path = Path(start).resolve()
+    for candidate in (path, *path.parents):
+        if (candidate / ".unaltraweb" / "computations.yml").is_file():
+            return candidate
+    raise RuntimeError("Project root not found: missing .unaltraweb/computations.yml")
+
+
+root = find_project_root(Path.cwd())
+figures = [
+    (
+        "assets/img/coordinate-systems/world-time-zones-map-es-2026-08-23.png",
+        "Mapa mundial dels fusos horaris civils",
+    ),
+    (
+        "assets/img/color-cartography/herschel-infrared-experiment-nasa.png",
+        "Reconstrucció educativa de l'experiment d'Herschel",
+    ),
+    (
+        "assets/img/color-cartography/ritter-ultraviolet-experiment-nasa.png",
+        "Reconstrucció educativa de l'experiment de Ritter",
+    ),
+    (
+        "assets/img/legacy/iqual-intervals-choropleth-map.png",
+        "Mapa de coropletes amb intervals iguals",
+    ),
+]
+
+for relative, title in figures:
+    source = root / relative
+    original = source.read_bytes()
+    if original[:16] != b"\x89PNG\r\n\x1a\n\x00\x00\x00\rIHDR":
+        raise RuntimeError(f"Expected an original PNG with IHDR: {relative}")
+    width, height = struct.unpack(">II", original[16:24])
+    if width <= 0 or height <= 0:
+        raise RuntimeError(f"Invalid PNG dimensions: {relative}")
+    encoded = base64.b64encode(original).decode("ascii")
+    source_hash = hashlib.sha256(original).hexdigest()
+    output = source.with_suffix(".opaque.svg")
+    svg = [
+        f'<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-labelledby="title desc">',
+        f'  <title id="title">{escape(title)}</title>',
+        '  <desc id="desc">PNG original íntegre, sense retall ni recompressió, sobre un fons blanc opac. Els crèdits de la imatge es conserven al peu del manual.</desc>',
+        '  <style>:root { background-color: #ffffff; }</style>',
+        f'  <!-- Source: {relative}; SHA256: {source_hash}. -->',
+        f'  <rect id="manual-opaque-background" x="-1" y="-1" width="{width + 2}" height="{height + 2}" fill="#ffffff"/>',
+        f'  <image x="0" y="0" width="{width}" height="{height}" xlink:href="data:image/png;base64,{encoded}"/>',
+        '</svg>',
+    ]
+    output.write_text("\n".join(svg) + "\n", encoding="utf-8")
+    if source.read_bytes() != original:
+        raise RuntimeError(f"The original PNG was modified: {relative}")
+```

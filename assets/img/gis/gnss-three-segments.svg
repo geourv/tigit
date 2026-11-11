@@ -1,4 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="810" height="546" viewBox="45 74 810 546" role="img" aria-labelledby="title desc">
+  <style>:root { background-color: #ffffff; }</style>
+  <rect id="manual-opaque-background" x="43" y="72" width="814" height="550" fill="#ffffff" style="fill:#ffffff;fill-opacity:1;stroke:none;opacity:1"/>
   <title id="title">Segments espacial, de control i d'usuari d'un sistema GNSS</title>
   <desc id="desc">Tres satèl·lits emeten senyals unidireccionals cap al segment d'usuari. Les antenes del segment de control reben telemetria i seguiment dels satèl·lits i hi envien ordres i dades de navegació actualitzades. Els receptors, representats per un telèfon, reben els senyals passivament i estimen posició, velocitat i temps.</desc>
   <metadata>

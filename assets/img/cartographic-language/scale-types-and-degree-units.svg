@@ -1,4 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1014" height="624" viewBox="53 110 1014 624" role="img" aria-labelledby="title desc">
+  <style>:root { background-color: #ffffff; }</style>
+  <rect id="manual-opaque-background" x="51" y="108" width="1018" height="628" fill="#ffffff" style="fill:#ffffff;fill-opacity:1;stroke:none;opacity:1"/>
   <title id="title">Tipus d'escala cartogràfica i unitats angulars</title>
   <desc id="desc">Figura didàctica que compara l'escala numèrica, verbal i gràfica, mostra equivalències mètriques i distingeix el grau de latitud, mesurat sobre meridians i gairebé constant en distància nord-sud, del grau de longitud, mesurat sobre paral·lels cada vegada més curts cap als pols.</desc>
   <defs>

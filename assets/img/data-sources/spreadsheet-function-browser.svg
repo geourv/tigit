@@ -1,4 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="871" height="412" viewBox="50 54 871 412" role="img" aria-labelledby="title desc">
+  <style>:root { background-color: #ffffff; }</style>
+  <rect id="manual-opaque-background" x="48" y="52" width="875" height="416" fill="#ffffff" style="fill:#ffffff;fill-opacity:1;stroke:none;opacity:1"/>
   <title id="title">Cercador de funcions en un full de càlcul</title>
   <desc id="desc">Esquema docent d'un assistent de funcions amb caixa de cerca, categories, resultats i validació de la fórmula proposada.</desc>
   <defs>

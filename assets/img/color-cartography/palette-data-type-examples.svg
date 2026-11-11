@@ -1,4 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1080" height="534" viewBox="62 113 1080 534" role="img" aria-labelledby="title desc">
+  <style>:root { background-color: #ffffff; }</style>
+  <rect id="manual-opaque-background" x="60" y="111" width="1084" height="538" fill="#ffffff" style="fill:#ffffff;fill-opacity:1;stroke:none;opacity:1"/>
   <title id="title">Paletes segons el tipus de dada</title>
   <desc id="desc">Quatre exemples de decisió cromàtica per a categories nominals, quantitats relatives, desviacions respecte d'un centre i llindars o accents.</desc>
   <defs>

@@ -1,4 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="900" height="620" viewBox="0 0 900 620" role="img" aria-labelledby="title desc">
+  <style>:root { background-color: #ffffff; }</style>
+  <rect id="manual-opaque-background" x="-2" y="-2" width="904" height="624" fill="#ffffff" style="fill:#ffffff;fill-opacity:1;stroke:none;opacity:1"/>
   <title id="title">Fus UTM 31 a l'hemisferi nord</title>
   <desc id="desc">Esquema geogràfic del fus 31 entre zero i sis graus est, des de l'equador fins al límit UTM de vuitanta-quatre graus nord. El meridià central és tres graus est i Vila-seca se situa a 41,10 graus nord.</desc>
   <defs>

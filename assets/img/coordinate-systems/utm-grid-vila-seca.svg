@@ -1,4 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="900" height="650" viewBox="0 0 900 650" role="img" aria-labelledby="title desc">
+  <style>:root { background-color: #ffffff; }</style>
+  <rect id="manual-opaque-background" x="-2" y="-2" width="904" height="654" fill="#ffffff" style="fill:#ffffff;fill-opacity:1;stroke:none;opacity:1"/>
   <title id="title">Lectura d'un reticle UTM local a Vila-seca</title>
   <desc id="desc">Zoom d'una quadrícula UTM d'un quilòmetre amb tres llocs de Vila-seca. L'equador no cap en el mapa local, però s'identifica com l'origen N igual a zero metres, uns 4.551 quilòmetres al sud.</desc>
   <defs>

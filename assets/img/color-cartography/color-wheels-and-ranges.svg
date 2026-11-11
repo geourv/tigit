@@ -1,4 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1054" height="524" viewBox="63 123 1054 524" role="img" aria-labelledby="title desc">
+  <style>:root { background-color: #ffffff; }</style>
+  <rect id="manual-opaque-background" x="61" y="121" width="1058" height="528" fill="#ffffff" style="fill:#ffffff;fill-opacity:1;stroke:none;opacity:1"/>
   <title id="title">Cercle cromàtic i rangs habituals dels models cromàtics</title>
   <desc id="desc">Esquema d'un cercle cromàtic amb colors anàlegs, complementaris i triàdics, i taula de rangs habituals per RGB, HEX, CMYK, RYB, HSL i HSV.</desc>
   <defs>
